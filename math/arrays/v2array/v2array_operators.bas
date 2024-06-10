@@ -155,7 +155,7 @@ namespace math
                 this._p[i] *= p[i]
             next i
         #ifdef MATH_VERBOSE
-        else : print "<math.array.*=> Unable to proceed. Arrays must have non-null matching lengths."
+        else : print "<math.v2array.*=> Unable to proceed. Arrays must have non-null matching lengths."
         #endif
         end if
     end operator
@@ -186,12 +186,130 @@ namespace math
         end if
     end operator
     
+    #ifdef _MATH_ARRAY_BI_
+    operator v2array./= (byref a as const array)
+        if (0% < a._l) and (a._l = this._l) then
+            dim as real const ptr p => a.data
+            for i as integer => 0% to this._l - 1%
+                if p[i] then
+                    this._p[i].x /= p[i]
+                    this._p[i].y /= p[i]
+                else
+                    this._p[i].x => 0d
+                    this._p[i].y => 0d
+                end if
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v2array./=> Unable to proceed. Arrays must have non-null matching lengths."
+        #endif
+        end if
+    end operator
+    #endif
+    
+    operator v2array./= (byref v as const vec2)
+        if this._l then
+            if v.x then
+                if v.y then
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x /= v.x
+                        this._p[i].y /= v.y
+                    next i
+                else
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x /= v.x
+                        this._p[i].y => 0d
+                    next i
+                end if
+            else
+                if v.y then
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x => 0d
+                        this._p[i].y /= v.y
+                    next i
+                else
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x => 0d
+                        this._p[i].y => 0d
+                    next i
+                end if
+            end if
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v2array./=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
+    
+    #ifdef _MATH_PVEC_BI_
+    operator v2array./= (byref v as const pvec)
+        if this._l then
+            dim as real x => v.x, y => v.y
+            if x then
+                if y then
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x /= x
+                        this._p[i].y /= y
+                    next i
+                else
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x /= x
+                        this._p[i].y => 0d
+                    next i
+                end if
+            else
+                if y then
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x => 0d
+                        this._p[i].y /= y
+                    next i
+                else
+                    for i as integer => 0% to this._l - 1%
+                        this._p[i].x => 0d
+                        this._p[i].y => 0d
+                    next i
+                end if
+            end if
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v2array./=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
+    #endif
+    
+    operator v2array./= (byref a as const v2array)
+        if (0% < a._l) and (a._l = this._l) then
+            for i as integer => 0% to this._l - 1%
+                this._p[i].x => iif(a._p[i].x, this._p[i].x / a._p[i].x, 0d)
+                this._p[i].y => iif(a._p[i].y, this._p[i].y / a._p[i].y, 0d)
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v2array./=> Unable to proceed. Arrays must have non-null matching lengths."
+        #endif
+        end if
+    end operator
+    
 ' math.v2array.cast ------------------------------------------------------------
     
-    
+    operator v2array.cast () as string
+        return "<math.v2array>{ length : " & this._l & " }"
+    end operator
     
 ' math.v2array.let -------------------------------------------------------------
     
-    
+    operator v2array.let (byref a as const v2array)
+        if @this <> @a then
+            this._l => 0%
+            if this._p then
+                delete[] this._p
+                this._p => 0
+            end if
+            if a._l then
+                this._l => a._l
+                this._p => new vec2[a._l]
+                for i as integer => 0% to a._l - 1%
+                    this._p[i] => a._p[i]
+                next i
+            end if
+        end if
+    end operator
     
 end namespace

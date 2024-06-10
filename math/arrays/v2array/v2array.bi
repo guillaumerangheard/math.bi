@@ -53,6 +53,10 @@
                     
                     declare const property data   () as vec2 const ptr
                     declare       property length (byref as const integer)
+                    declare const property xMax   () as real
+                    declare const property xMin   () as real
+                    declare const property yMax   () as real
+                    declare const property yMin   () as real
                     
                     declare       function forEach       overload (as sub      (byref as vec2)                                   , byref as const boolean => false) as boolean
                     declare       function forEach                (as function (byref as vec2)                         as boolean, byref as const boolean => false) as boolean
@@ -84,7 +88,7 @@
         end namespace
         #include "v2array_constructors.bas"
         #include "v2array_operators.bas"
-        '#include "v2array_properties.bas"
+        #include "v2array_properties.bas"
         '#include "v2array_methods.bas"
     #endif
 #endif
