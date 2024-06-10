@@ -186,11 +186,51 @@ namespace math
     
     #ifdef _MATH_ARRAY_BI_
     
+    #macro v2a_m(_a_,_b_)
+    function v2array.map##_a_ overload (byref a as array) as boolean
+        if this._l then
+            a.length => this._l
+            dim as real const ptr p => a.data
+            for i as integer => 0% to this._l - 1%
+                p[i] => this._p[i].##_b_
+            next i
+            return true
+        #ifdef MATH_VERBOSE
+        else : print "<math.v2array.map" & #_a_ & "> Unable to proceed. Array is empty."
+        #endif
+        end if
+        return false
+    end function
+    
+    function v2array.map##_a_ (byref a as array, f as function (byref as const real) as real) as boolean
+        if this._l then
+            if f then
+                a.length => this._l
+                dim as real const ptr p => a.data
+                for i as integer => 0% to this._l - 1%
+                    p[i] => f(this._p[i].##_b_)
+                next i
+                return true
+            #ifdef MATH_VERBOSE
+            else : print "<math.v2array.map" & #_a_ & "> Unable to proceed. Mapping function is undefined."
+            #endif
+            end if
+        #ifdef MATH_VERBOSE
+        else : print "<math.v2array.map" & #_a_ & "> Unable to proceed. Array is empty."
+        #endif
+        end if
+        return false
+    end function
+    #endmacro
+    
+    v2a_m(X,x)
     
     
 ' math.v2array.mapY ------------------------------------------------------------
     
+    v2a_m(Y,y)
     
+    #undef v2a_m
     
     #endif
     
