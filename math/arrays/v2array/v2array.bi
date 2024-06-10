@@ -91,6 +91,6 @@
         #include "v2array_constructors.bas"
         #include "v2array_operators.bas"
         #include "v2array_properties.bas"
-        '#include "v2array_methods.bas"
+        #include "v2array_methods.bas"
     #endif
 #endif

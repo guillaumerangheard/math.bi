@@ -169,6 +169,7 @@ namespace math
                 for i as integer => 0% to this._l - 1%
                     a._p[i] => f(this._p[i])
                 next i
+                return true
             #ifdef MATH_VERBOSE
             else
                 print "<math.v2array.map> Unable to proceed. Mapping function is undefined."
@@ -178,6 +179,7 @@ namespace math
         else : print "<math.v2array.map> Unable to proceed. Array is empty."
         #endif
         end if
+        return false
     end function
     
 ' math.v2array.mapX ------------------------------------------------------------
