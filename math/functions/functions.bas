@@ -58,20 +58,6 @@ namespace math
         return iif(frac(n), fix(n) + 1d, n)
     end function
     
-' math.ChDist ------------------------------------------------------------------
-    
-    function ChDist overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        return math.max(abs(x1 - x2), abs(y1 - y2))
-    end function
-    
-    function ChDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real) as real
-        return math.max(abs(x1 - x2), abs(y1 - y2), abs(z1 - z2))
-    end function
-    
-    function ChDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real) as real
-        return math.max(abs(x1 - x2), abs(y1 - y2), abs(z1 - z2), abs(w1 - w2))
-    end function
-    
 ' math.clamp -------------------------------------------------------------------
     
     function clamp overload (byref n as const real) as real
@@ -98,23 +84,6 @@ namespace math
     ' Cf. https://stackoverflow.com/questions/243945/calculating-a-2d-vectors-cross-product
     function cross overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
         return (x1 * y2) - (y1 * x2)
-    end function
-    
-' math.dist --------------------------------------------------------------------
-    
-    function dist overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2
-        return sqr(i * i + j * j)
-    end function
-    
-    function dist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2, k => z1 - z2
-        return sqr(i * i + j * j + k * k)
-    end function
-    
-    function dist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2, k => z1 - z2, l => w1 - w2
-        return sqr(i * i + j * j + k * k + l * l)
     end function
     
 ' math.dot ---------------------------------------------------------------------
@@ -195,20 +164,6 @@ namespace math
     end function
     #endif
     
-' math.MaDist ------------------------------------------------------------------
-    
-    function MaDist overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        return abs(x1 - x2) + abs(y1 - y2)
-    end function
-    
-    function MaDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real) as real
-        return abs(x1 - x2) + abs(y1 - y2) + abs(z1 - z2)
-    end function
-    
-    function MaDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real) as real
-        return abs(x1 - x2) + abs(y1 - y2) + abs(z1 - z2) + abs(w1 - w2)
-    end function
-    
 ' math.map ---------------------------------------------------------------------
     
     function map (byref n as const real, byref mn1 as const real, byref mx1 as const real, byref mn2 as const real, byref mx2 as const real) as real
@@ -247,26 +202,6 @@ namespace math
             return r
         end if
         return 0.0
-    end function
-    
-' math.MiDist ------------------------------------------------------------------
-    
-    function MiDist overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real, byref e as const real => 2d) as real
-        return iif(e, (abs(x1 - x2) ^ e + _
-                       abs(y1 - y2) ^ e) ^ (1.0 / e), 0.0)
-    end function
-    
-    function MiDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref e as const real => 2d) as real
-        return iif(e, (abs(x1 - x2) ^ e + _
-                       abs(y1 - y2) ^ e + _
-                       abs(z1 - z2) ^ e) ^ (1.0 / e), 0.0)
-    end function
-    
-    function MiDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real, byref e as const real => 2d) as real
-        return iif(e, (abs(x1 - x2) ^ e + _
-                       abs(y1 - y2) ^ e + _
-                       abs(z1 - z2) ^ e + _
-                       abs(w1 - w2) ^ e) ^ (1.0 / e), 0.0)
     end function
     
 ' math.min ---------------------------------------------------------------------
@@ -351,23 +286,6 @@ namespace math
     function sinh (byref n as const real) as real
         return (exp(n) - exp(-n)) * 0.5d
     end function    
-    
-' math.sqDist ------------------------------------------------------------------
-    
-    function sqDist overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2
-        return i * i + j * j
-    end function
-    
-    function sqDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2, k => z1 - z2
-        return i * i + j * j + k * k
-    end function
-    
-    function sqDist (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real) as real
-        dim as real i => x1 - x2, j => y1 - y2, k => z1 - z2, l => w1 - w2
-        return i * i + j * j + k * k + l * l
-    end function
     
 ' math.tanh --------------------------------------------------------------------
     

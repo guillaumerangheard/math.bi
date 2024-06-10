@@ -1,5 +1,4 @@
 #ifndef _MATH_BI_
-    ' math.bi v0.4
     #define _MATH_BI_
     #include "math.cfg"
     namespace math

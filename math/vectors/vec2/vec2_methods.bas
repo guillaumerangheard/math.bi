@@ -48,11 +48,31 @@ namespace math
     
     #endif
     
+' math.vec2.isUnit -------------------------------------------------------------
+    
+    function vec2.isUnit overload () as boolean
+        return iif(1d = this.norm, true, false)
+    end function
+    
+    function vec2.isUnit (byref t as const real) as boolean
+        return iif(abs(1d - this.norm) <= abs(t), true, false)
+    end function
+    
 ' math.vec2.MiNorm -------------------------------------------------------------
     
     function vec2.MiNorm (byref e as const real => 2.0) as real
         return iif(e, (abs(this.x) ^ e + abs(this.y) ^ e) ^ (1.0 / e), 0.0)
     end function
+    
+' math.vec2.normalise ----------------------------------------------------------
+    
+    sub vec2.normalise ()
+        dim as real h => this.norm
+        if (0d < h) and (h <> 1d) then
+            this.x /= h
+            this.y /= h
+        end if
+    end sub
     
 ' math.vec2.random -------------------------------------------------------------
     

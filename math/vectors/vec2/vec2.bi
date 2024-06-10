@@ -33,7 +33,10 @@
                 #else
                 declare static function fromPolar          (byref as const real, byref as const real) as vec2
                 #endif
+                declare const  function isUnit    overload () as boolean
+                declare const  function isUnit             (byref as const real) as boolean
                 declare const  function MiNorm             (byref as const real => 2d) as real
+                declare        sub      normalise          ()
                 #ifdef _RNG_BI_
                 declare static function random    overload ()                                                                                   as vec2
                 declare static function random             (byref as const real)                                                                as vec2
