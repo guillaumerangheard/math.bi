@@ -86,7 +86,7 @@ namespace math
                 this._p[i] _o_##= a._p[i]
             next i
         #ifdef MATH_VERBOSE
-        else : print "<math.array" & #_o_ & "=> Unable to proceed. Arrays must have non-null matching lengths."
+        else : print "<math.array." & #_o_ & "=> Unable to proceed. Arrays must have non-null matching lengths."
         #endif
         end if
     end operator

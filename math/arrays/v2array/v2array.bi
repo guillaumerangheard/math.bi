@@ -19,7 +19,7 @@
                     declare       operator &=   (byref as const pvec)
                     #endif
                     declare       operator &=   (byref as const v2array)
-                    declare       operator []   (byraf as const integer) byref as vec2
+                    declare       operator []   (byref as const integer) byref as vec2
                     declare       operator +=   (byref as const vec2)
                     #ifdef _MATH_PVEC_BI_
                     declare       operator +=   (byref as const pvec)
@@ -83,7 +83,7 @@
             end type
         end namespace
         #include "v2array_constructors.bas"
-        '#include "v2array_operators.bas"
+        #include "v2array_operators.bas"
         '#include "v2array_properties.bas"
         '#include "v2array_methods.bas"
     #endif
