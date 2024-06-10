@@ -94,7 +94,7 @@
             end type
         end namespace
         #include "complexArray_constructors.bas"
-        '#include "complexArray_operators.bas"
+        #include "complexArray_operators.bas"
         '#include "complexArray_properties.bas"
         '#include "complexArray_methods.bas"
     #endif

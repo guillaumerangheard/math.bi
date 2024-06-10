@@ -2,7 +2,7 @@
     #include "baseArray.bi"
     #include "array/array.bi"
     #include "complexArray/complexArray.bi"
-    '#include "v2array/v2array.bi"
+    #include "v2array/v2array.bi"
     '#ifdef MATH_POLAR_VECTORS
     '    #include "pvarray/pvarray.bi"
     '#endif
