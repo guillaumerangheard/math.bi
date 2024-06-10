@@ -6,7 +6,7 @@
     '#ifdef MATH_POLAR_VECTORS
     '    #include "pvarray/pvarray.bi"
     '#endif
-    '#include "v3array/v3array.bi"
+    #include "v3array/v3array.bi"
     '#ifdef MATH_CYLINDRICAL_VECTORS
     '    #include "cvarray/cvarray.bi"
     '#endif
