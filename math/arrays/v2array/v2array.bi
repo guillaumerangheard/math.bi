@@ -71,6 +71,8 @@
                     v2a_f(X)
                     v2a_f(Y)
                     #undef v2a_f
+                    declare const function map                    (byref as v2array, as function (byref as const vec2) as vec2) as boolean
+                    ' ...?
                     #ifdef _MATH_ARRAY_BI_
                     #macro v2a_m(_a_)
                     declare const function map##_a_      overload (byref as array)                                            as boolean
