@@ -166,19 +166,78 @@ namespace math
     
 ' math.v3array.map -------------------------------------------------------------
     
-    
+    function v3array.map (byref a as v3array, f as function (byref as const vec3) as vec3) as boolean
+        if this._l then
+            if f then
+                a.length => this._l
+                for i as integer => 0% to this._l - 1%
+                    a._p[i] => f(this._p[i])
+                next i
+                return true
+            #ifdef MATH_VERBOSE
+            else
+                print "<math.v3array.map> Unable to proceed. Mapping function is undefined."
+            #endif
+            end if
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.map> Unable to proceed. Array is empty."
+        #endif
+        end if
+        return false
+    end function
     
 ' math.v3array.mapX ------------------------------------------------------------
     
+    #ifdef _MATH_ARRAY_BI_
     
+    #macro v3a_m(_a_,_b_)
+    function v3array.map##_a_ overload (byref a as array) as boolean
+        if this._l then
+            a.length => this._l
+            dim as real const ptr p => a.data
+            for i as integer => 0% to this._l - 1%
+                p[i] => this._p[i].##_b_
+            next i
+            return true
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.map" & #_a_ & "> Unable to proceed. Array is empty."
+        #endif
+        end if
+        return false
+    end function
+    
+    function v3array.map##_a_ (byref a as array, f as function (byref as const real) as real) as boolean
+        if this._l then
+            if f then
+                a.length => this._l
+                dim as real const ptr p => a.data
+                for i as integer => 0% to this._l - 1%
+                    p[i] => f(this._p[i].##_b_)
+                next i
+                return true
+            #ifdef MATH_VERBOSE
+            else : print "<math.v3array.map" & #_a_ & "> Unable to proceed. Mapping function is undefined."
+            #endif
+            end if
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.map" & #_a_ & "> Unable to proceed. Array is empty."
+        #endif
+        end if
+        return false
+    end function
+    #endmacro
+    
+    v3a_m(X,x)
     
 ' math.v3array.mapY ------------------------------------------------------------
     
-    
+    v3a_m(Y,y)
     
 ' math.v3array.mapZ ------------------------------------------------------------
     
+    v3a_m(Z,z)
     
+    #endif
     
 ' math.v3array.normalise -------------------------------------------------------
     

@@ -100,10 +100,10 @@
                     declare const property zMax   () as real
                     declare const property zMin   () as real
                     
-                    declare       function forEach overload (as sub      (byref as vec3)                                   , byref as const boolean => false) as boolean
-                    declare       function forEach          (as function (byref as vec3)                         as boolean, byref as const boolean => false) as boolean
-                    declare       function forEach          (as sub      (byref as vec3, byref as const integer)           , byref as const boolean => false) as boolean
-                    declare       function forEach          (as function (byref as vec3, byref as const integer) as boolean, byref as const boolean => false) as boolean
+                    declare       function forEach      overload (as sub      (byref as vec3)                                   , byref as const boolean => false) as boolean
+                    declare       function forEach               (as function (byref as vec3)                         as boolean, byref as const boolean => false) as boolean
+                    declare       function forEach               (as sub      (byref as vec3, byref as const integer)           , byref as const boolean => false) as boolean
+                    declare       function forEach               (as function (byref as vec3, byref as const integer) as boolean, byref as const boolean => false) as boolean
                     #macro v3a_f(_a_)
                     declare       function forEach##_a_ overload (as sub      (byref as real)                                   , byref as const boolean => false) as boolean
                     declare       function forEach##_a_          (as function (byref as real)                         as boolean, byref as const boolean => false) as boolean

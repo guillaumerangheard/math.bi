@@ -13,6 +13,6 @@
     '#ifdef MATH_SPHERICAL_VECTORS
     '    #include "svarray/svarray.bi"
     '#endif
-    '#include "v4array/v4array.bi"
+    #include "v4array/v4array.bi"
     '#include "quaternionArray/quaternionArray.bi"
 #endif
