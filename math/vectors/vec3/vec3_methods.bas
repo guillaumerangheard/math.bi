@@ -10,6 +10,17 @@ namespace math
                        abs(this.z) ^ e) ^ (1d / e) , 0d)
     end function
     
+' math.vec3.normalise ----------------------------------------------------------
+    
+    sub vec3.normalise ()
+        dim as real h => this.norm
+        if (0d < h) and (1d <> h) then
+            this.x /= h
+            this.y /= h
+            this.z /= h
+        end if
+    end sub
+    
 ' math.vec3.toJSON -------------------------------------------------------------
     
     function vec3.toJSON (byref a as const boolean => false) as string

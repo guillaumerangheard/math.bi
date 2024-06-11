@@ -68,13 +68,66 @@ namespace math
         #endif
         end if
     end constructor
+    #endif
     
     #ifdef _MATH_V2ARRAY_BI_
+    constructor v3array (byref a as const v2array)
+        if a._l then
+            this._l => a._l
+            this._p => new vec3[a._l]
+            dim as vec2 const ptr p => a.data
+            for i as integer => 0% to a._l - 1%
+                this._p[i].x => p[i].x
+                this._p[i].y => p[i].y
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.constructor> Array is empty."
+        #endif
+        end if
+    end constructor
+    
+    #ifdef _MATH_ARRAY_BI_
     constructor v3array (byref a12 as const v2array, byref a3 as const array)
         if (0% < a12._l) and (a12._l = a3._l) then
             this._l => a12._l
             this._p => new vec3[a12._l]
             dim as vec2 const ptr p12 => a12.data
+            dim as real const ptr p3  => a3.data
+            for i as integer => 0% to a12._l - 1%
+                this._p[i].x => p12[i].x
+                this._p[i].y => p12[i].y
+                this._p[i].z => p3[i]
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.constructor> Arrays must have non-null matching lengths."
+        #endif
+        end if
+    end constructor
+    #endif
+    #endif
+    
+    #ifdef _MATH_PVARRAY_BI_
+    constructor v3array (byref a as const pvarray)
+        if a._l then
+            this._l => a._l
+            this._p => new vec3[a._l]
+            dim as pvec const ptr p => a.data
+            for i as integer => 0% to a._l - 1%
+                this._p[i].x => p[i].x
+                this._p[i].y => p[i].y
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array.constructor> Array is empty."
+        #endif
+        end if
+    end constructor
+    
+    #ifdef _MATH_ARRAY_BI_
+    constructor v3array (byref a12 as const pvarray, byref a3 as const array)
+        if (0% < a12._l) and (a12._l = a3._l) then
+            this._l => a12._l
+            this._p => new vec3[a12._l]
+            dim as pvec const ptr p12 => a12.data
             dim as real const ptr p3  => a3.data
             for i as integer => 0% to a12._l - 1%
                 this._p[i].x => p12[i].x

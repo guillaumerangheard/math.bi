@@ -119,19 +119,222 @@ namespace math
     
 ' math.v3array.+= --------------------------------------------------------------
     
+    #macro v3a_op1(_o_)
+    operator v3array.##_o_##= (byref v as const vec3)
+        if this._l then
+            for i as integer => 0% to this._l - 1%
+                this._p[i] _o_##= v
+            next i
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v3array." & #_o_ & "=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
     
+    #ifdef _MATH_CVEC_BI_
+    operator v3array.##_o_##= (byref v as const cvec)
+        if this._l then
+            dim as real x => v.x, y => v.y
+            for i as integer => 0% to this._l - 1%
+                this._p[i].x _o_##= x
+                this._p[i].y _o_##= y
+                this._p[i].z _o_##= v.z
+            next i
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v3array." & #_o_ & "=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
+    #endif
+    
+    #ifdef _MATH_SVEC_BI_
+    
+    #endif
+    #endmacro
+    
+    #macro v3a_op2(_o_)
+    operator v3array.##_o_##= (byref a as const v3array)
+        if (0% < a._l) and (a._l = this._l) then
+            for i as integer => 0% to this._l - 1%
+                this._p[i] _o_##= a._p[i]
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array." & #_o_ & "=> Unable to proceed. Arrays must have non-null matching lengths."
+        #endif
+        end if
+    end operator
+    #endmacro
+    
+    v3a_op1(+)
+    v3a_op2(+)
     
 ' math.v3array.-= --------------------------------------------------------------
     
-    
+    v3a_op1(-)
+    v3a_op2(-)
     
 ' math.v3array.*= --------------------------------------------------------------
     
-    
+    v3a_op1(*)
+    #undef v3a_op1
+    v3a_op2(*)
+    #undef v3a_op2
     
 ' math.v3array./= --------------------------------------------------------------
     
+    operator v3array./= (byref v as const vec3)
+        if this._l then
+            if v.x then
+                if v.y then
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= v.x
+                            this._p[i].y /= v.y
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= v.x
+                            this._p[i].y /= v.y
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                else
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= v.x
+                            this._p[i].y => 0d
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= v.x
+                            this._p[i].y => 0d
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                end if
+            else
+                if v.y then
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y /= v.y
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y /= v.y
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                else
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y => 0d
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y => 0d
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                end if
+            end if
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v3array./=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
     
+    #ifdef _MATH_CVEC_BI_
+    operator v3array./= (byref v as const cvec)
+        if this._l then
+            dim as real x => v.x, y => v.y
+            if x then
+                if y then
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= x
+                            this._p[i].y /= y
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= x
+                            this._p[i].y /= y
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                else
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= x
+                            this._p[i].y => 0d
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x /= x
+                            this._p[i].y => 0d
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                end if
+            else
+                if y then
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y /= y
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y /= y
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                else
+                    if v.z then
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y => 0d
+                            this._p[i].z /= v.z
+                        next i
+                    else
+                        for i as integer => 0% to this._l - 1%
+                            this._p[i].x => 0d
+                            this._p[i].y => 0d
+                            this._p[i].z => 0d
+                        next i
+                    end if
+                end if
+            end if
+        #ifdef  MATH_VERBOSE
+        else : print "<math.v3array./=> Unable to proceed. Array is empty."
+        #endif
+        end if
+    end operator
+    #endif
+    
+    operator v3array./= (byref a as const v3array)
+        if (0% < a._l) and (a._l = this._l) then
+            for i as integer => 0% to this._l - 1%
+                this._p[i].x => iif(a._p[i].x, this._p[i].x / a._p[i].x, 0d)
+                this._p[i].y => iif(a._p[i].y, this._p[i].y / a._p[i].y, 0d)
+                this._p[i].z => iif(a._p[i].z, this._p[i].z / a._p[i].z, 0d)
+            next i
+        #ifdef MATH_VERBOSE
+        else : print "<math.v3array." & #_o_ & "=> Unable to proceed. Arrays must have non-null matching lengths."
+        #endif
+        end if
+    end operator
     
 ' math.v3array.cast ------------------------------------------------------------
     

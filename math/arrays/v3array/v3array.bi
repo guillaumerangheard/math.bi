@@ -10,8 +10,17 @@
                     declare constructor (byref as const integer, as sub (byref as vec3, byref as const integer), byref as const boolean => false)
                     #ifdef _MATH_ARRAY_BI_
                     declare constructor (byref as const array, byref as const array, byref as const array)
+                    #endif
                     #ifdef _MATH_V2ARRAY_BI_
+                    declare constructor (byref as const v2array)
+                    #ifdef _MATH_ARRAY_BI_
                     declare constructor (byref as const v2array                    , byref as const array)
+                    #endif
+                    #endif
+                    #ifdef _MATH_PVARRAY_BI_
+                    declare constructor (byref as const pvarray)
+                    #ifdef _MATH_ARRAY_BI_
+                    declare constructor (byref as const pvarray                    , byref as const array)
                     #endif
                     #endif
                     declare constructor (byref as const v3array)
@@ -125,7 +134,7 @@
         end namespace
         #include "v3array_constructors.bas"
         #include "v3array_operators.bas"
-        '#include "v3array_properties.bas"
-        '#include "v3array_methods.bas"
+        #include "v3array_properties.bas"
+        #include "v3array_methods.bas"
     #endif
 #endif
