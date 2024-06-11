@@ -38,6 +38,13 @@ namespace math
         end if
     end property
     
+' math.quaternion.versor -------------------------------------------------------
+    
+    property quaternion.versor () as quaternion
+        dim as real h => this.norm
+        return iif(h, quaternion(this.x / h, this.y / h, this.z / h, this.w / h), quaternion())
+    end property
+    
 ' math.quaternion.xy -----------------------------------------------------------
     
     property quaternion.xy () as vec2

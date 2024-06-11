@@ -22,6 +22,8 @@
                 declare constructor (byref as const quaternion)
                 
                 declare       operator *=   (byref as const real)
+                declare       operator *=   (byref as const quaternion)
+                declare       operator /=   (byref as const real)
                 declare const operator cast () as string
                 declare       operator let  (byref as const quaternion)
                 
@@ -29,6 +31,7 @@
                 declare const property inverse   () as quaternion
                 declare const property norm      () as real
                 declare       property norm      (byref n as const real)
+                declare const property versor    () as quaternion
                 declare const property xy        () as vec2
                 declare       property xy        (byref as const vec2)
                 #ifdef _MATH_PVEC_BI_
@@ -51,6 +54,7 @@
             
             declare operator *  (byref as const quaternion, byref as const real)       as quaternion
             declare operator *  (byref as const real      , byref as const quaternion) as quaternion
+            declare operator *  (byref as const quaternion, byref as const quaternion) as quaternion
             declare operator =  (byref as const quaternion, byref as const quaternion) as boolean
             declare operator <> (byref as const quaternion, byref as const quaternion) as boolean
             
