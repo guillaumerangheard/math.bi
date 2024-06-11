@@ -28,6 +28,7 @@
                     declare       operator &=   (byref as const pvarray)
                     #endif
                     declare       operator &=   (byref as const vec3)
+                    declare       operator &=   (byref as const v3array)
                     #ifdef _MATH_CVEC_BI_
                     declare       operator &=   (byref as const cvec)
                     #endif
@@ -123,7 +124,7 @@
             end type
         end namespace
         #include "v3array_constructors.bas"
-        '#include "v3array_operators.bas"
+        #include "v3array_operators.bas"
         '#include "v3array_properties.bas"
         '#include "v3array_methods.bas"
     #endif

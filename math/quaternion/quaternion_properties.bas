@@ -4,7 +4,16 @@ namespace math
     
 ' math.quaternion.conjugate ----------------------------------------------------
     
+    property quaternion.conjugate () as quaternion
+        return quaternion(-this.x, -this.y, -this.z, this.w)
+    end property
     
+' math.quaternion.inverse ------------------------------------------------------
+    
+    property quaternion.inverse () as quaternion
+        dim as real h => this.norm
+        return iif(0d < h, quaternion(-this.x / h, -this.y / h, -this.z / h, this.w / h), quaternion())
+    end property
     
 ' math.quaternion.norm ---------------------------------------------------------
     

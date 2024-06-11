@@ -26,6 +26,7 @@
                 declare       operator let  (byref as const quaternion)
                 
                 declare const property conjugate () as quaternion
+                declare const property inverse   () as quaternion
                 declare const property norm      () as real
                 declare       property norm      (byref n as const real)
                 declare const property xy        () as vec2
@@ -90,7 +91,7 @@
         #include "quaternion_intrinsic_operators.bas"
         #include "quaternion_properties.bas"
         #include "quaternion_methods.bas"
-        '#include "quaternion_extrinsic_operators.bas"
+        #include "quaternion_extrinsic_operators.bas"
         '#include "quaternion_functions.bas"
     #endif
 #endif

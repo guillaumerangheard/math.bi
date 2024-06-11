@@ -4,41 +4,29 @@ namespace math
     
 ' math.v2array.&= --------------------------------------------------------------
     
-    operator v2array.&= (byref v as const vec2)
+    #macro v2a_e(_a_,_b_)
+    operator v2array.&= (byref v as const _a_)
         if this._l then
             this._l += 1%
             dim as vec2 ptr q => new vec2[this._l]
             for i as integer => 0% to this._l - 2%
                 q[i] => this._p[i]
             next i
-            this._p[this._l - 1%] => v
+            this._p[this._l - 1%] => _b_
             delete[] this._p
             this._p => q
         else
             this._l => 1%
             this._p => new vec2[1%]
-            this._p[0%] => v
+            this._p[0%] => _b_
         end if
     end operator
-    
+    #endmacro
+    v2a_e(vec2,v)
     #ifdef _MATH_PVEC_BI_
-    operator v2array.&= (byref v as const pvec)
-        if this._l then
-            this._l += 1%
-            dim as vec2 ptr q => new vec2[this._l]
-            for i as integer => 0% to this._l - 2%
-                q[i] => this._p[i]
-            next i
-            this._p[this._l - 1%] => vec2(v.x, v.y)
-            delete[] this._p
-            this._p => q
-        else
-            this._l => 1%
-            this._p => new vec2[1%]
-            this._p[0%] => vec2(v.x, v.y)
-        end if
-    end operator
+    v2a_e(pvec,vec2(v.x, v.y))
     #endif
+    #undef v2a_e
     
     operator v2array.&= (byref a as const v2array)
         if @this <> @a then

@@ -5,11 +5,11 @@ namespace math
 ' * ----------------------------------------------------------------------------
     
     operator * (byref q as const quaternion, byref n as const real) as quaternion
-        return qtaternion(q.x * n, q.y * n, q.z * n, q.w * n)
+        return quaternion(q.x * n, q.y * n, q.z * n, q.w * n)
     end operator
     
     operator * (byref n as const real, byref q as const quaternion) as quaternion
-        return qtaternion(n * q.x, n * q.y, n * q.z, n * q.w)
+        return quaternion(n * q.x, n * q.y, n * q.z, n * q.w)
     end operator
     
 ' = ----------------------------------------------------------------------------
