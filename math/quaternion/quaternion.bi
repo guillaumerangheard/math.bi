@@ -85,11 +85,11 @@
             #endif
             declare function eq             (byref as const quaternion                                                         , byref as const vec4                                                               , byref as const real => epsilon) as boolean
             declare function eq             (byref as const quaternion                                                         , byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            declare function slerp overload (byref as const quaternion, byref as const quaternion, byref as const real) as quaternion
-            #ifdef _EASING_BI_
-            declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real,       as const easing.equation) as quaternion
-            declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real, byref as const easing.curve)    as quaternion
-            #endif
+            'declare function slerp overload (byref as const quaternion, byref as const quaternion, byref as const real) as quaternion
+            '#ifdef _EASING_BI_
+            'declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real,       as const easing.equation) as quaternion
+            'declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real, byref as const easing.curve)    as quaternion
+            '#endif
         end namespace
         #include "quaternion_constructors.bas"
         #include "quaternion_intrinsic_operators.bas"
