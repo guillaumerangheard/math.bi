@@ -13,14 +13,56 @@ namespace math
         return r
     end function
     
-    function mat4.fromScale overload (byref sx as const real, byref sy as const real, byref sz as const real => 1d, byref sw as const real => 1d) as mat4
+    function mat4.fromScale (byref sx as const real, byref sy as const real, byref sz as const real => 1d) as mat4
         dim as mat4 r
         r._p[0%]  => sx
         r._p[5%]  => sy
         r._p[10%] => sz
-        r._p[15%] => sw
         return r
     end function
+    
+' math.mat4.fromTranslation ----------------------------------------------------
+    
+    function mat4.fromTranslation overload (byref tx as const real, byref ty as const real, byref tz as const real) as mat4
+        dim as mat4 r
+        r._p[3%]  => tx
+        r._p[7%]  => ty
+        r._p[11%] => tz
+        return r
+    end function
+    
+    #macro m4_ft(_t_)
+    function mat4.fromTranslation (byref t as const _t_, byref tz as const real => 0d) as mat4
+        dim as mat4 r
+        r._p[3%]  => t.x
+        r._p[7%]  => t.y
+        r._p[11%] => tz
+        return r
+    end function
+    #endmacro
+    m4_ft(vec2)
+    #ifdef _MATH_PVEC_BI_
+    m4_ft(pvec)
+    #endif
+    #undef m4_ft
+    
+    #macro m4_ft(_t_)
+    function mat4.fromTranslation (byref t as const _t_) as mat4
+        dim as mat4 r
+        r._p[3%]  => t.x
+        r._p[7%]  => t.y
+        r._p[11%] => t.z
+        return r
+    end function
+    #endmacro
+    m4_ft(vec3)
+    #ifdef _MATH_CVEC_BI_
+    m4_ft(cvec)
+    #endif
+    #ifdef _MATH_SVEC_BI_
+    m4_ft(svec)
+    #endif
+    #undef m4_ft
     
 ' math.mat4.get ----------------------------------------------------------------
     

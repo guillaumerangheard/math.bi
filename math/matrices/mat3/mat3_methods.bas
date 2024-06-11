@@ -20,6 +20,28 @@ namespace math
         return r
     end function
     
+' math.mat3.fromTranslation ----------------------------------------------------
+    
+    function mat3.fromTranslation overload (byref tx as const real, byref ty as const real) as mat3
+        dim as mat3 r
+        r._p[2%] => tx
+        r._p[5%] => ty
+        return r
+    end function
+    
+    #macro m3_ft(_t_)
+    function mat3.fromTranslation overload (byref t as const _t_) as mat3
+        dim as mat3 r
+        r._p[2%] => t.x
+        r._p[5%] => t.y
+        return r
+    end function
+    #endmacro
+    m3_ft(vec2)
+    #ifdef _MATH_PVEC_BI_
+    m3_ft(pvec)
+    #endif
+    
 ' math.mat3.get ----------------------------------------------------------------
     
     function mat3.get (byref x as const integer, byref y as const integer) as real
