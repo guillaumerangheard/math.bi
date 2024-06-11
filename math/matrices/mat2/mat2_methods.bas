@@ -2,6 +2,53 @@ namespace math
     
 ' methods ======================================================================
     
+' math.mat2.fromRotation -------------------------------------------------------
+    
+    #ifdef _MATH_ANGLE_BI_
+    
+    function mat2.fromRotation overload (byref n as const real, byref u as const angleUnit => defaultAngleUnit) as mat2
+        dim as real t => angle.convert(n, u, angleUnit.radian), c => cos(t), s => sin(t)
+        dim as mat2 r
+        r._p[0%] => c : r._p[1%] => -s
+        r._p[2%] => s : r._p[3%] =>  c
+        return r
+    end function
+    
+    function mat2.fromRotation (byref a as const angle) as mat2
+        dim as real t => a.phi, c => cos(t), s => sin(t)
+        dim as mat2 r
+        r._p[0%] => c : r._p[1%] => -s
+        r._p[2%] => s : r._p[3%] =>  c
+        return r
+    end function
+    #else
+    
+    function mat2.fromRotation (byref t as const real) as mat2
+        dim as real c => cos(t), s => sin(t)
+        dim as mat2 r
+        r._p[0%] => c : r._p[1%] => -s
+        r._p[2%] => s : r._p[3%] =>  c
+        return r
+    end function
+    
+    #endif
+    
+' math.mat2.fromScale ----------------------------------------------------------
+    
+    function mat2.fromScale overload (byref s as const real) as mat2
+        dim as mat2 r
+        r._p[0%] => s
+        r._p[3%] => s
+        return r
+    end function
+    
+    function mat2.fromScale (byref sx as const real, byref sy as const real) as mat2
+        dim as mat2 r
+        r._p[0%] => sx
+        r._p[3%] => sy
+        return r
+    end function
+    
 ' math.mat2.get ----------------------------------------------------------------
     
     function mat2.get (byref x as const integer, byref y as const integer) as real

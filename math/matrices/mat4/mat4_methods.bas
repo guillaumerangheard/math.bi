@@ -2,6 +2,26 @@ namespace math
     
 ' methods ======================================================================
     
+' math.mat4.fromScale ----------------------------------------------------------
+    
+    function mat4.fromScale overload (byref s as const real) as mat4
+        dim as mat4 r
+        r._p[0%]  => s
+        r._p[5%]  => s
+        r._p[10%] => s
+        r._p[15%] => s
+        return r
+    end function
+    
+    function mat4.fromScale overload (byref sx as const real, byref sy as const real, byref sz as const real => 1d, byref sw as const real => 1d) as mat4
+        dim as mat4 r
+        r._p[0%]  => sx
+        r._p[5%]  => sy
+        r._p[10%] => sz
+        r._p[15%] => sw
+        return r
+    end function
+    
 ' math.mat4.get ----------------------------------------------------------------
     
     function mat4.get (byref x as const integer, byref y as const integer) as real

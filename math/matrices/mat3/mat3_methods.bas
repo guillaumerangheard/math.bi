@@ -2,6 +2,24 @@ namespace math
     
 ' methods ======================================================================
     
+' math.mat3.fromScale ----------------------------------------------------------
+    
+    function mat3.fromScale overload (byref s as const real) as mat3
+        dim as mat3 r
+        r._p[0%] => s
+        r._p[4%] => s
+        r._p[8%] => s
+        return r
+    end function
+    
+    function mat3.fromScale overload (byref sx as const real, byref sy as const real, byref sz as const real => 1d) as mat3
+        dim as mat3 r
+        r._p[0%] => sx
+        r._p[4%] => sy
+        r._p[8%] => sz
+        return r
+    end function
+    
 ' math.mat3.get ----------------------------------------------------------------
     
     function mat3.get (byref x as const integer, byref y as const integer) as real
