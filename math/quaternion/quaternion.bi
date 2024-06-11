@@ -96,6 +96,6 @@
         #include "quaternion_properties.bas"
         #include "quaternion_methods.bas"
         #include "quaternion_extrinsic_operators.bas"
-        '#include "quaternion_functions.bas"
+        #include "quaternion_functions.bas"
     #endif
 #endif
