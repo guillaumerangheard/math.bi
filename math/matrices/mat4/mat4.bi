@@ -18,6 +18,39 @@
                 declare       operator let  (byref as const mat3)
                 declare       operator let  (byref as const mat4)
                 
+                #ifdef _MATH_ANGLE_BI_
+                declare static function fromAxisAngle   overload (byref as const real, byref as const real, byref as const real, byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const real, byref as const real, byref as const real, byref as const angle)                                              as mat4
+                declare static function fromAxisAngle   overload (byref as const vec2                     , byref as const real, byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const vec2                     , byref as const real, byref as const angle)                                              as mat4
+                #ifdef _MATH_PVEC_BI_
+                declare static function fromAxisAngle   overload (byref as const pvec                     , byref as const real, byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const pvec                     , byref as const real, byref as const angle)                                              as mat4
+                #endif
+                declare static function fromAxisAngle   overload (byref as const vec3                                          , byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const vec3                                          , byref as const angle)                                              as mat4
+                #ifdef _MATH_CVEC_BI_
+                declare static function fromAxisAngle   overload (byref as const cvec                                          , byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const cvec                                          , byref as const angle)                                              as mat4
+                #endif
+                #ifdef _MATH_SVEC_BI_
+                declare static function fromAxisAngle   overload (byref as const svec                                          , byref as const real, byref as const angleUnit => defaultAngleUnit) as mat4
+                declare static function fromAxisAngle            (byref as const svec                                          , byref as const angle)                                              as mat4
+                #endif
+                #else
+                declare static function fromAxisAngle   overload (byref as const real, byref as const real, byref as const real, byref as const real) as mat4
+                declare static function fromAxisAngle            (byref as const vec2                     , byref as const real, byref as const real) as mat4
+                #ifdef _MATH_PVEC_BI_
+                declare static function fromAxisAngle            (byref as const pvec                     , byref as const real, byref as const real) as mat4
+                #endif
+                declare static function fromAxisAngle            (byref as const vec3                                          , byref as const real) as mat4
+                #ifdef _MATH_CVEC_BI_
+                declare static function fromAxisAngle            (byref as const cvec                                          , byref as const real) as mat4
+                #endif
+                #ifdef _MATH_SVEC_BI_
+                declare static function fromAxisAngle            (byref as const svec                                          , byref as const real) as mat4
+                #endif
+                #endif
                 declare static function fromScale       overload (byref as const real)                                                 as mat4
                 declare static function fromScale                (byref as const real, byref as const real, byref as const real => 1d) as mat4
                 declare static function fromTranslation overload (byref as const real, byref as const real, byref as const real => 0d) as mat4

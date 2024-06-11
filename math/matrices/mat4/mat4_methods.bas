@@ -2,6 +2,108 @@ namespace math
     
 ' methods ======================================================================
     
+' math.mat4.fromAxisAngle ------------------------------------------------------
+    
+    ' Cf. https://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToMatrix/index.htm
+    #ifdef _MATH_ANGLE_BI_
+    
+    function mat4.fromAxisAngle overload (byref x as const real, byref y as const real, byref z as const real, byref s as const real, byref u as const angleUnit => defaultAngleUnit) as mat4
+        dim as vec3 a => vec3(x, y, z)
+        dim as real h => a.norm
+        if h then
+            a.x /= h : a.y /= h : a.z /= h
+            dim as real t => angle.convert(s, u, angleUnit.radian)
+            dim as real c => cos(t), d => 1d - c, s => sin(t)
+            dim as mat4 r
+            r._p[0%] => d * a.x * a.x + c       : r._p[1%] => d * a.x * a.y - a.z * s : r._p[2%]  => d * a.x * a.z + a.y * s
+            r._p[4%] => d * a.x * a.y + a.z * s : r._p[5%] => d * a.y * a.y + c       : r._p[6%]  => d * a.y * a.z - a.x * s
+            r._p[8%] => d * a.x * a.z - a.y * s : r._p[9%] => d * a.y * a.z + a.x * s : r._p[10%] => d * a.z * a.z + c
+            return r
+        end if
+        return mat4()
+    end function
+    
+    function mat4.fromAxisAngle (byref x as const real, byref y as const real, byref z as const real, byref a as const angle) as mat4
+        return mat4.fromAxisAngle(x, y, z, a.phi, angleUnit.radian)
+    end function
+    
+    #macro m4_faa(_t_)
+    function mat4.fromAxisAngle (byref v as const _t_, byref z as const real, byref t as const real, byref u as const angleUnit => defaultAngleUnit) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, z, t, u)
+    end function
+    
+    function mat4.fromAxisAngle (byref v as const _t_, byref z as const real, byref a as const angle) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, z, a.phi, angleUnit.radian)
+    end function
+    #endmacro
+    m4_faa(vec2)
+    #ifdef _MATH_PVEC_BI_
+    m4_faa(pvec)
+    #endif
+    #undef m4_faa
+    
+    #macro m4_faa(_t_)
+    function mat4.fromAxisAngle (byref v as const _t_, byref t as const real, byref u as const angleUnit => defaultAngleUnit) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, v.z, t, u)
+    end function
+    
+    function mat4.fromAxisAngle (byref v as const _t_, byref a as const angle) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, v.z, a.phi, angleUnit.radian)
+    end function
+    #endmacro
+    m4_faa(vec3)
+    #ifdef _MATH_CVEC_BI_
+    m4_faa(cvec)
+    #endif
+    #ifdef _MATH_SVEC_BI_
+    m4_faa(svec)
+    #endif
+    #undef m4_faa
+    
+    #else
+    
+    function mat4.fromAxisAngle overload (byref x as const real, byref y as const real, byref z as const real, byref t as const real) as mat4
+        dim as vec3 a => vec3(x, y, z)
+        dim as real h => a.norm
+        if h then
+            a.x /= h : a.y /= h : a.z /= h
+            dim as real c => cos(t), d => 1d - c, s => sin(t)
+            dim as mat4 r
+            r._p[0%] => d * a.x * a.x + c       : r._p[1%] => d * a.x * a.y - a.z * s : r._p[2%]  => d * a.x * a.z + a.y * s
+            r._p[4%] => d * a.x * a.y + a.z * s : r._p[5%] => d * a.y * a.y + c       : r._p[6%]  => d * a.y * a.z - a.x * s
+            r._p[8%] => d * a.x * a.z - a.y * s : r._p[9%] => d * a.y * a.z + a.x * s : r._p[10%] => d * a.z * a.z + c
+            return r
+        end if
+        return mat4()
+    end function
+    
+    #macro m4_faa(_t_)
+    function mat4.fromAxisAngle (byref v as const _t_, byref z as const real, byref t as const real) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, z, t)
+    end function
+    #endmacro
+    m4_faa(vec2)
+    #ifdef _MATH_PVEC_BI_
+    m4_faa(pvec)
+    #endif
+    #undef m4_faa
+    
+    #macro m4_faa(_t_)
+    function mat4.fromAxisAngle (byref v as const _t_, byref t as const real) as mat4
+        return mat4.fromAxisAngle(v.x, v.y, v.z, t)
+    end function
+    #endmacro
+    m4_faa(vec3)
+    #ifdef _MATH_CVEC_BI_
+    m4_faa(cvec)
+    #endif
+    #ifdef _MATH_SVEC_BI_
+    m4_faa(svec)
+    #endif
+    #undef m4_faa
+    
+    #endif
+    
 ' math.mat4.fromScale ----------------------------------------------------------
     
     function mat4.fromScale overload (byref s as const real) as mat4
