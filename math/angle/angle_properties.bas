@@ -2,16 +2,78 @@ namespace math
     
 ' properties ===================================================================
     
+' math.angle.cosecant ----------------------------------------------------------
+    
+    property angle.cosecant () as real
+        dim as real s => sin(this._v * two_pi)
+        return iif(s, 1d / s, 0d)
+    end property
+    
 ' math.angle.cosine ------------------------------------------------------------
     
     property angle.cosine () as real
         return cos(this._v * two_pi)
     end property
     
+' math.angle.cotangent ---------------------------------------------------------
+    
+    property angle.cotangent () as real
+        dim as real t => tan(this._v * two_pi)
+        return iif(t, 1d / t, 0d)
+    end property
+    
 ' math.angle.cosh --------------------------------------------------------------
     
     property angle.cosh () as real
         return math.cosh(this._v * two_pi)
+    end property
+    
+' math.angle.covercosine -------------------------------------------------------
+    
+    property angle.covercosine () as real
+        return 1d + sin(this._v * two_pi)
+    end property
+    
+' math.angle.coversine ---------------------------------------------------------
+    
+    property angle.coversine () as real
+        return 1d - sin(this._v * two_pi)
+    end property
+    
+' math.angle.excosecant --------------------------------------------------------
+    
+    property angle.excosecant () as real
+        return this.cosecant - 1d
+    end property
+    
+' math.angle.exsecant ----------------------------------------------------------
+    
+    property angle.exsecant () as real
+        return this.secant - 1d
+    end property
+    
+' math.angle.hacovercosine -----------------------------------------------------
+    
+    property angle.hacovercosine () as real
+        return (1d + sin(this._v * two_pi)) / 2d
+    end property
+    
+' math.angle.hacoversine -------------------------------------------------------
+    
+    property angle.hacoversine () as real
+        return (1d - sin(this._v * two_pi)) / 2d
+    end property
+    
+' math.angle.havercosine -------------------------------------------------------
+    
+    property angle.havercosine () as real
+        return (1d + cos(this._v * two_pi)) / 2d
+    end property
+    
+' math.angle.haversine ---------------------------------------------------------
+    
+    property angle.haversine () as real
+        return (1d - cos(this._v * two_pi)) / 2d
     end property
     
 ' math.angle.octant ------------------------------------------------------------
@@ -37,6 +99,13 @@ namespace math
 ' math.angle.quadrant ----------------------------------------------------------
     
     a_nt(quadr,4d)
+    
+' math.angle.secant ------------------------------------------------------------
+    
+    property angle.secant () as real
+        dim as real c => cos(this._v * two_pi)
+        return iif(c, 1d / c, 0d)
+    end property
     
 ' math.angle.sextant -----------------------------------------------------------
     
@@ -76,6 +145,18 @@ namespace math
     
     property angle.value (byref n as const real)
         this._v => wrap(n)
+    end property
+    
+' math.angle.vercosine ---------------------------------------------------------
+    
+    property angle.vercosine () as real
+        return 1d + cos(this._v * two_pi)
+    end property
+    
+' math.angle.versine -----------------------------------------------------------
+    
+    property angle.versine () as real
+        return 1d - cos(this._v * two_pi)
     end property
     
 end namespace

@@ -21,19 +21,32 @@
                     declare       operator let  (byref as const real)
                     declare       operator let  (byref as const angle)
                     
-                    declare const property cosine   () as real
-                    declare const property cosh     () as real
-                    declare const property octant   () as real
-                    declare const property phi      () as real
-                    declare       property phi      (byref as const real)
-                    declare const property quadrant () as real
-                    declare const property sextant  () as real
-                    declare const property sine     () as real
-                    declare const property sinh     () as real
-                    declare const property tangent  () as real
-                    declare const property tanh     () as real
-                    declare const property value    () as real
-                    declare       property value    (byref as const real)
+                    declare const property cosecant      () as real
+                    declare const property cosine        () as real
+                    declare const property cosh          () as real
+                    declare const property cotangent     () as real
+                    declare const property covercosine   () as real
+                    declare const property coversine     () as real
+                    declare const property excosecant    () as real
+                    declare const property exsecant      () as real
+                    declare const property hacovercosine () as real
+                    declare const property hacoversine   () as real
+                    declare const property havercosine   () as real
+                    declare const property haversine     () as real
+                    declare const property octant        () as real
+                    declare const property phi           () as real
+                    declare       property phi           (byref as const real)
+                    declare const property quadrant      () as real
+                    declare const property secant        () as real
+                    declare const property sextant       () as real
+                    declare const property sine          () as real
+                    declare const property sinh          () as real
+                    declare const property tangent       () as real
+                    declare const property tanh          () as real
+                    declare const property value         () as real
+                    declare       property value         (byref as const real)
+                    declare const property vercosine     () as real
+                    declare const property versine       () as real
                     
                     declare static function convert             (byref as const real, byref as const angleUnit, byref as const angleUnit) as real
                     declare const  function isAcute    overload ()                    as boolean
