@@ -147,4 +147,13 @@ namespace math
     end function
     #endif
     
+' math.mat2.toJSON -------------------------------------------------------------
+    
+    function mat2.toJSON (byref c as const boolean => false) as string
+        return iif(c, "[" & this._p[0%] & "," & this._p[2%] & _
+                      "," & this._p[1%] & "," & this._p[3%] & "]", _
+                      "[" & this._p[0%] & "," & this._p[1%] & _
+                      "," & this._p[2%] & "," & this._p[3%] & "]")
+    end function
+    
 end namespace

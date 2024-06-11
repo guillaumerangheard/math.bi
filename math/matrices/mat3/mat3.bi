@@ -51,6 +51,7 @@
                 #ifdef _MATH_SVEC_BI_
                 declare        function setRow                   (byref as const integer, byref as const svec)                                           as boolean
                 #endif
+                declare const  function toJSON                   (byref as const boolean => false) as string
             end type
             
             declare operator + (byref as const mat3, byref as const mat3) as mat3

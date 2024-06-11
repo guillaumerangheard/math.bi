@@ -95,6 +95,7 @@
                 declare        function setRow                   (byref as const integer, byref as const svec                                          , byref as const real) as boolean
                 #endif
                 declare        function setRow                   (byref as const integer, byref as const vec4)                                                                as boolean
+                declare const  function toJSON                   (byref as const boolean => false) as string
             end type
             
             declare operator + (byref as const mat4, byref as const mat4) as mat4

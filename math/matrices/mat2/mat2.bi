@@ -36,6 +36,7 @@
                 #ifdef _MATH_PVEC_BI_
                 declare        function setRow                (byref as const integer, byref as const pvec)                      as boolean
                 #endif
+                declare const  function toJSON                (byref as const boolean => false) as string
             end type
             
             declare operator + (byref as const mat2, byref as const mat2) as mat2

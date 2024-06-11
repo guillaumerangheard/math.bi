@@ -121,8 +121,8 @@
                     as vec4     _d ' Dummy value.
             end type
         end namespace
-        '#include "v4array_constructors.bas"
-        '#include "v4array_operators.bas"
+        #include "v4array_constructors.bas"
+        #include "v4array_operators.bas"
         '#include "v4array_properties.bas"
         '#include "v4array_methods.bas"
     #endif

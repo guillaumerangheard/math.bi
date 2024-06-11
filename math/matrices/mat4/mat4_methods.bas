@@ -332,4 +332,17 @@ namespace math
         return true
     end function
     
+' math.mat4.toJSON -------------------------------------------------------------
+    
+    function mat4.toJSON (byref c as const boolean => false) as string
+        return iif(c, "[" & this._p[0%]  & "," & this._p[4%]  & "," & this._p[8%]  & "," & this._p[12%] & _
+                      "," & this._p[1%]  & "," & this._p[5%]  & "," & this._p[9%]  & "," & this._p[13%] & _
+                      "," & this._p[2%]  & "," & this._p[6%]  & "," & this._p[10%] & "," & this._p[14%] & _
+                      "," & this._p[3%]  & "," & this._p[7%]  & "," & this._p[11%] & "," & this._p[15%] & "]", _
+                      "[" & this._p[0%]  & "," & this._p[1%]  & "," & this._p[2%]  & "," & this._p[3%]  & _
+                      "," & this._p[4%]  & "," & this._p[5%]  & "," & this._p[6%]  & "," & this._p[7%]  & _
+                      "," & this._p[8%]  & "," & this._p[9%]  & "," & this._p[10%] & "," & this._p[11%] & _
+                      "," & this._p[12%] & "," & this._p[13%] & "," & this._p[14%] & "," & this._p[15%] & "]")
+    end function
+    
 end namespace

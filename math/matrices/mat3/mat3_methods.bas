@@ -178,4 +178,15 @@ namespace math
     #endif
     #undef m3_sr
     
+' math.mat3.toJSON -------------------------------------------------------------
+    
+    function mat3.toJSON (byref c as const boolean => false) as string
+        return iif(c, "[" & this._p[0%] & "," & this._p[3%] & "," & this._p[6%] & _
+                      "," & this._p[1%] & "," & this._p[4%] & "," & this._p[7%] & _
+                      "," & this._p[2%] & "," & this._p[5%] & "," & this._p[8%] & "]", _
+                      "[" & this._p[0%] & "," & this._p[1%] & "," & this._p[2%] & _
+                      "," & this._p[3%] & "," & this._p[4%] & "," & this._p[5%] & _
+                      "," & this._p[6%] & "," & this._p[7%] & "," & this._p[8%] & "]")
+    end function
+    
 end namespace
