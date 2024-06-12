@@ -33,7 +33,9 @@
                 #else
                 declare static function fromPolar          (byref as const real, byref as const real) as vec2
                 #endif
-                declare const  function isUnit    overload () as boolean
+                declare const  function isNull    overload ()                    as boolean
+                declare const  function isNull             (byref as const real) as boolean
+                declare const  function isUnit    overload ()                    as boolean
                 declare const  function isUnit             (byref as const real) as boolean
                 declare const  function MiNorm             (byref as const real => 2d) as real
                 declare        sub      normalise          ()

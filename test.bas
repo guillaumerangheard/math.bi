@@ -1,7 +1,9 @@
 #include "math/math.bi"
 
-using math
+print "Done compiling " & math.versionString & !".\n"
 
-print "Done compiling " & versionString & "."
+for i as integer => 0% to 9%
+    print math.random()
+next i
 
 sleep

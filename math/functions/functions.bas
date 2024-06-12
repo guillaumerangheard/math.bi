@@ -248,6 +248,7 @@ namespace math
 ' math.random ------------------------------------------------------------------
     
     #ifdef _RNG_BI_
+    
     #ifndef MATH_PRNG
         #define MATH_PRNG xorshift64
     #endif
@@ -256,28 +257,37 @@ namespace math
     #undef _c
     
     function random overload () as real
-        #if MATH_PRECISION = 32
-        return PRNG.f32()
-        #else
         return PRNG.f64()
-        #endif
     end function
     
     function random (byref n as const real) as real
-        #if MATH_PRECISION = 32
-        return PRNG.f32() * n
-        #else
         return PRNG.f64() * n
-        #endif
     end function
     
     function random (byref n1 as const real, byref n2 as const real) as real
-        #if MATH_PRECISION = 32
-        return n1 + PRNG.f32() * (n2 - n1)
-        #else
         return n1 + PRNG.f64() * (n2 - n1)
-        #endif
     end function
+    
+    #else
+    
+end namespace
+
+randomize()
+
+namespace math
+    
+    function random overload () as real
+        return rnd()
+    end function
+    
+    function random (byref n as const real) as real
+        return rnd() * n
+    end function
+    
+    function random (byref n1 as const real, byref n2 as const real) as real
+        return n1 + rnd() * (n2 - n1)
+    end function
+    
     #endif
     
 ' math.sinh --------------------------------------------------------------------

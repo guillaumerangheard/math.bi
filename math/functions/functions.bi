@@ -40,11 +40,9 @@
         declare function min             (byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function min             (byref as const integer, byref as const real const ptr)                              as real
         declare function phi             (byref as const real, byref as const real) as real
-        #ifdef _RNG_BI_
         declare function random overload ()                                         as real
         declare function random          (byref as const real)                      as real
         declare function random          (byref as const real, byref as const real) as real
-        #endif
         declare function sinh            (byref as const real) as real
         declare function tanh            (byref as const real) as real
         declare function wrap   overload (byref as const real)                                           as real
