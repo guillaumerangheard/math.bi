@@ -65,46 +65,13 @@
             declare operator =  (byref as const vec2 , byref as const vec2)  as boolean
             declare operator <> (byref as const vec2 , byref as const vec2)  as boolean
             
-            declare function cross (byref as const real, byref as const real, byref as const vec2)                      as real
-            declare function cross (byref as const vec2                     , byref as const real, byref as const real) as real
-            declare function cross (byref as const vec2                     , byref as const vec2)                      as real
-            declare function dot   (byref as const real, byref as const real, byref as const vec2)                      as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const vec2)                      as real
-            declare function dot   (byref as const real, byref as const real, byref as const real, byref as const vec2                     , byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const real, byref as const real, byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const vec2                     , byref as const real) as real
-            declare function dot   (byref as const real, byref as const real, byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const real) as real
-            declare function eq    (byref as const real, byref as const real, byref as const vec2                     , byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const vec2                     , byref as const real => epsilon) as boolean
-            declare function eq    (byref as const real, byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const real, byref as const vec2                     , byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const real, byref as const real, byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const vec2                     , byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function lerp  (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as vec2
+            declare function cross (byref as const vec2, byref as const vec2) as real
+            declare function dot   (byref as const vec2, byref as const vec2) as real
+            declare function eq    (byref as const vec2, byref as const vec2, byref as const real => epsilon) as boolean
+            declare function lerp  (byref as const vec2, byref as const vec2, byref as const real)                                 as vec2
             #ifdef _EASING_BI_
-            declare function lerp  (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real,       as const easing.equation) as vec2
-            declare function lerp  (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const easing.curve)    as vec2
-            #endif
-            declare function lerp  (byref as const real, byref as const real, byref as const vec2                     , byref as const real) as vec2
-            #ifdef _EASING_BI_
-            declare function lerp  (byref as const real, byref as const real, byref as const vec2                     , byref as const real,       as const easing.equation) as vec2
-            declare function lerp  (byref as const real, byref as const real, byref as const vec2                     , byref as const real, byref as const easing.curve)    as vec2
-            #endif
-            declare function lerp  (byref as const vec2                     , byref as const real, byref as const real, byref as const real) as vec2
-            #ifdef _EASING_BI_
-            declare function lerp  (byref as const vec2                     , byref as const real, byref as const real, byref as const real,       as const easing.equation) as vec2
-            declare function lerp  (byref as const vec2                     , byref as const real, byref as const real, byref as const real, byref as const easing.curve)    as vec2
-            #endif
-            declare function lerp  (byref as const vec2                     , byref as const vec2                     , byref as const real) as vec2
-            #ifdef _EASING_BI_
-            declare function lerp  (byref as const vec2                     , byref as const vec2                     , byref as const real,       as const easing.equation) as vec2
-            declare function lerp  (byref as const vec2                     , byref as const vec2                     , byref as const real, byref as const easing.curve)    as vec2
+            declare function lerp  (byref as const vec2, byref as const vec2, byref as const real,       as const easing.equation) as vec2
+            declare function lerp  (byref as const vec2, byref as const vec2, byref as const real, byref as const easing.curve)    as vec2
             #endif
         end namespace
         #include "vec2_constructors.bas"

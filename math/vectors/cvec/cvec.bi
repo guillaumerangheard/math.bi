@@ -93,50 +93,36 @@
             declare operator =  (byref as const cvec, byref as const cvec) as boolean
             declare operator <> (byref as const cvec, byref as const cvec) as boolean
             
-            declare function cross (byref as const real, byref as const real, byref as const real, byref as const cvec)                                           as cv_rt
-            declare function cross (byref as const vec2                     , byref as const real, byref as const cvec)                                           as cv_rt
-            #ifdef _MATH_PVEC_BI_
-            declare function cross (byref as const pvec                     , byref as const real, byref as const cvec)                                           as cv_rt
+            declare function cross (byref as const vec3, byref as const cvec) as cv_rt
+            declare function cross (byref as const cvec, byref as const vec3) as cv_rt
+            declare function cross (byref as const cvec, byref as const cvec) as cvec
+            declare function dot   (byref as const vec3, byref as const cvec) as real
+            declare function dot   (byref as const cvec, byref as const vec3) as real
+            declare function dot   (byref as const cvec, byref as const cvec) as real
+            declare function eq    (byref as const vec3, byref as const cvec, byref as const real => epsilon) as boolean
+            declare function eq    (byref as const cvec, byref as const vec3, byref as const real => epsilon) as boolean
+            declare function eq    (byref as const cvec, byref as const cvec, byref as const real => epsilon) as boolean
+            declare function lerp  (byref as const vec3, byref as const cvec, byref as const real)                                 as cv_rt
+            #ifdef _EASING_BI_
+            declare function lerp  (byref as const vec3, byref as const cvec, byref as const real,       as const easing.equation) as cv_rt
+            declare function lerp  (byref as const vec3, byref as const cvec, byref as const real, byref as const easing.curve)    as cv_rt
             #endif
-            declare function cross (byref as const vec3                                          , byref as const cvec)                                           as cv_rt
-            declare function cross (byref as const cvec                                          , byref as const real, byref as const real, byref as const real) as cv_rt
-            declare function cross (byref as const cvec                                          , byref as const vec2                     , byref as const real) as cv_rt
-            #ifdef _MATH_PVEC_BI_
-            declare function cross (byref as const cvec                                          , byref as const pvec                     , byref as const real) as cv_rt
+            declare function lerp  (byref as const cvec, byref as const vec3, byref as const real) as cv_rt
+            #ifdef _EASING_BI_
+            declare function lerp  (byref as const cvec, byref as const vec3, byref as const real,       as const easing.equation) as cv_rt
+            declare function lerp  (byref as const cvec, byref as const vec3, byref as const real, byref as const easing.curve)    as cv_rt
             #endif
-            declare function cross (byref as const cvec                                          , byref as const vec3)                                           as cv_rt
-            declare function cross (byref as const cvec                                          , byref as const cvec)                                           as cv_rt
-            declare function dot   (byref as const real, byref as const real, byref as const real, byref as const cvec)                                           as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const cvec)                                           as real
-            #ifdef _MATH_PVEC_BI_
-            declare function dot   (byref as const pvec                     , byref as const real, byref as const cvec)                                           as real
+            declare function lerp  (byref as const cvec, byrec as const cvec, byref as const real) as cvec
+            #ifdef _EASING_BI_
+            declare function lerp  (byref as const cvec, byrec as const cvec, byref as const real,       as const easing.equation) as cvec
+            declare function lerp  (byref as const cvec, byrec as const cvec, byref as const real, byref as const easing.curve)    as cvec
             #endif
-            declare function dot   (byref as const vec3                                          , byref as const cvec)                                           as real
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const real, byref as const real) as real
-            declare function dot   (byref as const cvec                                          , byref as const vec2                     , byref as const real) as real
-            #ifdef _MATH_PVEC_BI_
-            declare function dot   (byref as const cvec                                          , byref as const pvec                     , byref as const real) as real
-            #endif
-            declare function dot   (byref as const cvec                                          , byref as const vec3)                                           as real
-            declare function dot   (byref as const cvec                                          , byref as const cvec)                                           as real
-            declare function dot   (byref as const real, byref as const real, byref as const real, byref as const real, byref as const cvec                                          , byref as const real) as real
-            declare function dot   (byref as const vec2                     , byref as const real, byref as const real, byref as const cvec                                          , byref as const real) as real
-            #ifdef _MATH_PVEC_BI_
-            declare function dot   (byref as const pvec                     , byref as const real, byref as const real, byref as const cvec                                          , byref as const real) as real
-            #endif
-            declare function dot   (byref as const vec3                                          , byref as const real, byref as const cvec                                          , byref as const real) as real
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const vec2                     , byref as const real, byref as const real) as real
-            #ifdef _MATH_PVEC_BI_
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const pvec                     , byref as const real, byref as const real) as real
-            #endif
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const vec3                                          , byref as const real) as real
-            declare function dot   (byref as const cvec                                          , byref as const real, byref as const cvec                                          , byref as const real) as real
         end namespace
         #include "cvec_constructors.bas"
         #include "cvec_intrinsic_operators.bas"
         #include "cvec_properties.bas"
         #include "cvec_methods.bas"
+        '#include "cvec_functions.bas"
         #undef cv_rt
     #endif
 #endif

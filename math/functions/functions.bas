@@ -79,27 +79,6 @@ namespace math
         return (exp(n) + exp(-n)) / 2.0
     end function
     
-' math.cross -------------------------------------------------------------------
-    
-    ' Cf. https://stackoverflow.com/questions/243945/calculating-a-2d-vectors-cross-product
-    function cross overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        return (x1 * y2) - (y1 * x2)
-    end function
-    
-' math.dot ---------------------------------------------------------------------
-    
-    function dot overload (byref x1 as const real, byref y1 as const real, byref x2 as const real, byref y2 as const real) as real
-        return x1 * x2 + y1 * y2
-    end function
-    
-    function dot (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real) as real
-        return x1 * x2 + y1 * y2 + z1 * z2
-    end function
-    
-    function dot (byref x1 as const real, byref y1 as const real, byref z1 as const real, byref w1 as const real, byref x2 as const real, byref y2 as const real, byref z2 as const real, byref w2 as const real) as real
-        return x1 * x2 + y1 * y2 + z1 * z2 + w1 * w2
-    end function
-    
 ' math.eq ----------------------------------------------------------------------
     
     function eq overload (byref n1 as const real, byref n2 as const real, byref t as const real => epsilon) as boolean

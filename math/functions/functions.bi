@@ -13,14 +13,7 @@
         declare function clamp           (byref as const real, byref as const real)                      as real
         declare function clamp           (byref as const real, byref as const real, byref as const real) as real
         declare function cosh            (byref as const real) as real
-        declare function cross  overload (byref as const real, byref as const real, byref as const real, byref as const real) as real
-        declare function dot    overload (byref as const real, byref as const real, byref as const real, byref as const real) as real
-        declare function dot             (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
-        declare function dot             (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function eq     overload (byref as const real, byref as const real, byref as const real => epsilon) as boolean
-        declare function eq              (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
-        declare function eq              (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
-        declare function eq              (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
         declare function floor           (byref as const real) as real
         declare function hypot  overload (byref as const real, byref as const real)                                           as real
         declare function hypot           (byref as const real, byref as const real, byref as const real)                      as real
