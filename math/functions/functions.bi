@@ -25,7 +25,7 @@
         declare function hypot  overload (byref as const real, byref as const real)                                           as real
         declare function hypot           (byref as const real, byref as const real, byref as const real)                      as real
         declare function hypot           (byref as const real, byref as const real, byref as const real, byref as const real) as real
-        declare function lerp   overload (byref as const real, byref as const real, byref as const real)                           as real
+        declare function lerp   overload (byref as const real, byref as const real, byref as const real)                     as real
         #ifdef _EASING_BI_
         declare function lerp            (byref as const real, byref as const real, byref as const real, as easing.equation) as real
         declare function lerp            (byref as const real, byref as const real, byref as const real, as easing.curve)    as real
