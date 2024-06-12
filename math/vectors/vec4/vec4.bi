@@ -61,20 +61,11 @@
                 declare       property xyz    (byref as const svec)
                 #endif
                 
+                declare const  function isNull    overload ()                    as boolean
+                declare const  function isNull             (byref as const real) as boolean
+                declare const  function isUnit    overload ()                    as boolean
+                declare const  function isUnit             (byref as const real) as boolean
                 declare const  function MiNorm             (byref as const real => 2d) as real
-                declare static function normalise overload (byref as const real, byref as const real, byref as const real, byref as const real) as vec4
-                declare static function normalise          (byref as const vec2                     , byref as const real, byref as const real) as vec4
-                #ifdef _MATH_PVEC_BI_
-                declare static function normalise          (byref as const pvec                     , byref as const real, byref as const real) as vec4
-                #endif
-                declare static function normalise          (byref as const vec3                                          , byref as const real) as vec4
-                #ifdef _MATH_CVEC_BI_
-                declare static function normalise          (byref as const cvec                                          , byref as const real) as vec4
-                #endif
-                #ifdef _MATH_SVEC_BI_
-                declare static function normalise          (byref as const svec                                          , byref as const real) as vec4
-                #endif
-                declare static function normalise          (byref as const vec4)                                                                as vec4
                 declare        sub      normalise          ()
                 declare const  function toJSON             (byref as const boolean => false) as string
                 declare static function unitX              () as vec4
