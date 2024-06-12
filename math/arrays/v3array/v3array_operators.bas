@@ -175,12 +175,40 @@ namespace math
     
 ' math.v3array.*= --------------------------------------------------------------
     
+    operator v3array.*= (byref n as const real)
+        if this._l then
+            for i as integer => 0% to this._l - 1%
+                this._p[i].x *= n
+                this._p[i].y *= n
+                this._p[i].z *= n
+            next i
+        end if
+    end operator
+    
     v3a_op1(*)
     #undef v3a_op1
     v3a_op2(*)
     #undef v3a_op2
     
 ' math.v3array./= --------------------------------------------------------------
+    
+    operator v3array./= (byref n as const real)
+        if this._l then
+            if n then
+                for i as integer => 0% to this._l - 1%
+                    this._p[i].x /= n
+                    this._p[i].y /= n
+                    this._p[i].z /= n
+                next i
+            else
+                for i as integer => 0% to this._l - 1%
+                    this._p[i].x => 0d
+                    this._p[i].y => 0d
+                    this._p[i].z => 0d
+                next i
+            end if
+        end if
+    end operator
     
     operator v3array./= (byref v as const vec3)
         if this._l then
