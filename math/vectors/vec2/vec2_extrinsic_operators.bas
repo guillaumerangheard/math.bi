@@ -41,9 +41,7 @@ namespace math
     end operator
     
     operator / (byref v1 as const vec2, byref v2 as const vec2) as vec2
-        dim as real i => iif(v2.x, v1.x / v2.x, 0.0), _
-                    j => iif(v2.y, v1.y / v2.y, 0.0)
-        return vec2(i, j)
+        return vec2(iif(v2.x, v1.x / v2.x, 0d), iif(v2.y, v1.y / v2.y, 0d))
     end operator
     
 ' = ----------------------------------------------------------------------------

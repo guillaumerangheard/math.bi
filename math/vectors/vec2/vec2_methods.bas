@@ -71,8 +71,8 @@ namespace math
     
 ' math.vec2.MiNorm -------------------------------------------------------------
     
-    function vec2.MiNorm (byref e as const real => 2.0) as real
-        return iif(e, (abs(this.x) ^ e + abs(this.y) ^ e) ^ (1.0 / e), 0.0)
+    function vec2.MiNorm (byref e as const real => 2d) as real
+        return iif(e, (abs(this.x) ^ e + abs(this.y) ^ e) ^ (1d / e), 0d)
     end function
     
 ' math.vec2.normalise ----------------------------------------------------------
@@ -87,15 +87,14 @@ namespace math
     
 ' math.vec2.random -------------------------------------------------------------
     
-    #ifdef _RNG_BI_
     function vec2.random () as vec2
         dim as real t => math.random(two_pi)
         return vec2(cos(t), -sin(t))
     end function
     
-    function vec2.random (n as const real) as vec2
-        dim as real t => math.random(two_pi)
-        return vec2(abs(n) * cos(t), -abs(n) * sin(t))
+    function vec2.random (byref n as const real) as vec2
+        dim as real r => abs(n), t => math.random(two_pi)
+        return vec2(r * cos(t), -r * sin(t))
     end function
     
     function vec2.random (byref n1 as const real, byref n2 as const real) as vec2
@@ -105,48 +104,10 @@ namespace math
     function vec2.random (byref n1 as const real, byref n2 as const real, byref n3 as const real, byref n4 as const real) as vec2
         return vec2(math.random(n1, n2), math.random(n3, n4))
     end function
-    #endif
     
 ' math.vec2.rotate -------------------------------------------------------------
     
-    #ifndef _MATH_ANGLE_BI_
-    
-    function vec2.rotate overload (byref n1 as const real, byref n2 as const real, byref n3 as const real) as vec2
-        dim as real c => cos(n3), s => sin(n3)
-        return vec2(c * n1 - s * n2, s * n1 + c * n2)
-    end function
-    
-    function vec2.rotate (byref v as const vec2, byref n as const real) as vec2
-        dim as real c => cos(n), s => sin(n)
-        return vec2(c * v.x - s * v.y, s * v.x + c * v.y)
-    end function
-    
-    sub vec2.rotate (byref n as const real)
-        dim as real c => cos(n), s => sin(n), _
-                    i => c * this.x - s * this.y, _
-                    j => s * this.x + c * this.y
-        this.x => i
-        this.y => j
-    end sub
-    
-    #else
-    
-    function vec2.rotate overload (byref n1 as const real, byref n2 as const real, byref n3 as const real, byref u as const angleUnit => defaultAngleUnit) as vec2
-        dim as real t => angle.convert(n3, u, angleUnit.radian), _
-                    c => cos(t), s => sin(t)
-        return vec2(c * n1 - s * n2, s * n1 + c * n2)
-    end function
-    
-    function vec2.rotate (byref v as const vec2, byref n as const real, byref u as const angleUnit => defaultAngleUnit) as vec2
-        dim as real t => angle.convert(n, u, angleUnit.radian), _
-                    c => cos(t), s => sin(t)
-        return vec2(c * v.x - s * v.y, s * v.x + c * v.y)
-    end function
-    
-    function vec2.rotate (byref v as const vec2, byref a as const math.angle) as vec2
-        dim as real c => a.cosine, s => a.sine
-        return vec2(c * v.x - s * v.y, s * v.x + c * v.y)
-    end function
+    #ifdef _MATH_ANGLE_BI_
     
     sub vec2.rotate (byref n as const real, byref u as const angleUnit => defaultAngleUnit)
         dim as real t => angle.convert(n, u, angleUnit.radian), _
@@ -165,6 +126,16 @@ namespace math
         this.y => j
     end sub
     
+    #else
+    
+    sub vec2.rotate (byref n as const real)
+        dim as real c => cos(n), s => sin(n), _
+                    i => c * this.x - s * this.y, _
+                    j => s * this.x + c * this.y
+        this.x => i
+        this.y => j
+    end sub
+    
     #endif
     
 ' math.vec2.toJSON -------------------------------------------------------------
@@ -177,13 +148,13 @@ namespace math
 ' math.vec2.unitX --------------------------------------------------------------
     
     function vec2.unitX () as vec2
-        return vec2(1.0, 0.0)
+        return vec2(1d, 0d)
     end function
     
 ' math.vec2.unitY --------------------------------------------------------------
     
     function vec2.unitY () as vec2
-        return vec2(0.0, 1.0)
+        return vec2(0d, 1d)
     end function
     
 end namespace

@@ -39,23 +39,15 @@
                 declare const  function isUnit             (byref as const real) as boolean
                 declare const  function MiNorm             (byref as const real => 2d) as real
                 declare        sub      normalise          ()
-                #ifdef _RNG_BI_
                 declare static function random    overload ()                                                                                   as vec2
                 declare static function random             (byref as const real)                                                                as vec2
                 declare static function random             (byref as const real, byref as const real)                                           as vec2
                 declare static function random             (byref as const real, byref as const real, byref as const real, byref as const real) as vec2
-                #endif
                 #ifdef _MATH_ANGLE_BI_
-                declare static function rotate    overload (byref as const real, byref as const real, byref as const real, byref as const angleUnit => defaultAngleUnit) as vec2
-                declare static function rotate             (byref as const real, byref as const real, byref as const math.angle)                                         as vec2
-                declare static function rotate             (byref as const vec2                     , byref as const real, byref as const angleUnit => defaultAngleUnit) as vec2
-                declare static function rotate             (byref as const vec2                     , byref as const math.angle)                                         as vec2
-                declare        sub      rotate                                                       (byref as const real, byref as const angleUnit => defaultAngleUnit)
-                declare        sub      rotate                                                       (byref as const math.angle)
+                declare        sub      rotate    overload (byref as const real, byref as const angleUnit => defaultAngleUnit)
+                declare        sub      rotate             (byref as const math.angle)
                 #else
-                declare static function rotate    overload (byref as const real, byref as const real, byref as const real) as vec2
-                declare static function rotate             (byref as const vec2                     , byref as const real) as vec2
-                declare        sub      rotate                                                       (byref as const real)
+                declare        sub      rotate             (byref as const real)
                 #endif
                 declare const  function toJSON             (byref as const boolean => false) as string
                 declare static function unitX              () as vec2

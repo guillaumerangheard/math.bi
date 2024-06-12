@@ -1,5 +1,9 @@
 #include "math/math.bi"
 
-print "Done compiling " & math.versionString & !".\n"
+using math
+
+print "Done compiling " & versionString & !".\n"
+
+
 
 sleep
