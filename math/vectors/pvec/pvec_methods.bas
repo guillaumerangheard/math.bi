@@ -12,6 +12,26 @@ namespace math
         #endif
     end function
     
+' math.pvec.isNull -------------------------------------------------------------
+    
+    function pvec.isNull overload () as boolean
+        return iif(0d = this._r, true, false)
+    end function
+    
+    function pvec.isNull (byref t as const real) as boolean
+        return iif(this._r <= abs(t), true, false)
+    end function
+    
+' math.pvec.isUnit -------------------------------------------------------------
+    
+    function pvec.isUnit overload () as boolean
+        return iif(1d = this._r, true, false)
+    end function
+    
+    function pvec.isUnit (byref t as const real) as boolean
+        return iif(abs(1d - this._r) <= abs(t), true, false)
+    end function
+    
 ' math.pvec.MiNorm -------------------------------------------------------------
     
     function pvec.MiNorm (byref e as const real => 2d) as real
@@ -21,6 +41,12 @@ namespace math
         end if
         return 0d
     end function
+    
+' math.pvec.normalise ----------------------------------------------------------
+    
+    sub pvec.normalise ()
+        this._r => 1d
+    end sub
     
 ' math.pvec.random -------------------------------------------------------------
     

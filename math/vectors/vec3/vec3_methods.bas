@@ -2,6 +2,27 @@ namespace math
     
 ' methods ======================================================================
     
+' math.vec3.isNull -------------------------------------------------------------
+    
+    function vec3.isNull overload () as boolean
+        return iif((0d = this.x) and (0d = this.y) and (0d = this.z), true, false)
+    end function
+    
+    function vec3.isNull (byref s as const real) as boolean
+        dim as real t => abs(s)
+        return iif((abs(this.x) <= t) and (abs(this.y) <= t) and (abs(this.z) <= t), true, false)
+    end function
+    
+' math.vec3.isUnit -------------------------------------------------------------
+    
+    function vec3.isUnit overload () as boolean
+        return iif(1d = this.norm, true, false)
+    end function
+    
+    function vec3.isUnit (byref t as const real) as boolean
+        return iif(abs(1d - this.norm) <= abs(t), true, false)
+    end function
+    
 ' math.vec3.MiNorm -------------------------------------------------------------
     
     function vec3.MiNorm (byref e as const real => 2d) as real

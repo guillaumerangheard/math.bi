@@ -51,10 +51,15 @@
                     declare       property y      (byref as const real)
                     
                     declare static function fromCartesian          (byref as const real, byref as const real) as pvec
+                    declare const  function isNull        overload ()                    as boolean
+                    declare const  function isNull                 (byref as const real) as boolean
+                    declare const  function isUnit        overload ()                    as boolean
+                    declare const  function isUnit                 (byref as const real) as boolean
                     declare const  function MiNorm                 (byref as const real => 2d) as real
                     #ifdef _RNG_BI_
                     
                     #endif
+                    declare        sub      normalise              ()
                     declare const  function toJSON                 (byref as const boolean => false) as string
                     declare const  function unitX                  () as pvec
                     declare const  function unitY                  () as pvec

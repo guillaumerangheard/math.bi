@@ -39,12 +39,16 @@
                 declare       property xy     (byref as const pvec)
                 #endif
                 
-                declare const  function MiNorm    (byref as const real => 2.0) as real
-                declare        sub      normalise ()
-                declare const  function toJSON    (byref as const boolean => false) as string
-                declare static function unitX     () as vec3
-                declare static function unitY     () as vec3
-                declare static function unitZ     () as vec3
+                declare const  function isNull    overload ()                    as boolean
+                declare const  function isNull             (byref as const real) as boolean
+                declare const  function isUnit    overload ()                    as boolean
+                declare const  function isUnit             (byref as const real) as boolean
+                declare const  function MiNorm             (byref as const real => 2.0) as real
+                declare        sub      normalise          ()
+                declare const  function toJSON             (byref as const boolean => false) as string
+                declare static function unitX              () as vec3
+                declare static function unitY              () as vec3
+                declare static function unitZ              () as vec3
             end type
             
             declare operator +  (byref as const vec3, byref as const vec3) as vec3

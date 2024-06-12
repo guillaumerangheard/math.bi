@@ -2,6 +2,36 @@ namespace math
     
 ' methods ======================================================================
     
+' math.cvec.fromCartesian ------------------------------------------------------
+    
+    function cvec.fromCartesian (byref n1 as const real, byref n2 as const real, byref n3 as const real => 0d) as cvec
+        #ifdef _MATH_ANGLE_BI_
+        return cvec(math.phi(n1, n2), angleUnit.radian, hypot(n1, n2), n3)
+        #else
+        return cvec(math.phi(n1, n2), hypot(n1, n2), n3)
+        #endif
+    end function
+    
+' math.cvec.isNull -------------------------------------------------------------
+    
+    function cvec.isNull overload () as boolean
+        return iif(0d = this.norm, true, false)
+    end function
+    
+    function cvec.isNull (byref t as const real) as boolean
+        return iif(this.norm <= abs(t), true, false)
+    end function
+    
+' math.cvec.isUnit -------------------------------------------------------------
+    
+    function cvec.isUnit overload () as boolean
+        return iif(1d = this.norm, true, false)
+    end function
+    
+    function cvec.isUnit (byref t as const real) as boolean
+        return iif(abs(1d - this.norm) <= abs(t), true, false)
+    end function
+    
 ' math.cvec.MiNorm -------------------------------------------------------------
     
     function cvec.MiNorm (byref e as const real) as real
@@ -9,6 +39,10 @@ namespace math
                        abs(sin(this._a) * this._r) ^ e + _
                        abs(this.z)                 ^ e) ^ (1d / e), 0d)
     end function
+    
+' math.cvec.normalise ----------------------------------------------------------
+    
+    
     
 ' math.cvec.toJSON -------------------------------------------------------------
     

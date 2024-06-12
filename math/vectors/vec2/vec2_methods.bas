@@ -48,6 +48,17 @@ namespace math
     
     #endif
     
+' math.vec2.isNull -------------------------------------------------------------
+    
+    function vec2.isNull overload () as boolean
+        return iif((0d = this.x) and (0d = this.y), true, false)
+    end function
+    
+    function vec2.isNull (byref s as const real) as boolean
+        dim as real t => abs(s)
+        return iif((abs(this.x) <= t) and (abs(this.y) <= t), true, false)
+    end function
+    
 ' math.vec2.isUnit -------------------------------------------------------------
     
     function vec2.isUnit overload () as boolean

@@ -12,9 +12,9 @@
                     declare constructor (byref as const real, byref as const angleUnit, byref as const real, byref as const real => 0d)
                     declare constructor (byref as const angle                         , byref as const real, byref as const real => 0d)
                     #endif
-                    declare constructor (byref as const vec2)
+                    declare constructor (byref as const vec2                                               , byref as const real => 0d)
                     #ifdef _MATH_PVEC_BI_
-                    declare constructor (byref as const pvec)
+                    declare constructor (byref as const pvec                                               , byref as const real => 0d)
                     #endif
                     declare constructor (byref as const vec3)
                     declare constructor (byref as const cvec)
@@ -52,11 +52,17 @@
                     declare const property y      () as real
                     declare       property y      (byref as const real)
                     
-                    declare const  function MiNorm (byref as const real => 2d) as real
-                    declare const  function toJSON (byref as const boolean => false) as string
-                    declare static function unitX  () as cvec
-                    declare static function unitY  () as cvec
-                    declare static function unitZ  () as cvec
+                    declare static function fromCartesian          (byref as const real, byref as const real, byref as const real => 0d) as cvec
+                    declare const  function isNull        overload ()                    as boolean
+                    declare const  function isNull                 (byref as const real) as boolean
+                    declare const  function isUnit        overload ()                    as boolean
+                    declare const  function isUnit                 (byref as const real) as boolean
+                    declare const  function MiNorm                 (byref as const real => 2d) as real
+                    declare        sub      normalise              ()
+                    declare const  function toJSON                 (byref as const boolean => false) as string
+                    declare static function unitX                  () as cvec
+                    declare static function unitY                  () as cvec
+                    declare static function unitZ                  () as cvec
                 private:
                     as real _a, _ ' Azimuth in radians.
                             _r    ' Radius.
