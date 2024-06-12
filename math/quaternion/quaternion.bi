@@ -58,38 +58,12 @@
             declare operator =  (byref as const quaternion, byref as const quaternion) as boolean
             declare operator <> (byref as const quaternion, byref as const quaternion) as boolean
             
-            declare function eq             (byref as const real, byref as const real, byref as const real, byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            declare function eq             (byref as const vec2                     , byref as const real, byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            #ifdef _MATH_PVEC_BI_
-            declare function eq             (byref as const pvec                     , byref as const real, byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
+            declare function eq   (byref as const quaternion, byref as const quaternion, byref as const real => epsilon) as boolean
+            declare function lerp (byref as const quaternion, byref as const quaternion, byref as const real) as quaternion
+            #ifdef _EASING_BI_
+            declare function lerp (byref as const quaternion, byref as const quaternion, byref as const real,       as const easing.equation) as quaternion
+            declare function lerp (byref as const quaternion, byref as const quaternion, byref as const real, byref as const easing.curve)    as quaternion
             #endif
-            declare function eq             (byref as const vec3                                          , byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            #ifdef _MATH_CVEC_BI_
-            declare function eq             (byref as const cvec                                          , byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            #endif
-            #ifdef _MATH_SVEC_BI_
-            declare function eq             (byref as const svec                                          , byref as const real, byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            #endif
-            declare function eq             (byref as const vec4                                                               , byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            declare function eq             (byref as const quaternion                                                         , byref as const real, byref as const real, byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            declare function eq             (byref as const quaternion                                                         , byref as const vec2                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            #ifdef _MATH_PVEC_BI_
-            declare function eq             (byref as const quaternion                                                         , byref as const pvec                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            #endif
-            declare function eq             (byref as const quaternion                                                         , byref as const vec3                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            #ifdef _MATH_CVEC_BI_
-            declare function eq             (byref as const quaternion                                                         , byref as const cvec                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            #endif
-            #ifdef _MATH_SVEC_BI_
-            declare function eq             (byref as const quaternion                                                         , byref as const svec                     , byref as const real, byref as const real, byref as const real => epsilon) as boolean
-            #endif
-            declare function eq             (byref as const quaternion                                                         , byref as const vec4                                                               , byref as const real => epsilon) as boolean
-            declare function eq             (byref as const quaternion                                                         , byref as const quaternion                                                         , byref as const real => epsilon) as boolean
-            'declare function slerp overload (byref as const quaternion, byref as const quaternion, byref as const real) as quaternion
-            '#ifdef _EASING_BI_
-            'declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real,       as const easing.equation) as quaternion
-            'declare function slerp          (byref as const quaternion, byref as const quaternion, byref as const real, byref as const easing.curve)    as quaternion
-            '#endif
         end namespace
         #include "quaternion_constructors.bas"
         #include "quaternion_intrinsic_operators.bas"
