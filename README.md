@@ -191,6 +191,10 @@ This function comes in two versions. The first one take two(, or three, or four)
 
 #### math.min ( _n1_ , _n2_ [, _n3_ [, _n4_ ] ] ) | ( _i_ , _p_ )
 
+#### math.nrt ( n1 , n2 )
+
+Return the `n2`th root of `n1`, or 1 if `n2` is lesser than or equal to 0.
+
 This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of `math.real`s to process, and a pointer to said `math.real`s.
 
 #### math.phi ( _x_ , _y_ )
