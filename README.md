@@ -44,3 +44,59 @@ This flag will be used in future versions so that, when the **rng.bi** is includ
 ### math_spherical_vectors
 
 In future versions, this flag will activate the [math.svec]() type, that is 3-dimensional vectors expressed in [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
+
+## Constants
+
+Below is a list of all of **math.bi**'s built-in constants.
+
+### math.defaultAngleUnit
+
+This constant of type `math.angleUnit` is only exposed if the [math_angles]() flag is `#define`d. Its default value is `degree`, and it can be set via the [math_angle_unit]() flag.
+
+### math.epsilon
+
+This constant of type `math.real` is the default threshold used by the [math.eq]() function, under which `true` is returned when two values are _almost_ equal.
+
+### math.eta
+
+This constant of type `math.real`is only exposed when the [math_angles]() is `#define`d, and is equal to [math.tau]() /&nbsp;720.
+
+### math.pi
+
+This constant of type `math.real` equals &pi; that is 3.141592653589793, according to the [OEIS](https://oeis.org/A000796).
+
+### math.quater_pi
+
+This constant of type `math.real` is equal to &pi /&nbsp;4.
+
+### math.quarter_tau
+
+This constant of type `math.real` is only exposed when the [math_angles]() flag is `#define`d, and is equal to [math._tau]() /&nbsp;4.
+
+### math.goldenRatio
+
+This constant of type `math.real` equals (1 + &sqrt;&nbsp;5) / 2.
+
+### math.half_pi
+
+This constant of type `math.real` equals &pi; /&nbsp;2, as its incredibly clever name implies.
+
+### math.half_tau
+
+This const of type `math.real` is only exposed when the [math_angles]() flag is `#define`d, and is equal to [math.tau]() /&nbsp;2.
+
+### math.plasticRatio
+
+Equals 1.324717957244746, according to the [OEIS](https://oeis.org/A060006).
+
+### math.silverRatio
+
+Equals 1 + &sqrt;&nbsp;2.
+
+### math.tau
+
+This constant of type `math.real` is only exposed if this [math_angles]() flag is `#define`d. Whatever the default angle unit is, it is equal to one turn, expressed in that unit.
+
+### math.two_pi
+
+Equals &pi; &times;&nbsp;2.
