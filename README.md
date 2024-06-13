@@ -129,57 +129,66 @@ Equals &pi; &times;&nbsp;2.
 
 Below is a list of all the functions in the `math` namespace.
 
-### acosh ( n )
+#### math.acosh ( _n_ )
 
 Returns the [inverse hyperbolic cosine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `acosh` property.
 
-### asinh ( n )
+#### math.asinh ( _n_ )
 
 Returns the [inverse hyperbolic sine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `asinh` property.
 
-### atanh ( n )
+#### math.atanh ( _n_ )
 
 Returns the [inverse hyperbolic tangent](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `atanh` property.
 
-### avg ( n1 , n2 [, n3 [, n4 ] ] )
+#### math.avg ( _n1_ , _n2_ [, _n3_ [, _n4_ ] ] )
 
 This function comes in two versions. The first one takes two(, or three, or four) numbers and calculates their average. The second one takes an `integer` representing the number of `math.real`s to process, and a pointer to said `math.real`s. (In a future version, I'll add the option to use complex numbers.)
 
-### cbr ( n )
+#### math.cbr ( _n_ )
 
 Returns the cubic root of a `math.real`.
 
-### ceil
-### clamp
-### cosh
-### eq ( n1 , n2 [ , threshold = [math.epsilon](#mathepsilon) ] )
+#### math.ceil ( _n_ )
+
+
+#### math.clamp ( _n_ [ [, _nMin_ ] , _nMax_ ] )
+
+
+#### math.cosh ( _n_ )
+
+#### eq ( _n1_ , _n2_ [ , _threshold_ = [math.epsilon](#mathepsilon) ] )
 
 Returns `true` if the absolute difference between two [math.real]s is lesser than or equal to `threshold`, and `false` otherwise.
 
-### floor
-### hypot ( x , y [, z [, w ] ] )
+#### math.floor
+#### math.hypot ( _x_ , _y_ [, _z_ [, _w_ ] ] )
 
 Returns the length of of a "vector" whose coordinates can be in 2, 3, or 4 dimensions.
 
-### lerp ( n1 , n2 , t [, e = easing.equation | easing.curve ] )
+#### math.lerp ( _n1_ , _n2_ , _t_ [, _e_ ] )
 
-Interpolates two numbers with respect to `t`. If [easing.bi](https://github.com/guillaumerangheard/easing.bi) is `#include`d, one also has the option to pass either an `easing.equation` or an `easing.curve`. The function is thoroughly overloaded, so that one can interpolate not only numbers, but also complex numbers and vectors. (Quaternions are one the way.)
+Interpolates two numbers with respect to `t`. If [easing.bi](https://github.com/guillaumerangheard/easing.bi) is `#include`d, one also has the option to pass `e` either as an `easing.equation` or as an `easing.curve`. The function is thoroughly overloaded, so that one can interpolate not only numbers, but also complex numbers and vectors. (Quaternions are one the way.)
 
-### map
+#### math.map ( _n_ , _nMin1_ , _nMax1_, _nMin2_ , _nMax2_ )
 
-### max ( n1 , n2 [, n3 [, n4 ] ] ) | ( i , p )
-
-This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of said `math.real`s to process, and a pointer to said `math.real`s.
-
-### min ( n1 , n2 [, n3 [, n4 ] ] ) | ( i , p )
+#### math.max ( _n1_ , _n2_ [, _n3_ [, _n4_ ] ] ) | ( _i_ , _p_ )
 
 This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of said `math.real`s to process, and a pointer to said `math.real`s.
 
-### phi
-### random
-### sinh
-### tanh
-### wrap
+#### math.min ( _n1_ , _n2_ [, _n3_ [, _n4_ ] ] ) | ( _i_ , _p_ )
+
+This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of said `math.real`s to process, and a pointer to said `math.real`s.
+
+#### math.phi ( _x_ , _y_ )
+
+#### math.random ( [ [ _n1_ ,] _n2_ ] )
+
+#### math.sinh ( _n_ )
+
+#### math.tanh ( _n_ )
+
+#### math.wrap ( _n_ [ [_nMin_ = 0 ,] _nMax_ = 1 ] )
 
 ## 5.&nbsp;Types
 
