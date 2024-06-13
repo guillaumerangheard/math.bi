@@ -129,36 +129,52 @@ Equals &pi; &times;&nbsp;2.
 
 Below is a list of all the functions in the `math` namespace.
 
-### acosh
+### acosh ( n )
 
 Returns the [inverse hyperbolic cosine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `acosh` property.
 
-### asinh
+### asinh ( n )
 
 Returns the [inverse hyperbolic sine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `asinh` property.
 
-### atanh
+### atanh ( n )
 
 Returns the [inverse hyperbolic tangent](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `atanh` property.
 
-### avg
+### avg ( n1 , n2 [, n3 [, n4 ] ] )
 
-This function comes in two versions. The first one takes two(, or three, or four) numbers and calculates their average. The second one takes an `integer` representing the number of `math.real`s to process, and a pointer to said `math.real`. (In a future version, I'll add the option to use complex numbers.)
+This function comes in two versions. The first one takes two(, or three, or four) numbers and calculates their average. The second one takes an `integer` representing the number of `math.real`s to process, and a pointer to said `math.real`s. (In a future version, I'll add the option to use complex numbers.)
 
-### cbr
+### cbr ( n )
 
 Returns the cubic root of a `math.real`.
 
 ### ceil
 ### clamp
 ### cosh
-### eq
+### eq ( n1 , n2 [ , threshold = [math.epsilon](#mathepsilon) ] )
+
+Returns `true` if the absolute difference between two [math.real]s is lesser than or equal to `threshold`, and `false` otherwise.
+
 ### floor
-### hypot
-### lerp
+### hypot ( x , y [, z [, w ] ] )
+
+Returns the length of of a "vector" whose coordinates can be in 2, 3, or 4 dimensions.
+
+### lerp ( n1 , n2 , t [, e = easing.equation | easing.curve ] )
+
+Interpolates two numbers with respect to `t`. If [easing.bi](https://github.com/guillaumerangheard/easing.bi) is `#include`d, one also has the option to pass either an `easing.equation` or an `easing.curve`. The function is thoroughly overloaded, so that one can interpolate not only numbers, but also complex numbers and vectors. (Quaternions are one the way.)
+
 ### map
-### max
-### min
+
+### max ( n1 , n2 [, n3 [, n4 ] ] ) | ( i , p )
+
+This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of said `math.real`s to process, and a pointer to said `math.real`s.
+
+### min ( n1 , n2 [, n3 [, n4 ] ] ) | ( i , p )
+
+This function comes in two versions. The first one take two(, or three, or four) `math.real`s and returns the maximum. The second one takes an `integer` representing the number of said `math.real`s to process, and a pointer to said `math.real`s.
+
 ### phi
 ### random
 ### sinh
