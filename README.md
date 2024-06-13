@@ -10,6 +10,21 @@ Please note that it is based on a somewhat old (and arguably messy) codebase, so
 2. [Flags](#2flags)
 3. [Constants](#3constants)
 4. [Types](#4types)
+  - [Matrices]
+    - [math.mat2](#mathmat2)
+    - [math.mat3](#mathmat3)
+    - [math.mat4](#mathmat4)
+  - [Numbers](#numbers)
+    - [math.complex](#mathcomplex)
+    - [math.real](#mathreal)
+  - [Quaternions](#quaternions)
+  - [Vectors](#vectors)
+    - [math.cvec](#mathcvec)
+    - [math.pvec](#mathpvec)
+    - [math.svec](#mathsvec)
+    - [math.vec2](#mathvec2)
+    - [math.vec3](#mathvec3)
+    - [math.vec4](#mathvec4)
 
 
 ## 1.&nbsp;Conventions
@@ -111,16 +126,38 @@ Equals &pi; &times;&nbsp;2.
 
 ## 4.&nbsp;Types
 
-### math.complex
+### Matrices
 
-Complex numbers in **math.bi** have an `r` and an `i` member, representig their real and imaginary parts, respectively. All operators and functions are overloaded, so one can seemlessly use real and complex numbers as they see fit.
-(The option to switch complex numbers on and off will be added in a future version.)
+#### math.mat2
 
-### math.cvec
+#### math.mat3
+
+#### math.mat4
+
+### Numbers
+
+#### math.complex
+
+Complex numbers in **math.bi** have an `r` and an `i` member, representing their real and imaginary parts, respectively. All operators and functions are overloaded, so one can seemlessly use both real and complex numbers at the same time. (The option to switch complex numbers on and off will be added in a future version. I'm leaving them here right now for testing purposes.)
+
+#### math.real
+
+`math.real`s as basically aliased `double`s. (The option to switch to single-precision may be added in a future version.)
+
+### Quaternions
+
+### Vectors
+
+#### math.cvec
 
 When the [math_cylindrical_vectors]() flag is `#define`d, one can use 3-dimensional vectors expressed in spherical coordinates. Each `math.cvec` has three coordinates: `phi`, which is their azimuth in radians, `rho`, which is their "radius" on the z plane, and `z`, which is, well, their z coordinate. Please note that the first two are _properties_, which means you can only get and set them. When the [math_angles]() flag is `#define`d, you can use a property called `azimuth`, which is the vectors azimuthal angle, expressed as a `math.angle`.
 
-### math.real
+#### math.pvec
 
-`math.real`s as basically aliased `double`s.
-(The option to switch to single-precision may be added in a future version.)
+#### math.svec
+
+#### math.vec2
+
+#### math.vec3
+
+#### math.vec4
