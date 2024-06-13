@@ -9,22 +9,23 @@ Please note that it is based on a somewhat old (and arguably messy) codebase, so
 1. [Conventions](#1conventions)
 2. [Flags](#2flags)
 3. [Constants](#3constants)
-4. [Types](#4types)
-  - [Matrices]
-    - [math.mat2](#mathmat2)
-    - [math.mat3](#mathmat3)
-    - [math.mat4](#mathmat4)
-  - [Numbers](#numbers)
-    - [math.complex](#mathcomplex)
-    - [math.real](#mathreal)
-  - [Quaternions](#quaternions)
-  - [Vectors](#vectors)
-    - [math.cvec](#mathcvec)
-    - [math.pvec](#mathpvec)
-    - [math.svec](#mathsvec)
-    - [math.vec2](#mathvec2)
-    - [math.vec3](#mathvec3)
-    - [math.vec4](#mathvec4)
+4. [Functions](#4functions)
+5. [Types](#5types)
+   - [Matrices](matrices)
+     - [math.mat2](#mathmat2)
+     - [math.mat3](#mathmat3)
+     - [math.mat4](#mathmat4)
+   - [Numbers](#numbers)
+     - [math.complex](#mathcomplex)
+     - [math.real](#mathreal)
+   - [Quaternions](#quaternions)
+   - [Vectors](#vectors)
+     - [math.cvec](#mathcvec)
+     - [math.pvec](#mathpvec)
+     - [math.svec](#mathsvec)
+     - [math.vec2](#mathvec2)
+     - [math.vec3](#mathvec3)
+     - [math.vec4](#mathvec4)
 
 
 ## 1.&nbsp;Conventions
@@ -124,7 +125,47 @@ This constant of type `math.real` is only exposed if this [math_angles]() flag i
 
 Equals &pi; &times;&nbsp;2.
 
-## 4.&nbsp;Types
+## Functions
+
+Below is a list of all the functions in the `math` namespace.
+
+### acosh
+
+Returns the [inverse hyperbolic cosine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `acosh` property.
+
+### asinh
+
+Returns the [inverse hyperbolic sine](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `asinh` property.
+
+### atanh
+
+Returns the [inverse hyperbolic tangent](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions) of an angle expressed in radians. (Other angle units will be added in a future version.) For `math.angle`s, use the built-in `atanh` property.
+
+### avg
+
+This function comes in two versions. The first one takes two(, or three, or four) numbers and calculates their average. The second one takes an `integer` representing the number of `math.real`s to process, and a pointer to said `math.real`. (In a future version, I'll add the option to use complex numbers.)
+
+### cbr
+
+Returns the cubic root of a `math.real`.
+
+### ceil
+### clamp
+### cosh
+### eq
+### floor
+### hypot
+### lerp
+### map
+### max
+### min
+### phi
+### random
+### sinh
+### tanh
+### wrap
+
+## 5.&nbsp;Types
 
 ### Matrices
 
