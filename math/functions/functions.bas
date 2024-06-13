@@ -7,6 +7,10 @@ namespace math
         return log(n + sqr(n * n - 1.0))
     end function
     
+' math.acoth -------------------------------------------------------------------
+    
+    
+    
 ' math.asinh -------------------------------------------------------------------
     
     ' Cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh
@@ -78,6 +82,28 @@ namespace math
     function cosh (byref n as const real) as real
         return (exp(n) + exp(-n)) / 2.0
     end function
+    
+' math.cot ---------------------------------------------------------------------
+    
+    function cot (byref n as const real) as real
+        dim as real t => tan(n)
+        return iif(t, 1d / t, 0d)
+    end property
+    
+' math.coth --------------------------------------------------------------------
+    
+    
+    
+' math.csec --------------------------------------------------------------------
+    
+    function csec (byref n as const real) as real
+        dim as real s => sin(n)
+        return iif(s, 1d / s, 0d)
+    end function
+    
+' math.csech -------------------------------------------------------------------
+    
+    
     
 ' math.eq ----------------------------------------------------------------------
     
@@ -268,6 +294,17 @@ namespace math
     end function
     
     #endif
+    
+' math. sec --------------------------------------------------------------------
+    
+    function sec (byref n as const real) as real
+        dim as real c => cos(n)
+        return iif(c, 1d / c, 0d)
+    end property
+    
+' math. sech -------------------------------------------------------------------
+    
+    
     
 ' math.sinh --------------------------------------------------------------------
     

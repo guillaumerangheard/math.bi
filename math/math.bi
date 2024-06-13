@@ -11,7 +11,9 @@
     #include "constants.bi"
     #include "functions/functions.bi"
     #include "complex/complex.bi"
-    #include "angle/angle.bi"
+    #ifdef MATH_ANGLES
+        #include "angle/angle.bi"
+    #endif
     #include "vectors/vectors.bi"
     #include "quaternion/quaternion.bi"
     #include "matrices/matrices.bi"

@@ -1,6 +1,11 @@
 #ifdef _MATH_BI_
     namespace math
         declare function acosh           (byref as const real) as real
+        declare function acoth           (byref as const real) as real
+        declare function acsec           (byref as const real) as real
+        declare function acsech          (byref as const real) as real
+        declare function asec            (byref as const real) as real
+        declare function asech           (byref as const real) as real
         declare function asinh           (byref as const real) as real
         declare function atanh           (byref as const real) as real
         declare function avg    overload (byref as const real, byref as const real)                                           as real
@@ -13,6 +18,10 @@
         declare function clamp           (byref as const real, byref as const real)                      as real
         declare function clamp           (byref as const real, byref as const real, byref as const real) as real
         declare function cosh            (byref as const real) as real
+        declare function cot             (byref as const real) as real
+        declare function coth            (byref as const real) as real
+        declare function csec            (byref as const real) as real
+        declare function csech           (byref as const real) as real
         declare function eq     overload (byref as const real, byref as const real, byref as const real => epsilon) as boolean
         declare function floor           (byref as const real) as real
         declare function hypot  overload (byref as const real, byref as const real)                                           as real
@@ -36,6 +45,8 @@
         declare function random overload ()                                         as real
         declare function random          (byref as const real)                      as real
         declare function random          (byref as const real, byref as const real) as real
+        declare function sec             (byref as const real) as real
+        declare function sech            (byref as const real) as real
         declare function sinh            (byref as const real) as real
         declare function tanh            (byref as const real) as real
         declare function wrap   overload (byref as const real)                                           as real
