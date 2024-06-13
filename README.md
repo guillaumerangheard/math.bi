@@ -73,55 +73,55 @@ In future versions, this flag will activate the [math.svec]() type, that is 3-di
 
 Below is a list of all of **math.bi**'s built-in constants.
 
-### math.defaultAngleUnit
+#### math.defaultAngleUnit
 
-This constant of type `math.angleUnit` is only exposed if the [math_angles]() flag is `#define`d. Its default value is `degree`, and it can be set via the [math_angle_unit]() flag.
+This constant of type `math.angleUnit` is only exposed if the [math_angles](#mathangles) flag is `#define`d. Its default value is `degree`, and it can be set via the [math_angle_unit]() flag.
 
-### math.epsilon
+#### math.epsilon
 
-This constant of type `math.real` is the default threshold used by the [math.eq]() function, under which `true` is returned when two values are _almost_ equal.
+This constant of type `math.real` is the default threshold used by the [math.eq](#matheq) function, under which `true` is returned when two values are _almost_ equal.
 
-### math.eta
+#### math.eta
 
-This constant of type `math.real`is only exposed when the [math_angles]() is `#define`d, and is equal to [math.tau]() /&nbsp;720.
+This constant of type `math.real`is only exposed when the [math_angles](#mathangles) is `#define`d, and is equal to [math.tau](#mathtau) /&nbsp;720.
 
-### math.pi
+#### math.pi
 
 This constant of type `math.real` equals &pi; that is 3.141592653589793, according to the [OEIS](https://oeis.org/A000796).
 
-### math.quater_pi
+#### math.quater_pi
 
 This constant of type `math.real` is equal to &pi /&nbsp;4.
 
-### math.quarter_tau
+#### math.quarter_tau
 
-This constant of type `math.real` is only exposed when the [math_angles]() flag is `#define`d, and is equal to [math._tau]() /&nbsp;4.
+This constant of type `math.real` is only exposed when the [math_angles](#mathangles) flag is `#define`d, and is equal to [math._tau](#mathtau) /&nbsp;4.
 
-### math.goldenRatio
+#### math.goldenRatio
 
 This constant of type `math.real` equals (1 + &sqrt;&nbsp;5) / 2.
 
-### math.half_pi
+#### math.half_pi
 
 This constant of type `math.real` equals &pi; /&nbsp;2, as its incredibly clever name implies.
 
-### math.half_tau
+#### math.half_tau
 
 This const of type `math.real` is only exposed when the [math_angles]() flag is `#define`d, and is equal to [math.tau]() /&nbsp;2.
 
-### math.plasticRatio
+#### math.plasticRatio
 
 Equals 1.324717957244746, according to the [OEIS](https://oeis.org/A060006).
 
-### math.silverRatio
+#### math.silverRatio
 
 Equals 1 + &sqrt;&nbsp;2.
 
-### math.tau
+#### math.tau
 
-This constant of type `math.real` is only exposed if this [math_angles]() flag is `#define`d. Whatever the default angle unit is, it is equal to one turn, expressed in that unit.
+This constant of type `math.real` is only exposed if this [math_angles](#mathangles) flag is `#define`d. Whatever the default angle unit is, it is equal to one turn, expressed in that unit.
 
-### math.two_pi
+#### math.two_pi
 
 Equals &pi; &times;&nbsp;2.
 
@@ -157,11 +157,20 @@ Returns the cubic root of a `math.real`.
 
 #### math.cosh ( _n_ )
 
+#### math.cross ( _v1_ , _v2_ )
+
+In the case of 2-dimensional vectors, this functions returns a `math.real` equal to the z coordinate of their cross product, _if_ they were 3-dimensional. This little mathematical hack has proven useful, for example when one wants to calculate [barycentric coordinates](https://en.wikipedia.org/wiki/Barycentric_coordinate_system). In the (much more frequent) case of 3-dimensional vectors, `math.cross` returns a 3-dimensional vector equal to their cross product, whose type depends on whether or not the [MATH_FORCE_CARTESIAN](#mathforcecartesian) flags has been `#define`d.
+
+#### math.dot ( _v1_ , _v2_)
+
+Returns a `math.real` equal to the dot product of `v1` and `v2`. The function has been overloaded so that it can be passed any type of vector, as long as both have the same number of dimensions.
+
 #### eq ( _n1_ , _n2_ [ , _threshold_ = [math.epsilon](#mathepsilon) ] )
 
-Returns `true` if the absolute difference between two [math.real]s is lesser than or equal to `threshold`, and `false` otherwise.
+Returns `true` if the absolute difference between two `math.real`s is lesser than or equal to `threshold`, and `false` otherwise.
 
 #### math.floor
+
 #### math.hypot ( _x_ , _y_ [, _z_ [, _w_ ] ] )
 
 Returns the length of of a "vector" whose coordinates can be in 2, 3, or 4 dimensions.
