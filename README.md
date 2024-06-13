@@ -34,38 +34,38 @@ Due to the fact that **math.bi** was originally designed as part of a graphics l
 
 ## 2.&nbsp;Flags
 
-**math.bi**'s configuration use flags that one `#define`s (or uncomments) before compilation. All flags can be found in the [math.cfg]() file (which is just a FreeBASIC header with a .cfg extension). Below is a list of all flags.
+**math.bi**'s configuration use flags that one `#define`s (or uncomments) before compilation. All flags can be found in the [math.cfg](https://github.com/guillaumerangheard/math.bi/blob/main/math/math.cfg) file (which is just a FreeBASIC header with a .cfg extension). Below is a list of all flags.
 
-### math_angles
+#### MATH_ANGLES
 
 By default, angles in **math.bi** are expressed in radians. When `#define`d, this flag activates the [math.angle]() and [math.angleUnit]() types, and allows one to work in degrees, gradians, quadrants, radians, sextants, and turns. The default angle unit can be specified via the [math_angle_unit]() flag, which defaults to degrees.
 
-### math_angle_unit
+#### MATH_ANGLE_UNIT
 
 This flag can have one of six values: `degree`, `gradian`, `quadrant`, `radian`, `sextant`, or `turn`, and sets the default angle unit, via the [math.defaultAngleUnit]() constant.
 
-### math_cylindrical_vectors
+#### MATH_CYLINDRICAL_VECTORS
 
 This flag activates the [math.cvec]() type, that is 3-dimensional vectors expressed in [cylindrical coordinates](https://en.wikipedia.org/wiki/Cylindrical_coordinate_system).
 
-### math_epsilon
+#### MATH_EPSILON
 
 This flag sets the [math.epsilon]() constant, and through it the default threshold under which the [math.eq]() function returns `true` for two _almost equal_ values. Its default value is 1.0 / 8192.0.
 
-### math_force_cartesian
+#### MATH_FORCE_CARTESIAN
 
 All of **math.bi**'s functions are overloaded so one can mix cartesian, polar, cylindrical, and spherical vectors. By design, the latter three take precedence over the first, when vectors of different types are passed to the same function. That is if one adds a cartesian and a polar vector, for example, a polar vector is returned. When the math_force_cartesian flag is `#define`d, all functions are forced to return a cartesian vector.
 Please note though that when one passes two vectors of the same type to a function, a _of this very type_ is returned.
 
-### math_polar_vectors
+#### MATH_POLAR_VECTORS
 
 This flag activates the [math.pvec]() type, that is 2-dimensional vectors expressed in [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system).
 
-### math_prng
+#### MATH_PRNG
 
 This flag will be used in future versions so that, when the **rng.bi** is included, one can choose which algorithm the [math.random]() function uses. Right now it uses FreeBASIC's [rnd](https://www.freebasic.net/wiki/KeyPgRnd) function internally (and will by default).
 
-### math_spherical_vectors
+#### MATH_SPHERICAL_VECTORS
 
 In future versions, this flag will activate the [math.svec]() type, that is 3-dimensional vectors expressed in [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 
