@@ -38,15 +38,15 @@ Due to the fact that **math.bi** was originally designed as part of a graphics l
 
 #### MATH_ANGLES
 
-By default, angles in **math.bi** are expressed in radians. When `#define`d, this flag activates the [math.angle]() and [math.angleUnit]() types, and allows one to work in degrees, gradians, quadrants, radians, sextants, and turns. The default angle unit can be specified via the [math_angle_unit]() flag, which defaults to degrees.
+By default, angles in **math.bi** are expressed in radians. When `#define`d, this flag activates the [math.angle](#mathangle) and [math.angleUnit](#mathangleunit) types, and allows one to work in degrees, gradians, quadrants, radians, sextants, and turns. The default angle unit can be specified via the [math_angle_unit](#mathangleunit) flag, which defaults to degrees.
 
 #### MATH_ANGLE_UNIT
 
-This flag can have one of six values: `degree`, `gradian`, `quadrant`, `radian`, `sextant`, or `turn`, and sets the default angle unit, via the [math.defaultAngleUnit]() constant.
+This flag can have one of six values: `degree`, `gradian`, `quadrant`, `radian`, `sextant`, or `turn`, and sets the default angle unit, via the [math.defaultAngleUnit](#mathdefaultangleunit) constant.
 
 #### MATH_CYLINDRICAL_VECTORS
 
-This flag activates the [math.cvec]() type, that is 3-dimensional vectors expressed in [cylindrical coordinates](https://en.wikipedia.org/wiki/Cylindrical_coordinate_system).
+This flag activates the [math.cvec](#mathcvec) type, that is 3-dimensional vectors expressed in [cylindrical coordinates](https://en.wikipedia.org/wiki/Cylindrical_coordinate_system).
 
 #### MATH_EPSILON
 
