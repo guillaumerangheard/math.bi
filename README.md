@@ -6,16 +6,16 @@ Please note that it is based on a somewhat old (and arguably messy) codebase, so
 
 ## Table of contents
 
-+ [Conventions](#conventions)
-+ [Flags](#flags)
-+ [Constants](#constants)
+1. [Conventions](#conventions)
+2. [Flags](#flags)
+3. [Constants](#constants)
 
 
-## Conventions
+## 1.&nbsp;Conventions
 
 Due to the fact that **math.bi** was originally designed as part of a graphics library, it uses a slightly unorthodox coordinate system, where positive x is _right_, positive y is _down_, and positive z is _backward_ (that is, it goes from your screen to you). (Positive w goes wherever the fourth dimension goes.) Rotations by a positive angle go _counterclockwise_.
 
-## Flags
+## 2.&nbsp;Flags
 
 **math.bi**'s configuration use flags that one `#define`s (or uncomments) before compilation. All flags can be found in the [math.cfg]() file (which is just a FreeBASIC header with a .cfg extension). Below is a list of all flags.
 
@@ -52,7 +52,7 @@ This flag will be used in future versions so that, when the **rng.bi** is includ
 
 In future versions, this flag will activate the [math.svec]() type, that is 3-dimensional vectors expressed in [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 
-## Constants
+## 3.&nbsp;Constants
 
 Below is a list of all of **math.bi**'s built-in constants.
 
