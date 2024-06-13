@@ -9,6 +9,7 @@ Please note that it is based on a somewhat old (and arguably messy) codebase, so
 1. [Conventions](#conventions)
 2. [Flags](#flags)
 3. [Constants](#constants)
+4. [Types](#types)
 
 
 ## 1.&nbsp;Conventions
@@ -107,3 +108,19 @@ This constant of type `math.real` is only exposed if this [math_angles]() flag i
 ### math.two_pi
 
 Equals &pi; &times;&nbsp;2.
+
+## 4.&nbsp;Types
+
+### math.complex
+
+Complex numbers in **math.bi** have an `r` and an `i` member, representig their real and imaginary parts, respectively. All operators and functions are overloaded, so one can seemlessly use real and complex numbers as they see fit.
+(The option to switch complex numbers on and off will be added in a future version.)
+
+### math.cvec
+
+When the [math_cylindrical_vectors]() flag is `#define`d, one can use 3-dimensional vectors expressed in spherical coordinates. Each `math.cvec` has three coordinates: `phi`, which is their azimuth in radians, `rho`, which is their "radius" on the z plane, and `z`, which is, well, their z coordinate. Please note that the first two are _properties_, which means you can only get and set them. When the [math_angles]() flag is `#define`d, you can use a property called `azimuth`, which is the vectors azimuthal angle, expressed as a `math.angle`.
+
+### math.real
+
+`math.real`s as basically aliased `double`s.
+(The option to switch to single-precision may be added in a future version.)
