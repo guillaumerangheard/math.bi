@@ -4,7 +4,7 @@
 
 Please note that it is based on a somewhat old (and arguably messy) codebase, so _some_ of types are still being (re)written. (I'm looking at you, quaternions.) It was also designed as part of a larger project, so it works seamlessly with my rng.bi and [easing.bi](https://github.com/guillaumerangheard/easing.bi) libraries.
 
-## Table of contents
+## Manual
 
 1. [Conventions](#1conventions)
 2. [Flags](#2flags)
@@ -50,7 +50,7 @@ This flag activates the [math.cvec](#mathcvec) type, that is 3-dimensional vecto
 
 #### MATH_EPSILON
 
-This flag sets the [math.epsilon]() constant, and through it the default threshold under which the [math.eq]() function returns `true` for two _almost equal_ values. Its default value is 1.0 / 8192.0.
+This flag sets the [math.epsilon]() constant, and through it the default threshold under which the [math.eq](#matheq) function returns `true` for two _almost equal_ values. Its default value is 1.0 / 8192.0 (&thickapprox;&nsp;0.0001220703125).
 
 #### MATH_FORCE_CARTESIAN
 
@@ -59,7 +59,7 @@ Please note though that when one passes two vectors of the same type to a functi
 
 #### MATH_POLAR_VECTORS
 
-This flag activates the [math.pvec]() type, that is 2-dimensional vectors expressed in [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system).
+This flag activates the [math.pvec](#mathpvec) type, that is 2-dimensional vectors expressed in [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system).
 
 #### MATH_PRNG
 
@@ -67,7 +67,7 @@ This flag will be used in future versions so that, when the **rng.bi** is includ
 
 #### MATH_SPHERICAL_VECTORS
 
-In future versions, this flag will activate the [math.svec]() type, that is 3-dimensional vectors expressed in [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
+In future versions, this flag will activate the [math.svec](#mathsvec) type, that is 3-dimensional vectors expressed in [spherical coordinates](https://en.wikipedia.org/wiki/Spherical_coordinate_system).
 
 ## 3.&nbsp;Constants
 
@@ -75,7 +75,7 @@ Below is a list of all of **math.bi**'s built-in constants.
 
 #### math.defaultAngleUnit
 
-This constant of type `math.angleUnit` is only exposed if the [math_angles](#mathangles) flag is `#define`d. Its default value is `degree`, and it can be set via the [math_angle_unit]() flag.
+This constant of type `math.angleUnit` is only exposed if the [math_angles](#math_angles) flag is `#define`d. Its default value is `degree`, and it can be set via the [math_angle_unit](#math_angle_unit) flag.
 
 #### math.epsilon
 
@@ -83,7 +83,7 @@ This constant of type `math.real` is the default threshold used by the [math.eq]
 
 #### math.eta
 
-This constant of type `math.real`is only exposed when the [math_angles](#mathangles) is `#define`d, and is equal to [math.tau](#mathtau) /&nbsp;720.
+This constant of type `math.real`is only exposed when the [math_angles](#math_angles) is `#define`d, and is equal to [math.tau](#mathtau) /&nbsp;720.
 
 #### math.pi
 
@@ -95,7 +95,7 @@ This constant of type `math.real` is equal to &pi /&nbsp;4.
 
 #### math.quarter_tau
 
-This constant of type `math.real` is only exposed when the [math_angles](#mathangles) flag is `#define`d, and is equal to [math._tau](#mathtau) /&nbsp;4.
+This constant of type `math.real` is only exposed when the [math_angles](#math_angles) flag is `#define`d, and is equal to [math.tau](#mathtau) /&nbsp;4.
 
 #### math.goldenRatio
 
@@ -107,7 +107,7 @@ This constant of type `math.real` equals &pi; /&nbsp;2, as its incredibly clever
 
 #### math.half_tau
 
-This const of type `math.real` is only exposed when the [math_angles]() flag is `#define`d, and is equal to [math.tau]() /&nbsp;2.
+This const of type `math.real` is only exposed when the [math_angles](#math_angles) flag is `#define`d, and is equal to [math.tau](#mathtau) /&nbsp;2.
 
 #### math.plasticRatio
 
@@ -119,7 +119,7 @@ Equals 1 + &sqrt;&nbsp;2.
 
 #### math.tau
 
-This constant of type `math.real` is only exposed if this [math_angles](#mathangles) flag is `#define`d. Whatever the default angle unit is, it is equal to one turn, expressed in that unit.
+This constant of type `math.real` is only exposed if the [math_angles](#math_angles) flag is `#define`d. Whatever the default angle unit is, it is equal to one turn, expressed in that unit.
 
 #### math.two_pi
 
@@ -200,6 +200,12 @@ This function comes in two versions. The first one take two(, or three, or four)
 #### math.wrap ( _n_ [ [_nMin_ = 0 ,] _nMax_ = 1 ] )
 
 ## 5.&nbsp;Types
+
+### Angles
+
+#### math.angle
+
+#### math.angleUnit
 
 ### Matrices
 
