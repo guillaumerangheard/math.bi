@@ -6,10 +6,10 @@ Please note that it is based on a somewhat old (and arguably messy) codebase, so
 
 ## Table of contents
 
-1. [Conventions](#conventions)
-2. [Flags](#flags)
-3. [Constants](#constants)
-4. [Types](#types)
+1. [Conventions](#1conventions)
+2. [Flags](#2flags)
+3. [Constants](#3constants)
+4. [Types](#4types)
 
 
 ## 1.&nbsp;Conventions
