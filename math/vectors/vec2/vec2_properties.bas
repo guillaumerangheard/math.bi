@@ -28,8 +28,8 @@ namespace math
                 this.y => this.y / h * n
             end if
         else
-            this.x => 0.0
-            this.y => 0.0
+            this.x => 0d
+            this.y => 0d
         end if
     end property
     

@@ -60,6 +60,21 @@
                     
                     #endif
                     declare        sub      normalise              ()
+                    #ifdef _MATH_ANGLE_BI_
+                    declare static function random                 ()                                                                                                                                       as pvec
+                    declare static function random                 (byref as const real                          , byref as const real                          , byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const real                          , byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const real                          , byref as const angle                         , byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const real                          , byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const angle                         , byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const angle                         , byref as const real                          , byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const angle                         , byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
+                    declare static function random                 (byref as const angle                         , byref as const angle                         , byref as const real, byref as const real) as pvec
+                    #else
+                    declare static function random                 ()                                                                                   as pvec
+                    declare static function random                 (byref as const real, byref as const real, byref as const real, byref as const real) as pvec
+                    #endif
                     declare const  function toJSON                 (byref as const boolean => false) as string
                     declare const  function unitX                  () as pvec
                     declare const  function unitY                  () as pvec
