@@ -4,7 +4,7 @@ namespace math
     
 ' math.angle.convert -----------------------------------------------------------
     
-    function angle.convert (byref n as const real, byref u1 as const angleUnit, byref u2 as const angleUnit) as real
+    function angle.convert (byref n as const real, byref u1 as const angleUnit, byref u2 as const angleUnit => defaultAngleUnit) as real
         return iif(u1 <> u2, n / angles(u1) * angles(u2), n)
     end function
     
@@ -93,6 +93,60 @@ namespace math
     
     function angle.ntant (byref n as const integer) as real
         return iif(2% <= n, iif(1d = this._v, 0d, this._v) * cdbl(n), -1d)
+    end function
+    
+' math.angle.random ------------------------------------------------------------
+    
+    function angle.random overload () as angle
+        return angle(math.random() * angles(defaultAngleUnit))
+    end function
+    
+    function angle.random (byref n as const real) as angle
+        return angle(math.random() * n)
+    end function
+    
+    function angle.random (byref n as const real, byref u as const angleUnit) as angle
+        return angle(math.random() * angle.convert(n, u))
+    end function
+    
+    function angle.random (byref a as const angle) as angle
+        return angle(math.random() * a._v * angles(defaultAngleUnit))
+    end function
+    
+    function angle.random (byref n1 as const real, byref n2 as const real) as angle
+        return angle(math.random(n1, n2))
+    end function
+    
+    function angle.random (byref n1 as const real, byref n2 as const real, byref u2 as const angleUnit) as angle
+        return angle(math.random(n1, angle.convert(n2, u2)))
+    end function
+    
+    function angle.random (byref n1 as const real, byref a2 as const angle) as angle
+        return angle(math.random(n1, a2._v * angles(defaultAngleUnit)))
+    end function
+    
+    function angle.random (byref n1 as const real, byref u1 as const angleUnit, byref n2 as const real) as angle
+        return angle(math.random(angle.convert(n1, u1), n2))
+    end function
+    
+    function angle.random (byref n1 as const real, byref u1 as const angleUnit, byref n2 as const real, byref u2 as const angleUnit) as angle
+        return angle(math.random(angle.convert(n1, u1), angle.convert(n2, u2)))
+    end function
+    
+    function angle.random (byref n1 as const real, byref u1 as const angleUnit, byref a2 as const angle) as angle
+        return angle(math.random(angle.convert(n1, u1), a2._v * angles(defaultAngleUnit)))
+    end function
+    
+    function angle.random (byref a1 as const angle, byref n2 as const real) as angle
+        return angle(math.random(a1._v * angles(defaultAngleUnit), n2))
+    end function
+    
+    function angle.random (byref a1 as const angle, byref n2 as const real, byref u2 as const angleUnit) as angle
+        return angle(math.random(a1._v * angles(defaultAngleUnit), angle.convert(n2, u2)))
+    end function
+    
+    function angle.random (byref a1 as const angle, byref a2 as const angle) as angle
+        return angle(math.random(a1._v * angles(defaultAngleUnit), a2._v * angles(defaultAngleUnit)))
     end function
     
 ' math.angle.render ------------------------------------------------------------

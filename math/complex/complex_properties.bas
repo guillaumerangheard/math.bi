@@ -8,10 +8,10 @@ namespace math
         return complex(this.r, -this.i)
     end property
     
-' math.complex.magnitude -------------------------------------------------------
+' math.complex.norm ------------------------------------------------------------
     
-    property complex.magnitude () as real
-        return sqr(this.r * this.r + this.i * this.i)
+    property complex.norm () as real
+        return iif (this.i, sqr(this.r * this.r + this.i * this.i), abs(this.r))
     end property
     
 ' math.complex.reciprocal ------------------------------------------------------

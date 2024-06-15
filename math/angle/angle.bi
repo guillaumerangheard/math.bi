@@ -48,7 +48,7 @@
                     declare const property vercosine     () as real
                     declare const property versine       () as real
                     
-                    declare static function convert             (byref as const real, byref as const angleUnit, byref as const angleUnit) as real
+                    declare static function convert             (byref as const real, byref as const angleUnit, byref as const angleUnit => defaultAngleUnit) as real
                     declare const  function isAcute    overload ()                    as boolean
                     declare const  function isAcute             (byref as const real) as boolean
                     declare const  function isFull     overload ()                    as boolean
@@ -66,6 +66,19 @@
                     declare const  function isStraight overload ()                    as boolean
                     declare const  function isStraight          (byref as const real) as boolean
                     declare const  function ntant               (byref as const integer) as real
+                    declare static function random     overload ()                                                                                             as angle
+                    declare static function random                                                             (byref as const real)                           as angle
+                    declare static function random                                                             (byref as const real, byref as const angleUnit) as angle
+                    declare static function random                                                             (byref as const angle)                          as angle
+                    declare static function random              (byref as const real                          , byref as const real)                           as angle
+                    declare static function random              (byref as const real                          , byref as const real, byref as const angleUnit) as angle
+                    declare static function random              (byref as const real                          , byref as const angle)                          as angle
+                    declare static function random              (byref as const real, byref as const angleUnit, byref as const real)                           as angle
+                    declare static function random              (byref as const real, byref as const angleUnit, byref as const real, byref as const angleUnit) as angle
+                    declare static function random              (byref as const real, byref as const angleUnit, byref as const angle)                          as angle
+                    declare static function random              (byref as const angle                         , byref as const real)                           as angle
+                    declare static function random              (byref as const angle                         , byref as const real, byref as const angleUnit) as angle
+                    declare static function random              (byref as const angle                         , byref as const angle)                          as angle
                     declare static function render     overload (byref as const real)                           as string
                     declare static function render              (byref as const real, byref as const angleUnit) as string
                     declare const  function render              ()                                              as string

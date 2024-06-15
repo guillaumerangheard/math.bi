@@ -64,7 +64,7 @@ namespace math
     
 ' math.complex.^= --------------------------------------------------------------
     
-    
+    ' Still trying to wrap my head around complex number exponentiation...
     
 ' math.complex.cast ------------------------------------------------------------
     

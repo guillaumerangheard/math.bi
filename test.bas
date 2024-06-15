@@ -4,8 +4,6 @@ using math
 
 print "Done compiling " & versionString & !".\n"
 
-dim as real a => pi
-print csech(a)
-print acsech(csech(a))
+print angle.random(90, pi, angleUnit.radian)
 
 sleep

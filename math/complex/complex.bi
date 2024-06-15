@@ -23,10 +23,9 @@
                 declare       operator let  (byref as const complex)
                 
                 declare const property conjugate  () as complex
-                declare const property magnitude  () as real
+                declare const property norm       () as real
                 declare const property reciprocal () as complex
                 
-                #ifdef _RNG_BI_
                 declare static function random overload ()                                               as complex
                 declare static function random          (byref as const real)                            as complex
                 declare static function random          (byref as const complex)                         as complex
@@ -34,7 +33,6 @@
                 declare static function random          (byref as const real   , byref as const complex) as complex
                 declare static function random          (byref as const complex, byref as const real)    as complex
                 declare static function random          (byref as const complex, byref as const complex) as complex
-                #endif
                 declare const  function toJSON          (byref as const boolean => false) as string
             end type
             
