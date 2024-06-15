@@ -2,42 +2,53 @@ namespace math
     
 ' math.acosh -------------------------------------------------------------------
     
-    ' Cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh
     function acosh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => angle.convert(n, defaultAngleUnit, angleUnit.radian)
-        return log(t + sqr(t * t - 1d))
-        #else
         return log(n + sqr(n * n - 1d))
-        #endif
     end function
     
 ' math.acoth -------------------------------------------------------------------
     
+    ' Cf. https://proofwiki.org/wiki/Definition:Area_Hyperbolic_Cotangent
+    function acoth (byref n as const real) as real
+        return log((n + 1d) / (n - 1d)) * 0.5d
+    end function
     
+' math.acsec -------------------------------------------------------------------
+    
+    
+    
+' math.acsech ------------------------------------------------------------------
+    
+    ' Cf. https://proofwiki.org/wiki/Definition:Area_Hyperbolic_Cosecant
+    function acsech (byref n as const real) as real
+        return iif(n, log(1d / n + (sqr(n * n + 1d)) / abs(n)), 0d)
+    end function
+    
+' math.asec --------------------------------------------------------------------
+    
+    function asec (byref n as const real) as real
+        return iif(n, acos(1d / n), 0d)
+    end function
+    
+' math.asech -------------------------------------------------------------------
+    
+    function asech (byref n as const real) as real
+        return iif(n, acos(1d / n), 0d)
+    end function
     
 ' math.asinh -------------------------------------------------------------------
     
-    ' Cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh
     function asinh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => angle.convert(n, defaultAngleUnitg, angleUnit.radian)
-        return log(t + sqr(t * t + 1d))
-        #else
         return log(n + sqr(n * n + 1d))
-        #endif
     end function
     
 ' math.atanh -------------------------------------------------------------------
     
-    ' Cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh
     function atanh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => angle.convert(n, defaultAngleUnit, angleUnit.radian)
-        return iif(t <> 1d, log((1d + t) / (1d - t)) * 0.5d, 0d)
-        #else
-        return iif(n <> 1d, log((1d + n) / (1d - n)) * 0.5d, 0d)
-        #endif
+        return log((1d + n) / (1d - n)) * 0.5d
     end function
     
 ' math.avg ---------------------------------------------------------------------
@@ -93,45 +104,40 @@ namespace math
     
 ' math.cosh --------------------------------------------------------------------
     
-    ' Cf. https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
-    function cosh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => angle.convert(n, defaultAngleUnit, angleUnit.radian)
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
+    function cosh (byref t as const real) as real
         return (exp(t) + exp(-t)) * 0.5d
-        #else
-        return (exp(n) + exp(-n)) * 0.5d
-        #endif
     end function
     
 ' math.cot ---------------------------------------------------------------------
     
-    function cot (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => tan(angle.convert(n, defaultAngleUnit, angleUnit.radian))
-        #else
-        dim as real t => tan(n)
-        #endif
+    ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    function cot (byref t as const real) as real
         return iif(t, 1d / t, 0d)
     end function
     
 ' math.coth --------------------------------------------------------------------
     
-    
+    ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
+    function coth (byref t as const real) as real
+        dim as real e => exp(2d * t)
+        return (e + 1d) / (e - 1d)
+    end function
     
 ' math.csec --------------------------------------------------------------------
     
-    function csec (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        di mas real s => sin(angle.convert(n, defaultAngleUnit, angleUnit.radian))
-        #else
-        dim as real s => sin(n)
-        #endif
+    ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    function csec (byref t as const real) as real
+        dim as real s => sin(t)
         return iif(s, 1d / s, 0d)
     end function
     
 ' math.csech -------------------------------------------------------------------
     
-    
+    ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
+    function csech (byref t as const real) as real
+        return (2d * exp(t)) / (exp(2d * t) - 1d)
+    end function
     
 ' math.eq ----------------------------------------------------------------------
     
@@ -312,41 +318,32 @@ namespace math
     
 ' math. sec --------------------------------------------------------------------
     
-    function sec (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real c => cos(angle.convert(n, defaultAngleUnit, angleUnit.radian)
-        #else
-        dim as real c => cos(n)
-        #endif
+    ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    function sec (byref t as const real) as real
+        dim as real c => cos(t)
         return iif(c, 1d / c, 0d)
     end function
     
 ' math. sech -------------------------------------------------------------------
     
-    
+    ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
+    function sech (byref t as const real) as real
+        return (2d * exp(t)) / (exp(2d * t) + 1d)
+    end function
     
 ' math.sinh --------------------------------------------------------------------
     
-    ' https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
-    function sinh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real t => angle.convert(n, defaultAngleUnit, angleUnit.radian)
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
+    function sinh (byref t as const real) as real
         return (exp(t) - exp(-t)) * 0.5d
-        #else
-        return (exp(n) - exp(-n)) * 0.5d
-        #endif
     end function    
     
 ' math.tanh --------------------------------------------------------------------
     
-    ' https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
     function tanh (byref n as const real) as real
-        #ifdef MATH_ANGLES
-        dim as real e => exp(2d * angle.convert(n, defaultAngleUnit, angleUnit.radian))
-        #else
         dim as real e => exp(2d * n)
-        #endif
-        return iif(-1d <> e, (e - 1d) / (e + 1d), 0d)
+        return (e - 1d) / (e + 1d)
     end function
     
 ' math.wrap --------------------------------------------------------------------
