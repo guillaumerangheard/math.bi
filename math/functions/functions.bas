@@ -1,31 +1,98 @@
 namespace math
-    
+
 ' math.acosh -------------------------------------------------------------------
     
+    ' Returns the hyperbolic arccosine of n.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh
+    
     function acosh (byref n as const real) as real
         return log(n + sqr(n * n - 1d))
     end function
     
+' math.acot --------------------------------------------------------------------
+    
+    ' Returns the arccotangent of n.
+    ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    '     https://mathworld.wolfram.com/InverseCotangent.html
+    
+    function acot (byref n as const real) as real
+        return iif(n, atn(1d / n), 0d)
+    end function
+    
 ' math.acoth -------------------------------------------------------------------
     
-    ' Cf. https://proofwiki.org/wiki/Definition:Area_Hyperbolic_Cotangent
-    function acoth (byref n as const real) as real
-        return log((n + 1d) / (n - 1d)) * 0.5d
+    ' NEEDS CHECKING
+    ' Returns the hyperbolic arccotangent of n.
+    
+    ' Cf. https://mathworld.wolfram.com/InverseHyperbolicCotangent.html
+    'function acoth (byref n as const real) as real
+    '    return iif(n, (log(1d + m) - log(1d - m)) * 0.5d, 0d)
+    'end function
+    
+' math.acrd --------------------------------------------------------------------
+    
+    ' Returns the "arcchord" of "inverse chord" of n.
+    
+    function acrd (byref n as const real) as real
+        return 2d * asin(n * 0.5d)
     end function
     
 ' math.acsec -------------------------------------------------------------------
     
+    ' Returns the arccosecant of n.
+    'Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
+    function acsec (byref n as const real) as real
+        return iif(n, asin(1d / n), 0d)
+    end function
     
 ' math.acsech ------------------------------------------------------------------
     
+    ' NEEDS CHECKING
+    
+    ' Returns the hyperbolic arccosecant of n.
     ' Cf. https://proofwiki.org/wiki/Definition:Area_Hyperbolic_Cosecant
-    function acsech (byref n as const real) as real
-        return iif(n, log(1d / n + (sqr(n * n + 1d)) / abs(n)), 0d)
+    
+    'function acsech (byref n as const real) as real
+    '    return iif(n, log(1d / n + (sqr(n * n + 1d)) / abs(n)), 0d)
+    'end function
+    
+' math.acvcos ------------------------------------------------------------------
+    
+    ' Returns the arccovercosine of n.
+    
+    function acvcos (byref n as const real) as real
+        return asin(n - 1d)
+    end function
+    
+' math.acvsin ------------------------------------------------------------------
+    
+    ' Returns the arccoversine of n.
+    
+    function acvsin (byref n as const real) as real
+        return asin(1d - n)
+    end function
+    
+' math.ahvcos ------------------------------------------------------------------
+    
+    ' Returns the archavercosine of n.
+    
+    function ahvcos (byref n as const real) as real
+        return acos(2d * n + 1d)
+    end function
+    
+' math.ahvsin ------------------------------------------------------------------
+    
+    ' Returns the archaversine of n.
+    
+    function ahvsin (byref n as const real) as real
+        return acos(1d - 2d * n)
     end function
     
 ' math.asec --------------------------------------------------------------------
+    
+    ' Returns the arcsecant of n.
+    ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
     function asec (byref n as const real) as real
         return iif(n, acos(1d / n), 0d)
@@ -33,25 +100,35 @@ namespace math
     
 ' math.asech -------------------------------------------------------------------
     
-    function asech (byref n as const real) as real
-        return iif(n, acos(1d / n), 0d)
-    end function
+    ' Returns the hyperbolic arcsecant of n.
     
 ' math.asinh -------------------------------------------------------------------
     
+    ' Returns the hyperbolic arcsine of n.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/asinh
+    
     function asinh (byref n as const real) as real
         return log(n + sqr(n * n + 1d))
     end function
     
 ' math.atanh -------------------------------------------------------------------
     
+    ' Returns the hyperbolic arctangent of n.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh
+    
     function atanh (byref n as const real) as real
         return log((1d + n) / (1d - n)) * 0.5d
     end function
     
 ' math.avg ---------------------------------------------------------------------
+    
+    ' Returns either the average of 2(, or 3, or 4) numbers, or the average of n
+    ' numbers at pointer p.
+    
+    ' TODO : add the option to specify a stride for the latter version of the
+    ' function, as the numbers may not be tightly packed.
+    ' TODO : overload the function, so that it can process (arrays of) complex
+    ' numbers.
     
     function avg overload (byref n1 as const real, byref n2 as const real) as real
         return (n1 + n2) * 0.5d
@@ -76,7 +153,17 @@ namespace math
         return 0d
     end function
     
+' math.avsin -------------------------------------------------------------------
+    
+    ' Returns the arcversine of n.
+    
+    function avsin (byref n as const real) as real
+        return acos(1d - n)
+    end function
+    
 ' math.cbr ---------------------------------------------------------------------
+    
+    ' Returns the cubic root of n. See also sqr and math.nrt.
     
     function cbr (byref n as const real) as real
         return iif(n < 0d, -(-n ^ 0.3333333333333333d), n ^ 0.3333333333333333d)
@@ -84,11 +171,16 @@ namespace math
     
 ' math.ceil --------------------------------------------------------------------
     
+    ' Rounds up n.
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
+    
     function ceil (byref n as const real) as real
-        return iif(frac(n), m_crl(cint(fix(n))) + 1d, n)
+        return m_crl(cint(fix(n))) + 1d
     end function
     
 ' math.clamp -------------------------------------------------------------------
+    
+    ' Clamps n either in the [0, 1], the [0, nMax], or the [nMin, nMax] range.
     
     function clamp overload (byref n as const real) as real
         return iif(n < 0d, 0d, iif(1d < n, 1d, n))
@@ -104,29 +196,49 @@ namespace math
     
 ' math.cosh --------------------------------------------------------------------
     
+    ' Returns the hyperbolic cosine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
+    
     function cosh (byref t as const real) as real
         return (exp(t) + exp(-t)) * 0.5d
     end function
     
 ' math.cot ---------------------------------------------------------------------
     
+    ' Returns the cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    
     function cot (byref t as const real) as real
-        return iif(t, 1d / t, 0d)
+        dim as real s => tan(t)
+        return iif (s, 1d / s, 0d)
     end function
     
 ' math.coth --------------------------------------------------------------------
     
+    ' NEEDS CHECKING
+    
+    ' Returns the hyperbolic cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
-    function coth (byref t as const real) as real
-        dim as real e => exp(2d * t)
-        return (e + 1d) / (e - 1d)
+    
+    'function coth (byref t as const real) as real
+    '    dim as real e => exp(2d * t)
+    '    return (e + 1d) / (e - 1d)
+    'end function
+    
+' math.crd ---------------------------------------------------------------------
+    
+    ' Returns the chord of t.
+    ' Cf. https://en.wikipedia.org/wiki/Chord_(geometry)#In_trigonometry
+    
+    function crd (byref t as const real) as real
+        return 2d * sin(t * 0.5d)
     end function
     
 ' math.csec --------------------------------------------------------------------
     
+    ' Returns the cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    
     function csec (byref t as const real) as real
         dim as real s => sin(t)
         return iif(s, 1d / s, 0d)
@@ -134,12 +246,38 @@ namespace math
     
 ' math.csech -------------------------------------------------------------------
     
+    ' NEEDS CHECKING
+    
+    ' Returns the hyperbolic cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
-    function csech (byref t as const real) as real
-        return (2d * exp(t)) / (exp(2d * t) - 1d)
+    
+    'function csech (byref t as const real) as real
+    '    dim as real s => sinh(t)
+    '    return iif(s, 1d / s, 0d)
+    'end function
+    
+' math.cvcos -------------------------------------------------------------------
+    
+    ' Returns the covercosine of t.
+    ' Cf. https://mathworld.wolfram.com/Covercosine.html
+    
+    function cvcos (byref t as const real) as real
+        return 1d + sin(t)
+    end function
+    
+' math.cvsin -------------------------------------------------------------------
+    
+    ' Returns the coversine of t.
+    ' Cf. https://mathworld.wolfram.com/Coversine.html
+    
+    function cvsin (byref t as const real) as real
+        return 1d - sin(t)
     end function
     
 ' math.eq ----------------------------------------------------------------------
+    
+    ' Returns true if the absolute difference between n1 and n2 is lesser than
+    ' or equal to t.
     
     function eq overload (byref n1 as const real, byref n2 as const real, byref t as const real => epsilon) as boolean
         return iif(abs(n1 - n2) <= abs(t), true, false)
@@ -147,11 +285,52 @@ namespace math
     
 ' math.floor -------------------------------------------------------------------
     
+    ' Rounds down n.
+    ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+    
     function floor (byref n as const real) as real
         return iif(frac(n), iif(n < 0d, fix(n) - 1d, fix(n)), n)
     end function
     
+' math.hcvcos ------------------------------------------------------------------
+    
+    ' Returns the hacovercosine of t.
+    ' Cf. https://mathworld.wolfram.com/Hacovercosine.html
+    
+    function hcvcos (byref t as const real) as real
+        return (1d + sin(t)) * 0.5d
+    end function
+    
+' math.hcvsin ------------------------------------------------------------------
+    
+    ' Returns the hacoversine of t.
+    ' Cf. https://mathworld.wolfram.com/Hacoversine.html
+    
+    function hcvsin (byref t as const real) as real
+        return (1d - sin(t)) * 0.5d
+    end function
+    
+' math.hvcos -------------------------------------------------------------------
+    
+    ' Returns the havercosine of t.
+    ' Cf. https://mathworld.wolfram.com/Havercosine.html
+    
+    function hvcos (byref t as const real) as real
+        return (1d + cos(t)) * 0.5d
+    end function
+    
+' math.hvsin -------------------------------------------------------------------
+    
+    ' Returns the haversine of t.
+    ' Cf. https://mathworld.wolfram.com/Haversine.html
+    
+    function hvsin (byref t as const real) as real
+        return (1d - cos(t)) * 0.5d
+    end function
+    
 ' math.hypot -------------------------------------------------------------------
+    
+    ' Returns the magnitude of vector (x, y[, z [, w]]).
     
     function hypot overload (byref x as const real, byref y as const real) as real
         return sqr(x * x + y * y)
@@ -166,6 +345,8 @@ namespace math
     end function
     
 ' math.lerp --------------------------------------------------------------------
+    
+    ' Performs a linear interpolation of n1 and n2.
     
     function lerp overload (byref n1 as const real, byref n2 as const real, byref s as const real) as real
         dim as real t => clamp(s), u => 1d - t
@@ -186,6 +367,10 @@ namespace math
     
 ' math.map ---------------------------------------------------------------------
     
+    ' Maps n from the [mn1, mx1] range onto the [mn2, mx2] range.
+    ' TODO : right now n is clamped before being mapped. Add the option to wrap
+    ' it (via a boolean?).
+    
     function map (byref n as const real, byref mn1 as const real, byref mx1 as const real, byref mn2 as const real, byref mx2 as const real) as real
         if n <= mn1 then return mn2
         if mx1 <= n then return mx2
@@ -193,6 +378,9 @@ namespace math
     end function
     
 ' math.max ---------------------------------------------------------------------
+    
+    ' Returns the maximum value of a set of numbers.
+    ' TODO : overload the function for complex numbers, if the formula exists.
     
     function max overload (byref n1 as const real, byref n2 as const real) as real
         return iif(n1 < n2, n2, n1)
@@ -226,6 +414,9 @@ namespace math
     
 ' math.min ---------------------------------------------------------------------
     
+    ' Returns the minimum value of a set of numbers.
+    ' TODO : overload the function for complex numbers, if the formula exists.
+    
     function min overload (byref n1 as const real, byref n2 as const real) as real
         return iif(n1 < n2, n1, n2)
     end function
@@ -258,11 +449,17 @@ namespace math
     
 ' math.nrt ---------------------------------------------------------------------
     
+    ' Retuns the nth root of n.
+    
     function nrt (byref n as const real, byref r as const real) as real
         return iif(0d < r, n ^ (1d / r), 1d)
     end function
     
 ' math.phi ---------------------------------------------------------------------
+    
+    ' Returns the angle between the vector (x, y) and the positive x axis. See
+    ' vec2.phi, pvec.phi, vec3.phi, cvec.phi, svec.phi, and vec4.phi, who do
+    ' basically the same.
     
     function phi (byref x as const real, byref y as const real) as real
         dim as real a => acos(x / hypot(x, y))
@@ -318,7 +515,9 @@ namespace math
     
 ' math. sec --------------------------------------------------------------------
     
+    ' Returns the secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
+    
     function sec (byref t as const real) as real
         dim as real c => cos(t)
         return iif(c, 1d / c, 0d)
@@ -326,27 +525,55 @@ namespace math
     
 ' math. sech -------------------------------------------------------------------
     
+    ' NEEDS CHECKING
+    
+    ' Returns the hyperbolic secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
-    function sech (byref t as const real) as real
-        return (2d * exp(t)) / (exp(2d * t) + 1d)
-    end function
+    
+    'function sech (byref t as const real) as real
+    '    return (2d * exp(t)) / (exp(2d * t) + 1d)
+    'end function
     
 ' math.sinh --------------------------------------------------------------------
     
+    ' Returns the hyperbolic sine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
+    
     function sinh (byref t as const real) as real
         return (exp(t) - exp(-t)) * 0.5d
     end function    
     
 ' math.tanh --------------------------------------------------------------------
     
+    ' Returns the hyperbolic tangent of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
-    function tanh (byref n as const real) as real
-        dim as real e => exp(2d * n)
+    
+    function tanh (byref t as const real) as real
+        dim as real e => exp(2d * t)
         return (e - 1d) / (e + 1d)
     end function
     
+' math.vcos --------------------------------------------------------------------
+    
+    ' Returns the vercosine of t.
+    ' Cf. https://mathworld.wolfram.com/Vercosine.html
+    
+    function vcos (byref t as const real) as real
+        return 1d + cos(t)
+    end function
+    
+' math.vsin --------------------------------------------------------------------
+    
+    ' Returns the versine of t.
+    ' Cf. https://en.wikipedia.org/wiki/Versine
+    
+    function vsin (byref t as const real) as real
+        return 1d - cos(t)
+    end function
+    
 ' math.wrap --------------------------------------------------------------------
+    
+    ' Wraps n either in the [0, 1], [0, nMax], or [nMin, nMax] range.
     
     function wrap overload (byref n as const real) as real
         return iif(n < 0d, 1.0 + frac(n), frac(n))

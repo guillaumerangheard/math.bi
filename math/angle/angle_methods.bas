@@ -8,6 +8,74 @@ namespace math
         return iif(u1 <> u2, n / angles(u1) * angles(u2), n)
     end function
     
+' math.angle.fromChord ---------------------------------------------------------
+    
+    function angle.fromChord (byref n as const real) as angle
+        return angle(2d * asin(n * 0.5d), angleUnit.radian)
+    end function
+    
+' math.angle.fromCosine --------------------------------------------------------
+    
+    #macro a_f(_a_,_b_)
+    function angle.from##_a_ (byref n as const real) as angle
+        return angle(_b_##(n), angleUnit.radian)
+    end function
+    #endmacro
+    
+    a_f(Cosine,acos)
+    
+' math.angle.fromCosecant ------------------------------------------------------
+    
+    a_f(Cosecant,acsec)
+    
+' math.angle.fromCotangent -----------------------------------------------------
+    
+    a_f(Cotangent,acot)
+    
+' math.angle.fromCovercosine ---------------------------------------------------
+    
+    function angle.fromCovercosine (byref n as const real) as angle
+        return angle(asin(n - 1d), angleUnit.radian)
+    end function
+    
+' math.angle.fromCoversine -----------------------------------------------------
+    
+    function angle.fromCoversine (byref n as const real) as angle
+        return angle(asin(1d - n), angleUnit.radian)
+    end function
+    
+' math.angle.fromHavercosine ---------------------------------------------------
+    
+    function angle.fromHavercosine (byref n as const real) as angle
+        return angle(acos(2d * n + 1d), angleUnit.radian)
+    end function
+    
+' math.angle.fromHaversine -----------------------------------------------------
+    
+    function angle.fromHaversine (byref n as const real) as angle
+        return angle(acos(1d - 2d * n), angleUnit.radian)
+    end function
+    
+' math.angle.fromSecant --------------------------------------------------------
+    
+    a_f(Secant,sec)
+    
+' math.angle.fromSine ----------------------------------------------------------
+    
+    a_f(Sine,asin)
+    
+' math.angle.fromTangent -------------------------------------------------------
+    
+    a_f(Tangent,atn)
+    
+    #undef a_f
+    
+' math.angle.fromVersine -------------------------------------------------------
+    
+    function angle.fromVersine (byref n as const real) as angle
+        return angle(acos(1d - n), angleUnit.radian)
+    end function
+    
 ' math.angle.isAcute -----------------------------------------------------------
     
     function angle.isAcute overload () as boolean
@@ -87,12 +155,6 @@ namespace math
     
     function angle.isStraight (byref t as const real) as boolean
         return iif(abs(0.25d - this._v) <= abs(t), true, false)
-    end function
-    
-' math.angle.ntant -------------------------------------------------------------
-    
-    function angle.ntant (byref n as const integer) as real
-        return iif(2% <= n, iif(1d = this._v, 0d, this._v) * cdbl(n), -1d)
     end function
     
 ' math.angle.random ------------------------------------------------------------
