@@ -31,7 +31,7 @@ namespace math
     
 ' math.acrd --------------------------------------------------------------------
     
-    ' Returns the "arcchord" of "inverse chord" of n.
+    ' Returns the inverse chord of n.
     
     function acrd (byref n as const real) as real
         return 2d * asin(n * 0.5d)
@@ -59,7 +59,7 @@ namespace math
     
 ' math.acvcos ------------------------------------------------------------------
     
-    ' Returns the arccovercosine of n.
+    ' Returns the inverse covercosine of n.
     
     function acvcos (byref n as const real) as real
         return asin(n - 1d)
@@ -67,15 +67,47 @@ namespace math
     
 ' math.acvsin ------------------------------------------------------------------
     
-    ' Returns the arccoversine of n.
+    ' Returns the inverse coversine of n.
     
     function acvsin (byref n as const real) as real
         return asin(1d - n)
     end function
     
+' math.aexcsec -----------------------------------------------------------------
+    
+    ' Returns the inverse excosecant of n.
+    
+    function aexcsec (byref n as const real) as real
+        return asin(1d / (n + 1d))
+    end function
+    
+' math.aexsec ------------------------------------------------------------------
+    
+    ' Returns the inverse exsecant of n.
+    
+    function aexsec (byref n as const real) as real
+        return acos(1d / (n + 1d))
+    end function
+    
+' math.ahcvcos -----------------------------------------------------------------
+    
+    ' Returns the inverse hacovercosine of n.
+    
+    function ahcvcos (byref n as const real) as real
+        return asin(2d * n - 1d)
+    end function
+    
+' math.ahcvsin -----------------------------------------------------------------
+    
+    ' Returns the inverse hacoversine of n.
+    
+    function ahcvsin (byref n as const real) as real
+        return asin(1d - 2d * n)
+    end function
+    
 ' math.ahvcos ------------------------------------------------------------------
     
-    ' Returns the archavercosine of n.
+    ' Returns the inverse havercosine of n.
     
     function ahvcos (byref n as const real) as real
         return acos(2d * n + 1d)
@@ -83,7 +115,7 @@ namespace math
     
 ' math.ahvsin ------------------------------------------------------------------
     
-    ' Returns the archaversine of n.
+    ' Returns the inverse haversine of n.
     
     function ahvsin (byref n as const real) as real
         return acos(1d - 2d * n)
@@ -118,6 +150,14 @@ namespace math
     
     function atanh (byref n as const real) as real
         return log((1d + n) / (1d - n)) * 0.5d
+    end function
+    
+' math.avcos -------------------------------------------------------------------
+    
+    ' Returns the inverse vercosine of n.
+    
+    function avcos (byref n as const real) as real
+        return acos(n - 1d)
     end function
     
 ' math.avg ---------------------------------------------------------------------
@@ -155,7 +195,7 @@ namespace math
     
 ' math.avsin -------------------------------------------------------------------
     
-    ' Returns the arcversine of n.
+    ' Returns the inverse versine of n.
     
     function avsin (byref n as const real) as real
         return acos(1d - n)
@@ -281,6 +321,26 @@ namespace math
     
     function eq overload (byref n1 as const real, byref n2 as const real, byref t as const real => epsilon) as boolean
         return iif(abs(n1 - n2) <= abs(t), true, false)
+    end function
+    
+' math.excsec ------------------------------------------------------------------
+    
+    ' Returns the excosecant of t.
+    ' Cf. https://mathworld.wolfram.com/Excosecant.html
+    
+    function excsec (byref t as const real) as real
+        dim as real s => sin(t)
+        return iif(s, 1d / s - 1d, 0d)
+    end function
+    
+' math.exsec -------------------------------------------------------------------
+    
+    ' Returns the exsecant of t.
+    ' Cf. https://en.wikipedia.org/wiki/Exsecant
+    
+    function exsec (byref t as const real) as real
+        dim as real c => cos(t)
+        return iif(c, 1d / c - 1d, 0d)
     end function
     
 ' math.floor -------------------------------------------------------------------
@@ -513,7 +573,7 @@ namespace math
     
     #endif
     
-' math. sec --------------------------------------------------------------------
+' math.sec ---------------------------------------------------------------------
     
     ' Returns the secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
@@ -523,7 +583,7 @@ namespace math
         return iif(c, 1d / c, 0d)
     end function
     
-' math. sech -------------------------------------------------------------------
+' math.sech --------------------------------------------------------------------
     
     ' NEEDS CHECKING
     

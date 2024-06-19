@@ -44,6 +44,30 @@ namespace math
         return angle(asin(1d - n), angleUnit.radian)
     end function
     
+' math.angle.fromExcosecant ----------------------------------------------------
+    
+    function angle.fromExcosecant (byref n as const real) as angle
+        return angle(asin(1d / (n + 1d)), angleUnit.radian)
+    end function
+    
+' math.angle.fromExsecant ------------------------------------------------------
+    
+    function angle.fromExsecant (byref n as const real) as angle
+        return angle(acos(1d / (n + 1d)), angleUnit.radian)
+    end function
+    
+' math.angle.fromHacovercosine -------------------------------------------------
+    
+    function angle.fromHacovercosine (byref n as const real) as angle
+        return angle(asin(2d * n - 1d), angleUnit.radian)
+    end function
+    
+' math.angle.fromHacoversine ---------------------------------------------------
+    
+    function angle.fromHacoversine (byref n as const real) as angle
+        return angle(asin(1d - 2d * n), angleUnit.radian)
+    end function
+    
 ' math.angle.fromHavercosine ---------------------------------------------------
     
     function angle.fromHavercosine (byref n as const real) as angle
@@ -69,6 +93,12 @@ namespace math
     a_f(Tangent,atn)
     
     #undef a_f
+    
+' math.angle.fromVercosine -----------------------------------------------------
+    
+    function angle.fromVercosine (byref n as const real) as angle
+        return angle(acos(n - 1d), angleUnit.radian)
+    end function
     
 ' math.angle.fromVersine -------------------------------------------------------
     

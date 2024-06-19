@@ -8,12 +8,17 @@
         'declare function acsech            (byref as const real) as real
         declare function acvcos            (byref as const real) as real
         declare function acvsin            (byref as const real) as real
+        declare function aexcsec           (byref as const real) as real
+        declare function aexsec            (byref as const real) as real
+        declare function ahcvcos           (byref as const real) as real
+        declare function ahcvsin           (byref as const real) as real
         declare function ahvcos            (byref as const real) as real
         declare function ahvsin            (byref as const real) as real
         declare function asec              (byref as const real) as real
         'declare function asech             (byref as const real) as real
         declare function asinh             (byref as const real) as real
         declare function atanh             (byref as const real) as real
+        declare function avcos             (byref as const real) as real
         declare function avg      overload (byref as const real, byref as const real)                                           as real
         declare function avg               (byref as const real, byref as const real, byref as const real)                      as real
         declare function avg               (byref as const real, byref as const real, byref as const real, byref as const real) as real
@@ -33,6 +38,8 @@
         declare function cvcos             (byref as const real) as real
         declare function cvsin             (byref as const real) as real
         declare function eq       overload (byref as const real, byref as const real, byref as const real => epsilon) as boolean
+        declare function excsec            (byref as const real) as real
+        declare function exsec             (byref as const real) as real
         declare function floor             (byref as const real) as real
         declare function hcvcos            (byref as const real) as real
         declare function hcvsin            (byref as const real) as real
