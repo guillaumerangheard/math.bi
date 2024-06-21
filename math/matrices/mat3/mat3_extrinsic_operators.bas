@@ -70,15 +70,15 @@ namespace math
     end operator
     #else
     operator * (byref m as const mat3, byref v as const cvec) as cvec
-        dim as real x => v.x, v.y, i, j, k
+        dim as real x => v.x, y => v.y, i, j, k
         dim as real const ptr p => m.data
         i => p[0%] * x + p[1%] * y + p[2%] * v.z
         j => p[3%] * x + p[4%] * y + p[5%] * v.z
         k => p[6%] * x + p[7%] * y + p[8%] * v.z
         #ifdef _MATH_ANGLE_BI_
-        return cvec(math.phi(i, j), angleUnit.radian, hypot(i, j), k)
+        return cvec(math.theta(i, j), angleUnit.radian, hypot(i, j), k)
         #else
-        return cvec(math.phi(i, j), hypot(i, j), k)
+        return cvec(math.theta(i, j), hypot(i, j), k)
         #endif
     end operator
     #endif

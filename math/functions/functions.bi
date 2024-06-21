@@ -37,7 +37,7 @@
         declare function cmp      overload (byref as const real, byref as const real, byref as const real => epsilon) as boolean
         trig_f(cosh)
         trig_f(cot)
-        'trig_f(coth)
+        trig_f(coth)
         trig_f(crd)
         trig_f(csc)
         trig_f(csch)
@@ -73,7 +73,7 @@
         declare function random            (byref as const real)                      as real
         declare function random            (byref as const real, byref as const real) as real
         trig_f(sec)
-        'trig_f(sech)
+        trig_f(sech)
         trig_f(sinh)
         trig_f(tanh)
         declare function theta             (byref as const real, byref as const real) as real

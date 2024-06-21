@@ -64,7 +64,6 @@
             declare function cmp  (byref as const real   , byref as const complex, byref as const real => epsilon) as boolean
             declare function cmp  (byref as const complex, byref as const real   , byref as const real => epsilon) as boolean
             declare function cmp  (byref as const complex, byref as const complex, byref as const real => epsilon) as boolean
-            'declare function cos  (byref as const complex) as complex
             declare function cosh (byref as const complex) as complex
             declare function cot  (byref as const complex) as complex
             declare function coth (byref as const complex) as complex
@@ -87,9 +86,7 @@
             #endif
             declare function sec  (byref as const complex) as complex
             declare function sech (byref as const complex) as complex
-            'declare function sin  (byref as const complex) as complex
             declare function sinh (byref as const complex) as complex
-            'declare function tan  (byref as const complex) as complex
             declare function tanh (byref as const complex) as complex
         end namespace
         

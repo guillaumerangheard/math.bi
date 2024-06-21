@@ -6,8 +6,8 @@
                          versionMinor  => 4%
         const as string  versionString => "math v" & versionMajor & "." & versionMinor
         type real as double
-        #define m_crl cdbl
     end namespace
+    #define m_crl cdbl
     #include "constants.bi"
     #include "functions/functions.bi"
     #include "complex/complex.bi"

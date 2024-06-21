@@ -29,7 +29,7 @@ namespace math
 ' math.cvec.rho ----------------------------------------------------------------
     
     property cvec.rho () as real
-        return this_r
+        return this._r
     end property
     
     property cvec.rho (byref n as const real)
@@ -52,22 +52,11 @@ namespace math
 ' math.cvec.theta --------------------------------------------------------------
     
     property cvec.theta () as real
-        if this.x then
-            if this.y then
-                dim as real a => acos(x / hypot(this.x, this.y))
-                return iif(0d < this.y, two_pi - a, a)
-            end if
-            return iif(0d <= this.x, 0d, pi)
-        end if
-        return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
+        return this._a
     end property
     
     property cvec.theta (byref n as const real)
-        dim as real h => hypot(this.x, this.y)
-        if h then
-            this.x =>  cos(n) * h
-            this.y => -sin(n) * h
-        end if
+        this._a => wrap(n, two_pi)
     end property
     
 ' math.cvec.x ------------------------------------------------------------------
@@ -78,24 +67,25 @@ namespace math
     
     property cvec.x (byref n as const real)
         dim as real j => -sin(this._a) * this._r
-        this._a => math.phi(n, j)
+        this._a => math.theta(n, j)
         this._r => hypot(n, j)
     end property
     
 ' math.cvec.xy -----------------------------------------------------------------
     
     property cvec.xy () as vec2
-        return vec2(cos(this._a * this._r, -sin(this._a) * this._r)
+        return vec2(cos(this._a) * this._r, _
+                   -sin(this._a) * this._r)
     end property
     
     property cvec.xy (byref v as const vec2)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.norm
     end property
     
     #ifdef _MATH_PVEC_BI_
     property cvec.xy (byref v as const pvec)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.rho
     end property
     #endif
@@ -108,7 +98,7 @@ namespace math
     
     property cvec.y (byref n as const real)
         dim as real i => cos(this._a) * this._r
-        this._a => math.phi(i, n)
+        this._a => math.theta(i, n)
         this._r => hypot(i, n)
     end property
     

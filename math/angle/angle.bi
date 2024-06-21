@@ -99,7 +99,6 @@
             declare function cmp    (byref as const real , byref as const angle, byref as const real => epsilon) as boolean
             declare function cmp    (byref as const angle, byref as const real , byref as const real => epsilon) as boolean
             declare function cmp    (byref as const angle, byref as const angle, byref as const real => epsilon) as boolean
-            'declare function cos    (byref as const angle) as real
             declare function cosh   (byref as const angle) as real
             declare function cot    (byref as const angle) as real
             declare function coth   (byref as const angle) as real
@@ -108,7 +107,6 @@
             declare function csch   (byref as const angle) as real
             declare function cvcos  (byref as const angle) as real
             declare function cvsin  (byref as const angle) as real
-            
             declare function excsc  (byref as const angle) as real
             declare function exsec  (byref as const angle) as real
             declare function hcvcos (byref as const angle) as real
@@ -122,9 +120,7 @@
             #endif
             declare function sec    (byref as const angle) as real
             declare function sech   (byref as const angle) as real
-            'declare function sin    (byref as const angle) as real
             declare function sinh   (byref as const angle) as real
-            'declare function tan    (byref as const angle) as real
             declare function tanh   (byref as const angle) as real
             declare function vcos   (byref as const angle) as real
             declare function vsin   (byref as const angle) as real

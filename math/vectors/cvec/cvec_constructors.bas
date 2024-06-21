@@ -32,10 +32,10 @@ namespace math
     
     constructor cvec (byref a as const angle, byref n1 as const real, byref n2 as const real => 0d)
         if 0d <= n2 then
-            this._a => a.phi
+            this._a => a.theta
             this._r => n1
         else
-            this._a => wrap(a.phi + pi, two_pi)
+            this._a => wrap(a.theta + pi, two_pi)
             this._r => -n1
         end if
         this.z => n2
@@ -57,21 +57,21 @@ namespace math
     #endif
     
     constructor cvec (byref v as const vec2, byref n as const real => 0d)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.norm
         this.z  => n
     end constructor
     
     #ifdef _MATH_PVEC_BI_
     constructor cvec (byref v as const pvec, byref n as const real => 0d)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.rho
         this.z  => n
     end constructor
     #endif
     
     constructor cvec (byref v as const vec3)
-        this._a => v.phi
+        this._a => v.theta
         this._r => hypot(v.x, v.y)
         this.z  => v.z
     end constructor

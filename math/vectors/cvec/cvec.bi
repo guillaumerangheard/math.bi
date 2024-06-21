@@ -29,6 +29,7 @@
                     declare       operator /=   (byref as const real)
                     declare       operator /=   (byref as const vec3)
                     declare       operator /=   (byref as const cvec)
+                    declare const operator cast () as vec3
                     declare const operator cast () as string
                     declare       operator let  (byref as const vec2)
                     #ifdef _MATH_PVEC_BI_
