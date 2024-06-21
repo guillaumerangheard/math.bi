@@ -2,6 +2,16 @@ namespace math
     
 ' functions ====================================================================
     
+' math.eq ----------------------------------------------------------------------
+    
+    function cmp (byref v1 as const vec4, byref v2 as const vec4, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(v1.x - v2.x) <= t) and _
+                   (abs(v1.y - v2.y) <= t) and _
+                   (abs(v1.z - v2.z) <= t) and _
+                   (abs(v1.w - v2.w) <= t), true, false)
+    end function
+    
 ' math.dot ---------------------------------------------------------------------
     
     function dot (byref v1 as const vec4, byref v2 as const vec4) as real
@@ -10,17 +20,7 @@ namespace math
                v1.z * v2.z + _
                v1.w * v2.w
     end function
-    
-' math.eq ----------------------------------------------------------------------
-    
-    function eq (byref v1 as const vec4, byref v2 as const vec4, byref s as const real => epsilon) as boolean
-        dim as real t => abs(s)
-        return iif((abs(v1.x - v2.x) <= t) and _
-                   (abs(v1.y - v2.y) <= t) and _
-                   (abs(v1.z - v2.z) <= t) and _
-                   (abs(v1.w - v2.w) <= t), true, false)
-    end function
-    
+        
 ' math.lerp --------------------------------------------------------------------
     
     function lerp (byref v1 as const vec4, byref v2 as const vec4, byref s as const real) as vec4

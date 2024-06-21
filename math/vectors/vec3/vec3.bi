@@ -30,9 +30,9 @@
                 declare const property MaNorm () as real
                 declare const property norm   () as real
                 declare       property norm   (byref as const real)
-                declare const property phi    () as real
-                declare       property phi    (byref as const real)
                 declare const property sqNorm () as real
+                declare const property theta  () as real
+                declare       property theta  (byref as const real)
                 declare const property xy     () as vec2
                 declare       property xy     (byref as const vec2)
                 #ifdef _MATH_PVEC_BI_
@@ -62,9 +62,9 @@
             declare operator =  (byref as const vec3, byref as const vec3) as boolean
             declare operator <> (byref as const vec3, byref as const vec3) as boolean
             
+            declare function cmp   (byref as const vec3, byref as const vec3, byref as const real => epsilon) as boolean
             declare function cross (byref as const vec3, byref as const vec3) as vec3
             declare function dot   (byref as const vec3, byref as const vec3) as real
-            declare function eq    (byref as const vec3, byref as const vec3, byref as const real => epsilon) as boolean
             declare function lerp  (byref as const vec3, byref as const vec3, byref as const real)                                 as vec3
             #ifdef _EASING_BI_
             declare function lerp  (byref as const vec3, byref as const vec3, byref as const real,       as const easing.equation) as vec3

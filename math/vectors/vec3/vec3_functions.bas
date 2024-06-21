@@ -2,6 +2,13 @@ namespace math
     
 ' functions  ===================================================================
     
+' math.cmp ---------------------------------------------------------------------
+    
+    function cmp (byref v1 as const vec3, byref v2 as const vec3, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.y - v2.y) <= t) and (abs(v1.z - v2.z) <= t), true, false)
+    end function
+    
 ' math.cross -------------------------------------------------------------------
     
     function cross (byref v1 as const vec3, byref v2 as const vec3) as vec3
@@ -14,13 +21,6 @@ namespace math
     
     function dot (byref v1 as const vec3, byref v2 as const vec3) as real
         return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
-    end function
-    
-' math.eq ----------------------------------------------------------------------
-    
-    function eq (byref v1 as const vec3, byref v2 as const vec3, byref s as const real => epsilon) as boolean
-        dim as real t => abs(s)
-        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.y - v2.y) <= t) and (abs(v1.z - v2.z) <= t), true, false)
     end function
     
 ' math.lerp --------------------------------------------------------------------

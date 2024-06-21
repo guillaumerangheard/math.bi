@@ -15,7 +15,7 @@ namespace math
     end function
     
     function mat2.fromRotation (byref a as const angle) as mat2
-        dim as real t => a.phi, c => cos(t), s => sin(t)
+        dim as real t => a.theta, c => cos(t), s => sin(t)
         dim as mat2 r
         r._p[0%] => c : r._p[1%] => -s
         r._p[2%] => s : r._p[3%] =>  c

@@ -26,12 +26,48 @@ namespace math
         return sqr(i * i + j * j + this.z * this.z)
     end property
     
+' math.cvec.rho ----------------------------------------------------------------
+    
+    property cvec.rho () as real
+        return this_r
+    end property
+    
+    property cvec.rho (byref n as const real)
+        if 0d <= n then
+            this._r => n
+        else
+            this._a => wrap(this._r + pi, two_pi)
+            this._r => -n
+        end if
+    end property
+    
 ' math.cvec.sqNorm -------------------------------------------------------------
     
     property cvec.sqNorm () as real
         dim as real i =>  cos(this._a) * this._r, _
                     j => -sin(this._a) * this._r
         return i * i + j * j + this.z * this.z
+    end property
+    
+' math.cvec.theta --------------------------------------------------------------
+    
+    property cvec.theta () as real
+        if this.x then
+            if this.y then
+                dim as real a => acos(x / hypot(this.x, this.y))
+                return iif(0d < this.y, two_pi - a, a)
+            end if
+            return iif(0d <= this.x, 0d, pi)
+        end if
+        return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
+    end property
+    
+    property cvec.theta (byref n as const real)
+        dim as real h => hypot(this.x, this.y)
+        if h then
+            this.x =>  cos(n) * h
+            this.y => -sin(n) * h
+        end if
     end property
     
 ' math.cvec.x ------------------------------------------------------------------

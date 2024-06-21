@@ -58,7 +58,7 @@
             declare operator =  (byref as const quaternion, byref as const quaternion) as boolean
             declare operator <> (byref as const quaternion, byref as const quaternion) as boolean
             
-            declare function eq   (byref as const quaternion, byref as const quaternion, byref as const real => epsilon) as boolean
+            declare function cmp  (byref as const quaternion, byref as const quaternion, byref as const real => epsilon) as boolean
             declare function lerp (byref as const quaternion, byref as const quaternion, byref as const real) as quaternion
             #ifdef _EASING_BI_
             declare function lerp (byref as const quaternion, byref as const quaternion, byref as const real,       as const easing.equation) as quaternion

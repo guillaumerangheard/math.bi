@@ -32,16 +32,6 @@ namespace math
                abs(sin(this._a)) * this._r
     end property
     
-' math.pvec.phi ----------------------------------------------------------------
-    
-    property pvec.phi () as real
-        return this._a
-    end property
-    
-    property pvec.phi (byref n as const real)
-        this._a => wrap(n, two_pi)
-    end property
-    
 ' math.pvec.rho ----------------------------------------------------------------
     
     property pvec.rho () as real
@@ -61,6 +51,16 @@ namespace math
     
     property pvec.sqNorm () as real
         return this._r * this._r
+    end property
+    
+' math.pvec.theta ----------------------------------------------------------------
+    
+    property pvec.theta () as real
+        return this._a
+    end property
+    
+    property pvec.theta (byref n as const real)
+        this._a => wrap(n, two_pi)
     end property
     
 ' math.pvec.x ------------------------------------------------------------------

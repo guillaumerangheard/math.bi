@@ -1,6 +1,13 @@
 namespace math
     
 ' functions ====================================================================
+
+' math.cmp ---------------------------------------------------------------------
+    
+    function cmp (byref v1 as const vec2, byref v2 as const vec2, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.y - v2.y) <= t), true, false)
+    end function
     
 ' math.cross -------------------------------------------------------------------
     
@@ -13,13 +20,6 @@ namespace math
     
     function dot overload (byref v1 as const vec2, byref v2 as const vec2) as real
         return v1.x * v2.x + v1.y * v2.y
-    end function
-    
-' math.eq ----------------------------------------------------------------------
-    
-    function eq (byref v1 as const vec2, byref v2 as const vec2, byref s as const real => epsilon) as boolean
-        dim as real t => abs(s)
-        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.y - v2.y) <= t), true, false)
     end function
     
 ' math.lerp --------------------------------------------------------------------

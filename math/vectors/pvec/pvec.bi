@@ -40,11 +40,11 @@
                     #endif
                     declare const property ChNorm () as real
                     declare const property MaNorm () as real
-                    declare const property phi    () as real
-                    declare       property phi    (byref as const real)
                     declare const property rho    () as real
                     declare       property rho    (byref as const real)
                     declare const property sqNorm () as real
+                    declare const property theta  () as real
+                    declare       property theta  (byref as const real)
                     declare const property x      () as real
                     declare       property x      (byref as const real)
                     declare const property y      () as real
@@ -108,15 +108,15 @@
             declare operator =  (byref as const pvec, byref as const pvec) as boolean
             declare operator <> (byref as const pvec, byref as const pvec) as boolean
             
+            declare function eq    (byref as const vec2, byref as const pvec, byref as const real => epsilon) as boolean
+            declare function eq    (byref as const pvec, byref as const vec2, byref as const real => epsilon) as boolean
+            declare function eq    (byref as const pvec, byref as const pvec, byref as const real => epsilon) as boolean
             declare function cross (byref as const vec2, byref as const pvec) as real
             declare function cross (byref as const pvec, byref as const vec2) as real
             declare function cross (byref as const pvec, byref as const pvec) as real
             declare function dot   (byref as const vec2, byref as const pvec) as real
             declare function dot   (byref as const pvec, byref as const vec2) as real
             declare function dot   (byref as const pvec, byref as const pvec) as real
-            declare function eq    (byref as const vec2, byref as const pvec, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const pvec, byref as const vec2, byref as const real => epsilon) as boolean
-            declare function eq    (byref as const pvec, byref as const pvec, byref as const real => epsilon) as boolean
             declare function lerp  (byref as const vec2, byref as const pvec, byref as const real)                                 as pv_rt
             #ifdef _EASING_BI_
             declare function lerp  (byref as const vec2, byref as const pvec, byref as const real,       as const easing.equation) as pv_rt

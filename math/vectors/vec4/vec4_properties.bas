@@ -46,10 +46,6 @@ namespace math
         end if
     end property
     
-' math.vec4.phi ----------------------------------------------------------------
-    
-    
-    
 ' math.vec4.sqNorm -------------------------------------------------------------
     
     property vec4.sqNorm () as real
@@ -57,6 +53,27 @@ namespace math
                this.y * this.y + _
                this.z * this.z * _
                this.w * this.w
+    end property
+    
+' math.vec4.theta --------------------------------------------------------------
+    
+    property vec4.theta () as real
+        if this.x then
+            if this.y then
+                dim as real a => acos(x / hypot(this.x, this.y))
+                return iif(0d < this.y, two_pi - a, a)
+            end if
+            return iif(0d <= this.x, 0d, pi)
+        end if
+        return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
+    end property
+    
+    property vec4.theta (byref n as const real)
+        dim as real h => hypot(this.x, this.y)
+        if h then
+            this.x =>  cos(n) * h
+            this.y => -sin(n) * h
+        end if
     end property
     
 ' math.vec4.xy -----------------------------------------------------------------

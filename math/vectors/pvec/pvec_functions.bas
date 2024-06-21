@@ -1,7 +1,24 @@
 namespace math
     
 ' functions ====================================================================
+
+' math.cmp ---------------------------------------------------------------------
     
+    #macro pv_e(_t1_,_t2_)
+    function cmp (byref v1 as const _t1_, byref v2 as const _t2_, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.x - v2.x) <= t), true, false)
+    end function
+    #endmacro
+    pv_e(vec2,pvec)
+    pv_e(pvec,vec2)
+    #undef pv_e
+    
+    function cmp (byref v1 as const pvec, byref v2 as const pvec, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(v1.theta - v2.theta) <= t) and (abs(v1.rho - v2.rho) <= t), true, false)
+    end function
+
 ' math.cross -------------------------------------------------------------------
     
     #macro pv_c(_t1_,_t2_)
@@ -25,23 +42,6 @@ namespace math
     pv_d(pvec,vec2)
     pv_d(pvec,pvec)
     #undef pv_d
-    
-' math.eq ----------------------------------------------------------------------
-    
-    #macro pv_e(_t1_,_t2_)
-    function eq (byref v1 as const _t1_, byref v2 as const _t2_, byref s as const real => epsilon) as boolean
-        dim as real t => abs(s)
-        return iif((abs(v1.x - v2.x) <= t) and (abs(v1.x - v2.x) <= t), true, false)
-    end function
-    #endmacro
-    pv_e(vec2,pvec)
-    pv_e(pvec,vec2)
-    #undef pv_e
-    
-    function eq (byref v1 as const pvec, byref v2 as const pvec, byref s as const real => epsilon) as boolean
-        dim as real t => abs(s)
-        return iif((abs(v1.phi - v2.phi) <= t) and (abs(v1.rho - v2.rho) <= t), true, false)
-    end function
     
 ' math.lerp --------------------------------------------------------------------
     

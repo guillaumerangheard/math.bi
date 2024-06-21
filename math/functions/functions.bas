@@ -1,5 +1,11 @@
 namespace math
-
+    
+    #if defined(MATH_ANGLES) or defined(MATH_COMPLEX)
+        #define trig_f(_a_) function _a_ overload (byref t as const real) as real
+    #else
+        #define trig_f(_a_) function _a_ overload (byref t as const real) as real
+    #endif
+    
 ' math.acosh -------------------------------------------------------------------
     
     ' Returns the hyperbolic arccosine of n.
@@ -22,6 +28,7 @@ namespace math
 ' math.acoth -------------------------------------------------------------------
     
     ' NEEDS CHECKING
+    
     ' Returns the hyperbolic arccotangent of n.
     
     ' Cf. https://mathworld.wolfram.com/InverseHyperbolicCotangent.html
@@ -37,23 +44,23 @@ namespace math
         return 2d * asin(n * 0.5d)
     end function
     
-' math.acsec -------------------------------------------------------------------
+' math.acsc --------------------------------------------------------------------
     
     ' Returns the arccosecant of n.
     'Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    function acsec (byref n as const real) as real
+    function acsc (byref n as const real) as real
         return iif(n, asin(1d / n), 0d)
     end function
     
-' math.acsech ------------------------------------------------------------------
+' math.acsch -------------------------------------------------------------------
     
     ' NEEDS CHECKING
     
     ' Returns the hyperbolic arccosecant of n.
     ' Cf. https://proofwiki.org/wiki/Definition:Area_Hyperbolic_Cosecant
     
-    'function acsech (byref n as const real) as real
+    'function acsch (byref n as const real) as real
     '    return iif(n, log(1d / n + (sqr(n * n + 1d)) / abs(n)), 0d)
     'end function
     
@@ -73,11 +80,11 @@ namespace math
         return asin(1d - n)
     end function
     
-' math.aexcsec -----------------------------------------------------------------
+' math.aexcsc ------------------------------------------------------------------
     
     ' Returns the inverse excosecant of n.
     
-    function aexcsec (byref n as const real) as real
+    function aexcsc (byref n as const real) as real
         return asin(1d / (n + 1d))
     end function
     
@@ -234,12 +241,21 @@ namespace math
         return iif(n < nMin, nMin, iif(nMax < n, nMax, n))
     end function
     
+' math.cmp ---------------------------------------------------------------------
+    
+    ' Returns true if the absolute difference between n1 and n2 is lesser than
+    ' or equal to t.
+    
+    function cmp overload (byref n1 as const real, byref n2 as const real, byref t as const real => epsilon) as boolean
+        return iif(abs(n1 - n2) <= abs(t), true, false)
+    end function
+    
 ' math.cosh --------------------------------------------------------------------
     
     ' Returns the hyperbolic cosine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
     
-    function cosh (byref t as const real) as real
+    trig_f(cosh)
         return (exp(t) + exp(-t)) * 0.5d
     end function
     
@@ -248,60 +264,56 @@ namespace math
     ' Returns the cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    function cot (byref t as const real) as real
+    trig_f(cot)
         dim as real s => tan(t)
         return iif (s, 1d / s, 0d)
     end function
     
 ' math.coth --------------------------------------------------------------------
     
-    ' NEEDS CHECKING
-    
     ' Returns the hyperbolic cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    'function coth (byref t as const real) as real
-    '    dim as real e => exp(2d * t)
-    '    return (e + 1d) / (e - 1d)
-    'end function
+    trig_f(coth)
+        dim as real s => tanh(t)
+        return iif(s, 1d / s, 0d)
+    end function
     
 ' math.crd ---------------------------------------------------------------------
     
     ' Returns the chord of t.
     ' Cf. https://en.wikipedia.org/wiki/Chord_(geometry)#In_trigonometry
     
-    function crd (byref t as const real) as real
+    trig_f(crd)
         return 2d * sin(t * 0.5d)
     end function
     
-' math.csec --------------------------------------------------------------------
+' math.csc ---------------------------------------------------------------------
     
     ' Returns the cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    function csec (byref t as const real) as real
+    trig_f(csc)
         dim as real s => sin(t)
         return iif(s, 1d / s, 0d)
     end function
     
-' math.csech -------------------------------------------------------------------
-    
-    ' NEEDS CHECKING
+' math.csch --------------------------------------------------------------------
     
     ' Returns the hyperbolic cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    'function csech (byref t as const real) as real
-    '    dim as real s => sinh(t)
-    '    return iif(s, 1d / s, 0d)
-    'end function
+    trig_f(csch)
+        dim as real s => sinh(t)
+        return iif(s, 1d / s, 0d)
+    end function
     
 ' math.cvcos -------------------------------------------------------------------
     
     ' Returns the covercosine of t.
     ' Cf. https://mathworld.wolfram.com/Covercosine.html
     
-    function cvcos (byref t as const real) as real
+    trig_f(cvcos)
         return 1d + sin(t)
     end function
     
@@ -310,25 +322,16 @@ namespace math
     ' Returns the coversine of t.
     ' Cf. https://mathworld.wolfram.com/Coversine.html
     
-    function cvsin (byref t as const real) as real
+    trig_f(cvsin)
         return 1d - sin(t)
     end function
     
-' math.eq ----------------------------------------------------------------------
-    
-    ' Returns true if the absolute difference between n1 and n2 is lesser than
-    ' or equal to t.
-    
-    function eq overload (byref n1 as const real, byref n2 as const real, byref t as const real => epsilon) as boolean
-        return iif(abs(n1 - n2) <= abs(t), true, false)
-    end function
-    
-' math.excsec ------------------------------------------------------------------
+' math.excsc ------------------------------------------------------------------
     
     ' Returns the excosecant of t.
     ' Cf. https://mathworld.wolfram.com/Excosecant.html
     
-    function excsec (byref t as const real) as real
+    trig_f(excsc)
         dim as real s => sin(t)
         return iif(s, 1d / s - 1d, 0d)
     end function
@@ -338,7 +341,7 @@ namespace math
     ' Returns the exsecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Exsecant
     
-    function exsec (byref t as const real) as real
+    trig_f(exsec)
         dim as real c => cos(t)
         return iif(c, 1d / c - 1d, 0d)
     end function
@@ -357,7 +360,7 @@ namespace math
     ' Returns the hacovercosine of t.
     ' Cf. https://mathworld.wolfram.com/Hacovercosine.html
     
-    function hcvcos (byref t as const real) as real
+    trig_f(hcvcos)
         return (1d + sin(t)) * 0.5d
     end function
     
@@ -366,7 +369,7 @@ namespace math
     ' Returns the hacoversine of t.
     ' Cf. https://mathworld.wolfram.com/Hacoversine.html
     
-    function hcvsin (byref t as const real) as real
+    trig_f(hcvsin)
         return (1d - sin(t)) * 0.5d
     end function
     
@@ -375,7 +378,7 @@ namespace math
     ' Returns the havercosine of t.
     ' Cf. https://mathworld.wolfram.com/Havercosine.html
     
-    function hvcos (byref t as const real) as real
+    trig_f(hvcos)
         return (1d + cos(t)) * 0.5d
     end function
     
@@ -384,7 +387,7 @@ namespace math
     ' Returns the haversine of t.
     ' Cf. https://mathworld.wolfram.com/Haversine.html
     
-    function hvsin (byref t as const real) as real
+    trig_f(hvsin)
         return (1d - cos(t)) * 0.5d
     end function
     
@@ -515,19 +518,6 @@ namespace math
         return iif(0d < r, n ^ (1d / r), 1d)
     end function
     
-' math.phi ---------------------------------------------------------------------
-    
-    ' Returns the angle between the vector (x, y) and the positive x axis. See
-    ' vec2.phi, pvec.phi, vec3.phi, cvec.phi, svec.phi, and vec4.phi, who do
-    ' basically the same.
-    
-    function phi (byref x as const real, byref y as const real) as real
-        dim as real a => acos(x / hypot(x, y))
-        if 0d < y then a = two_pi - a
-        if a = two_pi then a => 0d
-        return a
-    end function
-    
 ' math.random ------------------------------------------------------------------
     
     #ifdef _RNG_BI_
@@ -578,28 +568,27 @@ namespace math
     ' Returns the secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    function sec (byref t as const real) as real
+    trig_f(sec)
         dim as real c => cos(t)
         return iif(c, 1d / c, 0d)
     end function
     
 ' math.sech --------------------------------------------------------------------
     
-    ' NEEDS CHECKING
-    
     ' Returns the hyperbolic secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    'function sech (byref t as const real) as real
-    '    return (2d * exp(t)) / (exp(2d * t) + 1d)
-    'end function
+    trig_f(sech)
+        dim as real c => cosh(t)
+        return iif(c, 1d / c, 0d)
+    end function
     
 ' math.sinh --------------------------------------------------------------------
     
     ' Returns the hyperbolic sine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
     
-    function sinh (byref t as const real) as real
+    trig_f(sinh)
         return (exp(t) - exp(-t)) * 0.5d
     end function    
     
@@ -608,9 +597,22 @@ namespace math
     ' Returns the hyperbolic tangent of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
     
-    function tanh (byref t as const real) as real
+    trig_f(tanh)
         dim as real e => exp(2d * t)
         return (e - 1d) / (e + 1d)
+    end function
+    
+' math.theta -------------------------------------------------------------------
+    
+    ' Returns the angle between the vector (x, y) and the positive x axis. See
+    ' vec2.theta, pvec.theta, vec3.theta, cvec.theta, svec.theta, and
+    ' vec4.theta, who do basically the same.
+    
+    function theta (byref x as const real, byref y as const real) as real
+        dim as real a => acos(x / hypot(x, y))
+        if 0d < y then a = two_pi - a
+        if a = two_pi then a => 0d
+        return a
     end function
     
 ' math.vcos --------------------------------------------------------------------
@@ -618,7 +620,7 @@ namespace math
     ' Returns the vercosine of t.
     ' Cf. https://mathworld.wolfram.com/Vercosine.html
     
-    function vcos (byref t as const real) as real
+    trig_f(vcos)
         return 1d + cos(t)
     end function
     
@@ -627,7 +629,7 @@ namespace math
     ' Returns the versine of t.
     ' Cf. https://en.wikipedia.org/wiki/Versine
     
-    function vsin (byref t as const real) as real
+    trig_f(vsin)
         return 1d - cos(t)
     end function
     
@@ -642,5 +644,7 @@ namespace math
     function wrap (byref n as const real, byref nMax as const real) as real
         return iif(nMax, wrap(n / nMax) * nMax, 0.0)
     end function
+    
+    #undef trig_f
     
 end namespace

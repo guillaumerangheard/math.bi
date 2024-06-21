@@ -27,10 +27,11 @@ namespace math
     end function
     
     function vec2.fromPolar (byref a as const angle, byref n as const real) as vec2
+        dim as real t => a.theta
         if 0d <= n then
-            return vec2(a.cosine * n, -a.sine * n)
+            return vec2(cos(t) * n, -sin(t) * n)
         else
-            dim as real t => a.phi + pi, r => -n
+            dim as real r => -n
             return vec2(cos(t) * r, -sin(t) * r)
         end if
     end function
@@ -119,7 +120,7 @@ namespace math
     end sub
     
     sub vec2.rotate (byref a as const math.angle)
-        dim as real c => a.cosine, s => a.sine, _
+        dim as real t => a.theta, c => cos(t), s => sin(t), _
                     i => c * this.x - s * this.y, _
                     j => s * this.x + c * this.y
         this.x => i

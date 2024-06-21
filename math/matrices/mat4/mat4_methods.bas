@@ -24,7 +24,7 @@ namespace math
     end function
     
     function mat4.fromAxisAngle (byref x as const real, byref y as const real, byref z as const real, byref a as const angle) as mat4
-        return mat4.fromAxisAngle(x, y, z, a.phi, angleUnit.radian)
+        return mat4.fromAxisAngle(x, y, z, a.theta, angleUnit.radian)
     end function
     
     #macro m4_faa(_t_)
@@ -33,7 +33,7 @@ namespace math
     end function
     
     function mat4.fromAxisAngle (byref v as const _t_, byref z as const real, byref a as const angle) as mat4
-        return mat4.fromAxisAngle(v.x, v.y, z, a.phi, angleUnit.radian)
+        return mat4.fromAxisAngle(v.x, v.y, z, a.theta, angleUnit.radian)
     end function
     #endmacro
     m4_faa(vec2)
@@ -48,7 +48,7 @@ namespace math
     end function
     
     function mat4.fromAxisAngle (byref v as const _t_, byref a as const angle) as mat4
-        return mat4.fromAxisAngle(v.x, v.y, v.z, a.phi, angleUnit.radian)
+        return mat4.fromAxisAngle(v.x, v.y, v.z, a.theta, angleUnit.radian)
     end function
     #endmacro
     m4_faa(vec3)

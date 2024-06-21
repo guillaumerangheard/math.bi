@@ -57,9 +57,15 @@
             declare operator <> (byref as const complex, byref as const real)    as boolean
             declare operator <> (byref as const complex, byref as const complex) as boolean
             
-            declare function eq   (byref as const real   , byref as const complex, byref as const real => epsilon) as boolean
-            declare function eq   (byref as const complex, byref as const real   , byref as const real => epsilon) as boolean
-            declare function eq   (byref as const complex, byref as const complex, byref as const real => epsilon) as boolean
+            declare function cmp  (byref as const real   , byref as const complex, byref as const real => epsilon) as boolean
+            declare function cmp  (byref as const complex, byref as const real   , byref as const real => epsilon) as boolean
+            declare function cmp  (byref as const complex, byref as const complex, byref as const real => epsilon) as boolean
+            'declare function cos  (byref as const complex) as complex
+            declare function cosh (byref as const complex) as complex
+            declare function cot  (byref as const complex) as complex
+            declare function coth (byref as const complex) as complex
+            declare function csc  (byref as const complex) as complex
+            declare function csch (byref as const complex) as complex
             declare function lerp (byref as const real   , byref as const complex, byref as const real) as complex
             #ifdef _EASING_BI_
             declare function lerp (byref as const real   , byref as const complex, byref as const real,       as const easing.equation) as complex
@@ -75,6 +81,12 @@
             declare function lerp (byref as const complex, byref as const complex, byref as const real,       as const easing.equation) as complex
             declare function lerp (byref as const complex, byref as const complex, byref as const real, byref as const easing.curve)    as complex
             #endif
+            declare function sec  (byref as const complex) as complex
+            declare function sech (byref as const complex) as complex
+            'declare function sin  (byref as const complex) as complex
+            declare function sinh (byref as const complex) as complex
+            'declare function tan  (byref as const complex) as complex
+            declare function tanh (byref as const complex) as complex
         end namespace
         #include "complex_constructors.bas"
         #include "complex_intrinsic_operators.bas"

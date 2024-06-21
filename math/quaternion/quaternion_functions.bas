@@ -2,9 +2,9 @@ namespace math
     
 ' functions ====================================================================
     
-' math.eq ----------------------------------------------------------------------
+' math.cmp ---------------------------------------------------------------------
     
-    function eq (byref q1 as const quaternion, byref q2 as const quaternion, byref s as const real => epsilon) as boolean
+    function cmp (byref q1 as const quaternion, byref q2 as const quaternion, byref s as const real => epsilon) as boolean
         dim as real t => abs(s)
         return iif((abs(q1.x - q2.x) <= t) and _
                    (abs(q1.y - q2.y) <= t) and _

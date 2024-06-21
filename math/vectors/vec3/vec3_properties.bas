@@ -35,9 +35,15 @@ namespace math
         end if
     end property
     
-' math.vec3.phi ----------------------------------------------------------------
+' math.vec3.sqNorm -------------------------------------------------------------
     
-    property vec3.phi () as real
+    property vec3.sqNorm () as real
+        return this.x * this.x + this.y * this.y + this.z * this.z
+    end property
+    
+' math.vec3.theta --------------------------------------------------------------
+    
+    property vec3.theta () as real
         if this.x then
             if this.y then
                 dim as real a => acos(x / hypot(this.x, this.y))
@@ -48,18 +54,12 @@ namespace math
         return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
     end property
     
-    property vec3.phi (byref n as const real)
+    property vec3.theta (byref n as const real)
         dim as real h => hypot(this.x, this.y)
         if h then
             this.x =>  cos(n) * h
             this.y => -sin(n) * h
         end if
-    end property
-    
-' math.vec3.sqNorm -------------------------------------------------------------
-    
-    property vec3.sqNorm () as real
-        return this.x * this.x + this.y * this.y + this.z * this.z
     end property
     
 ' math.vec3.xy -----------------------------------------------------------------

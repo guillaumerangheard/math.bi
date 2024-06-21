@@ -22,9 +22,9 @@
                 declare const property MaNorm () as real
                 declare const property norm   () as real
                 declare       property norm   (byref as const real)
-                declare const property phi    () as real
-                declare       property phi    (byref as const real)
                 declare const property sqNorm () as real
+                declare const property theta  () as real
+                declare       property theta  (byref as const real)
                 
                 #ifdef _MATH_ANGLE_BI_
                 declare static function fromPolar overload (byref as const real                          , byref as const real) as vec2
@@ -65,9 +65,9 @@
             declare operator =  (byref as const vec2 , byref as const vec2)  as boolean
             declare operator <> (byref as const vec2 , byref as const vec2)  as boolean
             
+            declare function cmp   (byref as const vec2, byref as const vec2, byref as const real => epsilon) as boolean
             declare function cross (byref as const vec2, byref as const vec2) as real
             declare function dot   (byref as const vec2, byref as const vec2) as real
-            declare function eq    (byref as const vec2, byref as const vec2, byref as const real => epsilon) as boolean
             declare function lerp  (byref as const vec2, byref as const vec2, byref as const real)                                 as vec2
             #ifdef _EASING_BI_
             declare function lerp  (byref as const vec2, byref as const vec2, byref as const real,       as const easing.equation) as vec2
