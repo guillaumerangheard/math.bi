@@ -79,9 +79,9 @@ namespace math
     function lerp (byref v1 as const _t1_, byref v2 as const _t2_, byref s as const real) as pvec
         dim as real t => clamp(s), u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.##_p1_ * u + v2.##_p2_ * t)
         #endif
     end function
     
@@ -91,9 +91,9 @@ namespace math
         if e then t => e(t)
         u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.##_p1_ * u + v2.##_p2_ * t)
         #endif
     end function
     
@@ -102,9 +102,9 @@ namespace math
         t => c.compute(t)
         u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.##_p1_ * u + v2.##_p2_ * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.##_p1_ * u + v2.##_p2_ * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.##_p1_ * u + v2.##_p2_ * t)
         #endif
     end function
     #endif
@@ -118,9 +118,9 @@ namespace math
     function lerp (byref v1 as const pvec, byref v2 as const pvec, byref s as const real) as pvec
         dim as real t => clamp(t), u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.rho * u + v2.rho * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.rho * u + v2.rho * t)
         #endif
     end function
     

@@ -69,9 +69,9 @@ namespace math
         i => p[0%] * x + p[1%] * y
         j => p[2%] * x + p[3%] * y
         #ifdef _MATH_ANGLE_BI_
-        return pvec(math.phi(i, j), angleUnit.radian, hypot(i, j))
+        return pvec(math.theta(i, j), angleUnit.radian, hypot(i, j))
         #else
-        return pvec(math.phi(i, j), hypot(i, j))
+        return pvec(math.theta(i, j), hypot(i, j))
         #endif
     end operator
     #endif

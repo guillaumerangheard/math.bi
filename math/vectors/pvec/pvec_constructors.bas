@@ -13,7 +13,7 @@ namespace math
     end constructor
     
     constructor pvec (byref a as const angle)
-        this._a => a.phi
+        this._a => a.theta
     end constructor
     
     constructor pvec (byref n1 as const real, byref n2 as const real)
@@ -38,10 +38,10 @@ namespace math
     
     constructor pvec (byref a as const angle, byref n as const real)
         if 0d <= n then
-            this._a => a.phi
+            this._a => a.theta
             this._r => n
         else
-            this._a => wrap(a.phi + pi, two_pi)
+            this._a => wrap(a.theta + pi, two_pi)
             this._r => -n
         end if
     end constructor
@@ -65,7 +65,7 @@ namespace math
     #endif
     
     constructor pvec (byref v as const vec2)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.norm
     end constructor
     

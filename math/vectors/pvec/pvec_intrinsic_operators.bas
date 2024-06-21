@@ -8,7 +8,7 @@ namespace math
     operator pvec.##_o_##= (byref v as const vec2)
         dim as real i =>  cos(this._a) * this._r _o_ v.x, _
                     j => -sin(this._a) * this._r _o_ v.y
-        this._a => math.phi(i, j)
+        this._a => math.theta(i, j)
         this._r => math.hypot(i, j)
     end operator
     #endmacro
@@ -17,7 +17,7 @@ namespace math
     operator pvec.##_o1_##= (byref v as const pvec)
         dim as real i =>  cos(this._a) * this._r _o1_ cos(v._a) * v._r, _
                     j => -sin(this._a) * this._r _o2_ sin(v._a) * v._r
-        this._a => math.phi(i, j)
+        this._a => math.theta(i, j)
         this._r => math.hypot(i, j)
     end operator
     #endmacro
@@ -48,7 +48,7 @@ namespace math
     operator pvec.*= (byref v as const pvec)
         dim as real i =>  cos(this._a) * this._r *  cos(v._a) * v._r, _
                     j => -sin(this._a) * this._r * -sin(v._a) * v._r
-        this._a => math.phi(i, j)
+        this._a => math.theta(i, j)
         this._r => math.hypot(i, j)
     end operator
     
@@ -71,7 +71,7 @@ namespace math
             if v.y then
                 dim as real i =>  (cos(this._a) * this._r) / v.x, _
                             j => -(sin(this._a) * this._r) / v.y
-                this._a => math.phi(i, j)
+                this._a => math.theta(i, j)
                 this._r => math.hypot(i, j)
             else
                 this._r => (cos(this._a) * this._r) / v.x
@@ -95,7 +95,7 @@ namespace math
             if j then
                 dim as real k =>  (cos(this._a) * this._r) / i, _
                             l => -(sin(this._a) * this._r) / j
-                this._a => math.phi(k, l)
+                this._a => math.theta(k, l)
                 this._r => math.hypot(k, l)
             else
                 this._r => (cos(this._a) * this._r) / i
@@ -130,7 +130,7 @@ namespace math
 ' math.pvec.let ----------------------------------------------------------------
     
     operator pvec.let (byref v as const vec2)
-        this._a => v.phi
+        this._a => v.theta
         this._r => v.norm
     end operator
     

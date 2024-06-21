@@ -22,18 +22,18 @@ namespace math
     operator _o_ (byref v1 as const vec2, byref v2 as const pvec) as pvec
         dim as real i => v1.x _o_ v2.x, j => v1.y _o_ v2.y
         #ifdef _MATH_ANGLE_BI_
-        return pvec(math.phi(i, j), angleUnit.radian, math.hypot(i, j))
+        return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
         #else
-        return pvec(math.phi(i, j), math.hypot(i, j))
+        return pvec(math.theta(i, j), math.hypot(i, j))
         #endif
     end operator
     
     operator _o_ (byref v1 as const pvec, byref v2 as const vec2) as pvec
         dim as real i => v1.x _o_ v2.x, j => v1.y _o_ v2.y
         #ifdef _MATH_ANGLE_BI_
-        return pvec(math.phi(i, j), angleUnit.radian, math.hypot(i, j))
+        return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
         #else
-        return pvec(math.phi(i, j), math.hypot(i, j))
+        return pvec(math.theta(i, j), math.hypot(i, j))
         #endif
     end operator
     #endmacro
@@ -44,9 +44,9 @@ namespace math
     operator _o_ (byref v1 as const pvec, byref v2 as const pvec) as pvec
         dim as real i => v1.x _o_ v2.x, j => v1.y _o_ v2.y
         #ifdef _MATH_ANGLE_BI_
-        return pvec(math.phi(i, j), angleUnit.radian, math.hypot(i, j))
+        return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
         #else
-        return pvec(math.phi(i, j), math.hypot(i, j))
+        return pvec(math.theta(i, j), math.hypot(i, j))
         #endif
     end operator
     #endmacro
@@ -64,15 +64,15 @@ namespace math
     operator * (byref v as const pvec, byref n as const real) as pvec
         if 0d < n then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi, angleUnit.radian, v.rho * n)
+            return pvec(v.theta, angleUnit.radian, v.rho * n)
             #else
-            return pvec(v.phi, v.rho * n)
+            return pvec(v.theta, v.rho * n)
             #endif
         elseif n < 0d then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi + pi, angleUnit.radian, v.rho * -n)
+            return pvec(v.theta + pi, angleUnit.radian, v.rho * -n)
             #else
-            return pvec(v.phi + pi, v.rho * -n)
+            return pvec(v.theta + pi, v.rho * -n)
             #endif
         end if
         return pvec()
@@ -81,15 +81,15 @@ namespace math
     operator * (byref n as const real, byref v as const pvec) as pvec
         if 0d < n then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi, angleUnit.radian, n * v.rho)
+            return pvec(v.theta, angleUnit.radian, n * v.rho)
             #else
-            return pvec(v.phi, n * v.rho)
+            return pvec(v.theta, n * v.rho)
             #endif
         elseif n < 0d then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi + pi, angleUnit.radian, n * v.rho)
+            return pvec(v.theta + pi, angleUnit.radian, n * v.rho)
             #else
-            return pvec(v.phi + pi, n * v.rho)
+            return pvec(v.theta + pi, n * v.rho)
             #endif
         end if
         return pvec()
@@ -104,15 +104,15 @@ namespace math
     operator / (byref v as const pvec, byref n as const real) as pvec
         if 0d < n then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi, angleUnit.radian, v.rho / n)
+            return pvec(v.theta, angleUnit.radian, v.rho / n)
             #else
-            return pvec(v.phi, v.rho / n)
+            return pvec(v.theta, v.rho / n)
             #endif
         elseif n < 0d then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.phi + pi, angleUnit.radian, v.rho / -n)
+            return pvec(v.theta + pi, angleUnit.radian, v.rho / -n)
             #else
-            return pvec(v.phi + pi, v.rho / -n)
+            return pvec(v.theta + pi, v.rho / -n)
             #endif
         end if
         return pvec()
@@ -135,9 +135,9 @@ namespace math
         if v2.rho then
             dim as real i => v1.x / v2.x, j => v1.y / v2.y
             #ifdef _MATH_ANGLE_BI_
-            return pvec(math.phi(i, j), angleUnit.radian, math.hypot(i, j))
+            return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
             #else
-            return pvec(math.phi(i, j), math.hypot(i, j))
+            return pvec(math.theta(i, j), math.hypot(i, j))
             #endif
         end if
         return pvec()
@@ -151,9 +151,9 @@ namespace math
             if y2 then
                 dim as real i => v1.x / x2, j => v1.y / y2
                 #ifdef _MATH_ANGLE_BI_
-                return pvec(math.phi(i, j), angleUnit.radian, math.hypot(i, j))
+                return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
                 #else
-                return pvec(math.phi(i, j), math.hypot(i, j))
+                return pvec(math.theta(i, j), math.hypot(i, j))
                 #endif
             else
                 dim as real i => v1.x / x2
@@ -180,13 +180,13 @@ namespace math
 ' = ----------------------------------------------------------------------------
     
     operator = (byref v1 as const pvec, byref v2 as const pvec) as boolean
-        return iif((v1.phi = v2.phi) and (v1.rho = v2.rho), true, false)
+        return iif((v1.theta = v2.theta) and (v1.rho = v2.rho), true, false)
     end operator
     
 ' <> ---------------------------------------------------------------------------
     
     operator <> (byref v1 as const pvec, byref v2 as const pvec) as boolean
-        return iif((v1.phi <> v2.phi) or (v1.rho <> v2.rho), true, false)
+        return iif((v1.theta <> v2.theta) or (v1.rho <> v2.rho), true, false)
     end operator
     
 end namespace

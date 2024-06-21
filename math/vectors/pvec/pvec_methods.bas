@@ -6,9 +6,9 @@ namespace math
     
     function pvec.fromCartesian (byref n1 as const real, byref n2 as const real) as pvec
         #ifdef _MATH_ANGLE_BI_
-        return pvec(math.phi(n1, n2), angleUnit.radian, math.hypot(n1, n2))
+        return pvec(math.theta(n1, n2), angleUnit.radian, math.hypot(n1, n2))
         #else
-        return pvec(math.phi(n1, n2), math.hypot(n1, n2))
+        return pvec(math.theta(n1, n2), math.hypot(n1, n2))
         #endif
     end function
     

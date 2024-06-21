@@ -14,7 +14,7 @@ namespace math
     end property
     
     property pvec.azimuth (byref a as const angle)
-        this._a => a.phi
+        this._a => a.theta
     end property
     #endif
     
@@ -71,7 +71,7 @@ namespace math
     
     property pvec.x (byref n as const real)
         dim as real j => -sin(this._a) * this._r
-        this._a => math.phi(n, j)
+        this._a => math.theta(n, j)
         this._r => math.hypot(n, j)
     end property
     
@@ -83,7 +83,7 @@ namespace math
     
     property pvec.y (byref n as const real)
         dim as real i => cos(this._a) * this._r
-        this._a => math.phi(i, n)
+        this._a => math.theta(i, n)
         this._r => math.hypot(i, n)
     end property
     
