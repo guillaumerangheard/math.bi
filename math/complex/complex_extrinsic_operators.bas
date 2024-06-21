@@ -104,4 +104,40 @@ namespace math
         return iif((c1.r <> c2.r) or (c1.i <> c2.i), true, false)
     end operator
     
+' abs --------------------------------------------------------------------------
+    
+    ' Returns the absolute value (i.e. magnitude or modulus) of c.
+    
+    operator abs (byref c as const complex) as real
+        return sqr(c.r * c.r + c.i * c.i)
+    end operator
+    
+' cos --------------------------------------------------------------------------
+    
+    ' Returns the cosine of c.
+    ' Cf. https://proofwiki.org/wiki/Cosine_of_Complex_Number
+        
+    operator cos (byref c as const complex) as complex
+        return complex(cos(c.r) * cosh(c.i), -(sin(c.r) * sinh(c.i)))
+    end operator
+    
+' sin --------------------------------------------------------------------------
+    
+    ' Returns the sine of c.
+    ' Cf. https://proofwiki.org/wiki/Sine_of_Complex_Number
+    
+    operator sin (byref c as const complex) as complex
+        return complex(sin(c.r) * cosh(c.i), cos(c.r) * sinh(c.i))
+    end operator
+
+' tan --------------------------------------------------------------------------
+    
+    ' Returns the tangent of c.
+    ' Cf. https://proofwiki.org/wiki/Tangent_of_Complex_Number
+    
+    operator tan (byref c as const complex) as complex
+        dim as real a => tan(c.r), b => tanh(c.i), d => 1d - a * a * b * b
+        return iif(d, complex((a - a * b * b) / d, (b + a * a * b) / d), complex())
+    end operator
+    
 end namespace

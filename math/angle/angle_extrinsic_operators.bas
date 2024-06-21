@@ -86,4 +86,24 @@ namespace math
     
     #undef a_op
     
+' cos --------------------------------------------------------------------------
+    
+    #macro a_op(_o_)
+    operator _o_ (byref a as const angle) as real
+        return _o_##(a.theta)
+    end operator
+    #endmacro
+    
+    a_op(cos)
+    
+' sin --------------------------------------------------------------------------
+    
+    a_op(sin)
+    
+' tan --------------------------------------------------------------------------
+    
+    a_op(tan)
+    
+    #undef a_op
+    
 end namespace

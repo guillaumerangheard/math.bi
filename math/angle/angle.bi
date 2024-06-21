@@ -64,34 +64,37 @@
                     as real _v ' Value in turns.
             end type
             
-            declare operator +  (byref as const real , byref as const angle) as angle
-            declare operator +  (byref as const angle, byref as const real)  as angle
-            declare operator +  (byref as const angle, byref as const angle) as angle
-            declare operator -  (byref as const angle)                       as angle
-            declare operator -  (byref as const real , byref as const angle) as angle
-            declare operator -  (byref as const angle, byref as const real)  as angle
-            declare operator -  (byref as const angle, byref as const angle) as angle
-            declare operator *  (byref as const real , byref as const angle) as angle
-            declare operator *  (byref as const angle, byref as const real)  as angle
-            declare operator /  (byref as const angle, byref as const real)  as angle
-            declare operator <  (byref as const angle, byref as const real)  as boolean
-            declare operator <  (byref as const real , byref as const angle) as boolean
-            declare operator <  (byref as const angle, byref as const angle) as boolean
-            declare operator <= (byref as const angle, byref as const real)  as boolean
-            declare operator <= (byref as const real , byref as const angle) as boolean
-            declare operator <= (byref as const angle, byref as const angle) as boolean
-            declare operator =  (byref as const angle, byref as const real)  as boolean
-            declare operator =  (byref as const real , byref as const angle) as boolean
-            declare operator =  (byref as const angle, byref as const angle) as boolean
-            declare operator <> (byref as const angle, byref as const real)  as boolean
-            declare operator <> (byref as const real , byref as const angle) as boolean
-            declare operator <> (byref as const angle, byref as const angle) as boolean
-            declare operator >= (byref as const angle, byref as const real)  as boolean
-            declare operator >= (byref as const real , byref as const angle) as boolean
-            declare operator >= (byref as const angle, byref as const angle) as boolean
-            declare operator >  (byref as const angle, byref as const real)  as boolean
-            declare operator >  (byref as const real , byref as const angle) as boolean
-            declare operator >  (byref as const angle, byref as const angle) as boolean
+            declare operator +   (byref as const real , byref as const angle) as angle
+            declare operator +   (byref as const angle, byref as const real)  as angle
+            declare operator +   (byref as const angle, byref as const angle) as angle
+            declare operator -   (byref as const angle)                       as angle
+            declare operator -   (byref as const real , byref as const angle) as angle
+            declare operator -   (byref as const angle, byref as const real)  as angle
+            declare operator -   (byref as const angle, byref as const angle) as angle
+            declare operator *   (byref as const real , byref as const angle) as angle
+            declare operator *   (byref as const angle, byref as const real)  as angle
+            declare operator /   (byref as const angle, byref as const real)  as angle
+            declare operator <   (byref as const angle, byref as const real)  as boolean
+            declare operator <   (byref as const real , byref as const angle) as boolean
+            declare operator <   (byref as const angle, byref as const angle) as boolean
+            declare operator <=  (byref as const angle, byref as const real)  as boolean
+            declare operator <=  (byref as const real , byref as const angle) as boolean
+            declare operator <=  (byref as const angle, byref as const angle) as boolean
+            declare operator =   (byref as const angle, byref as const real)  as boolean
+            declare operator =   (byref as const real , byref as const angle) as boolean
+            declare operator =   (byref as const angle, byref as const angle) as boolean
+            declare operator <>  (byref as const angle, byref as const real)  as boolean
+            declare operator <>  (byref as const real , byref as const angle) as boolean
+            declare operator <>  (byref as const angle, byref as const angle) as boolean
+            declare operator >=  (byref as const angle, byref as const real)  as boolean
+            declare operator >=  (byref as const real , byref as const angle) as boolean
+            declare operator >=  (byref as const angle, byref as const angle) as boolean
+            declare operator >   (byref as const angle, byref as const real)  as boolean
+            declare operator >   (byref as const real , byref as const angle) as boolean
+            declare operator >   (byref as const angle, byref as const angle) as boolean
+            declare operator cos (byref as const angle)                       as real
+            declare operator sin (byref as const angle)                       as real
+            declare operator tan (byref as const angle)                       as real
             
             declare function cmp    (byref as const real , byref as const angle, byref as const real => epsilon) as boolean
             declare function cmp    (byref as const angle, byref as const real , byref as const real => epsilon) as boolean

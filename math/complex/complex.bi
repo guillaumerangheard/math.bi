@@ -36,26 +36,30 @@
                 declare const  function toJSON          (byref as const boolean => false) as string
             end type
             
-            declare operator +  (byref as const complex, byref as const real)    as complex
-            declare operator +  (byref as const real   , byref as const complex) as complex
-            declare operator +  (byref as const complex, byref as const complex) as complex
-            declare operator -  (byref as const complex)                         as complex
-            declare operator -  (byref as const complex, byref as const real)    as complex
-            declare operator -  (byref as const real   , byref as const complex) as complex
-            declare operator -  (byref as const complex, byref as const complex) as complex
-            declare operator *  (byref as const complex, byref as const real)    as complex
-            declare operator *  (byref as const real   , byref as const complex) as complex
-            declare operator *  (byref as const complex, byref as const complex) as complex
-            declare operator /  (byref as const complex, byref as const real)    as complex
-            declare operator /  (byref as const real   , byref as const complex) as complex
-            declare operator /  (byref as const complex, byref as const complex) as complex
-            declare operator ^  (byref as const complex, byref as const real)    as complex
-            declare operator =  (byref as const real   , byref as const complex) as boolean
-            declare operator =  (byref as const complex, byref as const real)    as boolean
-            declare operator =  (byref as const complex, byref as const complex) as boolean
-            declare operator <> (byref as const real   , byref as const complex) as boolean
-            declare operator <> (byref as const complex, byref as const real)    as boolean
-            declare operator <> (byref as const complex, byref as const complex) as boolean
+            declare operator +   (byref as const complex, byref as const real)    as complex
+            declare operator +   (byref as const real   , byref as const complex) as complex
+            declare operator +   (byref as const complex, byref as const complex) as complex
+            declare operator -   (byref as const complex)                         as complex
+            declare operator -   (byref as const complex, byref as const real)    as complex
+            declare operator -   (byref as const real   , byref as const complex) as complex
+            declare operator -   (byref as const complex, byref as const complex) as complex
+            declare operator *   (byref as const complex, byref as const real)    as complex
+            declare operator *   (byref as const real   , byref as const complex) as complex
+            declare operator *   (byref as const complex, byref as const complex) as complex
+            declare operator /   (byref as const complex, byref as const real)    as complex
+            declare operator /   (byref as const real   , byref as const complex) as complex
+            declare operator /   (byref as const complex, byref as const complex) as complex
+            declare operator ^   (byref as const complex, byref as const real)    as complex
+            declare operator =   (byref as const real   , byref as const complex) as boolean
+            declare operator =   (byref as const complex, byref as const real)    as boolean
+            declare operator =   (byref as const complex, byref as const complex) as boolean
+            declare operator <>  (byref as const real   , byref as const complex) as boolean
+            declare operator <>  (byref as const complex, byref as const real)    as boolean
+            declare operator <>  (byref as const complex, byref as const complex) as boolean
+            declare operator abs (byref as const complex)                         as real
+            declare operator cos (byref as const complex)                         as complex
+            declare operator sin (byref as const complex)                         as complex
+            declare operator tan (byref as const complex)                         as complex
             
             declare function cmp  (byref as const real   , byref as const complex, byref as const real => epsilon) as boolean
             declare function cmp  (byref as const complex, byref as const real   , byref as const real => epsilon) as boolean
@@ -88,6 +92,12 @@
             'declare function tan  (byref as const complex) as complex
             declare function tanh (byref as const complex) as complex
         end namespace
+        
+        
+        
+        'declare function sin (byref as const math.complex) as math.complex
+        'declare function tan (byref as const math.complex) as math.complex
+        
         #include "complex_constructors.bas"
         #include "complex_intrinsic_operators.bas"
         #include "complex_properties.bas"

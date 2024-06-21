@@ -19,15 +19,6 @@ namespace math
         return iif((abs(c1.r - c2.r) <= t) and (abs(c1.i - c2.i) <= t), true, false)
     end function
     
-' math.cos ---------------------------------------------------------------------
-    
-    ' Returns the cosine of c.
-    ' Cf. https://proofwiki.org/wiki/Cosine_of_Complex_Number
-    
-    'function cos (byref c as const complex) as complex
-    '    return complex(cos(c.r) * cosh(c.i), -(sin(c.r) * sinh(c.i)))
-    'end function
-    
 ' math.cosh --------------------------------------------------------------------
     
     ' Returns the hyperbolic cosine of c.
@@ -128,12 +119,6 @@ namespace math
     end function
     #endif
     
-' math.sin ---------------------------------------------------------------------
-    
-    'function sin (byref c as const complex) as complex
-    '    return complex(sin(c.r) * cosh(c.i), cos(c.r) * sinh(c.i))
-    'end function
-    
 ' math.sinh --------------------------------------------------------------------
     
     function sinh (byref c as const complex) as complex
@@ -157,16 +142,6 @@ namespace math
     function sech (byref c as const complex) as complex
         return 1d / cosh(c)
     end function
-    
-' math.tan ---------------------------------------------------------------------
-    
-    ' Returns the tangent of c.
-    ' Cf. https://proofwiki.org/wiki/Tangent_of_Complex_Number
-    
-    'function tan (byref c as const complex) as complex
-    '    dim as real a => tan(c.r), b => tanh(c.i), d => 1d - a * a * b * b
-    '    return iif(d, complex((a - a * b * b) / d, (b + a * a * b) / d), complex())
-    'end function
     
 ' math.tanh --------------------------------------------------------------------
     
