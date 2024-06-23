@@ -91,12 +91,6 @@
             declare function sinh (byref as const complex) as complex
             declare function tanh (byref as const complex) as complex
         end namespace
-        
-        
-        
-        'declare function sin (byref as const math.complex) as math.complex
-        'declare function tan (byref as const math.complex) as math.complex
-        
         #include "complex_constructors.bas"
         #include "complex_intrinsic_operators.bas"
         #include "complex_properties.bas"
