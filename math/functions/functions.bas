@@ -428,6 +428,12 @@ namespace math
     end function
     #endif
     
+' math.log2 --------------------------------------------------------------------
+    
+    function log2 (byref n as const real) as real
+        return log(n) / ln2
+    end function
+    
 ' math.map ---------------------------------------------------------------------
     
     ' Maps n from the [mn1, mx1] range onto the [mn2, mx2] range.
@@ -598,8 +604,8 @@ namespace math
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
     
     trig_f(tanh)
-        dim as real e => exp(2d * t)
-        return (e - 1d) / (e + 1d)
+        dim as real x => exp(2d * t)
+        return (x - 1d) / (x + 1d)
     end function
     
 ' math.theta -------------------------------------------------------------------

@@ -58,7 +58,9 @@
             declare operator <>  (byref as const complex, byref as const complex) as boolean
             declare operator abs (byref as const complex)                         as real
             declare operator cos (byref as const complex)                         as complex
+            declare operator sgn (byref as const complex)                         as complex
             declare operator sin (byref as const complex)                         as complex
+            declare operator sqr (byref as const complex)                         as complex
             declare operator tan (byref as const complex)                         as complex
             
             declare function cmp  (byref as const real   , byref as const complex, byref as const real => epsilon) as boolean

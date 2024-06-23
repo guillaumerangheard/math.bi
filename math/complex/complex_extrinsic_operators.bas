@@ -121,6 +121,14 @@ namespace math
         return complex(cos(c.r) * cosh(c.i), -(sin(c.r) * sinh(c.i)))
     end operator
     
+' sgn --------------------------------------------------------------------------
+    
+    ' Return the sign(um) of c, i.e. c / abs(c).
+    
+    operator sgn (byref c as const complex) as complex
+        return c / abs(c)
+    end operator
+    
 ' sin --------------------------------------------------------------------------
     
     ' Returns the sine of c.
@@ -129,7 +137,16 @@ namespace math
     operator sin (byref c as const complex) as complex
         return complex(sin(c.r) * cosh(c.i), cos(c.r) * sinh(c.i))
     end operator
-
+    
+' sqr --------------------------------------------------------------------------
+    
+    ' Returns the square root of c.
+    
+    operator sqr (byref c as const complex) as complex
+        dim as real a => abs(c)
+        return complex((1d / sqr_2) * sqr(a + c.r), (sgn(c.i) / sqr_2) * sqr(a - c.r))
+    end operator
+    
 ' tan --------------------------------------------------------------------------
     
     ' Returns the tangent of c.

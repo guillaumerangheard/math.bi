@@ -43,7 +43,6 @@
         trig_f(csch)
         trig_f(cvcos)
         trig_f(cvsin)
-        
         trig_f(excsc)
         trig_f(exsec)
         declare function floor             (byref as const real) as real
@@ -59,6 +58,7 @@
         declare function lerp              (byref as const real, byref as const real, byref as const real, as easing.equation) as real
         declare function lerp              (byref as const real, byref as const real, byref as const real, as easing.curve)    as real
         #endif
+        declare function log2              (byref as const real) as real
         declare function map               (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function max      overload (byref as const real, byref as const real)                                           as real
         declare function max               (byref as const real, byref as const real, byref as const real)                      as real
