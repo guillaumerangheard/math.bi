@@ -119,10 +119,51 @@ namespace math
     end function
     #endif
     
-' math.sinh --------------------------------------------------------------------
+' math.log2 --------------------------------------------------------------------
     
-    function sinh (byref c as const complex) as complex
-        return complex(sinh(c.r) * cos(c.i), cosh(c.r) * sin(c.i))
+    ' Returns the base 2 logarithm of c.
+    
+    function log2 (byref c as const complex) as complex
+        return log(c) / ln2
+    end function
+    
+' math.log10 -------------------------------------------------------------------
+    
+    ' Returns the base 10 logarithm of c.
+    
+    function log10 (byref c as const complex) as complex
+        return log(c) / ln10
+    end function
+    
+' math.log1p -------------------------------------------------------------------
+    
+    ' Returns the natural logarithm of c + 1.
+    
+    function log1p (byref c as const complex) as complex
+        return log(1d + c)
+    end function
+    
+' math.logb --------------------------------------------------------------------
+    
+    ' Returns the base b logarithm of n.
+    
+    function logb (byref n as const real, byref b as const complex) as complex
+        return log(n) / log(b)
+    end function
+    
+    function logb (byref c as const complex, byref b as const real) as complex
+        return log(c) / log(b)
+    end function
+    
+    function logb (byref c1 as const complex, byref c2 as const complex) as complex
+        return log(c1) / log(c2)
+    end function
+    
+' math.qdt ---------------------------------------------------------------------
+    
+    function qdt (byref c as const complex) as real
+        return iif(0d <= c.r, iif(0d <= c.i, 0d, 3d), _
+                              iif(0d <= c.i, 1d, 2d))
     end function
     
 ' math.sec ---------------------------------------------------------------------
@@ -141,6 +182,12 @@ namespace math
     
     function sech (byref c as const complex) as complex
         return 1d / cosh(c)
+    end function
+    
+' math.sinh --------------------------------------------------------------------
+    
+    function sinh (byref c as const complex) as complex
+        return complex(sinh(c.r) * cos(c.i), cosh(c.r) * sin(c.i))
     end function
     
 ' math.tanh --------------------------------------------------------------------

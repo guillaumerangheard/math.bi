@@ -10,10 +10,10 @@
     #define m_crl cdbl
     #include "constants.bi"
     #include "functions/functions.bi"
-    #include "complex/complex.bi"
     #ifdef MATH_ANGLES
         #include "angle/angle.bi"
     #endif
+    #include "complex/complex.bi"
     #include "vectors/vectors.bi"
     #include "quaternion/quaternion.bi"
     #include "matrices/matrices.bi"

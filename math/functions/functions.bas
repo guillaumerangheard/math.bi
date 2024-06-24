@@ -1,11 +1,5 @@
 namespace math
     
-    #if defined(MATH_ANGLES) or defined(MATH_COMPLEX)
-        #define trig_f(_a_) function _a_ overload (byref t as const real) as real
-    #else
-        #define trig_f(_a_) function _a_ overload (byref t as const real) as real
-    #endif
-    
 ' math.acosh -------------------------------------------------------------------
     
     ' Returns the hyperbolic arccosine of n.
@@ -141,6 +135,8 @@ namespace math
     
     ' Returns the hyperbolic arcsecant of n.
     
+    
+    
 ' math.asinh -------------------------------------------------------------------
     
     ' Returns the hyperbolic arcsine of n.
@@ -255,7 +251,7 @@ namespace math
     ' Returns the hyperbolic cosine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/cosh
     
-    trig_f(cosh)
+    function cosh m_ovl (byref t as const real) as real
         return (exp(t) + exp(-t)) * 0.5d
     end function
     
@@ -264,7 +260,7 @@ namespace math
     ' Returns the cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    trig_f(cot)
+    function cot m_ovl (byref t as const real) as real
         dim as real s => tan(t)
         return iif (s, 1d / s, 0d)
     end function
@@ -274,7 +270,7 @@ namespace math
     ' Returns the hyperbolic cotangent of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    trig_f(coth)
+    function coth m_ovl (byref t as const real) as real
         dim as real s => tanh(t)
         return iif(s, 1d / s, 0d)
     end function
@@ -284,7 +280,7 @@ namespace math
     ' Returns the chord of t.
     ' Cf. https://en.wikipedia.org/wiki/Chord_(geometry)#In_trigonometry
     
-    trig_f(crd)
+    function crd m_ovl (byref t as const real) as real
         return 2d * sin(t * 0.5d)
     end function
     
@@ -293,7 +289,7 @@ namespace math
     ' Returns the cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    trig_f(csc)
+    function csc m_ovl (byref t as const real) as real
         dim as real s => sin(t)
         return iif(s, 1d / s, 0d)
     end function
@@ -303,7 +299,7 @@ namespace math
     ' Returns the hyperbolic cosecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    trig_f(csch)
+    function csch m_ovl (byref t as const real) as real
         dim as real s => sinh(t)
         return iif(s, 1d / s, 0d)
     end function
@@ -313,7 +309,7 @@ namespace math
     ' Returns the covercosine of t.
     ' Cf. https://mathworld.wolfram.com/Covercosine.html
     
-    trig_f(cvcos)
+    function cvcos m_ovl (byref t as const real) as real
         return 1d + sin(t)
     end function
     
@@ -322,7 +318,7 @@ namespace math
     ' Returns the coversine of t.
     ' Cf. https://mathworld.wolfram.com/Coversine.html
     
-    trig_f(cvsin)
+    function cvsin m_ovl (byref t as const real) as real
         return 1d - sin(t)
     end function
     
@@ -331,7 +327,7 @@ namespace math
     ' Returns the excosecant of t.
     ' Cf. https://mathworld.wolfram.com/Excosecant.html
     
-    trig_f(excsc)
+    function excsc m_ovl (byref t as const real) as real
         dim as real s => sin(t)
         return iif(s, 1d / s - 1d, 0d)
     end function
@@ -341,7 +337,7 @@ namespace math
     ' Returns the exsecant of t.
     ' Cf. https://en.wikipedia.org/wiki/Exsecant
     
-    trig_f(exsec)
+    function exsec m_ovl (byref t as const real) as real
         dim as real c => cos(t)
         return iif(c, 1d / c - 1d, 0d)
     end function
@@ -360,7 +356,7 @@ namespace math
     ' Returns the hacovercosine of t.
     ' Cf. https://mathworld.wolfram.com/Hacovercosine.html
     
-    trig_f(hcvcos)
+    function hcvcos m_ovl (byref t as const real) as real
         return (1d + sin(t)) * 0.5d
     end function
     
@@ -369,7 +365,7 @@ namespace math
     ' Returns the hacoversine of t.
     ' Cf. https://mathworld.wolfram.com/Hacoversine.html
     
-    trig_f(hcvsin)
+    function hcvsin m_ovl (byref t as const real) as real
         return (1d - sin(t)) * 0.5d
     end function
     
@@ -378,7 +374,7 @@ namespace math
     ' Returns the havercosine of t.
     ' Cf. https://mathworld.wolfram.com/Havercosine.html
     
-    trig_f(hvcos)
+    function hvcos m_ovl (byref t as const real) as real
         return (1d + cos(t)) * 0.5d
     end function
     
@@ -387,7 +383,7 @@ namespace math
     ' Returns the haversine of t.
     ' Cf. https://mathworld.wolfram.com/Haversine.html
     
-    trig_f(hvsin)
+    function hvsin m_ovl (byref t as const real) as real
         return (1d - cos(t)) * 0.5d
     end function
     
@@ -430,8 +426,34 @@ namespace math
     
 ' math.log2 --------------------------------------------------------------------
     
-    function log2 (byref n as const real) as real
+    ' Returns the base 2 logarithm of n.
+    
+    function log2 m_ovl (byref n as const real) as real
         return log(n) / ln2
+    end function
+    
+' math.log10 -------------------------------------------------------------------
+    
+    ' Returns the base 10 logarithm of n.
+    
+    function log10 m_ovl (byref n as const real) as real
+        return log(n) / ln10
+    end function
+    
+' math.log1p -------------------------------------------------------------------
+    
+    ' Returns the natural logarithm of n + 1.
+    
+    function log1p (byref n as const real) as real
+        return log(1d + n)
+    end function
+    
+' math.logb --------------------------------------------------------------------
+    
+    ' Returns the base b logarithm of n.
+    
+    function logb m_ovl (byref n as const real, byref b as const real) as real
+        return log(n) / log(b)
     end function
     
 ' math.map ---------------------------------------------------------------------
@@ -524,6 +546,23 @@ namespace math
         return iif(0d < r, n ^ (1d / r), 1d)
     end function
     
+' math.qdt ---------------------------------------------------------------------
+    
+    ' 1 | 0
+    ' --+--
+    ' 2 | 3
+    ' Returns the quadrant in which point (x, y) lies.
+    
+    function qdt (byref x as const real, byref y as const real) as real
+        #ifdef MATH_FLIP_Y
+        return iif(0d < x, iif(0d < y, 3d, 0d), _
+                           iif(0d < y, 2d, 1d))
+        #else
+        return iif(0d < x, iif(0d < y, 0d, 3d), _
+                           iif(0d < y, 1d, 2d))
+        #endif
+    end function
+    
 ' math.random ------------------------------------------------------------------
     
     #ifdef _RNG_BI_
@@ -574,7 +613,7 @@ namespace math
     ' Returns the secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     
-    trig_f(sec)
+    function sec m_ovl (byref t as const real) as real
         dim as real c => cos(t)
         return iif(c, 1d / c, 0d)
     end function
@@ -584,7 +623,7 @@ namespace math
     ' Returns the hyperbolic secant of t.
     ' Cf. https://en.wikipedia.org/wiki/Hyperbolic_functions
     
-    trig_f(sech)
+    function sech m_ovl (byref t as const real) as real
         dim as real c => cosh(t)
         return iif(c, 1d / c, 0d)
     end function
@@ -594,7 +633,7 @@ namespace math
     ' Returns the hyperbolic sine of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sinh
     
-    trig_f(sinh)
+    function sinh m_ovl (byref t as const real) as real
         return (exp(t) - exp(-t)) * 0.5d
     end function    
     
@@ -603,7 +642,7 @@ namespace math
     ' Returns the hyperbolic tangent of t.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/tanh
     
-    trig_f(tanh)
+    function tanh m_ovl (byref t as const real) as real
         dim as real x => exp(2d * t)
         return (x - 1d) / (x + 1d)
     end function
@@ -626,7 +665,7 @@ namespace math
     ' Returns the vercosine of t.
     ' Cf. https://mathworld.wolfram.com/Vercosine.html
     
-    trig_f(vcos)
+    function vcos m_ovl (byref t as const real) as real
         return 1d + cos(t)
     end function
     
@@ -635,7 +674,7 @@ namespace math
     ' Returns the versine of t.
     ' Cf. https://en.wikipedia.org/wiki/Versine
     
-    trig_f(vsin)
+    function vsin m_ovl (byref t as const real) as real
         return 1d - cos(t)
     end function
     

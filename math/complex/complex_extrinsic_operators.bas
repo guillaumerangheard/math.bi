@@ -109,7 +109,7 @@ namespace math
     ' Returns the absolute value (i.e. magnitude or modulus) of c.
     
     operator abs (byref c as const complex) as real
-        return sqr(c.r * c.r + c.i * c.i)
+        return iif(c.i, sqr(c.r * c.r + c.i * c.i), abs(c.r))
     end operator
     
 ' cos --------------------------------------------------------------------------
@@ -119,6 +119,15 @@ namespace math
         
     operator cos (byref c as const complex) as complex
         return complex(cos(c.r) * cosh(c.i), -(sin(c.r) * sinh(c.i)))
+    end operator
+    
+' log --------------------------------------------------------------------------
+    
+    ' Returns the natural logarithm of c.
+    ' Cf. https://www.tutorchase.com/answers/a-level/maths/how-to-calculate-the-natural-logarithm-of-a-complex-number
+    
+    operator log (byref c as const complex) as complex
+        return complex(log(c.modulus), c.argument)
     end operator
     
 ' sgn --------------------------------------------------------------------------

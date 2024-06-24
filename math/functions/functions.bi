@@ -1,9 +1,9 @@
 #ifdef _MATH_BI_
     namespace math
         #if defined(MATH_ANGLES) or defined(MATH_COMPLEX)
-            #define trig_f(_a_) declare function _a_ overload (byref as const real) as real
+            #define m_ovl overload
         #else
-            #define trig_f(_a_) declare function _a_ (byref as const real) as real
+            #define m_ovl
         #endif
         declare function acosh             (byref as const real) as real
         declare function acot              (byref as const real) as real
@@ -35,21 +35,21 @@
         declare function clamp             (byref as const real, byref as const real)                      as real
         declare function clamp             (byref as const real, byref as const real, byref as const real) as real
         declare function cmp      overload (byref as const real, byref as const real, byref as const real => epsilon) as boolean
-        trig_f(cosh)
-        trig_f(cot)
-        trig_f(coth)
-        trig_f(crd)
-        trig_f(csc)
-        trig_f(csch)
-        trig_f(cvcos)
-        trig_f(cvsin)
-        trig_f(excsc)
-        trig_f(exsec)
+        declare function cosh     m_ovl    (byref as const real) as real
+        declare function cot      m_ovl    (byref as const real) as real
+        declare function coth     m_ovl    (byref as const real) as real
+        declare function crd      m_ovl    (byref as const real) as real
+        declare function csc      m_ovl    (byref as const real) as real
+        declare function csch     m_ovl    (byref as const real) as real
+        declare function cvcos    m_ovl    (byref as const real) as real
+        declare function cvsin    m_ovl    (byref as const real) as real
+        declare function excsc    m_ovl    (byref as const real) as real
+        declare function exsec    m_ovl    (byref as const real) as real
         declare function floor             (byref as const real) as real
-        trig_f(hcvcos)
-        trig_f(hcvsin)
-        trig_f(hvcos)
-        trig_f(hvsin)
+        declare function hcvcos   m_ovl    (byref as const real) as real
+        declare function hcvsin   m_ovl    (byref as const real) as real
+        declare function hvcos    m_ovl    (byref as const real) as real
+        declare function hvsin    m_ovl    (byref as const real) as real
         declare function hypot    overload (byref as const real, byref as const real)                                           as real
         declare function hypot             (byref as const real, byref as const real, byref as const real)                      as real
         declare function hypot             (byref as const real, byref as const real, byref as const real, byref as const real) as real
@@ -58,7 +58,10 @@
         declare function lerp              (byref as const real, byref as const real, byref as const real, as easing.equation) as real
         declare function lerp              (byref as const real, byref as const real, byref as const real, as easing.curve)    as real
         #endif
-        declare function log2              (byref as const real) as real
+        declare function log2     m_ovl    (byref as const real) as real
+        declare function log10    m_ovl    (byref as const real) as real
+        declare function log1p    m_ovl    (byref as const real) as real
+        declare function logb     m_ovl    (byref as const real, byref as const real) as real
         declare function map               (byref as const real, byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function max      overload (byref as const real, byref as const real)                                           as real
         declare function max               (byref as const real, byref as const real, byref as const real)                      as real
@@ -69,20 +72,21 @@
         declare function min               (byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function min               (byref as const integer, byref as const real const ptr)                              as real
         declare function nrt               (byref as const real, byref as const real) as real
+        declare function qdt      overload (byref as const real, byref as const real) as real
         declare function random   overload ()                                         as real
         declare function random            (byref as const real)                      as real
         declare function random            (byref as const real, byref as const real) as real
-        trig_f(sec)
-        trig_f(sech)
-        trig_f(sinh)
-        trig_f(tanh)
+        declare function sec      m_ovl    (byref as const real) as real
+        declare function sech     m_ovl    (byref as const real) as real
+        declare function sinh     m_ovl    (byref as const real) as real
+        declare function tanh     m_ovl    (byref as const real) as real
         declare function theta             (byref as const real, byref as const real) as real
-        trig_f(vcos)
-        trig_f(vsin)
+        declare function vcos     m_ovl    (byref as const real) as real
+        declare function vsin     m_ovl    (byref as const real) as real
         declare function wrap     overload (byref as const real)                                           as real
         declare function wrap              (byref as const real, byref as const real)                      as real
         declare function wrap              (byref as const real, byref as const real, byref as const real) as real
-        #undef trig_f
     end namespace
     #include "functions.bas"
+    #undef m_ovl
 #endif
