@@ -13,7 +13,9 @@
     #ifdef MATH_ANGLES
         #include "angle/angle.bi"
     #endif
-    #include "complex/complex.bi"
+    #ifdef MATH_COMPLEX
+        #include "complex/complex.bi"
+    #endif
     #include "vectors/vectors.bi"
     #include "quaternion/quaternion.bi"
     #include "matrices/matrices.bi"
