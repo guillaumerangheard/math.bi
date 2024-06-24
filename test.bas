@@ -1,5 +1,8 @@
 #include "math/math.bi"
 
+' The following is just whatever I happened to be testing the last time I
+' compiled the lib. Feel free to discard it.
+
 using math
 
 dim as complex c => 10d
