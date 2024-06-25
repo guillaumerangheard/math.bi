@@ -13,7 +13,10 @@
     #ifdef MATH_ANGLES
         #include "angle/angle.bi"
     #endif
-    #ifdef MATH_COMPLEX
+    #ifdef MATH_RATIONAL_NUMBERS
+        #include "rational/rational.bi"
+    #endif
+    #ifdef MATH_COMPLEX_NUMBERS
         #include "complex/complex.bi"
     #endif
     #include "vectors/vectors.bi"

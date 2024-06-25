@@ -44,6 +44,7 @@
                     declare const  function isRight             (byref as const real) as boolean
                     declare const  function isStraight overload ()                    as boolean
                     declare const  function isStraight          (byref as const real) as boolean
+                    #ifdef _RNG_BI_
                     declare static function random     overload ()                                                                                             as angle
                     declare static function random                                                             (byref as const real)                           as angle
                     declare static function random                                                             (byref as const real, byref as const angleUnit) as angle
@@ -57,6 +58,7 @@
                     declare static function random              (byref as const angle                         , byref as const real)                           as angle
                     declare static function random              (byref as const angle                         , byref as const real, byref as const angleUnit) as angle
                     declare static function random              (byref as const angle                         , byref as const angle)                          as angle
+                    #endif
                     declare static function render     overload (byref as const real)                           as string
                     declare static function render              (byref as const real, byref as const angleUnit) as string
                     declare const  function render              ()                                              as string

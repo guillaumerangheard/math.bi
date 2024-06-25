@@ -32,11 +32,15 @@ namespace math
     
 ' math.acrd --------------------------------------------------------------------
     
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
+    
     ' Returns the inverse chord of n.
     
     function acrd (byref n as const real) as real
         return 2d * asin(n * 0.5d)
     end function
+    
+    #endif
     
 ' math.acsc --------------------------------------------------------------------
     
@@ -59,6 +63,8 @@ namespace math
     'end function
     
 ' math.acvcos ------------------------------------------------------------------
+    
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
     
     ' Returns the inverse covercosine of n.
     
@@ -122,6 +128,8 @@ namespace math
         return acos(1d - 2d * n)
     end function
     
+    #endif
+    
 ' math.asec --------------------------------------------------------------------
     
     ' Returns the arcsecant of n.
@@ -157,11 +165,15 @@ namespace math
     
 ' math.avcos -------------------------------------------------------------------
     
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
+    
     ' Returns the inverse vercosine of n.
     
     function avcos (byref n as const real) as real
         return acos(n - 1d)
     end function
+    
+    #endif
     
 ' math.avg ---------------------------------------------------------------------
     
@@ -198,11 +210,15 @@ namespace math
     
 ' math.avsin -------------------------------------------------------------------
     
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
+    
     ' Returns the inverse versine of n.
     
     function avsin (byref n as const real) as real
         return acos(1d - n)
     end function
+    
+    #endif
     
 ' math.cbr ---------------------------------------------------------------------
     
@@ -277,12 +293,16 @@ namespace math
     
 ' math.crd ---------------------------------------------------------------------
     
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
+    
     ' Returns the chord of t.
     ' Cf. https://en.wikipedia.org/wiki/Chord_(geometry)#In_trigonometry
     
     function crd m_ovl (byref t as const real) as real
         return 2d * sin(t * 0.5d)
     end function
+    
+    #endif
     
 ' math.csc ---------------------------------------------------------------------
     
@@ -305,6 +325,8 @@ namespace math
     end function
     
 ' math.cvcos -------------------------------------------------------------------
+    
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
     
     ' Returns the covercosine of t.
     ' Cf. https://mathworld.wolfram.com/Covercosine.html
@@ -342,6 +364,8 @@ namespace math
         return iif(c, 1d / c - 1d, 0d)
     end function
     
+    #endif
+    
 ' math.floor -------------------------------------------------------------------
     
     ' Rounds down n.
@@ -351,7 +375,24 @@ namespace math
         return iif(frac(n), iif(n < 0d, fix(n) - 1d, fix(n)), n)
     end function
     
+' math.gcd ---------------------------------------------------------------------
+    
+    ' Returns the greatest common divisor of n1 and n2.
+    ' Cf. https://en.wikipedia.org/wiki/Euclidean_algorithm
+    
+    function gcd (byref n1 as const longint, byref n2 as const longint) as longint
+        dim as longint a => abs(n1), b => abs(n2), t
+        while 0ll <> b
+            t => b
+            b => a mod b
+            a => t
+        wend
+        return a
+    end function
+    
 ' math.hcvcos ------------------------------------------------------------------
+    
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
     
     ' Returns the hacovercosine of t.
     ' Cf. https://mathworld.wolfram.com/Hacovercosine.html
@@ -386,6 +427,8 @@ namespace math
     function hvsin m_ovl (byref t as const real) as real
         return (1d - cos(t)) * 0.5d
     end function
+    
+    #endif
     
 ' math.hypot -------------------------------------------------------------------
     
@@ -554,7 +597,7 @@ namespace math
     ' Returns the quadrant in which point (x, y) lies.
     
     function qdt (byref x as const real, byref y as const real) as real
-        #ifdef MATH_FLIP_Y
+        #ifdef MATH_FLIP_GRAPHICAL_PLANE
         return iif(0d < x, iif(0d < y, 3d, 0d), _
                            iif(0d < y, 2d, 1d))
         #else
@@ -584,26 +627,6 @@ namespace math
     
     function random (byref n1 as const real, byref n2 as const real) as real
         return n1 + PRNG.f64() * (n2 - n1)
-    end function
-    
-    #else
-    
-end namespace
-
-randomize()
-
-namespace math
-    
-    function random overload () as real
-        return rnd()
-    end function
-    
-    function random (byref n as const real) as real
-        return rnd() * n
-    end function
-    
-    function random (byref n1 as const real, byref n2 as const real) as real
-        return n1 + rnd() * (n2 - n1)
     end function
     
     #endif
@@ -662,6 +685,8 @@ namespace math
     
 ' math.vcos --------------------------------------------------------------------
     
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
+    
     ' Returns the vercosine of t.
     ' Cf. https://mathworld.wolfram.com/Vercosine.html
     
@@ -677,6 +702,8 @@ namespace math
     function vsin m_ovl (byref t as const real) as real
         return 1d - cos(t)
     end function
+    
+    #endif
     
 ' math.wrap --------------------------------------------------------------------
     

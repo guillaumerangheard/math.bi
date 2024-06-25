@@ -60,6 +60,7 @@
                     
                     #endif
                     declare        sub      normalise              ()
+                    #ifdef _RNG_BI_
                     #ifdef _MATH_ANGLE_BI_
                     declare static function random                 ()                                                                                                                                       as pvec
                     declare static function random                 (byref as const real                          , byref as const real                          , byref as const real, byref as const real) as pvec
@@ -74,6 +75,7 @@
                     #else
                     declare static function random                 ()                                                                                   as pvec
                     declare static function random                 (byref as const real, byref as const real, byref as const real, byref as const real) as pvec
+                    #endif
                     #endif
                     declare const  function toJSON                 (byref as const boolean => false) as string
                     declare const  function unitX                  () as pvec

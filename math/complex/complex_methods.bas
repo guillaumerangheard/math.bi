@@ -4,6 +4,8 @@ namespace math
     
 ' math.complex.random ----------------------------------------------------------
     
+    #ifdef _RNG_BI_
+    
     function complex.random overload () as complex
         dim as real a => math.random(two_pi)
         return complex(cos(a), sin(a))
@@ -40,6 +42,8 @@ namespace math
         dim as real t => math.random(), u => 1d - t
         return complex(c1.r * u + c2.r * t, c1.i * u + c2.i * t)
     end function
+    
+    #endif
     
 ' math.complex.toJSON ----------------------------------------------------------
     

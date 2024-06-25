@@ -50,6 +50,8 @@ namespace math
     
 ' math.pvec.random -------------------------------------------------------------
     
+    #ifdef _RNG_BI_
+    
     #ifdef _MATH_ANGLE_BI_
     
     function pvec.random overload () as pvec
@@ -111,6 +113,8 @@ namespace math
         dim as real a => math.random(a1, a2), r => math.random(r1, r2)
         return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
     end function
+    
+    #endif
     
     #endif
     

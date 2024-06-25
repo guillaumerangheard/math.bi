@@ -34,6 +34,7 @@
                 '#else
                 'declare static function fromPolar          (byref as const real, byref as const real) as complex
                 '#endif
+                #ifdef _RNG_BI_
                 declare static function random    overload ()                                               as complex
                 declare static function random             (byref as const real)                            as complex
                 declare static function random             (byref as const complex)                         as complex
@@ -41,6 +42,7 @@
                 declare static function random             (byref as const real   , byref as const complex) as complex
                 declare static function random             (byref as const complex, byref as const real)    as complex
                 declare static function random             (byref as const complex, byref as const complex) as complex
+                #endif
                 declare const  function toJSON             (byref as const boolean => false) as string
             end type
             

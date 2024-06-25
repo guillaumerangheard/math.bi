@@ -91,6 +91,8 @@ namespace math
     
 ' math.angle.random ------------------------------------------------------------
     
+    #ifdef _RNG_BI_
+    
     function angle.random overload () as angle
         return angle(math.random() * angles(defaultAngleUnit))
     end function
@@ -142,6 +144,8 @@ namespace math
     function angle.random (byref a1 as const angle, byref a2 as const angle) as angle
         return angle(math.random(a1._v * angles(defaultAngleUnit), a2._v * angles(defaultAngleUnit)))
     end function
+    
+    #endif
     
 ' math.angle.render ------------------------------------------------------------
     

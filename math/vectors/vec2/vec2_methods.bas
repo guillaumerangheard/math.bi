@@ -88,6 +88,8 @@ namespace math
     
 ' math.vec2.random -------------------------------------------------------------
     
+    #ifdef _RNG_BI_
+    
     function vec2.random () as vec2
         dim as real t => math.random(two_pi)
         return vec2(cos(t), -sin(t))
@@ -105,6 +107,8 @@ namespace math
     function vec2.random (byref n1 as const real, byref n2 as const real, byref n3 as const real, byref n4 as const real) as vec2
         return vec2(math.random(n1, n2), math.random(n3, n4))
     end function
+    
+    #endif
     
 ' math.vec2.rotate -------------------------------------------------------------
     

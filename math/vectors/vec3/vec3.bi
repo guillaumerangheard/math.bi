@@ -45,6 +45,9 @@
                 declare const  function isUnit             (byref as const real) as boolean
                 declare const  function MiNorm             (byref as const real => 2.0) as real
                 declare        sub      normalise          ()
+                #ifdef _RNG_BI_
+                
+                #endif
                 declare const  function toJSON             (byref as const boolean => false) as string
                 declare static function unitX              () as vec3
                 declare static function unitY              () as vec3
