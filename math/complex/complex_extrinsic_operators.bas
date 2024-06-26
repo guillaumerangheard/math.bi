@@ -4,12 +4,24 @@ namespace math
     
 ' + ----------------------------------------------------------------------------
     
-    operator + (byref c as const complex, byref n as const real) as complex
-        return complex(c.r + n, c.i)
+    #ifdef _MATH_RATIONAL_BI_
+    operator + (byref r as const rational, byref c as const complex) as complex
+        return complex(m_crl(r) + c.r, c.i)
     end operator
+    #endif
     
     operator + (byref n as const real, byref c as const complex) as complex
         return complex(n + c.r, c.i)
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator + (byref c as const complex, byref r as const rational) as complex
+        return complex(c.r + m_crl(r), c.i)
+    end operator
+    #endif
+    
+    operator + (byref c as const complex, byref n as const real) as complex
+        return complex(c.r + n, c.i)
     end operator
     
     operator + (byref c1 as const complex, byref c2 as const complex) as complex
@@ -22,12 +34,24 @@ namespace math
         return complex(-c.r, -c.i)
     end operator
     
-    operator - (byref c as const complex, byref n as const real) as complex
-        return complex(c.r - n, c.i)
+    #ifdef _MATH_RATIONAL_BI_
+    operator - (byref r as const rational, byref c as const complex) as complex
+        return complex(m_crl(r) - c.r, c.i)
     end operator
+    #endif
     
     operator - (byref n as const real, byref c as const complex) as complex
         return complex(n - c.r, -c.i)
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator - (byref c as const complex, byref r as const rational) as complex
+        return complex(c.r - m_crl(r), c.i)
+    end operator
+    #endif
+    
+    operator - (byref c as const complex, byref n as const real) as complex
+        return complex(c.r - n, c.i)
     end operator
     
     operator - (byref c1 as const complex, byref c2 as const complex) as complex
@@ -36,12 +60,26 @@ namespace math
     
 ' * ----------------------------------------------------------------------------
     
-    operator * (byref c as const complex, byref n as const real) as complex
-        return complex(c.r * n, c.i * n)
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref r as const rational, byref c as const complex) as complex
+        dim as real n => m_crl(r)
+        return complex(n * c.r, n * c.i)
     end operator
+    #endif
     
     operator * (byref n as const real, byref c as const complex) as complex
         return complex(n * c.r, n * c.i)
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref c as const complex, byref r as const rational) as complex
+        dim as real n => m_crl(r)
+        return complex(c.r * n, c.i * n)
+    end operator
+    #endif
+    
+    operator * (byref c as const complex, byref n as const real) as complex
+        return complex(c.r * n, c.i * n)
     end operator
     
     operator * (byref c1 as const complex, byref c2 as const complex) as complex
@@ -50,9 +88,17 @@ namespace math
     
 ' / ----------------------------------------------------------------------------
     
-    operator / (byref c as const complex, byref n as const real) as complex
-        return iif(n, complex(c.r / n, c.i / n), complex())
+    #ifdef _MATH_RATIONAL_BI_
+    operator / (byref r as const rational, byref c as const complex) as complex
+        if (0d <> c.r) or (0d <> c.i) then
+            dim as real n => m_crl(r), _
+                        d => c.r * c.r + c.i * c.i
+            return complex((n * c.r) / d, _
+                           (-n * c.i) / d)
+        end if
+        return complex()
     end operator
+    #endif
     
     operator / (byref n as const real, byref c as const complex) as complex
         if (0d <> c.r) or (0d <> c.i) then
@@ -61,6 +107,17 @@ namespace math
                            (-n * c.i) / d)
         end if
         return complex()
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator / (byref c as const complex, byref r as const rational) as complex
+        dim as real n => m_crl(r)
+        return iif(n, complex(c.r / n, c.i / n), complex())
+    end operator
+    #endif
+    
+    operator / (byref c as const complex, byref n as const real) as complex
+        return iif(n, complex(c.r / n, c.i / n), complex())
     end operator
     
     operator / (byref c1 as const complex, byref c2 as const complex) as complex
@@ -78,9 +135,21 @@ namespace math
     
 ' = ----------------------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator = (byref r as const rational, byref c as const complex) as boolean
+        return iif((m_crl(r) = c.r) and (0d = c.i), true, false)
+    end operator
+    #endif
+    
     operator = (byref n as const real, byref c as const complex) as boolean
         return iif((n = c.r) and (0d = c.i), true, false)
     end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator = (byref c as const complex, byref r as const rational) as boolean
+        return iif((c.r = m_crl(r)) and (c.i = 0d), true, false)
+    end operator
+    #endif
     
     operator = (byref c as const complex, byref n as const real) as boolean
         return iif((c.r = n) and (c.i = 0d), true, false)
@@ -92,9 +161,21 @@ namespace math
     
 ' <> ---------------------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator <> (byref r as const rational, byref c as const complex) as boolean
+        return iif((m_crl(r) <> c.r) or (0d <> c.i), true, false)
+    end operator
+    #endif
+    
     operator <> (byref n as const real, byref c as const complex) as boolean
         return iif((n <> c.r) or (0d <> c.i), true, false)
     end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator <> (byref c as const complex, byref r as const rational) as boolean
+        return iif((c.r <> m_crl(r)) or (c.i <> 0d), true, false)
+    end operator
+    #endif
     
     operator <> (byref c as const complex, byref n as const real) as boolean
         return iif((c.r <> n) or (c.i <> 0d), true, false)

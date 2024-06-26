@@ -2,10 +2,12 @@ namespace math
     
 ' constructors =================================================================
     
+    ' Defaults to 0, i.e. 0/1.
     constructor rational ()
         this._d => 1ll
     end constructor
     
+    ' Defaults to 0, i.e. 0/1.
     constructor rational (byref n1 as const longint, byref n2 as const longint => 1ll)
         if n2 then
             this._n => n1

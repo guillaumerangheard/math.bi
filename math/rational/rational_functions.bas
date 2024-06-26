@@ -118,6 +118,22 @@ namespace math
     
     m_f(asinh)
     
+' math.atan --------------------------------------------------------------------
+    
+    ' Returns the arctangent of y / x.
+    
+    function atan overload (byref y as const real, byref x as const rational) as real
+        return atan2(y, m_crl(x))
+    end function
+    
+    function atan (byref y as const rational, byref x as const real) as real
+        return atan2(m_crl(y), x)
+    end function
+    
+    function atan (byref y as const rational, byref x as const rational) as real
+        return atan2(m_crl(y), m_crl(x))
+    end function
+    
 ' math.atanh -------------------------------------------------------------------
     
     ' Returns the hyperbolic arctangent of r.

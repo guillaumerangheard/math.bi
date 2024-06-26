@@ -119,6 +119,9 @@
             declare function asec    (byref as const rational) as real
             declare function asech   (byref as const rational) as real
             declare function asinh   (byref as const rational) as real
+            declare function atan    overload (byref as const real    , byref as const rational) as real
+            declare function atan             (byref as const rational, byref as const real)     as real
+            declare function atan             (byref as const rational, byref as const rational) as real
             declare function atanh   (byref as const rational) as real
             #ifdef MATH_EXTENDED_TRIGONOMETRY
             declare function avcos   (byref as const rational) as real

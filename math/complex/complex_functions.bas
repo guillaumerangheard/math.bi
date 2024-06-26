@@ -4,10 +4,24 @@ namespace math
     
 ' math.cmp ---------------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    function cmp (byref r as const rational, byref c as const complex, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(m_crl(r) - c.r) <= t) and (abs(c.i) <= t), true, false)
+    end function
+    #endif
+    
     function cmp (byref n as const real, byref c as const complex, byref s as const real => epsilon) as boolean
         dim as real t => abs(s)
         return iif((abs(n - c.r) <= t) and (abs(c.i) <= t), true, false)
     end function
+    
+    #ifdef _MATH_RATIONAL_BI_
+    function cmp (byref c as const complex, byref r as const rational, byref s as const real => epsilon) as boolean
+        dim as real t => abs(s)
+        return iif((abs(c.r - m_crl(r)) <= t) and (abs(c.i) <= t), true, false)
+    end function
+    #endif
     
     function cmp (byref c as const complex, byref n as const real, byref s as const real => epsilon) as boolean
         dim as real t => abs(s)
@@ -67,6 +81,42 @@ namespace math
     end function
     
 ' math.lerp --------------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    function lerp (byref r as const rational, byref c as const complex, byref s as const real) as complex
+        dim as real t => clamp(s)
+        return complex(m_crl(r) * (1d - t) + c.r * t, c.i * t)
+    end function
+    
+    #ifdef _EASING_BI_
+    function lerp (byref r as const rational, byref c as const complex, byref s as const real, e as const easing.equation) as complex
+        dim as real t => iif(e, e(clamp(s)), clamp(s))
+        return complex(m_crl(r) * (1d - t) + c.r * t, c.i * t)
+    end function
+    
+    function lerp (byref r as const rational, byref c as const complex, byref s as const real, byref c as const easing.curve) as complex
+        dim as real t => c.compute(clamp(s))
+        return complex(m_crl(r) * (1d - t) + c.r * t, c.i * t)
+    end function
+    #endif
+    
+    function lerp (byref c as const complex, byref r as const rational, byref s as const real) as complex
+        dim as real t => clamp(s), u => 1d - t
+        return complex(c.r * u + m_crl(r) * t, c.i * u)
+    end function
+    
+    #ifdef _EASING_BI_
+    function lerp (byref c as const complex, byref r as const rational, byref s as const real, e as const easing.equation) as complex
+        dim as real t => iif(e, e(clamp(s)), clamp(s)), u => 1d - t
+        return complex(c.r * u + m_crl(r) * t, c.i * u)
+    end function
+    
+    function lerp (byref c as const complex, byref r as const rational, byref s as const real, byref c as const easing.curve) as complex
+        dim as real t => c.compute(clamp(s)), u => 1d - t
+        return complex(c.r * u + m_crl(r) * t, c.i * u)
+    end function
+    #endif
+    #endif
     
     function lerp (byref n as const real, byref c as const complex, byref s as const real) as complex
         dim as real t => clamp(s)

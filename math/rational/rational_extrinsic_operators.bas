@@ -152,6 +152,8 @@ namespace math
     
 ' abs --------------------------------------------------------------------------
     
+    ' Returns the absolute value of r.
+    
     operator abs (byref r as const rational) as rational
         return rational(abs(r.n), abs(r.d))
     end operator
@@ -164,21 +166,32 @@ namespace math
     end operator
     #endmacro
     
+    ' Returns the arccosine of r.
+    
     trig_f(acos)
     
 ' asin -------------------------------------------------------------------------
+    
+    ' Returns the arcsine of r.
     
     trig_f(asin)
     
 ' atn --------------------------------------------------------------------------
     
+    ' Returns the arctangent of r.
+    
     trig_f(atn)
     
 ' cos --------------------------------------------------------------------------
     
+    ' Returns the cosine of r.
+    
     trig_f(cos)
     
 ' sgn --------------------------------------------------------------------------
+    
+    ' Returns the sign of r, i.e. the signs of both its numerator and
+    ' denominator.
     
     operator sgn (byref r as const rational) as rational
         dim as longint n => r.n, d => r.d
@@ -187,9 +200,13 @@ namespace math
     
 ' sin --------------------------------------------------------------------------
     
+    ' Returns the sine of r.
+    
     trig_f(sin)
     
 ' tan --------------------------------------------------------------------------
+    
+    ' Returns the tangent of r.
     
     trig_f(tan)
     

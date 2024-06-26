@@ -7,6 +7,6 @@ using math
 
 print "Done compiling " & versionString & !".\n"
 
-print lcm(6, 7)
+
 
 sleep
