@@ -73,16 +73,25 @@
                 declare static function unitY              () as vec2
             end type
             
-            declare operator +  (byref as const vec2 , byref as const vec2)  as vec2
-            declare operator -  (byref as const vec2)                        as vec2
-            declare operator -  (byref as const vec2 , byref as const vec2)  as vec2
-            declare operator *  (byref as const vec2 , byref as const real)  as vec2
-            declare operator *  (byref as const real , byref as const vec2)  as vec2
-            declare operator *  (byref as const vec2 , byref as const vec2)  as vec2
-            declare operator /  (byref as const vec2 , byref as const real)  as vec2
-            declare operator /  (byref as const vec2 , byref as const vec2)  as vec2
-            declare operator =  (byref as const vec2 , byref as const vec2)  as boolean
-            declare operator <> (byref as const vec2 , byref as const vec2)  as boolean
+            declare operator +  (byref as const vec2    , byref as const vec2)     as vec2
+            declare operator -  (byref as const vec2)                              as vec2
+            declare operator -  (byref as const vec2    , byref as const vec2)     as vec2
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator *  (byref as const rational, byref as const vec2)     as vec2
+            #endif
+            declare operator *  (byref as const real    , byref as const vec2)     as vec2
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator *  (byref as const vec2    , byref as const rational) as vec2
+            #endif
+            declare operator *  (byref as const vec2    , byref as const real)     as vec2
+            declare operator *  (byref as const vec2    , byref as const vec2)     as vec2
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator /  (byref as const vec2    , byref as const rational) as vec2
+            #endif
+            declare operator /  (byref as const vec2    , byref as const real)     as vec2
+            declare operator /  (byref as const vec2    , byref as const vec2)     as vec2
+            declare operator =  (byref as const vec2    , byref as const vec2)     as boolean
+            declare operator <> (byref as const vec2    , byref as const vec2)     as boolean
             
             declare function cmp   (byref as const vec2, byref as const vec2, byref as const real => epsilon) as boolean
             declare function cross (byref as const vec2, byref as const vec2) as real

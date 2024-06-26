@@ -35,11 +35,7 @@ namespace math
 ' math.pvec.MiNorm -------------------------------------------------------------
     
     function pvec.MiNorm (byref e as const real => 2d) as real
-        if e then
-            dim as real i =>  cos(this._a) * this._r, j => -sin(this._a) * this._r
-            return (abs(i) ^ e + abs(j) ^ e) ^ (1d / e)
-        end if
-        return 0d
+        return iif(e, (abs(this.x) ^ e + abs(this.y) ^ e) ^ (1d / e), 0d)
     end function
     
 ' math.pvec.normalise ----------------------------------------------------------
@@ -52,77 +48,15 @@ namespace math
     
     #ifdef _RNG_BI_
     
-    #ifdef _MATH_ANGLE_BI_
     
-    function pvec.random overload () as pvec
-        return pvec(math.random(tau), 1d)
-    end function
-    
-    function pvec.random (byref a1 as const real, byref a2 as const real, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1, a2), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const real, byref a2 as const real, byref u2 as const angleUnit, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1, angle.convert(a2, u2, defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const real, byref a2 as const angle, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1, a2.value * angles(defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const real, byref u1 as const angleUnit, byref a2 as const real, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(angle.convert(a1, u1, defaultAngleUnit), a2), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const real, byref u1 as const angleUnit, byref a2 as const real, byref u2 as const angleUnit, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(angle.convert(a1, u1, defaultAngleUnit), angle.convert(a2, u2, defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const real, byref u1 as const angleUnit, byref a2 as const angle, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(angle.convert(a1, u1, defaultAngleUnit), a2.value * angles(defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const angle, byref a2 as const real, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1.value * angles(defaultAngleUnit), a2), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const angle, byref a2 as const real, byref u2 as const angleUnit, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1.value * angles(defaultAngleUnit), angle.convert(a2, u2, defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    function pvec.random (byref a1 as const angle, byref a2 as const angle, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1.value * angles(defaultAngleUnit), a2.value * angles(defaultAngleUnit)), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    #else
-    
-    function pvec.random overload () as pvec
-        return pvec(math.random(two_pi), 1d)
-    end function
-    
-    function pvec.random (byref a1 as const real, byref a2 as const real, byref r1 as const real, byref r2 as const real) as pvec
-        dim as real a => math.random(a1, a2), r => math.random(r1, r2)
-        return iif(r < 0d, pvec(a + pi, -r), pvec(a, r))
-    end function
-    
-    #endif
     
     #endif
     
 ' math.pvec.toJSON -------------------------------------------------------------
     
     function pvec.toJSON (byref a as const boolean => false) as string
-        return iif(a, "["         & this._a &  ","         & this._r & "]", _
-                     !"{\"phi\":" & this._a & !",\"rho\":" & this._r & "}")
+        return iif(a, "["           & this._a &  ","         & this._r & "]", _
+                     !"{\"theta\":" & this._a & !",\"rho\":" & this._r & "}")
     end function
     
 ' math.pvec.unitX --------------------------------------------------------------
@@ -135,9 +69,17 @@ namespace math
     
     function pvec.unitY () as pvec
         #ifdef _MATH_ANGLE_BI_
-        return pvec(1.5d * tau, 1d)
+        #ifdef MATH_FLIP_GRAPHICAL_PLANE
+        return pvec(half_pi, angleUnit.radian, 1d)
         #else
-        return pvec(1.5d * two_pi, 1d)
+        return pvec(pi + half_pi, angleUnit.radian, 1d)
+        #endif
+        #else
+        #ifdef MATH_FLIP_GRAPHICAL_PLANE
+        return pvec(half_pi, 1d)
+        #else
+        return pvec(pi + half_pi, 1d)
+        #endif
         #endif
     end function
     

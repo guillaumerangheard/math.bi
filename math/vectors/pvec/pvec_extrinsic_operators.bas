@@ -61,6 +61,63 @@ namespace math
     
 ' * ----------------------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref r as const rational, byref v as const pvec) as pvec
+        dim as real n => m_crl(r)
+        if 0d < n then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta, angleUnit.radian, n * v.rho)
+            #else
+            return pvec(v.theta, n * v.rho)
+            #endif
+        elseif n < 0d then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta + pi, angleUnit.radian, -n * v.rho)
+            #else
+            return pvec(v.theta + pi, -n * v.rho)
+            #endif
+        end if
+        return pvec()
+    end operator
+    #endif
+    
+    operator * (byref n as const real, byref v as const pvec) as pvec
+        if 0d < n then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta, angleUnit.radian, n * v.rho)
+            #else
+            return pvec(v.theta, n * v.rho)
+            #endif
+        elseif n < 0d then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta + pi, angleUnit.radian, abs(n) * v.rho)
+            #else
+            return pvec(v.theta + pi, abs(n) * v.rho)
+            #endif
+        end if
+        return pvec()
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref v as const pvec, byref r as const rational) as pvec
+        dim as real n => m_crl(r)
+        if 0d < n then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta, angleUnit.radian, v.rho * n)
+            #else
+            return pvec(v.theta, v.rho * n)
+            #endif
+        elseif n < 0d then
+            #ifdef _MATH_ANGLE_BI_
+            return pvec(v.theta + pi, angleUnit.radian, v.rho * -n)
+            #else
+            return pvec(v.theta + pi, v.rho * -n)
+            #endif
+        end if
+        return pvec()
+    end operator
+    #endif
+    
     operator * (byref v as const pvec, byref n as const real) as pvec
         if 0d < n then
             #ifdef _MATH_ANGLE_BI_
@@ -78,28 +135,32 @@ namespace math
         return pvec()
     end operator
     
-    operator * (byref n as const real, byref v as const pvec) as pvec
+    pv_op1(*)
+    pv_op2(*)
+    #undef pv_op1
+    #undef pv_op2
+    
+' / ----------------------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator / (byref v as const pvec, byref r as const rational) as pvec
+        dim as real n => m_crl(r)
         if 0d < n then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.theta, angleUnit.radian, n * v.rho)
+            return pvec(v.theta, angleUnit.radian, v.rho / n)
             #else
-            return pvec(v.theta, n * v.rho)
+            return pvec(v.theta, v.rho / n)
             #endif
         elseif n < 0d then
             #ifdef _MATH_ANGLE_BI_
-            return pvec(v.theta + pi, angleUnit.radian, n * v.rho)
+            return pvec(v.theta + pi, angleUnit.radian, v.rho / -n)
             #else
-            return pvec(v.theta + pi, n * v.rho)
+            return pvec(v.theta + pi, v.rho / -n)
             #endif
         end if
         return pvec()
     end operator
-    
-    pv_op1(*)
-    pv_op2(*)
-    #undef pv_op
-    
-' / ----------------------------------------------------------------------------
+    #endif
     
     operator / (byref v as const pvec, byref n as const real) as pvec
         if 0d < n then

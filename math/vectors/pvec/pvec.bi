@@ -6,14 +6,38 @@
                 public:
                     declare constructor ()
                     #ifdef _MATH_ANGLE_BI_
-                    declare constructor (byref as const real, byref as const angleUnit => defaultAngleUnit)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                    #endif
+                    declare constructor (byref as const real    , byref as const angleUnit => defaultAngleUnit)
                     declare constructor (byref as const angle)
-                    declare constructor (byref as const real                          , byref as const real)
-                    declare constructor (byref as const real, byref as const angleUnit, byref as const real)
-                    declare constructor (byref as const angle                         , byref as const real)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational                          , byref as const rational)
+                    declare constructor (byref as const rational                          , byref as const real)
+                    declare constructor (byref as const real                              , byref as const rational)
+                    #endif
+                    declare constructor (byref as const real                              , byref as const real)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational, byref as const angleUnit, byref as const rational)
+                    declare constructor (byref as const rational, byref as const angleUnit, byref as const real)
+                    declare constructor (byref as const real    , byref as const angleUnit, byref as const rational)
+                    #endif
+                    declare constructor (byref as const real    , byref as const angleUnit, byref as const real)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const angle                             , byref as const rational)
+                    #endif
+                    declare constructor (byref as const angle                             , byref as const real)
                     #else
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational)
+                    #endif
                     declare constructor (byref as const real)
-                    declare constructor (byref as const real, byref as const real)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational, byref as const rational)
+                    declare constructor (byref as const rational, byref as const real)
+                    declare constructor (byref as const real    , byref as const rational)
+                    #endif
+                    declare constructor (byref as const real    , byref as const real)
                     #endif
                     declare constructor (byref as const vec2)
                     declare constructor (byref as const pvec)
@@ -22,9 +46,15 @@
                     declare       operator +=   (byref as const pvec)
                     declare       operator -=   (byref as const vec2)
                     declare       operator -=   (byref as const pvec)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator *=   (byref as const rational)
+                    #endif
                     declare       operator *=   (byref as const real)
                     declare       operator *=   (byref as const vec2)
                     declare       operator *=   (byref as const pvec)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator /=   (byref as const rational)
+                    #endif
                     declare       operator /=   (byref as const real)
                     declare       operator /=   (byref as const vec2)
                     declare       operator /=   (byref as const pvec)
@@ -35,6 +65,9 @@
                     
                     #ifdef _MATH_ANGLE_BI_
                     declare const property azimuth   () as angle
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       property azimuth   (byref as const rational)
+                    #endif
                     declare       property azimuth   (byref as const real)
                     declare       property azimuth   (byref as const angle)
                     #endif
@@ -44,6 +77,9 @@
                     declare       property rho    (byref as const real)
                     declare const property sqNorm () as real
                     declare const property theta  () as real
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       property theta  (byref as const rational)
+                    #endif
                     declare       property theta  (byref as const real)
                     declare const property x      () as real
                     declare       property x      (byref as const real)
@@ -61,21 +97,7 @@
                     #endif
                     declare        sub      normalise              ()
                     #ifdef _RNG_BI_
-                    #ifdef _MATH_ANGLE_BI_
-                    declare static function random                 ()                                                                                                                                       as pvec
-                    declare static function random                 (byref as const real                          , byref as const real                          , byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const real                          , byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const real                          , byref as const angle                         , byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const real                          , byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const real, byref as const angleUnit, byref as const angle                         , byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const angle                         , byref as const real                          , byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const angle                         , byref as const real, byref as const angleUnit, byref as const real, byref as const real) as pvec
-                    declare static function random                 (byref as const angle                         , byref as const angle                         , byref as const real, byref as const real) as pvec
-                    #else
-                    declare static function random                 ()                                                                                   as pvec
-                    declare static function random                 (byref as const real, byref as const real, byref as const real, byref as const real) as pvec
-                    #endif
+                    
                     #endif
                     declare const  function toJSON                 (byref as const boolean => false) as string
                     declare const  function unitX                  () as pvec
@@ -86,29 +108,37 @@
             end type
             
             #ifdef MATH_FORCE_CARTESIAN
-            #define pv_rt vec2
+                #define pv_rt vec2
             #else
-            #define pv_rt pvec
+                #define pv_rt pvec
             #endif
-            
-            declare operator +  (byref as const vec2, byref as const pvec) as pv_rt
-            declare operator +  (byref as const pvec, byref as const vec2) as pv_rt
-            declare operator +  (byref as const pvec, byref as const pvec) as pvec
-            declare operator -  (byref as const pvec)                      as pvec
-            declare operator -  (byref as const vec2, byref as const pvec) as pv_rt
-            declare operator -  (byref as const pvec, byref as const vec2) as pv_rt
-            declare operator -  (byref as const pvec, byref as const pvec) as pvec
-            declare operator *  (byref as const pvec, byref as const real) as pvec
-            declare operator *  (byref as const real, byref as const pvec) as pvec
-            declare operator *  (byref as const vec2, byref as const pvec) as pv_rt
-            declare operator *  (byref as const pvec, byref as const vec2) as pv_rt
-            declare operator *  (byref as const pvec, byref as const pvec) as pvec
-            declare operator /  (byref as const pvec, byref as const real) as pvec
-            declare operator /  (byref as const vec2, byref as const pvec) as pv_rt
-            declare operator /  (byref as const pvec, byref as const vec2) as pv_rt
-            declare operator /  (byref as const pvec, byref as const pvec) as pvec
-            declare operator =  (byref as const pvec, byref as const pvec) as boolean
-            declare operator <> (byref as const pvec, byref as const pvec) as boolean
+            declare operator +  (byref as const vec2    , byref as const pvec)     as pv_rt
+            declare operator +  (byref as const pvec    , byref as const vec2)     as pv_rt
+            declare operator +  (byref as const pvec    , byref as const pvec)     as pvec
+            declare operator -  (byref as const pvec)                              as pvec
+            declare operator -  (byref as const vec2    , byref as const pvec)     as pv_rt
+            declare operator -  (byref as const pvec    , byref as const vec2)     as pv_rt
+            declare operator -  (byref as const pvec    , byref as const pvec)     as pvec
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator *  (byref as const rational, byref as const pvec)     as pvec
+            #endif
+            declare operator *  (byref as const real    , byref as const pvec)     as pvec
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator *  (byref as const pvec    , byref as const rational) as pvec
+            #endif
+            declare operator *  (byref as const pvec    , byref as const real)     as pvec
+            declare operator *  (byref as const vec2    , byref as const pvec)     as pv_rt
+            declare operator *  (byref as const pvec    , byref as const vec2)     as pv_rt
+            declare operator *  (byref as const pvec    , byref as const pvec)     as pvec
+            #ifdef _MATH_RATIONAL_BI_
+            declare operator /  (byref as const pvec    , byref as const rational) as pvec
+            #endif
+            declare operator /  (byref as const pvec    , byref as const real)     as pvec
+            declare operator /  (byref as const vec2    , byref as const pvec)     as pv_rt
+            declare operator /  (byref as const pvec    , byref as const vec2)     as pv_rt
+            declare operator /  (byref as const pvec    , byref as const pvec)     as pvec
+            declare operator =  (byref as const pvec    , byref as const pvec)     as boolean
+            declare operator <> (byref as const pvec    , byref as const pvec)     as boolean
             
             declare function cmp   (byref as const vec2, byref as const pvec, byref as const real => epsilon) as boolean
             declare function cmp   (byref as const pvec, byref as const vec2, byref as const real => epsilon) as boolean

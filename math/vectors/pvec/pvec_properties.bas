@@ -9,6 +9,12 @@ namespace math
         return angle(this._a, angleUnit.radian)
     end property
     
+    #ifdef _MATH_RATIONAL_BI_
+    property pvec.azimuth (byref r as const rational)
+        this._a => wrap(angle.convert(m_crl(r), defaultAngleUnit, angleUnit.radian), two_pi)
+    end property
+    #endif
+    
     property pvec.azimuth (byref n as const real)
         this._a => wrap(angle.convert(n, defaultAngleUnit, angleUnit.radian), two_pi)
     end property
@@ -39,7 +45,7 @@ namespace math
     end property
     
     property pvec.rho (byref n as const real)
-        if 0d < n then
+        if 0d <= n then
             this._r => n
         else
             this._a => wrap(this._a + pi, two_pi)
@@ -59,6 +65,12 @@ namespace math
         return this._a
     end property
     
+    #ifdef _MATH_RATIONAL_BI_
+    property pvec.theta (byref r as const rational)
+        this._a => wrap(m_crl(r), two_pi)
+    end property
+    #endif
+    
     property pvec.theta (byref n as const real)
         this._a => wrap(n, two_pi)
     end property
@@ -70,7 +82,11 @@ namespace math
     end property
     
     property pvec.x (byref n as const real)
+        #ifdef MATH_FLIP_GRAPHICAL_PLANE
         dim as real j => -sin(this._a) * this._r
+        #else
+        dim as real j => sin(this._a) * this._r
+        #endif
         this._a => math.theta(n, j)
         this._r => math.hypot(n, j)
     end property
@@ -78,7 +94,11 @@ namespace math
 ' math.pvec.y ------------------------------------------------------------------
     
     property pvec.y () as real
+        #ifdef MATH_FLIP_GRAPHICAL_PLANE
         return -sin(this._a) * this._r
+        #else
+        return sin(this._a) * this._r
+        #endif
     end property
     
     property pvec.y (byref n as const real)

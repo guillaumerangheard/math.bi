@@ -22,12 +22,26 @@ namespace math
     
 ' * ----------------------------------------------------------------------------
     
-    operator * (byref v as const vec2, byref n as const real) as vec2
-        return vec2(v.x * n, v.y * n)
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref r as const rational, byref v as const vec2) as vec2
+        dim as real n => m_crl(r)
+        return vec2(n * v.x, n * v.y)
     end operator
+    #endif
     
     operator * (byref n as const real, byref v as const vec2) as vec2
         return vec2(n * v.x, n * v.y)
+    end operator
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator * (byref v as const vec2, byref r as const rational) as vec2
+        dim as real n => m_crl(r)
+        return vec2(v.x * n, v.y * n)
+    end operator
+    #endif
+    
+    operator * (byref v as const vec2, byref n as const real) as vec2
+        return vec2(v.x * n, v.y * n)
     end operator
     
     v2_op(*)
@@ -35,6 +49,13 @@ namespace math
     #undef v2_op
     
 ' / ----------------------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator / (byref v as const vec2, byref r as const rational) as vec2
+        dim as real n => m_crl(r)
+        return iif(n, vec2(v.x / n, v.y / n), vec2())
+    end operator
+    #endif
     
     operator / (byref v as const vec2, byref n as const real) as vec2
         return iif(n, vec2(v.x / n, v.y / n), vec2())
