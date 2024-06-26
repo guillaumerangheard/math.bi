@@ -4,6 +4,7 @@ namespace math
     
 ' math.complex.argument --------------------------------------------------------
     
+    ' Returns the argument of c.
     ' Cf. https://en.wikipedia.org/wiki/Argument_(complex_analysis)
     
     property complex.argument () as real
@@ -27,14 +28,32 @@ namespace math
     
 ' math.complex.conjugate -------------------------------------------------------
     
+    ' Returns the (complex) conjugate of c.
     ' Cf. https://en.wikipedia.org/wiki/Complex_conjugate
     
     property complex.conjugate () as complex
         return complex(this.r, -this.i)
     end property
     
+' math.complex.isImaginary -----------------------------------------------------
+    
+    ' Returns true if c is purely imaginary, i.e. if its real part is null, and false otherwise.
+    
+    property complex.isImaginary () as boolean
+        return iif(0d = this.r, true, false)
+    end property
+    
+' math.complex.isReal ----------------------------------------------------------
+    
+    ' Returns true if c is purely real, i.e. if its imaginary part is null, and false otherwise.
+    
+    property complex.isReal () as boolean
+        return iif(0d = this.i, true, false)
+    end property
+    
 ' math.complex.modulus ---------------------------------------------------------
     
+    ' Returns the modulus (i.e. magnitude) of c.
     ' Cf. https://en.wikipedia.org/wiki/Absolute_value#Complex_numbers
     
     property complex.modulus () as real
@@ -42,6 +61,8 @@ namespace math
     end property
     
 ' math.complex.reciprocal ------------------------------------------------------
+    
+    ' Returns the (complex) reciprocal of c.
     
     property complex.reciprocal () as complex
         if(0d <> this.r) or (0d <> this.i) then

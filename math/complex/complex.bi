@@ -46,10 +46,12 @@
                 declare       operator let  (byref as const real)
                 declare       operator let  (byref as const complex)
                 
-                declare const property argument   () as real
-                declare const property conjugate  () as complex
-                declare const property modulus    () as real
-                declare const property reciprocal () as complex
+                declare const property argument    () as real
+                declare const property conjugate   () as complex
+                declare const property isImaginary () as boolean
+                declare const property isReal      () as boolean
+                declare const property modulus     () as real
+                declare const property reciprocal  () as complex
                 
                 '#ifdef MATH_ANGLES
                 'declare static function fromPolar overload (byref as const real                          , byref as const real) as complex
