@@ -6,13 +6,24 @@
                 as real x, y
                 
                 declare constructor ()
-                declare constructor (byref as const real, byref as const real)
+                #ifdef _MATH_RATIONAL_BI_
+                declare constructor (byref as const rational, byref as const real)
+                declare constructor (byref as const rational, byref as const rational)
+                declare constructor (byref as const real    , byref as const rational)
+                #endif
+                declare constructor (byref as const real    , byref as const real)
                 declare constructor (byref as const vec2)
                 
                 declare       operator +=   (byref as const vec2)
                 declare       operator -=   (byref as const vec2)
+                #ifdef _MATH_RATIONAL_BI_
+                declare       operator *=   (byref as const rational)
+                #endif
                 declare       operator *=   (byref as const real)
                 declare       operator *=   (byref as const vec2)
+                #ifdef _MATH_RATIONAL_BI_
+                declare       operator /=   (byref as const rational)
+                #endif
                 declare       operator /=   (byref as const real)
                 declare       operator /=   (byref as const vec2)
                 declare const operator cast () as string
@@ -21,9 +32,15 @@
                 declare const property ChNorm () as real
                 declare const property MaNorm () as real
                 declare const property norm   () as real
+                #ifdef _MATH_RATIONAL_BI_
+                declare       property norm   (byref as const rational)
+                #endif
                 declare       property norm   (byref as const real)
                 declare const property sqNorm () as real
                 declare const property theta  () as real
+                #ifdef _MATH_RATIONAL_BI_
+                declare       property theta  (byref as const rational)
+                #endif
                 declare       property theta  (byref as const real)
                 
                 #ifdef _MATH_ANGLE_BI_

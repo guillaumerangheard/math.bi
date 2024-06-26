@@ -301,23 +301,20 @@ namespace math
     end function
     #endif
     
-    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real) as rational
-        dim as real t => clamp(s), u => 1d - t
-        return rational(clngint(r1.n * u + r2.n * t), _
-                        clngint(r1.d * u + r2.d * t))
+    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real) as real
+        dim as real t => clamp(s)
+        return m_crl(r1) * (1d - t) + m_crl(r2) * t
     end function
     
     #ifdef _EASING_BI_
-    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, e as const easing.equation) as rational
-        dim as real t => iif(e, e(clamp(s)), clamp(s)), u => 1d - t
-        return rational(clngint(r1.n * u + r2.n * t), _
-                        clngint(r1.d * u + r2.d * t))
+    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, e as const easing.equation) as real
+        dim as real t => iif(e, e(clamp(s)), clamp(s))
+        return m_crl(r1) * (1d - t) + m_crl(r2) * t
     end function
     
-    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, byref c s const easing.curve) as rational
-        dim as real t => c.compute(clamp(s)), u => 1d - t
-        return rational(clngint(r1.n * u + r2.n * t), _
-                        clngint(r1.d * u + r2.d * t))
+    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, byref c s const easing.curve) as real
+        dim as real t => c.compute(clamp(s))
+        return m_crl(r1) * (1d - t) + m_crl(r2) * t
     end function
     #endif
     
@@ -378,6 +375,20 @@ namespace math
     ' Returns the hyperbolic tangent of r.
     
     m_f(tanh)
+    
+' math.theta -------------------------------------------------------------------
+    
+    function theta (byref x as const real, byref y as const rational) as real
+        return theta(x, m_crl(y))
+    end function
+    
+    function theta (byref x as const rational, byref y as const real) as real
+        return theta(m_crl(x), y)
+    end function
+    
+    function theta (byref x as const rational, byref y as const rational) as real
+        return theta(m_crl(x), m_crl(y))
+    end function
     
 ' math.vcos --------------------------------------------------------------------
     

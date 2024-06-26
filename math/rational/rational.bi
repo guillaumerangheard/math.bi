@@ -158,10 +158,10 @@
             declare function lerp    (byref as const rational, byref as const real    , byref as const real,       as const easing.equation) as real
             declare function lerp    (byref as const rational, byref as const real    , byref as const real, byref as const easing.curve)    as real
             #endif
-            declare function lerp    (byref as const rational, byref as const rational, byref as const real)                                 as rational
+            declare function lerp    (byref as const rational, byref as const rational, byref as const real)                                 as real
             #ifdef _EASING_BI_
-            declare function lerp    (byref as const rational, byref as const rational, byref as const real,       as const easing.equation) as rational
-            declare function lerp    (byref as const rational, byref as const rational, byref as const real, byref as const easing.curve)    as rational
+            declare function lerp    (byref as const rational, byref as const rational, byref as const real,       as const easing.equation) as real
+            declare function lerp    (byref as const rational, byref as const rational, byref as const real, byref as const easing.curve)    as real
             #endif
             declare function log10   (byref as const rational) as real
             declare function log1p   (byref as const rational) as real
@@ -173,6 +173,9 @@
             declare function sech    (byref as const rational) as real
             declare function sinh    (byref as const rational) as real
             declare function tanh    (byref as const rational) as real
+            declare function theta   (byref as const real    , byref as const rational) as real
+            declare function theta   (byref as const rational, byref as const real)     as real
+            declare function theta   (byref as const rational, byref as const rational) as real
             #ifdef MATH_EXTENDED_TRIGONOMETRY
             declare function vcos    (byref as const rational) as real
             declare function vsin    (byref as const rational) as real

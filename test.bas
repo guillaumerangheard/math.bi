@@ -7,6 +7,10 @@ using math
 
 print "Done compiling " & versionString & !".\n"
 
-
+dim as rational q => rational(1, 3), _
+                r => rational(1, 2)
+for i as real => 0d to 10d
+    ? "i:", i, lerp(q, r, i / 10d)
+next i
 
 sleep

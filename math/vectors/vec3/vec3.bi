@@ -6,10 +6,25 @@
                 as real x, y, z
                 
                 declare constructor ()
-                declare constructor (byref as const real, byref as const real, byref as const real => 0d)
-                declare constructor (byref as const vec2                     , byref as const real => 0d)
+                #ifdef _MATH_RATIONAL_BI_
+                declare constructor (byref as const rational, byref as const rational, byref as const rational)
+                declare constructor (byref as const rational, byref as const rational, byref as const real => 0d)
+                declare constructor (byref as const rational, byref as const real    , byref as const rational)
+                declare constructor (byref as const rational, byref as const real    , byref as const real => 0d)
+                declare constructor (byref as const real    , byref as const rational, byref as const rational)
+                declare constructor (byref as const real    , byref as const rational, byref as const real => 0d)
+                declare constructor (byref as const real    , byref as const real    , byref as const rational)
+                #endif
+                declare constructor (byref as const real    , byref as const real    , byref as const real => 0d)
+                #ifdef _MATH_RATIONAL_BI_
+                declare constructor (byref as const vec2                             , byref as const rational)
+                #endif
+                declare constructor (byref as const vec2                             , byref as const real => 0d)
                 #ifdef _MATH_PVEC_BI_
-                declare constructor (byref as const pvec                     , byref as const real => 0d)
+                #ifdef _MATH_RATIONAL_BI_
+                declare constructor (byref as const pvec                             , byref as const rational)
+                #endif
+                declare constructor (byref as const pvec                             , byref as const real => 0d)
                 #endif
                 declare constructor (byref as const vec3)
                 

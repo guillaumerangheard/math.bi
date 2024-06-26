@@ -98,7 +98,7 @@
         declare function sech    m_ovl    (byref as const real) as real
         declare function sinh    m_ovl    (byref as const real) as real
         declare function tanh    m_ovl    (byref as const real) as real
-        declare function theta            (byref as const real, byref as const real) as real
+        declare function theta   m_ovl    (byref as const real, byref as const real) as real
         #ifdef MATH_EXTENDED_TRIGONOMETRY
         declare function vcos    m_ovl    (byref as const real) as real
         declare function vsin    m_ovl    (byref as const real) as real

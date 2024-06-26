@@ -699,11 +699,55 @@ namespace math
     ' vec2.theta, pvec.theta, vec3.theta, cvec.theta, svec.theta, and
     ' vec4.theta, who do basically the same.
     
-    function theta (byref x as const real, byref y as const real) as real
-        dim as real a => acos(x / hypot(x, y))
-        if 0d < y then a = two_pi - a
-        if a = two_pi then a => 0d
-        return a
+    'function theta m_ovl (byref x as const real, byref y as const real) as real
+    '    dim as real a => acos(x / hypot(x, y))
+    '    if 0d < y then a = two_pi - a
+    '    if a = two_pi then a => 0d
+    '    return a
+    'end function
+    
+    function theta m_ovl (byref x as const real, byref y as const real) as real
+        if x < 0d then
+            if y < 0d then                              ' x < 0, y < 0
+                #ifdef MATH_FLIP_GRAPHICAL_PLANE
+                return acos(x / hypot(x, y))
+                #else
+                return two_pi - acos(x / hypot(x, y))
+                #endif
+            elseif 0d < y then                          ' x < 0, y > 0
+                #ifdef MATH_FLIP_GRAPHICAL_PLANE
+                return two_pi - acos(x / hypot(x, y))
+                #else
+                return acos(x / hypot(x, y))
+                #endif
+            else : return pi                            ' x < 0, y = 0
+            end if
+        elseif 0d < x then
+            if y < 0d then                              ' x > 0, y < 0
+                #ifdef MATH_FLIP_GRAPHICAL_PLANE
+                return acos(x / hypot(x, y))
+                #else
+                return two_pi - acos(x / hypot(x, y))
+                #endif
+            elseif 0d < y then                          ' x > 0, y > 0
+                #ifdef MATH_FLIP_GRAPHICAL_PLANE
+                return two_pi - acos(x / hypot(x, y))
+                #else
+                return acos(x / hypot(x, y))
+                #endif
+            else : return 0d                            ' x > 0, y = 0
+            end if
+        else
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
+            if y < 0d then     : return half_pi         ' x = 0, y < 0
+            elseif 0d < y then : return pi + half_pi    ' x = 0, y > 0
+            #else
+            if y < 0d then     : return pi + half_pi    ' x = 0, y < 0
+            elseif 0d < y then : return half_pi         ' x = 0, y > 0
+            #endif
+            else               : return 0d              ' x = 0, y = 0
+            end if
+        end if
     end function
     
 ' math.vcos --------------------------------------------------------------------

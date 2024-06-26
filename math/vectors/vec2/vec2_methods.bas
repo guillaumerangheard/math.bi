@@ -9,30 +9,54 @@ namespace math
     function vec2.fromPolar (byref n1 as const real, byref n2 as const real) as vec2
         if 0d <= n2 then
             dim as real t => angle.convert(n1, defaultAngleUnit, angleUnit.radian)
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * n2, -sin(t) * n2)
+            #else
+            return vec2(cos(t) * n2, sin(t) * n2)
+            #endif
         else
             dim as real t => angle.convert(n1 + pi, defaultAngleUnit, angleUnit.radian), r => -n2
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * r, -sin(t) * r)
+            #else
+            return vec2(cos(t) * r, sin(t) * r)
+            #endif
         end if
     end function
     
     function vec2.fromPolar (byref n1 as const real, byref u as const angleUnit, byref n2 as const real) as vec2
         if 0d <= n2 then
             dim as real t => angle.convert(n1, u, angleUnit.radian)
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * n2, -sin(t) * n2)
+            #else
+            return vec2(cos(t) * n2, sin(t) * n2)
+            #endif
         else
             dim as real t => angle.convert(n1 + pi, u, angleUnit.radian), r => -n2
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * r, -sin(t) * r)
+            #else
+            return vec2(cos(t) * r, sin(t) * r)
+            #endif
         end if
     end function
     
     function vec2.fromPolar (byref a as const angle, byref n as const real) as vec2
         dim as real t => a.theta
         if 0d <= n then
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * n, -sin(t) * n)
+            #else
+            return vec2(cos(t) * n, sin(t) * n)
+            #endif
         else
             dim as real r => -n
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * r, -sin(t) * r)
+            #else
+            return vec2(cos(t) * r, sin(t) * r)
+            #endif
         end if
     end function
     
@@ -43,7 +67,11 @@ namespace math
             return vec2(cos(n1) * n2, -sin(n1) * n2)
         else
             dim as real t => n1 + pi, r => -n2
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(t) * r, -sin(t) * r)
+            #else
+            return vec2(cos(t) * r, sin(t) * r)
+            #endif
         end if
     end function
     
