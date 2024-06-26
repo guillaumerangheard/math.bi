@@ -5,7 +5,7 @@ namespace math
     ' Returns the hyperbolic arccosine of n.
     ' Cf. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acosh
     
-    function acosh (byref n as const real) as real
+    function acosh m_ovl (byref n as const real) as real
         return log(n + sqr(n * n - 1d))
     end function
     
@@ -15,20 +15,22 @@ namespace math
     ' Cf. https://en.wikipedia.org/wiki/Trigonometric_functions
     '     https://mathworld.wolfram.com/InverseCotangent.html
     
-    function acot (byref n as const real) as real
+    function acot m_ovl (byref n as const real) as real
         return iif(n, atn(1d / n), 0d)
     end function
     
 ' math.acoth -------------------------------------------------------------------
     
-    ' NEEDS CHECKING
-    
     ' Returns the hyperbolic arccotangent of n.
-    
     ' Cf. https://mathworld.wolfram.com/InverseHyperbolicCotangent.html
-    'function acoth (byref n as const real) as real
-    '    return iif(n, (log(1d + m) - log(1d - m)) * 0.5d, 0d)
-    'end function
+    
+    function acoth m_ovl (byref n as const real) as real
+        if n then
+            dim as real m => 1d / n
+            return (log(1d + m) - log(1d - m)) * 0.5d
+        end if
+        return 0d
+    end function
     
 ' math.acrd --------------------------------------------------------------------
     
@@ -36,7 +38,7 @@ namespace math
     
     ' Returns the inverse chord of n.
     
-    function acrd (byref n as const real) as real
+    function acrd m_ovl (byref n as const real) as real
         return 2d * asin(n * 0.5d)
     end function
     
@@ -381,13 +383,25 @@ namespace math
     ' Cf. https://en.wikipedia.org/wiki/Euclidean_algorithm
     
     function gcd (byref n1 as const longint, byref n2 as const longint) as longint
-        dim as longint a => abs(n1), b => abs(n2), t
-        while 0ll <> b
-            t => b
-            b => a mod b
-            a => t
-        wend
-        return a
+        if n1 then
+            if n2 then
+                dim as longint a => abs(n1), b => abs(n2), t
+                while 0ll <> b
+                    t => b
+                    b => a mod b
+                    a => t
+                wend
+                return a
+            else
+                return abs(n1)
+            end if
+        else
+            if n2 then
+                return abs(n2)
+            else
+                return 0ll
+            end if
+        end if
     end function
     
 ' math.hcvcos ------------------------------------------------------------------
@@ -444,6 +458,15 @@ namespace math
     
     function hypot (byref x as const real, byref y as const real, byref z as const real, byref w as const real) as real
         return sqr(x * x + y * y + z * z + w * w)
+    end function
+    
+' math.lcm ---------------------------------------------------------------------
+    
+    ' Returns the least common multiple of a and b.
+    ' Cf. https://en.wikipedia.org/wiki/Least_common_multiple
+    
+    function lcm (byref a as const longint, byref b as const longint) as longint
+        return abs(a * b) / gcd(a, b)
     end function
     
 ' math.lerp --------------------------------------------------------------------

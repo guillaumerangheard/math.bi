@@ -7,9 +7,6 @@ using math
 
 print "Done compiling " & versionString & !".\n"
 
-dim as rational r => type(-24,144)
-print r
-r.reduce()
-print r
+print lcm(6, 7)
 
 sleep

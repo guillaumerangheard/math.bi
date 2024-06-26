@@ -5,37 +5,37 @@
         #else
             #define m_ovl
         #endif
-        declare function acosh            (byref as const real) as real
-        declare function acot             (byref as const real) as real
-        'declare function acoth            (byref as const real) as real
+        declare function acosh   m_ovl    (byref as const real) as real
+        declare function acot    m_ovl    (byref as const real) as real
+        declare function acoth   m_ovl    (byref as const real) as real
         #ifdef MATH_EXTENDED_TRIGONOMETRY
-        declare function acrd             (byref as const real) as real
+        declare function acrd    m_ovl    (byref as const real) as real
         #endif
-        declare function acsc             (byref as const real) as real
-        'declare function acsch            (byref as const real) as real
+        declare function acsc    m_ovl    (byref as const real) as real
+        'declare function acsch   m_ovl    (byref as const real) as real
         #ifdef MATH_EXTENDED_TRIGONOMETRY
-        declare function acvcos           (byref as const real) as real
-        declare function acvsin           (byref as const real) as real
-        declare function aexcsc           (byref as const real) as real
-        declare function aexsec           (byref as const real) as real
-        declare function ahcvcos          (byref as const real) as real
-        declare function ahcvsin          (byref as const real) as real
-        declare function ahvcos           (byref as const real) as real
-        declare function ahvsin           (byref as const real) as real
+        declare function acvcos  m_ovl    (byref as const real) as real
+        declare function acvsin  m_ovl    (byref as const real) as real
+        declare function aexcsc  m_ovl    (byref as const real) as real
+        declare function aexsec  m_ovl    (byref as const real) as real
+        declare function ahcvcos m_ovl    (byref as const real) as real
+        declare function ahcvsin m_ovl    (byref as const real) as real
+        declare function ahvcos  m_ovl    (byref as const real) as real
+        declare function ahvsin  m_ovl    (byref as const real) as real
         #endif
-        declare function asec             (byref as const real) as real
+        declare function asec    m_ovl    (byref as const real) as real
         'declare function asech            (byref as const real) as real
-        declare function asinh            (byref as const real) as real
-        declare function atanh            (byref as const real) as real
+        declare function asinh   m_ovl    (byref as const real) as real
+        declare function atanh   m_ovl    (byref as const real) as real
         #ifdef MATH_EXTENDED_TRIGONOMETRY
-        declare function avcos            (byref as const real) as real
+        declare function avcos   m_ovl    (byref as const real) as real
         #endif
         declare function avg     overload (byref as const real, byref as const real)                                           as real
         declare function avg              (byref as const real, byref as const real, byref as const real)                      as real
         declare function avg              (byref as const real, byref as const real, byref as const real, byref as const real) as real
         declare function avg              (byref as const integer, byref as const real const ptr)                              as real
         #ifdef MATH_EXTENDED_TRIGONOMETRY
-        declare function avsin            (byref as const real) as real
+        declare function avsin   m_ovl    (byref as const real) as real
         #endif
         declare function cbr              (byref as const real) as real
         declare function ceil             (byref as const real) as real
@@ -68,6 +68,7 @@
         declare function hypot   overload (byref as const real, byref as const real)                                           as real
         declare function hypot            (byref as const real, byref as const real, byref as const real)                      as real
         declare function hypot            (byref as const real, byref as const real, byref as const real, byref as const real) as real
+        declare function lcm              (byref as const longint, byref as const longint) as longint
         declare function lerp    overload (byref as const real, byref as const real, byref as const real)                     as real
         #ifdef _EASING_BI_  
         declare function lerp             (byref as const real, byref as const real, byref as const real, as easing.equation) as real
