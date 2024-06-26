@@ -21,6 +21,16 @@ namespace math
     
 ' math.vec4.*= -----------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator vec4.*= (byref r as const rational)
+        dim as real n => m_crl(r)
+        this.x *= n
+        this.y *= n
+        this.z *= n
+        this.w *= n
+    end operator
+    #endif
+    
     operator vec4.*= (byref n as const real)
         this.x *= n
         this.y *= n
@@ -33,6 +43,23 @@ namespace math
     #undef v4_op
     
 ' math.vec4./= -----------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator vec4./= (byref r as const rational)
+        dim as real n => m_crl(r)
+        if n then
+            this.x /= n
+            this.y /= n
+            this.z /= n
+            this.w /= n
+        else
+            this.x => 0d
+            this.y => 0d
+            this.z => 0d
+            this.w => 0d
+        end if
+    end operator
+    #endif
     
     operator vec4./= (byref n as const real)
         if n then

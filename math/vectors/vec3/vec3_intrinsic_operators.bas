@@ -20,6 +20,15 @@ namespace math
     
 ' math.vec3.*= -----------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator vec3.*= (byref r as const rational)
+        dim as real n => m_crl(r)
+        this.x *= n
+        this.y *= n
+        this.z *= n
+    end operator
+    #endif
+    
     operator vec3.*= (byref n as const real)
         this.x *= n
         this.y *= n
@@ -31,6 +40,21 @@ namespace math
     #undef v3_op
     
 ' math.vec3./= -----------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator vec3./= (byref r as const rational)
+        dim as real n => m_crl(r)
+        if n then
+            this.x /= n
+            this.y /= n
+            this.z /= n
+        else
+            this.x => 0d
+            this.y => 0d
+            this.z => 0d
+        end if
+    end operator
+    #endif
     
     operator vec3./= (byref n as const real)
         if n then
@@ -53,7 +77,9 @@ namespace math
 ' math.vec3.cast ---------------------------------------------------------------
     
     operator vec3.cast () as string
-        return "<math.vec3>{ x : " & this.x & " , y : " & this.y & " , z : " & this.z & " }"
+        return "<math.vec3>{ x : " & this.x & _
+                         " , y : " & this.y & _
+                         " , z : " & this.z & " }"
     end operator
     
 ' math.vec3.let ----------------------------------------------------------------

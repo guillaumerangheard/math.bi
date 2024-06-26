@@ -1,3 +1,5 @@
+'#cmdline "-gen gcc -O 2"
+
 #include "math/math.bi"
 
 ' The following is just whatever I happened to be testing the last time I

@@ -29,6 +29,26 @@ namespace math
                    this.w * this.w)
     end property
     
+    #ifdef _MATH_RATIONAL_BI_
+    property vec4.norm (byref r as const rational)
+        dim as real n => m_crl(r)
+        if n then
+            dim as real h => this.norm
+            if h then
+                this.x => this.x / h * n
+                this.y => this.y / h * n
+                this.z => this.z / h * n
+                this.w => this.w / h * n
+            end if
+        else
+            this.x => 0d
+            this.y => 0d
+            this.z => 0d
+            this.w => 0d
+        end if
+    end property
+    #endif
+    
     property vec4.norm (byref n as const real)
         if n then
             dim as real h => this.norm
@@ -58,21 +78,33 @@ namespace math
 ' math.vec4.theta --------------------------------------------------------------
     
     property vec4.theta () as real
-        if this.x then
-            if this.y then
-                dim as real a => acos(x / hypot(this.x, this.y))
-                return iif(0d < this.y, two_pi - a, a)
-            end if
-            return iif(0d <= this.x, 0d, pi)
-        end if
-        return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
+        return math.theta(this.x, this.y)
     end property
+    
+    #ifdef _MATH_RATIONAL_BI_
+    property vec4.theta (byref r as const rational)
+        dim as real h => hypot(this.x, this.y)
+        if h then
+            dim as real n => m_crl(r)
+            this.x => cos(n) * h
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
+            this.y => -sin(n) * h
+            #else
+            this.y => sin(n) * h
+            #endif
+        end if
+    end property
+    #endif
     
     property vec4.theta (byref n as const real)
         dim as real h => hypot(this.x, this.y)
         if h then
             this.x =>  cos(n) * h
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             this.y => -sin(n) * h
+            #else
+            this.y => sin(n) * h
+            #endif
         end if
     end property
     

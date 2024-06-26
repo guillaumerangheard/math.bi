@@ -30,8 +30,14 @@
                 
                 declare       operator +=   (byref as const vec3)
                 declare       operator -=   (byref as const vec3)
+                #ifdef _MATH_RATIONAL_BI_
+                declare       operator *=   (byref as const rational)
+                #endif
                 declare       operator *=   (byref as const real)
                 declare       operator *=   (byref as const vec3)
+                #ifdef _MATH_RATIONAL_BI_
+                declare       operator /=   (byref as const rational)
+                #endif
                 declare       operator /=   (byref as const real)
                 declare       operator /=   (byref as const vec3)
                 declare const operator cast () as string
@@ -44,9 +50,15 @@
                 declare const property ChNorm () as real
                 declare const property MaNorm () as real
                 declare const property norm   () as real
+                #ifdef _MATH_RATIONAL_BI_
+                declare       property norm   (byref as const rational)
+                #endif
                 declare       property norm   (byref as const real)
                 declare const property sqNorm () as real
                 declare const property theta  () as real
+                #ifdef _MATH_RATIONAL_BI_
+                declare       property theta  (byref as const rational)
+                #endif
                 declare       property theta  (byref as const real)
                 declare const property xy     () as vec2
                 declare       property xy     (byref as const vec2)

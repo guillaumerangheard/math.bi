@@ -206,37 +206,37 @@ namespace math
     
     #endif
     
-    operator / (byref v1 as const pvec, byref v2 as const pvec) as pvec
-        dim as real x2 => v2.x, y2 => v2.y
-        if x2 then
-            if y2 then
-                dim as real i => v1.x / x2, j => v1.y / y2
-                #ifdef _MATH_ANGLE_BI_
-                return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
-                #else
-                return pvec(math.theta(i, j), math.hypot(i, j))
-                #endif
-            else
-                dim as real i => v1.x / x2
-                #ifdef _MATH_ANGLE_BI_
-                return iif(0d <= i, pvec(0d, i), pvec(half_tau, -i))
-                #else
-                return iif(0d <= i, pvec(0d, i), pvec(half_pi, -i))
-                #endif
-            end if
-        else
-            if y2 then
-                dim as real j => v1.y / y2
-                #ifdef _MATH_ANGLE_BI_
-                return iif(0d <= j, pvec(quarter_tau, j), pvec(tau * 1.5d, -j))
-                #else
-                return iif(0d <= j, pvec(half_pi, j), pvec(pi * 1.5d, -j))
-                #endif
-            else
-                return pvec()
-            end if
-        end if
-    end operator
+    'operator / (byref v1 as const pvec, byref v2 as const pvec) as pvec
+    '    dim as real x2 => v2.x, y2 => v2.y
+    '    if x2 then
+    '        if y2 then
+    '            dim as real i => v1.x / x2, j => v1.y / y2
+    '            #ifdef _MATH_ANGLE_BI_
+    '            return pvec(math.theta(i, j), angleUnit.radian, math.hypot(i, j))
+    '            #else
+    '            return pvec(math.theta(i, j), math.hypot(i, j))
+    '            #endif
+    '        else
+    '            dim as real i => v1.x / x2
+    '            #ifdef _MATH_ANGLE_BI_
+    '            return iif(0d <= i, pvec(0d, i), pvec(half_tau, -i))
+    '            #else
+    '            return iif(0d <= i, pvec(0d, i), pvec(half_pi, -i))
+    '            #endif
+    '        end if
+    '    else
+    '        if y2 then
+    '            dim as real j => v1.y / y2
+    '            #ifdef _MATH_ANGLE_BI_
+    '            return iif(0d <= j, pvec(quarter_tau, j), pvec(tau * 1.5d, -j))
+    '            #else
+    '            return iif(0d <= j, pvec(half_pi, j), pvec(pi * 1.5d, -j))
+    '            #endif
+    '        else
+    '            return pvec()
+    '        end if
+    '    end if
+    'end operator
     
 ' = ----------------------------------------------------------------------------
     

@@ -58,14 +58,7 @@ namespace math
 ' math.vec2.theta --------------------------------------------------------------
     
     property vec2.theta () as real
-        if this.x then
-            if this.y then
-                dim as real a => acos(x / this.norm)
-                return iif(0d < this.y, two_pi - a, a)
-            end if
-            return iif(0d <= this.x, 0d, pi)
-        end if
-        return iif(0d < this.y, half_pi, iif(this.y < 0d, pi * 1.5d, 0d))
+        return math.theta(this.x, this.y)
     end property
     
     #ifdef _MATH_RATIONAL_BI_
