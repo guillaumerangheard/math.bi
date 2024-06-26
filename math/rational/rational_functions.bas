@@ -148,7 +148,114 @@ namespace math
     
     m_f(avcos)
     
+    #endif
+    
+' math.avg ---------------------------------------------------------------------
+    
+    function avg (byref n1 as const real, byref r2 as const rational) as real
+        return (n1 + m_crl(r2)) / 2d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real) as real
+        return (m_crl(r1) + n2) / 2d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational) as real
+        return (m_crl(r1) + m_crl(r2)) / 2d
+    end function
+    
+    function avg (byref n1 as const real, byref n2 as const real, byref r3 as const rational) as real
+        return (n1 + n2 + m_crl(r3)) / 3d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref n3 as const real) as real
+        return (n1 + m_crl(r2) + n3) / 3d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref r3 as const rational) as real
+        return (n1 + m_crl(r2) + m_crl(r3)) / 3d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref n3 as const real) as real
+        return (m_crl(r1) + n2 + n3) / 3d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref r3 as const rational) as real
+        return (m_crl(r1) + n2 + m_crl(r3)) / 3d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref n3 as const real) as real
+        return (m_crl(r1) + m_crl(r2) + n3) / 3d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref r3 as const rational) as real
+        return (m_crl(r1) + m_crl(r2) + m_crl(r3)) / 3d
+    end function
+    
+    function avg (byref n1 as const real, byref n2 as const real, byref n3 as const real, byref r4 as const rational) as real
+        return (n1 + n2 + n3 + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref n2 as const real, byref r3 as const rational, byref n4 as const real) as real
+        return (n1 + n2 + m_crl(r3) + n4) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref n2 as const real, byref r3 as const rational, byref r4 as const rational) as real
+        return (n1 + n2 + m_crl(r3) + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref n3 as const real, byref n4 as const real) as real
+        return (n1 + m_crl(r2) + n3 + n4) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref n3 as const real, byref r4 as const rational) as real
+        return (n1 + m_crl(r2) + n3 + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref r3 as const rational, byref n4 as const real) as real
+        return (n1 + m_crl(r2) + m_crl(r3) + n4) / 4d
+    end function
+    
+    function avg (byref n1 as const real, byref r2 as const rational, byref r3 as const rational, byref r4 as const rational) as real
+        return (n1 + m_crl(r2) + m_crl(r3) + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref n3 as const real, byref n4 as const real) as real
+        return (m_crl(r1) + n2 + n3 + n4) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref n3 as const real, byref r4 as const rational) as real
+        return (m_crl(r1) + n2 + n3 + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref r3 as const rational, byref n4 as const real) as real
+        return (m_crl(r1) + n2 + m_crl(r3) + n4) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref n2 as const real, byref r3 as const rational, byref r4 as const rational) as real
+        return (m_crl(r1) + n2 + m_crl(r3) + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref n3 as const real, byref n4 as const real) as real
+        return (m_crl(r1) + m_crl(r2) + n3 + n4) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref n3 as const real, byref r4 as const rational) as real
+        return (m_crl(r1) + m_crl(r2) + n3 + m_crl(r4)) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref r3 as const rational, byref n4 as const real) as real
+        return (m_crl(r1) + m_crl(r2) + m_crl(r3) + n4) / 4d
+    end function
+    
+    function avg (byref r1 as const rational, byref r2 as const rational, byref r3 as const rational, byref r4 as const rational) as real
+        return (m_crl(r1) + m_crl(r2) + m_crl(r3) + m_crl(r4)) / 4d
+    end function
+    
+    
 ' math.avsin -------------------------------------------------------------------
+    
+    #ifdef MATH_EXTENDED_TRIGONOMETRY
     
     ' Returns the inverse versine of r.
     
@@ -264,6 +371,133 @@ namespace math
     m_f(hvsin)
     
     #endif
+    
+' math.hypot -------------------------------------------------------------------
+    
+    function hypot (byref x as const real, byref y as const rational) as real
+        dim as real j => m_crl(y)
+        return sqr(x + x + j * j)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real) as real
+        dim as real i => m_crl(x)
+        return sqr(i * i + y * y)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational) as real
+        dim as real i => m_crl(x), j => m_crl(y)
+        return sqr(i * i + j * j)
+    end function
+    
+    function hypot (byref x as const real, byref y as const real, byref z as const rational) as real
+        dim as real k => m_crl(z)
+        return sqr(x * x + y * y + k * k)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const real) as real
+        dim as real j => m_crl(y)
+        return sqr(x * x + j * j + z * z)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const rational) as real
+        dim as real j => m_crl(y), k => m_crl(z)
+        return sqr(x * x + j * j + k * k)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const real) as real
+        dim as real i => m_crl(x)
+        return sqr(i * i + y * y + z * z)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const rational) as real
+        dim as real i => m_crl(x), k => m_crl(z)
+        return sqr(i * i + y * y + k * k)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const real) as real
+        dim as real i => m_crl(x), j => m_crl(y)
+        return sqr(i * i + j * j + z * z)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const rational) as real
+        dim as real i => m_crl(x), j => m_crl(y), k => m_crl(z)
+        return sqr(i * i + j * j + k * k)
+    end function
+    
+    function hypot (byref x as const real, byref y as const real, byref z as const real, byref w as const rational) as real
+        dim as real l => m_crl(w)
+        return sqr(x * x + y * y + z * z + l * l)
+    end function
+    
+    function hypot (byref x as const real, byref y as const real, byref z as const rational, byref w as const real) as real
+        dim as real k => m_crl(z)
+        return sqr(x * x + y * y + k * k + w * w)
+    end function
+    
+    function hypot (byref x as const real, byref y as const real, byref z as const rational, byref w as const rational) as real
+        dim as real k => m_crl(z), l => m_crl(w)
+        return sqr(x * x + y * y + k * k + l * l)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const real, byref w as const real) as real
+        dim as real j => m_crl(y)
+        return sqr(x * x + j * j + z * z + w * w)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const real, byref w as const rational) as real
+        dim as real j => m_crl(y), l => m_crl(w)
+        return sqr(x * x + j * j + z * z + l * l)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const rational, byref w as const real) as real
+        dim as real j => m_crl(y), k => m_crl(z)
+        return sqr(x * x + j * j + k * k + w * w)
+    end function
+    
+    function hypot (byref x as const real, byref y as const rational, byref z as const rational, byref w as const rational) as real
+        dim as real j => m_crl(y), k => m_crl(z), l => m_crl(w)
+        return sqr(x * x + j * j + k * k + l * l)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const real, byref w as const real) as real
+        dim as real i => m_crl(x)
+        return sqr(i * i + y * y + z * z + w * w)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const real, byref w as const rational) as real
+        dim as real i => m_crl(x), l => m_crl(w)
+        return sqr(i * i + y * y + z * z + l * l)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const rational, byref w as const real) as real
+        dim as real i => m_crl(x), k => m_crl(z)
+        return sqr(i * i + y * y + k * k + w * w)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const real, byref z as const rational, byref w as const rational) as real
+        dim as real i => m_crl(x), k => m_crl(z), l => m_crl(w)
+        return sqr(i * i + y * y + k * k + l * l)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const real, byref w as const real) as real
+        dim as real i => m_crl(x), j => m_crl(y)
+        return sqr(i * i + j * j + z * z + w * w)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const real, byref w as const rational) as real
+        dim as real i => m_crl(x), j => m_crl(y), l => m_crl(w)
+        return sqr(i * i + j * j + z * z + l * l)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const rational, byref w as const real) as real
+        dim as real i => m_crl(x), j => m_crl(y), k => m_crl(z)
+        return sqr(i * i + j * j + k * k + w * w)
+    end function
+    
+    function hypot (byref x as const rational, byref y as const rational, byref z as const rational, byref w as const rational) as real
+        dim as real i => m_crl(x), j => m_crl(y), k => m_crl(z), l => m_crl(w)
+        return sqr(i * i + j * j + k * k + l * l)
+    end function
     
 ' math.lerp --------------------------------------------------------------------
     

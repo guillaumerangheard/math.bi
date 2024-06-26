@@ -125,6 +125,33 @@
             declare function atanh   (byref as const rational) as real
             #ifdef MATH_EXTENDED_TRIGONOMETRY
             declare function avcos   (byref as const rational) as real
+            #endif
+            declare function avg     (byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const real    , byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const real    , byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const real    , byref as const real    , byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const real    , byref as const real)     as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const real    , byref as const rational, byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const real    , byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const real    , byref as const rational, byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const real    , byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const real    , byref as const rational) as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const rational, byref as const real)     as real
+            declare function avg     (byref as const rational, byref as const rational, byref as const rational, byref as const rational) as real
+            #ifdef MATH_EXTENDED_TRIGONOMETRY
             declare function avsin   (byref as const rational) as real
             #endif
             declare function cmp     (byref as const real    , byref as const rational, byref as const real => epsilon) as boolean
@@ -148,6 +175,31 @@
             declare function hvcos   (byref as const rational) as real
             declare function hvsin   (byref as const rational) as real
             #endif
+            declare function hypot   (byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const real    , byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const real    , byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const real    , byref as const real    , byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const real    , byref as const real)     as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const real    , byref as const rational, byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const real    , byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const real    , byref as const rational, byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const real    , byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const real    , byref as const rational) as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const rational, byref as const real)     as real
+            declare function hypot   (byref as const rational, byref as const rational, byref as const rational, byref as const rational) as real
             declare function lerp    (byref as const real    , byref as const rational, byref as const real)                                 as real
             #ifdef _EASING_BI_
             declare function lerp    (byref as const real    , byref as const rational, byref as const real,       as const easing.equation) as real
