@@ -1,4 +1,4 @@
-#cmdline "-fpu SSE -R"
+#cmdline "-fpu SSE"
 
 #include "math/math.bi"
 
@@ -21,9 +21,9 @@ print "Graphical plane is flipped."
 print "Graphical plane is not flipped."
 #endif
 
-dim as vec2 v => vec2(3d, 2d)
+dim as vec3 v => vec3(4d, 3d, 2d)
 print v
-v.rotate(half_pi)
+v.zRotate(90d)
 print v
 
 sleep

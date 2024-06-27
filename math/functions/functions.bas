@@ -788,11 +788,32 @@ namespace math
     
 ' math.xrot --------------------------------------------------------------------
     
-    
+    sub xrot m_ovl (byref y as real, byref z as real, byref t as const real)
+        if t then
+            dim as real c => cos(t), s => sin(t), j, k
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
+            j => -c * y - s * z
+            k =>  s * z - c * z
+            #else
+            j => c * y - s * z
+            k => s * z + c * z
+            #endif
+            y => j
+            z => k
+        end if
+    end sub
     
 ' math.yrot --------------------------------------------------------------------
     
-    
+    sub yrot m_ovl (byref x as real, byref z as real, byref t as const real)
+        if t then
+            dim as real c => cos(t), s => sin(t), _
+            i => c * x - s * z, _
+            k => s * x + c * z
+            x => i
+            z => k
+        end if
+    end sub
     
 ' math.zrot --------------------------------------------------------------------
     

@@ -73,7 +73,31 @@ namespace math
     
 ' math.vec3.yRotate ------------------------------------------------------------
     
+    #ifdef _MATH_ANGLE_BI_
     
+    sub vec3.yRotate overload (byref n as const real, byref u as const angleUnit => defaultAngleUnit)
+        math.yrot(this.x, this.z, angle.convert(n, u, angleUnit.radian))
+    end sub
+    
+    #ifdef _MATH_RATIONAL_BI_
+    sub vec3.yRotate (byref r as const rational, byref u as const angleUnit => defaultAngleUnit)
+        math.yrot(this.x, this.z, angle.convert(m_crl(r), u, angleUnit.radian))
+    end sub
+    #endif
+    
+    #else
+    
+    #ifdef _MATH_RATIONAL_BI_
+    sub vec3.yRotate overload (byref r as const rational)
+        math.yrot(this.x, this.z, m_crl(r))
+    end sub
+    #endif
+    
+    sub vec3.yRotate (byref n as const real)
+        math.yrot(this.x, this.z, n)
+    end sub
+    
+    #endif
     
 ' math.vec3.zRotate ------------------------------------------------------------
     
