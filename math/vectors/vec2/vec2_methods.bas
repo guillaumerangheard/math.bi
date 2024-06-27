@@ -167,29 +167,29 @@ namespace math
     #ifdef _MATH_ANGLE_BI_
     
     sub vec2.rotate overload (byref n as const real, byref u as const angleUnit => defaultAngleUnit)
-        math.rotz(this.x, this.y, angle.convert(n, u, angleUnit.radian))
+        math.zrot(this.x, this.y, angle.convert(n, u, angleUnit.radian))
     end sub
     
     #ifdef _MATH_RATIONAL_BI_
     sub vec2.rotate (byref r as const rational, byref u as const angleUnit => defaultAngleUnit)
-        math.rotz(this.x, this.y, angle.convert(m_crl(r), u, angleUnit.radian))
+        math.zrot(this.x, this.y, angle.convert(m_crl(r), u, angleUnit.radian))
     end sub
     #endif
     
     sub vec2.rotate (byref a as const math.angle)
-        math.rotz(this.x, this.y, a.theta)
+        math.zrot(this.x, this.y, a.theta)
     end sub
     
     #else
     
     #ifdef _MATH_RATIONAL_BI_
     sub vec2.rotate overload (byref r as const rational)
-        math.rotz(this.x, this.y, m_crl(r))
+        math.zrot(this.x, this.y, m_crl(r))
     end sub
     #endif
     
     sub vec2.rotate (byref n as const real)
-        math.rotz(this.x, this.y, n)
+        math.zrot(this.x, this.y, n)
     end sub
     
     #endif

@@ -75,10 +75,40 @@
                 #ifdef _RNG_BI_
                 
                 #endif
-                declare const  function toJSON             (byref as const boolean => false) as string
-                declare static function unitX              () as vec3
-                declare static function unitY              () as vec3
-                declare static function unitZ              () as vec3
+                declare const  function toJSON           (byref as const boolean => false) as string
+                declare static function unitX            () as vec3
+                declare static function unitY            () as vec3
+                declare static function unitZ            () as vec3
+                #ifdef _MATH_ANGLE_BI_
+                declare        sub      xRotate overload (byref as const real    , byref as const angleUnit => defaultAngleUnit)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      xRotate          (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                #endif
+                declare        sub      xRotate          (byref as const angle)
+                declare        sub      yRotate overload (byref as const real    , byref as const angleUnit => defaultAngleUnit)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      yRotate          (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                #endif
+                declare        sub      yRotate          (byref as const angle)
+                declare        sub      zRotate overload (byref as const real    , byref as const angleUnit => defaultAngleUnit)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      zRotate          (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                #endif
+                declare        sub      zRotate          (byref as const angle)
+                #else
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      xRotate overload (byref as const rational)
+                #endif
+                declare        sub      xRotate          (byref as const real)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      yRotate overload (byref as const rational)
+                #endif
+                declare        sub      yRotate          (byref as const real)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      zRotate overload (byref as const rational)
+                #endif
+                declare        sub      zRotate          (byref as const real)
+                #endif
             end type
             
             declare operator +  (byref as const vec3, byref as const vec3) as vec3

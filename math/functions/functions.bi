@@ -94,9 +94,6 @@
         declare function random           (byref as const real)                      as real
         declare function random           (byref as const real, byref as const real) as real
         #endif
-        declare sub      rotx    m_ovl    (byref as real, byref as real, byref as const real)
-        declare sub      roty    m_ovl    (byref as real, byref as real, byref as const real)
-        declare sub      rotz    m_ovl    (byref as real, byref as real, byref as const real)
         declare function sec     m_ovl    (byref as const real) as real
         declare function sech    m_ovl    (byref as const real) as real
         declare function sinh    m_ovl    (byref as const real) as real
@@ -109,6 +106,9 @@
         declare function wrap    overload (byref as const real)                                           as real
         declare function wrap             (byref as const real, byref as const real)                      as real
         declare function wrap             (byref as const real, byref as const real, byref as const real) as real
+        declare sub      xrot    m_ovl    (byref as real, byref as real, byref as const real)
+        declare sub      yrot    m_ovl    (byref as real, byref as real, byref as const real)
+        declare sub      zrot    m_ovl    (byref as real, byref as real, byref as const real)
     end namespace
     #include "functions.bas"
     #undef m_ovl

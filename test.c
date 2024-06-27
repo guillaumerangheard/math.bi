@@ -81,45 +81,45 @@ struct $N4MATH5ARRAYE {
 	double _D;
 };
 __FB_STATIC_ASSERT( sizeof( struct $N4MATH5ARRAYE ) == 24 );
-typedef void (*tmp$1293)( double* );
-typedef void (*tmp$1294)( double*, int64* );
-typedef boolean (*tmp$1295)( double* );
-typedef boolean (*tmp$1296)( double*, int64* );
-typedef double (*tmp$1297)( double* );
-typedef double (*tmp$1298)( double*, int64* );
+typedef void (*tmp$1294)( double* );
+typedef void (*tmp$1295)( double*, int64* );
+typedef boolean (*tmp$1296)( double* );
+typedef boolean (*tmp$1297)( double*, int64* );
+typedef double (*tmp$1298)( double* );
+typedef double (*tmp$1299)( double*, int64* );
 struct $N4MATH12COMPLEXARRAYE {
 	struct $N4MATH9BASEARRAYE BASE$;
 	struct $N4MATH7COMPLEXE* _P;
 	struct $N4MATH7COMPLEXE _D;
 };
 __FB_STATIC_ASSERT( sizeof( struct $N4MATH12COMPLEXARRAYE ) == 32 );
-typedef void (*tmp$1358)( struct $N4MATH7COMPLEXE* );
-typedef void (*tmp$1359)( struct $N4MATH7COMPLEXE*, int64* );
-typedef boolean (*tmp$1360)( struct $N4MATH7COMPLEXE* );
-typedef boolean (*tmp$1361)( struct $N4MATH7COMPLEXE*, int64* );
-typedef struct $N4MATH7COMPLEXE (*tmp$1362)( struct $N4MATH7COMPLEXE* );
+typedef void (*tmp$1359)( struct $N4MATH7COMPLEXE* );
+typedef void (*tmp$1360)( struct $N4MATH7COMPLEXE*, int64* );
+typedef boolean (*tmp$1361)( struct $N4MATH7COMPLEXE* );
+typedef boolean (*tmp$1362)( struct $N4MATH7COMPLEXE*, int64* );
+typedef struct $N4MATH7COMPLEXE (*tmp$1363)( struct $N4MATH7COMPLEXE* );
 struct $N4MATH7V2ARRAYE {
 	struct $N4MATH9BASEARRAYE BASE$;
 	struct $N4MATH4VEC2E* _P;
 	struct $N4MATH4VEC2E _D;
 };
 __FB_STATIC_ASSERT( sizeof( struct $N4MATH7V2ARRAYE ) == 32 );
-typedef void (*tmp$1491)( struct $N4MATH4VEC2E* );
-typedef void (*tmp$1492)( struct $N4MATH4VEC2E*, int64* );
-typedef boolean (*tmp$1493)( struct $N4MATH4VEC2E* );
-typedef boolean (*tmp$1494)( struct $N4MATH4VEC2E*, int64* );
-typedef struct $N4MATH4VEC2E (*tmp$1495)( struct $N4MATH4VEC2E* );
+typedef void (*tmp$1492)( struct $N4MATH4VEC2E* );
+typedef void (*tmp$1493)( struct $N4MATH4VEC2E*, int64* );
+typedef boolean (*tmp$1494)( struct $N4MATH4VEC2E* );
+typedef boolean (*tmp$1495)( struct $N4MATH4VEC2E*, int64* );
+typedef struct $N4MATH4VEC2E (*tmp$1496)( struct $N4MATH4VEC2E* );
 struct $N4MATH7V3ARRAYE {
 	struct $N4MATH9BASEARRAYE BASE$;
 	struct $N4MATH4VEC3E* _P;
 	struct $N4MATH4VEC3E _D;
 };
 __FB_STATIC_ASSERT( sizeof( struct $N4MATH7V3ARRAYE ) == 40 );
-typedef void (*tmp$1622)( struct $N4MATH4VEC3E* );
-typedef void (*tmp$1623)( struct $N4MATH4VEC3E*, int64* );
-typedef boolean (*tmp$1624)( struct $N4MATH4VEC3E* );
-typedef boolean (*tmp$1625)( struct $N4MATH4VEC3E*, int64* );
-typedef struct $N4MATH4VEC3E (*tmp$1626)( struct $N4MATH4VEC3E* );
+typedef void (*tmp$1623)( struct $N4MATH4VEC3E* );
+typedef void (*tmp$1624)( struct $N4MATH4VEC3E*, int64* );
+typedef boolean (*tmp$1625)( struct $N4MATH4VEC3E* );
+typedef boolean (*tmp$1626)( struct $N4MATH4VEC3E*, int64* );
+typedef struct $N4MATH4VEC3E (*tmp$1627)( struct $N4MATH4VEC3E* );
 struct $N4MATH7V4ARRAYE {
 	struct $N4MATH9BASEARRAYE BASE$;
 	struct $N4MATH4VEC4E* _P;
@@ -188,7 +188,6 @@ double _ZN4MATH4LOGBERKdS1_( double*, double* );
 double _ZN4MATH3MAXERKdS1_( double*, double* );
 double _ZN4MATH3MAXERKdS1_S1_( double*, double*, double* );
 double _ZN4MATH3MAXERKdS1_S1_S1_( double*, double*, double*, double* );
-void _ZN4MATH4ROTZERdS0_RKd( double*, double*, double* );
 double _ZN4MATH3SECERKd( double* );
 double _ZN4MATH4SECHERKd( double* );
 double _ZN4MATH4SINHERKd( double* );
@@ -198,6 +197,7 @@ double _ZN4MATH4VCOSERKd( double* );
 double _ZN4MATH4VSINERKd( double* );
 double _ZN4MATH4WRAPERKd( double* );
 double _ZN4MATH4WRAPERKdS1_( double*, double* );
+void _ZN4MATH4ZROTERdS0_RKd( double*, double*, double* );
 void _ZN4MATH8RATIONALC1Ev( struct $N4MATH8RATIONALE* );
 void _ZN4MATH8RATIONALC1ERKxS2_( struct $N4MATH8RATIONALE*, int64*, int64* );
 void _ZN4MATH8RATIONALC1ERKS0_( struct $N4MATH8RATIONALE*, struct $N4MATH8RATIONALE* );
@@ -1406,10 +1406,221 @@ double _ZN4MATH3QDTERKdS1_( double* X$1, double* Y$1 )
 	return fb$result$1;
 }
 
-void _ZN4MATH4ROTZERdS0_RKd( double* X$1, double* Y$1, double* T$1 )
+double _ZN4MATH3SECERKd( double* T$1 )
 {
+	double TMP$37$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
 	label$236:;
-	if( *T$1 == 0x0p+0 ) goto label$239;
+	double C$1;
+	C$1 = __builtin_cos( *T$1 );
+	if( C$1 == 0x0p+0 ) goto label$238;
+	TMP$37$1 = 0x1.p+0 / C$1;
+	goto label$239;
+	label$238:;
+	TMP$37$1 = 0x0p+0;
+	label$239:;
+	fb$result$1 = TMP$37$1;
+	goto label$237;
+	label$237:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4SECHERKd( double* T$1 )
+{
+	double TMP$38$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$240:;
+	double C$1;
+	double vr$1 = _ZN4MATH4COSHERKd( T$1 );
+	C$1 = vr$1;
+	if( C$1 == 0x0p+0 ) goto label$242;
+	TMP$38$1 = 0x1.p+0 / C$1;
+	goto label$243;
+	label$242:;
+	TMP$38$1 = 0x0p+0;
+	label$243:;
+	fb$result$1 = TMP$38$1;
+	goto label$241;
+	label$241:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4SINHERKd( double* T$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$244:;
+	fb$result$1 = (__builtin_exp( *T$1 ) - __builtin_exp( -(*T$1) )) * 0x1.p-1;
+	goto label$245;
+	label$245:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4TANHERKd( double* T$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$246:;
+	double X$1;
+	X$1 = __builtin_exp( (*T$1 * 0x1.p+1) );
+	fb$result$1 = (X$1 + -0x1.p+0) / (X$1 + 0x1.p+0);
+	goto label$247;
+	label$247:;
+	return fb$result$1;
+}
+
+double _ZN4MATH5THETAERKdS1_( double* X$1, double* Y$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$248:;
+	if( *X$1 >= 0x0p+0 ) goto label$251;
+	{
+		if( *Y$1 >= 0x0p+0 ) goto label$253;
+		{
+			double vr$4 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
+			fb$result$1 = -(__builtin_acos( (*X$1 / vr$4) )) + 0x1.921FB54442D18p+2;
+			goto label$249;
+		}
+		goto label$252;
+		label$253:;
+		if( *Y$1 <= 0x0p+0 ) goto label$254;
+		{
+			double vr$11 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
+			fb$result$1 = __builtin_acos( (*X$1 / vr$11) );
+			goto label$249;
+		}
+		goto label$252;
+		label$254:;
+		{
+			fb$result$1 = 0x1.921FB54442D18p+1;
+			goto label$249;
+		}
+		label$252:;
+	}
+	goto label$250;
+	label$251:;
+	if( *X$1 <= 0x0p+0 ) goto label$255;
+	{
+		if( *Y$1 >= 0x0p+0 ) goto label$257;
+		{
+			double vr$17 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
+			fb$result$1 = -(__builtin_acos( (*X$1 / vr$17) )) + 0x1.921FB54442D18p+2;
+			goto label$249;
+		}
+		goto label$256;
+		label$257:;
+		if( *Y$1 <= 0x0p+0 ) goto label$258;
+		{
+			double vr$24 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
+			fb$result$1 = __builtin_acos( (*X$1 / vr$24) );
+			goto label$249;
+		}
+		goto label$256;
+		label$258:;
+		{
+			fb$result$1 = 0x0p+0;
+			goto label$249;
+		}
+		label$256:;
+	}
+	goto label$250;
+	label$255:;
+	{
+		if( *Y$1 >= 0x0p+0 ) goto label$260;
+		{
+			fb$result$1 = 0x1.2D97C7F3321D2p+2;
+			goto label$249;
+		}
+		goto label$259;
+		label$260:;
+		if( *Y$1 <= 0x0p+0 ) goto label$261;
+		{
+			fb$result$1 = 0x1.921FB54442D18p+0;
+			goto label$249;
+		}
+		goto label$259;
+		label$261:;
+		{
+			fb$result$1 = 0x0p+0;
+			goto label$249;
+		}
+		label$259:;
+	}
+	label$250:;
+	label$249:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4VCOSERKd( double* T$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$262:;
+	fb$result$1 = __builtin_cos( *T$1 ) + 0x1.p+0;
+	goto label$263;
+	label$263:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4VSINERKd( double* T$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$264:;
+	fb$result$1 = -(__builtin_cos( *T$1 )) + 0x1.p+0;
+	goto label$265;
+	label$265:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4WRAPERKd( double* N$1 )
+{
+	double TMP$39$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$266:;
+	if( *N$1 >= 0x0p+0 ) goto label$268;
+	double vr$3 = fb_FRACd( *N$1 );
+	TMP$39$1 = vr$3 + 0x1.p+0;
+	goto label$269;
+	label$268:;
+	double vr$6 = fb_FRACd( *N$1 );
+	TMP$39$1 = vr$6;
+	label$269:;
+	fb$result$1 = TMP$39$1;
+	goto label$267;
+	label$267:;
+	return fb$result$1;
+}
+
+double _ZN4MATH4WRAPERKdS1_( double* N$1, double* NMAX$1 )
+{
+	double TMP$40$1;
+	double TMP$41$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$270:;
+	if( *NMAX$1 == 0x0p+0 ) goto label$272;
+	TMP$40$1 = *N$1 / *NMAX$1;
+	double vr$6 = _ZN4MATH4WRAPERKd( &TMP$40$1 );
+	TMP$41$1 = vr$6 * *NMAX$1;
+	goto label$273;
+	label$272:;
+	TMP$41$1 = 0x0p+0;
+	label$273:;
+	fb$result$1 = TMP$41$1;
+	goto label$271;
+	label$271:;
+	return fb$result$1;
+}
+
+void _ZN4MATH4ZROTERdS0_RKd( double* X$1, double* Y$1, double* T$1 )
+{
+	label$274:;
+	if( *T$1 == 0x0p+0 ) goto label$277;
 	{
 		double C$2;
 		C$2 = __builtin_cos( *T$1 );
@@ -1424,220 +1635,9 @@ void _ZN4MATH4ROTZERdS0_RKd( double* X$1, double* Y$1, double* T$1 )
 		*X$1 = I$2;
 		*Y$1 = J$2;
 	}
-	label$239:;
-	label$238:;
-	label$237:;
-}
-
-double _ZN4MATH3SECERKd( double* T$1 )
-{
-	double TMP$37$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$240:;
-	double C$1;
-	C$1 = __builtin_cos( *T$1 );
-	if( C$1 == 0x0p+0 ) goto label$242;
-	TMP$37$1 = 0x1.p+0 / C$1;
-	goto label$243;
-	label$242:;
-	TMP$37$1 = 0x0p+0;
-	label$243:;
-	fb$result$1 = TMP$37$1;
-	goto label$241;
-	label$241:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4SECHERKd( double* T$1 )
-{
-	double TMP$38$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$244:;
-	double C$1;
-	double vr$1 = _ZN4MATH4COSHERKd( T$1 );
-	C$1 = vr$1;
-	if( C$1 == 0x0p+0 ) goto label$246;
-	TMP$38$1 = 0x1.p+0 / C$1;
-	goto label$247;
-	label$246:;
-	TMP$38$1 = 0x0p+0;
-	label$247:;
-	fb$result$1 = TMP$38$1;
-	goto label$245;
-	label$245:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4SINHERKd( double* T$1 )
-{
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$248:;
-	fb$result$1 = (__builtin_exp( *T$1 ) - __builtin_exp( -(*T$1) )) * 0x1.p-1;
-	goto label$249;
-	label$249:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4TANHERKd( double* T$1 )
-{
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$250:;
-	double X$1;
-	X$1 = __builtin_exp( (*T$1 * 0x1.p+1) );
-	fb$result$1 = (X$1 + -0x1.p+0) / (X$1 + 0x1.p+0);
-	goto label$251;
-	label$251:;
-	return fb$result$1;
-}
-
-double _ZN4MATH5THETAERKdS1_( double* X$1, double* Y$1 )
-{
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$252:;
-	if( *X$1 >= 0x0p+0 ) goto label$255;
-	{
-		if( *Y$1 >= 0x0p+0 ) goto label$257;
-		{
-			double vr$4 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
-			fb$result$1 = -(__builtin_acos( (*X$1 / vr$4) )) + 0x1.921FB54442D18p+2;
-			goto label$253;
-		}
-		goto label$256;
-		label$257:;
-		if( *Y$1 <= 0x0p+0 ) goto label$258;
-		{
-			double vr$11 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
-			fb$result$1 = __builtin_acos( (*X$1 / vr$11) );
-			goto label$253;
-		}
-		goto label$256;
-		label$258:;
-		{
-			fb$result$1 = 0x1.921FB54442D18p+1;
-			goto label$253;
-		}
-		label$256:;
-	}
-	goto label$254;
-	label$255:;
-	if( *X$1 <= 0x0p+0 ) goto label$259;
-	{
-		if( *Y$1 >= 0x0p+0 ) goto label$261;
-		{
-			double vr$17 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
-			fb$result$1 = -(__builtin_acos( (*X$1 / vr$17) )) + 0x1.921FB54442D18p+2;
-			goto label$253;
-		}
-		goto label$260;
-		label$261:;
-		if( *Y$1 <= 0x0p+0 ) goto label$262;
-		{
-			double vr$24 = _ZN4MATH5HYPOTERKdS1_( X$1, Y$1 );
-			fb$result$1 = __builtin_acos( (*X$1 / vr$24) );
-			goto label$253;
-		}
-		goto label$260;
-		label$262:;
-		{
-			fb$result$1 = 0x0p+0;
-			goto label$253;
-		}
-		label$260:;
-	}
-	goto label$254;
-	label$259:;
-	{
-		if( *Y$1 >= 0x0p+0 ) goto label$264;
-		{
-			fb$result$1 = 0x1.2D97C7F3321D2p+2;
-			goto label$253;
-		}
-		goto label$263;
-		label$264:;
-		if( *Y$1 <= 0x0p+0 ) goto label$265;
-		{
-			fb$result$1 = 0x1.921FB54442D18p+0;
-			goto label$253;
-		}
-		goto label$263;
-		label$265:;
-		{
-			fb$result$1 = 0x0p+0;
-			goto label$253;
-		}
-		label$263:;
-	}
-	label$254:;
-	label$253:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4VCOSERKd( double* T$1 )
-{
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$266:;
-	fb$result$1 = __builtin_cos( *T$1 ) + 0x1.p+0;
-	goto label$267;
-	label$267:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4VSINERKd( double* T$1 )
-{
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$268:;
-	fb$result$1 = -(__builtin_cos( *T$1 )) + 0x1.p+0;
-	goto label$269;
-	label$269:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4WRAPERKd( double* N$1 )
-{
-	double TMP$39$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$270:;
-	if( *N$1 >= 0x0p+0 ) goto label$272;
-	double vr$3 = fb_FRACd( *N$1 );
-	TMP$39$1 = vr$3 + 0x1.p+0;
-	goto label$273;
-	label$272:;
-	double vr$6 = fb_FRACd( *N$1 );
-	TMP$39$1 = vr$6;
-	label$273:;
-	fb$result$1 = TMP$39$1;
-	goto label$271;
-	label$271:;
-	return fb$result$1;
-}
-
-double _ZN4MATH4WRAPERKdS1_( double* N$1, double* NMAX$1 )
-{
-	double TMP$40$1;
-	double TMP$41$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$274:;
-	if( *NMAX$1 == 0x0p+0 ) goto label$276;
-	TMP$40$1 = *N$1 / *NMAX$1;
-	double vr$6 = _ZN4MATH4WRAPERKd( &TMP$40$1 );
-	TMP$41$1 = vr$6 * *NMAX$1;
-	goto label$277;
-	label$276:;
-	TMP$41$1 = 0x0p+0;
 	label$277:;
-	fb$result$1 = TMP$41$1;
-	goto label$275;
+	label$276:;
 	label$275:;
-	return fb$result$1;
 }
 
 void _ZN4MATH8RATIONALC1Ev( struct $N4MATH8RATIONALE* THIS$1 )
@@ -6952,14 +6952,14 @@ void _ZN4MATH4VEC26ROTATEERKNS_8RATIONALE( struct $N4MATH4VEC2E* THIS$1, struct 
 	label$1136:;
 	double vr$0 = _ZNK4MATH8RATIONALcvdEv( R$1 );
 	TMP$430$1 = vr$0;
-	_ZN4MATH4ROTZERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), (double*)&TMP$430$1 );
+	_ZN4MATH4ZROTERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), (double*)&TMP$430$1 );
 	label$1137:;
 }
 
 void _ZN4MATH4VEC26ROTATEERKd( struct $N4MATH4VEC2E* THIS$1, double* N$1 )
 {
 	label$1138:;
-	_ZN4MATH4ROTZERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), N$1 );
+	_ZN4MATH4ZROTERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), N$1 );
 	label$1139:;
 }
 
@@ -9683,181 +9683,180 @@ struct $N4MATH4VEC3E _ZN4MATH4VEC35UNITZEv( void )
 	return fb$result$1;
 }
 
+void _ZN4MATH4VEC37ZROTATEERKNS_8RATIONALE( struct $N4MATH4VEC3E* THIS$1, struct $N4MATH8RATIONALE* R$1 )
+{
+	double TMP$692$1;
+	label$1552:;
+	double vr$0 = _ZNK4MATH8RATIONALcvdEv( R$1 );
+	TMP$692$1 = vr$0;
+	_ZN4MATH4ZROTERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), (double*)&TMP$692$1 );
+	label$1553:;
+}
+
+void _ZN4MATH4VEC37ZROTATEERKd( struct $N4MATH4VEC3E* THIS$1, double* N$1 )
+{
+	label$1554:;
+	_ZN4MATH4ZROTERdS0_RKd( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), N$1 );
+	label$1555:;
+}
+
 struct $N4MATH4VEC3E _ZN4MATHplERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
-	double TMP$693$1;
 	double TMP$694$1;
 	double TMP$695$1;
-	struct $N4MATH4VEC3E fb$result$1;
-	label$1552:;
-	TMP$695$1 = *(double*)((uint8*)V1$1 + 16ll) + *(double*)((uint8*)V2$1 + 16ll);
-	TMP$694$1 = *(double*)((uint8*)V1$1 + 8ll) + *(double*)((uint8*)V2$1 + 8ll);
-	TMP$693$1 = *(double*)V1$1 + *(double*)V2$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$693$1, &TMP$694$1, &TMP$695$1 );
-	goto label$1553;
-	label$1553:;
-	return fb$result$1;
-}
-
-struct $N4MATH4VEC3E _ZN4MATHngERKNS_4VEC3E( struct $N4MATH4VEC3E* V$1 )
-{
-	double TMP$697$1;
-	double TMP$698$1;
-	double TMP$699$1;
-	struct $N4MATH4VEC3E fb$result$1;
-	label$1554:;
-	TMP$699$1 = -(*(double*)((uint8*)V$1 + 16ll));
-	TMP$698$1 = -(*(double*)((uint8*)V$1 + 8ll));
-	TMP$697$1 = -(*(double*)V$1);
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$697$1, &TMP$698$1, &TMP$699$1 );
-	goto label$1555;
-	label$1555:;
-	return fb$result$1;
-}
-
-struct $N4MATH4VEC3E _ZN4MATHmiERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
-{
-	double TMP$701$1;
-	double TMP$702$1;
-	double TMP$703$1;
+	double TMP$696$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1556:;
-	TMP$703$1 = *(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll);
-	TMP$702$1 = *(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll);
-	TMP$701$1 = *(double*)V1$1 - *(double*)V2$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$701$1, &TMP$702$1, &TMP$703$1 );
+	TMP$696$1 = *(double*)((uint8*)V1$1 + 16ll) + *(double*)((uint8*)V2$1 + 16ll);
+	TMP$695$1 = *(double*)((uint8*)V1$1 + 8ll) + *(double*)((uint8*)V2$1 + 8ll);
+	TMP$694$1 = *(double*)V1$1 + *(double*)V2$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$694$1, &TMP$695$1, &TMP$696$1 );
 	goto label$1557;
 	label$1557:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATHmlERKNS_4VEC3ERKd( struct $N4MATH4VEC3E* V$1, double* N$1 )
+struct $N4MATH4VEC3E _ZN4MATHngERKNS_4VEC3E( struct $N4MATH4VEC3E* V$1 )
 {
-	double TMP$705$1;
-	double TMP$706$1;
-	double TMP$707$1;
+	double TMP$698$1;
+	double TMP$699$1;
+	double TMP$700$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1558:;
-	TMP$707$1 = *(double*)((uint8*)V$1 + 16ll) * *N$1;
-	TMP$706$1 = *(double*)((uint8*)V$1 + 8ll) * *N$1;
-	TMP$705$1 = *(double*)V$1 * *N$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$705$1, &TMP$706$1, &TMP$707$1 );
+	TMP$700$1 = -(*(double*)((uint8*)V$1 + 16ll));
+	TMP$699$1 = -(*(double*)((uint8*)V$1 + 8ll));
+	TMP$698$1 = -(*(double*)V$1);
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$698$1, &TMP$699$1, &TMP$700$1 );
 	goto label$1559;
 	label$1559:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATHmlERKdRKNS_4VEC3E( double* N$1, struct $N4MATH4VEC3E* V$1 )
+struct $N4MATH4VEC3E _ZN4MATHmiERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
-	double TMP$709$1;
-	double TMP$710$1;
-	double TMP$711$1;
+	double TMP$702$1;
+	double TMP$703$1;
+	double TMP$704$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1560:;
-	TMP$711$1 = *N$1 * *(double*)((uint8*)V$1 + 16ll);
-	TMP$710$1 = *N$1 * *(double*)((uint8*)V$1 + 8ll);
-	TMP$709$1 = *N$1 * *(double*)V$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$709$1, &TMP$710$1, &TMP$711$1 );
+	TMP$704$1 = *(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll);
+	TMP$703$1 = *(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll);
+	TMP$702$1 = *(double*)V1$1 - *(double*)V2$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$702$1, &TMP$703$1, &TMP$704$1 );
 	goto label$1561;
 	label$1561:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATHmlERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+struct $N4MATH4VEC3E _ZN4MATHmlERKNS_4VEC3ERKd( struct $N4MATH4VEC3E* V$1, double* N$1 )
 {
-	double TMP$713$1;
-	double TMP$714$1;
-	double TMP$715$1;
+	double TMP$706$1;
+	double TMP$707$1;
+	double TMP$708$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1562:;
-	TMP$715$1 = *(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll);
-	TMP$714$1 = *(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll);
-	TMP$713$1 = *(double*)V1$1 * *(double*)V2$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$713$1, &TMP$714$1, &TMP$715$1 );
+	TMP$708$1 = *(double*)((uint8*)V$1 + 16ll) * *N$1;
+	TMP$707$1 = *(double*)((uint8*)V$1 + 8ll) * *N$1;
+	TMP$706$1 = *(double*)V$1 * *N$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$706$1, &TMP$707$1, &TMP$708$1 );
 	goto label$1563;
 	label$1563:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATHdvERKNS_4VEC3ERKd( struct $N4MATH4VEC3E* V$1, double* N$1 )
+struct $N4MATH4VEC3E _ZN4MATHmlERKdRKNS_4VEC3E( double* N$1, struct $N4MATH4VEC3E* V$1 )
 {
-	double TMP$717$1;
-	double TMP$718$1;
-	double TMP$719$1;
-	struct $N4MATH4VEC3E TMP$721$1;
+	double TMP$710$1;
+	double TMP$711$1;
+	double TMP$712$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1564:;
-	if( *N$1 == 0x0p+0 ) goto label$1566;
-	TMP$719$1 = *(double*)((uint8*)V$1 + 16ll) / *N$1;
-	TMP$718$1 = *(double*)((uint8*)V$1 + 8ll) / *N$1;
-	TMP$717$1 = *(double*)V$1 / *N$1;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &TMP$721$1, &TMP$717$1, &TMP$718$1, &TMP$719$1 );
-	goto label$1567;
-	label$1566:;
-	_ZN4MATH4VEC3C1Ev( &TMP$721$1 );
-	label$1567:;
-	_ZN4MATH4VEC3C1ERKS0_( &fb$result$1, (struct $N4MATH4VEC3E*)&TMP$721$1 );
+	TMP$712$1 = *N$1 * *(double*)((uint8*)V$1 + 16ll);
+	TMP$711$1 = *N$1 * *(double*)((uint8*)V$1 + 8ll);
+	TMP$710$1 = *N$1 * *(double*)V$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$710$1, &TMP$711$1, &TMP$712$1 );
 	goto label$1565;
 	label$1565:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATHdvERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+struct $N4MATH4VEC3E _ZN4MATHmlERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
-	double TMP$723$1;
-	double TMP$724$1;
-	double TMP$725$1;
+	double TMP$714$1;
+	double TMP$715$1;
+	double TMP$716$1;
+	struct $N4MATH4VEC3E fb$result$1;
+	label$1566:;
+	TMP$716$1 = *(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll);
+	TMP$715$1 = *(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll);
+	TMP$714$1 = *(double*)V1$1 * *(double*)V2$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$714$1, &TMP$715$1, &TMP$716$1 );
+	goto label$1567;
+	label$1567:;
+	return fb$result$1;
+}
+
+struct $N4MATH4VEC3E _ZN4MATHdvERKNS_4VEC3ERKd( struct $N4MATH4VEC3E* V$1, double* N$1 )
+{
+	double TMP$718$1;
+	double TMP$719$1;
+	double TMP$720$1;
+	struct $N4MATH4VEC3E TMP$722$1;
 	struct $N4MATH4VEC3E fb$result$1;
 	label$1568:;
-	if( *(double*)((uint8*)V2$1 + 16ll) == 0x0p+0 ) goto label$1572;
-	TMP$725$1 = *(double*)((uint8*)V1$1 + 16ll) / *(double*)((uint8*)V2$1 + 16ll);
-	goto label$1573;
-	label$1572:;
-	TMP$725$1 = 0x0p+0;
-	label$1573:;
-	if( *(double*)((uint8*)V2$1 + 8ll) == 0x0p+0 ) goto label$1571;
-	TMP$724$1 = *(double*)((uint8*)V1$1 + 8ll) / *(double*)((uint8*)V2$1 + 8ll);
-	goto label$1574;
-	label$1571:;
-	TMP$724$1 = 0x0p+0;
-	label$1574:;
-	if( *(double*)V2$1 == 0x0p+0 ) goto label$1570;
-	TMP$723$1 = *(double*)V1$1 / *(double*)V2$1;
-	goto label$1575;
+	if( *N$1 == 0x0p+0 ) goto label$1570;
+	TMP$720$1 = *(double*)((uint8*)V$1 + 16ll) / *N$1;
+	TMP$719$1 = *(double*)((uint8*)V$1 + 8ll) / *N$1;
+	TMP$718$1 = *(double*)V$1 / *N$1;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &TMP$722$1, &TMP$718$1, &TMP$719$1, &TMP$720$1 );
+	goto label$1571;
 	label$1570:;
-	TMP$723$1 = 0x0p+0;
-	label$1575:;
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$723$1, &TMP$724$1, &TMP$725$1 );
+	_ZN4MATH4VEC3C1Ev( &TMP$722$1 );
+	label$1571:;
+	_ZN4MATH4VEC3C1ERKS0_( &fb$result$1, (struct $N4MATH4VEC3E*)&TMP$722$1 );
 	goto label$1569;
 	label$1569:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHeqERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+struct $N4MATH4VEC3E _ZN4MATHdvERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
-	boolean TMP$726$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$1576:;
-	if( (((int64)-(*(double*)V1$1 == *(double*)V2$1) & (int64)-(*(double*)((uint8*)V1$1 + 8ll) == *(double*)((uint8*)V2$1 + 8ll))) & (int64)-(*(double*)((uint8*)V1$1 + 16ll) == *(double*)((uint8*)V2$1 + 16ll))) == 0ll ) goto label$1578;
-	TMP$726$1 = (boolean)1ll;
-	goto label$1579;
-	label$1578:;
-	TMP$726$1 = (boolean)0ll;
-	label$1579:;
-	fb$result$1 = TMP$726$1;
+	double TMP$724$1;
+	double TMP$725$1;
+	double TMP$726$1;
+	struct $N4MATH4VEC3E fb$result$1;
+	label$1572:;
+	if( *(double*)((uint8*)V2$1 + 16ll) == 0x0p+0 ) goto label$1576;
+	TMP$726$1 = *(double*)((uint8*)V1$1 + 16ll) / *(double*)((uint8*)V2$1 + 16ll);
 	goto label$1577;
+	label$1576:;
+	TMP$726$1 = 0x0p+0;
 	label$1577:;
+	if( *(double*)((uint8*)V2$1 + 8ll) == 0x0p+0 ) goto label$1575;
+	TMP$725$1 = *(double*)((uint8*)V1$1 + 8ll) / *(double*)((uint8*)V2$1 + 8ll);
+	goto label$1578;
+	label$1575:;
+	TMP$725$1 = 0x0p+0;
+	label$1578:;
+	if( *(double*)V2$1 == 0x0p+0 ) goto label$1574;
+	TMP$724$1 = *(double*)V1$1 / *(double*)V2$1;
+	goto label$1579;
+	label$1574:;
+	TMP$724$1 = 0x0p+0;
+	label$1579:;
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$724$1, &TMP$725$1, &TMP$726$1 );
+	goto label$1573;
+	label$1573:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHneERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+boolean _ZN4MATHeqERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
 	boolean TMP$727$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1580:;
-	if( (((int64)-(*(double*)V1$1 != *(double*)V2$1) | (int64)-(*(double*)((uint8*)V1$1 + 8ll) != *(double*)((uint8*)V2$1 + 8ll))) | (int64)-(*(double*)((uint8*)V1$1 + 16ll) != *(double*)((uint8*)V2$1 + 16ll))) == 0ll ) goto label$1582;
+	if( (((int64)-(*(double*)V1$1 == *(double*)V2$1) & (int64)-(*(double*)((uint8*)V1$1 + 8ll) == *(double*)((uint8*)V2$1 + 8ll))) & (int64)-(*(double*)((uint8*)V1$1 + 16ll) == *(double*)((uint8*)V2$1 + 16ll))) == 0ll ) goto label$1582;
 	TMP$727$1 = (boolean)1ll;
 	goto label$1583;
 	label$1582:;
@@ -9869,15 +9868,13 @@ boolean _ZN4MATHneERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VE
 	return fb$result$1;
 }
 
-boolean _ZN4MATH3CMPERKNS_4VEC3ES2_RKd( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1, double* S$1 )
+boolean _ZN4MATHneERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
 {
 	boolean TMP$728$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1584:;
-	double T$1;
-	T$1 = __builtin_fabs( *S$1 );
-	if( (((int64)-(__builtin_fabs( (*(double*)V1$1 - *(double*)V2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll)) ) <= T$1)) == 0ll ) goto label$1586;
+	if( (((int64)-(*(double*)V1$1 != *(double*)V2$1) | (int64)-(*(double*)((uint8*)V1$1 + 8ll) != *(double*)((uint8*)V2$1 + 8ll))) | (int64)-(*(double*)((uint8*)V1$1 + 16ll) != *(double*)((uint8*)V2$1 + 16ll))) == 0ll ) goto label$1586;
 	TMP$728$1 = (boolean)1ll;
 	goto label$1587;
 	label$1586:;
@@ -9889,19 +9886,39 @@ boolean _ZN4MATH3CMPERKNS_4VEC3ES2_RKd( struct $N4MATH4VEC3E* V1$1, struct $N4MA
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC3E _ZN4MATH5CROSSERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+boolean _ZN4MATH3CMPERKNS_4VEC3ES2_RKd( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1, double* S$1 )
 {
-	double TMP$730$1;
-	double TMP$731$1;
-	double TMP$732$1;
-	struct $N4MATH4VEC3E fb$result$1;
+	boolean TMP$729$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1588:;
-	TMP$732$1 = (*(double*)V1$1 * *(double*)((uint8*)V2$1 + 8ll)) - (*(double*)((uint8*)V1$1 + 8ll) * *(double*)V2$1);
-	TMP$731$1 = (*(double*)((uint8*)V1$1 + 16ll) * *(double*)V2$1) - (*(double*)V1$1 * *(double*)((uint8*)V2$1 + 16ll));
-	TMP$730$1 = (*(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 16ll)) - (*(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 8ll));
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$730$1, &TMP$731$1, &TMP$732$1 );
+	double T$1;
+	T$1 = __builtin_fabs( *S$1 );
+	if( (((int64)-(__builtin_fabs( (*(double*)V1$1 - *(double*)V2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll)) ) <= T$1)) == 0ll ) goto label$1590;
+	TMP$729$1 = (boolean)1ll;
+	goto label$1591;
+	label$1590:;
+	TMP$729$1 = (boolean)0ll;
+	label$1591:;
+	fb$result$1 = TMP$729$1;
 	goto label$1589;
 	label$1589:;
+	return fb$result$1;
+}
+
+struct $N4MATH4VEC3E _ZN4MATH5CROSSERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1 )
+{
+	double TMP$731$1;
+	double TMP$732$1;
+	double TMP$733$1;
+	struct $N4MATH4VEC3E fb$result$1;
+	label$1592:;
+	TMP$733$1 = (*(double*)V1$1 * *(double*)((uint8*)V2$1 + 8ll)) - (*(double*)((uint8*)V1$1 + 8ll) * *(double*)V2$1);
+	TMP$732$1 = (*(double*)((uint8*)V1$1 + 16ll) * *(double*)V2$1) - (*(double*)V1$1 * *(double*)((uint8*)V2$1 + 16ll));
+	TMP$731$1 = (*(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 16ll)) - (*(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 8ll));
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$731$1, &TMP$732$1, &TMP$733$1 );
+	goto label$1593;
+	label$1593:;
 	return fb$result$1;
 }
 
@@ -9909,31 +9926,31 @@ double _ZN4MATH3DOTERKNS_4VEC3ES2_( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4V
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1590:;
+	label$1594:;
 	fb$result$1 = ((*(double*)V1$1 * *(double*)V2$1) + (*(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll))) + (*(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll));
-	goto label$1591;
-	label$1591:;
+	goto label$1595;
+	label$1595:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC3E _ZN4MATH4LERPERKNS_4VEC3ES2_RKd( struct $N4MATH4VEC3E* V1$1, struct $N4MATH4VEC3E* V2$1, double* S$1 )
 {
-	double TMP$734$1;
 	double TMP$735$1;
 	double TMP$736$1;
+	double TMP$737$1;
 	struct $N4MATH4VEC3E fb$result$1;
-	label$1592:;
+	label$1596:;
 	double T$1;
 	double vr$0 = _ZN4MATH5CLAMPERKd( S$1 );
 	T$1 = vr$0;
 	double U$1;
 	U$1 = 0x1.p+0 - T$1;
-	TMP$736$1 = (*(double*)((uint8*)V1$1 + 16ll) * U$1) + (*(double*)((uint8*)V2$1 + 16ll) * T$1);
-	TMP$735$1 = (*(double*)((uint8*)V1$1 + 8ll) * U$1) + (*(double*)((uint8*)V2$1 + 8ll) * T$1);
-	TMP$734$1 = (*(double*)V1$1 * U$1) + (*(double*)V2$1 * T$1);
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$734$1, &TMP$735$1, &TMP$736$1 );
-	goto label$1593;
-	label$1593:;
+	TMP$737$1 = (*(double*)((uint8*)V1$1 + 16ll) * U$1) + (*(double*)((uint8*)V2$1 + 16ll) * T$1);
+	TMP$736$1 = (*(double*)((uint8*)V1$1 + 8ll) * U$1) + (*(double*)((uint8*)V2$1 + 8ll) * T$1);
+	TMP$735$1 = (*(double*)V1$1 * U$1) + (*(double*)V2$1 * T$1);
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$735$1, &TMP$736$1, &TMP$737$1 );
+	goto label$1597;
+	label$1597:;
 	return fb$result$1;
 }
 
@@ -9942,43 +9959,43 @@ void _ZN4MATH4CVECC1Ev( struct $N4MATH4CVECE* THIS$1 )
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	label$1594:;
-	label$1595:;
+	label$1598:;
+	label$1599:;
 }
 
 void _ZN4MATH4CVECC1ERKdS2_S2_( struct $N4MATH4CVECE* THIS$1, double* N1$1, double* N2$1, double* N3$1 )
 {
-	label$1596:;
+	label$1600:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	if( *N2$1 < 0x0p+0 ) goto label$1599;
+	if( *N2$1 < 0x0p+0 ) goto label$1603;
 	{
-		double TMP$737$2;
-		TMP$737$2 = 0x1.921FB54442D18p+2;
-		double vr$8 = _ZN4MATH4WRAPERKdS1_( N1$1, (double*)&TMP$737$2 );
+		double TMP$738$2;
+		TMP$738$2 = 0x1.921FB54442D18p+2;
+		double vr$8 = _ZN4MATH4WRAPERKdS1_( N1$1, (double*)&TMP$738$2 );
 		*(double*)((uint8*)THIS$1 + 8ll) = vr$8;
 		*(double*)((uint8*)THIS$1 + 16ll) = *N2$1;
 	}
-	goto label$1598;
-	label$1599:;
+	goto label$1602;
+	label$1603:;
 	{
-		double TMP$738$2;
 		double TMP$739$2;
-		TMP$739$2 = 0x1.921FB54442D18p+2;
-		TMP$738$2 = *N1$1 + 0x1.921FB54442D18p+1;
-		double vr$16 = _ZN4MATH4WRAPERKdS1_( &TMP$738$2, (double*)&TMP$739$2 );
+		double TMP$740$2;
+		TMP$740$2 = 0x1.921FB54442D18p+2;
+		TMP$739$2 = *N1$1 + 0x1.921FB54442D18p+1;
+		double vr$16 = _ZN4MATH4WRAPERKdS1_( &TMP$739$2, (double*)&TMP$740$2 );
 		*(double*)((uint8*)THIS$1 + 8ll) = vr$16;
 		*(double*)((uint8*)THIS$1 + 16ll) = -(*N2$1);
 	}
-	label$1598:;
+	label$1602:;
 	*(double*)THIS$1 = *N3$1;
-	label$1597:;
+	label$1601:;
 }
 
 void _ZN4MATH4CVECC1ERKNS_4VEC2ERKd( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC2E* V$1, double* N$1 )
 {
-	label$1600:;
+	label$1604:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -9987,12 +10004,12 @@ void _ZN4MATH4CVECC1ERKNS_4VEC2ERKd( struct $N4MATH4CVECE* THIS$1, struct $N4MAT
 	double vr$8 = _ZNK4MATH4VEC211NORM__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$8;
 	*(double*)THIS$1 = *N$1;
-	label$1601:;
+	label$1605:;
 }
 
 void _ZN4MATH4CVECC1ERKNS_4PVECERKd( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4PVECE* V$1, double* N$1 )
 {
-	label$1602:;
+	label$1606:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -10001,12 +10018,12 @@ void _ZN4MATH4CVECC1ERKNS_4PVECERKd( struct $N4MATH4CVECE* THIS$1, struct $N4MAT
 	double vr$8 = _ZNK4MATH4PVEC10RHO__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$8;
 	*(double*)THIS$1 = *N$1;
-	label$1603:;
+	label$1607:;
 }
 
 void _ZN4MATH4CVECC1ERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1604:;
+	label$1608:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -10015,24 +10032,24 @@ void _ZN4MATH4CVECC1ERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4V
 	double vr$12 = _ZN4MATH5HYPOTERKdS1_( (double*)V$1, (double*)((uint8*)V$1 + 8ll) );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)THIS$1 = *(double*)((uint8*)V$1 + 16ll);
-	label$1605:;
+	label$1609:;
 }
 
 void _ZN4MATH4CVECC1ERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1606:;
+	label$1610:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)THIS$1 = *(double*)V$1;
-	label$1607:;
+	label$1611:;
 }
 
 void _ZN4MATH4CVECpLERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1608:;
+	label$1612:;
 	double I$1;
 	I$1 = (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) + *(double*)V$1;
 	double J$1;
@@ -10042,12 +10059,12 @@ void _ZN4MATH4CVECpLERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4V
 	double vr$19 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$19;
 	*(double*)THIS$1 = *(double*)THIS$1 + *(double*)((uint8*)V$1 + 16ll);
-	label$1609:;
+	label$1613:;
 }
 
 void _ZN4MATH4CVECpLERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1610:;
+	label$1614:;
 	double I$1;
 	I$1 = (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) + (__builtin_cos( *(double*)((uint8*)V$1 + 8ll) ) * *(double*)((uint8*)V$1 + 16ll));
 	double J$1;
@@ -10057,12 +10074,12 @@ void _ZN4MATH4CVECpLERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* 
 	double vr$25 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$25;
 	*(double*)THIS$1 = *(double*)THIS$1 + *(double*)V$1;
-	label$1611:;
+	label$1615:;
 }
 
 void _ZN4MATH4CVECmIERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1612:;
+	label$1616:;
 	double I$1;
 	I$1 = (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) - *(double*)V$1;
 	double J$1;
@@ -10072,12 +10089,12 @@ void _ZN4MATH4CVECmIERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4V
 	double vr$19 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$19;
 	*(double*)THIS$1 = *(double*)THIS$1 - *(double*)((uint8*)V$1 + 16ll);
-	label$1613:;
+	label$1617:;
 }
 
 void _ZN4MATH4CVECmIERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1614:;
+	label$1618:;
 	double I$1;
 	I$1 = (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) - (__builtin_cos( *(double*)((uint8*)V$1 + 8ll) ) * *(double*)((uint8*)V$1 + 16ll));
 	double J$1;
@@ -10087,36 +10104,36 @@ void _ZN4MATH4CVECmIERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* 
 	double vr$25 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$25;
 	*(double*)THIS$1 = *(double*)THIS$1 - *(double*)V$1;
-	label$1615:;
+	label$1619:;
 }
 
 void _ZN4MATH4CVECmLERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	label$1616:;
-	if( *N$1 < 0x0p+0 ) goto label$1619;
+	label$1620:;
+	if( *N$1 < 0x0p+0 ) goto label$1623;
 	{
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * *N$1;
 		*(double*)THIS$1 = *(double*)THIS$1 * *N$1;
 	}
-	goto label$1618;
-	label$1619:;
+	goto label$1622;
+	label$1623:;
 	{
-		double TMP$740$2;
 		double TMP$741$2;
-		TMP$741$2 = 0x1.921FB54442D18p+2;
-		TMP$740$2 = *(double*)((uint8*)THIS$1 + 8ll) + 0x1.921FB54442D18p+1;
-		double vr$13 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$740$2, (double*)&TMP$741$2 );
+		double TMP$742$2;
+		TMP$742$2 = 0x1.921FB54442D18p+2;
+		TMP$741$2 = *(double*)((uint8*)THIS$1 + 8ll) + 0x1.921FB54442D18p+1;
+		double vr$13 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$741$2, (double*)&TMP$742$2 );
 		*(double*)((uint8*)THIS$1 + 8ll) = vr$13;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * -(*N$1);
 		*(double*)THIS$1 = *(double*)THIS$1 * -(*N$1);
 	}
-	label$1618:;
-	label$1617:;
+	label$1622:;
+	label$1621:;
 }
 
 void _ZN4MATH4CVECmLERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1620:;
+	label$1624:;
 	double I$1;
 	I$1 = (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) * *(double*)V$1;
 	double J$1;
@@ -10126,12 +10143,12 @@ void _ZN4MATH4CVECmLERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4V
 	double vr$19 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$19;
 	*(double*)THIS$1 = *(double*)THIS$1 * *(double*)((uint8*)V$1 + 16ll);
-	label$1621:;
+	label$1625:;
 }
 
 void _ZN4MATH4CVECmLERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1622:;
+	label$1626:;
 	double I$1;
 	I$1 = ((__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) * __builtin_cos( *(double*)((uint8*)V$1 + 8ll) )) * *(double*)((uint8*)V$1 + 16ll);
 	double J$1;
@@ -10141,145 +10158,145 @@ void _ZN4MATH4CVECmLERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* 
 	double vr$26 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$26;
 	*(double*)THIS$1 = *(double*)THIS$1 * *(double*)V$1;
-	label$1623:;
+	label$1627:;
 }
 
 void _ZN4MATH4CVECdVERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	label$1624:;
-	if( *N$1 <= 0x0p+0 ) goto label$1627;
+	label$1628:;
+	if( *N$1 <= 0x0p+0 ) goto label$1631;
 	{
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / *N$1;
 		*(double*)THIS$1 = *(double*)THIS$1 / *N$1;
 	}
-	goto label$1626;
-	label$1627:;
-	if( *N$1 > 0x0p+0 ) goto label$1628;
+	goto label$1630;
+	label$1631:;
+	if( *N$1 > 0x0p+0 ) goto label$1632;
 	{
-		double TMP$742$2;
 		double TMP$743$2;
-		TMP$743$2 = 0x1.921FB54442D18p+2;
-		TMP$742$2 = *(double*)((uint8*)THIS$1 + 8ll) + 0x1.921FB54442D18p+1;
-		double vr$14 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$742$2, (double*)&TMP$743$2 );
+		double TMP$744$2;
+		TMP$744$2 = 0x1.921FB54442D18p+2;
+		TMP$743$2 = *(double*)((uint8*)THIS$1 + 8ll) + 0x1.921FB54442D18p+1;
+		double vr$14 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$743$2, (double*)&TMP$744$2 );
 		*(double*)((uint8*)THIS$1 + 8ll) = vr$14;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / -(*N$1);
 		*(double*)THIS$1 = *(double*)THIS$1 / *N$1;
 	}
-	goto label$1626;
-	label$1628:;
+	goto label$1630;
+	label$1632:;
 	{
 		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)THIS$1 = 0x0p+0;
 	}
-	label$1626:;
-	label$1625:;
+	label$1630:;
+	label$1629:;
 }
 
 struct $N4MATH4VEC3E _ZNK4MATH4CVECcvNS_4VEC3EEv( struct $N4MATH4CVECE* THIS$1 )
 {
-	double TMP$745$1;
 	double TMP$746$1;
+	double TMP$747$1;
 	struct $N4MATH4VEC3E fb$result$1;
-	label$1629:;
-	TMP$746$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
-	TMP$745$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$745$1, &TMP$746$1, (double*)THIS$1 );
-	goto label$1630;
-	label$1630:;
+	label$1633:;
+	TMP$747$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
+	TMP$746$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, &TMP$746$1, &TMP$747$1, (double*)THIS$1 );
+	goto label$1634;
+	label$1634:;
 	return fb$result$1;
 }
 
 FBSTRING* _ZNK4MATH4CVECcv8FBSTRINGEv( struct $N4MATH4CVECE* THIS$1 )
 {
-	FBSTRING TMP$748$1;
 	FBSTRING TMP$749$1;
 	FBSTRING TMP$750$1;
 	FBSTRING TMP$751$1;
 	FBSTRING TMP$752$1;
 	FBSTRING TMP$753$1;
+	FBSTRING TMP$754$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1631:;
+	label$1635:;
 	FBSTRING* vr$2 = fb_DoubleToStr( *(double*)THIS$1 );
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
-	__builtin_memset( &TMP$748$1, 0, 24ll );
-	FBSTRING* vr$9 = fb_StrConcat( &TMP$748$1, (void*)"<math.cvec>{ theta : ", 22ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$749$1, 0, 24ll );
-	FBSTRING* vr$12 = fb_StrConcat( &TMP$749$1, (void*)vr$9, -1ll, (void*)" , rho : ", 10ll );
+	FBSTRING* vr$9 = fb_StrConcat( &TMP$749$1, (void*)"<math.cvec>{ theta : ", 22ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$750$1, 0, 24ll );
-	FBSTRING* vr$15 = fb_StrConcat( &TMP$750$1, (void*)vr$12, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$12 = fb_StrConcat( &TMP$750$1, (void*)vr$9, -1ll, (void*)" , rho : ", 10ll );
 	__builtin_memset( &TMP$751$1, 0, 24ll );
-	FBSTRING* vr$18 = fb_StrConcat( &TMP$751$1, (void*)vr$15, -1ll, (void*)" , z : ", 8ll );
+	FBSTRING* vr$15 = fb_StrConcat( &TMP$751$1, (void*)vr$12, -1ll, (void*)vr$4, -1ll );
 	__builtin_memset( &TMP$752$1, 0, 24ll );
-	FBSTRING* vr$21 = fb_StrConcat( &TMP$752$1, (void*)vr$18, -1ll, (void*)vr$2, -1ll );
+	FBSTRING* vr$18 = fb_StrConcat( &TMP$752$1, (void*)vr$15, -1ll, (void*)" , z : ", 8ll );
 	__builtin_memset( &TMP$753$1, 0, 24ll );
-	FBSTRING* vr$24 = fb_StrConcat( &TMP$753$1, (void*)vr$21, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$21 = fb_StrConcat( &TMP$753$1, (void*)vr$18, -1ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$754$1, 0, 24ll );
+	FBSTRING* vr$24 = fb_StrConcat( &TMP$754$1, (void*)vr$21, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$24, -1ll, 0 );
-	goto label$1632;
-	label$1632:;
+	goto label$1636;
+	label$1636:;
 	FBSTRING* vr$27 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$27;
 }
 
 void _ZN4MATH4CVECaSERKNS_4VEC2E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$1633:;
+	label$1637:;
 	double vr$0 = _ZNK4MATH4VEC212THETA__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$0;
 	double vr$2 = _ZNK4MATH4VEC211NORM__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$2;
 	*(double*)THIS$1 = 0x0p+0;
-	label$1634:;
+	label$1638:;
 }
 
 void _ZN4MATH4CVECaSERKNS_4PVECE( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$1635:;
+	label$1639:;
 	double vr$0 = _ZNK4MATH4PVEC12THETA__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$0;
 	double vr$2 = _ZNK4MATH4PVEC10RHO__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$2;
 	*(double*)THIS$1 = 0x0p+0;
-	label$1636:;
+	label$1640:;
 }
 
 void _ZN4MATH4CVECaSERKNS_4VEC3E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1637:;
+	label$1641:;
 	double vr$0 = _ZNK4MATH4VEC312THETA__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$0;
 	double vr$6 = _ZN4MATH5HYPOTERKdS1_( (double*)V$1, (double*)((uint8*)V$1 + 8ll) );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$6;
 	*(double*)THIS$1 = *(double*)((uint8*)V$1 + 16ll);
-	label$1638:;
+	label$1642:;
 }
 
 void _ZN4MATH4CVECaSERKS0_( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1639:;
+	label$1643:;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)THIS$1 = *(double*)V$1;
-	label$1640:;
+	label$1644:;
 }
 
 double _ZNK4MATH4CVEC13CHNORM__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
-	double TMP$754$1;
 	double TMP$755$1;
 	double TMP$756$1;
+	double TMP$757$1;
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1641:;
-	TMP$756$1 = __builtin_fabs( *(double*)THIS$1 );
-	TMP$755$1 = __builtin_fabs( (__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) );
-	TMP$754$1 = __builtin_fabs( (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) );
-	double vr$16 = _ZN4MATH3MAXERKdS1_S1_( &TMP$754$1, &TMP$755$1, &TMP$756$1 );
+	label$1645:;
+	TMP$757$1 = __builtin_fabs( *(double*)THIS$1 );
+	TMP$756$1 = __builtin_fabs( (__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) );
+	TMP$755$1 = __builtin_fabs( (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) );
+	double vr$16 = _ZN4MATH3MAXERKdS1_S1_( &TMP$755$1, &TMP$756$1, &TMP$757$1 );
 	fb$result$1 = vr$16;
-	goto label$1642;
-	label$1642:;
+	goto label$1646;
+	label$1646:;
 	return fb$result$1;
 }
 
@@ -10287,10 +10304,10 @@ double _ZNK4MATH4CVEC13MANORM__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1643:;
+	label$1647:;
 	fb$result$1 = (__builtin_fabs( (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) ) + __builtin_fabs( (__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) )) + __builtin_fabs( *(double*)THIS$1 );
-	goto label$1644;
-	label$1644:;
+	goto label$1648;
+	label$1648:;
 	return fb$result$1;
 }
 
@@ -10298,14 +10315,14 @@ double _ZNK4MATH4CVEC11NORM__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1645:;
+	label$1649:;
 	double I$1;
 	I$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
 	double J$1;
 	J$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
 	fb$result$1 = __builtin_sqrt( (((I$1 * I$1) + (J$1 * J$1)) + (*(double*)THIS$1 * *(double*)THIS$1)) );
-	goto label$1646;
-	label$1646:;
+	goto label$1650;
+	label$1650:;
 	return fb$result$1;
 }
 
@@ -10313,47 +10330,47 @@ double _ZNK4MATH4CVEC10RHO__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1647:;
+	label$1651:;
 	fb$result$1 = *(double*)((uint8*)THIS$1 + 16ll);
-	goto label$1648;
-	label$1648:;
+	goto label$1652;
+	label$1652:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4CVEC10RHO__set__ERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	label$1649:;
-	if( *N$1 < 0x0p+0 ) goto label$1652;
+	label$1653:;
+	if( *N$1 < 0x0p+0 ) goto label$1656;
 	{
 		*(double*)((uint8*)THIS$1 + 16ll) = *N$1;
 	}
-	goto label$1651;
-	label$1652:;
+	goto label$1655;
+	label$1656:;
 	{
-		double TMP$757$2;
 		double TMP$758$2;
-		TMP$758$2 = 0x1.921FB54442D18p+2;
-		TMP$757$2 = *(double*)((uint8*)THIS$1 + 16ll) + 0x1.921FB54442D18p+1;
-		double vr$7 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$757$2, (double*)&TMP$758$2 );
+		double TMP$759$2;
+		TMP$759$2 = 0x1.921FB54442D18p+2;
+		TMP$758$2 = *(double*)((uint8*)THIS$1 + 16ll) + 0x1.921FB54442D18p+1;
+		double vr$7 = _ZN4MATH4WRAPERKdS1_( (double*)&TMP$758$2, (double*)&TMP$759$2 );
 		*(double*)((uint8*)THIS$1 + 8ll) = vr$7;
 		*(double*)((uint8*)THIS$1 + 16ll) = -(*N$1);
 	}
-	label$1651:;
-	label$1650:;
+	label$1655:;
+	label$1654:;
 }
 
 double _ZNK4MATH4CVEC13SQNORM__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1653:;
+	label$1657:;
 	double I$1;
 	I$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
 	double J$1;
 	J$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
 	fb$result$1 = ((I$1 * I$1) + (J$1 * J$1)) + (*(double*)THIS$1 * *(double*)THIS$1);
-	goto label$1654;
-	label$1654:;
+	goto label$1658;
+	label$1658:;
 	return fb$result$1;
 }
 
@@ -10361,146 +10378,127 @@ double _ZNK4MATH4CVEC12THETA__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1655:;
+	label$1659:;
 	fb$result$1 = *(double*)((uint8*)THIS$1 + 8ll);
-	goto label$1656;
-	label$1656:;
+	goto label$1660;
+	label$1660:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4CVEC12THETA__set__ERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	double TMP$759$1;
-	label$1657:;
-	TMP$759$1 = 0x1.921FB54442D18p+2;
-	double vr$1 = _ZN4MATH4WRAPERKdS1_( N$1, (double*)&TMP$759$1 );
+	double TMP$760$1;
+	label$1661:;
+	TMP$760$1 = 0x1.921FB54442D18p+2;
+	double vr$1 = _ZN4MATH4WRAPERKdS1_( N$1, (double*)&TMP$760$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$1;
-	label$1658:;
+	label$1662:;
 }
 
 double _ZNK4MATH4CVEC8X__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1659:;
+	label$1663:;
 	fb$result$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
-	goto label$1660;
-	label$1660:;
+	goto label$1664;
+	label$1664:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4CVEC8X__set__ERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	label$1661:;
+	label$1665:;
 	double J$1;
 	J$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
 	double vr$6 = _ZN4MATH5THETAERKdS1_( N$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$6;
 	double vr$9 = _ZN4MATH5HYPOTERKdS1_( N$1, (double*)&J$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$9;
-	label$1662:;
+	label$1666:;
 }
 
 struct $N4MATH4VEC2E _ZNK4MATH4CVEC9XY__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
-	double TMP$761$1;
 	double TMP$762$1;
+	double TMP$763$1;
 	struct $N4MATH4VEC2E fb$result$1;
-	label$1663:;
-	TMP$762$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
-	TMP$761$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
-	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, &TMP$761$1, &TMP$762$1 );
-	goto label$1664;
-	label$1664:;
+	label$1667:;
+	TMP$763$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
+	TMP$762$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
+	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, &TMP$762$1, &TMP$763$1 );
+	goto label$1668;
+	label$1668:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4CVEC9XY__set__ERKNS_4VEC2E( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$1665:;
+	label$1669:;
 	double vr$0 = _ZNK4MATH4VEC212THETA__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$0;
 	double vr$2 = _ZNK4MATH4VEC211NORM__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$2;
-	label$1666:;
+	label$1670:;
 }
 
 void _ZN4MATH4CVEC9XY__set__ERKNS_4PVECE( struct $N4MATH4CVECE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$1667:;
+	label$1671:;
 	double vr$0 = _ZNK4MATH4PVEC12THETA__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$0;
 	double vr$2 = _ZNK4MATH4PVEC10RHO__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$2;
-	label$1668:;
+	label$1672:;
 }
 
 double _ZNK4MATH4CVEC8Y__get__Ev( struct $N4MATH4CVECE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1669:;
+	label$1673:;
 	fb$result$1 = -(__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) )) * *(double*)((uint8*)THIS$1 + 16ll);
-	goto label$1670;
-	label$1670:;
+	goto label$1674;
+	label$1674:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4CVEC8Y__set__ERKd( struct $N4MATH4CVECE* THIS$1, double* N$1 )
 {
-	label$1671:;
+	label$1675:;
 	double I$1;
 	I$1 = __builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll);
 	double vr$5 = _ZN4MATH5THETAERKdS1_( (double*)&I$1, N$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$5;
 	double vr$8 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, N$1 );
 	*(double*)((uint8*)THIS$1 + 16ll) = vr$8;
-	label$1672:;
+	label$1676:;
 }
 
 struct $N4MATH4CVECE _ZN4MATH4CVEC13FROMCARTESIANERKdS2_S2_( double* N1$1, double* N2$1, double* N3$1 )
 {
-	double TMP$764$1;
 	double TMP$765$1;
+	double TMP$766$1;
 	struct $N4MATH4CVECE fb$result$1;
-	label$1673:;
+	label$1677:;
 	double vr$0 = _ZN4MATH5HYPOTERKdS1_( N1$1, N2$1 );
-	TMP$765$1 = vr$0;
+	TMP$766$1 = vr$0;
 	double vr$2 = _ZN4MATH5THETAERKdS1_( N1$1, N2$1 );
-	TMP$764$1 = vr$2;
-	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$764$1, (double*)&TMP$765$1, N3$1 );
-	goto label$1674;
-	label$1674:;
+	TMP$765$1 = vr$2;
+	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$765$1, (double*)&TMP$766$1, N3$1 );
+	goto label$1678;
+	label$1678:;
 	return fb$result$1;
 }
 
 boolean _ZNK4MATH4CVEC6ISNULLEv( struct $N4MATH4CVECE* THIS$1 )
-{
-	boolean TMP$766$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$1675:;
-	double vr$1 = _ZNK4MATH4CVEC11NORM__get__Ev( THIS$1 );
-	if( vr$1 != 0x0p+0 ) goto label$1677;
-	TMP$766$1 = (boolean)1ll;
-	goto label$1678;
-	label$1677:;
-	TMP$766$1 = (boolean)0ll;
-	label$1678:;
-	fb$result$1 = TMP$766$1;
-	goto label$1676;
-	label$1676:;
-	return fb$result$1;
-}
-
-boolean _ZNK4MATH4CVEC6ISNULLERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
 {
 	boolean TMP$767$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1679:;
 	double vr$1 = _ZNK4MATH4CVEC11NORM__get__Ev( THIS$1 );
-	if( vr$1 > __builtin_fabs( *T$1 ) ) goto label$1681;
+	if( vr$1 != 0x0p+0 ) goto label$1681;
 	TMP$767$1 = (boolean)1ll;
 	goto label$1682;
 	label$1681:;
@@ -10512,14 +10510,14 @@ boolean _ZNK4MATH4CVEC6ISNULLERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH4CVEC6ISUNITEv( struct $N4MATH4CVECE* THIS$1 )
+boolean _ZNK4MATH4CVEC6ISNULLERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
 {
 	boolean TMP$768$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1683:;
 	double vr$1 = _ZNK4MATH4CVEC11NORM__get__Ev( THIS$1 );
-	if( vr$1 != 0x1.p+0 ) goto label$1685;
+	if( vr$1 > __builtin_fabs( *T$1 ) ) goto label$1685;
 	TMP$768$1 = (boolean)1ll;
 	goto label$1686;
 	label$1685:;
@@ -10531,14 +10529,14 @@ boolean _ZNK4MATH4CVEC6ISUNITEv( struct $N4MATH4CVECE* THIS$1 )
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH4CVEC6ISUNITERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
+boolean _ZNK4MATH4CVEC6ISUNITEv( struct $N4MATH4CVECE* THIS$1 )
 {
 	boolean TMP$769$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1687:;
 	double vr$1 = _ZNK4MATH4CVEC11NORM__get__Ev( THIS$1 );
-	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1689;
+	if( vr$1 != 0x1.p+0 ) goto label$1689;
 	TMP$769$1 = (boolean)1ll;
 	goto label$1690;
 	label$1689:;
@@ -10550,21 +10548,18 @@ boolean _ZNK4MATH4CVEC6ISUNITERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
 	return fb$result$1;
 }
 
-double _ZNK4MATH4CVEC6MINORMERKd( struct $N4MATH4CVECE* THIS$1, double* E$1 )
+boolean _ZNK4MATH4CVEC6ISUNITERKd( struct $N4MATH4CVECE* THIS$1, double* T$1 )
 {
-	double TMP$770$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
+	boolean TMP$770$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1691:;
-	if( *E$1 == 0x0p+0 ) goto label$1693;
-	double vr$10 = pow( __builtin_fabs( (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) ), *E$1 );
-	double vr$17 = pow( __builtin_fabs( (__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) ), *E$1 );
-	double vr$22 = pow( __builtin_fabs( *(double*)THIS$1 ), *E$1 );
-	double vr$24 = pow( (vr$10 + vr$17) + vr$22, 0x1.p+0 / *E$1 );
-	TMP$770$1 = vr$24;
+	double vr$1 = _ZNK4MATH4CVEC11NORM__get__Ev( THIS$1 );
+	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1693;
+	TMP$770$1 = (boolean)1ll;
 	goto label$1694;
 	label$1693:;
-	TMP$770$1 = 0x0p+0;
+	TMP$770$1 = (boolean)0ll;
 	label$1694:;
 	fb$result$1 = TMP$770$1;
 	goto label$1692;
@@ -10572,9 +10567,30 @@ double _ZNK4MATH4CVEC6MINORMERKd( struct $N4MATH4CVECE* THIS$1, double* E$1 )
 	return fb$result$1;
 }
 
+double _ZNK4MATH4CVEC6MINORMERKd( struct $N4MATH4CVECE* THIS$1, double* E$1 )
+{
+	double TMP$771$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$1695:;
+	if( *E$1 == 0x0p+0 ) goto label$1697;
+	double vr$10 = pow( __builtin_fabs( (__builtin_cos( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) ), *E$1 );
+	double vr$17 = pow( __builtin_fabs( (__builtin_sin( *(double*)((uint8*)THIS$1 + 8ll) ) * *(double*)((uint8*)THIS$1 + 16ll)) ), *E$1 );
+	double vr$22 = pow( __builtin_fabs( *(double*)THIS$1 ), *E$1 );
+	double vr$24 = pow( (vr$10 + vr$17) + vr$22, 0x1.p+0 / *E$1 );
+	TMP$771$1 = vr$24;
+	goto label$1698;
+	label$1697:;
+	TMP$771$1 = 0x0p+0;
+	label$1698:;
+	fb$result$1 = TMP$771$1;
+	goto label$1696;
+	label$1696:;
+	return fb$result$1;
+}
+
 FBSTRING* _ZNK4MATH4CVEC6TOJSONERKb( struct $N4MATH4CVECE* THIS$1, boolean* A$1 )
 {
-	FBSTRING TMP$772$1;
 	FBSTRING TMP$773$1;
 	FBSTRING TMP$774$1;
 	FBSTRING TMP$775$1;
@@ -10587,98 +10603,99 @@ FBSTRING* _ZNK4MATH4CVEC6TOJSONERKb( struct $N4MATH4CVECE* THIS$1, boolean* A$1 
 	FBSTRING TMP$782$1;
 	FBSTRING TMP$783$1;
 	FBSTRING TMP$784$1;
+	FBSTRING TMP$785$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1695:;
-	if( *A$1 == (boolean)0ll ) goto label$1697;
+	label$1699:;
+	if( *A$1 == (boolean)0ll ) goto label$1701;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)THIS$1 );
 	FBSTRING* vr$5 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
-	__builtin_memset( &TMP$773$1, 0, 24ll );
-	FBSTRING* vr$10 = fb_StrConcat( &TMP$773$1, (void*)"[", 2ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$774$1, 0, 24ll );
-	FBSTRING* vr$13 = fb_StrConcat( &TMP$774$1, (void*)vr$10, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$10 = fb_StrConcat( &TMP$774$1, (void*)"[", 2ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$775$1, 0, 24ll );
-	FBSTRING* vr$16 = fb_StrConcat( &TMP$775$1, (void*)vr$13, -1ll, (void*)vr$5, -1ll );
+	FBSTRING* vr$13 = fb_StrConcat( &TMP$775$1, (void*)vr$10, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$776$1, 0, 24ll );
-	FBSTRING* vr$19 = fb_StrConcat( &TMP$776$1, (void*)vr$16, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$16 = fb_StrConcat( &TMP$776$1, (void*)vr$13, -1ll, (void*)vr$5, -1ll );
 	__builtin_memset( &TMP$777$1, 0, 24ll );
-	FBSTRING* vr$22 = fb_StrConcat( &TMP$777$1, (void*)vr$19, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$19 = fb_StrConcat( &TMP$777$1, (void*)vr$16, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$778$1, 0, 24ll );
-	FBSTRING* vr$25 = fb_StrConcat( &TMP$778$1, (void*)vr$22, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$772$1, -1ll, (void*)vr$25, -1ll, 0 );
-	goto label$1698;
-	label$1697:;
+	FBSTRING* vr$22 = fb_StrConcat( &TMP$778$1, (void*)vr$19, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$779$1, 0, 24ll );
+	FBSTRING* vr$25 = fb_StrConcat( &TMP$779$1, (void*)vr$22, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$773$1, -1ll, (void*)vr$25, -1ll, 0 );
+	goto label$1702;
+	label$1701:;
 	FBSTRING* vr$28 = fb_DoubleToStr( *(double*)THIS$1 );
 	FBSTRING* vr$30 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$32 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
-	__builtin_memset( &TMP$779$1, 0, 24ll );
-	FBSTRING* vr$35 = fb_StrConcat( &TMP$779$1, (void*)"{\x22phi\x22:", 8ll, (void*)vr$32, -1ll );
 	__builtin_memset( &TMP$780$1, 0, 24ll );
-	FBSTRING* vr$38 = fb_StrConcat( &TMP$780$1, (void*)vr$35, -1ll, (void*)",\x22rho\x22:", 8ll );
+	FBSTRING* vr$35 = fb_StrConcat( &TMP$780$1, (void*)"{\x22phi\x22:", 8ll, (void*)vr$32, -1ll );
 	__builtin_memset( &TMP$781$1, 0, 24ll );
-	FBSTRING* vr$41 = fb_StrConcat( &TMP$781$1, (void*)vr$38, -1ll, (void*)vr$30, -1ll );
+	FBSTRING* vr$38 = fb_StrConcat( &TMP$781$1, (void*)vr$35, -1ll, (void*)",\x22rho\x22:", 8ll );
 	__builtin_memset( &TMP$782$1, 0, 24ll );
-	FBSTRING* vr$44 = fb_StrConcat( &TMP$782$1, (void*)vr$41, -1ll, (void*)",\x22z\x22:", 6ll );
+	FBSTRING* vr$41 = fb_StrConcat( &TMP$782$1, (void*)vr$38, -1ll, (void*)vr$30, -1ll );
 	__builtin_memset( &TMP$783$1, 0, 24ll );
-	FBSTRING* vr$47 = fb_StrConcat( &TMP$783$1, (void*)vr$44, -1ll, (void*)vr$28, -1ll );
+	FBSTRING* vr$44 = fb_StrConcat( &TMP$783$1, (void*)vr$41, -1ll, (void*)",\x22z\x22:", 6ll );
 	__builtin_memset( &TMP$784$1, 0, 24ll );
-	FBSTRING* vr$50 = fb_StrConcat( &TMP$784$1, (void*)vr$47, -1ll, (void*)"}", 2ll );
-	fb_StrInit( (void*)&TMP$772$1, -1ll, (void*)vr$50, -1ll, 0 );
-	label$1698:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$772$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$772$1 );
-	goto label$1696;
-	label$1696:;
+	FBSTRING* vr$47 = fb_StrConcat( &TMP$784$1, (void*)vr$44, -1ll, (void*)vr$28, -1ll );
+	__builtin_memset( &TMP$785$1, 0, 24ll );
+	FBSTRING* vr$50 = fb_StrConcat( &TMP$785$1, (void*)vr$47, -1ll, (void*)"}", 2ll );
+	fb_StrInit( (void*)&TMP$773$1, -1ll, (void*)vr$50, -1ll, 0 );
+	label$1702:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$773$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$773$1 );
+	goto label$1700;
+	label$1700:;
 	FBSTRING* vr$56 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$56;
 }
 
 struct $N4MATH4CVECE _ZN4MATH4CVEC5UNITXEv( void )
 {
-	double TMP$786$1;
 	double TMP$787$1;
 	double TMP$788$1;
+	double TMP$789$1;
 	struct $N4MATH4CVECE fb$result$1;
-	label$1699:;
-	TMP$788$1 = 0x0p+0;
-	TMP$787$1 = 0x1.p+0;
-	TMP$786$1 = 0x0p+0;
-	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$786$1, (double*)&TMP$787$1, (double*)&TMP$788$1 );
-	goto label$1700;
-	label$1700:;
+	label$1703:;
+	TMP$789$1 = 0x0p+0;
+	TMP$788$1 = 0x1.p+0;
+	TMP$787$1 = 0x0p+0;
+	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$787$1, (double*)&TMP$788$1, (double*)&TMP$789$1 );
+	goto label$1704;
+	label$1704:;
 	return fb$result$1;
 }
 
 struct $N4MATH4CVECE _ZN4MATH4CVEC5UNITYEv( void )
 {
-	double TMP$790$1;
 	double TMP$791$1;
 	double TMP$792$1;
+	double TMP$793$1;
 	struct $N4MATH4CVECE fb$result$1;
-	label$1701:;
-	TMP$792$1 = 0x0p+0;
-	TMP$791$1 = 0x1.p+0;
-	TMP$790$1 = 0x1.2D97C7F3321D2p+2;
-	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$790$1, (double*)&TMP$791$1, (double*)&TMP$792$1 );
-	goto label$1702;
-	label$1702:;
+	label$1705:;
+	TMP$793$1 = 0x0p+0;
+	TMP$792$1 = 0x1.p+0;
+	TMP$791$1 = 0x1.2D97C7F3321D2p+2;
+	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$791$1, (double*)&TMP$792$1, (double*)&TMP$793$1 );
+	goto label$1706;
+	label$1706:;
 	return fb$result$1;
 }
 
 struct $N4MATH4CVECE _ZN4MATH4CVEC5UNITZEv( void )
 {
-	double TMP$794$1;
 	double TMP$795$1;
 	double TMP$796$1;
+	double TMP$797$1;
 	struct $N4MATH4CVECE fb$result$1;
-	label$1703:;
-	TMP$796$1 = 0x1.p+0;
+	label$1707:;
+	TMP$797$1 = 0x1.p+0;
+	TMP$796$1 = 0x0p+0;
 	TMP$795$1 = 0x0p+0;
-	TMP$794$1 = 0x0p+0;
-	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$794$1, (double*)&TMP$795$1, (double*)&TMP$796$1 );
-	goto label$1704;
-	label$1704:;
+	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$795$1, (double*)&TMP$796$1, (double*)&TMP$797$1 );
+	goto label$1708;
+	label$1708:;
 	return fb$result$1;
 }
 
@@ -10688,46 +10705,11 @@ void _ZN4MATH4VEC4C1Ev( struct $N4MATH4VEC4E* THIS$1 )
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	label$1705:;
-	label$1706:;
-}
-
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_S3_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
-{
-	label$1707:;
-	__builtin_memset( (double*)THIS$1, 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)THIS$1 = vr$8;
-	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
-	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
-	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
-	label$1708:;
-}
-
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_S3_RKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
-{
 	label$1709:;
-	__builtin_memset( (double*)THIS$1, 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)THIS$1 = vr$8;
-	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
-	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1710:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_S3_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1711:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10738,13 +10720,14 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS3_( struct $N4MATH4VEC4E* THIS$1, str
 	*(double*)THIS$1 = vr$8;
 	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1712:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_S3_RKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
 {
 	label$1713:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10755,12 +10738,13 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS5_( struct $N4MATH4VEC4E* THIS$1, str
 	*(double*)THIS$1 = vr$8;
 	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1714:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1715:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10769,15 +10753,15 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S3_( struct $N4MATH4VEC4E* THIS$1, str
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
 	*(double*)THIS$1 = vr$8;
-	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1716:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALES3_RKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, double* N4$1 )
 {
 	label$1717:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10786,14 +10770,14 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S5_( struct $N4MATH4VEC4E* THIS$1, str
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
 	*(double*)THIS$1 = vr$8;
-	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1718:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1719:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10803,13 +10787,14 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S3_( struct $N4MATH4VEC4E* THIS$1, str
 	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
 	*(double*)THIS$1 = vr$8;
 	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1720:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, double* N3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS3_S5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
 {
 	label$1721:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10819,45 +10804,44 @@ void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S5_( struct $N4MATH4VEC4E* THIS$1, str
 	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
 	*(double*)THIS$1 = vr$8;
 	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1722:;
 }
 
-void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES5_S5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S3_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1723:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	*(double*)THIS$1 = *N1$1;
-	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)THIS$1 = vr$8;
+	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1724:;
 }
 
-void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES5_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKNS_8RATIONALERKdS5_S5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1, double* N3$1, double* N4$1 )
 {
 	label$1725:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	*(double*)THIS$1 = *N1$1;
-	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$8 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)THIS$1 = vr$8;
+	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1726:;
 }
 
-void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES5_S5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1727:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10867,13 +10851,14 @@ void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S5_( struct $N4MATH4VEC4E* THIS$1, dou
 	*(double*)THIS$1 = *N1$1;
 	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1728:;
 }
 
-void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES5_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
 {
 	label$1729:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10883,12 +10868,13 @@ void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S2_( struct $N4MATH4VEC4E* THIS$1, dou
 	*(double*)THIS$1 = *N1$1;
 	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1730:;
 }
 
-void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1731:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10896,15 +10882,15 @@ void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES5_( struct $N4MATH4VEC4E* THIS$1, dou
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *N1$1;
-	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1732:;
 }
 
-void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKdRKNS_8RATIONALES2_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1, double* N3$1, double* N4$1 )
 {
 	label$1733:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10912,14 +10898,14 @@ void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES2_( struct $N4MATH4VEC4E* THIS$1, dou
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *N1$1;
-	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	double vr$10 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1734:;
 }
 
-void _ZN4MATH4VEC4C1ERKdS2_S2_RKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
+void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES5_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1735:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10928,13 +10914,14 @@ void _ZN4MATH4VEC4C1ERKdS2_S2_RKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, dou
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *N1$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1736:;
 }
 
-void _ZN4MATH4VEC4C1ERKdS2_S2_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, double* N3$1, double* N4$1 )
+void _ZN4MATH4VEC4C1ERKdS2_RKNS_8RATIONALES2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, struct $N4MATH8RATIONALE* R3$1, double* N4$1 )
 {
 	label$1737:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10943,43 +10930,42 @@ void _ZN4MATH4VEC4C1ERKdS2_S2_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, d
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *N1$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R3$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1738:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKNS_8RATIONALES6_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1 )
+void _ZN4MATH4VEC4C1ERKdS2_S2_RKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, double* N3$1, struct $N4MATH8RATIONALE* R4$1 )
 {
 	label$1739:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	*(double*)THIS$1 = *(double*)V$1;
-	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
-	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
+	*(double*)THIS$1 = *N1$1;
+	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R4$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1740:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKNS_8RATIONALERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1 )
+void _ZN4MATH4VEC4C1ERKdS2_S2_S2_( struct $N4MATH4VEC4E* THIS$1, double* N1$1, double* N2$1, double* N3$1, double* N4$1 )
 {
 	label$1741:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	*(double*)THIS$1 = *(double*)V$1;
-	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
-	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
+	*(double*)THIS$1 = *N1$1;
+	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
+	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
 	label$1742:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKNS_8RATIONALES6_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1 )
 {
 	label$1743:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -10988,13 +10974,14 @@ void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1744:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, double* N1$1, double* N2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKNS_8RATIONALERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1 )
 {
 	label$1745:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -11003,47 +10990,42 @@ void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
 	label$1746:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4PVECERKNS_8RATIONALES6_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1 )
 {
 	label$1747:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
-	*(double*)THIS$1 = vr$8;
-	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	*(double*)THIS$1 = *(double*)V$1;
+	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
+	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1748:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4PVECERKNS_8RATIONALERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4VEC2ERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1, double* N1$1, double* N2$1 )
 {
 	label$1749:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
-	*(double*)THIS$1 = vr$8;
-	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
-	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
-	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
+	*(double*)THIS$1 = *(double*)V$1;
+	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
+	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
 	label$1750:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4PVECERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4PVECERKNS_8RATIONALES6_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, struct $N4MATH8RATIONALE* R1$1, struct $N4MATH8RATIONALE* R2$1 )
 {
 	label$1751:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -11054,13 +11036,14 @@ void _ZN4MATH4VEC4C1ERKNS_4PVECERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1
 	*(double*)THIS$1 = vr$8;
 	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1752:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4PVECERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, double* N1$1, double* N2$1 )
+void _ZN4MATH4VEC4C1ERKNS_4PVECERKNS_8RATIONALERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, struct $N4MATH8RATIONALE* R1$1, double* N2$1 )
 {
 	label$1753:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
@@ -11071,43 +11054,77 @@ void _ZN4MATH4VEC4C1ERKNS_4PVECERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4
 	*(double*)THIS$1 = vr$8;
 	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
-	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	double vr$12 = _ZNK4MATH8RATIONALcvdEv( R1$1 );
+	*(double*)((uint8*)THIS$1 + 16ll) = vr$12;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
 	label$1754:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC3ERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1, struct $N4MATH8RATIONALE* R$1 )
+void _ZN4MATH4VEC4C1ERKNS_4PVECERKdRKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, double* N1$1, struct $N4MATH8RATIONALE* R2$1 )
 {
 	label$1755:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
-	*(double*)THIS$1 = *(double*)V$1;
-	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
-	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R$1 );
+	double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
+	*(double*)THIS$1 = vr$8;
+	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R2$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
 	label$1756:;
 }
 
-void _ZN4MATH4VEC4C1ERKNS_4VEC3ERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1, double* N$1 )
+void _ZN4MATH4VEC4C1ERKNS_4PVECERKdS5_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1, double* N1$1, double* N2$1 )
 {
 	label$1757:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
+	double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
+	*(double*)THIS$1 = vr$8;
+	double vr$10 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
+	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
+	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
+	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
+	label$1758:;
+}
+
+void _ZN4MATH4VEC4C1ERKNS_4VEC3ERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1, struct $N4MATH8RATIONALE* R$1 )
+{
+	label$1759:;
+	__builtin_memset( (double*)THIS$1, 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
+	*(double*)THIS$1 = *(double*)V$1;
+	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
+	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
+	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R$1 );
+	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
+	label$1760:;
+}
+
+void _ZN4MATH4VEC4C1ERKNS_4VEC3ERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1, double* N$1 )
+{
+	label$1761:;
+	__builtin_memset( (double*)THIS$1, 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *N$1;
-	label$1758:;
+	label$1762:;
 }
 
 void _ZN4MATH4VEC4C1ERKNS_4CVECERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4CVECE* V$1, struct $N4MATH8RATIONALE* R$1 )
 {
-	label$1759:;
+	label$1763:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -11119,12 +11136,12 @@ void _ZN4MATH4VEC4C1ERKNS_4CVECERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, s
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
 	double vr$14 = _ZNK4MATH8RATIONALcvdEv( R$1 );
 	*(double*)((uint8*)THIS$1 + 24ll) = vr$14;
-	label$1760:;
+	label$1764:;
 }
 
 void _ZN4MATH4VEC4C1ERKNS_4CVECERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4CVECE* V$1, double* N$1 )
 {
-	label$1761:;
+	label$1765:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -11135,12 +11152,12 @@ void _ZN4MATH4VEC4C1ERKNS_4CVECERKd( struct $N4MATH4VEC4E* THIS$1, struct $N4MAT
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N$1;
-	label$1762:;
+	label$1766:;
 }
 
 void _ZN4MATH4VEC4C1ERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1763:;
+	label$1767:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -11149,32 +11166,32 @@ void _ZN4MATH4VEC4C1ERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* 
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 24ll);
-	label$1764:;
+	label$1768:;
 }
 
 void _ZN4MATH4VEC4pLERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1765:;
+	label$1769:;
 	*(double*)THIS$1 = *(double*)THIS$1 + *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) + *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) + *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) + *(double*)((uint8*)V$1 + 24ll);
-	label$1766:;
+	label$1770:;
 }
 
 void _ZN4MATH4VEC4mIERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1767:;
+	label$1771:;
 	*(double*)THIS$1 = *(double*)THIS$1 - *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) - *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) - *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) - *(double*)((uint8*)V$1 + 24ll);
-	label$1768:;
+	label$1772:;
 }
 
 void _ZN4MATH4VEC4mLERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R$1 )
 {
-	label$1769:;
+	label$1773:;
 	double N$1;
 	double vr$0 = _ZNK4MATH8RATIONALcvdEv( R$1 );
 	N$1 = vr$0;
@@ -11182,63 +11199,41 @@ void _ZN4MATH4VEC4mLERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MA
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) * N$1;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * N$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) * N$1;
-	label$1770:;
+	label$1774:;
 }
 
 void _ZN4MATH4VEC4mLERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
 {
-	label$1771:;
+	label$1775:;
 	*(double*)THIS$1 = *(double*)THIS$1 * *N$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) * *N$1;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * *N$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) * *N$1;
-	label$1772:;
+	label$1776:;
 }
 
 void _ZN4MATH4VEC4mLERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1773:;
+	label$1777:;
 	*(double*)THIS$1 = *(double*)THIS$1 * *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) * *(double*)((uint8*)V$1 + 24ll);
-	label$1774:;
+	label$1778:;
 }
 
 void _ZN4MATH4VEC4dVERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R$1 )
 {
-	label$1775:;
+	label$1779:;
 	double N$1;
 	double vr$0 = _ZNK4MATH8RATIONALcvdEv( R$1 );
 	N$1 = vr$0;
-	if( N$1 == 0x0p+0 ) goto label$1778;
+	if( N$1 == 0x0p+0 ) goto label$1782;
 	{
 		*(double*)THIS$1 = *(double*)THIS$1 / N$1;
 		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / N$1;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / N$1;
 		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / N$1;
-	}
-	goto label$1777;
-	label$1778:;
-	{
-		*(double*)THIS$1 = 0x0p+0;
-		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
-		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
-		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
-	}
-	label$1777:;
-	label$1776:;
-}
-
-void _ZN4MATH4VEC4dVERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
-{
-	label$1779:;
-	if( *N$1 == 0x0p+0 ) goto label$1782;
-	{
-		*(double*)THIS$1 = *(double*)THIS$1 / *N$1;
-		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / *N$1;
-		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / *N$1;
-		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / *N$1;
 	}
 	goto label$1781;
 	label$1782:;
@@ -11252,47 +11247,68 @@ void _ZN4MATH4VEC4dVERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
 	label$1780:;
 }
 
+void _ZN4MATH4VEC4dVERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
+{
+	label$1783:;
+	if( *N$1 == 0x0p+0 ) goto label$1786;
+	{
+		*(double*)THIS$1 = *(double*)THIS$1 / *N$1;
+		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / *N$1;
+		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / *N$1;
+		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / *N$1;
+	}
+	goto label$1785;
+	label$1786:;
+	{
+		*(double*)THIS$1 = 0x0p+0;
+		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
+		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
+		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
+	}
+	label$1785:;
+	label$1784:;
+}
+
 void _ZN4MATH4VEC4dVERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	double TMP$797$1;
 	double TMP$798$1;
 	double TMP$799$1;
 	double TMP$800$1;
-	label$1783:;
-	if( *(double*)V$1 == 0x0p+0 ) goto label$1785;
-	TMP$797$1 = *(double*)THIS$1 / *(double*)V$1;
-	goto label$1789;
-	label$1785:;
-	TMP$797$1 = 0x0p+0;
-	label$1789:;
-	*(double*)THIS$1 = TMP$797$1;
-	if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$1786;
-	TMP$798$1 = *(double*)((uint8*)THIS$1 + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-	goto label$1790;
-	label$1786:;
-	TMP$798$1 = 0x0p+0;
-	label$1790:;
-	*(double*)((uint8*)THIS$1 + 8ll) = TMP$798$1;
-	if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$1787;
-	TMP$799$1 = *(double*)((uint8*)THIS$1 + 16ll) / *(double*)((uint8*)V$1 + 16ll);
-	goto label$1791;
+	double TMP$801$1;
 	label$1787:;
+	if( *(double*)V$1 == 0x0p+0 ) goto label$1789;
+	TMP$798$1 = *(double*)THIS$1 / *(double*)V$1;
+	goto label$1793;
+	label$1789:;
+	TMP$798$1 = 0x0p+0;
+	label$1793:;
+	*(double*)THIS$1 = TMP$798$1;
+	if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$1790;
+	TMP$799$1 = *(double*)((uint8*)THIS$1 + 8ll) / *(double*)((uint8*)V$1 + 8ll);
+	goto label$1794;
+	label$1790:;
 	TMP$799$1 = 0x0p+0;
+	label$1794:;
+	*(double*)((uint8*)THIS$1 + 8ll) = TMP$799$1;
+	if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$1791;
+	TMP$800$1 = *(double*)((uint8*)THIS$1 + 16ll) / *(double*)((uint8*)V$1 + 16ll);
+	goto label$1795;
 	label$1791:;
-	*(double*)((uint8*)THIS$1 + 16ll) = TMP$799$1;
-	if( *(double*)((uint8*)V$1 + 24ll) == 0x0p+0 ) goto label$1788;
-	TMP$800$1 = *(double*)((uint8*)THIS$1 + 24ll) / *(double*)((uint8*)V$1 + 24ll);
-	goto label$1792;
-	label$1788:;
 	TMP$800$1 = 0x0p+0;
+	label$1795:;
+	*(double*)((uint8*)THIS$1 + 16ll) = TMP$800$1;
+	if( *(double*)((uint8*)V$1 + 24ll) == 0x0p+0 ) goto label$1792;
+	TMP$801$1 = *(double*)((uint8*)THIS$1 + 24ll) / *(double*)((uint8*)V$1 + 24ll);
+	goto label$1796;
 	label$1792:;
-	*(double*)((uint8*)THIS$1 + 24ll) = TMP$800$1;
-	label$1784:;
+	TMP$801$1 = 0x0p+0;
+	label$1796:;
+	*(double*)((uint8*)THIS$1 + 24ll) = TMP$801$1;
+	label$1788:;
 }
 
 FBSTRING* _ZNK4MATH4VEC4cv8FBSTRINGEv( struct $N4MATH4VEC4E* THIS$1 )
 {
-	FBSTRING TMP$803$1;
 	FBSTRING TMP$804$1;
 	FBSTRING TMP$805$1;
 	FBSTRING TMP$806$1;
@@ -11300,107 +11316,108 @@ FBSTRING* _ZNK4MATH4VEC4cv8FBSTRINGEv( struct $N4MATH4VEC4E* THIS$1 )
 	FBSTRING TMP$808$1;
 	FBSTRING TMP$809$1;
 	FBSTRING TMP$810$1;
+	FBSTRING TMP$811$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1793:;
+	label$1797:;
 	FBSTRING* vr$2 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$8 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$803$1, 0, 24ll );
-	FBSTRING* vr$11 = fb_StrConcat( &TMP$803$1, (void*)"<math.vec4>{ x : ", 18ll, (void*)vr$8, -1ll );
 	__builtin_memset( &TMP$804$1, 0, 24ll );
-	FBSTRING* vr$14 = fb_StrConcat( &TMP$804$1, (void*)vr$11, -1ll, (void*)" , y : ", 8ll );
+	FBSTRING* vr$11 = fb_StrConcat( &TMP$804$1, (void*)"<math.vec4>{ x : ", 18ll, (void*)vr$8, -1ll );
 	__builtin_memset( &TMP$805$1, 0, 24ll );
-	FBSTRING* vr$17 = fb_StrConcat( &TMP$805$1, (void*)vr$14, -1ll, (void*)vr$6, -1ll );
+	FBSTRING* vr$14 = fb_StrConcat( &TMP$805$1, (void*)vr$11, -1ll, (void*)" , y : ", 8ll );
 	__builtin_memset( &TMP$806$1, 0, 24ll );
-	FBSTRING* vr$20 = fb_StrConcat( &TMP$806$1, (void*)vr$17, -1ll, (void*)" , z : ", 8ll );
+	FBSTRING* vr$17 = fb_StrConcat( &TMP$806$1, (void*)vr$14, -1ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$807$1, 0, 24ll );
-	FBSTRING* vr$23 = fb_StrConcat( &TMP$807$1, (void*)vr$20, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$20 = fb_StrConcat( &TMP$807$1, (void*)vr$17, -1ll, (void*)" , z : ", 8ll );
 	__builtin_memset( &TMP$808$1, 0, 24ll );
-	FBSTRING* vr$26 = fb_StrConcat( &TMP$808$1, (void*)vr$23, -1ll, (void*)" , w : ", 8ll );
+	FBSTRING* vr$23 = fb_StrConcat( &TMP$808$1, (void*)vr$20, -1ll, (void*)vr$4, -1ll );
 	__builtin_memset( &TMP$809$1, 0, 24ll );
-	FBSTRING* vr$29 = fb_StrConcat( &TMP$809$1, (void*)vr$26, -1ll, (void*)vr$2, -1ll );
+	FBSTRING* vr$26 = fb_StrConcat( &TMP$809$1, (void*)vr$23, -1ll, (void*)" , w : ", 8ll );
 	__builtin_memset( &TMP$810$1, 0, 24ll );
-	FBSTRING* vr$32 = fb_StrConcat( &TMP$810$1, (void*)vr$29, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$29 = fb_StrConcat( &TMP$810$1, (void*)vr$26, -1ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$811$1, 0, 24ll );
+	FBSTRING* vr$32 = fb_StrConcat( &TMP$811$1, (void*)vr$29, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$32, -1ll, 0 );
-	goto label$1794;
-	label$1794:;
+	goto label$1798;
+	label$1798:;
 	FBSTRING* vr$35 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$35;
 }
 
 void _ZN4MATH4VEC4aSERKNS_4VEC2E( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$1795:;
+	label$1799:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
-	label$1796:;
+	label$1800:;
 }
 
 void _ZN4MATH4VEC4aSERKNS_4PVECE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$1797:;
+	label$1801:;
 	double vr$0 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
-	label$1798:;
+	label$1802:;
 }
 
 void _ZN4MATH4VEC4aSERKNS_4VEC3E( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1799:;
+	label$1803:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
-	label$1800:;
+	label$1804:;
 }
 
 void _ZN4MATH4VEC4aSERKNS_4CVECE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1801:;
+	label$1805:;
 	double vr$0 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
-	label$1802:;
+	label$1806:;
 }
 
 void _ZN4MATH4VEC4aSERKS0_( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1803:;
+	label$1807:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 24ll);
-	label$1804:;
+	label$1808:;
 }
 
 double _ZNK4MATH4VEC413CHNORM__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
-	double TMP$811$1;
 	double TMP$812$1;
 	double TMP$813$1;
 	double TMP$814$1;
+	double TMP$815$1;
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1805:;
-	TMP$814$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 24ll) );
-	TMP$813$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 16ll) );
-	TMP$812$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 8ll) );
-	TMP$811$1 = __builtin_fabs( *(double*)THIS$1 );
-	double vr$13 = _ZN4MATH3MAXERKdS1_S1_S1_( &TMP$811$1, &TMP$812$1, &TMP$813$1, &TMP$814$1 );
+	label$1809:;
+	TMP$815$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 24ll) );
+	TMP$814$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 16ll) );
+	TMP$813$1 = __builtin_fabs( *(double*)((uint8*)THIS$1 + 8ll) );
+	TMP$812$1 = __builtin_fabs( *(double*)THIS$1 );
+	double vr$13 = _ZN4MATH3MAXERKdS1_S1_S1_( &TMP$812$1, &TMP$813$1, &TMP$814$1, &TMP$815$1 );
 	fb$result$1 = vr$13;
-	goto label$1806;
-	label$1806:;
+	goto label$1810;
+	label$1810:;
 	return fb$result$1;
 }
 
@@ -11408,10 +11425,10 @@ double _ZNK4MATH4VEC413MANORM__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1807:;
+	label$1811:;
 	fb$result$1 = ((__builtin_fabs( *(double*)THIS$1 ) + __builtin_fabs( *(double*)((uint8*)THIS$1 + 8ll) )) + __builtin_fabs( *(double*)((uint8*)THIS$1 + 16ll) )) + __builtin_fabs( *(double*)((uint8*)THIS$1 + 24ll) );
-	goto label$1808;
-	label$1808:;
+	goto label$1812;
+	label$1812:;
 	return fb$result$1;
 }
 
@@ -11419,84 +11436,84 @@ double _ZNK4MATH4VEC411NORM__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1809:;
+	label$1813:;
 	fb$result$1 = __builtin_sqrt( (((*(double*)THIS$1 * *(double*)THIS$1) + (*(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)THIS$1 + 8ll))) + (((*(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)THIS$1 + 16ll)) * *(double*)((uint8*)THIS$1 + 24ll)) * *(double*)((uint8*)THIS$1 + 24ll))) );
-	goto label$1810;
-	label$1810:;
+	goto label$1814;
+	label$1814:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4VEC411NORM__set__ERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R$1 )
 {
-	label$1811:;
+	label$1815:;
 	double N$1;
 	double vr$0 = _ZNK4MATH8RATIONALcvdEv( R$1 );
 	N$1 = vr$0;
-	if( N$1 == 0x0p+0 ) goto label$1814;
+	if( N$1 == 0x0p+0 ) goto label$1818;
 	{
 		double H$2;
 		double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( (struct $N4MATH4VEC4E*)THIS$1 );
 		H$2 = vr$1;
-		if( H$2 == 0x0p+0 ) goto label$1816;
+		if( H$2 == 0x0p+0 ) goto label$1820;
 		{
 			*(double*)THIS$1 = (*(double*)THIS$1 / H$2) * N$1;
 			*(double*)((uint8*)THIS$1 + 8ll) = (*(double*)((uint8*)THIS$1 + 8ll) / H$2) * N$1;
 			*(double*)((uint8*)THIS$1 + 16ll) = (*(double*)((uint8*)THIS$1 + 16ll) / H$2) * N$1;
 			*(double*)((uint8*)THIS$1 + 24ll) = (*(double*)((uint8*)THIS$1 + 24ll) / H$2) * N$1;
 		}
-		label$1816:;
-		label$1815:;
+		label$1820:;
+		label$1819:;
 	}
-	goto label$1813;
-	label$1814:;
+	goto label$1817;
+	label$1818:;
 	{
 		*(double*)THIS$1 = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	}
-	label$1813:;
-	label$1812:;
+	label$1817:;
+	label$1816:;
 }
 
 void _ZN4MATH4VEC411NORM__set__ERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
 {
-	label$1817:;
-	if( *N$1 == 0x0p+0 ) goto label$1820;
+	label$1821:;
+	if( *N$1 == 0x0p+0 ) goto label$1824;
 	{
 		double H$2;
 		double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( (struct $N4MATH4VEC4E*)THIS$1 );
 		H$2 = vr$1;
-		if( H$2 == 0x0p+0 ) goto label$1822;
+		if( H$2 == 0x0p+0 ) goto label$1826;
 		{
 			*(double*)THIS$1 = (*(double*)THIS$1 / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 8ll) = (*(double*)((uint8*)THIS$1 + 8ll) / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 16ll) = (*(double*)((uint8*)THIS$1 + 16ll) / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 24ll) = (*(double*)((uint8*)THIS$1 + 24ll) / H$2) * *N$1;
 		}
-		label$1822:;
-		label$1821:;
+		label$1826:;
+		label$1825:;
 	}
-	goto label$1819;
-	label$1820:;
+	goto label$1823;
+	label$1824:;
 	{
 		*(double*)THIS$1 = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	}
-	label$1819:;
-	label$1818:;
+	label$1823:;
+	label$1822:;
 }
 
 double _ZNK4MATH4VEC413SQNORM__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1823:;
+	label$1827:;
 	fb$result$1 = ((*(double*)THIS$1 * *(double*)THIS$1) + (*(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)THIS$1 + 8ll))) + (((*(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)THIS$1 + 16ll)) * *(double*)((uint8*)THIS$1 + 24ll)) * *(double*)((uint8*)THIS$1 + 24ll));
-	goto label$1824;
-	label$1824:;
+	goto label$1828;
+	label$1828:;
 	return fb$result$1;
 }
 
@@ -11504,34 +11521,15 @@ double _ZNK4MATH4VEC412THETA__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1825:;
+	label$1829:;
 	double vr$5 = _ZN4MATH5THETAERKdS1_( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll) );
 	fb$result$1 = vr$5;
-	goto label$1826;
-	label$1826:;
+	goto label$1830;
+	label$1830:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4VEC412THETA__set__ERKNS_8RATIONALE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH8RATIONALE* R$1 )
-{
-	label$1827:;
-	double H$1;
-	double vr$4 = _ZN4MATH5HYPOTERKdS1_( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll) );
-	H$1 = vr$4;
-	if( H$1 == 0x0p+0 ) goto label$1830;
-	{
-		double N$2;
-		double vr$5 = _ZNK4MATH8RATIONALcvdEv( R$1 );
-		N$2 = vr$5;
-		*(double*)THIS$1 = __builtin_cos( N$2 ) * H$1;
-		*(double*)((uint8*)THIS$1 + 8ll) = __builtin_sin( N$2 ) * H$1;
-	}
-	label$1830:;
-	label$1829:;
-	label$1828:;
-}
-
-void _ZN4MATH4VEC412THETA__set__ERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
 {
 	label$1831:;
 	double H$1;
@@ -11539,99 +11537,99 @@ void _ZN4MATH4VEC412THETA__set__ERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 
 	H$1 = vr$4;
 	if( H$1 == 0x0p+0 ) goto label$1834;
 	{
-		*(double*)THIS$1 = __builtin_cos( *N$1 ) * H$1;
-		*(double*)((uint8*)THIS$1 + 8ll) = __builtin_sin( *N$1 ) * H$1;
+		double N$2;
+		double vr$5 = _ZNK4MATH8RATIONALcvdEv( R$1 );
+		N$2 = vr$5;
+		*(double*)THIS$1 = __builtin_cos( N$2 ) * H$1;
+		*(double*)((uint8*)THIS$1 + 8ll) = __builtin_sin( N$2 ) * H$1;
 	}
 	label$1834:;
 	label$1833:;
 	label$1832:;
 }
 
+void _ZN4MATH4VEC412THETA__set__ERKd( struct $N4MATH4VEC4E* THIS$1, double* N$1 )
+{
+	label$1835:;
+	double H$1;
+	double vr$4 = _ZN4MATH5HYPOTERKdS1_( (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll) );
+	H$1 = vr$4;
+	if( H$1 == 0x0p+0 ) goto label$1838;
+	{
+		*(double*)THIS$1 = __builtin_cos( *N$1 ) * H$1;
+		*(double*)((uint8*)THIS$1 + 8ll) = __builtin_sin( *N$1 ) * H$1;
+	}
+	label$1838:;
+	label$1837:;
+	label$1836:;
+}
+
 struct $N4MATH4VEC2E _ZNK4MATH4VEC49XY__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	struct $N4MATH4VEC2E fb$result$1;
-	label$1835:;
+	label$1839:;
 	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll) );
-	goto label$1836;
-	label$1836:;
+	goto label$1840;
+	label$1840:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4VEC49XY__set__ERKNS_4VEC2E( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$1837:;
+	label$1841:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	label$1838:;
+	label$1842:;
 }
 
 void _ZN4MATH4VEC49XY__set__ERKNS_4PVECE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$1839:;
+	label$1843:;
 	double vr$0 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
-	label$1840:;
+	label$1844:;
 }
 
 struct $N4MATH4VEC3E _ZNK4MATH4VEC410XYZ__get__Ev( struct $N4MATH4VEC4E* THIS$1 )
 {
 	struct $N4MATH4VEC3E fb$result$1;
-	label$1841:;
+	label$1845:;
 	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), (double*)((uint8*)THIS$1 + 16ll) );
-	goto label$1842;
-	label$1842:;
+	goto label$1846;
+	label$1846:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4VEC410XYZ__set__ERKNS_4VEC3E( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1843:;
+	label$1847:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
-	label$1844:;
+	label$1848:;
 }
 
 void _ZN4MATH4VEC410XYZ__set__ERKNS_4CVECE( struct $N4MATH4VEC4E* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1845:;
+	label$1849:;
 	double vr$0 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
-	label$1846:;
+	label$1850:;
 }
 
 boolean _ZNK4MATH4VEC46ISNULLEv( struct $N4MATH4VEC4E* THIS$1 )
-{
-	boolean TMP$817$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$1847:;
-	double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( THIS$1 );
-	if( vr$1 != 0x0p+0 ) goto label$1849;
-	TMP$817$1 = (boolean)1ll;
-	goto label$1850;
-	label$1849:;
-	TMP$817$1 = (boolean)0ll;
-	label$1850:;
-	fb$result$1 = TMP$817$1;
-	goto label$1848;
-	label$1848:;
-	return fb$result$1;
-}
-
-boolean _ZNK4MATH4VEC46ISNULLERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
 {
 	boolean TMP$818$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1851:;
 	double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( THIS$1 );
-	if( vr$1 > __builtin_fabs( *T$1 ) ) goto label$1853;
+	if( vr$1 != 0x0p+0 ) goto label$1853;
 	TMP$818$1 = (boolean)1ll;
 	goto label$1854;
 	label$1853:;
@@ -11643,14 +11641,14 @@ boolean _ZNK4MATH4VEC46ISNULLERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH4VEC46ISUNITEv( struct $N4MATH4VEC4E* THIS$1 )
+boolean _ZNK4MATH4VEC46ISNULLERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
 {
 	boolean TMP$819$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1855:;
 	double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( THIS$1 );
-	if( vr$1 != 0x1.p+0 ) goto label$1857;
+	if( vr$1 > __builtin_fabs( *T$1 ) ) goto label$1857;
 	TMP$819$1 = (boolean)1ll;
 	goto label$1858;
 	label$1857:;
@@ -11662,14 +11660,14 @@ boolean _ZNK4MATH4VEC46ISUNITEv( struct $N4MATH4VEC4E* THIS$1 )
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH4VEC46ISUNITERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
+boolean _ZNK4MATH4VEC46ISUNITEv( struct $N4MATH4VEC4E* THIS$1 )
 {
 	boolean TMP$820$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1859:;
 	double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( THIS$1 );
-	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1861;
+	if( vr$1 != 0x1.p+0 ) goto label$1861;
 	TMP$820$1 = (boolean)1ll;
 	goto label$1862;
 	label$1861:;
@@ -11681,22 +11679,18 @@ boolean _ZNK4MATH4VEC46ISUNITERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
 	return fb$result$1;
 }
 
-double _ZNK4MATH4VEC46MINORMERKd( struct $N4MATH4VEC4E* THIS$1, double* E$1 )
+boolean _ZNK4MATH4VEC46ISUNITERKd( struct $N4MATH4VEC4E* THIS$1, double* T$1 )
 {
-	double TMP$821$1;
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
+	boolean TMP$821$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1863:;
-	if( *E$1 == 0x0p+0 ) goto label$1865;
-	double vr$7 = pow( __builtin_fabs( *(double*)THIS$1 ), *E$1 );
-	double vr$11 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 8ll) ), *E$1 );
-	double vr$16 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 16ll) ), *E$1 );
-	double vr$21 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 24ll) ), *E$1 );
-	double vr$23 = pow( ((vr$7 + vr$11) + vr$16) + vr$21, 0x1.p+0 / *E$1 );
-	TMP$821$1 = vr$23;
+	double vr$1 = _ZNK4MATH4VEC411NORM__get__Ev( THIS$1 );
+	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1865;
+	TMP$821$1 = (boolean)1ll;
 	goto label$1866;
 	label$1865:;
-	TMP$821$1 = 0x0p+0;
+	TMP$821$1 = (boolean)0ll;
 	label$1866:;
 	fb$result$1 = TMP$821$1;
 	goto label$1864;
@@ -11704,27 +11698,49 @@ double _ZNK4MATH4VEC46MINORMERKd( struct $N4MATH4VEC4E* THIS$1, double* E$1 )
 	return fb$result$1;
 }
 
+double _ZNK4MATH4VEC46MINORMERKd( struct $N4MATH4VEC4E* THIS$1, double* E$1 )
+{
+	double TMP$822$1;
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$1867:;
+	if( *E$1 == 0x0p+0 ) goto label$1869;
+	double vr$7 = pow( __builtin_fabs( *(double*)THIS$1 ), *E$1 );
+	double vr$11 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 8ll) ), *E$1 );
+	double vr$16 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 16ll) ), *E$1 );
+	double vr$21 = pow( __builtin_fabs( *(double*)((uint8*)THIS$1 + 24ll) ), *E$1 );
+	double vr$23 = pow( ((vr$7 + vr$11) + vr$16) + vr$21, 0x1.p+0 / *E$1 );
+	TMP$822$1 = vr$23;
+	goto label$1870;
+	label$1869:;
+	TMP$822$1 = 0x0p+0;
+	label$1870:;
+	fb$result$1 = TMP$822$1;
+	goto label$1868;
+	label$1868:;
+	return fb$result$1;
+}
+
 void _ZN4MATH4VEC49NORMALISEEv( struct $N4MATH4VEC4E* THIS$1 )
 {
-	label$1867:;
+	label$1871:;
 	double H$1;
 	double vr$0 = _ZNK4MATH4VEC411NORM__get__Ev( (struct $N4MATH4VEC4E*)THIS$1 );
 	H$1 = vr$0;
-	if( ((int64)-(H$1 > 0x0p+0) & (int64)-(H$1 != 0x1.p+0)) == 0ll ) goto label$1870;
+	if( ((int64)-(H$1 > 0x0p+0) & (int64)-(H$1 != 0x1.p+0)) == 0ll ) goto label$1874;
 	{
 		*(double*)THIS$1 = *(double*)THIS$1 / H$1;
 		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / H$1;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / H$1;
 		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
 	}
-	label$1870:;
-	label$1869:;
-	label$1868:;
+	label$1874:;
+	label$1873:;
+	label$1872:;
 }
 
 FBSTRING* _ZNK4MATH4VEC46TOJSONERKb( struct $N4MATH4VEC4E* THIS$1, boolean* A$1 )
 {
-	FBSTRING TMP$823$1;
 	FBSTRING TMP$824$1;
 	FBSTRING TMP$825$1;
 	FBSTRING TMP$826$1;
@@ -11741,313 +11757,296 @@ FBSTRING* _ZNK4MATH4VEC46TOJSONERKb( struct $N4MATH4VEC4E* THIS$1, boolean* A$1 
 	FBSTRING TMP$837$1;
 	FBSTRING TMP$838$1;
 	FBSTRING TMP$839$1;
+	FBSTRING TMP$840$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1871:;
-	if( *A$1 == (boolean)0ll ) goto label$1873;
+	label$1875:;
+	if( *A$1 == (boolean)0ll ) goto label$1877;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$5 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$9 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$824$1, 0, 24ll );
-	FBSTRING* vr$12 = fb_StrConcat( &TMP$824$1, (void*)"[", 2ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$825$1, 0, 24ll );
-	FBSTRING* vr$15 = fb_StrConcat( &TMP$825$1, (void*)vr$12, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$12 = fb_StrConcat( &TMP$825$1, (void*)"[", 2ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$826$1, 0, 24ll );
-	FBSTRING* vr$18 = fb_StrConcat( &TMP$826$1, (void*)vr$15, -1ll, (void*)vr$7, -1ll );
+	FBSTRING* vr$15 = fb_StrConcat( &TMP$826$1, (void*)vr$12, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$827$1, 0, 24ll );
-	FBSTRING* vr$21 = fb_StrConcat( &TMP$827$1, (void*)vr$18, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$18 = fb_StrConcat( &TMP$827$1, (void*)vr$15, -1ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$828$1, 0, 24ll );
-	FBSTRING* vr$24 = fb_StrConcat( &TMP$828$1, (void*)vr$21, -1ll, (void*)vr$5, -1ll );
+	FBSTRING* vr$21 = fb_StrConcat( &TMP$828$1, (void*)vr$18, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$829$1, 0, 24ll );
-	FBSTRING* vr$27 = fb_StrConcat( &TMP$829$1, (void*)vr$24, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$24 = fb_StrConcat( &TMP$829$1, (void*)vr$21, -1ll, (void*)vr$5, -1ll );
 	__builtin_memset( &TMP$830$1, 0, 24ll );
-	FBSTRING* vr$30 = fb_StrConcat( &TMP$830$1, (void*)vr$27, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$27 = fb_StrConcat( &TMP$830$1, (void*)vr$24, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$831$1, 0, 24ll );
-	FBSTRING* vr$33 = fb_StrConcat( &TMP$831$1, (void*)vr$30, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$823$1, -1ll, (void*)vr$33, -1ll, 0 );
-	goto label$1874;
-	label$1873:;
+	FBSTRING* vr$30 = fb_StrConcat( &TMP$831$1, (void*)vr$27, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$832$1, 0, 24ll );
+	FBSTRING* vr$33 = fb_StrConcat( &TMP$832$1, (void*)vr$30, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$824$1, -1ll, (void*)vr$33, -1ll, 0 );
+	goto label$1878;
+	label$1877:;
 	FBSTRING* vr$36 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$38 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$40 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$42 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$832$1, 0, 24ll );
-	FBSTRING* vr$45 = fb_StrConcat( &TMP$832$1, (void*)"{\x22x\x22:", 6ll, (void*)vr$42, -1ll );
 	__builtin_memset( &TMP$833$1, 0, 24ll );
-	FBSTRING* vr$48 = fb_StrConcat( &TMP$833$1, (void*)vr$45, -1ll, (void*)",\x22y\x22:", 6ll );
+	FBSTRING* vr$45 = fb_StrConcat( &TMP$833$1, (void*)"{\x22x\x22:", 6ll, (void*)vr$42, -1ll );
 	__builtin_memset( &TMP$834$1, 0, 24ll );
-	FBSTRING* vr$51 = fb_StrConcat( &TMP$834$1, (void*)vr$48, -1ll, (void*)vr$40, -1ll );
+	FBSTRING* vr$48 = fb_StrConcat( &TMP$834$1, (void*)vr$45, -1ll, (void*)",\x22y\x22:", 6ll );
 	__builtin_memset( &TMP$835$1, 0, 24ll );
-	FBSTRING* vr$54 = fb_StrConcat( &TMP$835$1, (void*)vr$51, -1ll, (void*)",\x22z\x22:", 6ll );
+	FBSTRING* vr$51 = fb_StrConcat( &TMP$835$1, (void*)vr$48, -1ll, (void*)vr$40, -1ll );
 	__builtin_memset( &TMP$836$1, 0, 24ll );
-	FBSTRING* vr$57 = fb_StrConcat( &TMP$836$1, (void*)vr$54, -1ll, (void*)vr$38, -1ll );
+	FBSTRING* vr$54 = fb_StrConcat( &TMP$836$1, (void*)vr$51, -1ll, (void*)",\x22z\x22:", 6ll );
 	__builtin_memset( &TMP$837$1, 0, 24ll );
-	FBSTRING* vr$60 = fb_StrConcat( &TMP$837$1, (void*)vr$57, -1ll, (void*)",\x22w\x22:", 6ll );
+	FBSTRING* vr$57 = fb_StrConcat( &TMP$837$1, (void*)vr$54, -1ll, (void*)vr$38, -1ll );
 	__builtin_memset( &TMP$838$1, 0, 24ll );
-	FBSTRING* vr$63 = fb_StrConcat( &TMP$838$1, (void*)vr$60, -1ll, (void*)vr$36, -1ll );
+	FBSTRING* vr$60 = fb_StrConcat( &TMP$838$1, (void*)vr$57, -1ll, (void*)",\x22w\x22:", 6ll );
 	__builtin_memset( &TMP$839$1, 0, 24ll );
-	FBSTRING* vr$66 = fb_StrConcat( &TMP$839$1, (void*)vr$63, -1ll, (void*)"}", 2ll );
-	fb_StrInit( (void*)&TMP$823$1, -1ll, (void*)vr$66, -1ll, 0 );
-	label$1874:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$823$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$823$1 );
-	goto label$1872;
-	label$1872:;
+	FBSTRING* vr$63 = fb_StrConcat( &TMP$839$1, (void*)vr$60, -1ll, (void*)vr$36, -1ll );
+	__builtin_memset( &TMP$840$1, 0, 24ll );
+	FBSTRING* vr$66 = fb_StrConcat( &TMP$840$1, (void*)vr$63, -1ll, (void*)"}", 2ll );
+	fb_StrInit( (void*)&TMP$824$1, -1ll, (void*)vr$66, -1ll, 0 );
+	label$1878:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$824$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$824$1 );
+	goto label$1876;
+	label$1876:;
 	FBSTRING* vr$72 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$72;
 }
 
 struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITXEv( void )
 {
-	double TMP$841$1;
 	double TMP$842$1;
 	double TMP$843$1;
 	double TMP$844$1;
-	struct $N4MATH4VEC4E fb$result$1;
-	label$1875:;
-	TMP$844$1 = 0x0p+0;
-	TMP$843$1 = 0x0p+0;
-	TMP$842$1 = 0x0p+0;
-	TMP$841$1 = 0x1.p+0;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$841$1, (double*)&TMP$842$1, (double*)&TMP$843$1, (double*)&TMP$844$1 );
-	goto label$1876;
-	label$1876:;
-	return fb$result$1;
-}
-
-struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITYEv( void )
-{
-	double TMP$846$1;
-	double TMP$847$1;
-	double TMP$848$1;
-	double TMP$849$1;
-	struct $N4MATH4VEC4E fb$result$1;
-	label$1877:;
-	TMP$849$1 = 0x0p+0;
-	TMP$848$1 = 0x0p+0;
-	TMP$847$1 = 0x1.p+0;
-	TMP$846$1 = 0x0p+0;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$846$1, (double*)&TMP$847$1, (double*)&TMP$848$1, (double*)&TMP$849$1 );
-	goto label$1878;
-	label$1878:;
-	return fb$result$1;
-}
-
-struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITZEv( void )
-{
-	double TMP$851$1;
-	double TMP$852$1;
-	double TMP$853$1;
-	double TMP$854$1;
+	double TMP$845$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1879:;
-	TMP$854$1 = 0x0p+0;
-	TMP$853$1 = 0x1.p+0;
-	TMP$852$1 = 0x0p+0;
-	TMP$851$1 = 0x0p+0;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$851$1, (double*)&TMP$852$1, (double*)&TMP$853$1, (double*)&TMP$854$1 );
+	TMP$845$1 = 0x0p+0;
+	TMP$844$1 = 0x0p+0;
+	TMP$843$1 = 0x0p+0;
+	TMP$842$1 = 0x1.p+0;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$842$1, (double*)&TMP$843$1, (double*)&TMP$844$1, (double*)&TMP$845$1 );
 	goto label$1880;
 	label$1880:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITWEv( void )
+struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITYEv( void )
 {
-	double TMP$856$1;
-	double TMP$857$1;
-	double TMP$858$1;
-	double TMP$859$1;
+	double TMP$847$1;
+	double TMP$848$1;
+	double TMP$849$1;
+	double TMP$850$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1881:;
-	TMP$859$1 = 0x1.p+0;
-	TMP$858$1 = 0x0p+0;
-	TMP$857$1 = 0x0p+0;
-	TMP$856$1 = 0x0p+0;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$856$1, (double*)&TMP$857$1, (double*)&TMP$858$1, (double*)&TMP$859$1 );
+	TMP$850$1 = 0x0p+0;
+	TMP$849$1 = 0x0p+0;
+	TMP$848$1 = 0x1.p+0;
+	TMP$847$1 = 0x0p+0;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$847$1, (double*)&TMP$848$1, (double*)&TMP$849$1, (double*)&TMP$850$1 );
 	goto label$1882;
 	label$1882:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHplERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITZEv( void )
 {
-	double TMP$861$1;
-	double TMP$862$1;
-	double TMP$863$1;
-	double TMP$864$1;
+	double TMP$852$1;
+	double TMP$853$1;
+	double TMP$854$1;
+	double TMP$855$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1883:;
-	TMP$864$1 = *(double*)((uint8*)V1$1 + 24ll) + *(double*)((uint8*)V2$1 + 24ll);
-	TMP$863$1 = *(double*)((uint8*)V1$1 + 16ll) + *(double*)((uint8*)V2$1 + 16ll);
-	TMP$862$1 = *(double*)((uint8*)V1$1 + 8ll) + *(double*)((uint8*)V2$1 + 8ll);
-	TMP$861$1 = *(double*)V1$1 + *(double*)V2$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$861$1, &TMP$862$1, &TMP$863$1, &TMP$864$1 );
+	TMP$855$1 = 0x0p+0;
+	TMP$854$1 = 0x1.p+0;
+	TMP$853$1 = 0x0p+0;
+	TMP$852$1 = 0x0p+0;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$852$1, (double*)&TMP$853$1, (double*)&TMP$854$1, (double*)&TMP$855$1 );
 	goto label$1884;
 	label$1884:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHmiERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+struct $N4MATH4VEC4E _ZN4MATH4VEC45UNITWEv( void )
 {
-	double TMP$866$1;
-	double TMP$867$1;
-	double TMP$868$1;
-	double TMP$869$1;
+	double TMP$857$1;
+	double TMP$858$1;
+	double TMP$859$1;
+	double TMP$860$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1885:;
-	TMP$869$1 = *(double*)((uint8*)V1$1 + 24ll) - *(double*)((uint8*)V2$1 + 24ll);
-	TMP$868$1 = *(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll);
-	TMP$867$1 = *(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll);
-	TMP$866$1 = *(double*)V1$1 - *(double*)V2$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$866$1, &TMP$867$1, &TMP$868$1, &TMP$869$1 );
+	TMP$860$1 = 0x1.p+0;
+	TMP$859$1 = 0x0p+0;
+	TMP$858$1 = 0x0p+0;
+	TMP$857$1 = 0x0p+0;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$857$1, (double*)&TMP$858$1, (double*)&TMP$859$1, (double*)&TMP$860$1 );
 	goto label$1886;
 	label$1886:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHmlERKNS_4VEC4ERKd( struct $N4MATH4VEC4E* V$1, double* N$1 )
+struct $N4MATH4VEC4E _ZN4MATHplERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
-	double TMP$871$1;
-	double TMP$872$1;
-	double TMP$873$1;
-	double TMP$874$1;
+	double TMP$862$1;
+	double TMP$863$1;
+	double TMP$864$1;
+	double TMP$865$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1887:;
-	TMP$874$1 = *(double*)((uint8*)V$1 + 24ll) * *N$1;
-	TMP$873$1 = *(double*)((uint8*)V$1 + 16ll) * *N$1;
-	TMP$872$1 = *(double*)((uint8*)V$1 + 8ll) * *N$1;
-	TMP$871$1 = *(double*)V$1 * *N$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$871$1, &TMP$872$1, &TMP$873$1, &TMP$874$1 );
+	TMP$865$1 = *(double*)((uint8*)V1$1 + 24ll) + *(double*)((uint8*)V2$1 + 24ll);
+	TMP$864$1 = *(double*)((uint8*)V1$1 + 16ll) + *(double*)((uint8*)V2$1 + 16ll);
+	TMP$863$1 = *(double*)((uint8*)V1$1 + 8ll) + *(double*)((uint8*)V2$1 + 8ll);
+	TMP$862$1 = *(double*)V1$1 + *(double*)V2$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$862$1, &TMP$863$1, &TMP$864$1, &TMP$865$1 );
 	goto label$1888;
 	label$1888:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHmlERKdRKNS_4VEC4E( double* N$1, struct $N4MATH4VEC4E* V$1 )
+struct $N4MATH4VEC4E _ZN4MATHmiERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
-	double TMP$876$1;
-	double TMP$877$1;
-	double TMP$878$1;
-	double TMP$879$1;
+	double TMP$867$1;
+	double TMP$868$1;
+	double TMP$869$1;
+	double TMP$870$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1889:;
-	TMP$879$1 = *N$1 * *(double*)((uint8*)V$1 + 24ll);
-	TMP$878$1 = *N$1 * *(double*)((uint8*)V$1 + 16ll);
-	TMP$877$1 = *N$1 * *(double*)((uint8*)V$1 + 8ll);
-	TMP$876$1 = *N$1 * *(double*)V$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$876$1, &TMP$877$1, &TMP$878$1, &TMP$879$1 );
+	TMP$870$1 = *(double*)((uint8*)V1$1 + 24ll) - *(double*)((uint8*)V2$1 + 24ll);
+	TMP$869$1 = *(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll);
+	TMP$868$1 = *(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll);
+	TMP$867$1 = *(double*)V1$1 - *(double*)V2$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$867$1, &TMP$868$1, &TMP$869$1, &TMP$870$1 );
 	goto label$1890;
 	label$1890:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHmlERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+struct $N4MATH4VEC4E _ZN4MATHmlERKNS_4VEC4ERKd( struct $N4MATH4VEC4E* V$1, double* N$1 )
 {
-	double TMP$881$1;
-	double TMP$882$1;
-	double TMP$883$1;
-	double TMP$884$1;
+	double TMP$872$1;
+	double TMP$873$1;
+	double TMP$874$1;
+	double TMP$875$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1891:;
-	TMP$884$1 = *(double*)((uint8*)V1$1 + 24ll) * *(double*)((uint8*)V2$1 + 24ll);
-	TMP$883$1 = *(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll);
-	TMP$882$1 = *(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll);
-	TMP$881$1 = *(double*)V1$1 * *(double*)V2$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$881$1, &TMP$882$1, &TMP$883$1, &TMP$884$1 );
+	TMP$875$1 = *(double*)((uint8*)V$1 + 24ll) * *N$1;
+	TMP$874$1 = *(double*)((uint8*)V$1 + 16ll) * *N$1;
+	TMP$873$1 = *(double*)((uint8*)V$1 + 8ll) * *N$1;
+	TMP$872$1 = *(double*)V$1 * *N$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$872$1, &TMP$873$1, &TMP$874$1, &TMP$875$1 );
 	goto label$1892;
 	label$1892:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHdvERKNS_4VEC4ERKd( struct $N4MATH4VEC4E* V$1, double* N$1 )
+struct $N4MATH4VEC4E _ZN4MATHmlERKdRKNS_4VEC4E( double* N$1, struct $N4MATH4VEC4E* V$1 )
 {
-	double TMP$886$1;
-	double TMP$887$1;
-	double TMP$888$1;
-	double TMP$889$1;
-	struct $N4MATH4VEC4E TMP$891$1;
+	double TMP$877$1;
+	double TMP$878$1;
+	double TMP$879$1;
+	double TMP$880$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1893:;
-	if( *N$1 == 0x0p+0 ) goto label$1895;
-	TMP$889$1 = *(double*)((uint8*)V$1 + 24ll) / *N$1;
-	TMP$888$1 = *(double*)((uint8*)V$1 + 16ll) / *N$1;
-	TMP$887$1 = *(double*)((uint8*)V$1 + 8ll) / *N$1;
-	TMP$886$1 = *(double*)V$1 / *N$1;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &TMP$891$1, &TMP$886$1, &TMP$887$1, &TMP$888$1, &TMP$889$1 );
-	goto label$1896;
-	label$1895:;
-	_ZN4MATH4VEC4C1Ev( &TMP$891$1 );
-	label$1896:;
-	_ZN4MATH4VEC4C1ERKS0_( &fb$result$1, (struct $N4MATH4VEC4E*)&TMP$891$1 );
+	TMP$880$1 = *N$1 * *(double*)((uint8*)V$1 + 24ll);
+	TMP$879$1 = *N$1 * *(double*)((uint8*)V$1 + 16ll);
+	TMP$878$1 = *N$1 * *(double*)((uint8*)V$1 + 8ll);
+	TMP$877$1 = *N$1 * *(double*)V$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$877$1, &TMP$878$1, &TMP$879$1, &TMP$880$1 );
 	goto label$1894;
 	label$1894:;
 	return fb$result$1;
 }
 
-struct $N4MATH4VEC4E _ZN4MATHdvERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+struct $N4MATH4VEC4E _ZN4MATHmlERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
-	double TMP$893$1;
-	double TMP$894$1;
-	double TMP$895$1;
-	double TMP$896$1;
+	double TMP$882$1;
+	double TMP$883$1;
+	double TMP$884$1;
+	double TMP$885$1;
+	struct $N4MATH4VEC4E fb$result$1;
+	label$1895:;
+	TMP$885$1 = *(double*)((uint8*)V1$1 + 24ll) * *(double*)((uint8*)V2$1 + 24ll);
+	TMP$884$1 = *(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll);
+	TMP$883$1 = *(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll);
+	TMP$882$1 = *(double*)V1$1 * *(double*)V2$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$882$1, &TMP$883$1, &TMP$884$1, &TMP$885$1 );
+	goto label$1896;
+	label$1896:;
+	return fb$result$1;
+}
+
+struct $N4MATH4VEC4E _ZN4MATHdvERKNS_4VEC4ERKd( struct $N4MATH4VEC4E* V$1, double* N$1 )
+{
+	double TMP$887$1;
+	double TMP$888$1;
+	double TMP$889$1;
+	double TMP$890$1;
+	struct $N4MATH4VEC4E TMP$892$1;
 	struct $N4MATH4VEC4E fb$result$1;
 	label$1897:;
-	if( *(double*)((uint8*)V2$1 + 24ll) == 0x0p+0 ) goto label$1902;
-	TMP$896$1 = *(double*)((uint8*)V1$1 + 24ll) / *(double*)((uint8*)V2$1 + 24ll);
-	goto label$1903;
-	label$1902:;
-	TMP$896$1 = 0x0p+0;
-	label$1903:;
-	if( *(double*)((uint8*)V2$1 + 16ll) == 0x0p+0 ) goto label$1901;
-	TMP$895$1 = *(double*)((uint8*)V1$1 + 16ll) / *(double*)((uint8*)V2$1 + 16ll);
-	goto label$1904;
-	label$1901:;
-	TMP$895$1 = 0x0p+0;
-	label$1904:;
-	if( *(double*)((uint8*)V2$1 + 8ll) == 0x0p+0 ) goto label$1900;
-	TMP$894$1 = *(double*)((uint8*)V1$1 + 8ll) / *(double*)((uint8*)V2$1 + 8ll);
-	goto label$1905;
-	label$1900:;
-	TMP$894$1 = 0x0p+0;
-	label$1905:;
-	if( *(double*)V2$1 == 0x0p+0 ) goto label$1899;
-	TMP$893$1 = *(double*)V1$1 / *(double*)V2$1;
-	goto label$1906;
+	if( *N$1 == 0x0p+0 ) goto label$1899;
+	TMP$890$1 = *(double*)((uint8*)V$1 + 24ll) / *N$1;
+	TMP$889$1 = *(double*)((uint8*)V$1 + 16ll) / *N$1;
+	TMP$888$1 = *(double*)((uint8*)V$1 + 8ll) / *N$1;
+	TMP$887$1 = *(double*)V$1 / *N$1;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &TMP$892$1, &TMP$887$1, &TMP$888$1, &TMP$889$1, &TMP$890$1 );
+	goto label$1900;
 	label$1899:;
-	TMP$893$1 = 0x0p+0;
-	label$1906:;
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$893$1, &TMP$894$1, &TMP$895$1, &TMP$896$1 );
+	_ZN4MATH4VEC4C1Ev( &TMP$892$1 );
+	label$1900:;
+	_ZN4MATH4VEC4C1ERKS0_( &fb$result$1, (struct $N4MATH4VEC4E*)&TMP$892$1 );
 	goto label$1898;
 	label$1898:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHeqERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+struct $N4MATH4VEC4E _ZN4MATHdvERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
-	boolean TMP$897$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
+	double TMP$894$1;
+	double TMP$895$1;
+	double TMP$896$1;
+	double TMP$897$1;
+	struct $N4MATH4VEC4E fb$result$1;
+	label$1901:;
+	if( *(double*)((uint8*)V2$1 + 24ll) == 0x0p+0 ) goto label$1906;
+	TMP$897$1 = *(double*)((uint8*)V1$1 + 24ll) / *(double*)((uint8*)V2$1 + 24ll);
+	goto label$1907;
+	label$1906:;
+	TMP$897$1 = 0x0p+0;
 	label$1907:;
-	if( ((((int64)-(*(double*)V1$1 == *(double*)V2$1) & (int64)-(*(double*)((uint8*)V1$1 + 8ll) == *(double*)((uint8*)V2$1 + 8ll))) & (int64)-(*(double*)((uint8*)V1$1 + 16ll) == *(double*)((uint8*)V2$1 + 16ll))) & (int64)-(*(double*)((uint8*)V1$1 + 24ll) == *(double*)((uint8*)V2$1 + 24ll))) == 0ll ) goto label$1909;
-	TMP$897$1 = (boolean)1ll;
-	goto label$1910;
-	label$1909:;
-	TMP$897$1 = (boolean)0ll;
-	label$1910:;
-	fb$result$1 = TMP$897$1;
+	if( *(double*)((uint8*)V2$1 + 16ll) == 0x0p+0 ) goto label$1905;
+	TMP$896$1 = *(double*)((uint8*)V1$1 + 16ll) / *(double*)((uint8*)V2$1 + 16ll);
 	goto label$1908;
+	label$1905:;
+	TMP$896$1 = 0x0p+0;
 	label$1908:;
+	if( *(double*)((uint8*)V2$1 + 8ll) == 0x0p+0 ) goto label$1904;
+	TMP$895$1 = *(double*)((uint8*)V1$1 + 8ll) / *(double*)((uint8*)V2$1 + 8ll);
+	goto label$1909;
+	label$1904:;
+	TMP$895$1 = 0x0p+0;
+	label$1909:;
+	if( *(double*)V2$1 == 0x0p+0 ) goto label$1903;
+	TMP$894$1 = *(double*)V1$1 / *(double*)V2$1;
+	goto label$1910;
+	label$1903:;
+	TMP$894$1 = 0x0p+0;
+	label$1910:;
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$894$1, &TMP$895$1, &TMP$896$1, &TMP$897$1 );
+	goto label$1902;
+	label$1902:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHneERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+boolean _ZN4MATHeqERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
 	boolean TMP$898$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1911:;
-	if( ((((int64)-(*(double*)V1$1 != *(double*)V2$1) | (int64)-(*(double*)((uint8*)V1$1 + 8ll) != *(double*)((uint8*)V2$1 + 8ll))) | (int64)-(*(double*)((uint8*)V1$1 + 16ll) != *(double*)((uint8*)V2$1 + 16ll))) | (int64)-(*(double*)((uint8*)V1$1 + 24ll) != *(double*)((uint8*)V2$1 + 24ll))) == 0ll ) goto label$1913;
+	if( ((((int64)-(*(double*)V1$1 == *(double*)V2$1) & (int64)-(*(double*)((uint8*)V1$1 + 8ll) == *(double*)((uint8*)V2$1 + 8ll))) & (int64)-(*(double*)((uint8*)V1$1 + 16ll) == *(double*)((uint8*)V2$1 + 16ll))) & (int64)-(*(double*)((uint8*)V1$1 + 24ll) == *(double*)((uint8*)V2$1 + 24ll))) == 0ll ) goto label$1913;
 	TMP$898$1 = (boolean)1ll;
 	goto label$1914;
 	label$1913:;
@@ -12059,15 +12058,13 @@ boolean _ZN4MATHneERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VE
 	return fb$result$1;
 }
 
-boolean _ZN4MATH3CMPERKNS_4VEC4ES2_RKd( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1, double* S$1 )
+boolean _ZN4MATHneERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
 {
 	boolean TMP$899$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1915:;
-	double T$1;
-	T$1 = __builtin_fabs( *S$1 );
-	if( ((((int64)-(__builtin_fabs( (*(double*)V1$1 - *(double*)V2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 24ll) - *(double*)((uint8*)V2$1 + 24ll)) ) <= T$1)) == 0ll ) goto label$1917;
+	if( ((((int64)-(*(double*)V1$1 != *(double*)V2$1) | (int64)-(*(double*)((uint8*)V1$1 + 8ll) != *(double*)((uint8*)V2$1 + 8ll))) | (int64)-(*(double*)((uint8*)V1$1 + 16ll) != *(double*)((uint8*)V2$1 + 16ll))) | (int64)-(*(double*)((uint8*)V1$1 + 24ll) != *(double*)((uint8*)V2$1 + 24ll))) == 0ll ) goto label$1917;
 	TMP$899$1 = (boolean)1ll;
 	goto label$1918;
 	label$1917:;
@@ -12079,54 +12076,74 @@ boolean _ZN4MATH3CMPERKNS_4VEC4ES2_RKd( struct $N4MATH4VEC4E* V1$1, struct $N4MA
 	return fb$result$1;
 }
 
-double _ZN4MATH3DOTERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+boolean _ZN4MATH3CMPERKNS_4VEC4ES2_RKd( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1, double* S$1 )
 {
-	double fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 8ll );
+	boolean TMP$900$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1919:;
-	fb$result$1 = (((*(double*)V1$1 * *(double*)V2$1) + (*(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll))) + (*(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll))) + (*(double*)((uint8*)V1$1 + 24ll) * *(double*)((uint8*)V2$1 + 24ll));
+	double T$1;
+	T$1 = __builtin_fabs( *S$1 );
+	if( ((((int64)-(__builtin_fabs( (*(double*)V1$1 - *(double*)V2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 8ll) - *(double*)((uint8*)V2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 16ll) - *(double*)((uint8*)V2$1 + 16ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)V1$1 + 24ll) - *(double*)((uint8*)V2$1 + 24ll)) ) <= T$1)) == 0ll ) goto label$1921;
+	TMP$900$1 = (boolean)1ll;
+	goto label$1922;
+	label$1921:;
+	TMP$900$1 = (boolean)0ll;
+	label$1922:;
+	fb$result$1 = TMP$900$1;
 	goto label$1920;
 	label$1920:;
 	return fb$result$1;
 }
 
+double _ZN4MATH3DOTERKNS_4VEC4ES2_( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1 )
+{
+	double fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 8ll );
+	label$1923:;
+	fb$result$1 = (((*(double*)V1$1 * *(double*)V2$1) + (*(double*)((uint8*)V1$1 + 8ll) * *(double*)((uint8*)V2$1 + 8ll))) + (*(double*)((uint8*)V1$1 + 16ll) * *(double*)((uint8*)V2$1 + 16ll))) + (*(double*)((uint8*)V1$1 + 24ll) * *(double*)((uint8*)V2$1 + 24ll));
+	goto label$1924;
+	label$1924:;
+	return fb$result$1;
+}
+
 struct $N4MATH4VEC4E _ZN4MATH4LERPERKNS_4VEC4ES2_RKd( struct $N4MATH4VEC4E* V1$1, struct $N4MATH4VEC4E* V2$1, double* S$1 )
 {
-	double TMP$901$1;
 	double TMP$902$1;
 	double TMP$903$1;
 	double TMP$904$1;
+	double TMP$905$1;
 	struct $N4MATH4VEC4E fb$result$1;
-	label$1921:;
+	label$1925:;
 	double T$1;
 	double vr$0 = _ZN4MATH5CLAMPERKd( S$1 );
 	T$1 = vr$0;
 	double U$1;
 	U$1 = 0x1.p+0 - T$1;
-	TMP$904$1 = (*(double*)((uint8*)V1$1 + 24ll) * U$1) + (*(double*)((uint8*)V2$1 + 24ll) * T$1);
-	TMP$903$1 = (*(double*)((uint8*)V1$1 + 16ll) * U$1) + (*(double*)((uint8*)V2$1 + 16ll) * T$1);
-	TMP$902$1 = (*(double*)((uint8*)V1$1 + 8ll) * U$1) + (*(double*)((uint8*)V2$1 + 8ll) * T$1);
-	TMP$901$1 = (*(double*)V1$1 * U$1) + (*(double*)V2$1 * T$1);
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$901$1, &TMP$902$1, &TMP$903$1, &TMP$904$1 );
-	goto label$1922;
-	label$1922:;
+	TMP$905$1 = (*(double*)((uint8*)V1$1 + 24ll) * U$1) + (*(double*)((uint8*)V2$1 + 24ll) * T$1);
+	TMP$904$1 = (*(double*)((uint8*)V1$1 + 16ll) * U$1) + (*(double*)((uint8*)V2$1 + 16ll) * T$1);
+	TMP$903$1 = (*(double*)((uint8*)V1$1 + 8ll) * U$1) + (*(double*)((uint8*)V2$1 + 8ll) * T$1);
+	TMP$902$1 = (*(double*)V1$1 * U$1) + (*(double*)V2$1 * T$1);
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, &TMP$902$1, &TMP$903$1, &TMP$904$1, &TMP$905$1 );
+	goto label$1926;
+	label$1926:;
 	return fb$result$1;
 }
 
 void _ZN4MATH10QUATERNIONC1Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	label$1923:;
+	label$1927:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 24ll), 0, 8ll );
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x1.p+0;
-	label$1924:;
+	label$1928:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( struct $N4MATH10QUATERNIONE* THIS$1, double* N1$1, double* N2$1, double* N3$1, double* N4$1 )
 {
-	label$1925:;
+	label$1929:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12135,12 +12152,12 @@ void _ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( struct $N4MATH10QUATERNIONE* THIS$1, d
 	*(double*)((uint8*)THIS$1 + 8ll) = *N2$1;
 	*(double*)((uint8*)THIS$1 + 16ll) = *N3$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N4$1;
-	label$1926:;
+	label$1930:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKNS_4VEC2ERKdS5_( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4VEC2E* V$1, double* N1$1, double* N2$1 )
 {
-	label$1927:;
+	label$1931:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12149,12 +12166,12 @@ void _ZN4MATH10QUATERNIONC1ERKNS_4VEC2ERKdS5_( struct $N4MATH10QUATERNIONE* THIS
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
-	label$1928:;
+	label$1932:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKNS_4PVECERKdS5_( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4PVECE* V$1, double* N1$1, double* N2$1 )
 {
-	label$1929:;
+	label$1933:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12165,12 +12182,12 @@ void _ZN4MATH10QUATERNIONC1ERKNS_4PVECERKdS5_( struct $N4MATH10QUATERNIONE* THIS
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
 	*(double*)((uint8*)THIS$1 + 16ll) = *N1$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N2$1;
-	label$1930:;
+	label$1934:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKNS_4VEC3ERKd( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4VEC3E* V$1, double* N$1 )
 {
-	label$1931:;
+	label$1935:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12179,12 +12196,12 @@ void _ZN4MATH10QUATERNIONC1ERKNS_4VEC3ERKd( struct $N4MATH10QUATERNIONE* THIS$1,
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *N$1;
-	label$1932:;
+	label$1936:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKNS_4CVECERKd( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4CVECE* V$1, double* N$1 )
 {
-	label$1933:;
+	label$1937:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12195,12 +12212,12 @@ void _ZN4MATH10QUATERNIONC1ERKNS_4CVECERKd( struct $N4MATH10QUATERNIONE* THIS$1,
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$10;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *N$1;
-	label$1934:;
+	label$1938:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKNS_4VEC4E( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4VEC4E* V$1 )
 {
-	label$1935:;
+	label$1939:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12209,12 +12226,12 @@ void _ZN4MATH10QUATERNIONC1ERKNS_4VEC4E( struct $N4MATH10QUATERNIONE* THIS$1, st
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 24ll);
-	label$1936:;
+	label$1940:;
 }
 
 void _ZN4MATH10QUATERNIONC1ERKS0_( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH10QUATERNIONE* V$1 )
 {
-	label$1937:;
+	label$1941:;
 	__builtin_memset( (double*)THIS$1, 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
@@ -12223,22 +12240,22 @@ void _ZN4MATH10QUATERNIONC1ERKS0_( struct $N4MATH10QUATERNIONE* THIS$1, struct $
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 24ll);
-	label$1938:;
+	label$1942:;
 }
 
 void _ZN4MATH10QUATERNIONmLERKd( struct $N4MATH10QUATERNIONE* THIS$1, double* N$1 )
 {
-	label$1939:;
+	label$1943:;
 	*(double*)THIS$1 = *(double*)THIS$1 * *N$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) * *N$1;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) * *N$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) * *N$1;
-	label$1940:;
+	label$1944:;
 }
 
 void _ZN4MATH10QUATERNIONmLERKS0_( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH10QUATERNIONE* Q$1 )
 {
-	label$1941:;
+	label$1945:;
 	double I$1;
 	I$1 = (((*(double*)((uint8*)THIS$1 + 24ll) * *(double*)Q$1) + (*(double*)THIS$1 * *(double*)((uint8*)Q$1 + 24ll))) + (*(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)Q$1 + 16ll))) - (*(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)Q$1 + 8ll));
 	double J$1;
@@ -12251,34 +12268,33 @@ void _ZN4MATH10QUATERNIONmLERKS0_( struct $N4MATH10QUATERNIONE* THIS$1, struct $
 	*(double*)((uint8*)THIS$1 + 8ll) = J$1;
 	*(double*)((uint8*)THIS$1 + 16ll) = K$1;
 	*(double*)((uint8*)THIS$1 + 24ll) = L$1;
-	label$1942:;
+	label$1946:;
 }
 
 void _ZN4MATH10QUATERNIONdVERKd( struct $N4MATH10QUATERNIONE* THIS$1, double* N$1 )
 {
-	label$1943:;
-	if( *N$1 == 0x0p+0 ) goto label$1946;
+	label$1947:;
+	if( *N$1 == 0x0p+0 ) goto label$1950;
 	{
 		*(double*)THIS$1 = *(double*)THIS$1 / *N$1;
 		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / *N$1;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / *N$1;
 		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / *N$1;
 	}
-	goto label$1945;
-	label$1946:;
+	goto label$1949;
+	label$1950:;
 	{
 		*(double*)THIS$1 = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	}
-	label$1945:;
-	label$1944:;
+	label$1949:;
+	label$1948:;
 }
 
 FBSTRING* _ZNK4MATH10QUATERNIONcv8FBSTRINGEv( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	FBSTRING TMP$906$1;
 	FBSTRING TMP$907$1;
 	FBSTRING TMP$908$1;
 	FBSTRING TMP$909$1;
@@ -12286,87 +12302,88 @@ FBSTRING* _ZNK4MATH10QUATERNIONcv8FBSTRINGEv( struct $N4MATH10QUATERNIONE* THIS$
 	FBSTRING TMP$911$1;
 	FBSTRING TMP$912$1;
 	FBSTRING TMP$913$1;
+	FBSTRING TMP$914$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1947:;
+	label$1951:;
 	FBSTRING* vr$2 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$8 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$906$1, 0, 24ll );
-	FBSTRING* vr$11 = fb_StrConcat( &TMP$906$1, (void*)"<math.quaternion>{ x : ", 24ll, (void*)vr$8, -1ll );
 	__builtin_memset( &TMP$907$1, 0, 24ll );
-	FBSTRING* vr$14 = fb_StrConcat( &TMP$907$1, (void*)vr$11, -1ll, (void*)" , y : ", 8ll );
+	FBSTRING* vr$11 = fb_StrConcat( &TMP$907$1, (void*)"<math.quaternion>{ x : ", 24ll, (void*)vr$8, -1ll );
 	__builtin_memset( &TMP$908$1, 0, 24ll );
-	FBSTRING* vr$17 = fb_StrConcat( &TMP$908$1, (void*)vr$14, -1ll, (void*)vr$6, -1ll );
+	FBSTRING* vr$14 = fb_StrConcat( &TMP$908$1, (void*)vr$11, -1ll, (void*)" , y : ", 8ll );
 	__builtin_memset( &TMP$909$1, 0, 24ll );
-	FBSTRING* vr$20 = fb_StrConcat( &TMP$909$1, (void*)vr$17, -1ll, (void*)" , z : ", 8ll );
+	FBSTRING* vr$17 = fb_StrConcat( &TMP$909$1, (void*)vr$14, -1ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$910$1, 0, 24ll );
-	FBSTRING* vr$23 = fb_StrConcat( &TMP$910$1, (void*)vr$20, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$20 = fb_StrConcat( &TMP$910$1, (void*)vr$17, -1ll, (void*)" , z : ", 8ll );
 	__builtin_memset( &TMP$911$1, 0, 24ll );
-	FBSTRING* vr$26 = fb_StrConcat( &TMP$911$1, (void*)vr$23, -1ll, (void*)" , w : ", 8ll );
+	FBSTRING* vr$23 = fb_StrConcat( &TMP$911$1, (void*)vr$20, -1ll, (void*)vr$4, -1ll );
 	__builtin_memset( &TMP$912$1, 0, 24ll );
-	FBSTRING* vr$29 = fb_StrConcat( &TMP$912$1, (void*)vr$26, -1ll, (void*)vr$2, -1ll );
+	FBSTRING* vr$26 = fb_StrConcat( &TMP$912$1, (void*)vr$23, -1ll, (void*)" , w : ", 8ll );
 	__builtin_memset( &TMP$913$1, 0, 24ll );
-	FBSTRING* vr$32 = fb_StrConcat( &TMP$913$1, (void*)vr$29, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$29 = fb_StrConcat( &TMP$913$1, (void*)vr$26, -1ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$914$1, 0, 24ll );
+	FBSTRING* vr$32 = fb_StrConcat( &TMP$914$1, (void*)vr$29, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$32, -1ll, 0 );
-	goto label$1948;
-	label$1948:;
+	goto label$1952;
+	label$1952:;
 	FBSTRING* vr$35 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$35;
 }
 
 void _ZN4MATH10QUATERNIONaSERKS0_( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH10QUATERNIONE* Q$1 )
 {
-	label$1949:;
+	label$1953:;
 	*(double*)THIS$1 = *(double*)Q$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)Q$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)Q$1 + 16ll);
 	*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)Q$1 + 24ll);
-	label$1950:;
+	label$1954:;
 }
 
 struct $N4MATH10QUATERNIONE _ZNK4MATH10QUATERNION16CONJUGATE__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	double TMP$915$1;
 	double TMP$916$1;
 	double TMP$917$1;
+	double TMP$918$1;
 	struct $N4MATH10QUATERNIONE fb$result$1;
-	label$1951:;
-	TMP$917$1 = -(*(double*)((uint8*)THIS$1 + 16ll));
-	TMP$916$1 = -(*(double*)((uint8*)THIS$1 + 8ll));
-	TMP$915$1 = -(*(double*)THIS$1);
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$915$1, &TMP$916$1, &TMP$917$1, (double*)((uint8*)THIS$1 + 24ll) );
-	goto label$1952;
-	label$1952:;
+	label$1955:;
+	TMP$918$1 = -(*(double*)((uint8*)THIS$1 + 16ll));
+	TMP$917$1 = -(*(double*)((uint8*)THIS$1 + 8ll));
+	TMP$916$1 = -(*(double*)THIS$1);
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$916$1, &TMP$917$1, &TMP$918$1, (double*)((uint8*)THIS$1 + 24ll) );
+	goto label$1956;
+	label$1956:;
 	return fb$result$1;
 }
 
 struct $N4MATH10QUATERNIONE _ZNK4MATH10QUATERNION14INVERSE__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	double TMP$919$1;
 	double TMP$920$1;
 	double TMP$921$1;
 	double TMP$922$1;
-	struct $N4MATH10QUATERNIONE TMP$924$1;
+	double TMP$923$1;
+	struct $N4MATH10QUATERNIONE TMP$925$1;
 	struct $N4MATH10QUATERNIONE fb$result$1;
-	label$1953:;
+	label$1957:;
 	double H$1;
 	double vr$0 = _ZNK4MATH10QUATERNION11NORM__get__Ev( THIS$1 );
 	H$1 = vr$0;
-	if( H$1 <= 0x0p+0 ) goto label$1955;
-	TMP$922$1 = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
-	TMP$921$1 = -(*(double*)((uint8*)THIS$1 + 16ll)) / H$1;
-	TMP$920$1 = -(*(double*)((uint8*)THIS$1 + 8ll)) / H$1;
-	TMP$919$1 = -(*(double*)THIS$1) / H$1;
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &TMP$924$1, &TMP$919$1, &TMP$920$1, &TMP$921$1, &TMP$922$1 );
-	goto label$1956;
-	label$1955:;
-	_ZN4MATH10QUATERNIONC1Ev( &TMP$924$1 );
-	label$1956:;
-	_ZN4MATH10QUATERNIONC1ERKS0_( &fb$result$1, (struct $N4MATH10QUATERNIONE*)&TMP$924$1 );
-	goto label$1954;
-	label$1954:;
+	if( H$1 <= 0x0p+0 ) goto label$1959;
+	TMP$923$1 = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
+	TMP$922$1 = -(*(double*)((uint8*)THIS$1 + 16ll)) / H$1;
+	TMP$921$1 = -(*(double*)((uint8*)THIS$1 + 8ll)) / H$1;
+	TMP$920$1 = -(*(double*)THIS$1) / H$1;
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &TMP$925$1, &TMP$920$1, &TMP$921$1, &TMP$922$1, &TMP$923$1 );
+	goto label$1960;
+	label$1959:;
+	_ZN4MATH10QUATERNIONC1Ev( &TMP$925$1 );
+	label$1960:;
+	_ZN4MATH10QUATERNIONC1ERKS0_( &fb$result$1, (struct $N4MATH10QUATERNIONE*)&TMP$925$1 );
+	goto label$1958;
+	label$1958:;
 	return fb$result$1;
 }
 
@@ -12374,155 +12391,136 @@ double _ZNK4MATH10QUATERNION11NORM__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$1957:;
+	label$1961:;
 	fb$result$1 = __builtin_sqrt( ((((*(double*)THIS$1 * *(double*)THIS$1) + (*(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)THIS$1 + 8ll))) + (*(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)THIS$1 + 16ll))) + (*(double*)((uint8*)THIS$1 + 24ll) * *(double*)((uint8*)THIS$1 + 24ll))) );
-	goto label$1958;
-	label$1958:;
+	goto label$1962;
+	label$1962:;
 	return fb$result$1;
 }
 
 void _ZN4MATH10QUATERNION11NORM__set__ERKd( struct $N4MATH10QUATERNIONE* THIS$1, double* N$1 )
 {
-	label$1959:;
-	if( *N$1 <= 0x0p+0 ) goto label$1962;
+	label$1963:;
+	if( *N$1 <= 0x0p+0 ) goto label$1966;
 	{
 		double H$2;
 		H$2 = __builtin_sqrt( ((((*(double*)THIS$1 * *(double*)THIS$1) + (*(double*)((uint8*)THIS$1 + 8ll) * *(double*)((uint8*)THIS$1 + 8ll))) + (*(double*)((uint8*)THIS$1 + 16ll) * *(double*)((uint8*)THIS$1 + 16ll))) + (*(double*)((uint8*)THIS$1 + 24ll) * *(double*)((uint8*)THIS$1 + 24ll))) );
-		if( H$2 == 0x0p+0 ) goto label$1964;
+		if( H$2 == 0x0p+0 ) goto label$1968;
 		{
 			*(double*)THIS$1 = (*(double*)THIS$1 / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 8ll) = (*(double*)((uint8*)THIS$1 + 8ll) / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 16ll) = (*(double*)((uint8*)THIS$1 + 16ll) / H$2) * *N$1;
 			*(double*)((uint8*)THIS$1 + 24ll) = (*(double*)((uint8*)THIS$1 + 24ll) / H$2) * *N$1;
 		}
-		label$1964:;
-		label$1963:;
+		label$1968:;
+		label$1967:;
 	}
-	goto label$1961;
-	label$1962:;
+	goto label$1965;
+	label$1966:;
 	{
 		*(double*)THIS$1 = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	}
-	label$1961:;
-	label$1960:;
+	label$1965:;
+	label$1964:;
 }
 
 struct $N4MATH10QUATERNIONE _ZNK4MATH10QUATERNION13VERSOR__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	double TMP$926$1;
 	double TMP$927$1;
 	double TMP$928$1;
 	double TMP$929$1;
-	struct $N4MATH10QUATERNIONE TMP$931$1;
+	double TMP$930$1;
+	struct $N4MATH10QUATERNIONE TMP$932$1;
 	struct $N4MATH10QUATERNIONE fb$result$1;
-	label$1965:;
+	label$1969:;
 	double H$1;
 	double vr$0 = _ZNK4MATH10QUATERNION11NORM__get__Ev( THIS$1 );
 	H$1 = vr$0;
-	if( H$1 == 0x0p+0 ) goto label$1967;
-	TMP$929$1 = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
-	TMP$928$1 = *(double*)((uint8*)THIS$1 + 16ll) / H$1;
-	TMP$927$1 = *(double*)((uint8*)THIS$1 + 8ll) / H$1;
-	TMP$926$1 = *(double*)THIS$1 / H$1;
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &TMP$931$1, &TMP$926$1, &TMP$927$1, &TMP$928$1, &TMP$929$1 );
-	goto label$1968;
-	label$1967:;
-	_ZN4MATH10QUATERNIONC1Ev( &TMP$931$1 );
-	label$1968:;
-	_ZN4MATH10QUATERNIONC1ERKS0_( &fb$result$1, (struct $N4MATH10QUATERNIONE*)&TMP$931$1 );
-	goto label$1966;
-	label$1966:;
+	if( H$1 == 0x0p+0 ) goto label$1971;
+	TMP$930$1 = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
+	TMP$929$1 = *(double*)((uint8*)THIS$1 + 16ll) / H$1;
+	TMP$928$1 = *(double*)((uint8*)THIS$1 + 8ll) / H$1;
+	TMP$927$1 = *(double*)THIS$1 / H$1;
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &TMP$932$1, &TMP$927$1, &TMP$928$1, &TMP$929$1, &TMP$930$1 );
+	goto label$1972;
+	label$1971:;
+	_ZN4MATH10QUATERNIONC1Ev( &TMP$932$1 );
+	label$1972:;
+	_ZN4MATH10QUATERNIONC1ERKS0_( &fb$result$1, (struct $N4MATH10QUATERNIONE*)&TMP$932$1 );
+	goto label$1970;
+	label$1970:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC2E _ZNK4MATH10QUATERNION9XY__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
 	struct $N4MATH4VEC2E fb$result$1;
-	label$1969:;
+	label$1973:;
 	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll) );
-	goto label$1970;
-	label$1970:;
+	goto label$1974;
+	label$1974:;
 	return fb$result$1;
 }
 
 void _ZN4MATH10QUATERNION9XY__set__ERKNS_4VEC2E( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$1971:;
+	label$1975:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
-	label$1972:;
+	label$1976:;
 }
 
 void _ZN4MATH10QUATERNION9XY__set__ERKNS_4PVECE( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$1973:;
+	label$1977:;
 	double vr$0 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
-	label$1974:;
+	label$1978:;
 }
 
 struct $N4MATH4VEC3E _ZNK4MATH10QUATERNION10XYZ__get__Ev( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
 	struct $N4MATH4VEC3E fb$result$1;
-	label$1975:;
+	label$1979:;
 	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)THIS$1, (double*)((uint8*)THIS$1 + 8ll), (double*)((uint8*)THIS$1 + 16ll) );
-	goto label$1976;
-	label$1976:;
+	goto label$1980;
+	label$1980:;
 	return fb$result$1;
 }
 
 void _ZN4MATH10QUATERNION10XYZ__set__ERKNS_4VEC3E( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$1977:;
+	label$1981:;
 	*(double*)THIS$1 = *(double*)V$1;
 	*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
-	label$1978:;
+	label$1982:;
 }
 
 void _ZN4MATH10QUATERNION10XYZ__set__ERKNS_4CVECE( struct $N4MATH10QUATERNIONE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$1979:;
+	label$1983:;
 	double vr$0 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 	*(double*)THIS$1 = vr$0;
 	double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
 	*(double*)((uint8*)THIS$1 + 8ll) = vr$2;
 	*(double*)((uint8*)THIS$1 + 16ll) = *(double*)V$1;
-	label$1980:;
+	label$1984:;
 }
 
 boolean _ZNK4MATH10QUATERNION6ISUNITEv( struct $N4MATH10QUATERNIONE* THIS$1 )
-{
-	boolean TMP$934$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$1981:;
-	double vr$1 = _ZNK4MATH10QUATERNION11NORM__get__Ev( THIS$1 );
-	if( vr$1 != 0x1.p+0 ) goto label$1983;
-	TMP$934$1 = (boolean)1ll;
-	goto label$1984;
-	label$1983:;
-	TMP$934$1 = (boolean)0ll;
-	label$1984:;
-	fb$result$1 = TMP$934$1;
-	goto label$1982;
-	label$1982:;
-	return fb$result$1;
-}
-
-boolean _ZNK4MATH10QUATERNION6ISUNITERKd( struct $N4MATH10QUATERNIONE* THIS$1, double* T$1 )
 {
 	boolean TMP$935$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$1985:;
 	double vr$1 = _ZNK4MATH10QUATERNION11NORM__get__Ev( THIS$1 );
-	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1987;
+	if( vr$1 != 0x1.p+0 ) goto label$1987;
 	TMP$935$1 = (boolean)1ll;
 	goto label$1988;
 	label$1987:;
@@ -12534,27 +12532,45 @@ boolean _ZNK4MATH10QUATERNION6ISUNITERKd( struct $N4MATH10QUATERNIONE* THIS$1, d
 	return fb$result$1;
 }
 
+boolean _ZNK4MATH10QUATERNION6ISUNITERKd( struct $N4MATH10QUATERNIONE* THIS$1, double* T$1 )
+{
+	boolean TMP$936$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$1989:;
+	double vr$1 = _ZNK4MATH10QUATERNION11NORM__get__Ev( THIS$1 );
+	if( __builtin_fabs( (-vr$1 + 0x1.p+0) ) > __builtin_fabs( *T$1 ) ) goto label$1991;
+	TMP$936$1 = (boolean)1ll;
+	goto label$1992;
+	label$1991:;
+	TMP$936$1 = (boolean)0ll;
+	label$1992:;
+	fb$result$1 = TMP$936$1;
+	goto label$1990;
+	label$1990:;
+	return fb$result$1;
+}
+
 void _ZN4MATH10QUATERNION9NORMALISEEv( struct $N4MATH10QUATERNIONE* THIS$1 )
 {
-	label$1989:;
+	label$1993:;
 	double H$1;
 	double vr$0 = _ZNK4MATH10QUATERNION11NORM__get__Ev( (struct $N4MATH10QUATERNIONE*)THIS$1 );
 	H$1 = vr$0;
-	if( ((int64)-(H$1 > 0x0p+0) & (int64)-(H$1 != 0x1.p+0)) == 0ll ) goto label$1992;
+	if( ((int64)-(H$1 > 0x0p+0) & (int64)-(H$1 != 0x1.p+0)) == 0ll ) goto label$1996;
 	{
 		*(double*)THIS$1 = *(double*)THIS$1 / H$1;
 		*(double*)((uint8*)THIS$1 + 8ll) = *(double*)((uint8*)THIS$1 + 8ll) / H$1;
 		*(double*)((uint8*)THIS$1 + 16ll) = *(double*)((uint8*)THIS$1 + 16ll) / H$1;
 		*(double*)((uint8*)THIS$1 + 24ll) = *(double*)((uint8*)THIS$1 + 24ll) / H$1;
 	}
-	label$1992:;
-	label$1991:;
-	label$1990:;
+	label$1996:;
+	label$1995:;
+	label$1994:;
 }
 
 FBSTRING* _ZNK4MATH10QUATERNION6TOJSONERKb( struct $N4MATH10QUATERNIONE* THIS$1, boolean* A$1 )
 {
-	FBSTRING TMP$936$1;
 	FBSTRING TMP$937$1;
 	FBSTRING TMP$938$1;
 	FBSTRING TMP$939$1;
@@ -12571,142 +12587,125 @@ FBSTRING* _ZNK4MATH10QUATERNION6TOJSONERKb( struct $N4MATH10QUATERNIONE* THIS$1,
 	FBSTRING TMP$950$1;
 	FBSTRING TMP$951$1;
 	FBSTRING TMP$952$1;
+	FBSTRING TMP$953$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$1993:;
-	if( *A$1 == (boolean)0ll ) goto label$1995;
+	label$1997:;
+	if( *A$1 == (boolean)0ll ) goto label$1999;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$5 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$9 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$937$1, 0, 24ll );
-	FBSTRING* vr$12 = fb_StrConcat( &TMP$937$1, (void*)"[", 2ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$938$1, 0, 24ll );
-	FBSTRING* vr$15 = fb_StrConcat( &TMP$938$1, (void*)vr$12, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$12 = fb_StrConcat( &TMP$938$1, (void*)"[", 2ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$939$1, 0, 24ll );
-	FBSTRING* vr$18 = fb_StrConcat( &TMP$939$1, (void*)vr$15, -1ll, (void*)vr$7, -1ll );
+	FBSTRING* vr$15 = fb_StrConcat( &TMP$939$1, (void*)vr$12, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$940$1, 0, 24ll );
-	FBSTRING* vr$21 = fb_StrConcat( &TMP$940$1, (void*)vr$18, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$18 = fb_StrConcat( &TMP$940$1, (void*)vr$15, -1ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$941$1, 0, 24ll );
-	FBSTRING* vr$24 = fb_StrConcat( &TMP$941$1, (void*)vr$21, -1ll, (void*)vr$5, -1ll );
+	FBSTRING* vr$21 = fb_StrConcat( &TMP$941$1, (void*)vr$18, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$942$1, 0, 24ll );
-	FBSTRING* vr$27 = fb_StrConcat( &TMP$942$1, (void*)vr$24, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$24 = fb_StrConcat( &TMP$942$1, (void*)vr$21, -1ll, (void*)vr$5, -1ll );
 	__builtin_memset( &TMP$943$1, 0, 24ll );
-	FBSTRING* vr$30 = fb_StrConcat( &TMP$943$1, (void*)vr$27, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$27 = fb_StrConcat( &TMP$943$1, (void*)vr$24, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$944$1, 0, 24ll );
-	FBSTRING* vr$33 = fb_StrConcat( &TMP$944$1, (void*)vr$30, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$936$1, -1ll, (void*)vr$33, -1ll, 0 );
-	goto label$1996;
-	label$1995:;
+	FBSTRING* vr$30 = fb_StrConcat( &TMP$944$1, (void*)vr$27, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$945$1, 0, 24ll );
+	FBSTRING* vr$33 = fb_StrConcat( &TMP$945$1, (void*)vr$30, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$937$1, -1ll, (void*)vr$33, -1ll, 0 );
+	goto label$2000;
+	label$1999:;
 	FBSTRING* vr$36 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 24ll) );
 	FBSTRING* vr$38 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 16ll) );
 	FBSTRING* vr$40 = fb_DoubleToStr( *(double*)((uint8*)THIS$1 + 8ll) );
 	FBSTRING* vr$42 = fb_DoubleToStr( *(double*)THIS$1 );
-	__builtin_memset( &TMP$945$1, 0, 24ll );
-	FBSTRING* vr$45 = fb_StrConcat( &TMP$945$1, (void*)"{\x22x\x22:", 6ll, (void*)vr$42, -1ll );
 	__builtin_memset( &TMP$946$1, 0, 24ll );
-	FBSTRING* vr$48 = fb_StrConcat( &TMP$946$1, (void*)vr$45, -1ll, (void*)",\x22y\x22:", 6ll );
+	FBSTRING* vr$45 = fb_StrConcat( &TMP$946$1, (void*)"{\x22x\x22:", 6ll, (void*)vr$42, -1ll );
 	__builtin_memset( &TMP$947$1, 0, 24ll );
-	FBSTRING* vr$51 = fb_StrConcat( &TMP$947$1, (void*)vr$48, -1ll, (void*)vr$40, -1ll );
+	FBSTRING* vr$48 = fb_StrConcat( &TMP$947$1, (void*)vr$45, -1ll, (void*)",\x22y\x22:", 6ll );
 	__builtin_memset( &TMP$948$1, 0, 24ll );
-	FBSTRING* vr$54 = fb_StrConcat( &TMP$948$1, (void*)vr$51, -1ll, (void*)",\x22z\x22:", 6ll );
+	FBSTRING* vr$51 = fb_StrConcat( &TMP$948$1, (void*)vr$48, -1ll, (void*)vr$40, -1ll );
 	__builtin_memset( &TMP$949$1, 0, 24ll );
-	FBSTRING* vr$57 = fb_StrConcat( &TMP$949$1, (void*)vr$54, -1ll, (void*)vr$38, -1ll );
+	FBSTRING* vr$54 = fb_StrConcat( &TMP$949$1, (void*)vr$51, -1ll, (void*)",\x22z\x22:", 6ll );
 	__builtin_memset( &TMP$950$1, 0, 24ll );
-	FBSTRING* vr$60 = fb_StrConcat( &TMP$950$1, (void*)vr$57, -1ll, (void*)",\x22w\x22:", 6ll );
+	FBSTRING* vr$57 = fb_StrConcat( &TMP$950$1, (void*)vr$54, -1ll, (void*)vr$38, -1ll );
 	__builtin_memset( &TMP$951$1, 0, 24ll );
-	FBSTRING* vr$63 = fb_StrConcat( &TMP$951$1, (void*)vr$60, -1ll, (void*)vr$36, -1ll );
+	FBSTRING* vr$60 = fb_StrConcat( &TMP$951$1, (void*)vr$57, -1ll, (void*)",\x22w\x22:", 6ll );
 	__builtin_memset( &TMP$952$1, 0, 24ll );
-	FBSTRING* vr$66 = fb_StrConcat( &TMP$952$1, (void*)vr$63, -1ll, (void*)"}", 2ll );
-	fb_StrInit( (void*)&TMP$936$1, -1ll, (void*)vr$66, -1ll, 0 );
-	label$1996:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$936$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$936$1 );
-	goto label$1994;
-	label$1994:;
+	FBSTRING* vr$63 = fb_StrConcat( &TMP$952$1, (void*)vr$60, -1ll, (void*)vr$36, -1ll );
+	__builtin_memset( &TMP$953$1, 0, 24ll );
+	FBSTRING* vr$66 = fb_StrConcat( &TMP$953$1, (void*)vr$63, -1ll, (void*)"}", 2ll );
+	fb_StrInit( (void*)&TMP$937$1, -1ll, (void*)vr$66, -1ll, 0 );
+	label$2000:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$937$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$937$1 );
+	goto label$1998;
+	label$1998:;
 	FBSTRING* vr$72 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$72;
 }
 
 struct $N4MATH10QUATERNIONE _ZN4MATHmlERKNS_10QUATERNIONERKd( struct $N4MATH10QUATERNIONE* Q$1, double* N$1 )
 {
-	double TMP$954$1;
 	double TMP$955$1;
 	double TMP$956$1;
 	double TMP$957$1;
-	struct $N4MATH10QUATERNIONE fb$result$1;
-	label$1997:;
-	TMP$957$1 = *(double*)((uint8*)Q$1 + 24ll) * *N$1;
-	TMP$956$1 = *(double*)((uint8*)Q$1 + 16ll) * *N$1;
-	TMP$955$1 = *(double*)((uint8*)Q$1 + 8ll) * *N$1;
-	TMP$954$1 = *(double*)Q$1 * *N$1;
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$954$1, &TMP$955$1, &TMP$956$1, &TMP$957$1 );
-	goto label$1998;
-	label$1998:;
-	return fb$result$1;
-}
-
-struct $N4MATH10QUATERNIONE _ZN4MATHmlERKdRKNS_10QUATERNIONE( double* N$1, struct $N4MATH10QUATERNIONE* Q$1 )
-{
-	double TMP$959$1;
-	double TMP$960$1;
-	double TMP$961$1;
-	double TMP$962$1;
-	struct $N4MATH10QUATERNIONE fb$result$1;
-	label$1999:;
-	TMP$962$1 = *N$1 * *(double*)((uint8*)Q$1 + 24ll);
-	TMP$961$1 = *N$1 * *(double*)((uint8*)Q$1 + 16ll);
-	TMP$960$1 = *N$1 * *(double*)((uint8*)Q$1 + 8ll);
-	TMP$959$1 = *N$1 * *(double*)Q$1;
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$959$1, &TMP$960$1, &TMP$961$1, &TMP$962$1 );
-	goto label$2000;
-	label$2000:;
-	return fb$result$1;
-}
-
-struct $N4MATH10QUATERNIONE _ZN4MATHmlERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
-{
-	double TMP$964$1;
-	double TMP$965$1;
-	double TMP$966$1;
-	double TMP$967$1;
+	double TMP$958$1;
 	struct $N4MATH10QUATERNIONE fb$result$1;
 	label$2001:;
-	TMP$967$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 24ll)) - (*(double*)Q1$1 * *(double*)Q2$1)) - (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 8ll))) - (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 16ll));
-	TMP$966$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 16ll)) + (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 8ll))) - (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)Q2$1)) + (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 24ll));
-	TMP$965$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 8ll)) - (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 16ll))) + (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 24ll))) + (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)Q2$1);
-	TMP$964$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)Q2$1) + (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 24ll))) + (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 16ll))) - (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 8ll));
-	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$964$1, &TMP$965$1, &TMP$966$1, &TMP$967$1 );
+	TMP$958$1 = *(double*)((uint8*)Q$1 + 24ll) * *N$1;
+	TMP$957$1 = *(double*)((uint8*)Q$1 + 16ll) * *N$1;
+	TMP$956$1 = *(double*)((uint8*)Q$1 + 8ll) * *N$1;
+	TMP$955$1 = *(double*)Q$1 * *N$1;
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$955$1, &TMP$956$1, &TMP$957$1, &TMP$958$1 );
 	goto label$2002;
 	label$2002:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHeqERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
+struct $N4MATH10QUATERNIONE _ZN4MATHmlERKdRKNS_10QUATERNIONE( double* N$1, struct $N4MATH10QUATERNIONE* Q$1 )
 {
-	boolean TMP$968$1;
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
+	double TMP$960$1;
+	double TMP$961$1;
+	double TMP$962$1;
+	double TMP$963$1;
+	struct $N4MATH10QUATERNIONE fb$result$1;
 	label$2003:;
-	if( ((((int64)-(*(double*)Q1$1 == *(double*)Q2$1) & (int64)-(*(double*)((uint8*)Q1$1 + 8ll) == *(double*)((uint8*)Q2$1 + 8ll))) & (int64)-(*(double*)((uint8*)Q1$1 + 16ll) == *(double*)((uint8*)Q2$1 + 16ll))) & (int64)-(*(double*)((uint8*)Q1$1 + 24ll) == *(double*)((uint8*)Q2$1 + 24ll))) == 0ll ) goto label$2005;
-	TMP$968$1 = (boolean)1ll;
-	goto label$2006;
-	label$2005:;
-	TMP$968$1 = (boolean)0ll;
-	label$2006:;
-	fb$result$1 = TMP$968$1;
+	TMP$963$1 = *N$1 * *(double*)((uint8*)Q$1 + 24ll);
+	TMP$962$1 = *N$1 * *(double*)((uint8*)Q$1 + 16ll);
+	TMP$961$1 = *N$1 * *(double*)((uint8*)Q$1 + 8ll);
+	TMP$960$1 = *N$1 * *(double*)Q$1;
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$960$1, &TMP$961$1, &TMP$962$1, &TMP$963$1 );
 	goto label$2004;
 	label$2004:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATHneERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
+struct $N4MATH10QUATERNIONE _ZN4MATHmlERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
+{
+	double TMP$965$1;
+	double TMP$966$1;
+	double TMP$967$1;
+	double TMP$968$1;
+	struct $N4MATH10QUATERNIONE fb$result$1;
+	label$2005:;
+	TMP$968$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 24ll)) - (*(double*)Q1$1 * *(double*)Q2$1)) - (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 8ll))) - (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 16ll));
+	TMP$967$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 16ll)) + (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 8ll))) - (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)Q2$1)) + (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 24ll));
+	TMP$966$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)((uint8*)Q2$1 + 8ll)) - (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 16ll))) + (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 24ll))) + (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)Q2$1);
+	TMP$965$1 = (((*(double*)((uint8*)Q1$1 + 24ll) * *(double*)Q2$1) + (*(double*)Q1$1 * *(double*)((uint8*)Q2$1 + 24ll))) + (*(double*)((uint8*)Q1$1 + 8ll) * *(double*)((uint8*)Q2$1 + 16ll))) - (*(double*)((uint8*)Q1$1 + 16ll) * *(double*)((uint8*)Q2$1 + 8ll));
+	_ZN4MATH10QUATERNIONC1ERKdS2_S2_S2_( &fb$result$1, &TMP$965$1, &TMP$966$1, &TMP$967$1, &TMP$968$1 );
+	goto label$2006;
+	label$2006:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATHeqERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
 {
 	boolean TMP$969$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$2007:;
-	if( ((((int64)-(*(double*)Q1$1 != *(double*)Q2$1) | (int64)-(*(double*)((uint8*)Q1$1 + 8ll) != *(double*)((uint8*)Q2$1 + 8ll))) | (int64)-(*(double*)((uint8*)Q1$1 + 16ll) != *(double*)((uint8*)Q2$1 + 16ll))) | (int64)-(*(double*)((uint8*)Q1$1 + 24ll) != *(double*)((uint8*)Q2$1 + 24ll))) == 0ll ) goto label$2009;
+	if( ((((int64)-(*(double*)Q1$1 == *(double*)Q2$1) & (int64)-(*(double*)((uint8*)Q1$1 + 8ll) == *(double*)((uint8*)Q2$1 + 8ll))) & (int64)-(*(double*)((uint8*)Q1$1 + 16ll) == *(double*)((uint8*)Q2$1 + 16ll))) & (int64)-(*(double*)((uint8*)Q1$1 + 24ll) == *(double*)((uint8*)Q2$1 + 24ll))) == 0ll ) goto label$2009;
 	TMP$969$1 = (boolean)1ll;
 	goto label$2010;
 	label$2009:;
@@ -12718,15 +12717,13 @@ boolean _ZN4MATHneERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, str
 	return fb$result$1;
 }
 
-boolean _ZN4MATH3CMPERKNS_10QUATERNIONES2_RKd( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1, double* S$1 )
+boolean _ZN4MATHneERKNS_10QUATERNIONES2_( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1 )
 {
 	boolean TMP$970$1;
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
 	label$2011:;
-	double T$1;
-	T$1 = __builtin_fabs( *S$1 );
-	if( ((((int64)-(__builtin_fabs( (*(double*)Q1$1 - *(double*)Q2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 8ll) - *(double*)((uint8*)Q2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 16ll) - *(double*)((uint8*)Q2$1 + 16ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 24ll) - *(double*)((uint8*)Q2$1 + 24ll)) ) <= T$1)) == 0ll ) goto label$2013;
+	if( ((((int64)-(*(double*)Q1$1 != *(double*)Q2$1) | (int64)-(*(double*)((uint8*)Q1$1 + 8ll) != *(double*)((uint8*)Q2$1 + 8ll))) | (int64)-(*(double*)((uint8*)Q1$1 + 16ll) != *(double*)((uint8*)Q2$1 + 16ll))) | (int64)-(*(double*)((uint8*)Q1$1 + 24ll) != *(double*)((uint8*)Q2$1 + 24ll))) == 0ll ) goto label$2013;
 	TMP$970$1 = (boolean)1ll;
 	goto label$2014;
 	label$2013:;
@@ -12738,93 +12735,113 @@ boolean _ZN4MATH3CMPERKNS_10QUATERNIONES2_RKd( struct $N4MATH10QUATERNIONE* Q1$1
 	return fb$result$1;
 }
 
+boolean _ZN4MATH3CMPERKNS_10QUATERNIONES2_RKd( struct $N4MATH10QUATERNIONE* Q1$1, struct $N4MATH10QUATERNIONE* Q2$1, double* S$1 )
+{
+	boolean TMP$971$1;
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$2015:;
+	double T$1;
+	T$1 = __builtin_fabs( *S$1 );
+	if( ((((int64)-(__builtin_fabs( (*(double*)Q1$1 - *(double*)Q2$1) ) <= T$1) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 8ll) - *(double*)((uint8*)Q2$1 + 8ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 16ll) - *(double*)((uint8*)Q2$1 + 16ll)) ) <= T$1)) & (int64)-(__builtin_fabs( (*(double*)((uint8*)Q1$1 + 24ll) - *(double*)((uint8*)Q2$1 + 24ll)) ) <= T$1)) == 0ll ) goto label$2017;
+	TMP$971$1 = (boolean)1ll;
+	goto label$2018;
+	label$2017:;
+	TMP$971$1 = (boolean)0ll;
+	label$2018:;
+	fb$result$1 = TMP$971$1;
+	goto label$2016;
+	label$2016:;
+	return fb$result$1;
+}
+
 void _ZN4MATH10BASEMATRIXD1Ev( struct $N4MATH10BASEMATRIXE* THIS$1 )
 {
-	label$2015:;
-	if( *(double**)THIS$1 == (double*)0ull ) goto label$2017;
+	label$2019:;
+	if( *(double**)THIS$1 == (double*)0ull ) goto label$2021;
 	free( *(void**)THIS$1 );
-	label$2017:;
-	label$2016:;
+	label$2021:;
+	label$2020:;
 }
 
 double* _ZNK4MATH10BASEMATRIX11DATA__get__Ev( struct $N4MATH10BASEMATRIXE* THIS$1 )
 {
 	double* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2018:;
+	label$2022:;
 	fb$result$1 = *(double**)THIS$1;
-	goto label$2019;
-	label$2019:;
+	goto label$2023;
+	label$2023:;
 	return fb$result$1;
 }
 
 void _ZN4MATH4MAT2C1Ev( struct $N4MATH4MAT2E* THIS$1 )
 {
-	double* TMP$971$1;
-	label$2022:;
+	double* TMP$972$1;
+	label$2026:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 32ull );
-	TMP$971$1 = (double*)vr$2;
-	if( TMP$971$1 == (double*)0ull ) goto label$2024;
-	__builtin_memset( TMP$971$1, 0, 32ull );
-	label$2024:;
-	*(double**)THIS$1 = TMP$971$1;
+	TMP$972$1 = (double*)vr$2;
+	if( TMP$972$1 == (double*)0ull ) goto label$2028;
+	__builtin_memset( TMP$972$1, 0, 32ull );
+	label$2028:;
+	*(double**)THIS$1 = TMP$972$1;
 	*(*(double**)THIS$1) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = 0x1.p+0;
-	label$2023:;
+	label$2027:;
 }
 
 void _ZN4MATH4MAT2C1ERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	double* TMP$972$1;
-	label$2025:;
+	double* TMP$973$1;
+	label$2029:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 32ull );
-	TMP$972$1 = (double*)vr$2;
-	if( TMP$972$1 == (double*)0ull ) goto label$2027;
-	__builtin_memset( TMP$972$1, 0, 32ull );
-	label$2027:;
-	*(double**)THIS$1 = TMP$972$1;
+	TMP$973$1 = (double*)vr$2;
+	if( TMP$973$1 == (double*)0ull ) goto label$2031;
+	__builtin_memset( TMP$973$1, 0, 32ull );
+	label$2031:;
+	*(double**)THIS$1 = TMP$973$1;
 	*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)M$1 + 16ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)M$1 + 24ll);
-	label$2026:;
+	label$2030:;
 }
 
 void _ZN4MATH4MAT2pLERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2028:;
+	label$2032:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) + *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) + *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) + *(double*)((uint8*)*(double**)M$1 + 16ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)THIS$1 + 24ll) + *(double*)((uint8*)*(double**)M$1 + 24ll);
-	label$2029:;
+	label$2033:;
 }
 
 void _ZN4MATH4MAT2mIERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2030:;
+	label$2034:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) - *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) - *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) - *(double*)((uint8*)*(double**)M$1 + 16ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)THIS$1 + 24ll) - *(double*)((uint8*)*(double**)M$1 + 24ll);
-	label$2031:;
+	label$2035:;
 }
 
 void _ZN4MATH4MAT2mLERKd( struct $N4MATH4MAT2E* THIS$1, double* N$1 )
 {
-	label$2032:;
+	label$2036:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)THIS$1 + 24ll) * *N$1;
-	label$2033:;
+	label$2037:;
 }
 
 void _ZN4MATH4MAT2mLERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2034:;
+	label$2038:;
 	double N00$1;
 	N00$1 = (*(*(double**)THIS$1) * *(double*)*(double**)M$1) + (*(double*)((uint8*)*(double**)THIS$1 + 8ll) * *(double*)((uint8*)*(double**)M$1 + 16ll));
 	double N10$1;
@@ -12837,34 +12854,33 @@ void _ZN4MATH4MAT2mLERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = N10$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = N01$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = N11$1;
-	label$2035:;
+	label$2039:;
 }
 
 void _ZN4MATH4MAT2dVERKd( struct $N4MATH4MAT2E* THIS$1, double* N$1 )
 {
-	label$2036:;
-	if( *N$1 == 0x0p+0 ) goto label$2039;
+	label$2040:;
+	if( *N$1 == 0x0p+0 ) goto label$2043;
 	{
 		*(*(double**)THIS$1) = *(*(double**)THIS$1) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)THIS$1 + 24ll) / *N$1;
 	}
-	goto label$2038;
-	label$2039:;
+	goto label$2042;
+	label$2043:;
 	{
 		*(*(double**)THIS$1) = 0x1.p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = 0x0p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 16ll) = 0x0p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 24ll) = 0x1.p+0;
 	}
-	label$2038:;
-	label$2037:;
+	label$2042:;
+	label$2041:;
 }
 
 FBSTRING* _ZNK4MATH4MAT2cv8FBSTRINGEv( struct $N4MATH4MAT2E* THIS$1 )
 {
-	FBSTRING TMP$977$1;
 	FBSTRING TMP$978$1;
 	FBSTRING TMP$979$1;
 	FBSTRING TMP$980$1;
@@ -12872,54 +12888,55 @@ FBSTRING* _ZNK4MATH4MAT2cv8FBSTRINGEv( struct $N4MATH4MAT2E* THIS$1 )
 	FBSTRING TMP$982$1;
 	FBSTRING TMP$983$1;
 	FBSTRING TMP$984$1;
+	FBSTRING TMP$985$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2040:;
+	label$2044:;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 24ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$9 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$12 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$977$1, 0, 24ll );
-	FBSTRING* vr$15 = fb_StrConcat( &TMP$977$1, (void*)"<math.mat2>{\x0A    ", 18ll, (void*)vr$12, -1ll );
 	__builtin_memset( &TMP$978$1, 0, 24ll );
-	FBSTRING* vr$18 = fb_StrConcat( &TMP$978$1, (void*)vr$15, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$15 = fb_StrConcat( &TMP$978$1, (void*)"<math.mat2>{\x0A    ", 18ll, (void*)vr$12, -1ll );
 	__builtin_memset( &TMP$979$1, 0, 24ll );
-	FBSTRING* vr$21 = fb_StrConcat( &TMP$979$1, (void*)vr$18, -1ll, (void*)vr$9, -1ll );
+	FBSTRING* vr$18 = fb_StrConcat( &TMP$979$1, (void*)vr$15, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$980$1, 0, 24ll );
-	FBSTRING* vr$24 = fb_StrConcat( &TMP$980$1, (void*)vr$21, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$21 = fb_StrConcat( &TMP$980$1, (void*)vr$18, -1ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$981$1, 0, 24ll );
-	FBSTRING* vr$27 = fb_StrConcat( &TMP$981$1, (void*)vr$24, -1ll, (void*)vr$6, -1ll );
+	FBSTRING* vr$24 = fb_StrConcat( &TMP$981$1, (void*)vr$21, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$982$1, 0, 24ll );
-	FBSTRING* vr$30 = fb_StrConcat( &TMP$982$1, (void*)vr$27, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$27 = fb_StrConcat( &TMP$982$1, (void*)vr$24, -1ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$983$1, 0, 24ll );
-	FBSTRING* vr$33 = fb_StrConcat( &TMP$983$1, (void*)vr$30, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$30 = fb_StrConcat( &TMP$983$1, (void*)vr$27, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$984$1, 0, 24ll );
-	FBSTRING* vr$36 = fb_StrConcat( &TMP$984$1, (void*)vr$33, -1ll, (void*)"\x0A}", 3ll );
+	FBSTRING* vr$33 = fb_StrConcat( &TMP$984$1, (void*)vr$30, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$985$1, 0, 24ll );
+	FBSTRING* vr$36 = fb_StrConcat( &TMP$985$1, (void*)vr$33, -1ll, (void*)"\x0A}", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$36, -1ll, 0 );
-	goto label$2041;
-	label$2041:;
+	goto label$2045;
+	label$2045:;
 	FBSTRING* vr$39 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$39;
 }
 
 void _ZN4MATH4MAT2aSERKS0_( struct $N4MATH4MAT2E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2042:;
-	if( THIS$1 == M$1 ) goto label$2045;
+	label$2046:;
+	if( THIS$1 == M$1 ) goto label$2049;
 	{
 		*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
 		*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)M$1 + 16ll);
 		*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)*(double**)M$1 + 24ll);
 	}
-	label$2045:;
-	label$2044:;
-	label$2043:;
+	label$2049:;
+	label$2048:;
+	label$2047:;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATH4MAT212FROMROTATIONERKd( struct $N4MATH4MAT2E* tmp$985$1, double* T$1 )
+struct $N4MATH4MAT2E* _ZN4MATH4MAT212FROMROTATIONERKd( struct $N4MATH4MAT2E* tmp$986$1, double* T$1 )
 {
-	label$2046:;
+	label$2050:;
 	double C$1;
 	C$1 = __builtin_cos( *T$1 );
 	double S$1;
@@ -12930,127 +12947,127 @@ struct $N4MATH4MAT2E* _ZN4MATH4MAT212FROMROTATIONERKd( struct $N4MATH4MAT2E* tmp
 	*(double*)((uint8*)*(double**)&R$1 + 8ll) = -S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 16ll) = S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 24ll) = C$1;
-	_ZN4MATH4MAT2C1ERKS0_( tmp$985$1, (struct $N4MATH4MAT2E*)&R$1 );
-	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2047;
-	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2047:;
-	return tmp$985$1;
-}
-
-struct $N4MATH4MAT2E* _ZN4MATH4MAT29FROMSCALEERKd( struct $N4MATH4MAT2E* tmp$986$1, double* S$1 )
-{
-	label$2048:;
-	struct $N4MATH4MAT2E R$1;
-	_ZN4MATH4MAT2C1Ev( &R$1 );
-	*(*(double**)&R$1) = *S$1;
-	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *S$1;
 	_ZN4MATH4MAT2C1ERKS0_( tmp$986$1, (struct $N4MATH4MAT2E*)&R$1 );
-	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2049;
-	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2049:;
-	return tmp$986$1;
-}
-
-struct $N4MATH4MAT2E* _ZN4MATH4MAT29FROMSCALEERKdS2_( struct $N4MATH4MAT2E* tmp$987$1, double* SX$1, double* SY$1 )
-{
-	label$2050:;
-	struct $N4MATH4MAT2E R$1;
-	_ZN4MATH4MAT2C1Ev( &R$1 );
-	*(*(double**)&R$1) = *SX$1;
-	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *SY$1;
-	_ZN4MATH4MAT2C1ERKS0_( tmp$987$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
 	goto label$2051;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
 	label$2051:;
+	return tmp$986$1;
+}
+
+struct $N4MATH4MAT2E* _ZN4MATH4MAT29FROMSCALEERKd( struct $N4MATH4MAT2E* tmp$987$1, double* S$1 )
+{
+	label$2052:;
+	struct $N4MATH4MAT2E R$1;
+	_ZN4MATH4MAT2C1Ev( &R$1 );
+	*(*(double**)&R$1) = *S$1;
+	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *S$1;
+	_ZN4MATH4MAT2C1ERKS0_( tmp$987$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2D1Ev( &R$1 );
+	goto label$2053;
+	_ZN4MATH4MAT2D1Ev( &R$1 );
+	label$2053:;
 	return tmp$987$1;
+}
+
+struct $N4MATH4MAT2E* _ZN4MATH4MAT29FROMSCALEERKdS2_( struct $N4MATH4MAT2E* tmp$988$1, double* SX$1, double* SY$1 )
+{
+	label$2054:;
+	struct $N4MATH4MAT2E R$1;
+	_ZN4MATH4MAT2C1Ev( &R$1 );
+	*(*(double**)&R$1) = *SX$1;
+	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *SY$1;
+	_ZN4MATH4MAT2C1ERKS0_( tmp$988$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2D1Ev( &R$1 );
+	goto label$2055;
+	_ZN4MATH4MAT2D1Ev( &R$1 );
+	label$2055:;
+	return tmp$988$1;
 }
 
 double _ZNK4MATH4MAT23GETERKu7INTEGERS3_( struct $N4MATH4MAT2E* THIS$1, int64* X$1, int64* Y$1 )
 {
-	double TMP$988$1;
+	double TMP$989$1;
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2052:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 2ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 2ll)) == 0ll ) goto label$2054;
-	TMP$988$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (1ll & 63ll))) << (3ll & 63ll)));
-	goto label$2055;
-	label$2054:;
-	TMP$988$1 = 0x0p+0;
-	label$2055:;
-	fb$result$1 = TMP$988$1;
-	goto label$2053;
-	label$2053:;
+	label$2056:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 2ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 2ll)) == 0ll ) goto label$2058;
+	TMP$989$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (1ll & 63ll))) << (3ll & 63ll)));
+	goto label$2059;
+	label$2058:;
+	TMP$989$1 = 0x0p+0;
+	label$2059:;
+	fb$result$1 = TMP$989$1;
+	goto label$2057;
+	label$2057:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC2E _ZNK4MATH4MAT29GETCOLUMNERKu7INTEGER( struct $N4MATH4MAT2E* THIS$1, int64* X$1 )
 {
 	struct $N4MATH4VEC2E fb$result$1;
-	label$2056:;
+	label$2060:;
 	{
-		int64 TMP$989$2;
-		TMP$989$2 = *X$1;
-		if( TMP$989$2 != 0ll ) goto label$2059;
-		label$2060:;
+		int64 TMP$990$2;
+		TMP$990$2 = *X$1;
+		if( TMP$990$2 != 0ll ) goto label$2063;
+		label$2064:;
 		{
 			_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 16ll) );
-			goto label$2057;
+			goto label$2061;
 		}
-		goto label$2058;
-		label$2059:;
-		if( TMP$989$2 != 1ll ) goto label$2061;
-		label$2062:;
+		goto label$2062;
+		label$2063:;
+		if( TMP$990$2 != 1ll ) goto label$2065;
+		label$2066:;
 		{
 			_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 24ll) );
-			goto label$2057;
+			goto label$2061;
 		}
-		goto label$2058;
-		label$2061:;
+		goto label$2062;
+		label$2065:;
 		{
 			_ZN4MATH4VEC2C1Ev( &fb$result$1 );
-			goto label$2057;
+			goto label$2061;
 		}
-		label$2063:;
-		label$2058:;
+		label$2067:;
+		label$2062:;
 	}
-	label$2057:;
+	label$2061:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC2E _ZNK4MATH4MAT26GETROWERKu7INTEGER( struct $N4MATH4MAT2E* THIS$1, int64* Y$1 )
 {
 	struct $N4MATH4VEC2E fb$result$1;
-	label$2064:;
+	label$2068:;
 	{
-		int64 TMP$993$2;
-		TMP$993$2 = *Y$1;
-		if( TMP$993$2 != 0ll ) goto label$2067;
-		label$2068:;
+		int64 TMP$994$2;
+		TMP$994$2 = *Y$1;
+		if( TMP$994$2 != 0ll ) goto label$2071;
+		label$2072:;
 		{
 			_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 8ll) );
-			goto label$2065;
+			goto label$2069;
 		}
-		goto label$2066;
-		label$2067:;
-		if( TMP$993$2 != 1ll ) goto label$2069;
-		label$2070:;
+		goto label$2070;
+		label$2071:;
+		if( TMP$994$2 != 1ll ) goto label$2073;
+		label$2074:;
 		{
 			_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 24ll) );
-			goto label$2065;
+			goto label$2069;
 		}
-		goto label$2066;
-		label$2069:;
+		goto label$2070;
+		label$2073:;
 		{
 			_ZN4MATH4VEC2C1Ev( &fb$result$1 );
-			goto label$2065;
+			goto label$2069;
 		}
-		label$2071:;
-		label$2066:;
+		label$2075:;
+		label$2070:;
 	}
-	label$2065:;
+	label$2069:;
 	return fb$result$1;
 }
 
@@ -13058,18 +13075,18 @@ boolean _ZN4MATH4MAT23SETERKu7INTEGERS3_RKd( struct $N4MATH4MAT2E* THIS$1, int64
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2072:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 2ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 2ll)) == 0ll ) goto label$2075;
+	label$2076:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 2ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 2ll)) == 0ll ) goto label$2079;
 	{
 		*(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (1ll & 63ll))) << (3ll & 63ll))) = *N$1;
 		fb$result$1 = (boolean)1ll;
-		goto label$2073;
+		goto label$2077;
 	}
-	label$2075:;
-	label$2074:;
+	label$2079:;
+	label$2078:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2073;
-	label$2073:;
+	goto label$2077;
+	label$2077:;
 	return fb$result$1;
 }
 
@@ -13077,36 +13094,36 @@ boolean _ZN4MATH4MAT29SETCOLUMNERKu7INTEGERRKdS5_( struct $N4MATH4MAT2E* THIS$1,
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2076:;
+	label$2080:;
 	{
-		int64 TMP$997$2;
-		TMP$997$2 = *X$1;
-		if( TMP$997$2 != 0ll ) goto label$2079;
-		label$2080:;
+		int64 TMP$998$2;
+		TMP$998$2 = *X$1;
+		if( TMP$998$2 != 0ll ) goto label$2083;
+		label$2084:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N2$1;
 		}
-		goto label$2078;
-		label$2079:;
-		if( TMP$997$2 != 1ll ) goto label$2081;
-		label$2082:;
+		goto label$2082;
+		label$2083:;
+		if( TMP$998$2 != 1ll ) goto label$2085;
+		label$2086:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N2$1;
 		}
-		goto label$2078;
-		label$2081:;
+		goto label$2082;
+		label$2085:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2077;
+			goto label$2081;
 		}
-		label$2083:;
-		label$2078:;
+		label$2087:;
+		label$2082:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2077;
-	label$2077:;
+	goto label$2081;
+	label$2081:;
 	return fb$result$1;
 }
 
@@ -13114,36 +13131,36 @@ boolean _ZN4MATH4MAT29SETCOLUMNERKu7INTEGERRKNS_4VEC2E( struct $N4MATH4MAT2E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2084:;
+	label$2088:;
 	{
-		int64 TMP$998$2;
-		TMP$998$2 = *X$1;
-		if( TMP$998$2 != 0ll ) goto label$2087;
-		label$2088:;
+		int64 TMP$999$2;
+		TMP$999$2 = *X$1;
+		if( TMP$999$2 != 0ll ) goto label$2091;
+		label$2092:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 8ll);
 		}
-		goto label$2086;
-		label$2087:;
-		if( TMP$998$2 != 1ll ) goto label$2089;
-		label$2090:;
+		goto label$2090;
+		label$2091:;
+		if( TMP$999$2 != 1ll ) goto label$2093;
+		label$2094:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 8ll);
 		}
-		goto label$2086;
-		label$2089:;
+		goto label$2090;
+		label$2093:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2085;
+			goto label$2089;
 		}
-		label$2091:;
-		label$2086:;
+		label$2095:;
+		label$2090:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2085;
-	label$2085:;
+	goto label$2089;
+	label$2089:;
 	return fb$result$1;
 }
 
@@ -13151,40 +13168,40 @@ boolean _ZN4MATH4MAT29SETCOLUMNERKu7INTEGERRKNS_4PVECE( struct $N4MATH4MAT2E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2092:;
+	label$2096:;
 	{
-		int64 TMP$999$2;
-		TMP$999$2 = *X$1;
-		if( TMP$999$2 != 0ll ) goto label$2095;
-		label$2096:;
+		int64 TMP$1000$2;
+		TMP$1000$2 = *X$1;
+		if( TMP$1000$2 != 0ll ) goto label$2099;
+		label$2100:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
 			double vr$5 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$5;
 		}
-		goto label$2094;
-		label$2095:;
-		if( TMP$999$2 != 1ll ) goto label$2097;
-		label$2098:;
+		goto label$2098;
+		label$2099:;
+		if( TMP$1000$2 != 1ll ) goto label$2101;
+		label$2102:;
 		{
 			double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$8;
 			double vr$11 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$11;
 		}
-		goto label$2094;
-		label$2097:;
+		goto label$2098;
+		label$2101:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2093;
+			goto label$2097;
 		}
-		label$2099:;
-		label$2094:;
+		label$2103:;
+		label$2098:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2093;
-	label$2093:;
+	goto label$2097;
+	label$2097:;
 	return fb$result$1;
 }
 
@@ -13192,36 +13209,36 @@ boolean _ZN4MATH4MAT26SETROWERKu7INTEGERRKdS5_( struct $N4MATH4MAT2E* THIS$1, in
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2100:;
+	label$2104:;
 	{
-		int64 TMP$1000$2;
-		TMP$1000$2 = *Y$1;
-		if( TMP$1000$2 != 0ll ) goto label$2103;
-		label$2104:;
+		int64 TMP$1001$2;
+		TMP$1001$2 = *Y$1;
+		if( TMP$1001$2 != 0ll ) goto label$2107;
+		label$2108:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N2$1;
 		}
-		goto label$2102;
-		label$2103:;
-		if( TMP$1000$2 != 1ll ) goto label$2105;
-		label$2106:;
+		goto label$2106;
+		label$2107:;
+		if( TMP$1001$2 != 1ll ) goto label$2109;
+		label$2110:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N2$1;
 		}
-		goto label$2102;
-		label$2105:;
+		goto label$2106;
+		label$2109:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2101;
+			goto label$2105;
 		}
-		label$2107:;
-		label$2102:;
+		label$2111:;
+		label$2106:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2101;
-	label$2101:;
+	goto label$2105;
+	label$2105:;
 	return fb$result$1;
 }
 
@@ -13229,36 +13246,36 @@ boolean _ZN4MATH4MAT26SETROWERKu7INTEGERRKNS_4VEC2E( struct $N4MATH4MAT2E* THIS$
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2108:;
+	label$2112:;
 	{
-		int64 TMP$1001$2;
-		TMP$1001$2 = *Y$1;
-		if( TMP$1001$2 != 0ll ) goto label$2111;
-		label$2112:;
+		int64 TMP$1002$2;
+		TMP$1002$2 = *Y$1;
+		if( TMP$1002$2 != 0ll ) goto label$2115;
+		label$2116:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 		}
-		goto label$2110;
-		label$2111:;
-		if( TMP$1001$2 != 1ll ) goto label$2113;
-		label$2114:;
+		goto label$2114;
+		label$2115:;
+		if( TMP$1002$2 != 1ll ) goto label$2117;
+		label$2118:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 8ll);
 		}
-		goto label$2110;
-		label$2113:;
+		goto label$2114;
+		label$2117:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2109;
+			goto label$2113;
 		}
-		label$2115:;
-		label$2110:;
+		label$2119:;
+		label$2114:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2109;
-	label$2109:;
+	goto label$2113;
+	label$2113:;
 	return fb$result$1;
 }
 
@@ -13266,46 +13283,45 @@ boolean _ZN4MATH4MAT26SETROWERKu7INTEGERRKNS_4PVECE( struct $N4MATH4MAT2E* THIS$
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2116:;
+	label$2120:;
 	{
-		int64 TMP$1002$2;
-		TMP$1002$2 = *Y$1;
-		if( TMP$1002$2 != 0ll ) goto label$2119;
-		label$2120:;
+		int64 TMP$1003$2;
+		TMP$1003$2 = *Y$1;
+		if( TMP$1003$2 != 0ll ) goto label$2123;
+		label$2124:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
 			double vr$5 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$5;
 		}
-		goto label$2118;
-		label$2119:;
-		if( TMP$1002$2 != 1ll ) goto label$2121;
-		label$2122:;
+		goto label$2122;
+		label$2123:;
+		if( TMP$1003$2 != 1ll ) goto label$2125;
+		label$2126:;
 		{
 			double vr$8 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$8;
 			double vr$11 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$11;
 		}
-		goto label$2118;
-		label$2121:;
+		goto label$2122;
+		label$2125:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2117;
+			goto label$2121;
 		}
-		label$2123:;
-		label$2118:;
+		label$2127:;
+		label$2122:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2117;
-	label$2117:;
+	goto label$2121;
+	label$2121:;
 	return fb$result$1;
 }
 
 FBSTRING* _ZNK4MATH4MAT26TOJSONERKb( struct $N4MATH4MAT2E* THIS$1, boolean* C$1 )
 {
-	FBSTRING TMP$1003$1;
 	FBSTRING TMP$1004$1;
 	FBSTRING TMP$1005$1;
 	FBSTRING TMP$1006$1;
@@ -13322,66 +13338,67 @@ FBSTRING* _ZNK4MATH4MAT26TOJSONERKb( struct $N4MATH4MAT2E* THIS$1, boolean* C$1 
 	FBSTRING TMP$1017$1;
 	FBSTRING TMP$1018$1;
 	FBSTRING TMP$1019$1;
+	FBSTRING TMP$1020$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2124:;
-	if( *C$1 == (boolean)0ll ) goto label$2126;
+	label$2128:;
+	if( *C$1 == (boolean)0ll ) goto label$2130;
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 24ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$10 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$13 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1004$1, 0, 24ll );
-	FBSTRING* vr$16 = fb_StrConcat( &TMP$1004$1, (void*)"[", 2ll, (void*)vr$13, -1ll );
 	__builtin_memset( &TMP$1005$1, 0, 24ll );
-	FBSTRING* vr$19 = fb_StrConcat( &TMP$1005$1, (void*)vr$16, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$16 = fb_StrConcat( &TMP$1005$1, (void*)"[", 2ll, (void*)vr$13, -1ll );
 	__builtin_memset( &TMP$1006$1, 0, 24ll );
-	FBSTRING* vr$22 = fb_StrConcat( &TMP$1006$1, (void*)vr$19, -1ll, (void*)vr$10, -1ll );
+	FBSTRING* vr$19 = fb_StrConcat( &TMP$1006$1, (void*)vr$16, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1007$1, 0, 24ll );
-	FBSTRING* vr$25 = fb_StrConcat( &TMP$1007$1, (void*)vr$22, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$22 = fb_StrConcat( &TMP$1007$1, (void*)vr$19, -1ll, (void*)vr$10, -1ll );
 	__builtin_memset( &TMP$1008$1, 0, 24ll );
-	FBSTRING* vr$28 = fb_StrConcat( &TMP$1008$1, (void*)vr$25, -1ll, (void*)vr$7, -1ll );
+	FBSTRING* vr$25 = fb_StrConcat( &TMP$1008$1, (void*)vr$22, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1009$1, 0, 24ll );
-	FBSTRING* vr$31 = fb_StrConcat( &TMP$1009$1, (void*)vr$28, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$28 = fb_StrConcat( &TMP$1009$1, (void*)vr$25, -1ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$1010$1, 0, 24ll );
-	FBSTRING* vr$34 = fb_StrConcat( &TMP$1010$1, (void*)vr$31, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$31 = fb_StrConcat( &TMP$1010$1, (void*)vr$28, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1011$1, 0, 24ll );
-	FBSTRING* vr$37 = fb_StrConcat( &TMP$1011$1, (void*)vr$34, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1003$1, -1ll, (void*)vr$37, -1ll, 0 );
-	goto label$2127;
-	label$2126:;
+	FBSTRING* vr$34 = fb_StrConcat( &TMP$1011$1, (void*)vr$31, -1ll, (void*)vr$4, -1ll );
+	__builtin_memset( &TMP$1012$1, 0, 24ll );
+	FBSTRING* vr$37 = fb_StrConcat( &TMP$1012$1, (void*)vr$34, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1004$1, -1ll, (void*)vr$37, -1ll, 0 );
+	goto label$2131;
+	label$2130:;
 	FBSTRING* vr$41 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 24ll) );
 	FBSTRING* vr$44 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$47 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$50 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1012$1, 0, 24ll );
-	FBSTRING* vr$53 = fb_StrConcat( &TMP$1012$1, (void*)"[", 2ll, (void*)vr$50, -1ll );
 	__builtin_memset( &TMP$1013$1, 0, 24ll );
-	FBSTRING* vr$56 = fb_StrConcat( &TMP$1013$1, (void*)vr$53, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$53 = fb_StrConcat( &TMP$1013$1, (void*)"[", 2ll, (void*)vr$50, -1ll );
 	__builtin_memset( &TMP$1014$1, 0, 24ll );
-	FBSTRING* vr$59 = fb_StrConcat( &TMP$1014$1, (void*)vr$56, -1ll, (void*)vr$47, -1ll );
+	FBSTRING* vr$56 = fb_StrConcat( &TMP$1014$1, (void*)vr$53, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1015$1, 0, 24ll );
-	FBSTRING* vr$62 = fb_StrConcat( &TMP$1015$1, (void*)vr$59, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$59 = fb_StrConcat( &TMP$1015$1, (void*)vr$56, -1ll, (void*)vr$47, -1ll );
 	__builtin_memset( &TMP$1016$1, 0, 24ll );
-	FBSTRING* vr$65 = fb_StrConcat( &TMP$1016$1, (void*)vr$62, -1ll, (void*)vr$44, -1ll );
+	FBSTRING* vr$62 = fb_StrConcat( &TMP$1016$1, (void*)vr$59, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1017$1, 0, 24ll );
-	FBSTRING* vr$68 = fb_StrConcat( &TMP$1017$1, (void*)vr$65, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$65 = fb_StrConcat( &TMP$1017$1, (void*)vr$62, -1ll, (void*)vr$44, -1ll );
 	__builtin_memset( &TMP$1018$1, 0, 24ll );
-	FBSTRING* vr$71 = fb_StrConcat( &TMP$1018$1, (void*)vr$68, -1ll, (void*)vr$41, -1ll );
+	FBSTRING* vr$68 = fb_StrConcat( &TMP$1018$1, (void*)vr$65, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1019$1, 0, 24ll );
-	FBSTRING* vr$74 = fb_StrConcat( &TMP$1019$1, (void*)vr$71, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1003$1, -1ll, (void*)vr$74, -1ll, 0 );
-	label$2127:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1003$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$1003$1 );
-	goto label$2125;
-	label$2125:;
+	FBSTRING* vr$71 = fb_StrConcat( &TMP$1019$1, (void*)vr$68, -1ll, (void*)vr$41, -1ll );
+	__builtin_memset( &TMP$1020$1, 0, 24ll );
+	FBSTRING* vr$74 = fb_StrConcat( &TMP$1020$1, (void*)vr$71, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1004$1, -1ll, (void*)vr$74, -1ll, 0 );
+	label$2131:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1004$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$1004$1 );
+	goto label$2129;
+	label$2129:;
 	FBSTRING* vr$80 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$80;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHplERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1020$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
+struct $N4MATH4MAT2E* _ZN4MATHplERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1021$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
 {
-	label$2128:;
+	label$2132:;
 	struct $N4MATH4MAT2E R$1;
 	_ZN4MATH4MAT2C1Ev( &R$1 );
 	double* P1$1;
@@ -13397,17 +13414,17 @@ struct $N4MATH4MAT2E* _ZN4MATHplERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1020$
 	*(double*)((uint8*)Q$1 + 8ll) = *(double*)((uint8*)P1$1 + 8ll) + *(double*)((uint8*)P2$1 + 8ll);
 	*(double*)((uint8*)Q$1 + 16ll) = *(double*)((uint8*)P1$1 + 16ll) + *(double*)((uint8*)P2$1 + 16ll);
 	*(double*)((uint8*)Q$1 + 24ll) = *(double*)((uint8*)P1$1 + 24ll) + *(double*)((uint8*)P2$1 + 24ll);
-	_ZN4MATH4MAT2C1ERKS0_( tmp$1020$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2C1ERKS0_( tmp$1021$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2129;
+	goto label$2133;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2129:;
-	return tmp$1020$1;
+	label$2133:;
+	return tmp$1021$1;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHmiERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1021$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
+struct $N4MATH4MAT2E* _ZN4MATHmiERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1022$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
 {
-	label$2130:;
+	label$2134:;
 	struct $N4MATH4MAT2E R$1;
 	_ZN4MATH4MAT2C1Ev( &R$1 );
 	double* P1$1;
@@ -13423,17 +13440,17 @@ struct $N4MATH4MAT2E* _ZN4MATHmiERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1021$
 	*(double*)((uint8*)Q$1 + 8ll) = *(double*)((uint8*)P1$1 + 8ll) - *(double*)((uint8*)P2$1 + 8ll);
 	*(double*)((uint8*)Q$1 + 16ll) = *(double*)((uint8*)P1$1 + 16ll) - *(double*)((uint8*)P2$1 + 16ll);
 	*(double*)((uint8*)Q$1 + 24ll) = *(double*)((uint8*)P1$1 + 24ll) - *(double*)((uint8*)P2$1 + 24ll);
-	_ZN4MATH4MAT2C1ERKS0_( tmp$1021$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2C1ERKS0_( tmp$1022$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2131;
+	goto label$2135;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2131:;
-	return tmp$1021$1;
+	label$2135:;
+	return tmp$1022$1;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1022$1, struct $N4MATH4MAT2E* M$1, double* N$1 )
+struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1023$1, struct $N4MATH4MAT2E* M$1, double* N$1 )
 {
-	label$2132:;
+	label$2136:;
 	struct $N4MATH4MAT2E R$1;
 	_ZN4MATH4MAT2C1Ev( &R$1 );
 	double* P$1;
@@ -13446,17 +13463,17 @@ struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1022$
 	*(double*)((uint8*)Q$1 + 8ll) = *(double*)((uint8*)P$1 + 8ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 16ll) = *(double*)((uint8*)P$1 + 16ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 24ll) = *(double*)((uint8*)P$1 + 24ll) * *N$1;
-	_ZN4MATH4MAT2C1ERKS0_( tmp$1022$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2C1ERKS0_( tmp$1023$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2133;
+	goto label$2137;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2133:;
-	return tmp$1022$1;
+	label$2137:;
+	return tmp$1023$1;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHmlERKdRKNS_4MAT2E( struct $N4MATH4MAT2E* tmp$1023$1, double* N$1, struct $N4MATH4MAT2E* M$1 )
+struct $N4MATH4MAT2E* _ZN4MATHmlERKdRKNS_4MAT2E( struct $N4MATH4MAT2E* tmp$1024$1, double* N$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2134:;
+	label$2138:;
 	struct $N4MATH4MAT2E R$1;
 	_ZN4MATH4MAT2C1Ev( &R$1 );
 	double* P$1;
@@ -13469,17 +13486,17 @@ struct $N4MATH4MAT2E* _ZN4MATHmlERKdRKNS_4MAT2E( struct $N4MATH4MAT2E* tmp$1023$
 	*(double*)((uint8*)Q$1 + 8ll) = *N$1 * *(double*)((uint8*)P$1 + 8ll);
 	*(double*)((uint8*)Q$1 + 16ll) = *N$1 * *(double*)((uint8*)P$1 + 16ll);
 	*(double*)((uint8*)Q$1 + 24ll) = *N$1 * *(double*)((uint8*)P$1 + 24ll);
-	_ZN4MATH4MAT2C1ERKS0_( tmp$1023$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2C1ERKS0_( tmp$1024$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2135;
+	goto label$2139;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2135:;
-	return tmp$1023$1;
+	label$2139:;
+	return tmp$1024$1;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1024$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
+struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1025$1, struct $N4MATH4MAT2E* M1$1, struct $N4MATH4MAT2E* M2$1 )
 {
-	label$2136:;
+	label$2140:;
 	struct $N4MATH4MAT2E R$1;
 	_ZN4MATH4MAT2C1Ev( &R$1 );
 	double* P1$1;
@@ -13495,37 +13512,37 @@ struct $N4MATH4MAT2E* _ZN4MATHmlERKNS_4MAT2ES2_( struct $N4MATH4MAT2E* tmp$1024$
 	*(double*)((uint8*)Q$1 + 8ll) = (*(double*)P1$1 * *(double*)((uint8*)P2$1 + 8ll)) + (*(double*)((uint8*)P1$1 + 8ll) * *(double*)((uint8*)P2$1 + 24ll));
 	*(double*)((uint8*)Q$1 + 16ll) = (*(double*)((uint8*)P1$1 + 16ll) * *(double*)P2$1) + (*(double*)((uint8*)P1$1 + 24ll) * *(double*)((uint8*)P2$1 + 16ll));
 	*(double*)((uint8*)Q$1 + 24ll) = (*(double*)((uint8*)P1$1 + 16ll) * *(double*)((uint8*)P2$1 + 8ll)) + (*(double*)((uint8*)P1$1 + 24ll) * *(double*)((uint8*)P2$1 + 24ll));
-	_ZN4MATH4MAT2C1ERKS0_( tmp$1024$1, (struct $N4MATH4MAT2E*)&R$1 );
+	_ZN4MATH4MAT2C1ERKS0_( tmp$1025$1, (struct $N4MATH4MAT2E*)&R$1 );
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	goto label$2137;
+	goto label$2141;
 	_ZN4MATH4MAT2D1Ev( &R$1 );
-	label$2137:;
-	return tmp$1024$1;
+	label$2141:;
+	return tmp$1025$1;
 }
 
 struct $N4MATH4VEC2E _ZN4MATHmlERKNS_4MAT2ERKNS_4VEC2E( struct $N4MATH4MAT2E* M$1, struct $N4MATH4VEC2E* V$1 )
 {
-	double TMP$1026$1;
 	double TMP$1027$1;
+	double TMP$1028$1;
 	struct $N4MATH4VEC2E fb$result$1;
-	label$2138:;
+	label$2142:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
-	TMP$1027$1 = (*(double*)((uint8*)P$1 + 16ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 24ll) * *(double*)((uint8*)V$1 + 8ll));
-	TMP$1026$1 = (*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll));
-	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)&TMP$1026$1, (double*)&TMP$1027$1 );
-	goto label$2139;
-	label$2139:;
+	TMP$1028$1 = (*(double*)((uint8*)P$1 + 16ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 24ll) * *(double*)((uint8*)V$1 + 8ll));
+	TMP$1027$1 = (*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll));
+	_ZN4MATH4VEC2C1ERKdS2_( &fb$result$1, (double*)&TMP$1027$1, (double*)&TMP$1028$1 );
+	goto label$2143;
+	label$2143:;
 	return fb$result$1;
 }
 
 struct $N4MATH4PVECE _ZN4MATHmlERKNS_4MAT2ERKNS_4PVECE( struct $N4MATH4MAT2E* M$1, struct $N4MATH4PVECE* V$1 )
 {
-	double TMP$1029$1;
 	double TMP$1030$1;
+	double TMP$1031$1;
 	struct $N4MATH4PVECE fb$result$1;
-	label$2140:;
+	label$2144:;
 	double X$1;
 	double vr$0 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 	X$1 = vr$0;
@@ -13542,19 +13559,19 @@ struct $N4MATH4PVECE _ZN4MATHmlERKNS_4MAT2ERKNS_4PVECE( struct $N4MATH4MAT2E* M$
 	I$1 = (*(double*)P$1 * X$1) + (*(double*)((uint8*)P$1 + 8ll) * Y$1);
 	J$1 = (*(double*)((uint8*)P$1 + 16ll) * X$1) + (*(double*)((uint8*)P$1 + 24ll) * Y$1);
 	double vr$17 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
-	TMP$1030$1 = vr$17;
+	TMP$1031$1 = vr$17;
 	double vr$21 = _ZN4MATH5THETAERKdS1_( (double*)&I$1, (double*)&J$1 );
-	TMP$1029$1 = vr$21;
-	_ZN4MATH4PVECC1ERKdS2_( &fb$result$1, (double*)&TMP$1029$1, (double*)&TMP$1030$1 );
-	goto label$2141;
-	label$2141:;
+	TMP$1030$1 = vr$21;
+	_ZN4MATH4PVECC1ERKdS2_( &fb$result$1, (double*)&TMP$1030$1, (double*)&TMP$1031$1 );
+	goto label$2145;
+	label$2145:;
 	return fb$result$1;
 }
 
-struct $N4MATH4MAT2E* _ZN4MATHdvERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1031$1, struct $N4MATH4MAT2E* M$1, double* N$1 )
+struct $N4MATH4MAT2E* _ZN4MATHdvERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1032$1, struct $N4MATH4MAT2E* M$1, double* N$1 )
 {
-	label$2142:;
-	if( *N$1 == 0x0p+0 ) goto label$2145;
+	label$2146:;
+	if( *N$1 == 0x0p+0 ) goto label$2149;
 	{
 		struct $N4MATH4MAT2E R$2;
 		_ZN4MATH4MAT2C1Ev( &R$2 );
@@ -13568,47 +13585,47 @@ struct $N4MATH4MAT2E* _ZN4MATHdvERKNS_4MAT2ERKd( struct $N4MATH4MAT2E* tmp$1031$
 		*(double*)((uint8*)Q$2 + 8ll) = *(double*)((uint8*)P$2 + 8ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 16ll) = *(double*)((uint8*)P$2 + 16ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 24ll) = *(double*)((uint8*)P$2 + 24ll) / *N$1;
-		_ZN4MATH4MAT2C1ERKS0_( tmp$1031$1, (struct $N4MATH4MAT2E*)&R$2 );
+		_ZN4MATH4MAT2C1ERKS0_( tmp$1032$1, (struct $N4MATH4MAT2E*)&R$2 );
 		_ZN4MATH4MAT2D1Ev( &R$2 );
-		goto label$2143;
+		goto label$2147;
 		_ZN4MATH4MAT2D1Ev( &R$2 );
 	}
-	label$2145:;
-	label$2144:;
-	_ZN4MATH4MAT2C1Ev( tmp$1031$1 );
-	goto label$2143;
-	label$2143:;
-	return tmp$1031$1;
+	label$2149:;
+	label$2148:;
+	_ZN4MATH4MAT2C1Ev( tmp$1032$1 );
+	goto label$2147;
+	label$2147:;
+	return tmp$1032$1;
 }
 
 void _ZN4MATH4MAT3C1Ev( struct $N4MATH4MAT3E* THIS$1 )
 {
-	double* TMP$1033$1;
-	label$2148:;
+	double* TMP$1034$1;
+	label$2152:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 72ull );
-	TMP$1033$1 = (double*)vr$2;
-	if( TMP$1033$1 == (double*)0ull ) goto label$2150;
-	__builtin_memset( TMP$1033$1, 0, 72ull );
-	label$2150:;
-	*(double**)THIS$1 = TMP$1033$1;
+	TMP$1034$1 = (double*)vr$2;
+	if( TMP$1034$1 == (double*)0ull ) goto label$2154;
+	__builtin_memset( TMP$1034$1, 0, 72ull );
+	label$2154:;
+	*(double**)THIS$1 = TMP$1034$1;
 	*(*(double**)THIS$1) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 32ll) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = 0x1.p+0;
-	label$2149:;
+	label$2153:;
 }
 
 void _ZN4MATH4MAT3C1ERKNS_4MAT2E( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	double* TMP$1034$1;
-	label$2151:;
+	double* TMP$1035$1;
+	label$2155:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 72ull );
-	TMP$1034$1 = (double*)vr$2;
-	if( TMP$1034$1 == (double*)0ull ) goto label$2153;
-	__builtin_memset( TMP$1034$1, 0, 72ull );
-	label$2153:;
-	*(double**)THIS$1 = TMP$1034$1;
+	TMP$1035$1 = (double*)vr$2;
+	if( TMP$1035$1 == (double*)0ull ) goto label$2157;
+	__builtin_memset( TMP$1035$1, 0, 72ull );
+	label$2157:;
+	*(double**)THIS$1 = TMP$1035$1;
 	double* P$1;
 	double* vr$4 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$4;
@@ -13617,20 +13634,20 @@ void _ZN4MATH4MAT3C1ERKNS_4MAT2E( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)P$1 + 16ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)P$1 + 24ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = 0x1.p+0;
-	label$2152:;
+	label$2156:;
 }
 
 void _ZN4MATH4MAT3C1ERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	double* TMP$1035$1;
-	label$2154:;
+	double* TMP$1036$1;
+	label$2158:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 72ull );
-	TMP$1035$1 = (double*)vr$2;
-	if( TMP$1035$1 == (double*)0ull ) goto label$2156;
-	__builtin_memset( TMP$1035$1, 0, 72ull );
-	label$2156:;
-	*(double**)THIS$1 = TMP$1035$1;
+	TMP$1036$1 = (double*)vr$2;
+	if( TMP$1036$1 == (double*)0ull ) goto label$2160;
+	__builtin_memset( TMP$1036$1, 0, 72ull );
+	label$2160:;
+	*(double**)THIS$1 = TMP$1036$1;
 	*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -13640,12 +13657,12 @@ void _ZN4MATH4MAT3C1ERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)*(double**)M$1 + 48ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)M$1 + 56ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)M$1 + 64ll);
-	label$2155:;
+	label$2159:;
 }
 
 void _ZN4MATH4MAT3pLERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2157:;
+	label$2161:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) + *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) + *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) + *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -13655,12 +13672,12 @@ void _ZN4MATH4MAT3pLERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)*(double**)THIS$1 + 48ll) + *(double*)((uint8*)*(double**)M$1 + 48ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)THIS$1 + 56ll) + *(double*)((uint8*)*(double**)M$1 + 56ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)THIS$1 + 64ll) + *(double*)((uint8*)*(double**)M$1 + 64ll);
-	label$2158:;
+	label$2162:;
 }
 
 void _ZN4MATH4MAT3mIERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2159:;
+	label$2163:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) - *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) - *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) - *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -13670,12 +13687,12 @@ void _ZN4MATH4MAT3mIERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)*(double**)THIS$1 + 48ll) - *(double*)((uint8*)*(double**)M$1 + 48ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)THIS$1 + 56ll) - *(double*)((uint8*)*(double**)M$1 + 56ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)THIS$1 + 64ll) - *(double*)((uint8*)*(double**)M$1 + 64ll);
-	label$2160:;
+	label$2164:;
 }
 
 void _ZN4MATH4MAT3mLERKd( struct $N4MATH4MAT3E* THIS$1, double* N$1 )
 {
-	label$2161:;
+	label$2165:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) * *N$1;
@@ -13685,12 +13702,12 @@ void _ZN4MATH4MAT3mLERKd( struct $N4MATH4MAT3E* THIS$1, double* N$1 )
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)*(double**)THIS$1 + 48ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)THIS$1 + 56ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)THIS$1 + 64ll) * *N$1;
-	label$2162:;
+	label$2166:;
 }
 
 void _ZN4MATH4MAT3mLERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2163:;
+	label$2167:;
 	double N00$1;
 	N00$1 = ((*(*(double**)THIS$1) * *(double*)*(double**)M$1) + (*(double*)((uint8*)*(double**)THIS$1 + 8ll) * *(double*)((uint8*)*(double**)M$1 + 24ll))) + (*(double*)((uint8*)*(double**)THIS$1 + 16ll) * *(double*)((uint8*)*(double**)M$1 + 48ll));
 	double N10$1;
@@ -13718,13 +13735,13 @@ void _ZN4MATH4MAT3mLERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = N02$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = N12$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = N22$1;
-	label$2164:;
+	label$2168:;
 }
 
 void _ZN4MATH4MAT3dVERKd( struct $N4MATH4MAT3E* THIS$1, double* N$1 )
 {
-	label$2165:;
-	if( *N$1 == 0x0p+0 ) goto label$2168;
+	label$2169:;
+	if( *N$1 == 0x0p+0 ) goto label$2172;
 	{
 		*(*(double**)THIS$1) = *(*(double**)THIS$1) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) / *N$1;
@@ -13736,8 +13753,8 @@ void _ZN4MATH4MAT3dVERKd( struct $N4MATH4MAT3E* THIS$1, double* N$1 )
 		*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)THIS$1 + 56ll) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)THIS$1 + 64ll) / *N$1;
 	}
-	goto label$2167;
-	label$2168:;
+	goto label$2171;
+	label$2172:;
 	{
 		*(*(double**)THIS$1) = 0x1.p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = 0x0p+0;
@@ -13749,13 +13766,12 @@ void _ZN4MATH4MAT3dVERKd( struct $N4MATH4MAT3E* THIS$1, double* N$1 )
 		*(double*)((uint8*)*(double**)THIS$1 + 56ll) = 0x0p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 64ll) = 0x1.p+0;
 	}
-	label$2167:;
-	label$2166:;
+	label$2171:;
+	label$2170:;
 }
 
 FBSTRING* _ZNK4MATH4MAT3cv8FBSTRINGEv( struct $N4MATH4MAT3E* THIS$1 )
 {
-	FBSTRING TMP$1037$1;
 	FBSTRING TMP$1038$1;
 	FBSTRING TMP$1039$1;
 	FBSTRING TMP$1040$1;
@@ -13773,9 +13789,10 @@ FBSTRING* _ZNK4MATH4MAT3cv8FBSTRINGEv( struct $N4MATH4MAT3E* THIS$1 )
 	FBSTRING TMP$1052$1;
 	FBSTRING TMP$1053$1;
 	FBSTRING TMP$1054$1;
+	FBSTRING TMP$1055$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2169:;
+	label$2173:;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 64ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 56ll) );
 	FBSTRING* vr$9 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 48ll) );
@@ -13785,52 +13802,52 @@ FBSTRING* _ZNK4MATH4MAT3cv8FBSTRINGEv( struct $N4MATH4MAT3E* THIS$1 )
 	FBSTRING* vr$21 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$24 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$27 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1037$1, 0, 24ll );
-	FBSTRING* vr$30 = fb_StrConcat( &TMP$1037$1, (void*)"<math.mat3>{\x0A    ", 18ll, (void*)vr$27, -1ll );
 	__builtin_memset( &TMP$1038$1, 0, 24ll );
-	FBSTRING* vr$33 = fb_StrConcat( &TMP$1038$1, (void*)vr$30, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$30 = fb_StrConcat( &TMP$1038$1, (void*)"<math.mat3>{\x0A    ", 18ll, (void*)vr$27, -1ll );
 	__builtin_memset( &TMP$1039$1, 0, 24ll );
-	FBSTRING* vr$36 = fb_StrConcat( &TMP$1039$1, (void*)vr$33, -1ll, (void*)vr$24, -1ll );
+	FBSTRING* vr$33 = fb_StrConcat( &TMP$1039$1, (void*)vr$30, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1040$1, 0, 24ll );
-	FBSTRING* vr$39 = fb_StrConcat( &TMP$1040$1, (void*)vr$36, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$36 = fb_StrConcat( &TMP$1040$1, (void*)vr$33, -1ll, (void*)vr$24, -1ll );
 	__builtin_memset( &TMP$1041$1, 0, 24ll );
-	FBSTRING* vr$42 = fb_StrConcat( &TMP$1041$1, (void*)vr$39, -1ll, (void*)vr$21, -1ll );
+	FBSTRING* vr$39 = fb_StrConcat( &TMP$1041$1, (void*)vr$36, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1042$1, 0, 24ll );
-	FBSTRING* vr$45 = fb_StrConcat( &TMP$1042$1, (void*)vr$42, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$42 = fb_StrConcat( &TMP$1042$1, (void*)vr$39, -1ll, (void*)vr$21, -1ll );
 	__builtin_memset( &TMP$1043$1, 0, 24ll );
-	FBSTRING* vr$48 = fb_StrConcat( &TMP$1043$1, (void*)vr$45, -1ll, (void*)vr$18, -1ll );
+	FBSTRING* vr$45 = fb_StrConcat( &TMP$1043$1, (void*)vr$42, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$1044$1, 0, 24ll );
-	FBSTRING* vr$51 = fb_StrConcat( &TMP$1044$1, (void*)vr$48, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$48 = fb_StrConcat( &TMP$1044$1, (void*)vr$45, -1ll, (void*)vr$18, -1ll );
 	__builtin_memset( &TMP$1045$1, 0, 24ll );
-	FBSTRING* vr$54 = fb_StrConcat( &TMP$1045$1, (void*)vr$51, -1ll, (void*)vr$15, -1ll );
+	FBSTRING* vr$51 = fb_StrConcat( &TMP$1045$1, (void*)vr$48, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1046$1, 0, 24ll );
-	FBSTRING* vr$57 = fb_StrConcat( &TMP$1046$1, (void*)vr$54, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$54 = fb_StrConcat( &TMP$1046$1, (void*)vr$51, -1ll, (void*)vr$15, -1ll );
 	__builtin_memset( &TMP$1047$1, 0, 24ll );
-	FBSTRING* vr$60 = fb_StrConcat( &TMP$1047$1, (void*)vr$57, -1ll, (void*)vr$12, -1ll );
+	FBSTRING* vr$57 = fb_StrConcat( &TMP$1047$1, (void*)vr$54, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1048$1, 0, 24ll );
-	FBSTRING* vr$63 = fb_StrConcat( &TMP$1048$1, (void*)vr$60, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$60 = fb_StrConcat( &TMP$1048$1, (void*)vr$57, -1ll, (void*)vr$12, -1ll );
 	__builtin_memset( &TMP$1049$1, 0, 24ll );
-	FBSTRING* vr$66 = fb_StrConcat( &TMP$1049$1, (void*)vr$63, -1ll, (void*)vr$9, -1ll );
+	FBSTRING* vr$63 = fb_StrConcat( &TMP$1049$1, (void*)vr$60, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$1050$1, 0, 24ll );
-	FBSTRING* vr$69 = fb_StrConcat( &TMP$1050$1, (void*)vr$66, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$66 = fb_StrConcat( &TMP$1050$1, (void*)vr$63, -1ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$1051$1, 0, 24ll );
-	FBSTRING* vr$72 = fb_StrConcat( &TMP$1051$1, (void*)vr$69, -1ll, (void*)vr$6, -1ll );
+	FBSTRING* vr$69 = fb_StrConcat( &TMP$1051$1, (void*)vr$66, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1052$1, 0, 24ll );
-	FBSTRING* vr$75 = fb_StrConcat( &TMP$1052$1, (void*)vr$72, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$72 = fb_StrConcat( &TMP$1052$1, (void*)vr$69, -1ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$1053$1, 0, 24ll );
-	FBSTRING* vr$78 = fb_StrConcat( &TMP$1053$1, (void*)vr$75, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$75 = fb_StrConcat( &TMP$1053$1, (void*)vr$72, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1054$1, 0, 24ll );
-	FBSTRING* vr$81 = fb_StrConcat( &TMP$1054$1, (void*)vr$78, -1ll, (void*)"\x0A}", 3ll );
+	FBSTRING* vr$78 = fb_StrConcat( &TMP$1054$1, (void*)vr$75, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$1055$1, 0, 24ll );
+	FBSTRING* vr$81 = fb_StrConcat( &TMP$1055$1, (void*)vr$78, -1ll, (void*)"\x0A}", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$81, -1ll, 0 );
-	goto label$2170;
-	label$2170:;
+	goto label$2174;
+	label$2174:;
 	FBSTRING* vr$84 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$84;
 }
 
 void _ZN4MATH4MAT3aSERKNS_4MAT2E( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2171:;
+	label$2175:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
@@ -13843,13 +13860,13 @@ void _ZN4MATH4MAT3aSERKNS_4MAT2E( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 48ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 56ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 64ll) = 0x1.p+0;
-	label$2172:;
+	label$2176:;
 }
 
 void _ZN4MATH4MAT3aSERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2173:;
-	if( THIS$1 == M$1 ) goto label$2176;
+	label$2177:;
+	if( THIS$1 == M$1 ) goto label$2180;
 	{
 		*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
@@ -13861,189 +13878,189 @@ void _ZN4MATH4MAT3aSERKS0_( struct $N4MATH4MAT3E* THIS$1, struct $N4MATH4MAT3E* 
 		*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)*(double**)M$1 + 56ll);
 		*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)*(double**)M$1 + 64ll);
 	}
-	label$2176:;
-	label$2175:;
-	label$2174:;
+	label$2180:;
+	label$2179:;
+	label$2178:;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATH4MAT39FROMSCALEERKd( struct $N4MATH4MAT3E* tmp$1055$1, double* S$1 )
+struct $N4MATH4MAT3E* _ZN4MATH4MAT39FROMSCALEERKd( struct $N4MATH4MAT3E* tmp$1056$1, double* S$1 )
 {
-	label$2177:;
+	label$2181:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	*(*(double**)&R$1) = *S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 32ll) = *S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 64ll) = *S$1;
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1055$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1056$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2178;
+	goto label$2182;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2178:;
-	return tmp$1055$1;
+	label$2182:;
+	return tmp$1056$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATH4MAT39FROMSCALEERKdS2_S2_( struct $N4MATH4MAT3E* tmp$1056$1, double* SX$1, double* SY$1, double* SZ$1 )
+struct $N4MATH4MAT3E* _ZN4MATH4MAT39FROMSCALEERKdS2_S2_( struct $N4MATH4MAT3E* tmp$1057$1, double* SX$1, double* SY$1, double* SZ$1 )
 {
-	label$2179:;
+	label$2183:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	*(*(double**)&R$1) = *SX$1;
 	*(double*)((uint8*)*(double**)&R$1 + 32ll) = *SY$1;
 	*(double*)((uint8*)*(double**)&R$1 + 64ll) = *SZ$1;
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1056$1, (struct $N4MATH4MAT3E*)&R$1 );
-	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2180;
-	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2180:;
-	return tmp$1056$1;
-}
-
-struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKdS2_( struct $N4MATH4MAT3E* tmp$1057$1, double* TX$1, double* TY$1 )
-{
-	label$2181:;
-	struct $N4MATH4MAT3E R$1;
-	_ZN4MATH4MAT3C1Ev( &R$1 );
-	*(double*)((uint8*)*(double**)&R$1 + 16ll) = *TX$1;
-	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *TY$1;
 	_ZN4MATH4MAT3C1ERKS0_( tmp$1057$1, (struct $N4MATH4MAT3E*)&R$1 );
-	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2182;
-	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2182:;
-	return tmp$1057$1;
-}
-
-struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKNS_4VEC2E( struct $N4MATH4MAT3E* tmp$1058$1, struct $N4MATH4VEC2E* T$1 )
-{
-	label$2183:;
-	struct $N4MATH4MAT3E R$1;
-	_ZN4MATH4MAT3C1Ev( &R$1 );
-	*(double*)((uint8*)*(double**)&R$1 + 16ll) = *(double*)T$1;
-	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *(double*)((uint8*)T$1 + 8ll);
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1058$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
 	goto label$2184;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
 	label$2184:;
+	return tmp$1057$1;
+}
+
+struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKdS2_( struct $N4MATH4MAT3E* tmp$1058$1, double* TX$1, double* TY$1 )
+{
+	label$2185:;
+	struct $N4MATH4MAT3E R$1;
+	_ZN4MATH4MAT3C1Ev( &R$1 );
+	*(double*)((uint8*)*(double**)&R$1 + 16ll) = *TX$1;
+	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *TY$1;
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1058$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3D1Ev( &R$1 );
+	goto label$2186;
+	_ZN4MATH4MAT3D1Ev( &R$1 );
+	label$2186:;
 	return tmp$1058$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKNS_4PVECE( struct $N4MATH4MAT3E* tmp$1059$1, struct $N4MATH4PVECE* T$1 )
+struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKNS_4VEC2E( struct $N4MATH4MAT3E* tmp$1059$1, struct $N4MATH4VEC2E* T$1 )
 {
-	label$2185:;
+	label$2187:;
+	struct $N4MATH4MAT3E R$1;
+	_ZN4MATH4MAT3C1Ev( &R$1 );
+	*(double*)((uint8*)*(double**)&R$1 + 16ll) = *(double*)T$1;
+	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *(double*)((uint8*)T$1 + 8ll);
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1059$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3D1Ev( &R$1 );
+	goto label$2188;
+	_ZN4MATH4MAT3D1Ev( &R$1 );
+	label$2188:;
+	return tmp$1059$1;
+}
+
+struct $N4MATH4MAT3E* _ZN4MATH4MAT315FROMTRANSLATIONERKNS_4PVECE( struct $N4MATH4MAT3E* tmp$1060$1, struct $N4MATH4PVECE* T$1 )
+{
+	label$2189:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( T$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 16ll) = vr$1;
 	double vr$3 = _ZNK4MATH4PVEC8Y__get__Ev( T$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 40ll) = vr$3;
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1059$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1060$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2186;
+	goto label$2190;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2186:;
-	return tmp$1059$1;
+	label$2190:;
+	return tmp$1060$1;
 }
 
 double _ZNK4MATH4MAT33GETERKu7INTEGERS3_( struct $N4MATH4MAT3E* THIS$1, int64* X$1, int64* Y$1 )
 {
-	double TMP$1060$1;
+	double TMP$1061$1;
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2187:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 3ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 3ll)) == 0ll ) goto label$2189;
-	TMP$1060$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 * 3ll)) << (3ll & 63ll)));
-	goto label$2190;
-	label$2189:;
-	TMP$1060$1 = 0x0p+0;
-	label$2190:;
-	fb$result$1 = TMP$1060$1;
-	goto label$2188;
-	label$2188:;
+	label$2191:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 3ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 3ll)) == 0ll ) goto label$2193;
+	TMP$1061$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 * 3ll)) << (3ll & 63ll)));
+	goto label$2194;
+	label$2193:;
+	TMP$1061$1 = 0x0p+0;
+	label$2194:;
+	fb$result$1 = TMP$1061$1;
+	goto label$2192;
+	label$2192:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC3E _ZNK4MATH4MAT39GETCOLUMNERKu7INTEGER( struct $N4MATH4MAT3E* THIS$1, int64* X$1 )
 {
 	struct $N4MATH4VEC3E fb$result$1;
-	label$2191:;
+	label$2195:;
 	{
-		int64 TMP$1061$2;
-		TMP$1061$2 = *X$1;
-		if( TMP$1061$2 != 0ll ) goto label$2194;
-		label$2195:;
-		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 48ll) );
-			goto label$2192;
-		}
-		goto label$2193;
-		label$2194:;
-		if( TMP$1061$2 != 1ll ) goto label$2196;
-		label$2197:;
-		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 56ll) );
-			goto label$2192;
-		}
-		goto label$2193;
-		label$2196:;
-		if( TMP$1061$2 != 2ll ) goto label$2198;
+		int64 TMP$1062$2;
+		TMP$1062$2 = *X$1;
+		if( TMP$1062$2 != 0ll ) goto label$2198;
 		label$2199:;
 		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 64ll) );
-			goto label$2192;
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 48ll) );
+			goto label$2196;
 		}
-		goto label$2193;
+		goto label$2197;
 		label$2198:;
+		if( TMP$1062$2 != 1ll ) goto label$2200;
+		label$2201:;
+		{
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 56ll) );
+			goto label$2196;
+		}
+		goto label$2197;
+		label$2200:;
+		if( TMP$1062$2 != 2ll ) goto label$2202;
+		label$2203:;
+		{
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 64ll) );
+			goto label$2196;
+		}
+		goto label$2197;
+		label$2202:;
 		{
 			_ZN4MATH4VEC3C1Ev( &fb$result$1 );
-			goto label$2192;
+			goto label$2196;
 		}
-		label$2200:;
-		label$2193:;
+		label$2204:;
+		label$2197:;
 	}
-	label$2192:;
+	label$2196:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC3E _ZNK4MATH4MAT36GETROWERKu7INTEGER( struct $N4MATH4MAT3E* THIS$1, int64* Y$1 )
 {
 	struct $N4MATH4VEC3E fb$result$1;
-	label$2201:;
+	label$2205:;
 	{
-		int64 TMP$1066$2;
-		TMP$1066$2 = *Y$1;
-		if( TMP$1066$2 != 0ll ) goto label$2204;
-		label$2205:;
-		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 16ll) );
-			goto label$2202;
-		}
-		goto label$2203;
-		label$2204:;
-		if( TMP$1066$2 != 1ll ) goto label$2206;
-		label$2207:;
-		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 40ll) );
-			goto label$2202;
-		}
-		goto label$2203;
-		label$2206:;
-		if( TMP$1066$2 != 2ll ) goto label$2208;
+		int64 TMP$1067$2;
+		TMP$1067$2 = *Y$1;
+		if( TMP$1067$2 != 0ll ) goto label$2208;
 		label$2209:;
 		{
-			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 56ll), (double*)((uint8*)*(double**)THIS$1 + 64ll) );
-			goto label$2202;
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 16ll) );
+			goto label$2206;
 		}
-		goto label$2203;
+		goto label$2207;
 		label$2208:;
+		if( TMP$1067$2 != 1ll ) goto label$2210;
+		label$2211:;
+		{
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 40ll) );
+			goto label$2206;
+		}
+		goto label$2207;
+		label$2210:;
+		if( TMP$1067$2 != 2ll ) goto label$2212;
+		label$2213:;
+		{
+			_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 56ll), (double*)((uint8*)*(double**)THIS$1 + 64ll) );
+			goto label$2206;
+		}
+		goto label$2207;
+		label$2212:;
 		{
 			_ZN4MATH4VEC3C1Ev( &fb$result$1 );
-			goto label$2202;
+			goto label$2206;
 		}
-		label$2210:;
-		label$2203:;
+		label$2214:;
+		label$2207:;
 	}
-	label$2202:;
+	label$2206:;
 	return fb$result$1;
 }
 
@@ -14051,18 +14068,18 @@ boolean _ZN4MATH4MAT33SETERKu7INTEGERS3_RKd( struct $N4MATH4MAT3E* THIS$1, int64
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2211:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 3ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 3ll)) == 0ll ) goto label$2214;
+	label$2215:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 3ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 3ll)) == 0ll ) goto label$2218;
 	{
 		*(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 * 3ll)) << (3ll & 63ll))) = *N$1;
 		fb$result$1 = (boolean)1ll;
-		goto label$2212;
+		goto label$2216;
 	}
-	label$2214:;
-	label$2213:;
+	label$2218:;
+	label$2217:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2212;
-	label$2212:;
+	goto label$2216;
+	label$2216:;
 	return fb$result$1;
 }
 
@@ -14070,47 +14087,47 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKdS5_S5_( struct $N4MATH4MAT3E* THIS
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2215:;
+	label$2219:;
 	{
-		int64 TMP$1071$2;
-		TMP$1071$2 = *X$1;
-		if( TMP$1071$2 != 0ll ) goto label$2218;
-		label$2219:;
+		int64 TMP$1072$2;
+		TMP$1072$2 = *X$1;
+		if( TMP$1072$2 != 0ll ) goto label$2222;
+		label$2223:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N3$1;
 		}
-		goto label$2217;
-		label$2218:;
-		if( TMP$1071$2 != 1ll ) goto label$2220;
-		label$2221:;
+		goto label$2221;
+		label$2222:;
+		if( TMP$1072$2 != 1ll ) goto label$2224;
+		label$2225:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N3$1;
 		}
-		goto label$2217;
-		label$2220:;
-		if( TMP$1071$2 != 2ll ) goto label$2222;
-		label$2223:;
+		goto label$2221;
+		label$2224:;
+		if( TMP$1072$2 != 2ll ) goto label$2226;
+		label$2227:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N3$1;
 		}
-		goto label$2217;
-		label$2222:;
+		goto label$2221;
+		label$2226:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2216;
+			goto label$2220;
 		}
-		label$2224:;
-		label$2217:;
+		label$2228:;
+		label$2221:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2216;
-	label$2216:;
+	goto label$2220;
+	label$2220:;
 	return fb$result$1;
 }
 
@@ -14118,47 +14135,47 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4VEC2ERKd( struct $N4MATH4MAT3E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2225:;
+	label$2229:;
 	{
-		int64 TMP$1072$2;
-		TMP$1072$2 = *X$1;
-		if( TMP$1072$2 != 0ll ) goto label$2228;
-		label$2229:;
+		int64 TMP$1073$2;
+		TMP$1073$2 = *X$1;
+		if( TMP$1073$2 != 0ll ) goto label$2232;
+		label$2233:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N$1;
 		}
-		goto label$2227;
-		label$2228:;
-		if( TMP$1072$2 != 1ll ) goto label$2230;
-		label$2231:;
+		goto label$2231;
+		label$2232:;
+		if( TMP$1073$2 != 1ll ) goto label$2234;
+		label$2235:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N$1;
 		}
-		goto label$2227;
-		label$2230:;
-		if( TMP$1072$2 != 2ll ) goto label$2232;
-		label$2233:;
+		goto label$2231;
+		label$2234:;
+		if( TMP$1073$2 != 2ll ) goto label$2236;
+		label$2237:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N$1;
 		}
-		goto label$2227;
-		label$2232:;
+		goto label$2231;
+		label$2236:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2226;
+			goto label$2230;
 		}
-		label$2234:;
-		label$2227:;
+		label$2238:;
+		label$2231:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2226;
-	label$2226:;
+	goto label$2230;
+	label$2230:;
 	return fb$result$1;
 }
 
@@ -14166,12 +14183,12 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2235:;
+	label$2239:;
 	{
-		int64 TMP$1073$2;
-		TMP$1073$2 = *X$1;
-		if( TMP$1073$2 != 0ll ) goto label$2238;
-		label$2239:;
+		int64 TMP$1074$2;
+		TMP$1074$2 = *X$1;
+		if( TMP$1074$2 != 0ll ) goto label$2242;
+		label$2243:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -14179,10 +14196,10 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E*
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$5;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N$1;
 		}
-		goto label$2237;
-		label$2238:;
-		if( TMP$1073$2 != 1ll ) goto label$2240;
-		label$2241:;
+		goto label$2241;
+		label$2242:;
+		if( TMP$1074$2 != 1ll ) goto label$2244;
+		label$2245:;
 		{
 			double vr$11 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$11;
@@ -14190,10 +14207,10 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E*
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N$1;
 		}
-		goto label$2237;
-		label$2240:;
-		if( TMP$1073$2 != 2ll ) goto label$2242;
-		label$2243:;
+		goto label$2241;
+		label$2244:;
+		if( TMP$1074$2 != 2ll ) goto label$2246;
+		label$2247:;
 		{
 			double vr$20 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$20;
@@ -14201,18 +14218,18 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E*
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = vr$23;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N$1;
 		}
-		goto label$2237;
-		label$2242:;
+		goto label$2241;
+		label$2246:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2236;
+			goto label$2240;
 		}
-		label$2244:;
-		label$2237:;
+		label$2248:;
+		label$2241:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2236;
-	label$2236:;
+	goto label$2240;
+	label$2240:;
 	return fb$result$1;
 }
 
@@ -14220,47 +14237,47 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4VEC3E( struct $N4MATH4MAT3E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2245:;
+	label$2249:;
 	{
-		int64 TMP$1074$2;
-		TMP$1074$2 = *X$1;
-		if( TMP$1074$2 != 0ll ) goto label$2248;
-		label$2249:;
+		int64 TMP$1075$2;
+		TMP$1075$2 = *X$1;
+		if( TMP$1075$2 != 0ll ) goto label$2252;
+		label$2253:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2247;
-		label$2248:;
-		if( TMP$1074$2 != 1ll ) goto label$2250;
-		label$2251:;
+		goto label$2251;
+		label$2252:;
+		if( TMP$1075$2 != 1ll ) goto label$2254;
+		label$2255:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2247;
-		label$2250:;
-		if( TMP$1074$2 != 2ll ) goto label$2252;
-		label$2253:;
+		goto label$2251;
+		label$2254:;
+		if( TMP$1075$2 != 2ll ) goto label$2256;
+		label$2257:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2247;
-		label$2252:;
+		goto label$2251;
+		label$2256:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2246;
+			goto label$2250;
 		}
-		label$2254:;
-		label$2247:;
+		label$2258:;
+		label$2251:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2246;
-	label$2246:;
+	goto label$2250;
+	label$2250:;
 	return fb$result$1;
 }
 
@@ -14268,12 +14285,12 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2255:;
+	label$2259:;
 	{
-		int64 TMP$1075$2;
-		TMP$1075$2 = *X$1;
-		if( TMP$1075$2 != 0ll ) goto label$2258;
-		label$2259:;
+		int64 TMP$1076$2;
+		TMP$1076$2 = *X$1;
+		if( TMP$1076$2 != 0ll ) goto label$2262;
+		label$2263:;
 		{
 			double vr$2 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -14281,10 +14298,10 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$5;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)V$1;
 		}
-		goto label$2257;
-		label$2258:;
-		if( TMP$1075$2 != 1ll ) goto label$2260;
-		label$2261:;
+		goto label$2261;
+		label$2262:;
+		if( TMP$1076$2 != 1ll ) goto label$2264;
+		label$2265:;
 		{
 			double vr$11 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$11;
@@ -14292,10 +14309,10 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)V$1;
 		}
-		goto label$2257;
-		label$2260:;
-		if( TMP$1075$2 != 2ll ) goto label$2262;
-		label$2263:;
+		goto label$2261;
+		label$2264:;
+		if( TMP$1076$2 != 2ll ) goto label$2266;
+		label$2267:;
 		{
 			double vr$20 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$20;
@@ -14303,18 +14320,18 @@ boolean _ZN4MATH4MAT39SETCOLUMNERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = vr$23;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 		}
-		goto label$2257;
-		label$2262:;
+		goto label$2261;
+		label$2266:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2256;
+			goto label$2260;
 		}
-		label$2264:;
-		label$2257:;
+		label$2268:;
+		label$2261:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2256;
-	label$2256:;
+	goto label$2260;
+	label$2260:;
 	return fb$result$1;
 }
 
@@ -14322,47 +14339,47 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKdS5_S5_( struct $N4MATH4MAT3E* THIS$1,
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2265:;
+	label$2269:;
 	{
-		int64 TMP$1076$2;
-		TMP$1076$2 = *Y$1;
-		if( TMP$1076$2 != 0ll ) goto label$2268;
-		label$2269:;
+		int64 TMP$1077$2;
+		TMP$1077$2 = *Y$1;
+		if( TMP$1077$2 != 0ll ) goto label$2272;
+		label$2273:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N3$1;
 		}
-		goto label$2267;
-		label$2268:;
-		if( TMP$1076$2 != 1ll ) goto label$2270;
-		label$2271:;
+		goto label$2271;
+		label$2272:;
+		if( TMP$1077$2 != 1ll ) goto label$2274;
+		label$2275:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N3$1;
 		}
-		goto label$2267;
-		label$2270:;
-		if( TMP$1076$2 != 2ll ) goto label$2272;
-		label$2273:;
+		goto label$2271;
+		label$2274:;
+		if( TMP$1077$2 != 2ll ) goto label$2276;
+		label$2277:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N3$1;
 		}
-		goto label$2267;
-		label$2272:;
+		goto label$2271;
+		label$2276:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2266;
+			goto label$2270;
 		}
-		label$2274:;
-		label$2267:;
+		label$2278:;
+		label$2271:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2266;
-	label$2266:;
+	goto label$2270;
+	label$2270:;
 	return fb$result$1;
 }
 
@@ -14370,47 +14387,47 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4VEC2ERKd( struct $N4MATH4MAT3E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2275:;
+	label$2279:;
 	{
-		int64 TMP$1077$2;
-		TMP$1077$2 = *Y$1;
-		if( TMP$1077$2 != 0ll ) goto label$2278;
-		label$2279:;
+		int64 TMP$1078$2;
+		TMP$1078$2 = *Y$1;
+		if( TMP$1078$2 != 0ll ) goto label$2282;
+		label$2283:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N$1;
 		}
-		goto label$2277;
-		label$2278:;
-		if( TMP$1077$2 != 1ll ) goto label$2280;
-		label$2281:;
+		goto label$2281;
+		label$2282:;
+		if( TMP$1078$2 != 1ll ) goto label$2284;
+		label$2285:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N$1;
 		}
-		goto label$2277;
-		label$2280:;
-		if( TMP$1077$2 != 2ll ) goto label$2282;
-		label$2283:;
+		goto label$2281;
+		label$2284:;
+		if( TMP$1078$2 != 2ll ) goto label$2286;
+		label$2287:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N$1;
 		}
-		goto label$2277;
-		label$2282:;
+		goto label$2281;
+		label$2286:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2276;
+			goto label$2280;
 		}
-		label$2284:;
-		label$2277:;
+		label$2288:;
+		label$2281:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2276;
-	label$2276:;
+	goto label$2280;
+	label$2280:;
 	return fb$result$1;
 }
 
@@ -14418,12 +14435,12 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2285:;
+	label$2289:;
 	{
-		int64 TMP$1078$2;
-		TMP$1078$2 = *Y$1;
-		if( TMP$1078$2 != 0ll ) goto label$2288;
-		label$2289:;
+		int64 TMP$1079$2;
+		TMP$1079$2 = *Y$1;
+		if( TMP$1079$2 != 0ll ) goto label$2292;
+		label$2293:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -14431,10 +14448,10 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$5;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N$1;
 		}
-		goto label$2287;
-		label$2288:;
-		if( TMP$1078$2 != 1ll ) goto label$2290;
-		label$2291:;
+		goto label$2291;
+		label$2292:;
+		if( TMP$1079$2 != 1ll ) goto label$2294;
+		label$2295:;
 		{
 			double vr$11 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$11;
@@ -14442,10 +14459,10 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N$1;
 		}
-		goto label$2287;
-		label$2290:;
-		if( TMP$1078$2 != 2ll ) goto label$2292;
-		label$2293:;
+		goto label$2291;
+		label$2294:;
+		if( TMP$1079$2 != 2ll ) goto label$2296;
+		label$2297:;
 		{
 			double vr$20 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = vr$20;
@@ -14453,18 +14470,18 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4PVECERKd( struct $N4MATH4MAT3E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = vr$23;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N$1;
 		}
-		goto label$2287;
-		label$2292:;
+		goto label$2291;
+		label$2296:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2286;
+			goto label$2290;
 		}
-		label$2294:;
-		label$2287:;
+		label$2298:;
+		label$2291:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2286;
-	label$2286:;
+	goto label$2290;
+	label$2290:;
 	return fb$result$1;
 }
 
@@ -14472,47 +14489,47 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4VEC3E( struct $N4MATH4MAT3E* THIS$
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2295:;
+	label$2299:;
 	{
-		int64 TMP$1079$2;
-		TMP$1079$2 = *Y$1;
-		if( TMP$1079$2 != 0ll ) goto label$2298;
-		label$2299:;
+		int64 TMP$1080$2;
+		TMP$1080$2 = *Y$1;
+		if( TMP$1080$2 != 0ll ) goto label$2302;
+		label$2303:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2297;
-		label$2298:;
-		if( TMP$1079$2 != 1ll ) goto label$2300;
-		label$2301:;
+		goto label$2301;
+		label$2302:;
+		if( TMP$1080$2 != 1ll ) goto label$2304;
+		label$2305:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2297;
-		label$2300:;
-		if( TMP$1079$2 != 2ll ) goto label$2302;
-		label$2303:;
+		goto label$2301;
+		label$2304:;
+		if( TMP$1080$2 != 2ll ) goto label$2306;
+		label$2307:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)V$1 + 16ll);
 		}
-		goto label$2297;
-		label$2302:;
+		goto label$2301;
+		label$2306:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2296;
+			goto label$2300;
 		}
-		label$2304:;
-		label$2297:;
+		label$2308:;
+		label$2301:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2296;
-	label$2296:;
+	goto label$2300;
+	label$2300:;
 	return fb$result$1;
 }
 
@@ -14520,12 +14537,12 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* THIS$
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2305:;
+	label$2309:;
 	{
-		int64 TMP$1080$2;
-		TMP$1080$2 = *Y$1;
-		if( TMP$1080$2 != 0ll ) goto label$2308;
-		label$2309:;
+		int64 TMP$1081$2;
+		TMP$1081$2 = *Y$1;
+		if( TMP$1081$2 != 0ll ) goto label$2312;
+		label$2313:;
 		{
 			double vr$2 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -14533,10 +14550,10 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* THIS$
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$5;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 		}
-		goto label$2307;
-		label$2308:;
-		if( TMP$1080$2 != 1ll ) goto label$2310;
-		label$2311:;
+		goto label$2311;
+		label$2312:;
+		if( TMP$1081$2 != 1ll ) goto label$2314;
+		label$2315:;
 		{
 			double vr$11 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$11;
@@ -14544,10 +14561,10 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* THIS$
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)V$1;
 		}
-		goto label$2307;
-		label$2310:;
-		if( TMP$1080$2 != 2ll ) goto label$2312;
-		label$2313:;
+		goto label$2311;
+		label$2314:;
+		if( TMP$1081$2 != 2ll ) goto label$2316;
+		label$2317:;
 		{
 			double vr$20 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = vr$20;
@@ -14555,24 +14572,23 @@ boolean _ZN4MATH4MAT36SETROWERKu7INTEGERRKNS_4CVECE( struct $N4MATH4MAT3E* THIS$
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = vr$23;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 		}
-		goto label$2307;
-		label$2312:;
+		goto label$2311;
+		label$2316:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2306;
+			goto label$2310;
 		}
-		label$2314:;
-		label$2307:;
+		label$2318:;
+		label$2311:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2306;
-	label$2306:;
+	goto label$2310;
+	label$2310:;
 	return fb$result$1;
 }
 
 FBSTRING* _ZNK4MATH4MAT36TOJSONERKb( struct $N4MATH4MAT3E* THIS$1, boolean* C$1 )
 {
-	FBSTRING TMP$1081$1;
 	FBSTRING TMP$1082$1;
 	FBSTRING TMP$1083$1;
 	FBSTRING TMP$1084$1;
@@ -14609,10 +14625,11 @@ FBSTRING* _ZNK4MATH4MAT36TOJSONERKb( struct $N4MATH4MAT3E* THIS$1, boolean* C$1 
 	FBSTRING TMP$1115$1;
 	FBSTRING TMP$1116$1;
 	FBSTRING TMP$1117$1;
+	FBSTRING TMP$1118$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2315:;
-	if( *C$1 == (boolean)0ll ) goto label$2317;
+	label$2319:;
+	if( *C$1 == (boolean)0ll ) goto label$2321;
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 64ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 40ll) );
 	FBSTRING* vr$10 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
@@ -14622,45 +14639,45 @@ FBSTRING* _ZNK4MATH4MAT36TOJSONERKb( struct $N4MATH4MAT3E* THIS$1, boolean* C$1 
 	FBSTRING* vr$22 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 48ll) );
 	FBSTRING* vr$25 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 24ll) );
 	FBSTRING* vr$28 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1082$1, 0, 24ll );
-	FBSTRING* vr$31 = fb_StrConcat( &TMP$1082$1, (void*)"[", 2ll, (void*)vr$28, -1ll );
 	__builtin_memset( &TMP$1083$1, 0, 24ll );
-	FBSTRING* vr$34 = fb_StrConcat( &TMP$1083$1, (void*)vr$31, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$31 = fb_StrConcat( &TMP$1083$1, (void*)"[", 2ll, (void*)vr$28, -1ll );
 	__builtin_memset( &TMP$1084$1, 0, 24ll );
-	FBSTRING* vr$37 = fb_StrConcat( &TMP$1084$1, (void*)vr$34, -1ll, (void*)vr$25, -1ll );
+	FBSTRING* vr$34 = fb_StrConcat( &TMP$1084$1, (void*)vr$31, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1085$1, 0, 24ll );
-	FBSTRING* vr$40 = fb_StrConcat( &TMP$1085$1, (void*)vr$37, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$37 = fb_StrConcat( &TMP$1085$1, (void*)vr$34, -1ll, (void*)vr$25, -1ll );
 	__builtin_memset( &TMP$1086$1, 0, 24ll );
-	FBSTRING* vr$43 = fb_StrConcat( &TMP$1086$1, (void*)vr$40, -1ll, (void*)vr$22, -1ll );
+	FBSTRING* vr$40 = fb_StrConcat( &TMP$1086$1, (void*)vr$37, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1087$1, 0, 24ll );
-	FBSTRING* vr$46 = fb_StrConcat( &TMP$1087$1, (void*)vr$43, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$43 = fb_StrConcat( &TMP$1087$1, (void*)vr$40, -1ll, (void*)vr$22, -1ll );
 	__builtin_memset( &TMP$1088$1, 0, 24ll );
-	FBSTRING* vr$49 = fb_StrConcat( &TMP$1088$1, (void*)vr$46, -1ll, (void*)vr$19, -1ll );
+	FBSTRING* vr$46 = fb_StrConcat( &TMP$1088$1, (void*)vr$43, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1089$1, 0, 24ll );
-	FBSTRING* vr$52 = fb_StrConcat( &TMP$1089$1, (void*)vr$49, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$49 = fb_StrConcat( &TMP$1089$1, (void*)vr$46, -1ll, (void*)vr$19, -1ll );
 	__builtin_memset( &TMP$1090$1, 0, 24ll );
-	FBSTRING* vr$55 = fb_StrConcat( &TMP$1090$1, (void*)vr$52, -1ll, (void*)vr$16, -1ll );
+	FBSTRING* vr$52 = fb_StrConcat( &TMP$1090$1, (void*)vr$49, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1091$1, 0, 24ll );
-	FBSTRING* vr$58 = fb_StrConcat( &TMP$1091$1, (void*)vr$55, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$55 = fb_StrConcat( &TMP$1091$1, (void*)vr$52, -1ll, (void*)vr$16, -1ll );
 	__builtin_memset( &TMP$1092$1, 0, 24ll );
-	FBSTRING* vr$61 = fb_StrConcat( &TMP$1092$1, (void*)vr$58, -1ll, (void*)vr$13, -1ll );
+	FBSTRING* vr$58 = fb_StrConcat( &TMP$1092$1, (void*)vr$55, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1093$1, 0, 24ll );
-	FBSTRING* vr$64 = fb_StrConcat( &TMP$1093$1, (void*)vr$61, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$61 = fb_StrConcat( &TMP$1093$1, (void*)vr$58, -1ll, (void*)vr$13, -1ll );
 	__builtin_memset( &TMP$1094$1, 0, 24ll );
-	FBSTRING* vr$67 = fb_StrConcat( &TMP$1094$1, (void*)vr$64, -1ll, (void*)vr$10, -1ll );
+	FBSTRING* vr$64 = fb_StrConcat( &TMP$1094$1, (void*)vr$61, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1095$1, 0, 24ll );
-	FBSTRING* vr$70 = fb_StrConcat( &TMP$1095$1, (void*)vr$67, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$67 = fb_StrConcat( &TMP$1095$1, (void*)vr$64, -1ll, (void*)vr$10, -1ll );
 	__builtin_memset( &TMP$1096$1, 0, 24ll );
-	FBSTRING* vr$73 = fb_StrConcat( &TMP$1096$1, (void*)vr$70, -1ll, (void*)vr$7, -1ll );
+	FBSTRING* vr$70 = fb_StrConcat( &TMP$1096$1, (void*)vr$67, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1097$1, 0, 24ll );
-	FBSTRING* vr$76 = fb_StrConcat( &TMP$1097$1, (void*)vr$73, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$73 = fb_StrConcat( &TMP$1097$1, (void*)vr$70, -1ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$1098$1, 0, 24ll );
-	FBSTRING* vr$79 = fb_StrConcat( &TMP$1098$1, (void*)vr$76, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$76 = fb_StrConcat( &TMP$1098$1, (void*)vr$73, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1099$1, 0, 24ll );
-	FBSTRING* vr$82 = fb_StrConcat( &TMP$1099$1, (void*)vr$79, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1081$1, -1ll, (void*)vr$82, -1ll, 0 );
-	goto label$2318;
-	label$2317:;
+	FBSTRING* vr$79 = fb_StrConcat( &TMP$1099$1, (void*)vr$76, -1ll, (void*)vr$4, -1ll );
+	__builtin_memset( &TMP$1100$1, 0, 24ll );
+	FBSTRING* vr$82 = fb_StrConcat( &TMP$1100$1, (void*)vr$79, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1082$1, -1ll, (void*)vr$82, -1ll, 0 );
+	goto label$2322;
+	label$2321:;
 	FBSTRING* vr$86 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 64ll) );
 	FBSTRING* vr$89 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 56ll) );
 	FBSTRING* vr$92 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 48ll) );
@@ -14670,55 +14687,55 @@ FBSTRING* _ZNK4MATH4MAT36TOJSONERKb( struct $N4MATH4MAT3E* THIS$1, boolean* C$1 
 	FBSTRING* vr$104 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$107 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$110 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1100$1, 0, 24ll );
-	FBSTRING* vr$113 = fb_StrConcat( &TMP$1100$1, (void*)"[", 2ll, (void*)vr$110, -1ll );
 	__builtin_memset( &TMP$1101$1, 0, 24ll );
-	FBSTRING* vr$116 = fb_StrConcat( &TMP$1101$1, (void*)vr$113, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$113 = fb_StrConcat( &TMP$1101$1, (void*)"[", 2ll, (void*)vr$110, -1ll );
 	__builtin_memset( &TMP$1102$1, 0, 24ll );
-	FBSTRING* vr$119 = fb_StrConcat( &TMP$1102$1, (void*)vr$116, -1ll, (void*)vr$107, -1ll );
+	FBSTRING* vr$116 = fb_StrConcat( &TMP$1102$1, (void*)vr$113, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1103$1, 0, 24ll );
-	FBSTRING* vr$122 = fb_StrConcat( &TMP$1103$1, (void*)vr$119, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$119 = fb_StrConcat( &TMP$1103$1, (void*)vr$116, -1ll, (void*)vr$107, -1ll );
 	__builtin_memset( &TMP$1104$1, 0, 24ll );
-	FBSTRING* vr$125 = fb_StrConcat( &TMP$1104$1, (void*)vr$122, -1ll, (void*)vr$104, -1ll );
+	FBSTRING* vr$122 = fb_StrConcat( &TMP$1104$1, (void*)vr$119, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1105$1, 0, 24ll );
-	FBSTRING* vr$128 = fb_StrConcat( &TMP$1105$1, (void*)vr$125, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$125 = fb_StrConcat( &TMP$1105$1, (void*)vr$122, -1ll, (void*)vr$104, -1ll );
 	__builtin_memset( &TMP$1106$1, 0, 24ll );
-	FBSTRING* vr$131 = fb_StrConcat( &TMP$1106$1, (void*)vr$128, -1ll, (void*)vr$101, -1ll );
+	FBSTRING* vr$128 = fb_StrConcat( &TMP$1106$1, (void*)vr$125, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1107$1, 0, 24ll );
-	FBSTRING* vr$134 = fb_StrConcat( &TMP$1107$1, (void*)vr$131, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$131 = fb_StrConcat( &TMP$1107$1, (void*)vr$128, -1ll, (void*)vr$101, -1ll );
 	__builtin_memset( &TMP$1108$1, 0, 24ll );
-	FBSTRING* vr$137 = fb_StrConcat( &TMP$1108$1, (void*)vr$134, -1ll, (void*)vr$98, -1ll );
+	FBSTRING* vr$134 = fb_StrConcat( &TMP$1108$1, (void*)vr$131, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1109$1, 0, 24ll );
-	FBSTRING* vr$140 = fb_StrConcat( &TMP$1109$1, (void*)vr$137, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$137 = fb_StrConcat( &TMP$1109$1, (void*)vr$134, -1ll, (void*)vr$98, -1ll );
 	__builtin_memset( &TMP$1110$1, 0, 24ll );
-	FBSTRING* vr$143 = fb_StrConcat( &TMP$1110$1, (void*)vr$140, -1ll, (void*)vr$95, -1ll );
+	FBSTRING* vr$140 = fb_StrConcat( &TMP$1110$1, (void*)vr$137, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1111$1, 0, 24ll );
-	FBSTRING* vr$146 = fb_StrConcat( &TMP$1111$1, (void*)vr$143, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$143 = fb_StrConcat( &TMP$1111$1, (void*)vr$140, -1ll, (void*)vr$95, -1ll );
 	__builtin_memset( &TMP$1112$1, 0, 24ll );
-	FBSTRING* vr$149 = fb_StrConcat( &TMP$1112$1, (void*)vr$146, -1ll, (void*)vr$92, -1ll );
+	FBSTRING* vr$146 = fb_StrConcat( &TMP$1112$1, (void*)vr$143, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1113$1, 0, 24ll );
-	FBSTRING* vr$152 = fb_StrConcat( &TMP$1113$1, (void*)vr$149, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$149 = fb_StrConcat( &TMP$1113$1, (void*)vr$146, -1ll, (void*)vr$92, -1ll );
 	__builtin_memset( &TMP$1114$1, 0, 24ll );
-	FBSTRING* vr$155 = fb_StrConcat( &TMP$1114$1, (void*)vr$152, -1ll, (void*)vr$89, -1ll );
+	FBSTRING* vr$152 = fb_StrConcat( &TMP$1114$1, (void*)vr$149, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1115$1, 0, 24ll );
-	FBSTRING* vr$158 = fb_StrConcat( &TMP$1115$1, (void*)vr$155, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$155 = fb_StrConcat( &TMP$1115$1, (void*)vr$152, -1ll, (void*)vr$89, -1ll );
 	__builtin_memset( &TMP$1116$1, 0, 24ll );
-	FBSTRING* vr$161 = fb_StrConcat( &TMP$1116$1, (void*)vr$158, -1ll, (void*)vr$86, -1ll );
+	FBSTRING* vr$158 = fb_StrConcat( &TMP$1116$1, (void*)vr$155, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1117$1, 0, 24ll );
-	FBSTRING* vr$164 = fb_StrConcat( &TMP$1117$1, (void*)vr$161, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1081$1, -1ll, (void*)vr$164, -1ll, 0 );
-	label$2318:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1081$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$1081$1 );
-	goto label$2316;
-	label$2316:;
+	FBSTRING* vr$161 = fb_StrConcat( &TMP$1117$1, (void*)vr$158, -1ll, (void*)vr$86, -1ll );
+	__builtin_memset( &TMP$1118$1, 0, 24ll );
+	FBSTRING* vr$164 = fb_StrConcat( &TMP$1118$1, (void*)vr$161, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1082$1, -1ll, (void*)vr$164, -1ll, 0 );
+	label$2322:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1082$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$1082$1 );
+	goto label$2320;
+	label$2320:;
 	FBSTRING* vr$170 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$170;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHplERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1118$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
+struct $N4MATH4MAT3E* _ZN4MATHplERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1119$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
 {
-	label$2319:;
+	label$2323:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double* P1$1;
@@ -14739,17 +14756,17 @@ struct $N4MATH4MAT3E* _ZN4MATHplERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1118$
 	*(double*)((uint8*)Q$1 + 48ll) = *(double*)((uint8*)P1$1 + 48ll) + *(double*)((uint8*)P2$1 + 48ll);
 	*(double*)((uint8*)Q$1 + 56ll) = *(double*)((uint8*)P1$1 + 56ll) + *(double*)((uint8*)P2$1 + 56ll);
 	*(double*)((uint8*)Q$1 + 64ll) = *(double*)((uint8*)P1$1 + 64ll) + *(double*)((uint8*)P2$1 + 64ll);
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1118$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1119$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2320;
+	goto label$2324;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2320:;
-	return tmp$1118$1;
+	label$2324:;
+	return tmp$1119$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHmiERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1119$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
+struct $N4MATH4MAT3E* _ZN4MATHmiERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1120$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
 {
-	label$2321:;
+	label$2325:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double* P1$1;
@@ -14770,17 +14787,17 @@ struct $N4MATH4MAT3E* _ZN4MATHmiERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1119$
 	*(double*)((uint8*)Q$1 + 48ll) = *(double*)((uint8*)P1$1 + 48ll) - *(double*)((uint8*)P2$1 + 48ll);
 	*(double*)((uint8*)Q$1 + 56ll) = *(double*)((uint8*)P1$1 + 56ll) - *(double*)((uint8*)P2$1 + 56ll);
 	*(double*)((uint8*)Q$1 + 64ll) = *(double*)((uint8*)P1$1 + 64ll) - *(double*)((uint8*)P2$1 + 64ll);
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1119$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1120$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2322;
+	goto label$2326;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2322:;
-	return tmp$1119$1;
+	label$2326:;
+	return tmp$1120$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1120$1, struct $N4MATH4MAT3E* M$1, double* N$1 )
+struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1121$1, struct $N4MATH4MAT3E* M$1, double* N$1 )
 {
-	label$2323:;
+	label$2327:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double* P$1;
@@ -14798,17 +14815,17 @@ struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1120$
 	*(double*)((uint8*)Q$1 + 48ll) = *(double*)((uint8*)P$1 + 48ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 56ll) = *(double*)((uint8*)P$1 + 56ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 64ll) = *(double*)((uint8*)P$1 + 64ll) * *N$1;
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1120$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1121$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2324;
+	goto label$2328;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2324:;
-	return tmp$1120$1;
+	label$2328:;
+	return tmp$1121$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHmlERKdRKNS_4MAT3E( struct $N4MATH4MAT3E* tmp$1121$1, double* N$1, struct $N4MATH4MAT3E* M$1 )
+struct $N4MATH4MAT3E* _ZN4MATHmlERKdRKNS_4MAT3E( struct $N4MATH4MAT3E* tmp$1122$1, double* N$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2325:;
+	label$2329:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double* P$1;
@@ -14826,17 +14843,17 @@ struct $N4MATH4MAT3E* _ZN4MATHmlERKdRKNS_4MAT3E( struct $N4MATH4MAT3E* tmp$1121$
 	*(double*)((uint8*)Q$1 + 48ll) = *N$1 * *(double*)((uint8*)P$1 + 48ll);
 	*(double*)((uint8*)Q$1 + 56ll) = *N$1 * *(double*)((uint8*)P$1 + 56ll);
 	*(double*)((uint8*)Q$1 + 64ll) = *N$1 * *(double*)((uint8*)P$1 + 64ll);
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1121$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1122$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2326;
+	goto label$2330;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2326:;
-	return tmp$1121$1;
+	label$2330:;
+	return tmp$1122$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1122$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
+struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1123$1, struct $N4MATH4MAT3E* M1$1, struct $N4MATH4MAT3E* M2$1 )
 {
-	label$2327:;
+	label$2331:;
 	struct $N4MATH4MAT3E R$1;
 	_ZN4MATH4MAT3C1Ev( &R$1 );
 	double* P1$1;
@@ -14857,39 +14874,39 @@ struct $N4MATH4MAT3E* _ZN4MATHmlERKNS_4MAT3ES2_( struct $N4MATH4MAT3E* tmp$1122$
 	*(double*)((uint8*)Q$1 + 48ll) = ((*(double*)((uint8*)P1$1 + 48ll) * *(double*)P2$1) + (*(double*)((uint8*)P1$1 + 56ll) * *(double*)((uint8*)P2$1 + 24ll))) + (*(double*)((uint8*)P1$1 + 64ll) * *(double*)((uint8*)P2$1 + 48ll));
 	*(double*)((uint8*)Q$1 + 56ll) = ((*(double*)((uint8*)P1$1 + 48ll) * *(double*)((uint8*)P2$1 + 8ll)) + (*(double*)((uint8*)P1$1 + 56ll) * *(double*)((uint8*)P2$1 + 32ll))) + (*(double*)((uint8*)P1$1 + 64ll) * *(double*)((uint8*)P2$1 + 56ll));
 	*(double*)((uint8*)Q$1 + 64ll) = ((*(double*)((uint8*)P1$1 + 48ll) * *(double*)((uint8*)P2$1 + 16ll)) + (*(double*)((uint8*)P1$1 + 56ll) * *(double*)((uint8*)P2$1 + 40ll))) + (*(double*)((uint8*)P1$1 + 64ll) * *(double*)((uint8*)P2$1 + 64ll));
-	_ZN4MATH4MAT3C1ERKS0_( tmp$1122$1, (struct $N4MATH4MAT3E*)&R$1 );
+	_ZN4MATH4MAT3C1ERKS0_( tmp$1123$1, (struct $N4MATH4MAT3E*)&R$1 );
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	goto label$2328;
+	goto label$2332;
 	_ZN4MATH4MAT3D1Ev( &R$1 );
-	label$2328:;
-	return tmp$1122$1;
+	label$2332:;
+	return tmp$1123$1;
 }
 
 struct $N4MATH4VEC3E _ZN4MATHmlERKNS_4MAT3ERKNS_4VEC3E( struct $N4MATH4MAT3E* M$1, struct $N4MATH4VEC3E* V$1 )
 {
-	double TMP$1124$1;
 	double TMP$1125$1;
 	double TMP$1126$1;
+	double TMP$1127$1;
 	struct $N4MATH4VEC3E fb$result$1;
-	label$2329:;
+	label$2333:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
-	TMP$1126$1 = ((*(double*)((uint8*)P$1 + 48ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 56ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 64ll) * *(double*)((uint8*)V$1 + 16ll));
-	TMP$1125$1 = ((*(double*)((uint8*)P$1 + 24ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 32ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 40ll) * *(double*)((uint8*)V$1 + 16ll));
-	TMP$1124$1 = ((*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 16ll) * *(double*)((uint8*)V$1 + 16ll));
-	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)&TMP$1124$1, (double*)&TMP$1125$1, (double*)&TMP$1126$1 );
-	goto label$2330;
-	label$2330:;
+	TMP$1127$1 = ((*(double*)((uint8*)P$1 + 48ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 56ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 64ll) * *(double*)((uint8*)V$1 + 16ll));
+	TMP$1126$1 = ((*(double*)((uint8*)P$1 + 24ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 32ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 40ll) * *(double*)((uint8*)V$1 + 16ll));
+	TMP$1125$1 = ((*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 16ll) * *(double*)((uint8*)V$1 + 16ll));
+	_ZN4MATH4VEC3C1ERKdS2_S2_( &fb$result$1, (double*)&TMP$1125$1, (double*)&TMP$1126$1, (double*)&TMP$1127$1 );
+	goto label$2334;
+	label$2334:;
 	return fb$result$1;
 }
 
 struct $N4MATH4CVECE _ZN4MATHmlERKNS_4MAT3ERKNS_4CVECE( struct $N4MATH4MAT3E* M$1, struct $N4MATH4CVECE* V$1 )
 {
-	double TMP$1128$1;
 	double TMP$1129$1;
+	double TMP$1130$1;
 	struct $N4MATH4CVECE fb$result$1;
-	label$2331:;
+	label$2335:;
 	double X$1;
 	double vr$0 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 	X$1 = vr$0;
@@ -14909,19 +14926,19 @@ struct $N4MATH4CVECE _ZN4MATHmlERKNS_4MAT3ERKNS_4CVECE( struct $N4MATH4MAT3E* M$
 	J$1 = ((*(double*)((uint8*)P$1 + 24ll) * X$1) + (*(double*)((uint8*)P$1 + 32ll) * Y$1)) + (*(double*)((uint8*)P$1 + 40ll) * *(double*)V$1);
 	K$1 = ((*(double*)((uint8*)P$1 + 48ll) * X$1) + (*(double*)((uint8*)P$1 + 56ll) * Y$1)) + (*(double*)((uint8*)P$1 + 64ll) * *(double*)V$1);
 	double vr$36 = _ZN4MATH5HYPOTERKdS1_( (double*)&I$1, (double*)&J$1 );
-	TMP$1129$1 = vr$36;
+	TMP$1130$1 = vr$36;
 	double vr$40 = _ZN4MATH5THETAERKdS1_( (double*)&I$1, (double*)&J$1 );
-	TMP$1128$1 = vr$40;
-	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$1128$1, (double*)&TMP$1129$1, (double*)&K$1 );
-	goto label$2332;
-	label$2332:;
+	TMP$1129$1 = vr$40;
+	_ZN4MATH4CVECC1ERKdS2_S2_( &fb$result$1, (double*)&TMP$1129$1, (double*)&TMP$1130$1, (double*)&K$1 );
+	goto label$2336;
+	label$2336:;
 	return fb$result$1;
 }
 
-struct $N4MATH4MAT3E* _ZN4MATHdvERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1130$1, struct $N4MATH4MAT3E* M$1, double* N$1 )
+struct $N4MATH4MAT3E* _ZN4MATHdvERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1131$1, struct $N4MATH4MAT3E* M$1, double* N$1 )
 {
-	label$2333:;
-	if( *N$1 == 0x0p+0 ) goto label$2336;
+	label$2337:;
+	if( *N$1 == 0x0p+0 ) goto label$2340;
 	{
 		struct $N4MATH4MAT3E R$2;
 		_ZN4MATH4MAT3C1Ev( &R$2 );
@@ -14940,48 +14957,48 @@ struct $N4MATH4MAT3E* _ZN4MATHdvERKNS_4MAT3ERKd( struct $N4MATH4MAT3E* tmp$1130$
 		*(double*)((uint8*)Q$2 + 48ll) = *(double*)((uint8*)P$2 + 48ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 56ll) = *(double*)((uint8*)P$2 + 56ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 64ll) = *(double*)((uint8*)P$2 + 64ll) / *N$1;
-		_ZN4MATH4MAT3C1ERKS0_( tmp$1130$1, (struct $N4MATH4MAT3E*)&R$2 );
+		_ZN4MATH4MAT3C1ERKS0_( tmp$1131$1, (struct $N4MATH4MAT3E*)&R$2 );
 		_ZN4MATH4MAT3D1Ev( &R$2 );
-		goto label$2334;
+		goto label$2338;
 		_ZN4MATH4MAT3D1Ev( &R$2 );
 	}
-	label$2336:;
-	label$2335:;
-	_ZN4MATH4MAT3C1Ev( tmp$1130$1 );
-	goto label$2334;
-	label$2334:;
-	return tmp$1130$1;
+	label$2340:;
+	label$2339:;
+	_ZN4MATH4MAT3C1Ev( tmp$1131$1 );
+	goto label$2338;
+	label$2338:;
+	return tmp$1131$1;
 }
 
 void _ZN4MATH4MAT4C1Ev( struct $N4MATH4MAT4E* THIS$1 )
 {
-	double* TMP$1132$1;
-	label$2339:;
+	double* TMP$1133$1;
+	label$2343:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 128ull );
-	TMP$1132$1 = (double*)vr$2;
-	if( TMP$1132$1 == (double*)0ull ) goto label$2341;
-	__builtin_memset( TMP$1132$1, 0, 128ull );
-	label$2341:;
-	*(double**)THIS$1 = TMP$1132$1;
+	TMP$1133$1 = (double*)vr$2;
+	if( TMP$1133$1 == (double*)0ull ) goto label$2345;
+	__builtin_memset( TMP$1133$1, 0, 128ull );
+	label$2345:;
+	*(double**)THIS$1 = TMP$1133$1;
 	*(*(double**)THIS$1) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 40ll) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 80ll) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
-	label$2340:;
+	label$2344:;
 }
 
 void _ZN4MATH4MAT4C1ERKNS_4MAT2E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	double* TMP$1133$1;
-	label$2342:;
+	double* TMP$1134$1;
+	label$2346:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 128ull );
-	TMP$1133$1 = (double*)vr$2;
-	if( TMP$1133$1 == (double*)0ull ) goto label$2344;
-	__builtin_memset( TMP$1133$1, 0, 128ull );
-	label$2344:;
-	*(double**)THIS$1 = TMP$1133$1;
+	TMP$1134$1 = (double*)vr$2;
+	if( TMP$1134$1 == (double*)0ull ) goto label$2348;
+	__builtin_memset( TMP$1134$1, 0, 128ull );
+	label$2348:;
+	*(double**)THIS$1 = TMP$1134$1;
 	double* P$1;
 	double* vr$4 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$4;
@@ -14991,20 +15008,20 @@ void _ZN4MATH4MAT4C1ERKNS_4MAT2E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)P$1 + 24ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 80ll) = 0x1.p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
-	label$2343:;
+	label$2347:;
 }
 
 void _ZN4MATH4MAT4C1ERKNS_4MAT3E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	double* TMP$1134$1;
-	label$2345:;
+	double* TMP$1135$1;
+	label$2349:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 128ull );
-	TMP$1134$1 = (double*)vr$2;
-	if( TMP$1134$1 == (double*)0ull ) goto label$2347;
-	__builtin_memset( TMP$1134$1, 0, 128ull );
-	label$2347:;
-	*(double**)THIS$1 = TMP$1134$1;
+	TMP$1135$1 = (double*)vr$2;
+	if( TMP$1135$1 == (double*)0ull ) goto label$2351;
+	__builtin_memset( TMP$1135$1, 0, 128ull );
+	label$2351:;
+	*(double**)THIS$1 = TMP$1135$1;
 	double* P$1;
 	double* vr$4 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$4;
@@ -15018,20 +15035,20 @@ void _ZN4MATH4MAT4C1ERKNS_4MAT3E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)P$1 + 56ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)((uint8*)P$1 + 64ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
-	label$2346:;
+	label$2350:;
 }
 
 void _ZN4MATH4MAT4C1ERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* M$1 )
 {
-	double* TMP$1135$1;
-	label$2348:;
+	double* TMP$1136$1;
+	label$2352:;
 	__builtin_memset( (struct $N4MATH10BASEMATRIXE*)THIS$1, 0, 8ll );
 	void* vr$2 = malloc( 128ull );
-	TMP$1135$1 = (double*)vr$2;
-	if( TMP$1135$1 == (double*)0ull ) goto label$2350;
-	__builtin_memset( TMP$1135$1, 0, 128ull );
-	label$2350:;
-	*(double**)THIS$1 = TMP$1135$1;
+	TMP$1136$1 = (double*)vr$2;
+	if( TMP$1136$1 == (double*)0ull ) goto label$2354;
+	__builtin_memset( TMP$1136$1, 0, 128ull );
+	label$2354:;
+	*(double**)THIS$1 = TMP$1136$1;
 	*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -15048,12 +15065,12 @@ void _ZN4MATH4MAT4C1ERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)*(double**)M$1 + 104ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)M$1 + 112ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)M$1 + 120ll);
-	label$2349:;
+	label$2353:;
 }
 
 void _ZN4MATH4MAT4pLERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* M$1 )
 {
-	label$2351:;
+	label$2355:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) + *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) + *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) + *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -15070,12 +15087,12 @@ void _ZN4MATH4MAT4pLERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)*(double**)THIS$1 + 104ll) + *(double*)((uint8*)*(double**)M$1 + 104ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)THIS$1 + 112ll) + *(double*)((uint8*)*(double**)M$1 + 112ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)THIS$1 + 120ll) + *(double*)((uint8*)*(double**)M$1 + 120ll);
-	label$2352:;
+	label$2356:;
 }
 
 void _ZN4MATH4MAT4mIERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* M$1 )
 {
-	label$2353:;
+	label$2357:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) - *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) - *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) - *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -15092,12 +15109,12 @@ void _ZN4MATH4MAT4mIERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)*(double**)THIS$1 + 104ll) - *(double*)((uint8*)*(double**)M$1 + 104ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)THIS$1 + 112ll) - *(double*)((uint8*)*(double**)M$1 + 112ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)THIS$1 + 120ll) - *(double*)((uint8*)*(double**)M$1 + 120ll);
-	label$2354:;
+	label$2358:;
 }
 
 void _ZN4MATH4MAT4mLERKd( struct $N4MATH4MAT4E* THIS$1, double* N$1 )
 {
-	label$2355:;
+	label$2359:;
 	*(*(double**)THIS$1) = *(*(double**)THIS$1) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)THIS$1 + 16ll) * *N$1;
@@ -15114,12 +15131,12 @@ void _ZN4MATH4MAT4mLERKd( struct $N4MATH4MAT4E* THIS$1, double* N$1 )
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)*(double**)THIS$1 + 104ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)THIS$1 + 112ll) * *N$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)THIS$1 + 120ll) * *N$1;
-	label$2356:;
+	label$2360:;
 }
 
 void _ZN4MATH4MAT4mLERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* M$1 )
 {
-	label$2357:;
+	label$2361:;
 	double N00$1;
 	N00$1 = (((*(*(double**)THIS$1) * *(double*)*(double**)M$1) + (*(double*)((uint8*)*(double**)THIS$1 + 8ll) * *(double*)((uint8*)*(double**)M$1 + 32ll))) + (*(double*)((uint8*)*(double**)THIS$1 + 16ll) * *(double*)((uint8*)*(double**)M$1 + 64ll))) + (*(double*)((uint8*)*(double**)THIS$1 + 24ll) * *(double*)((uint8*)*(double**)M$1 + 96ll));
 	double N10$1;
@@ -15168,13 +15185,13 @@ void _ZN4MATH4MAT4mLERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = N13$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = N23$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = N33$1;
-	label$2358:;
+	label$2362:;
 }
 
 void _ZN4MATH4MAT4dVERKd( struct $N4MATH4MAT4E* THIS$1, double* N$1 )
 {
-	label$2359:;
-	if( *N$1 == 0x0p+0 ) goto label$2362;
+	label$2363:;
+	if( *N$1 == 0x0p+0 ) goto label$2366;
 	{
 		*(*(double**)THIS$1) = *(*(double**)THIS$1) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)THIS$1 + 8ll) / *N$1;
@@ -15193,8 +15210,8 @@ void _ZN4MATH4MAT4dVERKd( struct $N4MATH4MAT4E* THIS$1, double* N$1 )
 		*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)THIS$1 + 112ll) / *N$1;
 		*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)THIS$1 + 120ll) / *N$1;
 	}
-	goto label$2361;
-	label$2362:;
+	goto label$2365;
+	label$2366:;
 	{
 		*(*(double**)THIS$1) = 0x1.p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 8ll) = 0x0p+0;
@@ -15213,13 +15230,12 @@ void _ZN4MATH4MAT4dVERKd( struct $N4MATH4MAT4E* THIS$1, double* N$1 )
 		*(double*)((uint8*)*(double**)THIS$1 + 112ll) = 0x0p+0;
 		*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
 	}
-	label$2361:;
-	label$2360:;
+	label$2365:;
+	label$2364:;
 }
 
 FBSTRING* _ZNK4MATH4MAT4cv8FBSTRINGEv( struct $N4MATH4MAT4E* THIS$1 )
 {
-	FBSTRING TMP$1137$1;
 	FBSTRING TMP$1138$1;
 	FBSTRING TMP$1139$1;
 	FBSTRING TMP$1140$1;
@@ -15251,9 +15267,10 @@ FBSTRING* _ZNK4MATH4MAT4cv8FBSTRINGEv( struct $N4MATH4MAT4E* THIS$1 )
 	FBSTRING TMP$1166$1;
 	FBSTRING TMP$1167$1;
 	FBSTRING TMP$1168$1;
+	FBSTRING TMP$1169$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2363:;
+	label$2367:;
 	FBSTRING* vr$3 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 120ll) );
 	FBSTRING* vr$6 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 112ll) );
 	FBSTRING* vr$9 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 104ll) );
@@ -15270,80 +15287,80 @@ FBSTRING* _ZNK4MATH4MAT4cv8FBSTRINGEv( struct $N4MATH4MAT4E* THIS$1 )
 	FBSTRING* vr$42 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$45 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$48 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1137$1, 0, 24ll );
-	FBSTRING* vr$51 = fb_StrConcat( &TMP$1137$1, (void*)"<math.mat4>{\x0A    ", 18ll, (void*)vr$48, -1ll );
 	__builtin_memset( &TMP$1138$1, 0, 24ll );
-	FBSTRING* vr$54 = fb_StrConcat( &TMP$1138$1, (void*)vr$51, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$51 = fb_StrConcat( &TMP$1138$1, (void*)"<math.mat4>{\x0A    ", 18ll, (void*)vr$48, -1ll );
 	__builtin_memset( &TMP$1139$1, 0, 24ll );
-	FBSTRING* vr$57 = fb_StrConcat( &TMP$1139$1, (void*)vr$54, -1ll, (void*)vr$45, -1ll );
+	FBSTRING* vr$54 = fb_StrConcat( &TMP$1139$1, (void*)vr$51, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1140$1, 0, 24ll );
-	FBSTRING* vr$60 = fb_StrConcat( &TMP$1140$1, (void*)vr$57, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$57 = fb_StrConcat( &TMP$1140$1, (void*)vr$54, -1ll, (void*)vr$45, -1ll );
 	__builtin_memset( &TMP$1141$1, 0, 24ll );
-	FBSTRING* vr$63 = fb_StrConcat( &TMP$1141$1, (void*)vr$60, -1ll, (void*)vr$42, -1ll );
+	FBSTRING* vr$60 = fb_StrConcat( &TMP$1141$1, (void*)vr$57, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1142$1, 0, 24ll );
-	FBSTRING* vr$66 = fb_StrConcat( &TMP$1142$1, (void*)vr$63, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$63 = fb_StrConcat( &TMP$1142$1, (void*)vr$60, -1ll, (void*)vr$42, -1ll );
 	__builtin_memset( &TMP$1143$1, 0, 24ll );
-	FBSTRING* vr$69 = fb_StrConcat( &TMP$1143$1, (void*)vr$66, -1ll, (void*)vr$39, -1ll );
+	FBSTRING* vr$66 = fb_StrConcat( &TMP$1143$1, (void*)vr$63, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1144$1, 0, 24ll );
-	FBSTRING* vr$72 = fb_StrConcat( &TMP$1144$1, (void*)vr$69, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$69 = fb_StrConcat( &TMP$1144$1, (void*)vr$66, -1ll, (void*)vr$39, -1ll );
 	__builtin_memset( &TMP$1145$1, 0, 24ll );
-	FBSTRING* vr$75 = fb_StrConcat( &TMP$1145$1, (void*)vr$72, -1ll, (void*)vr$36, -1ll );
+	FBSTRING* vr$72 = fb_StrConcat( &TMP$1145$1, (void*)vr$69, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$1146$1, 0, 24ll );
-	FBSTRING* vr$78 = fb_StrConcat( &TMP$1146$1, (void*)vr$75, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$75 = fb_StrConcat( &TMP$1146$1, (void*)vr$72, -1ll, (void*)vr$36, -1ll );
 	__builtin_memset( &TMP$1147$1, 0, 24ll );
-	FBSTRING* vr$81 = fb_StrConcat( &TMP$1147$1, (void*)vr$78, -1ll, (void*)vr$33, -1ll );
+	FBSTRING* vr$78 = fb_StrConcat( &TMP$1147$1, (void*)vr$75, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1148$1, 0, 24ll );
-	FBSTRING* vr$84 = fb_StrConcat( &TMP$1148$1, (void*)vr$81, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$81 = fb_StrConcat( &TMP$1148$1, (void*)vr$78, -1ll, (void*)vr$33, -1ll );
 	__builtin_memset( &TMP$1149$1, 0, 24ll );
-	FBSTRING* vr$87 = fb_StrConcat( &TMP$1149$1, (void*)vr$84, -1ll, (void*)vr$30, -1ll );
+	FBSTRING* vr$84 = fb_StrConcat( &TMP$1149$1, (void*)vr$81, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1150$1, 0, 24ll );
-	FBSTRING* vr$90 = fb_StrConcat( &TMP$1150$1, (void*)vr$87, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$87 = fb_StrConcat( &TMP$1150$1, (void*)vr$84, -1ll, (void*)vr$30, -1ll );
 	__builtin_memset( &TMP$1151$1, 0, 24ll );
-	FBSTRING* vr$93 = fb_StrConcat( &TMP$1151$1, (void*)vr$90, -1ll, (void*)vr$27, -1ll );
+	FBSTRING* vr$90 = fb_StrConcat( &TMP$1151$1, (void*)vr$87, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1152$1, 0, 24ll );
-	FBSTRING* vr$96 = fb_StrConcat( &TMP$1152$1, (void*)vr$93, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$93 = fb_StrConcat( &TMP$1152$1, (void*)vr$90, -1ll, (void*)vr$27, -1ll );
 	__builtin_memset( &TMP$1153$1, 0, 24ll );
-	FBSTRING* vr$99 = fb_StrConcat( &TMP$1153$1, (void*)vr$96, -1ll, (void*)vr$24, -1ll );
+	FBSTRING* vr$96 = fb_StrConcat( &TMP$1153$1, (void*)vr$93, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$1154$1, 0, 24ll );
-	FBSTRING* vr$102 = fb_StrConcat( &TMP$1154$1, (void*)vr$99, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$99 = fb_StrConcat( &TMP$1154$1, (void*)vr$96, -1ll, (void*)vr$24, -1ll );
 	__builtin_memset( &TMP$1155$1, 0, 24ll );
-	FBSTRING* vr$105 = fb_StrConcat( &TMP$1155$1, (void*)vr$102, -1ll, (void*)vr$21, -1ll );
+	FBSTRING* vr$102 = fb_StrConcat( &TMP$1155$1, (void*)vr$99, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1156$1, 0, 24ll );
-	FBSTRING* vr$108 = fb_StrConcat( &TMP$1156$1, (void*)vr$105, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$105 = fb_StrConcat( &TMP$1156$1, (void*)vr$102, -1ll, (void*)vr$21, -1ll );
 	__builtin_memset( &TMP$1157$1, 0, 24ll );
-	FBSTRING* vr$111 = fb_StrConcat( &TMP$1157$1, (void*)vr$108, -1ll, (void*)vr$18, -1ll );
+	FBSTRING* vr$108 = fb_StrConcat( &TMP$1157$1, (void*)vr$105, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1158$1, 0, 24ll );
-	FBSTRING* vr$114 = fb_StrConcat( &TMP$1158$1, (void*)vr$111, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$111 = fb_StrConcat( &TMP$1158$1, (void*)vr$108, -1ll, (void*)vr$18, -1ll );
 	__builtin_memset( &TMP$1159$1, 0, 24ll );
-	FBSTRING* vr$117 = fb_StrConcat( &TMP$1159$1, (void*)vr$114, -1ll, (void*)vr$15, -1ll );
+	FBSTRING* vr$114 = fb_StrConcat( &TMP$1159$1, (void*)vr$111, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1160$1, 0, 24ll );
-	FBSTRING* vr$120 = fb_StrConcat( &TMP$1160$1, (void*)vr$117, -1ll, (void*)",\x0A    ", 7ll );
+	FBSTRING* vr$117 = fb_StrConcat( &TMP$1160$1, (void*)vr$114, -1ll, (void*)vr$15, -1ll );
 	__builtin_memset( &TMP$1161$1, 0, 24ll );
-	FBSTRING* vr$123 = fb_StrConcat( &TMP$1161$1, (void*)vr$120, -1ll, (void*)vr$12, -1ll );
+	FBSTRING* vr$120 = fb_StrConcat( &TMP$1161$1, (void*)vr$117, -1ll, (void*)",\x0A    ", 7ll );
 	__builtin_memset( &TMP$1162$1, 0, 24ll );
-	FBSTRING* vr$126 = fb_StrConcat( &TMP$1162$1, (void*)vr$123, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$123 = fb_StrConcat( &TMP$1162$1, (void*)vr$120, -1ll, (void*)vr$12, -1ll );
 	__builtin_memset( &TMP$1163$1, 0, 24ll );
-	FBSTRING* vr$129 = fb_StrConcat( &TMP$1163$1, (void*)vr$126, -1ll, (void*)vr$9, -1ll );
+	FBSTRING* vr$126 = fb_StrConcat( &TMP$1163$1, (void*)vr$123, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1164$1, 0, 24ll );
-	FBSTRING* vr$132 = fb_StrConcat( &TMP$1164$1, (void*)vr$129, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$129 = fb_StrConcat( &TMP$1164$1, (void*)vr$126, -1ll, (void*)vr$9, -1ll );
 	__builtin_memset( &TMP$1165$1, 0, 24ll );
-	FBSTRING* vr$135 = fb_StrConcat( &TMP$1165$1, (void*)vr$132, -1ll, (void*)vr$6, -1ll );
+	FBSTRING* vr$132 = fb_StrConcat( &TMP$1165$1, (void*)vr$129, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1166$1, 0, 24ll );
-	FBSTRING* vr$138 = fb_StrConcat( &TMP$1166$1, (void*)vr$135, -1ll, (void*)" , ", 4ll );
+	FBSTRING* vr$135 = fb_StrConcat( &TMP$1166$1, (void*)vr$132, -1ll, (void*)vr$6, -1ll );
 	__builtin_memset( &TMP$1167$1, 0, 24ll );
-	FBSTRING* vr$141 = fb_StrConcat( &TMP$1167$1, (void*)vr$138, -1ll, (void*)vr$3, -1ll );
+	FBSTRING* vr$138 = fb_StrConcat( &TMP$1167$1, (void*)vr$135, -1ll, (void*)" , ", 4ll );
 	__builtin_memset( &TMP$1168$1, 0, 24ll );
-	FBSTRING* vr$144 = fb_StrConcat( &TMP$1168$1, (void*)vr$141, -1ll, (void*)"\x0A}", 3ll );
+	FBSTRING* vr$141 = fb_StrConcat( &TMP$1168$1, (void*)vr$138, -1ll, (void*)vr$3, -1ll );
+	__builtin_memset( &TMP$1169$1, 0, 24ll );
+	FBSTRING* vr$144 = fb_StrConcat( &TMP$1169$1, (void*)vr$141, -1ll, (void*)"\x0A}", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$144, -1ll, 0 );
-	goto label$2364;
-	label$2364:;
+	goto label$2368;
+	label$2368:;
 	FBSTRING* vr$147 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$147;
 }
 
 void _ZN4MATH4MAT4aSERKNS_4MAT2E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT2E* M$1 )
 {
-	label$2365:;
+	label$2369:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
@@ -15363,12 +15380,12 @@ void _ZN4MATH4MAT4aSERKNS_4MAT2E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
-	label$2366:;
+	label$2370:;
 }
 
 void _ZN4MATH4MAT4aSERKNS_4MAT3E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT3E* M$1 )
 {
-	label$2367:;
+	label$2371:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
@@ -15388,12 +15405,12 @@ void _ZN4MATH4MAT4aSERKNS_4MAT3E( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4M
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = 0x0p+0;
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = 0x1.p+0;
-	label$2368:;
+	label$2372:;
 }
 
 void _ZN4MATH4MAT4aSERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* M$1 )
 {
-	label$2369:;
+	label$2373:;
 	*(*(double**)THIS$1) = *(double*)*(double**)M$1;
 	*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)*(double**)M$1 + 8ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)*(double**)M$1 + 16ll);
@@ -15410,18 +15427,18 @@ void _ZN4MATH4MAT4aSERKS0_( struct $N4MATH4MAT4E* THIS$1, struct $N4MATH4MAT4E* 
 	*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)*(double**)M$1 + 104ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)*(double**)M$1 + 112ll);
 	*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)*(double**)M$1 + 120ll);
-	label$2370:;
+	label$2374:;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( struct $N4MATH4MAT4E* tmp$1169$1, double* X$1, double* Y$1, double* Z$1, double* T$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( struct $N4MATH4MAT4E* tmp$1170$1, double* X$1, double* Y$1, double* Z$1, double* T$1 )
 {
-	label$2371:;
+	label$2375:;
 	struct $N4MATH4VEC3E A$1;
 	_ZN4MATH4VEC3C1ERKdS2_S2_( &A$1, X$1, Y$1, Z$1 );
 	double H$1;
 	double vr$2 = _ZNK4MATH4VEC311NORM__get__Ev( (struct $N4MATH4VEC3E*)&A$1 );
 	H$1 = vr$2;
-	if( H$1 == 0x0p+0 ) goto label$2374;
+	if( H$1 == 0x0p+0 ) goto label$2378;
 	{
 		*(double*)&A$1 = *(double*)&A$1 / H$1;
 		*(double*)((uint8*)&A$1 + 8ll) = *(double*)((uint8*)&A$1 + 8ll) / H$1;
@@ -15443,147 +15460,147 @@ struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( struct $N4MATH4
 		*(double*)((uint8*)*(double**)&R$2 + 64ll) = ((D$2 * *(double*)&A$1) * *(double*)((uint8*)&A$1 + 16ll)) - (*(double*)((uint8*)&A$1 + 8ll) * S$2);
 		*(double*)((uint8*)*(double**)&R$2 + 72ll) = ((D$2 * *(double*)((uint8*)&A$1 + 8ll)) * *(double*)((uint8*)&A$1 + 16ll)) + (*(double*)&A$1 * S$2);
 		*(double*)((uint8*)*(double**)&R$2 + 80ll) = ((D$2 * *(double*)((uint8*)&A$1 + 16ll)) * *(double*)((uint8*)&A$1 + 16ll)) + C$2;
-		_ZN4MATH4MAT4C1ERKS0_( tmp$1169$1, (struct $N4MATH4MAT4E*)&R$2 );
+		_ZN4MATH4MAT4C1ERKS0_( tmp$1170$1, (struct $N4MATH4MAT4E*)&R$2 );
 		_ZN4MATH4MAT4D1Ev( &R$2 );
-		goto label$2372;
+		goto label$2376;
 		_ZN4MATH4MAT4D1Ev( &R$2 );
 	}
-	label$2374:;
-	label$2373:;
-	_ZN4MATH4MAT4C1Ev( tmp$1169$1 );
-	goto label$2372;
-	label$2372:;
-	return tmp$1169$1;
-}
-
-struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4VEC2ERKdS5_( struct $N4MATH4MAT4E* tmp$1172$1, struct $N4MATH4VEC2E* V$1, double* Z$1, double* T$1 )
-{
-	struct $N4MATH4MAT4E TMP$1173$1;
-	label$2375:;
-	struct $N4MATH4MAT4E* vr$5 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1173$1, (double*)V$1, (double*)((uint8*)V$1 + 8ll), Z$1, T$1 );
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1172$1, (struct $N4MATH4MAT4E*)vr$5 );
-	_ZN4MATH4MAT4D1Ev( &TMP$1173$1 );
+	label$2378:;
+	label$2377:;
+	_ZN4MATH4MAT4C1Ev( tmp$1170$1 );
 	goto label$2376;
 	label$2376:;
-	return tmp$1172$1;
+	return tmp$1170$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4PVECERKdS5_( struct $N4MATH4MAT4E* tmp$1174$1, struct $N4MATH4PVECE* V$1, double* Z$1, double* T$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4VEC2ERKdS5_( struct $N4MATH4MAT4E* tmp$1173$1, struct $N4MATH4VEC2E* V$1, double* Z$1, double* T$1 )
 {
-	struct $N4MATH4MAT4E TMP$1175$1;
-	double TMP$1176$1;
-	double TMP$1177$1;
-	label$2377:;
-	double vr$0 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
-	TMP$1177$1 = vr$0;
-	double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
-	TMP$1176$1 = vr$2;
-	struct $N4MATH4MAT4E* vr$5 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1175$1, (double*)&TMP$1176$1, (double*)&TMP$1177$1, Z$1, T$1 );
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1174$1, (struct $N4MATH4MAT4E*)vr$5 );
-	_ZN4MATH4MAT4D1Ev( &TMP$1175$1 );
-	goto label$2378;
-	label$2378:;
-	return tmp$1174$1;
-}
-
-struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4VEC3ERKd( struct $N4MATH4MAT4E* tmp$1178$1, struct $N4MATH4VEC3E* V$1, double* T$1 )
-{
-	struct $N4MATH4MAT4E TMP$1179$1;
+	struct $N4MATH4MAT4E TMP$1174$1;
 	label$2379:;
-	struct $N4MATH4MAT4E* vr$7 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1179$1, (double*)V$1, (double*)((uint8*)V$1 + 8ll), (double*)((uint8*)V$1 + 16ll), T$1 );
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1178$1, (struct $N4MATH4MAT4E*)vr$7 );
-	_ZN4MATH4MAT4D1Ev( &TMP$1179$1 );
+	struct $N4MATH4MAT4E* vr$5 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1174$1, (double*)V$1, (double*)((uint8*)V$1 + 8ll), Z$1, T$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1173$1, (struct $N4MATH4MAT4E*)vr$5 );
+	_ZN4MATH4MAT4D1Ev( &TMP$1174$1 );
 	goto label$2380;
 	label$2380:;
-	return tmp$1178$1;
+	return tmp$1173$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4CVECERKd( struct $N4MATH4MAT4E* tmp$1180$1, struct $N4MATH4CVECE* V$1, double* T$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4PVECERKdS5_( struct $N4MATH4MAT4E* tmp$1175$1, struct $N4MATH4PVECE* V$1, double* Z$1, double* T$1 )
 {
-	struct $N4MATH4MAT4E TMP$1181$1;
-	double TMP$1182$1;
-	double TMP$1183$1;
+	struct $N4MATH4MAT4E TMP$1176$1;
+	double TMP$1177$1;
+	double TMP$1178$1;
 	label$2381:;
-	double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
-	TMP$1183$1 = vr$2;
-	double vr$4 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
-	TMP$1182$1 = vr$4;
-	struct $N4MATH4MAT4E* vr$7 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1181$1, (double*)&TMP$1182$1, (double*)&TMP$1183$1, (double*)V$1, T$1 );
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1180$1, (struct $N4MATH4MAT4E*)vr$7 );
-	_ZN4MATH4MAT4D1Ev( &TMP$1181$1 );
+	double vr$0 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
+	TMP$1178$1 = vr$0;
+	double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
+	TMP$1177$1 = vr$2;
+	struct $N4MATH4MAT4E* vr$5 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1176$1, (double*)&TMP$1177$1, (double*)&TMP$1178$1, Z$1, T$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1175$1, (struct $N4MATH4MAT4E*)vr$5 );
+	_ZN4MATH4MAT4D1Ev( &TMP$1176$1 );
 	goto label$2382;
 	label$2382:;
-	return tmp$1180$1;
+	return tmp$1175$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT49FROMSCALEERKd( struct $N4MATH4MAT4E* tmp$1184$1, double* S$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4VEC3ERKd( struct $N4MATH4MAT4E* tmp$1179$1, struct $N4MATH4VEC3E* V$1, double* T$1 )
 {
+	struct $N4MATH4MAT4E TMP$1180$1;
 	label$2383:;
+	struct $N4MATH4MAT4E* vr$7 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1180$1, (double*)V$1, (double*)((uint8*)V$1 + 8ll), (double*)((uint8*)V$1 + 16ll), T$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1179$1, (struct $N4MATH4MAT4E*)vr$7 );
+	_ZN4MATH4MAT4D1Ev( &TMP$1180$1 );
+	goto label$2384;
+	label$2384:;
+	return tmp$1179$1;
+}
+
+struct $N4MATH4MAT4E* _ZN4MATH4MAT413FROMAXISANGLEERKNS_4CVECERKd( struct $N4MATH4MAT4E* tmp$1181$1, struct $N4MATH4CVECE* V$1, double* T$1 )
+{
+	struct $N4MATH4MAT4E TMP$1182$1;
+	double TMP$1183$1;
+	double TMP$1184$1;
+	label$2385:;
+	double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
+	TMP$1184$1 = vr$2;
+	double vr$4 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
+	TMP$1183$1 = vr$4;
+	struct $N4MATH4MAT4E* vr$7 = _ZN4MATH4MAT413FROMAXISANGLEERKdS2_S2_S2_( &TMP$1182$1, (double*)&TMP$1183$1, (double*)&TMP$1184$1, (double*)V$1, T$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1181$1, (struct $N4MATH4MAT4E*)vr$7 );
+	_ZN4MATH4MAT4D1Ev( &TMP$1182$1 );
+	goto label$2386;
+	label$2386:;
+	return tmp$1181$1;
+}
+
+struct $N4MATH4MAT4E* _ZN4MATH4MAT49FROMSCALEERKd( struct $N4MATH4MAT4E* tmp$1185$1, double* S$1 )
+{
+	label$2387:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	*(*(double**)&R$1) = *S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 80ll) = *S$1;
 	*(double*)((uint8*)*(double**)&R$1 + 120ll) = *S$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1184$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1185$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2384;
+	goto label$2388;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2384:;
-	return tmp$1184$1;
+	label$2388:;
+	return tmp$1185$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT49FROMSCALEERKdS2_S2_( struct $N4MATH4MAT4E* tmp$1185$1, double* SX$1, double* SY$1, double* SZ$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT49FROMSCALEERKdS2_S2_( struct $N4MATH4MAT4E* tmp$1186$1, double* SX$1, double* SY$1, double* SZ$1 )
 {
-	label$2385:;
+	label$2389:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	*(*(double**)&R$1) = *SX$1;
 	*(double*)((uint8*)*(double**)&R$1 + 40ll) = *SY$1;
 	*(double*)((uint8*)*(double**)&R$1 + 80ll) = *SZ$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1185$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1186$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2386;
+	goto label$2390;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2386:;
-	return tmp$1185$1;
+	label$2390:;
+	return tmp$1186$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKdS2_S2_( struct $N4MATH4MAT4E* tmp$1186$1, double* TX$1, double* TY$1, double* TZ$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKdS2_S2_( struct $N4MATH4MAT4E* tmp$1187$1, double* TX$1, double* TY$1, double* TZ$1 )
 {
-	label$2387:;
+	label$2391:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *TX$1;
 	*(double*)((uint8*)*(double**)&R$1 + 56ll) = *TY$1;
 	*(double*)((uint8*)*(double**)&R$1 + 88ll) = *TZ$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1186$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1187$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2388;
+	goto label$2392;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2388:;
-	return tmp$1186$1;
+	label$2392:;
+	return tmp$1187$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4VEC2ERKd( struct $N4MATH4MAT4E* tmp$1187$1, struct $N4MATH4VEC2E* T$1, double* TZ$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4VEC2ERKd( struct $N4MATH4MAT4E* tmp$1188$1, struct $N4MATH4VEC2E* T$1, double* TZ$1 )
 {
-	label$2389:;
+	label$2393:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *(double*)T$1;
 	*(double*)((uint8*)*(double**)&R$1 + 56ll) = *(double*)((uint8*)T$1 + 8ll);
 	*(double*)((uint8*)*(double**)&R$1 + 88ll) = *TZ$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1187$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1188$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2390;
+	goto label$2394;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2390:;
-	return tmp$1187$1;
+	label$2394:;
+	return tmp$1188$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4PVECERKd( struct $N4MATH4MAT4E* tmp$1188$1, struct $N4MATH4PVECE* T$1, double* TZ$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4PVECERKd( struct $N4MATH4MAT4E* tmp$1189$1, struct $N4MATH4PVECE* T$1, double* TZ$1 )
 {
-	label$2391:;
+	label$2395:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( T$1 );
@@ -15591,33 +15608,33 @@ struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4PVECERKd( struct $N4M
 	double vr$3 = _ZNK4MATH4PVEC8Y__get__Ev( T$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 56ll) = vr$3;
 	*(double*)((uint8*)*(double**)&R$1 + 88ll) = *TZ$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1188$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1189$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2392;
+	goto label$2396;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2392:;
-	return tmp$1188$1;
+	label$2396:;
+	return tmp$1189$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4VEC3E( struct $N4MATH4MAT4E* tmp$1189$1, struct $N4MATH4VEC3E* T$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4VEC3E( struct $N4MATH4MAT4E* tmp$1190$1, struct $N4MATH4VEC3E* T$1 )
 {
-	label$2393:;
+	label$2397:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 24ll) = *(double*)T$1;
 	*(double*)((uint8*)*(double**)&R$1 + 56ll) = *(double*)((uint8*)T$1 + 8ll);
 	*(double*)((uint8*)*(double**)&R$1 + 88ll) = *(double*)((uint8*)T$1 + 16ll);
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1189$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1190$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2394;
+	goto label$2398;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2394:;
-	return tmp$1189$1;
+	label$2398:;
+	return tmp$1190$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4CVECE( struct $N4MATH4MAT4E* tmp$1190$1, struct $N4MATH4CVECE* T$1 )
+struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4CVECE( struct $N4MATH4MAT4E* tmp$1191$1, struct $N4MATH4CVECE* T$1 )
 {
-	label$2395:;
+	label$2399:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double vr$1 = _ZNK4MATH4CVEC8X__get__Ev( T$1 );
@@ -15625,129 +15642,129 @@ struct $N4MATH4MAT4E* _ZN4MATH4MAT415FROMTRANSLATIONERKNS_4CVECE( struct $N4MATH
 	double vr$3 = _ZNK4MATH4CVEC8Y__get__Ev( T$1 );
 	*(double*)((uint8*)*(double**)&R$1 + 56ll) = vr$3;
 	*(double*)((uint8*)*(double**)&R$1 + 88ll) = *(double*)T$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1190$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1191$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2396;
+	goto label$2400;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2396:;
-	return tmp$1190$1;
+	label$2400:;
+	return tmp$1191$1;
 }
 
 double _ZNK4MATH4MAT43GETERKu7INTEGERS3_( struct $N4MATH4MAT4E* THIS$1, int64* X$1, int64* Y$1 )
 {
-	double TMP$1191$1;
+	double TMP$1192$1;
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2397:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 4ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 4ll)) == 0ll ) goto label$2399;
-	TMP$1191$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (2ll & 63ll))) << (3ll & 63ll)));
-	goto label$2400;
-	label$2399:;
-	TMP$1191$1 = 0x0p+0;
-	label$2400:;
-	fb$result$1 = TMP$1191$1;
-	goto label$2398;
-	label$2398:;
+	label$2401:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 4ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 4ll)) == 0ll ) goto label$2403;
+	TMP$1192$1 = *(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (2ll & 63ll))) << (3ll & 63ll)));
+	goto label$2404;
+	label$2403:;
+	TMP$1192$1 = 0x0p+0;
+	label$2404:;
+	fb$result$1 = TMP$1192$1;
+	goto label$2402;
+	label$2402:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC4E _ZNK4MATH4MAT49GETCOLUMNERKu7INTEGER( struct $N4MATH4MAT4E* THIS$1, int64* X$1 )
 {
 	struct $N4MATH4VEC4E fb$result$1;
-	label$2401:;
+	label$2405:;
 	{
-		int64 TMP$1192$2;
-		TMP$1192$2 = *X$1;
-		if( TMP$1192$2 != 0ll ) goto label$2404;
-		label$2405:;
-		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 64ll), (double*)((uint8*)*(double**)THIS$1 + 96ll) );
-			goto label$2402;
-		}
-		goto label$2403;
-		label$2404:;
-		if( TMP$1192$2 != 1ll ) goto label$2406;
-		label$2407:;
-		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 72ll), (double*)((uint8*)*(double**)THIS$1 + 104ll) );
-			goto label$2402;
-		}
-		goto label$2403;
-		label$2406:;
-		if( TMP$1192$2 != 2ll ) goto label$2408;
+		int64 TMP$1193$2;
+		TMP$1193$2 = *X$1;
+		if( TMP$1193$2 != 0ll ) goto label$2408;
 		label$2409:;
 		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 80ll), (double*)((uint8*)*(double**)THIS$1 + 112ll) );
-			goto label$2402;
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 64ll), (double*)((uint8*)*(double**)THIS$1 + 96ll) );
+			goto label$2406;
 		}
-		goto label$2403;
+		goto label$2407;
 		label$2408:;
-		if( TMP$1192$2 != 3ll ) goto label$2410;
+		if( TMP$1193$2 != 1ll ) goto label$2410;
 		label$2411:;
 		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 56ll), (double*)((uint8*)*(double**)THIS$1 + 88ll), (double*)((uint8*)*(double**)THIS$1 + 120ll) );
-			goto label$2402;
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 72ll), (double*)((uint8*)*(double**)THIS$1 + 104ll) );
+			goto label$2406;
 		}
-		goto label$2403;
+		goto label$2407;
 		label$2410:;
+		if( TMP$1193$2 != 2ll ) goto label$2412;
+		label$2413:;
+		{
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 80ll), (double*)((uint8*)*(double**)THIS$1 + 112ll) );
+			goto label$2406;
+		}
+		goto label$2407;
+		label$2412:;
+		if( TMP$1193$2 != 3ll ) goto label$2414;
+		label$2415:;
+		{
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 24ll), (double*)((uint8*)*(double**)THIS$1 + 56ll), (double*)((uint8*)*(double**)THIS$1 + 88ll), (double*)((uint8*)*(double**)THIS$1 + 120ll) );
+			goto label$2406;
+		}
+		goto label$2407;
+		label$2414:;
 		{
 			_ZN4MATH4VEC4C1Ev( &fb$result$1 );
-			goto label$2402;
+			goto label$2406;
 		}
-		label$2412:;
-		label$2403:;
+		label$2416:;
+		label$2407:;
 	}
-	label$2402:;
+	label$2406:;
 	return fb$result$1;
 }
 
 struct $N4MATH4VEC4E _ZNK4MATH4MAT46GETROWERKu7INTEGER( struct $N4MATH4MAT4E* THIS$1, int64* Y$1 )
 {
 	struct $N4MATH4VEC4E fb$result$1;
-	label$2413:;
+	label$2417:;
 	{
-		int64 TMP$1198$2;
-		TMP$1198$2 = *Y$1;
-		if( TMP$1198$2 != 0ll ) goto label$2416;
-		label$2417:;
-		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 24ll) );
-			goto label$2414;
-		}
-		goto label$2415;
-		label$2416:;
-		if( TMP$1198$2 != 1ll ) goto label$2418;
-		label$2419:;
-		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 56ll) );
-			goto label$2414;
-		}
-		goto label$2415;
-		label$2418:;
-		if( TMP$1198$2 != 2ll ) goto label$2420;
+		int64 TMP$1199$2;
+		TMP$1199$2 = *Y$1;
+		if( TMP$1199$2 != 0ll ) goto label$2420;
 		label$2421:;
 		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 64ll), (double*)((uint8*)*(double**)THIS$1 + 72ll), (double*)((uint8*)*(double**)THIS$1 + 80ll), (double*)((uint8*)*(double**)THIS$1 + 88ll) );
-			goto label$2414;
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, *(double**)THIS$1, (double*)((uint8*)*(double**)THIS$1 + 8ll), (double*)((uint8*)*(double**)THIS$1 + 16ll), (double*)((uint8*)*(double**)THIS$1 + 24ll) );
+			goto label$2418;
 		}
-		goto label$2415;
+		goto label$2419;
 		label$2420:;
-		if( TMP$1198$2 != 3ll ) goto label$2422;
+		if( TMP$1199$2 != 1ll ) goto label$2422;
 		label$2423:;
 		{
-			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 96ll), (double*)((uint8*)*(double**)THIS$1 + 104ll), (double*)((uint8*)*(double**)THIS$1 + 112ll), (double*)((uint8*)*(double**)THIS$1 + 120ll) );
-			goto label$2414;
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 32ll), (double*)((uint8*)*(double**)THIS$1 + 40ll), (double*)((uint8*)*(double**)THIS$1 + 48ll), (double*)((uint8*)*(double**)THIS$1 + 56ll) );
+			goto label$2418;
 		}
-		goto label$2415;
+		goto label$2419;
 		label$2422:;
+		if( TMP$1199$2 != 2ll ) goto label$2424;
+		label$2425:;
+		{
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 64ll), (double*)((uint8*)*(double**)THIS$1 + 72ll), (double*)((uint8*)*(double**)THIS$1 + 80ll), (double*)((uint8*)*(double**)THIS$1 + 88ll) );
+			goto label$2418;
+		}
+		goto label$2419;
+		label$2424:;
+		if( TMP$1199$2 != 3ll ) goto label$2426;
+		label$2427:;
+		{
+			_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)((uint8*)*(double**)THIS$1 + 96ll), (double*)((uint8*)*(double**)THIS$1 + 104ll), (double*)((uint8*)*(double**)THIS$1 + 112ll), (double*)((uint8*)*(double**)THIS$1 + 120ll) );
+			goto label$2418;
+		}
+		goto label$2419;
+		label$2426:;
 		{
 			_ZN4MATH4VEC4C1Ev( &fb$result$1 );
-			goto label$2414;
+			goto label$2418;
 		}
-		label$2424:;
-		label$2415:;
+		label$2428:;
+		label$2419:;
 	}
-	label$2414:;
+	label$2418:;
 	return fb$result$1;
 }
 
@@ -15755,18 +15772,18 @@ boolean _ZN4MATH4MAT43SETERKu7INTEGERS3_RKd( struct $N4MATH4MAT4E* THIS$1, int64
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2425:;
-	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 4ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 4ll)) == 0ll ) goto label$2428;
+	label$2429:;
+	if( ((((int64)-(*X$1 >= 0ll) & (int64)-(*X$1 < 4ll)) & (int64)-(*Y$1 >= 0ll)) & (int64)-(*Y$1 < 4ll)) == 0ll ) goto label$2432;
 	{
 		*(double*)((uint8*)*(double**)THIS$1 + ((*X$1 + (*Y$1 << (2ll & 63ll))) << (3ll & 63ll))) = *N$1;
 		fb$result$1 = (boolean)1ll;
-		goto label$2426;
+		goto label$2430;
 	}
-	label$2428:;
-	label$2427:;
+	label$2432:;
+	label$2431:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2426;
-	label$2426:;
+	goto label$2430;
+	label$2430:;
 	return fb$result$1;
 }
 
@@ -15774,60 +15791,60 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKdS5_S5_S5_( struct $N4MATH4MAT4E* T
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2429:;
+	label$2433:;
 	{
-		int64 TMP$1204$2;
-		TMP$1204$2 = *X$1;
-		if( TMP$1204$2 != 0ll ) goto label$2432;
-		label$2433:;
+		int64 TMP$1205$2;
+		TMP$1205$2 = *X$1;
+		if( TMP$1205$2 != 0ll ) goto label$2436;
+		label$2437:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N4$1;
 		}
-		goto label$2431;
-		label$2432:;
-		if( TMP$1204$2 != 1ll ) goto label$2434;
-		label$2435:;
+		goto label$2435;
+		label$2436:;
+		if( TMP$1205$2 != 1ll ) goto label$2438;
+		label$2439:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *N4$1;
 		}
-		goto label$2431;
-		label$2434:;
-		if( TMP$1204$2 != 2ll ) goto label$2436;
-		label$2437:;
+		goto label$2435;
+		label$2438:;
+		if( TMP$1205$2 != 2ll ) goto label$2440;
+		label$2441:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N4$1;
 		}
-		goto label$2431;
-		label$2436:;
-		if( TMP$1204$2 != 3ll ) goto label$2438;
-		label$2439:;
+		goto label$2435;
+		label$2440:;
+		if( TMP$1205$2 != 3ll ) goto label$2442;
+		label$2443:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N4$1;
 		}
-		goto label$2431;
-		label$2438:;
+		goto label$2435;
+		label$2442:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2430;
+			goto label$2434;
 		}
-		label$2440:;
-		label$2431:;
+		label$2444:;
+		label$2435:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2430;
-	label$2430:;
+	goto label$2434;
+	label$2434:;
 	return fb$result$1;
 }
 
@@ -15835,60 +15852,60 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4VEC2ERKdS8_( struct $N4MATH4MAT
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2441:;
+	label$2445:;
 	{
-		int64 TMP$1205$2;
-		TMP$1205$2 = *X$1;
-		if( TMP$1205$2 != 0ll ) goto label$2444;
-		label$2445:;
+		int64 TMP$1206$2;
+		TMP$1206$2 = *X$1;
+		if( TMP$1206$2 != 0ll ) goto label$2448;
+		label$2449:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N2$1;
 		}
-		goto label$2443;
-		label$2444:;
-		if( TMP$1205$2 != 1ll ) goto label$2446;
-		label$2447:;
+		goto label$2447;
+		label$2448:;
+		if( TMP$1206$2 != 1ll ) goto label$2450;
+		label$2451:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *N2$1;
 		}
-		goto label$2443;
-		label$2446:;
-		if( TMP$1205$2 != 2ll ) goto label$2448;
-		label$2449:;
+		goto label$2447;
+		label$2450:;
+		if( TMP$1206$2 != 2ll ) goto label$2452;
+		label$2453:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N2$1;
 		}
-		goto label$2443;
-		label$2448:;
-		if( TMP$1205$2 != 3ll ) goto label$2450;
-		label$2451:;
+		goto label$2447;
+		label$2452:;
+		if( TMP$1206$2 != 3ll ) goto label$2454;
+		label$2455:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N2$1;
 		}
-		goto label$2443;
-		label$2450:;
+		goto label$2447;
+		label$2454:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2442;
+			goto label$2446;
 		}
-		label$2452:;
-		label$2443:;
+		label$2456:;
+		label$2447:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2442;
-	label$2442:;
+	goto label$2446;
+	label$2446:;
 	return fb$result$1;
 }
 
@@ -15896,12 +15913,12 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2453:;
+	label$2457:;
 	{
-		int64 TMP$1206$2;
-		TMP$1206$2 = *X$1;
-		if( TMP$1206$2 != 0ll ) goto label$2456;
-		label$2457:;
+		int64 TMP$1207$2;
+		TMP$1207$2 = *X$1;
+		if( TMP$1207$2 != 0ll ) goto label$2460;
+		label$2461:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -15910,10 +15927,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N2$1;
 		}
-		goto label$2455;
-		label$2456:;
-		if( TMP$1206$2 != 1ll ) goto label$2458;
-		label$2459:;
+		goto label$2459;
+		label$2460:;
+		if( TMP$1207$2 != 1ll ) goto label$2462;
+		label$2463:;
 		{
 			double vr$14 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$14;
@@ -15922,10 +15939,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *N2$1;
 		}
-		goto label$2455;
-		label$2458:;
-		if( TMP$1206$2 != 2ll ) goto label$2460;
-		label$2461:;
+		goto label$2459;
+		label$2462:;
+		if( TMP$1207$2 != 2ll ) goto label$2464;
+		label$2465:;
 		{
 			double vr$26 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$26;
@@ -15934,10 +15951,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N2$1;
 		}
-		goto label$2455;
-		label$2460:;
-		if( TMP$1206$2 != 3ll ) goto label$2462;
-		label$2463:;
+		goto label$2459;
+		label$2464:;
+		if( TMP$1207$2 != 3ll ) goto label$2466;
+		label$2467:;
 		{
 			double vr$38 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$38;
@@ -15946,18 +15963,18 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N2$1;
 		}
-		goto label$2455;
-		label$2462:;
+		goto label$2459;
+		label$2466:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2454;
+			goto label$2458;
 		}
-		label$2464:;
-		label$2455:;
+		label$2468:;
+		label$2459:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2454;
-	label$2454:;
+	goto label$2458;
+	label$2458:;
 	return fb$result$1;
 }
 
@@ -15965,60 +15982,60 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4VEC3ERKd( struct $N4MATH4MAT4E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2465:;
+	label$2469:;
 	{
-		int64 TMP$1207$2;
-		TMP$1207$2 = *X$1;
-		if( TMP$1207$2 != 0ll ) goto label$2468;
-		label$2469:;
+		int64 TMP$1208$2;
+		TMP$1208$2 = *X$1;
+		if( TMP$1208$2 != 0ll ) goto label$2472;
+		label$2473:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N$1;
 		}
-		goto label$2467;
-		label$2468:;
-		if( TMP$1207$2 != 1ll ) goto label$2470;
-		label$2471:;
+		goto label$2471;
+		label$2472:;
+		if( TMP$1208$2 != 1ll ) goto label$2474;
+		label$2475:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *N$1;
 		}
-		goto label$2467;
-		label$2470:;
-		if( TMP$1207$2 != 2ll ) goto label$2472;
-		label$2473:;
+		goto label$2471;
+		label$2474:;
+		if( TMP$1208$2 != 2ll ) goto label$2476;
+		label$2477:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N$1;
 		}
-		goto label$2467;
-		label$2472:;
-		if( TMP$1207$2 != 3ll ) goto label$2474;
-		label$2475:;
+		goto label$2471;
+		label$2476:;
+		if( TMP$1208$2 != 3ll ) goto label$2478;
+		label$2479:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N$1;
 		}
-		goto label$2467;
-		label$2474:;
+		goto label$2471;
+		label$2478:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2466;
+			goto label$2470;
 		}
-		label$2476:;
-		label$2467:;
+		label$2480:;
+		label$2471:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2466;
-	label$2466:;
+	goto label$2470;
+	label$2470:;
 	return fb$result$1;
 }
 
@@ -16026,12 +16043,12 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2477:;
+	label$2481:;
 	{
-		int64 TMP$1208$2;
-		TMP$1208$2 = *X$1;
-		if( TMP$1208$2 != 0ll ) goto label$2480;
-		label$2481:;
+		int64 TMP$1209$2;
+		TMP$1209$2 = *X$1;
+		if( TMP$1209$2 != 0ll ) goto label$2484;
+		label$2485:;
 		{
 			double vr$2 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -16040,10 +16057,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N$1;
 		}
-		goto label$2479;
-		label$2480:;
-		if( TMP$1208$2 != 1ll ) goto label$2482;
-		label$2483:;
+		goto label$2483;
+		label$2484:;
+		if( TMP$1209$2 != 1ll ) goto label$2486;
+		label$2487:;
 		{
 			double vr$14 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = vr$14;
@@ -16052,10 +16069,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *N$1;
 		}
-		goto label$2479;
-		label$2482:;
-		if( TMP$1208$2 != 2ll ) goto label$2484;
-		label$2485:;
+		goto label$2483;
+		label$2486:;
+		if( TMP$1209$2 != 2ll ) goto label$2488;
+		label$2489:;
 		{
 			double vr$26 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = vr$26;
@@ -16064,10 +16081,10 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N$1;
 		}
-		goto label$2479;
-		label$2484:;
-		if( TMP$1208$2 != 3ll ) goto label$2486;
-		label$2487:;
+		goto label$2483;
+		label$2488:;
+		if( TMP$1209$2 != 3ll ) goto label$2490;
+		label$2491:;
 		{
 			double vr$38 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = vr$38;
@@ -16076,18 +16093,18 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N$1;
 		}
-		goto label$2479;
-		label$2486:;
+		goto label$2483;
+		label$2490:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2478;
+			goto label$2482;
 		}
-		label$2488:;
-		label$2479:;
+		label$2492:;
+		label$2483:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2478;
-	label$2478:;
+	goto label$2482;
+	label$2482:;
 	return fb$result$1;
 }
 
@@ -16095,60 +16112,60 @@ boolean _ZN4MATH4MAT49SETCOLUMNERKu7INTEGERRKNS_4VEC4E( struct $N4MATH4MAT4E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2489:;
+	label$2493:;
 	{
-		int64 TMP$1209$2;
-		TMP$1209$2 = *X$1;
-		if( TMP$1209$2 != 0ll ) goto label$2492;
-		label$2493:;
+		int64 TMP$1210$2;
+		TMP$1210$2 = *X$1;
+		if( TMP$1210$2 != 0ll ) goto label$2496;
+		label$2497:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2491;
-		label$2492:;
-		if( TMP$1209$2 != 1ll ) goto label$2494;
-		label$2495:;
+		goto label$2495;
+		label$2496:;
+		if( TMP$1210$2 != 1ll ) goto label$2498;
+		label$2499:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 104ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2491;
-		label$2494:;
-		if( TMP$1209$2 != 2ll ) goto label$2496;
-		label$2497:;
+		goto label$2495;
+		label$2498:;
+		if( TMP$1210$2 != 2ll ) goto label$2500;
+		label$2501:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2491;
-		label$2496:;
-		if( TMP$1209$2 != 3ll ) goto label$2498;
-		label$2499:;
+		goto label$2495;
+		label$2500:;
+		if( TMP$1210$2 != 3ll ) goto label$2502;
+		label$2503:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2491;
-		label$2498:;
+		goto label$2495;
+		label$2502:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2490;
+			goto label$2494;
 		}
-		label$2500:;
-		label$2491:;
+		label$2504:;
+		label$2495:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2490;
-	label$2490:;
+	goto label$2494;
+	label$2494:;
 	return fb$result$1;
 }
 
@@ -16156,60 +16173,60 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKdS5_S5_S5_( struct $N4MATH4MAT4E* THIS
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2501:;
+	label$2505:;
 	{
-		int64 TMP$1210$2;
-		TMP$1210$2 = *Y$1;
-		if( TMP$1210$2 != 0ll ) goto label$2504;
-		label$2505:;
+		int64 TMP$1211$2;
+		TMP$1211$2 = *Y$1;
+		if( TMP$1211$2 != 0ll ) goto label$2508;
+		label$2509:;
 		{
 			*(*(double**)THIS$1) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N4$1;
 		}
-		goto label$2503;
-		label$2504:;
-		if( TMP$1210$2 != 1ll ) goto label$2506;
-		label$2507:;
+		goto label$2507;
+		label$2508:;
+		if( TMP$1211$2 != 1ll ) goto label$2510;
+		label$2511:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N4$1;
 		}
-		goto label$2503;
-		label$2506:;
-		if( TMP$1210$2 != 2ll ) goto label$2508;
-		label$2509:;
+		goto label$2507;
+		label$2510:;
+		if( TMP$1211$2 != 2ll ) goto label$2512;
+		label$2513:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N4$1;
 		}
-		goto label$2503;
-		label$2508:;
-		if( TMP$1210$2 != 3ll ) goto label$2510;
-		label$2511:;
+		goto label$2507;
+		label$2512:;
+		if( TMP$1211$2 != 3ll ) goto label$2514;
+		label$2515:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N2$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N3$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N4$1;
 		}
-		goto label$2503;
-		label$2510:;
+		goto label$2507;
+		label$2514:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2502;
+			goto label$2506;
 		}
-		label$2512:;
-		label$2503:;
+		label$2516:;
+		label$2507:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2502;
-	label$2502:;
+	goto label$2506;
+	label$2506:;
 	return fb$result$1;
 }
 
@@ -16217,60 +16234,60 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4VEC2ERKdS8_( struct $N4MATH4MAT4E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2513:;
+	label$2517:;
 	{
-		int64 TMP$1211$2;
-		TMP$1211$2 = *Y$1;
-		if( TMP$1211$2 != 0ll ) goto label$2516;
-		label$2517:;
+		int64 TMP$1212$2;
+		TMP$1212$2 = *Y$1;
+		if( TMP$1212$2 != 0ll ) goto label$2520;
+		label$2521:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N2$1;
 		}
-		goto label$2515;
-		label$2516:;
-		if( TMP$1211$2 != 1ll ) goto label$2518;
-		label$2519:;
+		goto label$2519;
+		label$2520:;
+		if( TMP$1212$2 != 1ll ) goto label$2522;
+		label$2523:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N2$1;
 		}
-		goto label$2515;
-		label$2518:;
-		if( TMP$1211$2 != 2ll ) goto label$2520;
-		label$2521:;
+		goto label$2519;
+		label$2522:;
+		if( TMP$1212$2 != 2ll ) goto label$2524;
+		label$2525:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N2$1;
 		}
-		goto label$2515;
-		label$2520:;
-		if( TMP$1211$2 != 3ll ) goto label$2522;
-		label$2523:;
+		goto label$2519;
+		label$2524:;
+		if( TMP$1212$2 != 3ll ) goto label$2526;
+		label$2527:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N2$1;
 		}
-		goto label$2515;
-		label$2522:;
+		goto label$2519;
+		label$2526:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2514;
+			goto label$2518;
 		}
-		label$2524:;
-		label$2515:;
+		label$2528:;
+		label$2519:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2514;
-	label$2514:;
+	goto label$2518;
+	label$2518:;
 	return fb$result$1;
 }
 
@@ -16278,12 +16295,12 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT4E*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2525:;
+	label$2529:;
 	{
-		int64 TMP$1212$2;
-		TMP$1212$2 = *Y$1;
-		if( TMP$1212$2 != 0ll ) goto label$2528;
-		label$2529:;
+		int64 TMP$1213$2;
+		TMP$1213$2 = *Y$1;
+		if( TMP$1213$2 != 0ll ) goto label$2532;
+		label$2533:;
 		{
 			double vr$2 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -16292,10 +16309,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N2$1;
 		}
-		goto label$2527;
-		label$2528:;
-		if( TMP$1212$2 != 1ll ) goto label$2530;
-		label$2531:;
+		goto label$2531;
+		label$2532:;
+		if( TMP$1213$2 != 1ll ) goto label$2534;
+		label$2535:;
 		{
 			double vr$14 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
@@ -16304,10 +16321,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N2$1;
 		}
-		goto label$2527;
-		label$2530:;
-		if( TMP$1212$2 != 2ll ) goto label$2532;
-		label$2533:;
+		goto label$2531;
+		label$2534:;
+		if( TMP$1213$2 != 2ll ) goto label$2536;
+		label$2537:;
 		{
 			double vr$26 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = vr$26;
@@ -16316,10 +16333,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N2$1;
 		}
-		goto label$2527;
-		label$2532:;
-		if( TMP$1212$2 != 3ll ) goto label$2534;
-		label$2535:;
+		goto label$2531;
+		label$2536:;
+		if( TMP$1213$2 != 3ll ) goto label$2538;
+		label$2539:;
 		{
 			double vr$38 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = vr$38;
@@ -16328,18 +16345,18 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4PVECERKdS8_( struct $N4MATH4MAT4E*
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *N1$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N2$1;
 		}
-		goto label$2527;
-		label$2534:;
+		goto label$2531;
+		label$2538:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2526;
+			goto label$2530;
 		}
-		label$2536:;
-		label$2527:;
+		label$2540:;
+		label$2531:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2526;
-	label$2526:;
+	goto label$2530;
+	label$2530:;
 	return fb$result$1;
 }
 
@@ -16347,60 +16364,60 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4VEC3ERKd( struct $N4MATH4MAT4E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2537:;
+	label$2541:;
 	{
-		int64 TMP$1213$2;
-		TMP$1213$2 = *Y$1;
-		if( TMP$1213$2 != 0ll ) goto label$2540;
-		label$2541:;
+		int64 TMP$1214$2;
+		TMP$1214$2 = *Y$1;
+		if( TMP$1214$2 != 0ll ) goto label$2544;
+		label$2545:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N$1;
 		}
-		goto label$2539;
-		label$2540:;
-		if( TMP$1213$2 != 1ll ) goto label$2542;
-		label$2543:;
+		goto label$2543;
+		label$2544:;
+		if( TMP$1214$2 != 1ll ) goto label$2546;
+		label$2547:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N$1;
 		}
-		goto label$2539;
-		label$2542:;
-		if( TMP$1213$2 != 2ll ) goto label$2544;
-		label$2545:;
+		goto label$2543;
+		label$2546:;
+		if( TMP$1214$2 != 2ll ) goto label$2548;
+		label$2549:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N$1;
 		}
-		goto label$2539;
-		label$2544:;
-		if( TMP$1213$2 != 3ll ) goto label$2546;
-		label$2547:;
+		goto label$2543;
+		label$2548:;
+		if( TMP$1214$2 != 3ll ) goto label$2550;
+		label$2551:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N$1;
 		}
-		goto label$2539;
-		label$2546:;
+		goto label$2543;
+		label$2550:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2538;
+			goto label$2542;
 		}
-		label$2548:;
-		label$2539:;
+		label$2552:;
+		label$2543:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2538;
-	label$2538:;
+	goto label$2542;
+	label$2542:;
 	return fb$result$1;
 }
 
@@ -16408,12 +16425,12 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E* TH
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2549:;
+	label$2553:;
 	{
-		int64 TMP$1214$2;
-		TMP$1214$2 = *Y$1;
-		if( TMP$1214$2 != 0ll ) goto label$2552;
-		label$2553:;
+		int64 TMP$1215$2;
+		TMP$1215$2 = *Y$1;
+		if( TMP$1215$2 != 0ll ) goto label$2556;
+		label$2557:;
 		{
 			double vr$2 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(*(double**)THIS$1) = vr$2;
@@ -16422,10 +16439,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *N$1;
 		}
-		goto label$2551;
-		label$2552:;
-		if( TMP$1214$2 != 1ll ) goto label$2554;
-		label$2555:;
+		goto label$2555;
+		label$2556:;
+		if( TMP$1215$2 != 1ll ) goto label$2558;
+		label$2559:;
 		{
 			double vr$14 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = vr$14;
@@ -16434,10 +16451,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *N$1;
 		}
-		goto label$2551;
-		label$2554:;
-		if( TMP$1214$2 != 2ll ) goto label$2556;
-		label$2557:;
+		goto label$2555;
+		label$2558:;
+		if( TMP$1215$2 != 2ll ) goto label$2560;
+		label$2561:;
 		{
 			double vr$26 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = vr$26;
@@ -16446,10 +16463,10 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *N$1;
 		}
-		goto label$2551;
-		label$2556:;
-		if( TMP$1214$2 != 3ll ) goto label$2558;
-		label$2559:;
+		goto label$2555;
+		label$2560:;
+		if( TMP$1215$2 != 3ll ) goto label$2562;
+		label$2563:;
 		{
 			double vr$38 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = vr$38;
@@ -16458,18 +16475,18 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4CVECERKd( struct $N4MATH4MAT4E* TH
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *N$1;
 		}
-		goto label$2551;
-		label$2558:;
+		goto label$2555;
+		label$2562:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2550;
+			goto label$2554;
 		}
-		label$2560:;
-		label$2551:;
+		label$2564:;
+		label$2555:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2550;
-	label$2550:;
+	goto label$2554;
+	label$2554:;
 	return fb$result$1;
 }
 
@@ -16477,66 +16494,65 @@ boolean _ZN4MATH4MAT46SETROWERKu7INTEGERRKNS_4VEC4E( struct $N4MATH4MAT4E* THIS$
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2561:;
+	label$2565:;
 	{
-		int64 TMP$1215$2;
-		TMP$1215$2 = *Y$1;
-		if( TMP$1215$2 != 0ll ) goto label$2564;
-		label$2565:;
+		int64 TMP$1216$2;
+		TMP$1216$2 = *Y$1;
+		if( TMP$1216$2 != 0ll ) goto label$2568;
+		label$2569:;
 		{
 			*(*(double**)THIS$1) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 8ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 16ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 24ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2563;
-		label$2564:;
-		if( TMP$1215$2 != 1ll ) goto label$2566;
-		label$2567:;
+		goto label$2567;
+		label$2568:;
+		if( TMP$1216$2 != 1ll ) goto label$2570;
+		label$2571:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 32ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 40ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 48ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 56ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2563;
-		label$2566:;
-		if( TMP$1215$2 != 2ll ) goto label$2568;
-		label$2569:;
+		goto label$2567;
+		label$2570:;
+		if( TMP$1216$2 != 2ll ) goto label$2572;
+		label$2573:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 64ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 72ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 80ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2563;
-		label$2568:;
-		if( TMP$1215$2 != 3ll ) goto label$2570;
-		label$2571:;
+		goto label$2567;
+		label$2572:;
+		if( TMP$1216$2 != 3ll ) goto label$2574;
+		label$2575:;
 		{
 			*(double*)((uint8*)*(double**)THIS$1 + 96ll) = *(double*)V$1;
 			*(double*)((uint8*)*(double**)THIS$1 + 88ll) = *(double*)((uint8*)V$1 + 8ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 112ll) = *(double*)((uint8*)V$1 + 16ll);
 			*(double*)((uint8*)*(double**)THIS$1 + 120ll) = *(double*)((uint8*)V$1 + 24ll);
 		}
-		goto label$2563;
-		label$2570:;
+		goto label$2567;
+		label$2574:;
 		{
 			fb$result$1 = (boolean)0ll;
-			goto label$2562;
+			goto label$2566;
 		}
-		label$2572:;
-		label$2563:;
+		label$2576:;
+		label$2567:;
 	}
 	fb$result$1 = (boolean)1ll;
-	goto label$2562;
-	label$2562:;
+	goto label$2566;
+	label$2566:;
 	return fb$result$1;
 }
 
 FBSTRING* _ZNK4MATH4MAT46TOJSONERKb( struct $N4MATH4MAT4E* THIS$1, boolean* C$1 )
 {
-	FBSTRING TMP$1216$1;
 	FBSTRING TMP$1217$1;
 	FBSTRING TMP$1218$1;
 	FBSTRING TMP$1219$1;
@@ -16601,10 +16617,11 @@ FBSTRING* _ZNK4MATH4MAT46TOJSONERKb( struct $N4MATH4MAT4E* THIS$1, boolean* C$1 
 	FBSTRING TMP$1278$1;
 	FBSTRING TMP$1279$1;
 	FBSTRING TMP$1280$1;
+	FBSTRING TMP$1281$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2573:;
-	if( *C$1 == (boolean)0ll ) goto label$2575;
+	label$2577:;
+	if( *C$1 == (boolean)0ll ) goto label$2579;
 	FBSTRING* vr$4 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 120ll) );
 	FBSTRING* vr$7 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 88ll) );
 	FBSTRING* vr$10 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 56ll) );
@@ -16621,73 +16638,73 @@ FBSTRING* _ZNK4MATH4MAT46TOJSONERKb( struct $N4MATH4MAT4E* THIS$1, boolean* C$1 
 	FBSTRING* vr$43 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 64ll) );
 	FBSTRING* vr$46 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 32ll) );
 	FBSTRING* vr$49 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1217$1, 0, 24ll );
-	FBSTRING* vr$52 = fb_StrConcat( &TMP$1217$1, (void*)"[", 2ll, (void*)vr$49, -1ll );
 	__builtin_memset( &TMP$1218$1, 0, 24ll );
-	FBSTRING* vr$55 = fb_StrConcat( &TMP$1218$1, (void*)vr$52, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$52 = fb_StrConcat( &TMP$1218$1, (void*)"[", 2ll, (void*)vr$49, -1ll );
 	__builtin_memset( &TMP$1219$1, 0, 24ll );
-	FBSTRING* vr$58 = fb_StrConcat( &TMP$1219$1, (void*)vr$55, -1ll, (void*)vr$46, -1ll );
+	FBSTRING* vr$55 = fb_StrConcat( &TMP$1219$1, (void*)vr$52, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1220$1, 0, 24ll );
-	FBSTRING* vr$61 = fb_StrConcat( &TMP$1220$1, (void*)vr$58, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$58 = fb_StrConcat( &TMP$1220$1, (void*)vr$55, -1ll, (void*)vr$46, -1ll );
 	__builtin_memset( &TMP$1221$1, 0, 24ll );
-	FBSTRING* vr$64 = fb_StrConcat( &TMP$1221$1, (void*)vr$61, -1ll, (void*)vr$43, -1ll );
+	FBSTRING* vr$61 = fb_StrConcat( &TMP$1221$1, (void*)vr$58, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1222$1, 0, 24ll );
-	FBSTRING* vr$67 = fb_StrConcat( &TMP$1222$1, (void*)vr$64, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$64 = fb_StrConcat( &TMP$1222$1, (void*)vr$61, -1ll, (void*)vr$43, -1ll );
 	__builtin_memset( &TMP$1223$1, 0, 24ll );
-	FBSTRING* vr$70 = fb_StrConcat( &TMP$1223$1, (void*)vr$67, -1ll, (void*)vr$40, -1ll );
+	FBSTRING* vr$67 = fb_StrConcat( &TMP$1223$1, (void*)vr$64, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1224$1, 0, 24ll );
-	FBSTRING* vr$73 = fb_StrConcat( &TMP$1224$1, (void*)vr$70, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$70 = fb_StrConcat( &TMP$1224$1, (void*)vr$67, -1ll, (void*)vr$40, -1ll );
 	__builtin_memset( &TMP$1225$1, 0, 24ll );
-	FBSTRING* vr$76 = fb_StrConcat( &TMP$1225$1, (void*)vr$73, -1ll, (void*)vr$37, -1ll );
+	FBSTRING* vr$73 = fb_StrConcat( &TMP$1225$1, (void*)vr$70, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1226$1, 0, 24ll );
-	FBSTRING* vr$79 = fb_StrConcat( &TMP$1226$1, (void*)vr$76, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$76 = fb_StrConcat( &TMP$1226$1, (void*)vr$73, -1ll, (void*)vr$37, -1ll );
 	__builtin_memset( &TMP$1227$1, 0, 24ll );
-	FBSTRING* vr$82 = fb_StrConcat( &TMP$1227$1, (void*)vr$79, -1ll, (void*)vr$34, -1ll );
+	FBSTRING* vr$79 = fb_StrConcat( &TMP$1227$1, (void*)vr$76, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1228$1, 0, 24ll );
-	FBSTRING* vr$85 = fb_StrConcat( &TMP$1228$1, (void*)vr$82, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$82 = fb_StrConcat( &TMP$1228$1, (void*)vr$79, -1ll, (void*)vr$34, -1ll );
 	__builtin_memset( &TMP$1229$1, 0, 24ll );
-	FBSTRING* vr$88 = fb_StrConcat( &TMP$1229$1, (void*)vr$85, -1ll, (void*)vr$31, -1ll );
+	FBSTRING* vr$85 = fb_StrConcat( &TMP$1229$1, (void*)vr$82, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1230$1, 0, 24ll );
-	FBSTRING* vr$91 = fb_StrConcat( &TMP$1230$1, (void*)vr$88, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$88 = fb_StrConcat( &TMP$1230$1, (void*)vr$85, -1ll, (void*)vr$31, -1ll );
 	__builtin_memset( &TMP$1231$1, 0, 24ll );
-	FBSTRING* vr$94 = fb_StrConcat( &TMP$1231$1, (void*)vr$91, -1ll, (void*)vr$28, -1ll );
+	FBSTRING* vr$91 = fb_StrConcat( &TMP$1231$1, (void*)vr$88, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1232$1, 0, 24ll );
-	FBSTRING* vr$97 = fb_StrConcat( &TMP$1232$1, (void*)vr$94, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$94 = fb_StrConcat( &TMP$1232$1, (void*)vr$91, -1ll, (void*)vr$28, -1ll );
 	__builtin_memset( &TMP$1233$1, 0, 24ll );
-	FBSTRING* vr$100 = fb_StrConcat( &TMP$1233$1, (void*)vr$97, -1ll, (void*)vr$25, -1ll );
+	FBSTRING* vr$97 = fb_StrConcat( &TMP$1233$1, (void*)vr$94, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1234$1, 0, 24ll );
-	FBSTRING* vr$103 = fb_StrConcat( &TMP$1234$1, (void*)vr$100, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$100 = fb_StrConcat( &TMP$1234$1, (void*)vr$97, -1ll, (void*)vr$25, -1ll );
 	__builtin_memset( &TMP$1235$1, 0, 24ll );
-	FBSTRING* vr$106 = fb_StrConcat( &TMP$1235$1, (void*)vr$103, -1ll, (void*)vr$22, -1ll );
+	FBSTRING* vr$103 = fb_StrConcat( &TMP$1235$1, (void*)vr$100, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1236$1, 0, 24ll );
-	FBSTRING* vr$109 = fb_StrConcat( &TMP$1236$1, (void*)vr$106, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$106 = fb_StrConcat( &TMP$1236$1, (void*)vr$103, -1ll, (void*)vr$22, -1ll );
 	__builtin_memset( &TMP$1237$1, 0, 24ll );
-	FBSTRING* vr$112 = fb_StrConcat( &TMP$1237$1, (void*)vr$109, -1ll, (void*)vr$19, -1ll );
+	FBSTRING* vr$109 = fb_StrConcat( &TMP$1237$1, (void*)vr$106, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1238$1, 0, 24ll );
-	FBSTRING* vr$115 = fb_StrConcat( &TMP$1238$1, (void*)vr$112, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$112 = fb_StrConcat( &TMP$1238$1, (void*)vr$109, -1ll, (void*)vr$19, -1ll );
 	__builtin_memset( &TMP$1239$1, 0, 24ll );
-	FBSTRING* vr$118 = fb_StrConcat( &TMP$1239$1, (void*)vr$115, -1ll, (void*)vr$16, -1ll );
+	FBSTRING* vr$115 = fb_StrConcat( &TMP$1239$1, (void*)vr$112, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1240$1, 0, 24ll );
-	FBSTRING* vr$121 = fb_StrConcat( &TMP$1240$1, (void*)vr$118, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$118 = fb_StrConcat( &TMP$1240$1, (void*)vr$115, -1ll, (void*)vr$16, -1ll );
 	__builtin_memset( &TMP$1241$1, 0, 24ll );
-	FBSTRING* vr$124 = fb_StrConcat( &TMP$1241$1, (void*)vr$121, -1ll, (void*)vr$13, -1ll );
+	FBSTRING* vr$121 = fb_StrConcat( &TMP$1241$1, (void*)vr$118, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1242$1, 0, 24ll );
-	FBSTRING* vr$127 = fb_StrConcat( &TMP$1242$1, (void*)vr$124, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$124 = fb_StrConcat( &TMP$1242$1, (void*)vr$121, -1ll, (void*)vr$13, -1ll );
 	__builtin_memset( &TMP$1243$1, 0, 24ll );
-	FBSTRING* vr$130 = fb_StrConcat( &TMP$1243$1, (void*)vr$127, -1ll, (void*)vr$10, -1ll );
+	FBSTRING* vr$127 = fb_StrConcat( &TMP$1243$1, (void*)vr$124, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1244$1, 0, 24ll );
-	FBSTRING* vr$133 = fb_StrConcat( &TMP$1244$1, (void*)vr$130, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$130 = fb_StrConcat( &TMP$1244$1, (void*)vr$127, -1ll, (void*)vr$10, -1ll );
 	__builtin_memset( &TMP$1245$1, 0, 24ll );
-	FBSTRING* vr$136 = fb_StrConcat( &TMP$1245$1, (void*)vr$133, -1ll, (void*)vr$7, -1ll );
+	FBSTRING* vr$133 = fb_StrConcat( &TMP$1245$1, (void*)vr$130, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1246$1, 0, 24ll );
-	FBSTRING* vr$139 = fb_StrConcat( &TMP$1246$1, (void*)vr$136, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$136 = fb_StrConcat( &TMP$1246$1, (void*)vr$133, -1ll, (void*)vr$7, -1ll );
 	__builtin_memset( &TMP$1247$1, 0, 24ll );
-	FBSTRING* vr$142 = fb_StrConcat( &TMP$1247$1, (void*)vr$139, -1ll, (void*)vr$4, -1ll );
+	FBSTRING* vr$139 = fb_StrConcat( &TMP$1247$1, (void*)vr$136, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1248$1, 0, 24ll );
-	FBSTRING* vr$145 = fb_StrConcat( &TMP$1248$1, (void*)vr$142, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1216$1, -1ll, (void*)vr$145, -1ll, 0 );
-	goto label$2576;
-	label$2575:;
+	FBSTRING* vr$142 = fb_StrConcat( &TMP$1248$1, (void*)vr$139, -1ll, (void*)vr$4, -1ll );
+	__builtin_memset( &TMP$1249$1, 0, 24ll );
+	FBSTRING* vr$145 = fb_StrConcat( &TMP$1249$1, (void*)vr$142, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1217$1, -1ll, (void*)vr$145, -1ll, 0 );
+	goto label$2580;
+	label$2579:;
 	FBSTRING* vr$149 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 120ll) );
 	FBSTRING* vr$152 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 112ll) );
 	FBSTRING* vr$155 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 104ll) );
@@ -16704,83 +16721,83 @@ FBSTRING* _ZNK4MATH4MAT46TOJSONERKb( struct $N4MATH4MAT4E* THIS$1, boolean* C$1 
 	FBSTRING* vr$188 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 16ll) );
 	FBSTRING* vr$191 = fb_DoubleToStr( *(double*)((uint8*)*(double**)THIS$1 + 8ll) );
 	FBSTRING* vr$194 = fb_DoubleToStr( *(double*)*(double**)THIS$1 );
-	__builtin_memset( &TMP$1249$1, 0, 24ll );
-	FBSTRING* vr$197 = fb_StrConcat( &TMP$1249$1, (void*)"[", 2ll, (void*)vr$194, -1ll );
 	__builtin_memset( &TMP$1250$1, 0, 24ll );
-	FBSTRING* vr$200 = fb_StrConcat( &TMP$1250$1, (void*)vr$197, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$197 = fb_StrConcat( &TMP$1250$1, (void*)"[", 2ll, (void*)vr$194, -1ll );
 	__builtin_memset( &TMP$1251$1, 0, 24ll );
-	FBSTRING* vr$203 = fb_StrConcat( &TMP$1251$1, (void*)vr$200, -1ll, (void*)vr$191, -1ll );
+	FBSTRING* vr$200 = fb_StrConcat( &TMP$1251$1, (void*)vr$197, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1252$1, 0, 24ll );
-	FBSTRING* vr$206 = fb_StrConcat( &TMP$1252$1, (void*)vr$203, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$203 = fb_StrConcat( &TMP$1252$1, (void*)vr$200, -1ll, (void*)vr$191, -1ll );
 	__builtin_memset( &TMP$1253$1, 0, 24ll );
-	FBSTRING* vr$209 = fb_StrConcat( &TMP$1253$1, (void*)vr$206, -1ll, (void*)vr$188, -1ll );
+	FBSTRING* vr$206 = fb_StrConcat( &TMP$1253$1, (void*)vr$203, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1254$1, 0, 24ll );
-	FBSTRING* vr$212 = fb_StrConcat( &TMP$1254$1, (void*)vr$209, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$209 = fb_StrConcat( &TMP$1254$1, (void*)vr$206, -1ll, (void*)vr$188, -1ll );
 	__builtin_memset( &TMP$1255$1, 0, 24ll );
-	FBSTRING* vr$215 = fb_StrConcat( &TMP$1255$1, (void*)vr$212, -1ll, (void*)vr$185, -1ll );
+	FBSTRING* vr$212 = fb_StrConcat( &TMP$1255$1, (void*)vr$209, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1256$1, 0, 24ll );
-	FBSTRING* vr$218 = fb_StrConcat( &TMP$1256$1, (void*)vr$215, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$215 = fb_StrConcat( &TMP$1256$1, (void*)vr$212, -1ll, (void*)vr$185, -1ll );
 	__builtin_memset( &TMP$1257$1, 0, 24ll );
-	FBSTRING* vr$221 = fb_StrConcat( &TMP$1257$1, (void*)vr$218, -1ll, (void*)vr$182, -1ll );
+	FBSTRING* vr$218 = fb_StrConcat( &TMP$1257$1, (void*)vr$215, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1258$1, 0, 24ll );
-	FBSTRING* vr$224 = fb_StrConcat( &TMP$1258$1, (void*)vr$221, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$221 = fb_StrConcat( &TMP$1258$1, (void*)vr$218, -1ll, (void*)vr$182, -1ll );
 	__builtin_memset( &TMP$1259$1, 0, 24ll );
-	FBSTRING* vr$227 = fb_StrConcat( &TMP$1259$1, (void*)vr$224, -1ll, (void*)vr$179, -1ll );
+	FBSTRING* vr$224 = fb_StrConcat( &TMP$1259$1, (void*)vr$221, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1260$1, 0, 24ll );
-	FBSTRING* vr$230 = fb_StrConcat( &TMP$1260$1, (void*)vr$227, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$227 = fb_StrConcat( &TMP$1260$1, (void*)vr$224, -1ll, (void*)vr$179, -1ll );
 	__builtin_memset( &TMP$1261$1, 0, 24ll );
-	FBSTRING* vr$233 = fb_StrConcat( &TMP$1261$1, (void*)vr$230, -1ll, (void*)vr$176, -1ll );
+	FBSTRING* vr$230 = fb_StrConcat( &TMP$1261$1, (void*)vr$227, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1262$1, 0, 24ll );
-	FBSTRING* vr$236 = fb_StrConcat( &TMP$1262$1, (void*)vr$233, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$233 = fb_StrConcat( &TMP$1262$1, (void*)vr$230, -1ll, (void*)vr$176, -1ll );
 	__builtin_memset( &TMP$1263$1, 0, 24ll );
-	FBSTRING* vr$239 = fb_StrConcat( &TMP$1263$1, (void*)vr$236, -1ll, (void*)vr$173, -1ll );
+	FBSTRING* vr$236 = fb_StrConcat( &TMP$1263$1, (void*)vr$233, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1264$1, 0, 24ll );
-	FBSTRING* vr$242 = fb_StrConcat( &TMP$1264$1, (void*)vr$239, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$239 = fb_StrConcat( &TMP$1264$1, (void*)vr$236, -1ll, (void*)vr$173, -1ll );
 	__builtin_memset( &TMP$1265$1, 0, 24ll );
-	FBSTRING* vr$245 = fb_StrConcat( &TMP$1265$1, (void*)vr$242, -1ll, (void*)vr$170, -1ll );
+	FBSTRING* vr$242 = fb_StrConcat( &TMP$1265$1, (void*)vr$239, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1266$1, 0, 24ll );
-	FBSTRING* vr$248 = fb_StrConcat( &TMP$1266$1, (void*)vr$245, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$245 = fb_StrConcat( &TMP$1266$1, (void*)vr$242, -1ll, (void*)vr$170, -1ll );
 	__builtin_memset( &TMP$1267$1, 0, 24ll );
-	FBSTRING* vr$251 = fb_StrConcat( &TMP$1267$1, (void*)vr$248, -1ll, (void*)vr$167, -1ll );
+	FBSTRING* vr$248 = fb_StrConcat( &TMP$1267$1, (void*)vr$245, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1268$1, 0, 24ll );
-	FBSTRING* vr$254 = fb_StrConcat( &TMP$1268$1, (void*)vr$251, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$251 = fb_StrConcat( &TMP$1268$1, (void*)vr$248, -1ll, (void*)vr$167, -1ll );
 	__builtin_memset( &TMP$1269$1, 0, 24ll );
-	FBSTRING* vr$257 = fb_StrConcat( &TMP$1269$1, (void*)vr$254, -1ll, (void*)vr$164, -1ll );
+	FBSTRING* vr$254 = fb_StrConcat( &TMP$1269$1, (void*)vr$251, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1270$1, 0, 24ll );
-	FBSTRING* vr$260 = fb_StrConcat( &TMP$1270$1, (void*)vr$257, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$257 = fb_StrConcat( &TMP$1270$1, (void*)vr$254, -1ll, (void*)vr$164, -1ll );
 	__builtin_memset( &TMP$1271$1, 0, 24ll );
-	FBSTRING* vr$263 = fb_StrConcat( &TMP$1271$1, (void*)vr$260, -1ll, (void*)vr$161, -1ll );
+	FBSTRING* vr$260 = fb_StrConcat( &TMP$1271$1, (void*)vr$257, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1272$1, 0, 24ll );
-	FBSTRING* vr$266 = fb_StrConcat( &TMP$1272$1, (void*)vr$263, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$263 = fb_StrConcat( &TMP$1272$1, (void*)vr$260, -1ll, (void*)vr$161, -1ll );
 	__builtin_memset( &TMP$1273$1, 0, 24ll );
-	FBSTRING* vr$269 = fb_StrConcat( &TMP$1273$1, (void*)vr$266, -1ll, (void*)vr$158, -1ll );
+	FBSTRING* vr$266 = fb_StrConcat( &TMP$1273$1, (void*)vr$263, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1274$1, 0, 24ll );
-	FBSTRING* vr$272 = fb_StrConcat( &TMP$1274$1, (void*)vr$269, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$269 = fb_StrConcat( &TMP$1274$1, (void*)vr$266, -1ll, (void*)vr$158, -1ll );
 	__builtin_memset( &TMP$1275$1, 0, 24ll );
-	FBSTRING* vr$275 = fb_StrConcat( &TMP$1275$1, (void*)vr$272, -1ll, (void*)vr$155, -1ll );
+	FBSTRING* vr$272 = fb_StrConcat( &TMP$1275$1, (void*)vr$269, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1276$1, 0, 24ll );
-	FBSTRING* vr$278 = fb_StrConcat( &TMP$1276$1, (void*)vr$275, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$275 = fb_StrConcat( &TMP$1276$1, (void*)vr$272, -1ll, (void*)vr$155, -1ll );
 	__builtin_memset( &TMP$1277$1, 0, 24ll );
-	FBSTRING* vr$281 = fb_StrConcat( &TMP$1277$1, (void*)vr$278, -1ll, (void*)vr$152, -1ll );
+	FBSTRING* vr$278 = fb_StrConcat( &TMP$1277$1, (void*)vr$275, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1278$1, 0, 24ll );
-	FBSTRING* vr$284 = fb_StrConcat( &TMP$1278$1, (void*)vr$281, -1ll, (void*)",", 2ll );
+	FBSTRING* vr$281 = fb_StrConcat( &TMP$1278$1, (void*)vr$278, -1ll, (void*)vr$152, -1ll );
 	__builtin_memset( &TMP$1279$1, 0, 24ll );
-	FBSTRING* vr$287 = fb_StrConcat( &TMP$1279$1, (void*)vr$284, -1ll, (void*)vr$149, -1ll );
+	FBSTRING* vr$284 = fb_StrConcat( &TMP$1279$1, (void*)vr$281, -1ll, (void*)",", 2ll );
 	__builtin_memset( &TMP$1280$1, 0, 24ll );
-	FBSTRING* vr$290 = fb_StrConcat( &TMP$1280$1, (void*)vr$287, -1ll, (void*)"]", 2ll );
-	fb_StrInit( (void*)&TMP$1216$1, -1ll, (void*)vr$290, -1ll, 0 );
-	label$2576:;
-	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1216$1, -1ll, 0 );
-	fb_StrDelete( (FBSTRING*)&TMP$1216$1 );
-	goto label$2574;
-	label$2574:;
+	FBSTRING* vr$287 = fb_StrConcat( &TMP$1280$1, (void*)vr$284, -1ll, (void*)vr$149, -1ll );
+	__builtin_memset( &TMP$1281$1, 0, 24ll );
+	FBSTRING* vr$290 = fb_StrConcat( &TMP$1281$1, (void*)vr$287, -1ll, (void*)"]", 2ll );
+	fb_StrInit( (void*)&TMP$1217$1, -1ll, (void*)vr$290, -1ll, 0 );
+	label$2580:;
+	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)&TMP$1217$1, -1ll, 0 );
+	fb_StrDelete( (FBSTRING*)&TMP$1217$1 );
+	goto label$2578;
+	label$2578:;
 	FBSTRING* vr$296 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$296;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHplERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1281$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
+struct $N4MATH4MAT4E* _ZN4MATHplERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1282$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
 {
-	label$2577:;
+	label$2581:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double* P1$1;
@@ -16808,17 +16825,17 @@ struct $N4MATH4MAT4E* _ZN4MATHplERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1281$
 	*(double*)((uint8*)Q$1 + 104ll) = *(double*)((uint8*)P1$1 + 104ll) + *(double*)((uint8*)P2$1 + 104ll);
 	*(double*)((uint8*)Q$1 + 112ll) = *(double*)((uint8*)P1$1 + 112ll) + *(double*)((uint8*)P2$1 + 112ll);
 	*(double*)((uint8*)Q$1 + 120ll) = *(double*)((uint8*)P1$1 + 120ll) + *(double*)((uint8*)P2$1 + 120ll);
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1281$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1282$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2578;
+	goto label$2582;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2578:;
-	return tmp$1281$1;
+	label$2582:;
+	return tmp$1282$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHmiERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1282$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
+struct $N4MATH4MAT4E* _ZN4MATHmiERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1283$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
 {
-	label$2579:;
+	label$2583:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double* P1$1;
@@ -16846,17 +16863,17 @@ struct $N4MATH4MAT4E* _ZN4MATHmiERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1282$
 	*(double*)((uint8*)Q$1 + 104ll) = *(double*)((uint8*)P1$1 + 104ll) - *(double*)((uint8*)P2$1 + 104ll);
 	*(double*)((uint8*)Q$1 + 112ll) = *(double*)((uint8*)P1$1 + 112ll) - *(double*)((uint8*)P2$1 + 112ll);
 	*(double*)((uint8*)Q$1 + 120ll) = *(double*)((uint8*)P1$1 + 120ll) - *(double*)((uint8*)P2$1 + 120ll);
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1282$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1283$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2580;
+	goto label$2584;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2580:;
-	return tmp$1282$1;
+	label$2584:;
+	return tmp$1283$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1283$1, struct $N4MATH4MAT4E* M$1, double* N$1 )
+struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1284$1, struct $N4MATH4MAT4E* M$1, double* N$1 )
 {
-	label$2581:;
+	label$2585:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double* P$1;
@@ -16881,17 +16898,17 @@ struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1283$
 	*(double*)((uint8*)Q$1 + 104ll) = *(double*)((uint8*)P$1 + 104ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 112ll) = *(double*)((uint8*)P$1 + 112ll) * *N$1;
 	*(double*)((uint8*)Q$1 + 120ll) = *(double*)((uint8*)P$1 + 120ll) * *N$1;
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1283$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1284$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2582;
+	goto label$2586;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2582:;
-	return tmp$1283$1;
+	label$2586:;
+	return tmp$1284$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHmlERKdRKNS_4MAT4E( struct $N4MATH4MAT4E* tmp$1284$1, double* N$1, struct $N4MATH4MAT4E* M$1 )
+struct $N4MATH4MAT4E* _ZN4MATHmlERKdRKNS_4MAT4E( struct $N4MATH4MAT4E* tmp$1285$1, double* N$1, struct $N4MATH4MAT4E* M$1 )
 {
-	label$2583:;
+	label$2587:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double* P$1;
@@ -16916,17 +16933,17 @@ struct $N4MATH4MAT4E* _ZN4MATHmlERKdRKNS_4MAT4E( struct $N4MATH4MAT4E* tmp$1284$
 	*(double*)((uint8*)Q$1 + 104ll) = *N$1 * *(double*)((uint8*)P$1 + 104ll);
 	*(double*)((uint8*)Q$1 + 112ll) = *N$1 * *(double*)((uint8*)P$1 + 112ll);
 	*(double*)((uint8*)Q$1 + 120ll) = *N$1 * *(double*)((uint8*)P$1 + 120ll);
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1284$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1285$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2584;
+	goto label$2588;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2584:;
-	return tmp$1284$1;
+	label$2588:;
+	return tmp$1285$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1285$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
+struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1286$1, struct $N4MATH4MAT4E* M1$1, struct $N4MATH4MAT4E* M2$1 )
 {
-	label$2585:;
+	label$2589:;
 	struct $N4MATH4MAT4E R$1;
 	_ZN4MATH4MAT4C1Ev( &R$1 );
 	double* P1$1;
@@ -16954,39 +16971,39 @@ struct $N4MATH4MAT4E* _ZN4MATHmlERKNS_4MAT4ES2_( struct $N4MATH4MAT4E* tmp$1285$
 	*(double*)((uint8*)Q$1 + 104ll) = (((*(double*)((uint8*)P1$1 + 96ll) * *(double*)P2$1) + (*(double*)((uint8*)P1$1 + 104ll) * *(double*)((uint8*)P2$1 + 32ll))) + (*(double*)((uint8*)P1$1 + 112ll) * *(double*)((uint8*)P2$1 + 64ll))) + (*(double*)((uint8*)P1$1 + 120ll) * *(double*)((uint8*)P2$1 + 96ll));
 	*(double*)((uint8*)Q$1 + 112ll) = (((*(double*)((uint8*)P1$1 + 96ll) * *(double*)P2$1) + (*(double*)((uint8*)P1$1 + 104ll) * *(double*)((uint8*)P2$1 + 32ll))) + (*(double*)((uint8*)P1$1 + 112ll) * *(double*)((uint8*)P2$1 + 64ll))) + (*(double*)((uint8*)P1$1 + 120ll) * *(double*)((uint8*)P2$1 + 96ll));
 	*(double*)((uint8*)Q$1 + 120ll) = (((*(double*)((uint8*)P1$1 + 96ll) * *(double*)P2$1) + (*(double*)((uint8*)P1$1 + 104ll) * *(double*)((uint8*)P2$1 + 32ll))) + (*(double*)((uint8*)P1$1 + 112ll) * *(double*)((uint8*)P2$1 + 64ll))) + (*(double*)((uint8*)P1$1 + 120ll) * *(double*)((uint8*)P2$1 + 96ll));
-	_ZN4MATH4MAT4C1ERKS0_( tmp$1285$1, (struct $N4MATH4MAT4E*)&R$1 );
+	_ZN4MATH4MAT4C1ERKS0_( tmp$1286$1, (struct $N4MATH4MAT4E*)&R$1 );
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	goto label$2586;
+	goto label$2590;
 	_ZN4MATH4MAT4D1Ev( &R$1 );
-	label$2586:;
-	return tmp$1285$1;
+	label$2590:;
+	return tmp$1286$1;
 }
 
 struct $N4MATH4VEC4E _ZN4MATHmlERKNS_4MAT4ERKNS_4VEC4E( struct $N4MATH4MAT4E* M$1, struct $N4MATH4VEC4E* V$1 )
 {
-	double TMP$1287$1;
 	double TMP$1288$1;
 	double TMP$1289$1;
 	double TMP$1290$1;
+	double TMP$1291$1;
 	struct $N4MATH4VEC4E fb$result$1;
-	label$2587:;
+	label$2591:;
 	double* P$1;
 	double* vr$0 = _ZNK4MATH10BASEMATRIX11DATA__get__Ev( (struct $N4MATH10BASEMATRIXE*)M$1 );
 	P$1 = vr$0;
-	TMP$1290$1 = (((*(double*)((uint8*)P$1 + 96ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 104ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 112ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 120ll) * *(double*)((uint8*)V$1 + 24ll));
-	TMP$1289$1 = (((*(double*)((uint8*)P$1 + 64ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 72ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 80ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 88ll) * *(double*)((uint8*)V$1 + 24ll));
-	TMP$1288$1 = (((*(double*)((uint8*)P$1 + 32ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 40ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 48ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 56ll) * *(double*)((uint8*)V$1 + 24ll));
-	TMP$1287$1 = (((*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 16ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 24ll) * *(double*)((uint8*)V$1 + 24ll));
-	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$1287$1, (double*)&TMP$1288$1, (double*)&TMP$1289$1, (double*)&TMP$1290$1 );
-	goto label$2588;
-	label$2588:;
+	TMP$1291$1 = (((*(double*)((uint8*)P$1 + 96ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 104ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 112ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 120ll) * *(double*)((uint8*)V$1 + 24ll));
+	TMP$1290$1 = (((*(double*)((uint8*)P$1 + 64ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 72ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 80ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 88ll) * *(double*)((uint8*)V$1 + 24ll));
+	TMP$1289$1 = (((*(double*)((uint8*)P$1 + 32ll) * *(double*)V$1) + (*(double*)((uint8*)P$1 + 40ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 48ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 56ll) * *(double*)((uint8*)V$1 + 24ll));
+	TMP$1288$1 = (((*(double*)P$1 * *(double*)V$1) + (*(double*)((uint8*)P$1 + 8ll) * *(double*)((uint8*)V$1 + 8ll))) + (*(double*)((uint8*)P$1 + 16ll) * *(double*)((uint8*)V$1 + 16ll))) + (*(double*)((uint8*)P$1 + 24ll) * *(double*)((uint8*)V$1 + 24ll));
+	_ZN4MATH4VEC4C1ERKdS2_S2_S2_( &fb$result$1, (double*)&TMP$1288$1, (double*)&TMP$1289$1, (double*)&TMP$1290$1, (double*)&TMP$1291$1 );
+	goto label$2592;
+	label$2592:;
 	return fb$result$1;
 }
 
-struct $N4MATH4MAT4E* _ZN4MATHdvERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1291$1, struct $N4MATH4MAT4E* M$1, double* N$1 )
+struct $N4MATH4MAT4E* _ZN4MATHdvERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1292$1, struct $N4MATH4MAT4E* M$1, double* N$1 )
 {
-	label$2589:;
-	if( *N$1 == 0x0p+0 ) goto label$2592;
+	label$2593:;
+	if( *N$1 == 0x0p+0 ) goto label$2596;
 	{
 		struct $N4MATH4MAT4E R$2;
 		_ZN4MATH4MAT4C1Ev( &R$2 );
@@ -17012,27 +17029,27 @@ struct $N4MATH4MAT4E* _ZN4MATHdvERKNS_4MAT4ERKd( struct $N4MATH4MAT4E* tmp$1291$
 		*(double*)((uint8*)Q$2 + 104ll) = *(double*)((uint8*)P$2 + 104ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 112ll) = *(double*)((uint8*)P$2 + 112ll) / *N$1;
 		*(double*)((uint8*)Q$2 + 120ll) = *(double*)((uint8*)P$2 + 120ll) / *N$1;
-		_ZN4MATH4MAT4C1ERKS0_( tmp$1291$1, (struct $N4MATH4MAT4E*)&R$2 );
+		_ZN4MATH4MAT4C1ERKS0_( tmp$1292$1, (struct $N4MATH4MAT4E*)&R$2 );
 		_ZN4MATH4MAT4D1Ev( &R$2 );
-		goto label$2590;
+		goto label$2594;
 		_ZN4MATH4MAT4D1Ev( &R$2 );
 	}
-	label$2592:;
-	label$2591:;
-	_ZN4MATH4MAT4C1Ev( tmp$1291$1 );
-	goto label$2590;
-	label$2590:;
-	return tmp$1291$1;
+	label$2596:;
+	label$2595:;
+	_ZN4MATH4MAT4C1Ev( tmp$1292$1 );
+	goto label$2594;
+	label$2594:;
+	return tmp$1292$1;
 }
 
 int64 _ZNK4MATH9BASEARRAY13LENGTH__get__Ev( struct $N4MATH9BASEARRAYE* THIS$1 )
 {
 	int64 fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2593:;
+	label$2597:;
 	fb$result$1 = *(int64*)THIS$1;
-	goto label$2594;
-	label$2594:;
+	goto label$2598;
+	label$2598:;
 	return fb$result$1;
 }
 
@@ -17041,308 +17058,293 @@ void _ZN4MATH5ARRAYC1Ev( struct $N4MATH5ARRAYE* THIS$1 )
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	label$2595:;
-	label$2596:;
+	label$2599:;
+	label$2600:;
 }
 
 void _ZN4MATH5ARRAYC1ERKu7INTEGER( struct $N4MATH5ARRAYE* THIS$1, int64* L$1 )
 {
-	label$2597:;
+	label$2601:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	if( *L$1 <= 0ll ) goto label$2600;
-	{
-		double* TMP$1299$2;
-		*(int64*)THIS$1 = *L$1;
-		void* vr$11 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
-		TMP$1299$2 = (double*)vr$11;
-		if( TMP$1299$2 == (double*)0ull ) goto label$2601;
-		__builtin_memset( TMP$1299$2, 0, *(uint64*)L$1 << (3ull & 63ll) );
-		label$2601:;
-		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1299$2;
-	}
-	label$2600:;
-	label$2599:;
-	label$2598:;
-}
-
-void _ZN4MATH5ARRAYC1ERKu7INTEGERPFvRdERKb( struct $N4MATH5ARRAYE* THIS$1, int64* L$1, tmp$1293 F$1, boolean* R$1 )
-{
-	label$2602:;
-	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
-	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	if( *L$1 <= 0ll ) goto label$2605;
+	if( *L$1 <= 0ll ) goto label$2604;
 	{
 		double* TMP$1300$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
 		TMP$1300$2 = (double*)vr$11;
-		if( TMP$1300$2 == (double*)0ull ) goto label$2606;
+		if( TMP$1300$2 == (double*)0ull ) goto label$2605;
 		__builtin_memset( TMP$1300$2, 0, *(uint64*)L$1 << (3ull & 63ll) );
-		label$2606:;
+		label$2605:;
 		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1300$2;
-		if( F$1 == (tmp$1293)0ull ) goto label$2608;
+	}
+	label$2604:;
+	label$2603:;
+	label$2602:;
+}
+
+void _ZN4MATH5ARRAYC1ERKu7INTEGERPFvRdERKb( struct $N4MATH5ARRAYE* THIS$1, int64* L$1, tmp$1294 F$1, boolean* R$1 )
+{
+	label$2606:;
+	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
+	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
+	if( *L$1 <= 0ll ) goto label$2609;
+	{
+		double* TMP$1301$2;
+		*(int64*)THIS$1 = *L$1;
+		void* vr$11 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
+		TMP$1301$2 = (double*)vr$11;
+		if( TMP$1301$2 == (double*)0ull ) goto label$2610;
+		__builtin_memset( TMP$1301$2, 0, *(uint64*)L$1 << (3ull & 63ll) );
+		label$2610:;
+		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1301$2;
+		if( F$1 == (tmp$1294)0ull ) goto label$2612;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$2610;
+			if( *R$1 == (boolean)0ll ) goto label$2614;
 			{
 				{
 					int64 I$5;
 					I$5 = *L$1 + -1ll;
-					goto label$2611;
-					label$2614:;
-					{
-						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
-					}
-					label$2612:;
-					I$5 = I$5 + -1ll;
-					label$2611:;
-					if( I$5 >= 0ll ) goto label$2614;
-					label$2613:;
-				}
-			}
-			goto label$2609;
-			label$2610:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1301$5;
-					TMP$1301$5 = *L$1 + -1ll;
 					goto label$2615;
 					label$2618:;
 					{
 						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
 					}
 					label$2616:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$2615:;
-					if( I$5 <= TMP$1301$5 ) goto label$2618;
+					if( I$5 >= 0ll ) goto label$2618;
 					label$2617:;
 				}
 			}
-			label$2609:;
-		}
-		label$2608:;
-		label$2607:;
-	}
-	label$2605:;
-	label$2604:;
-	label$2603:;
-}
-
-void _ZN4MATH5ARRAYC1ERKu7INTEGERPFvRdS3_ERKb( struct $N4MATH5ARRAYE* THIS$1, int64* L$1, tmp$1294 F$1, boolean* R$1 )
-{
-	label$2619:;
-	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
-	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	if( *L$1 <= 0ll ) goto label$2622;
-	{
-		double* TMP$1302$2;
-		*(int64*)THIS$1 = *L$1;
-		void* vr$11 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
-		TMP$1302$2 = (double*)vr$11;
-		if( TMP$1302$2 == (double*)0ull ) goto label$2623;
-		__builtin_memset( TMP$1302$2, 0, *(uint64*)L$1 << (3ull & 63ll) );
-		label$2623:;
-		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1302$2;
-		if( F$1 == (tmp$1294)0ull ) goto label$2625;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$2627;
-			{
-				{
-					int64 I$5;
-					I$5 = *L$1 + -1ll;
-					goto label$2628;
-					label$2631:;
-					{
-						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
-					}
-					label$2629:;
-					I$5 = I$5 + -1ll;
-					label$2628:;
-					if( I$5 >= 0ll ) goto label$2631;
-					label$2630:;
-				}
-			}
-			goto label$2626;
-			label$2627:;
+			goto label$2613;
+			label$2614:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1303$5;
-					TMP$1303$5 = *L$1 + -1ll;
+					int64 TMP$1302$5;
+					TMP$1302$5 = *L$1 + -1ll;
+					goto label$2619;
+					label$2622:;
+					{
+						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
+					}
+					label$2620:;
+					I$5 = I$5 + 1ll;
+					label$2619:;
+					if( I$5 <= TMP$1302$5 ) goto label$2622;
+					label$2621:;
+				}
+			}
+			label$2613:;
+		}
+		label$2612:;
+		label$2611:;
+	}
+	label$2609:;
+	label$2608:;
+	label$2607:;
+}
+
+void _ZN4MATH5ARRAYC1ERKu7INTEGERPFvRdS3_ERKb( struct $N4MATH5ARRAYE* THIS$1, int64* L$1, tmp$1295 F$1, boolean* R$1 )
+{
+	label$2623:;
+	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
+	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
+	if( *L$1 <= 0ll ) goto label$2626;
+	{
+		double* TMP$1303$2;
+		*(int64*)THIS$1 = *L$1;
+		void* vr$11 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
+		TMP$1303$2 = (double*)vr$11;
+		if( TMP$1303$2 == (double*)0ull ) goto label$2627;
+		__builtin_memset( TMP$1303$2, 0, *(uint64*)L$1 << (3ull & 63ll) );
+		label$2627:;
+		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1303$2;
+		if( F$1 == (tmp$1295)0ull ) goto label$2629;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$2631;
+			{
+				{
+					int64 I$5;
+					I$5 = *L$1 + -1ll;
 					goto label$2632;
 					label$2635:;
 					{
 						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
 					}
 					label$2633:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$2632:;
-					if( I$5 <= TMP$1303$5 ) goto label$2635;
+					if( I$5 >= 0ll ) goto label$2635;
 					label$2634:;
 				}
 			}
-			label$2626:;
+			goto label$2630;
+			label$2631:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1304$5;
+					TMP$1304$5 = *L$1 + -1ll;
+					goto label$2636;
+					label$2639:;
+					{
+						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
+					}
+					label$2637:;
+					I$5 = I$5 + 1ll;
+					label$2636:;
+					if( I$5 <= TMP$1304$5 ) goto label$2639;
+					label$2638:;
+				}
+			}
+			label$2630:;
 		}
-		label$2625:;
-		label$2624:;
+		label$2629:;
+		label$2628:;
 	}
-	label$2622:;
-	label$2621:;
-	label$2620:;
+	label$2626:;
+	label$2625:;
+	label$2624:;
 }
 
 void _ZN4MATH5ARRAYC1ERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2636:;
+	label$2640:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (double**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	__builtin_memset( (double*)((uint8*)THIS$1 + 16ll), 0, 8ll );
-	if( *(int64*)A$1 == 0ll ) goto label$2639;
+	if( *(int64*)A$1 == 0ll ) goto label$2643;
 	{
-		double* TMP$1304$2;
+		double* TMP$1305$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (3ull & 63ll) );
-		TMP$1304$2 = (double*)vr$11;
-		if( TMP$1304$2 == (double*)0ull ) goto label$2640;
-		__builtin_memset( TMP$1304$2, 0, *(uint64*)A$1 << (3ull & 63ll) );
-		label$2640:;
-		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1304$2;
+		TMP$1305$2 = (double*)vr$11;
+		if( TMP$1305$2 == (double*)0ull ) goto label$2644;
+		__builtin_memset( TMP$1305$2, 0, *(uint64*)A$1 << (3ull & 63ll) );
+		label$2644:;
+		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1305$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1305$3;
-			TMP$1305$3 = *(int64*)A$1 + -1ll;
-			goto label$2641;
-			label$2644:;
+			int64 TMP$1306$3;
+			TMP$1306$3 = *(int64*)A$1 + -1ll;
+			goto label$2645;
+			label$2648:;
 			{
 				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
 			}
-			label$2642:;
+			label$2646:;
 			I$3 = I$3 + 1ll;
-			label$2641:;
-			if( I$3 <= TMP$1305$3 ) goto label$2644;
-			label$2643:;
+			label$2645:;
+			if( I$3 <= TMP$1306$3 ) goto label$2648;
+			label$2647:;
 		}
 	}
-	label$2639:;
-	label$2638:;
-	label$2637:;
+	label$2643:;
+	label$2642:;
+	label$2641:;
 }
 
 void _ZN4MATH5ARRAYD1Ev( struct $N4MATH5ARRAYE* THIS$1 )
 {
-	label$2645:;
-	if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2648;
+	label$2649:;
+	if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2652;
 	{
-		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2649;
+		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2653;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$2649:;
-		label$2648:;
+		label$2653:;
+		label$2652:;
 	}
-	label$2646:;
+	label$2650:;
 }
 
 void _ZN4MATH5ARRAYv27selfcatERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2650:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2653;
+	label$2654:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2657;
 	{
-		double* TMP$1306$2;
+		double* TMP$1307$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		double* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 << (3ull & 63ll) );
-		TMP$1306$2 = (double*)vr$6;
-		if( TMP$1306$2 == (double*)0ull ) goto label$2654;
-		__builtin_memset( TMP$1306$2, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
-		label$2654:;
-		Q$2 = TMP$1306$2;
+		TMP$1307$2 = (double*)vr$6;
+		if( TMP$1307$2 == (double*)0ull ) goto label$2658;
+		__builtin_memset( TMP$1307$2, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
+		label$2658:;
+		Q$2 = TMP$1307$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1307$3;
-			TMP$1307$3 = *(int64*)THIS$1 + -2ll;
-			goto label$2655;
-			label$2658:;
+			int64 TMP$1308$3;
+			TMP$1308$3 = *(int64*)THIS$1 + -2ll;
+			goto label$2659;
+			label$2662:;
 			{
 				*(double*)((uint8*)Q$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll)));
 			}
-			label$2656:;
+			label$2660:;
 			I$3 = I$3 + 1ll;
-			label$2655:;
-			if( I$3 <= TMP$1307$3 ) goto label$2658;
-			label$2657:;
+			label$2659:;
+			if( I$3 <= TMP$1308$3 ) goto label$2662;
+			label$2661:;
 		}
 		*(double*)((uint8*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (3ll & 63ll))) + -8ll) = *N$1;
-		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2659;
+		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2663;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$2659:;
+		label$2663:;
 		*(double**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$2652;
-	label$2653:;
+	goto label$2656;
+	label$2657:;
 	{
-		double* TMP$1308$2;
+		double* TMP$1309$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$26 = malloc( 8ull );
-		TMP$1308$2 = (double*)vr$26;
-		if( TMP$1308$2 == (double*)0ull ) goto label$2660;
-		__builtin_memset( TMP$1308$2, 0, 8ull );
-		label$2660:;
-		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1308$2;
+		TMP$1309$2 = (double*)vr$26;
+		if( TMP$1309$2 == (double*)0ull ) goto label$2664;
+		__builtin_memset( TMP$1309$2, 0, 8ull );
+		label$2664:;
+		*(double**)((uint8*)THIS$1 + 8ll) = TMP$1309$2;
 		*(*(double**)((uint8*)THIS$1 + 8ll)) = *N$1;
 	}
-	label$2652:;
-	label$2651:;
+	label$2656:;
+	label$2655:;
 }
 
 void _ZN4MATH5ARRAYv27selfcatERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2661:;
-	if( THIS$1 == A$1 ) goto label$2664;
+	label$2665:;
+	if( THIS$1 == A$1 ) goto label$2668;
 	{
-		if( *(int64*)A$1 == 0ll ) goto label$2666;
+		if( *(int64*)A$1 == 0ll ) goto label$2670;
 		{
-			if( *(int64*)THIS$1 == 0ll ) goto label$2668;
+			if( *(int64*)THIS$1 == 0ll ) goto label$2672;
 			{
-				double* TMP$1309$4;
+				double* TMP$1310$4;
 				double* Q$4;
 				void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (3ull & 63ll) );
-				TMP$1309$4 = (double*)vr$6;
-				if( TMP$1309$4 == (double*)0ull ) goto label$2669;
-				__builtin_memset( TMP$1309$4, 0, (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (3ull & 63ll) );
-				label$2669:;
-				Q$4 = TMP$1309$4;
+				TMP$1310$4 = (double*)vr$6;
+				if( TMP$1310$4 == (double*)0ull ) goto label$2673;
+				__builtin_memset( TMP$1310$4, 0, (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (3ull & 63ll) );
+				label$2673:;
+				Q$4 = TMP$1310$4;
 				int64 I$4;
 				__builtin_memset( &I$4, 0, 8ll );
 				{
 					I$4 = 0ll;
-					int64 TMP$1310$5;
-					TMP$1310$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2670;
-					label$2673:;
-					{
-						*(double*)((uint8*)Q$4 + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
-					}
-					label$2671:;
-					I$4 = I$4 + 1ll;
-					label$2670:;
-					if( I$4 <= TMP$1310$5 ) goto label$2673;
-					label$2672:;
-				}
-				{
-					I$4 = 0ll;
 					int64 TMP$1311$5;
-					TMP$1311$5 = *(int64*)A$1 + -1ll;
+					TMP$1311$5 = *(int64*)THIS$1 + -1ll;
 					goto label$2674;
 					label$2677:;
 					{
-						*(double*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll)));
+						*(double*)((uint8*)Q$4 + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
 					}
 					label$2675:;
 					I$4 = I$4 + 1ll;
@@ -17350,294 +17352,289 @@ void _ZN4MATH5ARRAYv27selfcatERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MA
 					if( I$4 <= TMP$1311$5 ) goto label$2677;
 					label$2676:;
 				}
+				{
+					I$4 = 0ll;
+					int64 TMP$1312$5;
+					TMP$1312$5 = *(int64*)A$1 + -1ll;
+					goto label$2678;
+					label$2681:;
+					{
+						*(double*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll)));
+					}
+					label$2679:;
+					I$4 = I$4 + 1ll;
+					label$2678:;
+					if( I$4 <= TMP$1312$5 ) goto label$2681;
+					label$2680:;
+				}
 				*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-				if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2678;
+				if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2682;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$2678:;
+				label$2682:;
 				*(double**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			goto label$2667;
-			label$2668:;
+			goto label$2671;
+			label$2672:;
 			{
-				double* TMP$1312$4;
+				double* TMP$1313$4;
 				*(int64*)THIS$1 = *(int64*)A$1;
 				void* vr$41 = malloc( *(uint64*)THIS$1 << (3ull & 63ll) );
-				TMP$1312$4 = (double*)vr$41;
-				if( TMP$1312$4 == (double*)0ull ) goto label$2679;
-				__builtin_memset( TMP$1312$4, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
-				label$2679:;
-				*(double**)((uint8*)THIS$1 + 8ll) = TMP$1312$4;
+				TMP$1313$4 = (double*)vr$41;
+				if( TMP$1313$4 == (double*)0ull ) goto label$2683;
+				__builtin_memset( TMP$1313$4, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
+				label$2683:;
+				*(double**)((uint8*)THIS$1 + 8ll) = TMP$1313$4;
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1313$5;
-					TMP$1313$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2680;
-					label$2683:;
+					int64 TMP$1314$5;
+					TMP$1314$5 = *(int64*)THIS$1 + -1ll;
+					goto label$2684;
+					label$2687:;
 					{
 						*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$5 << (3ll & 63ll)));
 					}
-					label$2681:;
+					label$2685:;
 					I$5 = I$5 + 1ll;
-					label$2680:;
-					if( I$5 <= TMP$1313$5 ) goto label$2683;
-					label$2682:;
+					label$2684:;
+					if( I$5 <= TMP$1314$5 ) goto label$2687;
+					label$2686:;
 				}
 			}
-			label$2667:;
+			label$2671:;
 		}
-		label$2666:;
-		label$2665:;
+		label$2670:;
+		label$2669:;
 	}
-	goto label$2663;
-	label$2664:;
+	goto label$2667;
+	label$2668:;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$2685;
+		if( *(int64*)THIS$1 == 0ll ) goto label$2689;
 		{
-			double* TMP$1314$3;
+			double* TMP$1315$3;
 			double* Q$3;
 			void* vr$58 = malloc( (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) << (3ull & 63ll) );
-			TMP$1314$3 = (double*)vr$58;
-			if( TMP$1314$3 == (double*)0ull ) goto label$2686;
-			__builtin_memset( TMP$1314$3, 0, (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) << (3ull & 63ll) );
-			label$2686:;
-			Q$3 = TMP$1314$3;
+			TMP$1315$3 = (double*)vr$58;
+			if( TMP$1315$3 == (double*)0ull ) goto label$2690;
+			__builtin_memset( TMP$1315$3, 0, (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) << (3ull & 63ll) );
+			label$2690:;
+			Q$3 = TMP$1315$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1315$4;
-				TMP$1315$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2687;
-				label$2690:;
+				int64 TMP$1316$4;
+				TMP$1316$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2691;
+				label$2694:;
 				{
 					*(double*)((uint8*)Q$3 + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
 					*(double*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$4) << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
 				}
-				label$2688:;
+				label$2692:;
 				I$4 = I$4 + 1ll;
-				label$2687:;
-				if( I$4 <= TMP$1315$4 ) goto label$2690;
-				label$2689:;
+				label$2691:;
+				if( I$4 <= TMP$1316$4 ) goto label$2694;
+				label$2693:;
 			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 << (1ll & 63ll);
-			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2691;
+			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2695;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$2691:;
+			label$2695:;
 			*(double**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		label$2685:;
-		label$2684:;
+		label$2689:;
+		label$2688:;
 	}
-	label$2663:;
-	label$2662:;
+	label$2667:;
+	label$2666:;
 }
 
 double* _ZN4MATH5ARRAYixERKu7INTEGER( struct $N4MATH5ARRAYE* THIS$1, int64* I$1 )
 {
 	double* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2692:;
-	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$2695;
+	label$2696:;
+	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$2699;
 	{
 		fb$result$1 = (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (*I$1 << (3ll & 63ll)));
-		goto label$2693;
-		label$2695:;
+		goto label$2697;
+		label$2699:;
 	}
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	fb$result$1 = (double*)((uint8*)THIS$1 + 16ll);
-	goto label$2693;
-	label$2693:;
+	goto label$2697;
+	label$2697:;
 	return fb$result$1;
 }
 
 void _ZN4MATH5ARRAYpLERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2696:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2699;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1316$3;
-			TMP$1316$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2700;
-			label$2703:;
-			{
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) + *N$1;
-			}
-			label$2701:;
-			I$3 = I$3 + 1ll;
-			label$2700:;
-			if( I$3 <= TMP$1316$3 ) goto label$2703;
-			label$2702:;
-		}
-	}
-	label$2699:;
-	label$2698:;
-	label$2697:;
-}
-
-void _ZN4MATH5ARRAYpLERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
-{
-	label$2704:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2707;
+	label$2700:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2703;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1317$3;
 			TMP$1317$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2708;
-			label$2711:;
+			goto label$2704;
+			label$2707:;
 			{
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) + *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) + *N$1;
 			}
-			label$2709:;
+			label$2705:;
 			I$3 = I$3 + 1ll;
-			label$2708:;
-			if( I$3 <= TMP$1317$3 ) goto label$2711;
-			label$2710:;
+			label$2704:;
+			if( I$3 <= TMP$1317$3 ) goto label$2707;
+			label$2706:;
 		}
 	}
-	label$2707:;
-	label$2706:;
-	label$2705:;
+	label$2703:;
+	label$2702:;
+	label$2701:;
 }
 
-void _ZN4MATH5ARRAYmIERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
+void _ZN4MATH5ARRAYpLERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2712:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2715;
+	label$2708:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2711;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1318$3;
 			TMP$1318$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2716;
-			label$2719:;
+			goto label$2712;
+			label$2715:;
 			{
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) - *N$1;
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) + *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
 			}
-			label$2717:;
+			label$2713:;
 			I$3 = I$3 + 1ll;
-			label$2716:;
-			if( I$3 <= TMP$1318$3 ) goto label$2719;
-			label$2718:;
+			label$2712:;
+			if( I$3 <= TMP$1318$3 ) goto label$2715;
+			label$2714:;
 		}
 	}
-	label$2715:;
-	label$2714:;
-	label$2713:;
+	label$2711:;
+	label$2710:;
+	label$2709:;
 }
 
-void _ZN4MATH5ARRAYmIERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
+void _ZN4MATH5ARRAYmIERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2720:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2723;
+	label$2716:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2719;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1319$3;
 			TMP$1319$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2724;
-			label$2727:;
+			goto label$2720;
+			label$2723:;
 			{
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) - *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) - *N$1;
 			}
-			label$2725:;
+			label$2721:;
 			I$3 = I$3 + 1ll;
-			label$2724:;
-			if( I$3 <= TMP$1319$3 ) goto label$2727;
-			label$2726:;
+			label$2720:;
+			if( I$3 <= TMP$1319$3 ) goto label$2723;
+			label$2722:;
 		}
 	}
-	label$2723:;
-	label$2722:;
-	label$2721:;
+	label$2719:;
+	label$2718:;
+	label$2717:;
 }
 
-void _ZN4MATH5ARRAYmLERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
+void _ZN4MATH5ARRAYmIERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2728:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2731;
+	label$2724:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2727;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1320$3;
 			TMP$1320$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2732;
-			label$2735:;
+			goto label$2728;
+			label$2731:;
 			{
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) * *N$1;
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) - *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
 			}
-			label$2733:;
+			label$2729:;
 			I$3 = I$3 + 1ll;
-			label$2732:;
-			if( I$3 <= TMP$1320$3 ) goto label$2735;
-			label$2734:;
+			label$2728:;
+			if( I$3 <= TMP$1320$3 ) goto label$2731;
+			label$2730:;
 		}
 	}
-	label$2731:;
-	label$2730:;
-	label$2729:;
+	label$2727:;
+	label$2726:;
+	label$2725:;
 }
 
-void _ZN4MATH5ARRAYmLERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
+void _ZN4MATH5ARRAYmLERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2736:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2739;
+	label$2732:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2735;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1321$3;
 			TMP$1321$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2740;
-			label$2743:;
+			goto label$2736;
+			label$2739:;
+			{
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) * *N$1;
+			}
+			label$2737:;
+			I$3 = I$3 + 1ll;
+			label$2736:;
+			if( I$3 <= TMP$1321$3 ) goto label$2739;
+			label$2738:;
+		}
+	}
+	label$2735:;
+	label$2734:;
+	label$2733:;
+}
+
+void _ZN4MATH5ARRAYmLERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
+{
+	label$2740:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2743;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1322$3;
+			TMP$1322$3 = *(int64*)THIS$1 + -1ll;
+			goto label$2744;
+			label$2747:;
 			{
 				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) * *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
 			}
-			label$2741:;
+			label$2745:;
 			I$3 = I$3 + 1ll;
-			label$2740:;
-			if( I$3 <= TMP$1321$3 ) goto label$2743;
-			label$2742:;
+			label$2744:;
+			if( I$3 <= TMP$1322$3 ) goto label$2747;
+			label$2746:;
 		}
 	}
-	label$2739:;
-	label$2738:;
-	label$2737:;
+	label$2743:;
+	label$2742:;
+	label$2741:;
 }
 
 void _ZN4MATH5ARRAYdVERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2744:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2747;
+	label$2748:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2751;
 	{
-		if( *N$1 == 0x0p+0 ) goto label$2749;
-		{
-			{
-				int64 I$4;
-				I$4 = 0ll;
-				int64 TMP$1322$4;
-				TMP$1322$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2750;
-				label$2753:;
-				{
-					*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) / *N$1;
-				}
-				label$2751:;
-				I$4 = I$4 + 1ll;
-				label$2750:;
-				if( I$4 <= TMP$1322$4 ) goto label$2753;
-				label$2752:;
-			}
-		}
-		goto label$2748;
-		label$2749:;
+		if( *N$1 == 0x0p+0 ) goto label$2753;
 		{
 			{
 				int64 I$4;
@@ -17647,7 +17644,7 @@ void _ZN4MATH5ARRAYdVERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 				goto label$2754;
 				label$2757:;
 				{
-					*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) = 0x0p+0;
+					*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) / *N$1;
 				}
 				label$2755:;
 				I$4 = I$4 + 1ll;
@@ -17656,222 +17653,242 @@ void _ZN4MATH5ARRAYdVERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 				label$2756:;
 			}
 		}
-		label$2748:;
+		goto label$2752;
+		label$2753:;
+		{
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1324$4;
+				TMP$1324$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2758;
+				label$2761:;
+				{
+					*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) = 0x0p+0;
+				}
+				label$2759:;
+				I$4 = I$4 + 1ll;
+				label$2758:;
+				if( I$4 <= TMP$1324$4 ) goto label$2761;
+				label$2760:;
+			}
+		}
+		label$2752:;
 	}
-	label$2747:;
-	label$2746:;
-	label$2745:;
+	label$2751:;
+	label$2750:;
+	label$2749:;
 }
 
 void _ZN4MATH5ARRAYdVERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2758:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2761;
+	label$2762:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2765;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1324$3;
-			TMP$1324$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2762;
-			label$2765:;
+			int64 TMP$1325$3;
+			TMP$1325$3 = *(int64*)THIS$1 + -1ll;
+			goto label$2766;
+			label$2769:;
 			{
-				double TMP$1325$4;
-				if( *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$2766;
-				TMP$1325$4 = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) / *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
-				goto label$2767;
-				label$2766:;
-				TMP$1325$4 = 0x0p+0;
-				label$2767:;
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = TMP$1325$4;
+				double TMP$1326$4;
+				if( *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$2770;
+				TMP$1326$4 = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) / *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll)));
+				goto label$2771;
+				label$2770:;
+				TMP$1326$4 = 0x0p+0;
+				label$2771:;
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = TMP$1326$4;
 			}
-			label$2763:;
+			label$2767:;
 			I$3 = I$3 + 1ll;
-			label$2762:;
-			if( I$3 <= TMP$1324$3 ) goto label$2765;
-			label$2764:;
+			label$2766:;
+			if( I$3 <= TMP$1325$3 ) goto label$2769;
+			label$2768:;
 		}
 	}
-	label$2761:;
-	label$2760:;
-	label$2759:;
+	label$2765:;
+	label$2764:;
+	label$2763:;
 }
 
 void _ZN4MATH5ARRAYv27selfpowERKd( struct $N4MATH5ARRAYE* THIS$1, double* N$1 )
 {
-	label$2768:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2771;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1326$3;
-			TMP$1326$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2772;
-			label$2775:;
-			{
-				double vr$7 = pow( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))), *N$1 );
-				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = vr$7;
-			}
-			label$2773:;
-			I$3 = I$3 + 1ll;
-			label$2772:;
-			if( I$3 <= TMP$1326$3 ) goto label$2775;
-			label$2774:;
-		}
-	}
-	label$2771:;
-	label$2770:;
-	label$2769:;
-}
-
-void _ZN4MATH5ARRAYv27selfpowERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
-{
-	label$2776:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2779;
+	label$2772:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2775;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1327$3;
 			TMP$1327$3 = *(int64*)THIS$1 + -1ll;
-			goto label$2780;
-			label$2783:;
+			goto label$2776;
+			label$2779:;
+			{
+				double vr$7 = pow( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))), *N$1 );
+				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = vr$7;
+			}
+			label$2777:;
+			I$3 = I$3 + 1ll;
+			label$2776:;
+			if( I$3 <= TMP$1327$3 ) goto label$2779;
+			label$2778:;
+		}
+	}
+	label$2775:;
+	label$2774:;
+	label$2773:;
+}
+
+void _ZN4MATH5ARRAYv27selfpowERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
+{
+	label$2780:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$2783;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1328$3;
+			TMP$1328$3 = *(int64*)THIS$1 + -1ll;
+			goto label$2784;
+			label$2787:;
 			{
 				double vr$14 = pow( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))), *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$3 << (3ll & 63ll))) );
 				*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$3 << (3ll & 63ll))) = vr$14;
 			}
-			label$2781:;
+			label$2785:;
 			I$3 = I$3 + 1ll;
-			label$2780:;
-			if( I$3 <= TMP$1327$3 ) goto label$2783;
-			label$2782:;
+			label$2784:;
+			if( I$3 <= TMP$1328$3 ) goto label$2787;
+			label$2786:;
 		}
 	}
-	label$2779:;
-	label$2778:;
-	label$2777:;
+	label$2783:;
+	label$2782:;
+	label$2781:;
 }
 
 FBSTRING* _ZNK4MATH5ARRAYcv8FBSTRINGEv( struct $N4MATH5ARRAYE* THIS$1 )
 {
-	FBSTRING TMP$1329$1;
 	FBSTRING TMP$1330$1;
+	FBSTRING TMP$1331$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2784:;
+	label$2788:;
 	FBSTRING* vr$2 = fb_LongintToStr( *(int64*)THIS$1 );
-	__builtin_memset( &TMP$1329$1, 0, 24ll );
-	FBSTRING* vr$5 = fb_StrConcat( &TMP$1329$1, (void*)"<math.array>{ length : ", 24ll, (void*)vr$2, -1ll );
 	__builtin_memset( &TMP$1330$1, 0, 24ll );
-	FBSTRING* vr$8 = fb_StrConcat( &TMP$1330$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$5 = fb_StrConcat( &TMP$1330$1, (void*)"<math.array>{ length : ", 24ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$1331$1, 0, 24ll );
+	FBSTRING* vr$8 = fb_StrConcat( &TMP$1331$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$8, -1ll, 0 );
-	goto label$2785;
-	label$2785:;
+	goto label$2789;
+	label$2789:;
 	FBSTRING* vr$11 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$11;
 }
 
 void _ZN4MATH5ARRAYaSERKS0_( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$2786:;
-	if( THIS$1 == A$1 ) goto label$2789;
+	label$2790:;
+	if( THIS$1 == A$1 ) goto label$2793;
 	{
 		*(int64*)THIS$1 = 0ll;
-		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2791;
+		if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2795;
 		{
-			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2792;
+			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2796;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$2792:;
+			label$2796:;
 			*(double**)((uint8*)THIS$1 + 8ll) = (double*)0ull;
 		}
-		label$2791:;
-		label$2790:;
-		if( *(int64*)A$1 == 0ll ) goto label$2794;
+		label$2795:;
+		label$2794:;
+		if( *(int64*)A$1 == 0ll ) goto label$2798;
 		{
-			double* TMP$1331$3;
+			double* TMP$1332$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$10 = malloc( *(uint64*)A$1 << (3ull & 63ll) );
-			TMP$1331$3 = (double*)vr$10;
-			if( TMP$1331$3 == (double*)0ull ) goto label$2795;
-			__builtin_memset( TMP$1331$3, 0, *(uint64*)A$1 << (3ull & 63ll) );
-			label$2795:;
-			*(double**)((uint8*)THIS$1 + 8ll) = TMP$1331$3;
+			TMP$1332$3 = (double*)vr$10;
+			if( TMP$1332$3 == (double*)0ull ) goto label$2799;
+			__builtin_memset( TMP$1332$3, 0, *(uint64*)A$1 << (3ull & 63ll) );
+			label$2799:;
+			*(double**)((uint8*)THIS$1 + 8ll) = TMP$1332$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1332$4;
-				TMP$1332$4 = *(int64*)A$1 + -1ll;
-				goto label$2796;
-				label$2799:;
+				int64 TMP$1333$4;
+				TMP$1333$4 = *(int64*)A$1 + -1ll;
+				goto label$2800;
+				label$2803:;
 				{
 					*(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll)));
 				}
-				label$2797:;
+				label$2801:;
 				I$4 = I$4 + 1ll;
-				label$2796:;
-				if( I$4 <= TMP$1332$4 ) goto label$2799;
-				label$2798:;
+				label$2800:;
+				if( I$4 <= TMP$1333$4 ) goto label$2803;
+				label$2802:;
 			}
 		}
-		label$2794:;
-		label$2793:;
+		label$2798:;
+		label$2797:;
 	}
-	label$2789:;
-	label$2788:;
-	label$2787:;
+	label$2793:;
+	label$2792:;
+	label$2791:;
 }
 
 double _ZNK4MATH5ARRAY10AVG__get__Ev( struct $N4MATH5ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2800:;
+	label$2804:;
 	{
-		int64 TMP$1333$2;
-		TMP$1333$2 = *(int64*)THIS$1;
-		if( TMP$1333$2 != 0ll ) goto label$2803;
-		label$2804:;
+		int64 TMP$1334$2;
+		TMP$1334$2 = *(int64*)THIS$1;
+		if( TMP$1334$2 != 0ll ) goto label$2807;
+		label$2808:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$2801;
+			goto label$2805;
 		}
-		goto label$2802;
-		label$2803:;
-		if( TMP$1333$2 != 1ll ) goto label$2805;
-		label$2806:;
+		goto label$2806;
+		label$2807:;
+		if( TMP$1334$2 != 1ll ) goto label$2809;
+		label$2810:;
 		{
 			fb$result$1 = *(double*)*(double**)((uint8*)THIS$1 + 8ll);
-			goto label$2801;
+			goto label$2805;
 		}
-		goto label$2802;
-		label$2805:;
+		goto label$2806;
+		label$2809:;
 		{
 			double R$3;
 			__builtin_memset( &R$3, 0, 8ll );
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1334$4;
-				TMP$1334$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2808;
-				label$2811:;
+				int64 TMP$1335$4;
+				TMP$1335$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2812;
+				label$2815:;
 				{
 					R$3 = R$3 + *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
 				}
-				label$2809:;
+				label$2813:;
 				I$4 = I$4 + 1ll;
-				label$2808:;
-				if( I$4 <= TMP$1334$4 ) goto label$2811;
-				label$2810:;
+				label$2812:;
+				if( I$4 <= TMP$1335$4 ) goto label$2815;
+				label$2814:;
 			}
 			fb$result$1 = R$3 / (double)*(int64*)THIS$1;
-			goto label$2801;
+			goto label$2805;
 		}
-		label$2807:;
-		label$2802:;
+		label$2811:;
+		label$2806:;
 	}
-	label$2801:;
+	label$2805:;
 	return fb$result$1;
 }
 
@@ -17879,150 +17896,150 @@ double* _ZNK4MATH5ARRAY11DATA__get__Ev( struct $N4MATH5ARRAYE* THIS$1 )
 {
 	double* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2812:;
+	label$2816:;
 	fb$result$1 = *(double**)((uint8*)THIS$1 + 8ll);
-	goto label$2813;
-	label$2813:;
+	goto label$2817;
+	label$2817:;
 	return fb$result$1;
 }
 
 void _ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( struct $N4MATH5ARRAYE* THIS$1, int64* L$1 )
 {
-	label$2814:;
-	if( *L$1 <= 0ll ) goto label$2817;
+	label$2818:;
+	if( *L$1 <= 0ll ) goto label$2821;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$2819;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$2823;
 		{
-			if( *L$1 == *(int64*)THIS$1 ) goto label$2821;
+			if( *L$1 == *(int64*)THIS$1 ) goto label$2825;
 			{
-				double* TMP$1335$4;
+				double* TMP$1336$4;
 				double* Q$4;
 				void* vr$6 = malloc( *(uint64*)L$1 << (3ull & 63ll) );
-				TMP$1335$4 = (double*)vr$6;
-				if( TMP$1335$4 == (double*)0ull ) goto label$2822;
-				__builtin_memset( TMP$1335$4, 0, *(uint64*)L$1 << (3ull & 63ll) );
-				label$2822:;
-				Q$4 = TMP$1335$4;
+				TMP$1336$4 = (double*)vr$6;
+				if( TMP$1336$4 == (double*)0ull ) goto label$2826;
+				__builtin_memset( TMP$1336$4, 0, *(uint64*)L$1 << (3ull & 63ll) );
+				label$2826:;
+				Q$4 = TMP$1336$4;
 				{
-					int64 TMP$1336$5;
+					int64 TMP$1337$5;
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1337$5;
-					if( *L$1 >= *(int64*)THIS$1 ) goto label$2823;
-					TMP$1336$5 = *L$1;
-					goto label$2834;
-					label$2823:;
-					TMP$1336$5 = *(int64*)THIS$1;
-					label$2834:;
-					TMP$1337$5 = TMP$1336$5 + -1ll;
-					goto label$2824;
+					int64 TMP$1338$5;
+					if( *L$1 >= *(int64*)THIS$1 ) goto label$2827;
+					TMP$1337$5 = *L$1;
+					goto label$2838;
 					label$2827:;
+					TMP$1337$5 = *(int64*)THIS$1;
+					label$2838:;
+					TMP$1338$5 = TMP$1337$5 + -1ll;
+					goto label$2828;
+					label$2831:;
 					{
 						*(double*)((uint8*)Q$4 + (I$5 << (3ll & 63ll))) = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll)));
 					}
-					label$2825:;
+					label$2829:;
 					I$5 = I$5 + 1ll;
-					label$2824:;
-					if( I$5 <= TMP$1337$5 ) goto label$2827;
-					label$2826:;
+					label$2828:;
+					if( I$5 <= TMP$1338$5 ) goto label$2831;
+					label$2830:;
 				}
 				*(int64*)THIS$1 = *L$1;
-				if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2828;
+				if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2832;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$2828:;
+				label$2832:;
 				*(double**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			label$2821:;
-			label$2820:;
+			label$2825:;
+			label$2824:;
 		}
-		goto label$2818;
-		label$2819:;
+		goto label$2822;
+		label$2823:;
 		{
-			double* TMP$1338$3;
+			double* TMP$1339$3;
 			*(int64*)THIS$1 = *L$1;
 			void* vr$29 = malloc( *(uint64*)THIS$1 << (3ull & 63ll) );
-			TMP$1338$3 = (double*)vr$29;
-			if( TMP$1338$3 == (double*)0ull ) goto label$2829;
-			__builtin_memset( TMP$1338$3, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
-			label$2829:;
-			*(double**)((uint8*)THIS$1 + 8ll) = TMP$1338$3;
+			TMP$1339$3 = (double*)vr$29;
+			if( TMP$1339$3 == (double*)0ull ) goto label$2833;
+			__builtin_memset( TMP$1339$3, 0, *(uint64*)THIS$1 << (3ull & 63ll) );
+			label$2833:;
+			*(double**)((uint8*)THIS$1 + 8ll) = TMP$1339$3;
 		}
-		label$2818:;
+		label$2822:;
 	}
-	goto label$2816;
-	label$2817:;
-	if( *L$1 != 0ll ) goto label$2830;
+	goto label$2820;
+	label$2821:;
+	if( *L$1 != 0ll ) goto label$2834;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$2832;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$2836;
 		{
 			*(int64*)THIS$1 = 0ll;
-			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2833;
+			if( *(double**)((uint8*)THIS$1 + 8ll) == (double*)0ull ) goto label$2837;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$2833:;
+			label$2837:;
 			*(double**)((uint8*)THIS$1 + 8ll) = (double*)0ull;
 		}
-		label$2832:;
-		label$2831:;
+		label$2836:;
+		label$2835:;
 	}
-	label$2830:;
-	label$2816:;
-	label$2815:;
+	label$2834:;
+	label$2820:;
+	label$2819:;
 }
 
 double _ZNK4MATH5ARRAY10MAX__get__Ev( struct $N4MATH5ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2835:;
+	label$2839:;
 	{
-		int64 TMP$1339$2;
-		TMP$1339$2 = *(int64*)THIS$1;
-		if( TMP$1339$2 != 0ll ) goto label$2838;
-		label$2839:;
+		int64 TMP$1340$2;
+		TMP$1340$2 = *(int64*)THIS$1;
+		if( TMP$1340$2 != 0ll ) goto label$2842;
+		label$2843:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$2836;
+			goto label$2840;
 		}
-		goto label$2837;
-		label$2838:;
-		if( TMP$1339$2 != 1ll ) goto label$2840;
-		label$2841:;
+		goto label$2841;
+		label$2842:;
+		if( TMP$1340$2 != 1ll ) goto label$2844;
+		label$2845:;
 		{
 			fb$result$1 = *(double*)*(double**)((uint8*)THIS$1 + 8ll);
-			goto label$2836;
+			goto label$2840;
 		}
-		goto label$2837;
-		label$2840:;
+		goto label$2841;
+		label$2844:;
 		{
 			double R$3;
 			R$3 = *(double*)*(double**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1340$4;
-				TMP$1340$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2843;
-				label$2846:;
+				int64 TMP$1341$4;
+				TMP$1341$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2847;
+				label$2850:;
 				{
-					if( R$3 >= *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) ) goto label$2848;
+					if( R$3 >= *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) ) goto label$2852;
 					{
 						R$3 = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
-						label$2848:;
+						label$2852:;
 					}
 				}
-				label$2844:;
+				label$2848:;
 				I$4 = I$4 + 1ll;
-				label$2843:;
-				if( I$4 <= TMP$1340$4 ) goto label$2846;
-				label$2845:;
+				label$2847:;
+				if( I$4 <= TMP$1341$4 ) goto label$2850;
+				label$2849:;
 			}
 			fb$result$1 = R$3;
-			goto label$2836;
+			goto label$2840;
 		}
-		label$2842:;
-		label$2837:;
+		label$2846:;
+		label$2841:;
 	}
-	label$2836:;
+	label$2840:;
 	return fb$result$1;
 }
 
@@ -18030,374 +18047,335 @@ double _ZNK4MATH5ARRAY10MIN__get__Ev( struct $N4MATH5ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$2849:;
+	label$2853:;
 	{
-		int64 TMP$1341$2;
-		TMP$1341$2 = *(int64*)THIS$1;
-		if( TMP$1341$2 != 0ll ) goto label$2852;
-		label$2853:;
+		int64 TMP$1342$2;
+		TMP$1342$2 = *(int64*)THIS$1;
+		if( TMP$1342$2 != 0ll ) goto label$2856;
+		label$2857:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$2850;
+			goto label$2854;
 		}
-		goto label$2851;
-		label$2852:;
-		if( TMP$1341$2 != 1ll ) goto label$2854;
-		label$2855:;
+		goto label$2855;
+		label$2856:;
+		if( TMP$1342$2 != 1ll ) goto label$2858;
+		label$2859:;
 		{
 			fb$result$1 = *(double*)*(double**)((uint8*)THIS$1 + 8ll);
-			goto label$2850;
+			goto label$2854;
 		}
-		goto label$2851;
-		label$2854:;
+		goto label$2855;
+		label$2858:;
 		{
 			double R$3;
 			R$3 = *(double*)*(double**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1342$4;
-				TMP$1342$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2857;
-				label$2860:;
+				int64 TMP$1343$4;
+				TMP$1343$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2861;
+				label$2864:;
 				{
-					if( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) >= R$3 ) goto label$2862;
+					if( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) >= R$3 ) goto label$2866;
 					{
 						R$3 = *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll)));
-						label$2862:;
+						label$2866:;
 					}
 				}
-				label$2858:;
+				label$2862:;
 				I$4 = I$4 + 1ll;
-				label$2857:;
-				if( I$4 <= TMP$1342$4 ) goto label$2860;
-				label$2859:;
+				label$2861:;
+				if( I$4 <= TMP$1343$4 ) goto label$2864;
+				label$2863:;
 			}
 			fb$result$1 = R$3;
-			goto label$2850;
+			goto label$2854;
 		}
-		label$2856:;
-		label$2851:;
+		label$2860:;
+		label$2855:;
 	}
-	label$2850:;
+	label$2854:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH5ARRAY7FOREACHEPFvRdERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH5ARRAY7FOREACHEPFvRdERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2863:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2866;
+	label$2867:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2870;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$2868;
+		if( F$1 == (tmp$1294)0ull ) goto label$2872;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$2870;
+			if( *R$1 == (boolean)0ll ) goto label$2874;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2871;
-					label$2874:;
-					{
-						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
-					}
-					label$2872:;
-					I$5 = I$5 + -1ll;
-					label$2871:;
-					if( I$5 >= 0ll ) goto label$2874;
-					label$2873:;
-				}
-			}
-			goto label$2869;
-			label$2870:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1343$5;
-					TMP$1343$5 = *(int64*)THIS$1 + -1ll;
 					goto label$2875;
 					label$2878:;
 					{
 						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
 					}
 					label$2876:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$2875:;
-					if( I$5 <= TMP$1343$5 ) goto label$2878;
+					if( I$5 >= 0ll ) goto label$2878;
 					label$2877:;
 				}
 			}
-			label$2869:;
-			fb$result$1 = (boolean)1ll;
-			goto label$2864;
-		}
-		label$2868:;
-		label$2867:;
-	}
-	label$2866:;
-	label$2865:;
-	fb$result$1 = (boolean)0ll;
-	goto label$2864;
-	label$2864:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH5ARRAY7FOREACHEPFbRdERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2879:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2882;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$2884;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$2886;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2887;
-					label$2890:;
-					{
-						boolean vr$8 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
-						if( vr$8 != (boolean)0ll ) goto label$2892;
-						{
-							goto label$2889;
-						}
-						label$2892:;
-						label$2891:;
-					}
-					label$2888:;
-					I$5 = I$5 + -1ll;
-					label$2887:;
-					if( I$5 >= 0ll ) goto label$2890;
-					label$2889:;
-				}
-			}
-			goto label$2885;
-			label$2886:;
+			goto label$2873;
+			label$2874:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1344$5;
 					TMP$1344$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2893;
-					label$2896:;
+					goto label$2879;
+					label$2882:;
 					{
-						boolean vr$15 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
-						if( vr$15 != (boolean)0ll ) goto label$2898;
-						{
-							goto label$2895;
-						}
-						label$2898:;
-						label$2897:;
+						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
 					}
-					label$2894:;
+					label$2880:;
 					I$5 = I$5 + 1ll;
-					label$2893:;
-					if( I$5 <= TMP$1344$5 ) goto label$2896;
-					label$2895:;
+					label$2879:;
+					if( I$5 <= TMP$1344$5 ) goto label$2882;
+					label$2881:;
 				}
 			}
-			label$2885:;
+			label$2873:;
 			fb$result$1 = (boolean)1ll;
-			goto label$2880;
+			goto label$2868;
 		}
-		label$2884:;
-		label$2883:;
+		label$2872:;
+		label$2871:;
 	}
-	label$2882:;
-	label$2881:;
+	label$2870:;
+	label$2869:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2880;
-	label$2880:;
+	goto label$2868;
+	label$2868:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH5ARRAY7FOREACHEPFvRdRKu7INTEGERERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH5ARRAY7FOREACHEPFbRdERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2899:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2902;
+	label$2883:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2886;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$2904;
+		if( F$1 == (tmp$1296)0ull ) goto label$2888;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$2906;
+			if( *R$1 == (boolean)0ll ) goto label$2890;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2907;
-					label$2910:;
+					goto label$2891;
+					label$2894:;
 					{
-						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
+						boolean vr$8 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
+						if( vr$8 != (boolean)0ll ) goto label$2896;
+						{
+							goto label$2893;
+						}
+						label$2896:;
+						label$2895:;
 					}
-					label$2908:;
+					label$2892:;
 					I$5 = I$5 + -1ll;
-					label$2907:;
-					if( I$5 >= 0ll ) goto label$2910;
-					label$2909:;
+					label$2891:;
+					if( I$5 >= 0ll ) goto label$2894;
+					label$2893:;
 				}
 			}
-			goto label$2905;
-			label$2906:;
+			goto label$2889;
+			label$2890:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1345$5;
 					TMP$1345$5 = *(int64*)THIS$1 + -1ll;
+					goto label$2897;
+					label$2900:;
+					{
+						boolean vr$15 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))) );
+						if( vr$15 != (boolean)0ll ) goto label$2902;
+						{
+							goto label$2899;
+						}
+						label$2902:;
+						label$2901:;
+					}
+					label$2898:;
+					I$5 = I$5 + 1ll;
+					label$2897:;
+					if( I$5 <= TMP$1345$5 ) goto label$2900;
+					label$2899:;
+				}
+			}
+			label$2889:;
+			fb$result$1 = (boolean)1ll;
+			goto label$2884;
+		}
+		label$2888:;
+		label$2887:;
+	}
+	label$2886:;
+	label$2885:;
+	fb$result$1 = (boolean)0ll;
+	goto label$2884;
+	label$2884:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH5ARRAY7FOREACHEPFvRdRKu7INTEGERERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$2903:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2906;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$2908;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$2910;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$2911;
 					label$2914:;
 					{
 						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
 					}
 					label$2912:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$2911:;
-					if( I$5 <= TMP$1345$5 ) goto label$2914;
+					if( I$5 >= 0ll ) goto label$2914;
 					label$2913:;
 				}
 			}
-			label$2905:;
-			fb$result$1 = (boolean)1ll;
-			goto label$2900;
-		}
-		label$2904:;
-		label$2903:;
-	}
-	label$2902:;
-	label$2901:;
-	fb$result$1 = (boolean)0ll;
-	goto label$2900;
-	label$2900:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH5ARRAY7FOREACHEPFbRdRKu7INTEGERERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2915:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2918;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$2920;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$2922;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2923;
-					label$2926:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
-						if( vr$9 != (boolean)0ll ) goto label$2928;
-						{
-							goto label$2925;
-						}
-						label$2928:;
-						label$2927:;
-					}
-					label$2924:;
-					I$5 = I$5 + -1ll;
-					label$2923:;
-					if( I$5 >= 0ll ) goto label$2926;
-					label$2925:;
-				}
-			}
-			goto label$2921;
-			label$2922:;
+			goto label$2909;
+			label$2910:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1346$5;
 					TMP$1346$5 = *(int64*)THIS$1 + -1ll;
-					goto label$2929;
-					label$2932:;
+					goto label$2915;
+					label$2918:;
+					{
+						(F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
+					}
+					label$2916:;
+					I$5 = I$5 + 1ll;
+					label$2915:;
+					if( I$5 <= TMP$1346$5 ) goto label$2918;
+					label$2917:;
+				}
+			}
+			label$2909:;
+			fb$result$1 = (boolean)1ll;
+			goto label$2904;
+		}
+		label$2908:;
+		label$2907:;
+	}
+	label$2906:;
+	label$2905:;
+	fb$result$1 = (boolean)0ll;
+	goto label$2904;
+	label$2904:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH5ARRAY7FOREACHEPFbRdRKu7INTEGERERKb( struct $N4MATH5ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$2919:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2922;
+	{
+		if( F$1 == (tmp$1297)0ull ) goto label$2924;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$2926;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
+					goto label$2927;
+					label$2930:;
+					{
+						boolean vr$9 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
+						if( vr$9 != (boolean)0ll ) goto label$2932;
+						{
+							goto label$2929;
+						}
+						label$2932:;
+						label$2931:;
+					}
+					label$2928:;
+					I$5 = I$5 + -1ll;
+					label$2927:;
+					if( I$5 >= 0ll ) goto label$2930;
+					label$2929:;
+				}
+			}
+			goto label$2925;
+			label$2926:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1347$5;
+					TMP$1347$5 = *(int64*)THIS$1 + -1ll;
+					goto label$2933;
+					label$2936:;
 					{
 						boolean vr$17 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$5 << (3ll & 63ll))), (int64*)&I$5 );
-						if( vr$17 != (boolean)0ll ) goto label$2934;
+						if( vr$17 != (boolean)0ll ) goto label$2938;
 						{
-							goto label$2931;
+							goto label$2935;
 						}
-						label$2934:;
-						label$2933:;
+						label$2938:;
+						label$2937:;
 					}
-					label$2930:;
+					label$2934:;
 					I$5 = I$5 + 1ll;
-					label$2929:;
-					if( I$5 <= TMP$1346$5 ) goto label$2932;
-					label$2931:;
+					label$2933:;
+					if( I$5 <= TMP$1347$5 ) goto label$2936;
+					label$2935:;
 				}
 			}
-			label$2921:;
+			label$2925:;
 			fb$result$1 = (boolean)1ll;
-			goto label$2916;
+			goto label$2920;
 		}
-		label$2920:;
-		label$2919:;
+		label$2924:;
+		label$2923:;
 	}
-	label$2918:;
-	label$2917:;
+	label$2922:;
+	label$2921:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2916;
-	label$2916:;
+	goto label$2920;
+	label$2920:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH5ARRAY3MAPERS0_PFdRKdE( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZN4MATH5ARRAY3MAPERS0_PFdRKdE( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2935:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2938;
+	label$2939:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2942;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$2940;
-		{
-			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
-			{
-				int64 I$4;
-				I$4 = 0ll;
-				int64 TMP$1347$4;
-				TMP$1347$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2941;
-				label$2944:;
-				{
-					double vr$9 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) );
-					*(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll))) = vr$9;
-				}
-				label$2942:;
-				I$4 = I$4 + 1ll;
-				label$2941:;
-				if( I$4 <= TMP$1347$4 ) goto label$2944;
-				label$2943:;
-			}
-		}
-		label$2940:;
-		label$2939:;
-	}
-	label$2938:;
-	label$2937:;
-	fb$result$1 = (boolean)0ll;
-	goto label$2936;
-	label$2936:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH5ARRAY3MAPERS0_PFdRKdRKu7INTEGERE( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$2945:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$2948;
-	{
-		if( F$1 == (tmp$1298)0ull ) goto label$2950;
+		if( F$1 == (tmp$1298)0ull ) goto label$2944;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			{
@@ -18405,27 +18383,66 @@ boolean _ZN4MATH5ARRAY3MAPERS0_PFdRKdRKu7INTEGERE( struct $N4MATH5ARRAYE* THIS$1
 				I$4 = 0ll;
 				int64 TMP$1348$4;
 				TMP$1348$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2951;
-				label$2954:;
+				goto label$2945;
+				label$2948:;
+				{
+					double vr$9 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) );
+					*(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll))) = vr$9;
+				}
+				label$2946:;
+				I$4 = I$4 + 1ll;
+				label$2945:;
+				if( I$4 <= TMP$1348$4 ) goto label$2948;
+				label$2947:;
+			}
+		}
+		label$2944:;
+		label$2943:;
+	}
+	label$2942:;
+	label$2941:;
+	fb$result$1 = (boolean)0ll;
+	goto label$2940;
+	label$2940:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH5ARRAY3MAPERS0_PFdRKdRKu7INTEGERE( struct $N4MATH5ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1299 F$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$2949:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$2952;
+	{
+		if( F$1 == (tmp$1299)0ull ) goto label$2954;
+		{
+			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1349$4;
+				TMP$1349$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2955;
+				label$2958:;
 				{
 					double vr$10 = (F$1)( (double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))), (int64*)&I$4 );
 					*(double*)((uint8*)*(double**)((uint8*)A$1 + 8ll) + (I$4 << (3ll & 63ll))) = vr$10;
 				}
-				label$2952:;
+				label$2956:;
 				I$4 = I$4 + 1ll;
-				label$2951:;
-				if( I$4 <= TMP$1348$4 ) goto label$2954;
-				label$2953:;
+				label$2955:;
+				if( I$4 <= TMP$1349$4 ) goto label$2958;
+				label$2957:;
 			}
 		}
-		label$2950:;
-		label$2949:;
+		label$2954:;
+		label$2953:;
 	}
-	label$2948:;
-	label$2947:;
+	label$2952:;
+	label$2951:;
 	fb$result$1 = (boolean)0ll;
-	goto label$2946;
-	label$2946:;
+	goto label$2950;
+	label$2950:;
 	return fb$result$1;
 }
 
@@ -18433,75 +18450,75 @@ FBSTRING* _ZNK4MATH5ARRAY6TOJSONEv( struct $N4MATH5ARRAYE* THIS$1 )
 {
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$2955:;
+	label$2959:;
 	{
-		int64 TMP$1349$2;
-		TMP$1349$2 = *(int64*)THIS$1;
-		if( TMP$1349$2 != 0ll ) goto label$2958;
-		label$2959:;
+		int64 TMP$1350$2;
+		TMP$1350$2 = *(int64*)THIS$1;
+		if( TMP$1350$2 != 0ll ) goto label$2962;
+		label$2963:;
 		{
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)"[]", 3ll, 0 );
-			goto label$2956;
+			goto label$2960;
 		}
-		goto label$2957;
-		label$2958:;
-		if( TMP$1349$2 != 1ll ) goto label$2960;
-		label$2961:;
+		goto label$2961;
+		label$2962:;
+		if( TMP$1350$2 != 1ll ) goto label$2964;
+		label$2965:;
 		{
-			FBSTRING TMP$1351$3;
 			FBSTRING TMP$1352$3;
-			FBSTRING* vr$5 = fb_DoubleToStr( *(double*)*(double**)((uint8*)THIS$1 + 8ll) );
-			__builtin_memset( &TMP$1351$3, 0, 24ll );
-			FBSTRING* vr$8 = fb_StrConcat( &TMP$1351$3, (void*)"[", 2ll, (void*)vr$5, -1ll );
-			__builtin_memset( &TMP$1352$3, 0, 24ll );
-			FBSTRING* vr$11 = fb_StrConcat( &TMP$1352$3, (void*)vr$8, -1ll, (void*)"]", 2ll );
-			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$11, -1ll, 0 );
-			goto label$2956;
-		}
-		goto label$2957;
-		label$2960:;
-		{
 			FBSTRING TMP$1353$3;
-			FBSTRING TMP$1357$3;
+			FBSTRING* vr$5 = fb_DoubleToStr( *(double*)*(double**)((uint8*)THIS$1 + 8ll) );
+			__builtin_memset( &TMP$1352$3, 0, 24ll );
+			FBSTRING* vr$8 = fb_StrConcat( &TMP$1352$3, (void*)"[", 2ll, (void*)vr$5, -1ll );
+			__builtin_memset( &TMP$1353$3, 0, 24ll );
+			FBSTRING* vr$11 = fb_StrConcat( &TMP$1353$3, (void*)vr$8, -1ll, (void*)"]", 2ll );
+			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$11, -1ll, 0 );
+			goto label$2960;
+		}
+		goto label$2961;
+		label$2964:;
+		{
+			FBSTRING TMP$1354$3;
+			FBSTRING TMP$1358$3;
 			FBSTRING R$3;
 			FBSTRING* vr$15 = fb_DoubleToStr( *(double*)*(double**)((uint8*)THIS$1 + 8ll) );
-			__builtin_memset( &TMP$1353$3, 0, 24ll );
-			FBSTRING* vr$18 = fb_StrConcat( &TMP$1353$3, (void*)"[", 2ll, (void*)vr$15, -1ll );
+			__builtin_memset( &TMP$1354$3, 0, 24ll );
+			FBSTRING* vr$18 = fb_StrConcat( &TMP$1354$3, (void*)"[", 2ll, (void*)vr$15, -1ll );
 			fb_StrInit( (void*)&R$3, -1ll, (void*)vr$18, -1ll, 0 );
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1354$4;
-				TMP$1354$4 = *(int64*)THIS$1 + -1ll;
-				goto label$2963;
-				label$2966:;
+				int64 TMP$1355$4;
+				TMP$1355$4 = *(int64*)THIS$1 + -1ll;
+				goto label$2967;
+				label$2970:;
 				{
-					FBSTRING TMP$1355$5;
 					FBSTRING TMP$1356$5;
+					FBSTRING TMP$1357$5;
 					FBSTRING* vr$25 = fb_DoubleToStr( *(double*)((uint8*)*(double**)((uint8*)THIS$1 + 8ll) + (I$4 << (3ll & 63ll))) );
-					__builtin_memset( &TMP$1355$5, 0, 24ll );
-					FBSTRING* vr$28 = fb_StrConcat( &TMP$1355$5, (void*)",", 2ll, (void*)vr$25, -1ll );
 					__builtin_memset( &TMP$1356$5, 0, 24ll );
-					FBSTRING* vr$32 = fb_StrConcat( &TMP$1356$5, (void*)&R$3, -1ll, (void*)vr$28, -1ll );
+					FBSTRING* vr$28 = fb_StrConcat( &TMP$1356$5, (void*)",", 2ll, (void*)vr$25, -1ll );
+					__builtin_memset( &TMP$1357$5, 0, 24ll );
+					FBSTRING* vr$32 = fb_StrConcat( &TMP$1357$5, (void*)&R$3, -1ll, (void*)vr$28, -1ll );
 					fb_StrAssign( (void*)&R$3, -1ll, (void*)vr$32, -1ll, 0 );
 				}
-				label$2964:;
+				label$2968:;
 				I$4 = I$4 + 1ll;
-				label$2963:;
-				if( I$4 <= TMP$1354$4 ) goto label$2966;
-				label$2965:;
+				label$2967:;
+				if( I$4 <= TMP$1355$4 ) goto label$2970;
+				label$2969:;
 			}
-			__builtin_memset( &TMP$1357$3, 0, 24ll );
-			FBSTRING* vr$38 = fb_StrConcat( &TMP$1357$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
+			__builtin_memset( &TMP$1358$3, 0, 24ll );
+			FBSTRING* vr$38 = fb_StrConcat( &TMP$1358$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$38, -1ll, 0 );
 			fb_StrDelete( (FBSTRING*)&R$3 );
-			goto label$2956;
+			goto label$2960;
 			fb_StrDelete( (FBSTRING*)&R$3 );
 		}
-		label$2962:;
-		label$2957:;
+		label$2966:;
+		label$2961:;
 	}
-	label$2956:;
+	label$2960:;
 	FBSTRING* vr$43 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$43;
 }
@@ -18511,269 +18528,269 @@ void _ZN4MATH12COMPLEXARRAYC1Ev( struct $N4MATH12COMPLEXARRAYE* THIS$1 )
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	label$2967:;
-	label$2968:;
+	label$2971:;
+	label$2972:;
 }
 
 void _ZN4MATH12COMPLEXARRAYC1ERKu7INTEGER( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1 )
 {
-	label$2969:;
+	label$2973:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$2972;
+	if( *L$1 <= 0ll ) goto label$2976;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1363$2;
-		uint64 TMP$1364$2;
-		struct $N4MATH7COMPLEXE* TMP$1365$2;
+		struct $N4MATH7COMPLEXE* TMP$1364$2;
+		uint64 TMP$1365$2;
+		struct $N4MATH7COMPLEXE* TMP$1366$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1363$2 = (struct $N4MATH7COMPLEXE*)vr$11;
-		if( TMP$1363$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$2973;
-		TMP$1365$2 = TMP$1363$2;
-		TMP$1364$2 = *(uint64*)L$1;
-		label$2974:;
-		if( TMP$1364$2 == 0ull ) goto label$2975;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1365$2 );
-		TMP$1365$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1365$2 + 16ll);
-		TMP$1364$2 = TMP$1364$2 + 18446744073709551615ull;
-		goto label$2974;
-		label$2975:;
-		label$2973:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1363$2;
+		TMP$1364$2 = (struct $N4MATH7COMPLEXE*)vr$11;
+		if( TMP$1364$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$2977;
+		TMP$1366$2 = TMP$1364$2;
+		TMP$1365$2 = *(uint64*)L$1;
+		label$2978:;
+		if( TMP$1365$2 == 0ull ) goto label$2979;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1366$2 );
+		TMP$1366$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1366$2 + 16ll);
+		TMP$1365$2 = TMP$1365$2 + 18446744073709551615ull;
+		goto label$2978;
+		label$2979:;
+		label$2977:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1364$2;
 	}
-	label$2972:;
-	label$2971:;
-	label$2970:;
+	label$2976:;
+	label$2975:;
+	label$2974:;
 }
 
-void _ZN4MATH12COMPLEXARRAYC1ERKu7INTEGERPFvRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1, tmp$1358 F$1, boolean* R$1 )
+void _ZN4MATH12COMPLEXARRAYC1ERKu7INTEGERPFvRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1, tmp$1359 F$1, boolean* R$1 )
 {
-	label$2976:;
+	label$2980:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$2979;
+	if( *L$1 <= 0ll ) goto label$2983;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1366$2;
-		uint64 TMP$1367$2;
-		struct $N4MATH7COMPLEXE* TMP$1368$2;
+		struct $N4MATH7COMPLEXE* TMP$1367$2;
+		uint64 TMP$1368$2;
+		struct $N4MATH7COMPLEXE* TMP$1369$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1366$2 = (struct $N4MATH7COMPLEXE*)vr$11;
-		if( TMP$1366$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$2980;
-		TMP$1368$2 = TMP$1366$2;
-		TMP$1367$2 = *(uint64*)L$1;
-		label$2981:;
-		if( TMP$1367$2 == 0ull ) goto label$2982;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1368$2 );
-		TMP$1368$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1368$2 + 16ll);
-		TMP$1367$2 = TMP$1367$2 + 18446744073709551615ull;
-		goto label$2981;
-		label$2982:;
-		label$2980:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1366$2;
-		if( F$1 == (tmp$1358)0ull ) goto label$2984;
+		TMP$1367$2 = (struct $N4MATH7COMPLEXE*)vr$11;
+		if( TMP$1367$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$2984;
+		TMP$1369$2 = TMP$1367$2;
+		TMP$1368$2 = *(uint64*)L$1;
+		label$2985:;
+		if( TMP$1368$2 == 0ull ) goto label$2986;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1369$2 );
+		TMP$1369$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1369$2 + 16ll);
+		TMP$1368$2 = TMP$1368$2 + 18446744073709551615ull;
+		goto label$2985;
+		label$2986:;
+		label$2984:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1367$2;
+		if( F$1 == (tmp$1359)0ull ) goto label$2988;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$2986;
+			if( *R$1 == (boolean)0ll ) goto label$2990;
 			{
 				{
 					int64 I$5;
 					I$5 = *L$1 + -1ll;
-					goto label$2987;
-					label$2990:;
-					{
-						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-					}
-					label$2988:;
-					I$5 = I$5 + -1ll;
-					label$2987:;
-					if( I$5 >= 0ll ) goto label$2990;
-					label$2989:;
-				}
-			}
-			goto label$2985;
-			label$2986:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1369$5;
-					TMP$1369$5 = *L$1 + -1ll;
 					goto label$2991;
 					label$2994:;
 					{
 						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$2992:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$2991:;
-					if( I$5 <= TMP$1369$5 ) goto label$2994;
+					if( I$5 >= 0ll ) goto label$2994;
 					label$2993:;
 				}
 			}
-			label$2985:;
-		}
-		label$2984:;
-		label$2983:;
-	}
-	label$2979:;
-	label$2978:;
-	label$2977:;
-}
-
-void _ZN4MATH12COMPLEXARRAYC1ERKu7INTEGERPFvRNS_7COMPLEXES3_ERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1, tmp$1359 F$1, boolean* R$1 )
-{
-	label$2995:;
-	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
-	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$2998;
-	{
-		struct $N4MATH7COMPLEXE* TMP$1370$2;
-		uint64 TMP$1371$2;
-		struct $N4MATH7COMPLEXE* TMP$1372$2;
-		*(int64*)THIS$1 = *L$1;
-		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1370$2 = (struct $N4MATH7COMPLEXE*)vr$11;
-		if( TMP$1370$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$2999;
-		TMP$1372$2 = TMP$1370$2;
-		TMP$1371$2 = *(uint64*)L$1;
-		label$3000:;
-		if( TMP$1371$2 == 0ull ) goto label$3001;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1372$2 );
-		TMP$1372$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1372$2 + 16ll);
-		TMP$1371$2 = TMP$1371$2 + 18446744073709551615ull;
-		goto label$3000;
-		label$3001:;
-		label$2999:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1370$2;
-		if( F$1 == (tmp$1359)0ull ) goto label$3003;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3005;
-			{
-				{
-					int64 I$5;
-					I$5 = *L$1 + -1ll;
-					goto label$3006;
-					label$3009:;
-					{
-						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-					}
-					label$3007:;
-					I$5 = I$5 + -1ll;
-					label$3006:;
-					if( I$5 >= 0ll ) goto label$3009;
-					label$3008:;
-				}
-			}
-			goto label$3004;
-			label$3005:;
+			goto label$2989;
+			label$2990:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1373$5;
-					TMP$1373$5 = *L$1 + -1ll;
+					int64 TMP$1370$5;
+					TMP$1370$5 = *L$1 + -1ll;
+					goto label$2995;
+					label$2998:;
+					{
+						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+					}
+					label$2996:;
+					I$5 = I$5 + 1ll;
+					label$2995:;
+					if( I$5 <= TMP$1370$5 ) goto label$2998;
+					label$2997:;
+				}
+			}
+			label$2989:;
+		}
+		label$2988:;
+		label$2987:;
+	}
+	label$2983:;
+	label$2982:;
+	label$2981:;
+}
+
+void _ZN4MATH12COMPLEXARRAYC1ERKu7INTEGERPFvRNS_7COMPLEXES3_ERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1, tmp$1360 F$1, boolean* R$1 )
+{
+	label$2999:;
+	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
+	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
+	if( *L$1 <= 0ll ) goto label$3002;
+	{
+		struct $N4MATH7COMPLEXE* TMP$1371$2;
+		uint64 TMP$1372$2;
+		struct $N4MATH7COMPLEXE* TMP$1373$2;
+		*(int64*)THIS$1 = *L$1;
+		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
+		TMP$1371$2 = (struct $N4MATH7COMPLEXE*)vr$11;
+		if( TMP$1371$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3003;
+		TMP$1373$2 = TMP$1371$2;
+		TMP$1372$2 = *(uint64*)L$1;
+		label$3004:;
+		if( TMP$1372$2 == 0ull ) goto label$3005;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1373$2 );
+		TMP$1373$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1373$2 + 16ll);
+		TMP$1372$2 = TMP$1372$2 + 18446744073709551615ull;
+		goto label$3004;
+		label$3005:;
+		label$3003:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1371$2;
+		if( F$1 == (tmp$1360)0ull ) goto label$3007;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3009;
+			{
+				{
+					int64 I$5;
+					I$5 = *L$1 + -1ll;
 					goto label$3010;
 					label$3013:;
 					{
 						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$3011:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3010:;
-					if( I$5 <= TMP$1373$5 ) goto label$3013;
+					if( I$5 >= 0ll ) goto label$3013;
 					label$3012:;
 				}
 			}
-			label$3004:;
+			goto label$3008;
+			label$3009:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1374$5;
+					TMP$1374$5 = *L$1 + -1ll;
+					goto label$3014;
+					label$3017:;
+					{
+						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+					}
+					label$3015:;
+					I$5 = I$5 + 1ll;
+					label$3014:;
+					if( I$5 <= TMP$1374$5 ) goto label$3017;
+					label$3016:;
+				}
+			}
+			label$3008:;
 		}
-		label$3003:;
-		label$3002:;
+		label$3007:;
+		label$3006:;
 	}
-	label$2998:;
-	label$2997:;
-	label$2996:;
+	label$3002:;
+	label$3001:;
+	label$3000:;
 }
 
 void _ZN4MATH12COMPLEXARRAYC1ERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3014:;
+	label$3018:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$3017;
+	if( *(int64*)A$1 == 0ll ) goto label$3021;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1374$2;
-		uint64 TMP$1375$2;
-		struct $N4MATH7COMPLEXE* TMP$1376$2;
+		struct $N4MATH7COMPLEXE* TMP$1375$2;
+		uint64 TMP$1376$2;
+		struct $N4MATH7COMPLEXE* TMP$1377$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-		TMP$1374$2 = (struct $N4MATH7COMPLEXE*)vr$11;
-		if( TMP$1374$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3018;
-		TMP$1376$2 = TMP$1374$2;
-		TMP$1375$2 = *(uint64*)A$1;
-		label$3019:;
-		if( TMP$1375$2 == 0ull ) goto label$3020;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1376$2 );
-		TMP$1376$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1376$2 + 16ll);
-		TMP$1375$2 = TMP$1375$2 + 18446744073709551615ull;
-		goto label$3019;
-		label$3020:;
-		label$3018:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1374$2;
+		TMP$1375$2 = (struct $N4MATH7COMPLEXE*)vr$11;
+		if( TMP$1375$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3022;
+		TMP$1377$2 = TMP$1375$2;
+		TMP$1376$2 = *(uint64*)A$1;
+		label$3023:;
+		if( TMP$1376$2 == 0ull ) goto label$3024;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1377$2 );
+		TMP$1377$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1377$2 + 16ll);
+		TMP$1376$2 = TMP$1376$2 + 18446744073709551615ull;
+		goto label$3023;
+		label$3024:;
+		label$3022:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1375$2;
 		double* P$2;
 		double* vr$16 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
 		P$2 = vr$16;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1377$3;
-			TMP$1377$3 = *(int64*)A$1 + -1ll;
-			goto label$3021;
-			label$3024:;
+			int64 TMP$1378$3;
+			TMP$1378$3 = *(int64*)A$1 + -1ll;
+			goto label$3025;
+			label$3028:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$3022:;
+			label$3026:;
 			I$3 = I$3 + 1ll;
-			label$3021:;
-			if( I$3 <= TMP$1377$3 ) goto label$3024;
-			label$3023:;
+			label$3025:;
+			if( I$3 <= TMP$1378$3 ) goto label$3028;
+			label$3027:;
 		}
 	}
-	label$3017:;
-	label$3016:;
-	label$3015:;
+	label$3021:;
+	label$3020:;
+	label$3019:;
 }
 
 void _ZN4MATH12COMPLEXARRAYC1ERKNS_5ARRAYES3_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A1$1, struct $N4MATH5ARRAYE* A2$1 )
 {
-	label$3025:;
+	label$3029:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( ((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) == 0ll ) goto label$3028;
+	if( ((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) == 0ll ) goto label$3032;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1378$2;
-		uint64 TMP$1379$2;
-		struct $N4MATH7COMPLEXE* TMP$1380$2;
+		struct $N4MATH7COMPLEXE* TMP$1379$2;
+		uint64 TMP$1380$2;
+		struct $N4MATH7COMPLEXE* TMP$1381$2;
 		*(int64*)THIS$1 = *(int64*)A1$1;
 		void* vr$16 = malloc( *(uint64*)A1$1 << (4ull & 63ll) );
-		TMP$1378$2 = (struct $N4MATH7COMPLEXE*)vr$16;
-		if( TMP$1378$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3029;
-		TMP$1380$2 = TMP$1378$2;
-		TMP$1379$2 = *(uint64*)A1$1;
-		label$3030:;
-		if( TMP$1379$2 == 0ull ) goto label$3031;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1380$2 );
-		TMP$1380$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1380$2 + 16ll);
-		TMP$1379$2 = TMP$1379$2 + 18446744073709551615ull;
-		goto label$3030;
-		label$3031:;
-		label$3029:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1378$2;
+		TMP$1379$2 = (struct $N4MATH7COMPLEXE*)vr$16;
+		if( TMP$1379$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3033;
+		TMP$1381$2 = TMP$1379$2;
+		TMP$1380$2 = *(uint64*)A1$1;
+		label$3034:;
+		if( TMP$1380$2 == 0ull ) goto label$3035;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1381$2 );
+		TMP$1381$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1381$2 + 16ll);
+		TMP$1380$2 = TMP$1380$2 + 18446744073709551615ull;
+		goto label$3034;
+		label$3035:;
+		label$3033:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1379$2;
 		double* P1$2;
 		double* vr$21 = _ZNK4MATH5ARRAY11DATA__get__Ev( A1$1 );
 		P1$2 = vr$21;
@@ -18783,213 +18800,195 @@ void _ZN4MATH12COMPLEXARRAYC1ERKNS_5ARRAYES3_( struct $N4MATH12COMPLEXARRAYE* TH
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1381$3;
-			TMP$1381$3 = *(int64*)A1$1 + -1ll;
-			goto label$3032;
-			label$3035:;
+			int64 TMP$1382$3;
+			TMP$1382$3 = *(int64*)A1$1 + -1ll;
+			goto label$3036;
+			label$3039:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)P1$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)P2$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$3033:;
+			label$3037:;
 			I$3 = I$3 + 1ll;
-			label$3032:;
-			if( I$3 <= TMP$1381$3 ) goto label$3035;
-			label$3034:;
+			label$3036:;
+			if( I$3 <= TMP$1382$3 ) goto label$3039;
+			label$3038:;
 		}
 	}
-	label$3028:;
-	label$3027:;
-	label$3026:;
+	label$3032:;
+	label$3031:;
+	label$3030:;
 }
 
 void _ZN4MATH12COMPLEXARRAYC1ERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3036:;
+	label$3040:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH7COMPLEXC1Ev( (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$3039;
+	if( *(int64*)A$1 == 0ll ) goto label$3043;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1382$2;
-		uint64 TMP$1383$2;
-		struct $N4MATH7COMPLEXE* TMP$1384$2;
+		struct $N4MATH7COMPLEXE* TMP$1383$2;
+		uint64 TMP$1384$2;
+		struct $N4MATH7COMPLEXE* TMP$1385$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-		TMP$1382$2 = (struct $N4MATH7COMPLEXE*)vr$11;
-		if( TMP$1382$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3040;
-		TMP$1384$2 = TMP$1382$2;
-		TMP$1383$2 = *(uint64*)A$1;
-		label$3041:;
-		if( TMP$1383$2 == 0ull ) goto label$3042;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1384$2 );
-		TMP$1384$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1384$2 + 16ll);
-		TMP$1383$2 = TMP$1383$2 + 18446744073709551615ull;
-		goto label$3041;
-		label$3042:;
-		label$3040:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1382$2;
+		TMP$1383$2 = (struct $N4MATH7COMPLEXE*)vr$11;
+		if( TMP$1383$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3044;
+		TMP$1385$2 = TMP$1383$2;
+		TMP$1384$2 = *(uint64*)A$1;
+		label$3045:;
+		if( TMP$1384$2 == 0ull ) goto label$3046;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1385$2 );
+		TMP$1385$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1385$2 + 16ll);
+		TMP$1384$2 = TMP$1384$2 + 18446744073709551615ull;
+		goto label$3045;
+		label$3046:;
+		label$3044:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1383$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1385$3;
-			TMP$1385$3 = *(int64*)A$1 + -1ll;
-			goto label$3043;
-			label$3046:;
+			int64 TMP$1386$3;
+			TMP$1386$3 = *(int64*)A$1 + -1ll;
+			goto label$3047;
+			label$3050:;
 			{
 				_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3044:;
+			label$3048:;
 			I$3 = I$3 + 1ll;
-			label$3043:;
-			if( I$3 <= TMP$1385$3 ) goto label$3046;
-			label$3045:;
+			label$3047:;
+			if( I$3 <= TMP$1386$3 ) goto label$3050;
+			label$3049:;
 		}
 	}
-	label$3039:;
-	label$3038:;
-	label$3037:;
+	label$3043:;
+	label$3042:;
+	label$3041:;
 }
 
 void _ZN4MATH12COMPLEXARRAYD1Ev( struct $N4MATH12COMPLEXARRAYE* THIS$1 )
 {
-	label$3047:;
-	if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3050;
+	label$3051:;
+	if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3054;
 	{
-		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3051;
+		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3055;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3051:;
-		label$3050:;
+		label$3055:;
+		label$3054:;
 	}
-	label$3048:;
+	label$3052:;
 }
 
 void _ZN4MATH12COMPLEXARRAYv27selfcatERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
 {
-	label$3052:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3055;
+	label$3056:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3059;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1386$2;
-		uint64 TMP$1387$2;
-		struct $N4MATH7COMPLEXE* TMP$1388$2;
+		struct $N4MATH7COMPLEXE* TMP$1387$2;
+		uint64 TMP$1388$2;
+		struct $N4MATH7COMPLEXE* TMP$1389$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH7COMPLEXE* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-		TMP$1386$2 = (struct $N4MATH7COMPLEXE*)vr$6;
-		if( TMP$1386$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3056;
-		TMP$1388$2 = TMP$1386$2;
-		TMP$1387$2 = *(uint64*)THIS$1;
-		label$3057:;
-		if( TMP$1387$2 == 0ull ) goto label$3058;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1388$2 );
-		TMP$1388$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1388$2 + 16ll);
-		TMP$1387$2 = TMP$1387$2 + 18446744073709551615ull;
-		goto label$3057;
-		label$3058:;
-		label$3056:;
-		Q$2 = TMP$1386$2;
+		TMP$1387$2 = (struct $N4MATH7COMPLEXE*)vr$6;
+		if( TMP$1387$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3060;
+		TMP$1389$2 = TMP$1387$2;
+		TMP$1388$2 = *(uint64*)THIS$1;
+		label$3061:;
+		if( TMP$1388$2 == 0ull ) goto label$3062;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1389$2 );
+		TMP$1389$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1389$2 + 16ll);
+		TMP$1388$2 = TMP$1388$2 + 18446744073709551615ull;
+		goto label$3061;
+		label$3062:;
+		label$3060:;
+		Q$2 = TMP$1387$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1389$3;
-			TMP$1389$3 = *(int64*)THIS$1 + -2ll;
-			goto label$3059;
-			label$3062:;
+			int64 TMP$1390$3;
+			TMP$1390$3 = *(int64*)THIS$1 + -2ll;
+			goto label$3063;
+			label$3066:;
 			{
 				_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$2 + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3060:;
+			label$3064:;
 			I$3 = I$3 + 1ll;
-			label$3059:;
-			if( I$3 <= TMP$1389$3 ) goto label$3062;
-			label$3061:;
+			label$3063:;
+			if( I$3 <= TMP$1390$3 ) goto label$3066;
+			label$3065:;
 		}
 		*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (4ll & 63ll))) + -16ll) = *N$1;
-		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3063;
+		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3067;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3063:;
+		label$3067:;
 		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$3054;
-	label$3055:;
+	goto label$3058;
+	label$3059:;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1390$2;
-		uint64 TMP$1391$2;
-		struct $N4MATH7COMPLEXE* TMP$1392$2;
+		struct $N4MATH7COMPLEXE* TMP$1391$2;
+		uint64 TMP$1392$2;
+		struct $N4MATH7COMPLEXE* TMP$1393$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 16ull );
-		TMP$1390$2 = (struct $N4MATH7COMPLEXE*)vr$27;
-		if( TMP$1390$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3064;
-		TMP$1392$2 = TMP$1390$2;
-		TMP$1391$2 = 1ull;
-		label$3065:;
-		if( TMP$1391$2 == 0ull ) goto label$3066;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1392$2 );
-		TMP$1392$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1392$2 + 16ll);
-		TMP$1391$2 = TMP$1391$2 + 18446744073709551615ull;
-		goto label$3065;
-		label$3066:;
-		label$3064:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1390$2;
+		TMP$1391$2 = (struct $N4MATH7COMPLEXE*)vr$27;
+		if( TMP$1391$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3068;
+		TMP$1393$2 = TMP$1391$2;
+		TMP$1392$2 = 1ull;
+		label$3069:;
+		if( TMP$1392$2 == 0ull ) goto label$3070;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1393$2 );
+		TMP$1393$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1393$2 + 16ll);
+		TMP$1392$2 = TMP$1392$2 + 18446744073709551615ull;
+		goto label$3069;
+		label$3070:;
+		label$3068:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1391$2;
 		*(double*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = *N$1;
 	}
-	label$3054:;
-	label$3053:;
+	label$3058:;
+	label$3057:;
 }
 
 void _ZN4MATH12COMPLEXARRAYv27selfcatERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3067:;
-	if( *(int64*)A$1 == 0ll ) goto label$3070;
+	label$3071:;
+	if( *(int64*)A$1 == 0ll ) goto label$3074;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$3072;
+		if( *(int64*)THIS$1 == 0ll ) goto label$3076;
 		{
-			struct $N4MATH7COMPLEXE* TMP$1393$3;
-			uint64 TMP$1394$3;
-			struct $N4MATH7COMPLEXE* TMP$1395$3;
+			struct $N4MATH7COMPLEXE* TMP$1394$3;
+			uint64 TMP$1395$3;
+			struct $N4MATH7COMPLEXE* TMP$1396$3;
 			struct $N4MATH7COMPLEXE* Q$3;
 			void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (4ull & 63ll) );
-			TMP$1393$3 = (struct $N4MATH7COMPLEXE*)vr$6;
-			if( TMP$1393$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3073;
-			TMP$1395$3 = TMP$1393$3;
-			TMP$1394$3 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
-			label$3074:;
-			if( TMP$1394$3 == 0ull ) goto label$3075;
-			_ZN4MATH7COMPLEXC1Ev( TMP$1395$3 );
-			TMP$1395$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1395$3 + 16ll);
-			TMP$1394$3 = TMP$1394$3 + 18446744073709551615ull;
-			goto label$3074;
-			label$3075:;
-			label$3073:;
-			Q$3 = TMP$1393$3;
+			TMP$1394$3 = (struct $N4MATH7COMPLEXE*)vr$6;
+			if( TMP$1394$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3077;
+			TMP$1396$3 = TMP$1394$3;
+			TMP$1395$3 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
+			label$3078:;
+			if( TMP$1395$3 == 0ull ) goto label$3079;
+			_ZN4MATH7COMPLEXC1Ev( TMP$1396$3 );
+			TMP$1396$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1396$3 + 16ll);
+			TMP$1395$3 = TMP$1395$3 + 18446744073709551615ull;
+			goto label$3078;
+			label$3079:;
+			label$3077:;
+			Q$3 = TMP$1394$3;
 			int64 I$3;
 			__builtin_memset( &I$3, 0, 8ll );
 			{
 				I$3 = 0ll;
-				int64 TMP$1396$4;
-				TMP$1396$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3076;
-				label$3079:;
-				{
-					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$3 + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
-				}
-				label$3077:;
-				I$3 = I$3 + 1ll;
-				label$3076:;
-				if( I$3 <= TMP$1396$4 ) goto label$3079;
-				label$3078:;
-			}
-			double* P$3;
-			double* vr$21 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
-			P$3 = vr$21;
-			{
-				I$3 = 0ll;
 				int64 TMP$1397$4;
-				TMP$1397$4 = *(int64*)A$1 + -1ll;
+				TMP$1397$4 = *(int64*)THIS$1 + -1ll;
 				goto label$3080;
 				label$3083:;
 				{
-					*(double*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$3) << (4ll & 63ll))) = *(double*)((uint8*)P$3 + (I$3 << (3ll & 63ll)));
+					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$3 + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 				}
 				label$3081:;
 				I$3 = I$3 + 1ll;
@@ -18997,185 +18996,188 @@ void _ZN4MATH12COMPLEXARRAYv27selfcatERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAY
 				if( I$3 <= TMP$1397$4 ) goto label$3083;
 				label$3082:;
 			}
+			double* P$3;
+			double* vr$21 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
+			P$3 = vr$21;
+			{
+				I$3 = 0ll;
+				int64 TMP$1398$4;
+				TMP$1398$4 = *(int64*)A$1 + -1ll;
+				goto label$3084;
+				label$3087:;
+				{
+					*(double*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$3) << (4ll & 63ll))) = *(double*)((uint8*)P$3 + (I$3 << (3ll & 63ll)));
+				}
+				label$3085:;
+				I$3 = I$3 + 1ll;
+				label$3084:;
+				if( I$3 <= TMP$1398$4 ) goto label$3087;
+				label$3086:;
+			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3084;
+			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3088;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3084:;
+			label$3088:;
 			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		goto label$3071;
-		label$3072:;
+		goto label$3075;
+		label$3076:;
 		{
-			struct $N4MATH7COMPLEXE* TMP$1398$3;
-			uint64 TMP$1399$3;
-			struct $N4MATH7COMPLEXE* TMP$1400$3;
+			struct $N4MATH7COMPLEXE* TMP$1399$3;
+			uint64 TMP$1400$3;
+			struct $N4MATH7COMPLEXE* TMP$1401$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$42 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-			TMP$1398$3 = (struct $N4MATH7COMPLEXE*)vr$42;
-			if( TMP$1398$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3085;
-			TMP$1400$3 = TMP$1398$3;
-			TMP$1399$3 = *(uint64*)THIS$1;
-			label$3086:;
-			if( TMP$1399$3 == 0ull ) goto label$3087;
-			_ZN4MATH7COMPLEXC1Ev( TMP$1400$3 );
-			TMP$1400$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1400$3 + 16ll);
-			TMP$1399$3 = TMP$1399$3 + 18446744073709551615ull;
-			goto label$3086;
-			label$3087:;
-			label$3085:;
-			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1398$3;
+			TMP$1399$3 = (struct $N4MATH7COMPLEXE*)vr$42;
+			if( TMP$1399$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3089;
+			TMP$1401$3 = TMP$1399$3;
+			TMP$1400$3 = *(uint64*)THIS$1;
+			label$3090:;
+			if( TMP$1400$3 == 0ull ) goto label$3091;
+			_ZN4MATH7COMPLEXC1Ev( TMP$1401$3 );
+			TMP$1401$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1401$3 + 16ll);
+			TMP$1400$3 = TMP$1400$3 + 18446744073709551615ull;
+			goto label$3090;
+			label$3091:;
+			label$3089:;
+			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1399$3;
 			double* P$3;
 			double* vr$47 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
 			P$3 = vr$47;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1401$4;
-				TMP$1401$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3088;
-				label$3091:;
+				int64 TMP$1402$4;
+				TMP$1402$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3092;
+				label$3095:;
 				{
 					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = *(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll)));
 				}
-				label$3089:;
+				label$3093:;
 				I$4 = I$4 + 1ll;
-				label$3088:;
-				if( I$4 <= TMP$1401$4 ) goto label$3091;
-				label$3090:;
+				label$3092:;
+				if( I$4 <= TMP$1402$4 ) goto label$3095;
+				label$3094:;
 			}
 		}
-		label$3071:;
+		label$3075:;
 	}
-	label$3070:;
-	label$3069:;
-	label$3068:;
+	label$3074:;
+	label$3073:;
+	label$3072:;
 }
 
 void _ZN4MATH12COMPLEXARRAYv27selfcatERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH7COMPLEXE* C$1 )
 {
-	label$3092:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3095;
+	label$3096:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3099;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1402$2;
-		uint64 TMP$1403$2;
-		struct $N4MATH7COMPLEXE* TMP$1404$2;
+		struct $N4MATH7COMPLEXE* TMP$1403$2;
+		uint64 TMP$1404$2;
+		struct $N4MATH7COMPLEXE* TMP$1405$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH7COMPLEXE* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-		TMP$1402$2 = (struct $N4MATH7COMPLEXE*)vr$6;
-		if( TMP$1402$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3096;
-		TMP$1404$2 = TMP$1402$2;
-		TMP$1403$2 = *(uint64*)THIS$1;
-		label$3097:;
-		if( TMP$1403$2 == 0ull ) goto label$3098;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1404$2 );
-		TMP$1404$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1404$2 + 16ll);
-		TMP$1403$2 = TMP$1403$2 + 18446744073709551615ull;
-		goto label$3097;
-		label$3098:;
-		label$3096:;
-		Q$2 = TMP$1402$2;
+		TMP$1403$2 = (struct $N4MATH7COMPLEXE*)vr$6;
+		if( TMP$1403$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3100;
+		TMP$1405$2 = TMP$1403$2;
+		TMP$1404$2 = *(uint64*)THIS$1;
+		label$3101:;
+		if( TMP$1404$2 == 0ull ) goto label$3102;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1405$2 );
+		TMP$1405$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1405$2 + 16ll);
+		TMP$1404$2 = TMP$1404$2 + 18446744073709551615ull;
+		goto label$3101;
+		label$3102:;
+		label$3100:;
+		Q$2 = TMP$1403$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1405$3;
-			TMP$1405$3 = *(int64*)THIS$1 + -2ll;
-			goto label$3099;
-			label$3102:;
+			int64 TMP$1406$3;
+			TMP$1406$3 = *(int64*)THIS$1 + -2ll;
+			goto label$3103;
+			label$3106:;
 			{
 				_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$2 + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3100:;
+			label$3104:;
 			I$3 = I$3 + 1ll;
-			label$3099:;
-			if( I$3 <= TMP$1405$3 ) goto label$3102;
-			label$3101:;
+			label$3103:;
+			if( I$3 <= TMP$1406$3 ) goto label$3106;
+			label$3105:;
 		}
 		_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (4ll & 63ll))) + -16ll), C$1 );
-		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3103;
+		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3107;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3103:;
+		label$3107:;
 		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$3094;
-	label$3095:;
+	goto label$3098;
+	label$3099:;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1406$2;
-		uint64 TMP$1407$2;
-		struct $N4MATH7COMPLEXE* TMP$1408$2;
+		struct $N4MATH7COMPLEXE* TMP$1407$2;
+		uint64 TMP$1408$2;
+		struct $N4MATH7COMPLEXE* TMP$1409$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 16ull );
-		TMP$1406$2 = (struct $N4MATH7COMPLEXE*)vr$27;
-		if( TMP$1406$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3104;
-		TMP$1408$2 = TMP$1406$2;
-		TMP$1407$2 = 1ull;
-		label$3105:;
-		if( TMP$1407$2 == 0ull ) goto label$3106;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1408$2 );
-		TMP$1408$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1408$2 + 16ll);
-		TMP$1407$2 = TMP$1407$2 + 18446744073709551615ull;
-		goto label$3105;
-		label$3106:;
-		label$3104:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1406$2;
+		TMP$1407$2 = (struct $N4MATH7COMPLEXE*)vr$27;
+		if( TMP$1407$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3108;
+		TMP$1409$2 = TMP$1407$2;
+		TMP$1408$2 = 1ull;
+		label$3109:;
+		if( TMP$1408$2 == 0ull ) goto label$3110;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1409$2 );
+		TMP$1409$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1409$2 + 16ll);
+		TMP$1408$2 = TMP$1408$2 + 18446744073709551615ull;
+		goto label$3109;
+		label$3110:;
+		label$3108:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1407$2;
 		_ZN4MATH7COMPLEXaSERKS0_( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), C$1 );
 	}
-	label$3094:;
-	label$3093:;
+	label$3098:;
+	label$3097:;
 }
 
 void _ZN4MATH12COMPLEXARRAYv27selfcatERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3107:;
-	if( THIS$1 == A$1 ) goto label$3110;
+	label$3111:;
+	if( THIS$1 == A$1 ) goto label$3114;
 	{
-		if( *(int64*)A$1 == 0ll ) goto label$3112;
+		if( *(int64*)A$1 == 0ll ) goto label$3116;
 		{
-			if( *(int64*)THIS$1 == 0ll ) goto label$3114;
+			if( *(int64*)THIS$1 == 0ll ) goto label$3118;
 			{
-				struct $N4MATH7COMPLEXE* TMP$1409$4;
-				uint64 TMP$1410$4;
-				struct $N4MATH7COMPLEXE* TMP$1411$4;
+				struct $N4MATH7COMPLEXE* TMP$1410$4;
+				uint64 TMP$1411$4;
+				struct $N4MATH7COMPLEXE* TMP$1412$4;
 				struct $N4MATH7COMPLEXE* Q$4;
 				void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (4ull & 63ll) );
-				TMP$1409$4 = (struct $N4MATH7COMPLEXE*)vr$6;
-				if( TMP$1409$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3115;
-				TMP$1411$4 = TMP$1409$4;
-				TMP$1410$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
-				label$3116:;
-				if( TMP$1410$4 == 0ull ) goto label$3117;
-				_ZN4MATH7COMPLEXC1Ev( TMP$1411$4 );
-				TMP$1411$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1411$4 + 16ll);
-				TMP$1410$4 = TMP$1410$4 + 18446744073709551615ull;
-				goto label$3116;
-				label$3117:;
-				label$3115:;
-				Q$4 = TMP$1409$4;
+				TMP$1410$4 = (struct $N4MATH7COMPLEXE*)vr$6;
+				if( TMP$1410$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3119;
+				TMP$1412$4 = TMP$1410$4;
+				TMP$1411$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
+				label$3120:;
+				if( TMP$1411$4 == 0ull ) goto label$3121;
+				_ZN4MATH7COMPLEXC1Ev( TMP$1412$4 );
+				TMP$1412$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1412$4 + 16ll);
+				TMP$1411$4 = TMP$1411$4 + 18446744073709551615ull;
+				goto label$3120;
+				label$3121:;
+				label$3119:;
+				Q$4 = TMP$1410$4;
 				int64 I$4;
 				__builtin_memset( &I$4, 0, 8ll );
 				{
 					I$4 = 0ll;
-					int64 TMP$1412$5;
-					TMP$1412$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3118;
-					label$3121:;
-					{
-						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$4 + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
-					}
-					label$3119:;
-					I$4 = I$4 + 1ll;
-					label$3118:;
-					if( I$4 <= TMP$1412$5 ) goto label$3121;
-					label$3120:;
-				}
-				{
-					I$4 = 0ll;
 					int64 TMP$1413$5;
-					TMP$1413$5 = *(int64*)A$1 + -1ll;
+					TMP$1413$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3122;
 					label$3125:;
 					{
-						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
+						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$4 + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					}
 					label$3123:;
 					I$4 = I$4 + 1ll;
@@ -19183,158 +19185,173 @@ void _ZN4MATH12COMPLEXARRAYv27selfcatERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS
 					if( I$4 <= TMP$1413$5 ) goto label$3125;
 					label$3124:;
 				}
+				{
+					I$4 = 0ll;
+					int64 TMP$1414$5;
+					TMP$1414$5 = *(int64*)A$1 + -1ll;
+					goto label$3126;
+					label$3129:;
+					{
+						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
+					}
+					label$3127:;
+					I$4 = I$4 + 1ll;
+					label$3126:;
+					if( I$4 <= TMP$1414$5 ) goto label$3129;
+					label$3128:;
+				}
 				*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-				if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3126;
+				if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3130;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$3126:;
+				label$3130:;
 				*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			goto label$3113;
-			label$3114:;
+			goto label$3117;
+			label$3118:;
 			{
-				struct $N4MATH7COMPLEXE* TMP$1414$4;
-				uint64 TMP$1415$4;
-				struct $N4MATH7COMPLEXE* TMP$1416$4;
+				struct $N4MATH7COMPLEXE* TMP$1415$4;
+				uint64 TMP$1416$4;
+				struct $N4MATH7COMPLEXE* TMP$1417$4;
 				*(int64*)THIS$1 = *(int64*)A$1;
 				void* vr$42 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-				TMP$1414$4 = (struct $N4MATH7COMPLEXE*)vr$42;
-				if( TMP$1414$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3127;
-				TMP$1416$4 = TMP$1414$4;
-				TMP$1415$4 = *(uint64*)THIS$1;
-				label$3128:;
-				if( TMP$1415$4 == 0ull ) goto label$3129;
-				_ZN4MATH7COMPLEXC1Ev( TMP$1416$4 );
-				TMP$1416$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1416$4 + 16ll);
-				TMP$1415$4 = TMP$1415$4 + 18446744073709551615ull;
-				goto label$3128;
-				label$3129:;
-				label$3127:;
-				*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1414$4;
+				TMP$1415$4 = (struct $N4MATH7COMPLEXE*)vr$42;
+				if( TMP$1415$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3131;
+				TMP$1417$4 = TMP$1415$4;
+				TMP$1416$4 = *(uint64*)THIS$1;
+				label$3132:;
+				if( TMP$1416$4 == 0ull ) goto label$3133;
+				_ZN4MATH7COMPLEXC1Ev( TMP$1417$4 );
+				TMP$1417$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1417$4 + 16ll);
+				TMP$1416$4 = TMP$1416$4 + 18446744073709551615ull;
+				goto label$3132;
+				label$3133:;
+				label$3131:;
+				*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1415$4;
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1417$5;
-					TMP$1417$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3130;
-					label$3133:;
+					int64 TMP$1418$5;
+					TMP$1418$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3134;
+					label$3137:;
 					{
 						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3131:;
+					label$3135:;
 					I$5 = I$5 + 1ll;
-					label$3130:;
-					if( I$5 <= TMP$1417$5 ) goto label$3133;
-					label$3132:;
+					label$3134:;
+					if( I$5 <= TMP$1418$5 ) goto label$3137;
+					label$3136:;
 				}
 			}
-			label$3113:;
+			label$3117:;
 		}
-		label$3112:;
-		label$3111:;
+		label$3116:;
+		label$3115:;
 	}
-	goto label$3109;
-	label$3110:;
+	goto label$3113;
+	label$3114:;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$3135;
+		if( *(int64*)THIS$1 == 0ll ) goto label$3139;
 		{
-			struct $N4MATH7COMPLEXE* TMP$1418$3;
-			uint64 TMP$1419$3;
-			struct $N4MATH7COMPLEXE* TMP$1420$3;
+			struct $N4MATH7COMPLEXE* TMP$1419$3;
+			uint64 TMP$1420$3;
+			struct $N4MATH7COMPLEXE* TMP$1421$3;
 			struct $N4MATH7COMPLEXE* Q$3;
 			void* vr$60 = malloc( (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) << (4ull & 63ll) );
-			TMP$1418$3 = (struct $N4MATH7COMPLEXE*)vr$60;
-			if( TMP$1418$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3136;
-			TMP$1420$3 = TMP$1418$3;
-			TMP$1419$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
-			label$3137:;
-			if( TMP$1419$3 == 0ull ) goto label$3138;
-			_ZN4MATH7COMPLEXC1Ev( TMP$1420$3 );
-			TMP$1420$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1420$3 + 16ll);
-			TMP$1419$3 = TMP$1419$3 + 18446744073709551615ull;
-			goto label$3137;
-			label$3138:;
-			label$3136:;
-			Q$3 = TMP$1418$3;
+			TMP$1419$3 = (struct $N4MATH7COMPLEXE*)vr$60;
+			if( TMP$1419$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3140;
+			TMP$1421$3 = TMP$1419$3;
+			TMP$1420$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
+			label$3141:;
+			if( TMP$1420$3 == 0ull ) goto label$3142;
+			_ZN4MATH7COMPLEXC1Ev( TMP$1421$3 );
+			TMP$1421$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1421$3 + 16ll);
+			TMP$1420$3 = TMP$1420$3 + 18446744073709551615ull;
+			goto label$3141;
+			label$3142:;
+			label$3140:;
+			Q$3 = TMP$1419$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1421$4;
-				TMP$1421$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3139;
-				label$3142:;
+				int64 TMP$1422$4;
+				TMP$1422$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3143;
+				label$3146:;
 				{
 					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$3 + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 				}
-				label$3140:;
+				label$3144:;
 				I$4 = I$4 + 1ll;
-				label$3139:;
-				if( I$4 <= TMP$1421$4 ) goto label$3142;
-				label$3141:;
+				label$3143:;
+				if( I$4 <= TMP$1422$4 ) goto label$3146;
+				label$3145:;
 			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 << (1ll & 63ll);
-			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3143;
+			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3147;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3143:;
+			label$3147:;
 			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		label$3135:;
-		label$3134:;
+		label$3139:;
+		label$3138:;
 	}
-	label$3109:;
-	label$3108:;
+	label$3113:;
+	label$3112:;
 }
 
 struct $N4MATH7COMPLEXE* _ZN4MATH12COMPLEXARRAYixERKu7INTEGER( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* I$1 )
 {
 	struct $N4MATH7COMPLEXE* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$3144:;
-	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$3147;
+	label$3148:;
+	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$3151;
 	{
 		fb$result$1 = (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (*I$1 << (4ll & 63ll)));
-		goto label$3145;
-		label$3147:;
+		goto label$3149;
+		label$3151:;
 	}
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	fb$result$1 = (struct $N4MATH7COMPLEXE*)((uint8*)THIS$1 + 16ll);
-	goto label$3145;
-	label$3145:;
+	goto label$3149;
+	label$3149:;
 	return fb$result$1;
 }
 
 void _ZN4MATH12COMPLEXARRAYpLERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
 {
-	label$3148:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3151;
+	label$3152:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3155;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1422$3;
-			TMP$1422$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3152;
-			label$3155:;
+			int64 TMP$1423$3;
+			TMP$1423$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3156;
+			label$3159:;
 			{
 				_ZN4MATH7COMPLEXpLERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), N$1 );
 			}
-			label$3153:;
+			label$3157:;
 			I$3 = I$3 + 1ll;
-			label$3152:;
-			if( I$3 <= TMP$1422$3 ) goto label$3155;
-			label$3154:;
+			label$3156:;
+			if( I$3 <= TMP$1423$3 ) goto label$3159;
+			label$3158:;
 		}
 	}
-	label$3151:;
-	label$3150:;
-	label$3149:;
+	label$3155:;
+	label$3154:;
+	label$3153:;
 }
 
 void _ZN4MATH12COMPLEXARRAYpLERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3156:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3159;
+	label$3160:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3163;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -19342,110 +19359,110 @@ void _ZN4MATH12COMPLEXARRAYpLERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1423$3;
-			TMP$1423$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3160;
-			label$3163:;
+			int64 TMP$1424$3;
+			TMP$1424$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3164;
+			label$3167:;
 			{
 				_ZN4MATH7COMPLEXpLERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) );
 			}
-			label$3161:;
+			label$3165:;
 			I$3 = I$3 + 1ll;
-			label$3160:;
-			if( I$3 <= TMP$1423$3 ) goto label$3163;
-			label$3162:;
+			label$3164:;
+			if( I$3 <= TMP$1424$3 ) goto label$3167;
+			label$3166:;
 		}
 	}
-	label$3159:;
-	label$3158:;
-	label$3157:;
+	label$3163:;
+	label$3162:;
+	label$3161:;
 }
 
 void _ZN4MATH12COMPLEXARRAYpLERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH7COMPLEXE* C$1 )
 {
-	label$3164:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3167;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1424$3;
-			TMP$1424$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3168;
-			label$3171:;
-			{
-				_ZN4MATH7COMPLEXpLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
-			}
-			label$3169:;
-			I$3 = I$3 + 1ll;
-			label$3168:;
-			if( I$3 <= TMP$1424$3 ) goto label$3171;
-			label$3170:;
-		}
-	}
-	label$3167:;
-	label$3166:;
-	label$3165:;
-}
-
-void _ZN4MATH12COMPLEXARRAYpLERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
-{
-	label$3172:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3175;
+	label$3168:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3171;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1425$3;
 			TMP$1425$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3176;
-			label$3179:;
+			goto label$3172;
+			label$3175:;
 			{
-				_ZN4MATH7COMPLEXpLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+				_ZN4MATH7COMPLEXpLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
 			}
-			label$3177:;
+			label$3173:;
 			I$3 = I$3 + 1ll;
-			label$3176:;
-			if( I$3 <= TMP$1425$3 ) goto label$3179;
-			label$3178:;
+			label$3172:;
+			if( I$3 <= TMP$1425$3 ) goto label$3175;
+			label$3174:;
 		}
 	}
-	label$3175:;
-	label$3174:;
-	label$3173:;
+	label$3171:;
+	label$3170:;
+	label$3169:;
 }
 
-void _ZN4MATH12COMPLEXARRAYmIERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
+void _ZN4MATH12COMPLEXARRAYpLERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3180:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3183;
+	label$3176:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3179;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1426$3;
 			TMP$1426$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3184;
-			label$3187:;
+			goto label$3180;
+			label$3183:;
+			{
+				_ZN4MATH7COMPLEXpLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+			}
+			label$3181:;
+			I$3 = I$3 + 1ll;
+			label$3180:;
+			if( I$3 <= TMP$1426$3 ) goto label$3183;
+			label$3182:;
+		}
+	}
+	label$3179:;
+	label$3178:;
+	label$3177:;
+}
+
+void _ZN4MATH12COMPLEXARRAYmIERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
+{
+	label$3184:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3187;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1427$3;
+			TMP$1427$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3188;
+			label$3191:;
 			{
 				_ZN4MATH7COMPLEXmIERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), N$1 );
 			}
-			label$3185:;
+			label$3189:;
 			I$3 = I$3 + 1ll;
-			label$3184:;
-			if( I$3 <= TMP$1426$3 ) goto label$3187;
-			label$3186:;
+			label$3188:;
+			if( I$3 <= TMP$1427$3 ) goto label$3191;
+			label$3190:;
 		}
 	}
-	label$3183:;
-	label$3182:;
-	label$3181:;
+	label$3187:;
+	label$3186:;
+	label$3185:;
 }
 
 void _ZN4MATH12COMPLEXARRAYmIERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3188:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3191;
+	label$3192:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3195;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -19453,110 +19470,110 @@ void _ZN4MATH12COMPLEXARRAYmIERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1427$3;
-			TMP$1427$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3192;
-			label$3195:;
+			int64 TMP$1428$3;
+			TMP$1428$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3196;
+			label$3199:;
 			{
 				_ZN4MATH7COMPLEXmIERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) );
 			}
-			label$3193:;
+			label$3197:;
 			I$3 = I$3 + 1ll;
-			label$3192:;
-			if( I$3 <= TMP$1427$3 ) goto label$3195;
-			label$3194:;
+			label$3196:;
+			if( I$3 <= TMP$1428$3 ) goto label$3199;
+			label$3198:;
 		}
 	}
-	label$3191:;
-	label$3190:;
-	label$3189:;
+	label$3195:;
+	label$3194:;
+	label$3193:;
 }
 
 void _ZN4MATH12COMPLEXARRAYmIERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH7COMPLEXE* C$1 )
 {
-	label$3196:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3199;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1428$3;
-			TMP$1428$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3200;
-			label$3203:;
-			{
-				_ZN4MATH7COMPLEXmIERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
-			}
-			label$3201:;
-			I$3 = I$3 + 1ll;
-			label$3200:;
-			if( I$3 <= TMP$1428$3 ) goto label$3203;
-			label$3202:;
-		}
-	}
-	label$3199:;
-	label$3198:;
-	label$3197:;
-}
-
-void _ZN4MATH12COMPLEXARRAYmIERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
-{
-	label$3204:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3207;
+	label$3200:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3203;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1429$3;
 			TMP$1429$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3208;
-			label$3211:;
+			goto label$3204;
+			label$3207:;
 			{
-				_ZN4MATH7COMPLEXmIERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+				_ZN4MATH7COMPLEXmIERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
 			}
-			label$3209:;
+			label$3205:;
 			I$3 = I$3 + 1ll;
-			label$3208:;
-			if( I$3 <= TMP$1429$3 ) goto label$3211;
-			label$3210:;
+			label$3204:;
+			if( I$3 <= TMP$1429$3 ) goto label$3207;
+			label$3206:;
 		}
 	}
-	label$3207:;
-	label$3206:;
-	label$3205:;
+	label$3203:;
+	label$3202:;
+	label$3201:;
 }
 
-void _ZN4MATH12COMPLEXARRAYmLERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
+void _ZN4MATH12COMPLEXARRAYmIERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3212:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3215;
+	label$3208:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3211;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1430$3;
 			TMP$1430$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3216;
-			label$3219:;
+			goto label$3212;
+			label$3215:;
+			{
+				_ZN4MATH7COMPLEXmIERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+			}
+			label$3213:;
+			I$3 = I$3 + 1ll;
+			label$3212:;
+			if( I$3 <= TMP$1430$3 ) goto label$3215;
+			label$3214:;
+		}
+	}
+	label$3211:;
+	label$3210:;
+	label$3209:;
+}
+
+void _ZN4MATH12COMPLEXARRAYmLERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
+{
+	label$3216:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3219;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1431$3;
+			TMP$1431$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3220;
+			label$3223:;
 			{
 				_ZN4MATH7COMPLEXmLERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), N$1 );
 			}
-			label$3217:;
+			label$3221:;
 			I$3 = I$3 + 1ll;
-			label$3216:;
-			if( I$3 <= TMP$1430$3 ) goto label$3219;
-			label$3218:;
+			label$3220:;
+			if( I$3 <= TMP$1431$3 ) goto label$3223;
+			label$3222:;
 		}
 	}
-	label$3215:;
-	label$3214:;
-	label$3213:;
+	label$3219:;
+	label$3218:;
+	label$3217:;
 }
 
 void _ZN4MATH12COMPLEXARRAYmLERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3220:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3223;
+	label$3224:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3227;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -19564,106 +19581,85 @@ void _ZN4MATH12COMPLEXARRAYmLERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1431$3;
-			TMP$1431$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3224;
-			label$3227:;
+			int64 TMP$1432$3;
+			TMP$1432$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3228;
+			label$3231:;
 			{
 				_ZN4MATH7COMPLEXmLERKd( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) );
 			}
-			label$3225:;
+			label$3229:;
 			I$3 = I$3 + 1ll;
-			label$3224:;
-			if( I$3 <= TMP$1431$3 ) goto label$3227;
-			label$3226:;
+			label$3228:;
+			if( I$3 <= TMP$1432$3 ) goto label$3231;
+			label$3230:;
 		}
 	}
-	label$3223:;
-	label$3222:;
-	label$3221:;
+	label$3227:;
+	label$3226:;
+	label$3225:;
 }
 
 void _ZN4MATH12COMPLEXARRAYmLERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH7COMPLEXE* C$1 )
 {
-	label$3228:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3231;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1432$3;
-			TMP$1432$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3232;
-			label$3235:;
-			{
-				_ZN4MATH7COMPLEXmLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
-			}
-			label$3233:;
-			I$3 = I$3 + 1ll;
-			label$3232:;
-			if( I$3 <= TMP$1432$3 ) goto label$3235;
-			label$3234:;
-		}
-	}
-	label$3231:;
-	label$3230:;
-	label$3229:;
-}
-
-void _ZN4MATH12COMPLEXARRAYmLERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
-{
-	label$3236:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3239;
+	label$3232:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3235;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1433$3;
 			TMP$1433$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3240;
-			label$3243:;
+			goto label$3236;
+			label$3239:;
+			{
+				_ZN4MATH7COMPLEXmLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), C$1 );
+			}
+			label$3237:;
+			I$3 = I$3 + 1ll;
+			label$3236:;
+			if( I$3 <= TMP$1433$3 ) goto label$3239;
+			label$3238:;
+		}
+	}
+	label$3235:;
+	label$3234:;
+	label$3233:;
+}
+
+void _ZN4MATH12COMPLEXARRAYmLERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
+{
+	label$3240:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3243;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1434$3;
+			TMP$1434$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3244;
+			label$3247:;
 			{
 				_ZN4MATH7COMPLEXmLERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3241:;
+			label$3245:;
 			I$3 = I$3 + 1ll;
-			label$3240:;
-			if( I$3 <= TMP$1433$3 ) goto label$3243;
-			label$3242:;
+			label$3244:;
+			if( I$3 <= TMP$1434$3 ) goto label$3247;
+			label$3246:;
 		}
 	}
-	label$3239:;
-	label$3238:;
-	label$3237:;
+	label$3243:;
+	label$3242:;
+	label$3241:;
 }
 
 void _ZN4MATH12COMPLEXARRAYdVERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double* N$1 )
 {
-	label$3244:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3247;
+	label$3248:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3251;
 	{
-		if( *N$1 == 0x0p+0 ) goto label$3249;
-		{
-			{
-				int64 I$4;
-				I$4 = 0ll;
-				int64 TMP$1434$4;
-				TMP$1434$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3250;
-				label$3253:;
-				{
-					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) / *N$1;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) / *N$1;
-				}
-				label$3251:;
-				I$4 = I$4 + 1ll;
-				label$3250:;
-				if( I$4 <= TMP$1434$4 ) goto label$3253;
-				label$3252:;
-			}
-		}
-		goto label$3248;
-		label$3249:;
+		if( *N$1 == 0x0p+0 ) goto label$3253;
 		{
 			{
 				int64 I$4;
@@ -19673,8 +19669,8 @@ void _ZN4MATH12COMPLEXARRAYdVERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double
 				goto label$3254;
 				label$3257:;
 				{
-					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) / *N$1;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) / *N$1;
 				}
 				label$3255:;
 				I$4 = I$4 + 1ll;
@@ -19683,17 +19679,38 @@ void _ZN4MATH12COMPLEXARRAYdVERKd( struct $N4MATH12COMPLEXARRAYE* THIS$1, double
 				label$3256:;
 			}
 		}
-		label$3248:;
+		goto label$3252;
+		label$3253:;
+		{
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1436$4;
+				TMP$1436$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3258;
+				label$3261:;
+				{
+					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+				}
+				label$3259:;
+				I$4 = I$4 + 1ll;
+				label$3258:;
+				if( I$4 <= TMP$1436$4 ) goto label$3261;
+				label$3260:;
+			}
+		}
+		label$3252:;
 	}
-	label$3247:;
-	label$3246:;
-	label$3245:;
+	label$3251:;
+	label$3250:;
+	label$3249:;
 }
 
 void _ZN4MATH12COMPLEXARRAYdVERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3258:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3261;
+	label$3262:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3265;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -19701,42 +19718,42 @@ void _ZN4MATH12COMPLEXARRAYdVERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1436$3;
-			TMP$1436$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3262;
-			label$3265:;
+			int64 TMP$1437$3;
+			TMP$1437$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3266;
+			label$3269:;
 			{
-				if( *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$3267;
+				if( *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$3271;
 				{
 					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) / *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 				}
-				goto label$3266;
-				label$3267:;
+				goto label$3270;
+				label$3271:;
 				{
 					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = 0x0p+0;
 					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = 0x0p+0;
 				}
-				label$3266:;
+				label$3270:;
 			}
-			label$3263:;
+			label$3267:;
 			I$3 = I$3 + 1ll;
-			label$3262:;
-			if( I$3 <= TMP$1436$3 ) goto label$3265;
-			label$3264:;
+			label$3266:;
+			if( I$3 <= TMP$1437$3 ) goto label$3269;
+			label$3268:;
 		}
 	}
-	label$3261:;
-	label$3260:;
-	label$3259:;
+	label$3265:;
+	label$3264:;
+	label$3263:;
 }
 
 void _ZN4MATH12COMPLEXARRAYdVERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH7COMPLEXE* C$1 )
 {
-	label$3268:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3271;
+	label$3272:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3275;
 	{
-		if( ((int64)-(*(double*)C$1 != 0x0p+0) | (int64)-(*(double*)((uint8*)C$1 + 8ll) != 0x0p+0)) == 0ll ) goto label$3273;
+		if( ((int64)-(*(double*)C$1 != 0x0p+0) | (int64)-(*(double*)((uint8*)C$1 + 8ll) != 0x0p+0)) == 0ll ) goto label$3277;
 		{
 			double D$3;
 			D$3 = (*(double*)C$1 * *(double*)C$1) + (*(double*)((uint8*)C$1 + 8ll) * *(double*)((uint8*)C$1 + 8ll));
@@ -19747,36 +19764,15 @@ void _ZN4MATH12COMPLEXARRAYdVERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THI
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1437$4;
-				TMP$1437$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3274;
-				label$3277:;
-				{
-					X$3 = ((*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) * *(double*)C$1) + (*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) * *(double*)((uint8*)C$1 + 8ll))) / D$3;
-					Y$3 = ((*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) * *(double*)C$1) - (*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) * *(double*)((uint8*)C$1 + 8ll))) / D$3;
-					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = X$3;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = Y$3;
-				}
-				label$3275:;
-				I$4 = I$4 + 1ll;
-				label$3274:;
-				if( I$4 <= TMP$1437$4 ) goto label$3277;
-				label$3276:;
-			}
-		}
-		goto label$3272;
-		label$3273:;
-		{
-			{
-				int64 I$4;
-				I$4 = 0ll;
 				int64 TMP$1438$4;
 				TMP$1438$4 = *(int64*)THIS$1 + -1ll;
 				goto label$3278;
 				label$3281:;
 				{
-					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					X$3 = ((*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) * *(double*)C$1) + (*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) * *(double*)((uint8*)C$1 + 8ll))) / D$3;
+					Y$3 = ((*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) * *(double*)C$1) - (*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) * *(double*)((uint8*)C$1 + 8ll))) / D$3;
+					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = X$3;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = Y$3;
 				}
 				label$3279:;
 				I$4 = I$4 + 1ll;
@@ -19785,231 +19781,252 @@ void _ZN4MATH12COMPLEXARRAYdVERKNS_7COMPLEXE( struct $N4MATH12COMPLEXARRAYE* THI
 				label$3280:;
 			}
 		}
-		label$3272:;
+		goto label$3276;
+		label$3277:;
+		{
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1439$4;
+				TMP$1439$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3282;
+				label$3285:;
+				{
+					*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+				}
+				label$3283:;
+				I$4 = I$4 + 1ll;
+				label$3282:;
+				if( I$4 <= TMP$1439$4 ) goto label$3285;
+				label$3284:;
+			}
+		}
+		label$3276:;
 	}
-	label$3271:;
-	label$3270:;
-	label$3269:;
+	label$3275:;
+	label$3274:;
+	label$3273:;
 }
 
 void _ZN4MATH12COMPLEXARRAYdVERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3282:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3285;
+	label$3286:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3289;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1440$3;
-			TMP$1440$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3286;
-			label$3289:;
+			int64 TMP$1441$3;
+			TMP$1441$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3290;
+			label$3293:;
 			{
 				_ZN4MATH7COMPLEXdVERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3287:;
+			label$3291:;
 			I$3 = I$3 + 1ll;
-			label$3286:;
-			if( I$3 <= TMP$1440$3 ) goto label$3289;
-			label$3288:;
+			label$3290:;
+			if( I$3 <= TMP$1441$3 ) goto label$3293;
+			label$3292:;
 		}
 	}
-	label$3285:;
-	label$3284:;
-	label$3283:;
+	label$3289:;
+	label$3288:;
+	label$3287:;
 }
 
 FBSTRING* _ZNK4MATH12COMPLEXARRAYcv8FBSTRINGEv( struct $N4MATH12COMPLEXARRAYE* THIS$1 )
 {
-	FBSTRING TMP$1442$1;
 	FBSTRING TMP$1443$1;
+	FBSTRING TMP$1444$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$3290:;
+	label$3294:;
 	FBSTRING* vr$2 = fb_LongintToStr( *(int64*)THIS$1 );
-	__builtin_memset( &TMP$1442$1, 0, 24ll );
-	FBSTRING* vr$5 = fb_StrConcat( &TMP$1442$1, (void*)"<math.complexArray>{ length : ", 31ll, (void*)vr$2, -1ll );
 	__builtin_memset( &TMP$1443$1, 0, 24ll );
-	FBSTRING* vr$8 = fb_StrConcat( &TMP$1443$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$5 = fb_StrConcat( &TMP$1443$1, (void*)"<math.complexArray>{ length : ", 31ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$1444$1, 0, 24ll );
+	FBSTRING* vr$8 = fb_StrConcat( &TMP$1444$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$8, -1ll, 0 );
-	goto label$3291;
-	label$3291:;
+	goto label$3295;
+	label$3295:;
 	FBSTRING* vr$11 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$11;
 }
 
 void _ZN4MATH12COMPLEXARRAYaSERKNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3292:;
+	label$3296:;
 	*(int64*)THIS$1 = 0ll;
-	if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3295;
+	if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3299;
 	{
-		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3296;
+		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3300;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3296:;
+		label$3300:;
 		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH7COMPLEXE*)0ull;
 	}
-	label$3295:;
-	label$3294:;
-	if( *(int64*)A$1 == 0ll ) goto label$3298;
+	label$3299:;
+	label$3298:;
+	if( *(int64*)A$1 == 0ll ) goto label$3302;
 	{
-		struct $N4MATH7COMPLEXE* TMP$1444$2;
-		uint64 TMP$1445$2;
-		struct $N4MATH7COMPLEXE* TMP$1446$2;
+		struct $N4MATH7COMPLEXE* TMP$1445$2;
+		uint64 TMP$1446$2;
+		struct $N4MATH7COMPLEXE* TMP$1447$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$10 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-		TMP$1444$2 = (struct $N4MATH7COMPLEXE*)vr$10;
-		if( TMP$1444$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3299;
-		TMP$1446$2 = TMP$1444$2;
-		TMP$1445$2 = *(uint64*)A$1;
-		label$3300:;
-		if( TMP$1445$2 == 0ull ) goto label$3301;
-		_ZN4MATH7COMPLEXC1Ev( TMP$1446$2 );
-		TMP$1446$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1446$2 + 16ll);
-		TMP$1445$2 = TMP$1445$2 + 18446744073709551615ull;
-		goto label$3300;
-		label$3301:;
-		label$3299:;
-		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1444$2;
+		TMP$1445$2 = (struct $N4MATH7COMPLEXE*)vr$10;
+		if( TMP$1445$2 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3303;
+		TMP$1447$2 = TMP$1445$2;
+		TMP$1446$2 = *(uint64*)A$1;
+		label$3304:;
+		if( TMP$1446$2 == 0ull ) goto label$3305;
+		_ZN4MATH7COMPLEXC1Ev( TMP$1447$2 );
+		TMP$1447$2 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1447$2 + 16ll);
+		TMP$1446$2 = TMP$1446$2 + 18446744073709551615ull;
+		goto label$3304;
+		label$3305:;
+		label$3303:;
+		*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1445$2;
 		double* P$2;
 		double* vr$15 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
 		P$2 = vr$15;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1447$3;
-			TMP$1447$3 = *(int64*)A$1 + -1ll;
-			goto label$3302;
-			label$3305:;
+			int64 TMP$1448$3;
+			TMP$1448$3 = *(int64*)A$1 + -1ll;
+			goto label$3306;
+			label$3309:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$3303:;
+			label$3307:;
 			I$3 = I$3 + 1ll;
-			label$3302:;
-			if( I$3 <= TMP$1447$3 ) goto label$3305;
-			label$3304:;
+			label$3306:;
+			if( I$3 <= TMP$1448$3 ) goto label$3309;
+			label$3308:;
 		}
 	}
-	label$3298:;
+	label$3302:;
+	label$3301:;
 	label$3297:;
-	label$3293:;
 }
 
 void _ZN4MATH12COMPLEXARRAYaSERKS0_( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1 )
 {
-	label$3306:;
-	if( THIS$1 == A$1 ) goto label$3309;
+	label$3310:;
+	if( THIS$1 == A$1 ) goto label$3313;
 	{
 		*(int64*)THIS$1 = 0ll;
-		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3311;
+		if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3315;
 		{
-			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3312;
+			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3316;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3312:;
+			label$3316:;
 			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH7COMPLEXE*)0ull;
 		}
-		label$3311:;
-		label$3310:;
-		if( *(int64*)A$1 == 0ll ) goto label$3314;
+		label$3315:;
+		label$3314:;
+		if( *(int64*)A$1 == 0ll ) goto label$3318;
 		{
-			struct $N4MATH7COMPLEXE* TMP$1448$3;
-			uint64 TMP$1449$3;
-			struct $N4MATH7COMPLEXE* TMP$1450$3;
+			struct $N4MATH7COMPLEXE* TMP$1449$3;
+			uint64 TMP$1450$3;
+			struct $N4MATH7COMPLEXE* TMP$1451$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$10 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-			TMP$1448$3 = (struct $N4MATH7COMPLEXE*)vr$10;
-			if( TMP$1448$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3315;
-			TMP$1450$3 = TMP$1448$3;
-			TMP$1449$3 = *(uint64*)A$1;
-			label$3316:;
-			if( TMP$1449$3 == 0ull ) goto label$3317;
-			_ZN4MATH7COMPLEXC1Ev( TMP$1450$3 );
-			TMP$1450$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1450$3 + 16ll);
-			TMP$1449$3 = TMP$1449$3 + 18446744073709551615ull;
-			goto label$3316;
-			label$3317:;
-			label$3315:;
-			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1448$3;
+			TMP$1449$3 = (struct $N4MATH7COMPLEXE*)vr$10;
+			if( TMP$1449$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3319;
+			TMP$1451$3 = TMP$1449$3;
+			TMP$1450$3 = *(uint64*)A$1;
+			label$3320:;
+			if( TMP$1450$3 == 0ull ) goto label$3321;
+			_ZN4MATH7COMPLEXC1Ev( TMP$1451$3 );
+			TMP$1451$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1451$3 + 16ll);
+			TMP$1450$3 = TMP$1450$3 + 18446744073709551615ull;
+			goto label$3320;
+			label$3321:;
+			label$3319:;
+			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1449$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1451$4;
-				TMP$1451$4 = *(int64*)A$1 + -1ll;
-				goto label$3318;
-				label$3321:;
+				int64 TMP$1452$4;
+				TMP$1452$4 = *(int64*)A$1 + -1ll;
+				goto label$3322;
+				label$3325:;
 				{
 					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 				}
-				label$3319:;
+				label$3323:;
 				I$4 = I$4 + 1ll;
-				label$3318:;
-				if( I$4 <= TMP$1451$4 ) goto label$3321;
-				label$3320:;
+				label$3322:;
+				if( I$4 <= TMP$1452$4 ) goto label$3325;
+				label$3324:;
 			}
 		}
-		label$3314:;
-		label$3313:;
+		label$3318:;
+		label$3317:;
 	}
-	label$3309:;
-	label$3308:;
-	label$3307:;
+	label$3313:;
+	label$3312:;
+	label$3311:;
 }
 
 struct $N4MATH7COMPLEXE _ZNK4MATH12COMPLEXARRAY10AVG__get__Ev( struct $N4MATH12COMPLEXARRAYE* THIS$1 )
 {
 	struct $N4MATH7COMPLEXE fb$result$1;
-	label$3322:;
+	label$3326:;
 	{
-		int64 TMP$1452$2;
-		TMP$1452$2 = *(int64*)THIS$1;
-		if( TMP$1452$2 != 0ll ) goto label$3325;
-		label$3326:;
+		int64 TMP$1453$2;
+		TMP$1453$2 = *(int64*)THIS$1;
+		if( TMP$1453$2 != 0ll ) goto label$3329;
+		label$3330:;
 		{
 			_ZN4MATH7COMPLEXC1Ev( &fb$result$1 );
-			goto label$3323;
+			goto label$3327;
 		}
-		goto label$3324;
-		label$3325:;
-		if( TMP$1452$2 != 1ll ) goto label$3327;
-		label$3328:;
+		goto label$3328;
+		label$3329:;
+		if( TMP$1453$2 != 1ll ) goto label$3331;
+		label$3332:;
 		{
 			_ZN4MATH7COMPLEXC1ERKS0_( &fb$result$1, *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) );
-			goto label$3323;
+			goto label$3327;
 		}
-		goto label$3324;
-		label$3327:;
+		goto label$3328;
+		label$3331:;
 		{
-			double TMP$1455$3;
-			struct $N4MATH7COMPLEXE TMP$1456$3;
+			double TMP$1456$3;
+			struct $N4MATH7COMPLEXE TMP$1457$3;
 			struct $N4MATH7COMPLEXE R$3;
 			_ZN4MATH7COMPLEXC1Ev( &R$3 );
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1454$4;
-				TMP$1454$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3330;
-				label$3333:;
+				int64 TMP$1455$4;
+				TMP$1455$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3334;
+				label$3337:;
 				{
 					_ZN4MATH7COMPLEXpLERKS0_( &R$3, (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 				}
-				label$3331:;
+				label$3335:;
 				I$4 = I$4 + 1ll;
-				label$3330:;
-				if( I$4 <= TMP$1454$4 ) goto label$3333;
-				label$3332:;
+				label$3334:;
+				if( I$4 <= TMP$1455$4 ) goto label$3337;
+				label$3336:;
 			}
-			TMP$1455$3 = (double)*(int64*)THIS$1;
-			struct $N4MATH7COMPLEXE vr$16 = _ZN4MATHdvERKNS_7COMPLEXERKd( (struct $N4MATH7COMPLEXE*)&R$3, (double*)&TMP$1455$3 );
-			TMP$1456$3 = vr$16;
-			_ZN4MATH7COMPLEXC1ERKS0_( &fb$result$1, (struct $N4MATH7COMPLEXE*)&TMP$1456$3 );
-			goto label$3323;
+			TMP$1456$3 = (double)*(int64*)THIS$1;
+			struct $N4MATH7COMPLEXE vr$16 = _ZN4MATHdvERKNS_7COMPLEXERKd( (struct $N4MATH7COMPLEXE*)&R$3, (double*)&TMP$1456$3 );
+			TMP$1457$3 = vr$16;
+			_ZN4MATH7COMPLEXC1ERKS0_( &fb$result$1, (struct $N4MATH7COMPLEXE*)&TMP$1457$3 );
+			goto label$3327;
 		}
-		label$3329:;
-		label$3324:;
+		label$3333:;
+		label$3328:;
 	}
-	label$3323:;
+	label$3327:;
 	return fb$result$1;
 }
 
@@ -20017,960 +20034,960 @@ struct $N4MATH7COMPLEXE* _ZNK4MATH12COMPLEXARRAY11DATA__get__Ev( struct $N4MATH1
 {
 	struct $N4MATH7COMPLEXE* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$3334:;
+	label$3338:;
 	fb$result$1 = *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll);
-	goto label$3335;
-	label$3335:;
+	goto label$3339;
+	label$3339:;
 	return fb$result$1;
 }
 
 void _ZN4MATH12COMPLEXARRAY13LENGTH__set__ERKu7INTEGER( struct $N4MATH12COMPLEXARRAYE* THIS$1, int64* L$1 )
 {
-	label$3336:;
-	if( *L$1 <= 0ll ) goto label$3339;
+	label$3340:;
+	if( *L$1 <= 0ll ) goto label$3343;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$3341;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$3345;
 		{
-			if( *L$1 == *(int64*)THIS$1 ) goto label$3343;
+			if( *L$1 == *(int64*)THIS$1 ) goto label$3347;
 			{
-				struct $N4MATH7COMPLEXE* TMP$1457$4;
-				uint64 TMP$1458$4;
-				struct $N4MATH7COMPLEXE* TMP$1459$4;
+				struct $N4MATH7COMPLEXE* TMP$1458$4;
+				uint64 TMP$1459$4;
+				struct $N4MATH7COMPLEXE* TMP$1460$4;
 				struct $N4MATH7COMPLEXE* Q$4;
 				void* vr$6 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-				TMP$1457$4 = (struct $N4MATH7COMPLEXE*)vr$6;
-				if( TMP$1457$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3344;
-				TMP$1459$4 = TMP$1457$4;
-				TMP$1458$4 = *(uint64*)L$1;
-				label$3345:;
-				if( TMP$1458$4 == 0ull ) goto label$3346;
-				_ZN4MATH7COMPLEXC1Ev( TMP$1459$4 );
-				TMP$1459$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1459$4 + 16ll);
-				TMP$1458$4 = TMP$1458$4 + 18446744073709551615ull;
-				goto label$3345;
-				label$3346:;
-				label$3344:;
-				Q$4 = TMP$1457$4;
+				TMP$1458$4 = (struct $N4MATH7COMPLEXE*)vr$6;
+				if( TMP$1458$4 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3348;
+				TMP$1460$4 = TMP$1458$4;
+				TMP$1459$4 = *(uint64*)L$1;
+				label$3349:;
+				if( TMP$1459$4 == 0ull ) goto label$3350;
+				_ZN4MATH7COMPLEXC1Ev( TMP$1460$4 );
+				TMP$1460$4 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1460$4 + 16ll);
+				TMP$1459$4 = TMP$1459$4 + 18446744073709551615ull;
+				goto label$3349;
+				label$3350:;
+				label$3348:;
+				Q$4 = TMP$1458$4;
 				{
-					int64 TMP$1460$5;
+					int64 TMP$1461$5;
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1461$5;
-					if( *L$1 >= *(int64*)THIS$1 ) goto label$3347;
-					TMP$1460$5 = *L$1;
-					goto label$3360;
-					label$3347:;
-					TMP$1460$5 = *(int64*)THIS$1;
-					label$3360:;
-					TMP$1461$5 = TMP$1460$5 + -1ll;
-					goto label$3348;
+					int64 TMP$1462$5;
+					if( *L$1 >= *(int64*)THIS$1 ) goto label$3351;
+					TMP$1461$5 = *L$1;
+					goto label$3364;
 					label$3351:;
+					TMP$1461$5 = *(int64*)THIS$1;
+					label$3364:;
+					TMP$1462$5 = TMP$1461$5 + -1ll;
+					goto label$3352;
+					label$3355:;
 					{
 						_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)Q$4 + (I$5 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3349:;
+					label$3353:;
 					I$5 = I$5 + 1ll;
-					label$3348:;
-					if( I$5 <= TMP$1461$5 ) goto label$3351;
-					label$3350:;
+					label$3352:;
+					if( I$5 <= TMP$1462$5 ) goto label$3355;
+					label$3354:;
 				}
 				*(int64*)THIS$1 = *L$1;
-				if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3352;
+				if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3356;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$3352:;
+				label$3356:;
 				*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			label$3343:;
-			label$3342:;
+			label$3347:;
+			label$3346:;
 		}
-		goto label$3340;
-		label$3341:;
+		goto label$3344;
+		label$3345:;
 		{
-			struct $N4MATH7COMPLEXE* TMP$1462$3;
-			uint64 TMP$1463$3;
-			struct $N4MATH7COMPLEXE* TMP$1464$3;
+			struct $N4MATH7COMPLEXE* TMP$1463$3;
+			uint64 TMP$1464$3;
+			struct $N4MATH7COMPLEXE* TMP$1465$3;
 			*(int64*)THIS$1 = *L$1;
 			void* vr$30 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-			TMP$1462$3 = (struct $N4MATH7COMPLEXE*)vr$30;
-			if( TMP$1462$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3353;
-			TMP$1464$3 = TMP$1462$3;
-			TMP$1463$3 = *(uint64*)THIS$1;
-			label$3354:;
-			if( TMP$1463$3 == 0ull ) goto label$3355;
-			_ZN4MATH7COMPLEXC1Ev( TMP$1464$3 );
-			TMP$1464$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1464$3 + 16ll);
-			TMP$1463$3 = TMP$1463$3 + 18446744073709551615ull;
-			goto label$3354;
-			label$3355:;
-			label$3353:;
-			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1462$3;
+			TMP$1463$3 = (struct $N4MATH7COMPLEXE*)vr$30;
+			if( TMP$1463$3 == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3357;
+			TMP$1465$3 = TMP$1463$3;
+			TMP$1464$3 = *(uint64*)THIS$1;
+			label$3358:;
+			if( TMP$1464$3 == 0ull ) goto label$3359;
+			_ZN4MATH7COMPLEXC1Ev( TMP$1465$3 );
+			TMP$1465$3 = (struct $N4MATH7COMPLEXE*)((uint8*)TMP$1465$3 + 16ll);
+			TMP$1464$3 = TMP$1464$3 + 18446744073709551615ull;
+			goto label$3358;
+			label$3359:;
+			label$3357:;
+			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = TMP$1463$3;
 		}
-		label$3340:;
+		label$3344:;
 	}
-	goto label$3338;
-	label$3339:;
-	if( *L$1 != 0ll ) goto label$3356;
+	goto label$3342;
+	label$3343:;
+	if( *L$1 != 0ll ) goto label$3360;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$3358;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$3362;
 		{
 			*(int64*)THIS$1 = 0ll;
-			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3359;
+			if( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH7COMPLEXE*)0ull ) goto label$3363;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3359:;
+			label$3363:;
 			*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH7COMPLEXE*)0ull;
 		}
-		label$3358:;
-		label$3357:;
+		label$3362:;
+		label$3361:;
 	}
-	label$3356:;
-	label$3338:;
-	label$3337:;
+	label$3360:;
+	label$3342:;
+	label$3341:;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFvRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1358 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFvRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1359 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3361:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3364;
+	label$3365:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3368;
 	{
-		if( F$1 == (tmp$1358)0ull ) goto label$3366;
+		if( F$1 == (tmp$1359)0ull ) goto label$3370;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3368;
+			if( *R$1 == (boolean)0ll ) goto label$3372;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3369;
-					label$3372:;
-					{
-						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-					}
-					label$3370:;
-					I$5 = I$5 + -1ll;
-					label$3369:;
-					if( I$5 >= 0ll ) goto label$3372;
-					label$3371:;
-				}
-			}
-			goto label$3367;
-			label$3368:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1465$5;
-					TMP$1465$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3373;
 					label$3376:;
 					{
 						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$3374:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3373:;
-					if( I$5 <= TMP$1465$5 ) goto label$3376;
+					if( I$5 >= 0ll ) goto label$3376;
 					label$3375:;
 				}
 			}
-			label$3367:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3362;
-		}
-		label$3366:;
-		label$3365:;
-	}
-	label$3364:;
-	label$3363:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3362;
-	label$3362:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFbRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1360 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3377:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3380;
-	{
-		if( F$1 == (tmp$1360)0ull ) goto label$3382;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3384;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3385;
-					label$3388:;
-					{
-						boolean vr$8 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$8 != (boolean)0ll ) goto label$3390;
-						{
-							goto label$3387;
-						}
-						label$3390:;
-						label$3389:;
-					}
-					label$3386:;
-					I$5 = I$5 + -1ll;
-					label$3385:;
-					if( I$5 >= 0ll ) goto label$3388;
-					label$3387:;
-				}
-			}
-			goto label$3383;
-			label$3384:;
+			goto label$3371;
+			label$3372:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1466$5;
 					TMP$1466$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3391;
-					label$3394:;
+					goto label$3377;
+					label$3380:;
 					{
-						boolean vr$15 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$15 != (boolean)0ll ) goto label$3396;
-						{
-							goto label$3393;
-						}
-						label$3396:;
-						label$3395:;
+						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3392:;
+					label$3378:;
 					I$5 = I$5 + 1ll;
-					label$3391:;
-					if( I$5 <= TMP$1466$5 ) goto label$3394;
-					label$3393:;
+					label$3377:;
+					if( I$5 <= TMP$1466$5 ) goto label$3380;
+					label$3379:;
 				}
 			}
-			label$3383:;
+			label$3371:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3378;
+			goto label$3366;
 		}
-		label$3382:;
-		label$3381:;
+		label$3370:;
+		label$3369:;
 	}
-	label$3380:;
-	label$3379:;
+	label$3368:;
+	label$3367:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3378;
-	label$3378:;
+	goto label$3366;
+	label$3366:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFvRNS_7COMPLEXERKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1359 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFbRNS_7COMPLEXEERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1361 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3397:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3400;
+	label$3381:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3384;
 	{
-		if( F$1 == (tmp$1359)0ull ) goto label$3402;
+		if( F$1 == (tmp$1361)0ull ) goto label$3386;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3404;
+			if( *R$1 == (boolean)0ll ) goto label$3388;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3405;
-					label$3408:;
+					goto label$3389;
+					label$3392:;
 					{
-						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						boolean vr$8 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$8 != (boolean)0ll ) goto label$3394;
+						{
+							goto label$3391;
+						}
+						label$3394:;
+						label$3393:;
 					}
-					label$3406:;
+					label$3390:;
 					I$5 = I$5 + -1ll;
-					label$3405:;
-					if( I$5 >= 0ll ) goto label$3408;
-					label$3407:;
+					label$3389:;
+					if( I$5 >= 0ll ) goto label$3392;
+					label$3391:;
 				}
 			}
-			goto label$3403;
-			label$3404:;
+			goto label$3387;
+			label$3388:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1467$5;
 					TMP$1467$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3395;
+					label$3398:;
+					{
+						boolean vr$15 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$15 != (boolean)0ll ) goto label$3400;
+						{
+							goto label$3397;
+						}
+						label$3400:;
+						label$3399:;
+					}
+					label$3396:;
+					I$5 = I$5 + 1ll;
+					label$3395:;
+					if( I$5 <= TMP$1467$5 ) goto label$3398;
+					label$3397:;
+				}
+			}
+			label$3387:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3382;
+		}
+		label$3386:;
+		label$3385:;
+	}
+	label$3384:;
+	label$3383:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3382;
+	label$3382:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFvRNS_7COMPLEXERKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1360 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3401:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3404;
+	{
+		if( F$1 == (tmp$1360)0ull ) goto label$3406;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3408;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3409;
 					label$3412:;
 					{
 						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$3410:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3409:;
-					if( I$5 <= TMP$1467$5 ) goto label$3412;
+					if( I$5 >= 0ll ) goto label$3412;
 					label$3411:;
 				}
 			}
-			label$3403:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3398;
-		}
-		label$3402:;
-		label$3401:;
-	}
-	label$3400:;
-	label$3399:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3398;
-	label$3398:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFbRNS_7COMPLEXERKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1361 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3413:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3416;
-	{
-		if( F$1 == (tmp$1361)0ull ) goto label$3418;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3420;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3421;
-					label$3424:;
-					{
-						boolean vr$9 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$9 != (boolean)0ll ) goto label$3426;
-						{
-							goto label$3423;
-						}
-						label$3426:;
-						label$3425:;
-					}
-					label$3422:;
-					I$5 = I$5 + -1ll;
-					label$3421:;
-					if( I$5 >= 0ll ) goto label$3424;
-					label$3423:;
-				}
-			}
-			goto label$3419;
-			label$3420:;
+			goto label$3407;
+			label$3408:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1468$5;
 					TMP$1468$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3427;
-					label$3430:;
+					goto label$3413;
+					label$3416:;
 					{
-						boolean vr$17 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$17 != (boolean)0ll ) goto label$3432;
-						{
-							goto label$3429;
-						}
-						label$3432:;
-						label$3431:;
+						(F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
-					label$3428:;
+					label$3414:;
 					I$5 = I$5 + 1ll;
-					label$3427:;
-					if( I$5 <= TMP$1468$5 ) goto label$3430;
-					label$3429:;
+					label$3413:;
+					if( I$5 <= TMP$1468$5 ) goto label$3416;
+					label$3415:;
 				}
 			}
-			label$3419:;
+			label$3407:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3414;
+			goto label$3402;
 		}
-		label$3418:;
-		label$3417:;
+		label$3406:;
+		label$3405:;
 	}
-	label$3416:;
-	label$3415:;
+	label$3404:;
+	label$3403:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3414;
-	label$3414:;
+	goto label$3402;
+	label$3402:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFvRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY7FOREACHEPFbRNS_7COMPLEXERKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1362 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3433:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3436;
+	label$3417:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3420;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$3438;
+		if( F$1 == (tmp$1362)0ull ) goto label$3422;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3440;
+			if( *R$1 == (boolean)0ll ) goto label$3424;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3441;
-					label$3444:;
+					goto label$3425;
+					label$3428:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						boolean vr$9 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$9 != (boolean)0ll ) goto label$3430;
+						{
+							goto label$3427;
+						}
+						label$3430:;
+						label$3429:;
 					}
-					label$3442:;
+					label$3426:;
 					I$5 = I$5 + -1ll;
-					label$3441:;
-					if( I$5 >= 0ll ) goto label$3444;
-					label$3443:;
+					label$3425:;
+					if( I$5 >= 0ll ) goto label$3428;
+					label$3427:;
 				}
 			}
-			goto label$3439;
-			label$3440:;
+			goto label$3423;
+			label$3424:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1469$5;
 					TMP$1469$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3431;
+					label$3434:;
+					{
+						boolean vr$17 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$17 != (boolean)0ll ) goto label$3436;
+						{
+							goto label$3433;
+						}
+						label$3436:;
+						label$3435:;
+					}
+					label$3432:;
+					I$5 = I$5 + 1ll;
+					label$3431:;
+					if( I$5 <= TMP$1469$5 ) goto label$3434;
+					label$3433:;
+				}
+			}
+			label$3423:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3418;
+		}
+		label$3422:;
+		label$3421:;
+	}
+	label$3420:;
+	label$3419:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3418;
+	label$3418:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFvRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3437:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3440;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$3442;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3444;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3445;
 					label$3448:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
 					}
 					label$3446:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3445:;
-					if( I$5 <= TMP$1469$5 ) goto label$3448;
+					if( I$5 >= 0ll ) goto label$3448;
 					label$3447:;
 				}
 			}
-			label$3439:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3434;
-		}
-		label$3438:;
-		label$3437:;
-	}
-	label$3436:;
-	label$3435:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3434;
-	label$3434:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFbRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3449:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3452;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$3454;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3456;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3457;
-					label$3460:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
-						if( vr$9 != (boolean)0ll ) goto label$3462;
-						{
-							goto label$3459;
-						}
-						label$3462:;
-						label$3461:;
-					}
-					label$3458:;
-					I$5 = I$5 + -1ll;
-					label$3457:;
-					if( I$5 >= 0ll ) goto label$3460;
-					label$3459:;
-				}
-			}
-			goto label$3455;
-			label$3456:;
+			goto label$3443;
+			label$3444:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1470$5;
 					TMP$1470$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3463;
-					label$3466:;
+					goto label$3449;
+					label$3452:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
-						if( vr$17 != (boolean)0ll ) goto label$3468;
-						{
-							goto label$3465;
-						}
-						label$3468:;
-						label$3467:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
 					}
-					label$3464:;
+					label$3450:;
 					I$5 = I$5 + 1ll;
-					label$3463:;
-					if( I$5 <= TMP$1470$5 ) goto label$3466;
-					label$3465:;
+					label$3449:;
+					if( I$5 <= TMP$1470$5 ) goto label$3452;
+					label$3451:;
 				}
 			}
-			label$3455:;
+			label$3443:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3450;
+			goto label$3438;
 		}
-		label$3454:;
-		label$3453:;
+		label$3442:;
+		label$3441:;
 	}
-	label$3452:;
-	label$3451:;
+	label$3440:;
+	label$3439:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3450;
-	label$3450:;
+	goto label$3438;
+	label$3438:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFvRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFbRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3469:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3472;
+	label$3453:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3456;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$3474;
+		if( F$1 == (tmp$1296)0ull ) goto label$3458;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3476;
+			if( *R$1 == (boolean)0ll ) goto label$3460;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3477;
-					label$3480:;
+					goto label$3461;
+					label$3464:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						if( vr$9 != (boolean)0ll ) goto label$3466;
+						{
+							goto label$3463;
+						}
+						label$3466:;
+						label$3465:;
 					}
-					label$3478:;
+					label$3462:;
 					I$5 = I$5 + -1ll;
-					label$3477:;
-					if( I$5 >= 0ll ) goto label$3480;
-					label$3479:;
+					label$3461:;
+					if( I$5 >= 0ll ) goto label$3464;
+					label$3463:;
 				}
 			}
-			goto label$3475;
-			label$3476:;
+			goto label$3459;
+			label$3460:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1471$5;
 					TMP$1471$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3467;
+					label$3470:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						if( vr$17 != (boolean)0ll ) goto label$3472;
+						{
+							goto label$3469;
+						}
+						label$3472:;
+						label$3471:;
+					}
+					label$3468:;
+					I$5 = I$5 + 1ll;
+					label$3467:;
+					if( I$5 <= TMP$1471$5 ) goto label$3470;
+					label$3469:;
+				}
+			}
+			label$3459:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3454;
+		}
+		label$3458:;
+		label$3457:;
+	}
+	label$3456:;
+	label$3455:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3454;
+	label$3454:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFvRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3473:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3476;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$3478;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3480;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3481;
 					label$3484:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
 					}
 					label$3482:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3481:;
-					if( I$5 <= TMP$1471$5 ) goto label$3484;
+					if( I$5 >= 0ll ) goto label$3484;
 					label$3483:;
 				}
 			}
-			label$3475:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3470;
-		}
-		label$3474:;
-		label$3473:;
-	}
-	label$3472:;
-	label$3471:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3470;
-	label$3470:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFbRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3485:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3488;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$3490;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3492;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3493;
-					label$3496:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$3498;
-						{
-							goto label$3495;
-						}
-						label$3498:;
-						label$3497:;
-					}
-					label$3494:;
-					I$5 = I$5 + -1ll;
-					label$3493:;
-					if( I$5 >= 0ll ) goto label$3496;
-					label$3495:;
-				}
-			}
-			goto label$3491;
-			label$3492:;
+			goto label$3479;
+			label$3480:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1472$5;
 					TMP$1472$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3499;
-					label$3502:;
+					goto label$3485;
+					label$3488:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$3504;
-						{
-							goto label$3501;
-						}
-						label$3504:;
-						label$3503:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
 					}
-					label$3500:;
+					label$3486:;
 					I$5 = I$5 + 1ll;
-					label$3499:;
-					if( I$5 <= TMP$1472$5 ) goto label$3502;
-					label$3501:;
+					label$3485:;
+					if( I$5 <= TMP$1472$5 ) goto label$3488;
+					label$3487:;
 				}
 			}
-			label$3491:;
+			label$3479:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3486;
+			goto label$3474;
 		}
-		label$3490:;
-		label$3489:;
+		label$3478:;
+		label$3477:;
 	}
-	label$3488:;
-	label$3487:;
+	label$3476:;
+	label$3475:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3486;
-	label$3486:;
+	goto label$3474;
+	label$3474:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFvRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHIEPFbRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3505:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3508;
+	label$3489:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3492;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$3510;
+		if( F$1 == (tmp$1297)0ull ) goto label$3494;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3512;
+			if( *R$1 == (boolean)0ll ) goto label$3496;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3513;
-					label$3516:;
+					goto label$3497;
+					label$3500:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$3502;
+						{
+							goto label$3499;
+						}
+						label$3502:;
+						label$3501:;
 					}
-					label$3514:;
+					label$3498:;
 					I$5 = I$5 + -1ll;
-					label$3513:;
-					if( I$5 >= 0ll ) goto label$3516;
-					label$3515:;
+					label$3497:;
+					if( I$5 >= 0ll ) goto label$3500;
+					label$3499:;
 				}
 			}
-			goto label$3511;
-			label$3512:;
+			goto label$3495;
+			label$3496:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1473$5;
 					TMP$1473$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3503;
+					label$3506:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$3508;
+						{
+							goto label$3505;
+						}
+						label$3508:;
+						label$3507:;
+					}
+					label$3504:;
+					I$5 = I$5 + 1ll;
+					label$3503:;
+					if( I$5 <= TMP$1473$5 ) goto label$3506;
+					label$3505:;
+				}
+			}
+			label$3495:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3490;
+		}
+		label$3494:;
+		label$3493:;
+	}
+	label$3492:;
+	label$3491:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3490;
+	label$3490:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFvRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3509:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3512;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$3514;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3516;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3517;
 					label$3520:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$3518:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3517:;
-					if( I$5 <= TMP$1473$5 ) goto label$3520;
+					if( I$5 >= 0ll ) goto label$3520;
 					label$3519:;
 				}
 			}
-			label$3511:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3506;
-		}
-		label$3510:;
-		label$3509:;
-	}
-	label$3508:;
-	label$3507:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3506;
-	label$3506:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFbRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3521:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3524;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$3526;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3528;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3529;
-					label$3532:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$9 != (boolean)0ll ) goto label$3534;
-						{
-							goto label$3531;
-						}
-						label$3534:;
-						label$3533:;
-					}
-					label$3530:;
-					I$5 = I$5 + -1ll;
-					label$3529:;
-					if( I$5 >= 0ll ) goto label$3532;
-					label$3531:;
-				}
-			}
-			goto label$3527;
-			label$3528:;
+			goto label$3515;
+			label$3516:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1474$5;
 					TMP$1474$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3535;
-					label$3538:;
+					goto label$3521;
+					label$3524:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$17 != (boolean)0ll ) goto label$3540;
-						{
-							goto label$3537;
-						}
-						label$3540:;
-						label$3539:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3536:;
+					label$3522:;
 					I$5 = I$5 + 1ll;
-					label$3535:;
-					if( I$5 <= TMP$1474$5 ) goto label$3538;
-					label$3537:;
+					label$3521:;
+					if( I$5 <= TMP$1474$5 ) goto label$3524;
+					label$3523:;
 				}
 			}
-			label$3527:;
+			label$3515:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3522;
+			goto label$3510;
 		}
-		label$3526:;
-		label$3525:;
+		label$3514:;
+		label$3513:;
 	}
-	label$3524:;
-	label$3523:;
+	label$3512:;
+	label$3511:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3522;
-	label$3522:;
+	goto label$3510;
+	label$3510:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFvRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFbRdERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3541:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3544;
+	label$3525:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3528;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$3546;
+		if( F$1 == (tmp$1296)0ull ) goto label$3530;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3548;
+			if( *R$1 == (boolean)0ll ) goto label$3532;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3549;
-					label$3552:;
+					goto label$3533;
+					label$3536:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$9 != (boolean)0ll ) goto label$3538;
+						{
+							goto label$3535;
+						}
+						label$3538:;
+						label$3537:;
 					}
-					label$3550:;
+					label$3534:;
 					I$5 = I$5 + -1ll;
-					label$3549:;
-					if( I$5 >= 0ll ) goto label$3552;
-					label$3551:;
+					label$3533:;
+					if( I$5 >= 0ll ) goto label$3536;
+					label$3535:;
 				}
 			}
-			goto label$3547;
-			label$3548:;
+			goto label$3531;
+			label$3532:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1475$5;
 					TMP$1475$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3539;
+					label$3542:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$17 != (boolean)0ll ) goto label$3544;
+						{
+							goto label$3541;
+						}
+						label$3544:;
+						label$3543:;
+					}
+					label$3540:;
+					I$5 = I$5 + 1ll;
+					label$3539:;
+					if( I$5 <= TMP$1475$5 ) goto label$3542;
+					label$3541:;
+				}
+			}
+			label$3531:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3526;
+		}
+		label$3530:;
+		label$3529:;
+	}
+	label$3528:;
+	label$3527:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3526;
+	label$3526:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFvRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3545:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3548;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$3550;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3552;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3553;
 					label$3556:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$3554:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3553:;
-					if( I$5 <= TMP$1475$5 ) goto label$3556;
+					if( I$5 >= 0ll ) goto label$3556;
 					label$3555:;
 				}
 			}
-			label$3547:;
-			fb$result$1 = (boolean)1ll;
-			goto label$3542;
-		}
-		label$3546:;
-		label$3545:;
-	}
-	label$3544:;
-	label$3543:;
-	fb$result$1 = (boolean)0ll;
-	goto label$3542;
-	label$3542:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFbRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3557:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3560;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$3562;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3564;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3565;
-					label$3568:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$3570;
-						{
-							goto label$3567;
-						}
-						label$3570:;
-						label$3569:;
-					}
-					label$3566:;
-					I$5 = I$5 + -1ll;
-					label$3565:;
-					if( I$5 >= 0ll ) goto label$3568;
-					label$3567:;
-				}
-			}
-			goto label$3563;
-			label$3564:;
+			goto label$3551;
+			label$3552:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1476$5;
 					TMP$1476$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3571;
-					label$3574:;
+					goto label$3557;
+					label$3560:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$3576;
-						{
-							goto label$3573;
-						}
-						label$3576:;
-						label$3575:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
-					label$3572:;
+					label$3558:;
 					I$5 = I$5 + 1ll;
-					label$3571:;
-					if( I$5 <= TMP$1476$5 ) goto label$3574;
-					label$3573:;
+					label$3557:;
+					if( I$5 <= TMP$1476$5 ) goto label$3560;
+					label$3559:;
 				}
 			}
-			label$3563:;
+			label$3551:;
 			fb$result$1 = (boolean)1ll;
-			goto label$3558;
+			goto label$3546;
 		}
-		label$3562:;
-		label$3561:;
+		label$3550:;
+		label$3549:;
 	}
-	label$3560:;
-	label$3559:;
+	label$3548:;
+	label$3547:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3558;
-	label$3558:;
+	goto label$3546;
+	label$3546:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH12COMPLEXARRAY3MAPERS0_PFNS_7COMPLEXERKS2_E( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1, tmp$1362 F$1 )
+boolean _ZN4MATH12COMPLEXARRAY8FOREACHREPFbRdRKu7INTEGERERKb( struct $N4MATH12COMPLEXARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3577:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3580;
+	label$3561:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3564;
 	{
-		if( F$1 == (tmp$1362)0ull ) goto label$3582;
+		if( F$1 == (tmp$1297)0ull ) goto label$3566;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3568;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3569;
+					label$3572:;
+					{
+						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$3574;
+						{
+							goto label$3571;
+						}
+						label$3574:;
+						label$3573:;
+					}
+					label$3570:;
+					I$5 = I$5 + -1ll;
+					label$3569:;
+					if( I$5 >= 0ll ) goto label$3572;
+					label$3571:;
+				}
+			}
+			goto label$3567;
+			label$3568:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1477$5;
+					TMP$1477$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3575;
+					label$3578:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$3580;
+						{
+							goto label$3577;
+						}
+						label$3580:;
+						label$3579:;
+					}
+					label$3576:;
+					I$5 = I$5 + 1ll;
+					label$3575:;
+					if( I$5 <= TMP$1477$5 ) goto label$3578;
+					label$3577:;
+				}
+			}
+			label$3567:;
+			fb$result$1 = (boolean)1ll;
+			goto label$3562;
+		}
+		label$3566:;
+		label$3565:;
+	}
+	label$3564:;
+	label$3563:;
+	fb$result$1 = (boolean)0ll;
+	goto label$3562;
+	label$3562:;
+	return fb$result$1;
+}
+
+boolean _ZNK4MATH12COMPLEXARRAY3MAPERS0_PFNS_7COMPLEXERKS2_E( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH12COMPLEXARRAYE* A$1, tmp$1363 F$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$3581:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3584;
+	{
+		if( F$1 == (tmp$1363)0ull ) goto label$3586;
 		{
 			_ZN4MATH12COMPLEXARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1477$4;
-				TMP$1477$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3583;
-				label$3586:;
+				int64 TMP$1478$4;
+				TMP$1478$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3587;
+				label$3590:;
 				{
-					struct $N4MATH7COMPLEXE TMP$1478$5;
+					struct $N4MATH7COMPLEXE TMP$1479$5;
 					struct $N4MATH7COMPLEXE vr$9 = (F$1)( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
-					TMP$1478$5 = vr$9;
-					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)&TMP$1478$5 );
+					TMP$1479$5 = vr$9;
+					_ZN4MATH7COMPLEXaSERKS0_( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH7COMPLEXE*)&TMP$1479$5 );
 				}
-				label$3584:;
+				label$3588:;
 				I$4 = I$4 + 1ll;
-				label$3583:;
-				if( I$4 <= TMP$1477$4 ) goto label$3586;
-				label$3585:;
+				label$3587:;
+				if( I$4 <= TMP$1478$4 ) goto label$3590;
+				label$3589:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$3578;
+			goto label$3582;
 		}
-		label$3582:;
-		label$3581:;
+		label$3586:;
+		label$3585:;
 	}
-	label$3580:;
-	label$3579:;
+	label$3584:;
+	label$3583:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3578;
-	label$3578:;
+	goto label$3582;
+	label$3582:;
 	return fb$result$1;
 }
 
@@ -20978,8 +20995,8 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPIERNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3587:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3590;
+	label$3591:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3594;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -20988,38 +21005,38 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPIERNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE*
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1479$3;
-			TMP$1479$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3591;
-			label$3594:;
+			int64 TMP$1480$3;
+			TMP$1480$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3595;
+			label$3598:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll);
 			}
-			label$3592:;
+			label$3596:;
 			I$3 = I$3 + 1ll;
-			label$3591:;
-			if( I$3 <= TMP$1479$3 ) goto label$3594;
-			label$3593:;
+			label$3595:;
+			if( I$3 <= TMP$1480$3 ) goto label$3598;
+			label$3597:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$3588;
+		goto label$3592;
 	}
-	label$3590:;
-	label$3589:;
+	label$3594:;
+	label$3593:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3588;
-	label$3588:;
+	goto label$3592;
+	label$3592:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH12COMPLEXARRAY4MAPIERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZNK4MATH12COMPLEXARRAY4MAPIERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3595:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3598;
+	label$3599:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3602;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$3600;
+		if( F$1 == (tmp$1298)0ull ) goto label$3604;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -21028,31 +21045,31 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPIERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEX
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1480$4;
-				TMP$1480$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3601;
-				label$3604:;
+				int64 TMP$1481$4;
+				TMP$1481$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3605;
+				label$3608:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$3602:;
+				label$3606:;
 				I$4 = I$4 + 1ll;
-				label$3601:;
-				if( I$4 <= TMP$1480$4 ) goto label$3604;
-				label$3603:;
+				label$3605:;
+				if( I$4 <= TMP$1481$4 ) goto label$3608;
+				label$3607:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$3596;
+			goto label$3600;
 		}
-		label$3600:;
-		label$3599:;
+		label$3604:;
+		label$3603:;
 	}
-	label$3598:;
-	label$3597:;
+	label$3602:;
+	label$3601:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3596;
-	label$3596:;
+	goto label$3600;
+	label$3600:;
 	return fb$result$1;
 }
 
@@ -21060,8 +21077,8 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPRERNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE*
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3605:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3608;
+	label$3609:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3612;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -21070,38 +21087,38 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPRERNS_5ARRAYE( struct $N4MATH12COMPLEXARRAYE*
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1481$3;
-			TMP$1481$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3609;
-			label$3612:;
+			int64 TMP$1482$3;
+			TMP$1482$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3613;
+			label$3616:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll)));
 			}
-			label$3610:;
+			label$3614:;
 			I$3 = I$3 + 1ll;
-			label$3609:;
-			if( I$3 <= TMP$1481$3 ) goto label$3612;
-			label$3611:;
+			label$3613:;
+			if( I$3 <= TMP$1482$3 ) goto label$3616;
+			label$3615:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$3606;
+		goto label$3610;
 	}
-	label$3608:;
-	label$3607:;
+	label$3612:;
+	label$3611:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3606;
-	label$3606:;
+	goto label$3610;
+	label$3610:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH12COMPLEXARRAY4MAPRERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZNK4MATH12COMPLEXARRAY4MAPRERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEXARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$3613:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3616;
+	label$3617:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3620;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$3618;
+		if( F$1 == (tmp$1298)0ull ) goto label$3622;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -21110,31 +21127,31 @@ boolean _ZNK4MATH12COMPLEXARRAY4MAPRERNS_5ARRAYEPFdRKdE( struct $N4MATH12COMPLEX
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1482$4;
-				TMP$1482$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3619;
-				label$3622:;
+				int64 TMP$1483$4;
+				TMP$1483$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3623;
+				label$3626:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$3620:;
+				label$3624:;
 				I$4 = I$4 + 1ll;
-				label$3619:;
-				if( I$4 <= TMP$1482$4 ) goto label$3622;
-				label$3621:;
+				label$3623:;
+				if( I$4 <= TMP$1483$4 ) goto label$3626;
+				label$3625:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$3614;
+			goto label$3618;
 		}
-		label$3618:;
-		label$3617:;
+		label$3622:;
+		label$3621:;
 	}
-	label$3616:;
-	label$3615:;
+	label$3620:;
+	label$3619:;
 	fb$result$1 = (boolean)0ll;
-	goto label$3614;
-	label$3614:;
+	goto label$3618;
+	label$3618:;
 	return fb$result$1;
 }
 
@@ -21142,75 +21159,75 @@ FBSTRING* _ZNK4MATH12COMPLEXARRAY6TOJSONERKb( struct $N4MATH12COMPLEXARRAYE* THI
 {
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$3623:;
+	label$3627:;
 	{
-		int64 TMP$1483$2;
-		TMP$1483$2 = *(int64*)THIS$1;
-		if( TMP$1483$2 != 0ll ) goto label$3626;
-		label$3627:;
+		int64 TMP$1484$2;
+		TMP$1484$2 = *(int64*)THIS$1;
+		if( TMP$1484$2 != 0ll ) goto label$3630;
+		label$3631:;
 		{
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)"[]", 3ll, 0 );
-			goto label$3624;
+			goto label$3628;
 		}
-		goto label$3625;
-		label$3626:;
-		if( TMP$1483$2 != 1ll ) goto label$3628;
-		label$3629:;
+		goto label$3629;
+		label$3630:;
+		if( TMP$1484$2 != 1ll ) goto label$3632;
+		label$3633:;
 		{
-			FBSTRING TMP$1484$3;
 			FBSTRING TMP$1485$3;
-			FBSTRING* vr$4 = _ZNK4MATH7COMPLEX6TOJSONERKb( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1484$3, 0, 24ll );
-			FBSTRING* vr$7 = fb_StrConcat( &TMP$1484$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
-			__builtin_memset( &TMP$1485$3, 0, 24ll );
-			FBSTRING* vr$10 = fb_StrConcat( &TMP$1485$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
-			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
-			goto label$3624;
-		}
-		goto label$3625;
-		label$3628:;
-		{
 			FBSTRING TMP$1486$3;
-			FBSTRING TMP$1490$3;
+			FBSTRING* vr$4 = _ZNK4MATH7COMPLEX6TOJSONERKb( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), A$1 );
+			__builtin_memset( &TMP$1485$3, 0, 24ll );
+			FBSTRING* vr$7 = fb_StrConcat( &TMP$1485$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
+			__builtin_memset( &TMP$1486$3, 0, 24ll );
+			FBSTRING* vr$10 = fb_StrConcat( &TMP$1486$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
+			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
+			goto label$3628;
+		}
+		goto label$3629;
+		label$3632:;
+		{
+			FBSTRING TMP$1487$3;
+			FBSTRING TMP$1491$3;
 			FBSTRING R$3;
 			FBSTRING* vr$13 = _ZNK4MATH7COMPLEX6TOJSONERKb( *(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1486$3, 0, 24ll );
-			FBSTRING* vr$16 = fb_StrConcat( &TMP$1486$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
+			__builtin_memset( &TMP$1487$3, 0, 24ll );
+			FBSTRING* vr$16 = fb_StrConcat( &TMP$1487$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
 			fb_StrInit( (void*)&R$3, -1ll, (void*)vr$16, -1ll, 0 );
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1487$4;
-				TMP$1487$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3631;
-				label$3634:;
+				int64 TMP$1488$4;
+				TMP$1488$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3635;
+				label$3638:;
 				{
-					FBSTRING TMP$1488$5;
 					FBSTRING TMP$1489$5;
+					FBSTRING TMP$1490$5;
 					FBSTRING* vr$23 = _ZNK4MATH7COMPLEX6TOJSONERKb( (struct $N4MATH7COMPLEXE*)((uint8*)*(struct $N4MATH7COMPLEXE**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))), A$1 );
-					__builtin_memset( &TMP$1488$5, 0, 24ll );
-					FBSTRING* vr$26 = fb_StrConcat( &TMP$1488$5, (void*)",", 2ll, (void*)vr$23, -1ll );
 					__builtin_memset( &TMP$1489$5, 0, 24ll );
-					FBSTRING* vr$30 = fb_StrConcat( &TMP$1489$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
+					FBSTRING* vr$26 = fb_StrConcat( &TMP$1489$5, (void*)",", 2ll, (void*)vr$23, -1ll );
+					__builtin_memset( &TMP$1490$5, 0, 24ll );
+					FBSTRING* vr$30 = fb_StrConcat( &TMP$1490$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
 					fb_StrAssign( (void*)&R$3, -1ll, (void*)vr$30, -1ll, 0 );
 				}
-				label$3632:;
+				label$3636:;
 				I$4 = I$4 + 1ll;
-				label$3631:;
-				if( I$4 <= TMP$1487$4 ) goto label$3634;
-				label$3633:;
+				label$3635:;
+				if( I$4 <= TMP$1488$4 ) goto label$3638;
+				label$3637:;
 			}
-			__builtin_memset( &TMP$1490$3, 0, 24ll );
-			FBSTRING* vr$36 = fb_StrConcat( &TMP$1490$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
+			__builtin_memset( &TMP$1491$3, 0, 24ll );
+			FBSTRING* vr$36 = fb_StrConcat( &TMP$1491$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$36, -1ll, 0 );
 			fb_StrDelete( (FBSTRING*)&R$3 );
-			goto label$3624;
+			goto label$3628;
 			fb_StrDelete( (FBSTRING*)&R$3 );
 		}
-		label$3630:;
-		label$3625:;
+		label$3634:;
+		label$3629:;
 	}
-	label$3624:;
+	label$3628:;
 	FBSTRING* vr$41 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$41;
 }
@@ -21220,218 +21237,218 @@ void _ZN4MATH7V2ARRAYC1Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	label$3635:;
-	label$3636:;
+	label$3639:;
+	label$3640:;
 }
 
 void _ZN4MATH7V2ARRAYC1ERKu7INTEGER( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1 )
 {
-	label$3637:;
+	label$3641:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$3640;
+	if( *L$1 <= 0ll ) goto label$3644;
 	{
-		struct $N4MATH4VEC2E* TMP$1496$2;
-		uint64 TMP$1497$2;
-		struct $N4MATH4VEC2E* TMP$1498$2;
+		struct $N4MATH4VEC2E* TMP$1497$2;
+		uint64 TMP$1498$2;
+		struct $N4MATH4VEC2E* TMP$1499$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1496$2 = (struct $N4MATH4VEC2E*)vr$11;
-		if( TMP$1496$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3641;
-		TMP$1498$2 = TMP$1496$2;
-		TMP$1497$2 = *(uint64*)L$1;
-		label$3642:;
-		if( TMP$1497$2 == 0ull ) goto label$3643;
-		_ZN4MATH4VEC2C1Ev( TMP$1498$2 );
-		TMP$1498$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1498$2 + 16ll);
-		TMP$1497$2 = TMP$1497$2 + 18446744073709551615ull;
-		goto label$3642;
-		label$3643:;
-		label$3641:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1496$2;
+		TMP$1497$2 = (struct $N4MATH4VEC2E*)vr$11;
+		if( TMP$1497$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3645;
+		TMP$1499$2 = TMP$1497$2;
+		TMP$1498$2 = *(uint64*)L$1;
+		label$3646:;
+		if( TMP$1498$2 == 0ull ) goto label$3647;
+		_ZN4MATH4VEC2C1Ev( TMP$1499$2 );
+		TMP$1499$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1499$2 + 16ll);
+		TMP$1498$2 = TMP$1498$2 + 18446744073709551615ull;
+		goto label$3646;
+		label$3647:;
+		label$3645:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1497$2;
 	}
-	label$3640:;
-	label$3639:;
-	label$3638:;
+	label$3644:;
+	label$3643:;
+	label$3642:;
 }
 
-void _ZN4MATH7V2ARRAYC1ERKu7INTEGERPFvRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1, tmp$1491 F$1, boolean* R$1 )
+void _ZN4MATH7V2ARRAYC1ERKu7INTEGERPFvRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1, tmp$1492 F$1, boolean* R$1 )
 {
-	label$3644:;
+	label$3648:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$3647;
+	if( *L$1 <= 0ll ) goto label$3651;
 	{
-		struct $N4MATH4VEC2E* TMP$1499$2;
-		uint64 TMP$1500$2;
-		struct $N4MATH4VEC2E* TMP$1501$2;
+		struct $N4MATH4VEC2E* TMP$1500$2;
+		uint64 TMP$1501$2;
+		struct $N4MATH4VEC2E* TMP$1502$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1499$2 = (struct $N4MATH4VEC2E*)vr$11;
-		if( TMP$1499$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3648;
-		TMP$1501$2 = TMP$1499$2;
-		TMP$1500$2 = *(uint64*)L$1;
-		label$3649:;
-		if( TMP$1500$2 == 0ull ) goto label$3650;
-		_ZN4MATH4VEC2C1Ev( TMP$1501$2 );
-		TMP$1501$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1501$2 + 16ll);
-		TMP$1500$2 = TMP$1500$2 + 18446744073709551615ull;
-		goto label$3649;
-		label$3650:;
-		label$3648:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1499$2;
-		if( F$1 == (tmp$1491)0ull ) goto label$3652;
+		TMP$1500$2 = (struct $N4MATH4VEC2E*)vr$11;
+		if( TMP$1500$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3652;
+		TMP$1502$2 = TMP$1500$2;
+		TMP$1501$2 = *(uint64*)L$1;
+		label$3653:;
+		if( TMP$1501$2 == 0ull ) goto label$3654;
+		_ZN4MATH4VEC2C1Ev( TMP$1502$2 );
+		TMP$1502$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1502$2 + 16ll);
+		TMP$1501$2 = TMP$1501$2 + 18446744073709551615ull;
+		goto label$3653;
+		label$3654:;
+		label$3652:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1500$2;
+		if( F$1 == (tmp$1492)0ull ) goto label$3656;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$3654;
+			if( *R$1 == (boolean)0ll ) goto label$3658;
 			{
 				{
 					int64 I$5;
 					I$5 = *L$1 + -1ll;
-					goto label$3655;
-					label$3658:;
-					{
-						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-					}
-					label$3656:;
-					I$5 = I$5 + -1ll;
-					label$3655:;
-					if( I$5 >= 0ll ) goto label$3658;
-					label$3657:;
-				}
-			}
-			goto label$3653;
-			label$3654:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1502$5;
-					TMP$1502$5 = *L$1 + -1ll;
 					goto label$3659;
 					label$3662:;
 					{
 						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$3660:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3659:;
-					if( I$5 <= TMP$1502$5 ) goto label$3662;
+					if( I$5 >= 0ll ) goto label$3662;
 					label$3661:;
 				}
 			}
-			label$3653:;
-		}
-		label$3652:;
-		label$3651:;
-	}
-	label$3647:;
-	label$3646:;
-	label$3645:;
-}
-
-void _ZN4MATH7V2ARRAYC1ERKu7INTEGERPFvRNS_4VEC2ES3_ERKb( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1, tmp$1492 F$1, boolean* R$1 )
-{
-	label$3663:;
-	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
-	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$3666;
-	{
-		struct $N4MATH4VEC2E* TMP$1503$2;
-		uint64 TMP$1504$2;
-		struct $N4MATH4VEC2E* TMP$1505$2;
-		*(int64*)THIS$1 = *L$1;
-		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-		TMP$1503$2 = (struct $N4MATH4VEC2E*)vr$11;
-		if( TMP$1503$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3667;
-		TMP$1505$2 = TMP$1503$2;
-		TMP$1504$2 = *(uint64*)L$1;
-		label$3668:;
-		if( TMP$1504$2 == 0ull ) goto label$3669;
-		_ZN4MATH4VEC2C1Ev( TMP$1505$2 );
-		TMP$1505$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1505$2 + 16ll);
-		TMP$1504$2 = TMP$1504$2 + 18446744073709551615ull;
-		goto label$3668;
-		label$3669:;
-		label$3667:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1503$2;
-		if( F$1 == (tmp$1492)0ull ) goto label$3671;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$3673;
-			{
-				{
-					int64 I$5;
-					I$5 = *L$1 + -1ll;
-					goto label$3674;
-					label$3677:;
-					{
-						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-					}
-					label$3675:;
-					I$5 = I$5 + -1ll;
-					label$3674:;
-					if( I$5 >= 0ll ) goto label$3677;
-					label$3676:;
-				}
-			}
-			goto label$3672;
-			label$3673:;
+			goto label$3657;
+			label$3658:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1506$5;
-					TMP$1506$5 = *L$1 + -1ll;
+					int64 TMP$1503$5;
+					TMP$1503$5 = *L$1 + -1ll;
+					goto label$3663;
+					label$3666:;
+					{
+						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+					}
+					label$3664:;
+					I$5 = I$5 + 1ll;
+					label$3663:;
+					if( I$5 <= TMP$1503$5 ) goto label$3666;
+					label$3665:;
+				}
+			}
+			label$3657:;
+		}
+		label$3656:;
+		label$3655:;
+	}
+	label$3651:;
+	label$3650:;
+	label$3649:;
+}
+
+void _ZN4MATH7V2ARRAYC1ERKu7INTEGERPFvRNS_4VEC2ES3_ERKb( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1, tmp$1493 F$1, boolean* R$1 )
+{
+	label$3667:;
+	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
+	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
+	if( *L$1 <= 0ll ) goto label$3670;
+	{
+		struct $N4MATH4VEC2E* TMP$1504$2;
+		uint64 TMP$1505$2;
+		struct $N4MATH4VEC2E* TMP$1506$2;
+		*(int64*)THIS$1 = *L$1;
+		void* vr$11 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
+		TMP$1504$2 = (struct $N4MATH4VEC2E*)vr$11;
+		if( TMP$1504$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3671;
+		TMP$1506$2 = TMP$1504$2;
+		TMP$1505$2 = *(uint64*)L$1;
+		label$3672:;
+		if( TMP$1505$2 == 0ull ) goto label$3673;
+		_ZN4MATH4VEC2C1Ev( TMP$1506$2 );
+		TMP$1506$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1506$2 + 16ll);
+		TMP$1505$2 = TMP$1505$2 + 18446744073709551615ull;
+		goto label$3672;
+		label$3673:;
+		label$3671:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1504$2;
+		if( F$1 == (tmp$1493)0ull ) goto label$3675;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$3677;
+			{
+				{
+					int64 I$5;
+					I$5 = *L$1 + -1ll;
 					goto label$3678;
 					label$3681:;
 					{
 						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$3679:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$3678:;
-					if( I$5 <= TMP$1506$5 ) goto label$3681;
+					if( I$5 >= 0ll ) goto label$3681;
 					label$3680:;
 				}
 			}
-			label$3672:;
+			goto label$3676;
+			label$3677:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1507$5;
+					TMP$1507$5 = *L$1 + -1ll;
+					goto label$3682;
+					label$3685:;
+					{
+						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+					}
+					label$3683:;
+					I$5 = I$5 + 1ll;
+					label$3682:;
+					if( I$5 <= TMP$1507$5 ) goto label$3685;
+					label$3684:;
+				}
+			}
+			label$3676:;
 		}
-		label$3671:;
-		label$3670:;
+		label$3675:;
+		label$3674:;
 	}
-	label$3666:;
-	label$3665:;
-	label$3664:;
+	label$3670:;
+	label$3669:;
+	label$3668:;
 }
 
 void _ZN4MATH7V2ARRAYC1ERKNS_5ARRAYES3_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A1$1, struct $N4MATH5ARRAYE* A2$1 )
 {
-	label$3682:;
+	label$3686:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	if( ((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) == 0ll ) goto label$3685;
+	if( ((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) == 0ll ) goto label$3689;
 	{
-		struct $N4MATH4VEC2E* TMP$1507$2;
-		uint64 TMP$1508$2;
-		struct $N4MATH4VEC2E* TMP$1509$2;
+		struct $N4MATH4VEC2E* TMP$1508$2;
+		uint64 TMP$1509$2;
+		struct $N4MATH4VEC2E* TMP$1510$2;
 		*(int64*)THIS$1 = *(int64*)A1$1;
 		void* vr$16 = malloc( *(uint64*)A1$1 << (4ull & 63ll) );
-		TMP$1507$2 = (struct $N4MATH4VEC2E*)vr$16;
-		if( TMP$1507$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3686;
-		TMP$1509$2 = TMP$1507$2;
-		TMP$1508$2 = *(uint64*)A1$1;
-		label$3687:;
-		if( TMP$1508$2 == 0ull ) goto label$3688;
-		_ZN4MATH4VEC2C1Ev( TMP$1509$2 );
-		TMP$1509$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1509$2 + 16ll);
-		TMP$1508$2 = TMP$1508$2 + 18446744073709551615ull;
-		goto label$3687;
-		label$3688:;
-		label$3686:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1507$2;
+		TMP$1508$2 = (struct $N4MATH4VEC2E*)vr$16;
+		if( TMP$1508$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3690;
+		TMP$1510$2 = TMP$1508$2;
+		TMP$1509$2 = *(uint64*)A1$1;
+		label$3691:;
+		if( TMP$1509$2 == 0ull ) goto label$3692;
+		_ZN4MATH4VEC2C1Ev( TMP$1510$2 );
+		TMP$1510$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1510$2 + 16ll);
+		TMP$1509$2 = TMP$1509$2 + 18446744073709551615ull;
+		goto label$3691;
+		label$3692:;
+		label$3690:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1508$2;
 		double* P1$2;
 		double* vr$21 = _ZNK4MATH5ARRAY11DATA__get__Ev( A1$1 );
 		P1$2 = vr$21;
@@ -21441,301 +21458,286 @@ void _ZN4MATH7V2ARRAYC1ERKNS_5ARRAYES3_( struct $N4MATH7V2ARRAYE* THIS$1, struct
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1510$3;
-			TMP$1510$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3689;
-			label$3692:;
+			int64 TMP$1511$3;
+			TMP$1511$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3693;
+			label$3696:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)P1$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)P2$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$3690:;
+			label$3694:;
 			I$3 = I$3 + 1ll;
-			label$3689:;
-			if( I$3 <= TMP$1510$3 ) goto label$3692;
-			label$3691:;
+			label$3693:;
+			if( I$3 <= TMP$1511$3 ) goto label$3696;
+			label$3695:;
 		}
 	}
-	label$3685:;
-	label$3684:;
-	label$3683:;
+	label$3689:;
+	label$3688:;
+	label$3687:;
 }
 
 void _ZN4MATH7V2ARRAYC1ERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3693:;
+	label$3697:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC2C1Ev( (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$3696;
+	if( *(int64*)A$1 == 0ll ) goto label$3700;
 	{
-		struct $N4MATH4VEC2E* TMP$1511$2;
-		uint64 TMP$1512$2;
-		struct $N4MATH4VEC2E* TMP$1513$2;
+		struct $N4MATH4VEC2E* TMP$1512$2;
+		uint64 TMP$1513$2;
+		struct $N4MATH4VEC2E* TMP$1514$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-		TMP$1511$2 = (struct $N4MATH4VEC2E*)vr$11;
-		if( TMP$1511$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3697;
-		TMP$1513$2 = TMP$1511$2;
-		TMP$1512$2 = *(uint64*)A$1;
-		label$3698:;
-		if( TMP$1512$2 == 0ull ) goto label$3699;
-		_ZN4MATH4VEC2C1Ev( TMP$1513$2 );
-		TMP$1513$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1513$2 + 16ll);
-		TMP$1512$2 = TMP$1512$2 + 18446744073709551615ull;
-		goto label$3698;
-		label$3699:;
-		label$3697:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1511$2;
+		TMP$1512$2 = (struct $N4MATH4VEC2E*)vr$11;
+		if( TMP$1512$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3701;
+		TMP$1514$2 = TMP$1512$2;
+		TMP$1513$2 = *(uint64*)A$1;
+		label$3702:;
+		if( TMP$1513$2 == 0ull ) goto label$3703;
+		_ZN4MATH4VEC2C1Ev( TMP$1514$2 );
+		TMP$1514$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1514$2 + 16ll);
+		TMP$1513$2 = TMP$1513$2 + 18446744073709551615ull;
+		goto label$3702;
+		label$3703:;
+		label$3701:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1512$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1514$3;
-			TMP$1514$3 = *(int64*)A$1 + -1ll;
-			goto label$3700;
-			label$3703:;
+			int64 TMP$1515$3;
+			TMP$1515$3 = *(int64*)A$1 + -1ll;
+			goto label$3704;
+			label$3707:;
 			{
 				_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3701:;
+			label$3705:;
 			I$3 = I$3 + 1ll;
-			label$3700:;
-			if( I$3 <= TMP$1514$3 ) goto label$3703;
-			label$3702:;
+			label$3704:;
+			if( I$3 <= TMP$1515$3 ) goto label$3707;
+			label$3706:;
 		}
 	}
-	label$3696:;
-	label$3695:;
-	label$3694:;
+	label$3700:;
+	label$3699:;
+	label$3698:;
 }
 
 void _ZN4MATH7V2ARRAYD1Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
-	label$3704:;
-	if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3707;
+	label$3708:;
+	if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3711;
 	{
-		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3708;
+		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3712;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3708:;
-		label$3707:;
+		label$3712:;
+		label$3711:;
 	}
-	label$3705:;
+	label$3709:;
 }
 
 void _ZN4MATH7V2ARRAYv27selfcatERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$3709:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3712;
+	label$3713:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3716;
 	{
-		struct $N4MATH4VEC2E* TMP$1515$2;
-		uint64 TMP$1516$2;
-		struct $N4MATH4VEC2E* TMP$1517$2;
+		struct $N4MATH4VEC2E* TMP$1516$2;
+		uint64 TMP$1517$2;
+		struct $N4MATH4VEC2E* TMP$1518$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC2E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-		TMP$1515$2 = (struct $N4MATH4VEC2E*)vr$6;
-		if( TMP$1515$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3713;
-		TMP$1517$2 = TMP$1515$2;
-		TMP$1516$2 = *(uint64*)THIS$1;
-		label$3714:;
-		if( TMP$1516$2 == 0ull ) goto label$3715;
-		_ZN4MATH4VEC2C1Ev( TMP$1517$2 );
-		TMP$1517$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1517$2 + 16ll);
-		TMP$1516$2 = TMP$1516$2 + 18446744073709551615ull;
-		goto label$3714;
-		label$3715:;
-		label$3713:;
-		Q$2 = TMP$1515$2;
+		TMP$1516$2 = (struct $N4MATH4VEC2E*)vr$6;
+		if( TMP$1516$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3717;
+		TMP$1518$2 = TMP$1516$2;
+		TMP$1517$2 = *(uint64*)THIS$1;
+		label$3718:;
+		if( TMP$1517$2 == 0ull ) goto label$3719;
+		_ZN4MATH4VEC2C1Ev( TMP$1518$2 );
+		TMP$1518$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1518$2 + 16ll);
+		TMP$1517$2 = TMP$1517$2 + 18446744073709551615ull;
+		goto label$3718;
+		label$3719:;
+		label$3717:;
+		Q$2 = TMP$1516$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1518$3;
-			TMP$1518$3 = *(int64*)THIS$1 + -2ll;
-			goto label$3716;
-			label$3719:;
+			int64 TMP$1519$3;
+			TMP$1519$3 = *(int64*)THIS$1 + -2ll;
+			goto label$3720;
+			label$3723:;
 			{
 				_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$2 + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3717:;
+			label$3721:;
 			I$3 = I$3 + 1ll;
-			label$3716:;
-			if( I$3 <= TMP$1518$3 ) goto label$3719;
-			label$3718:;
+			label$3720:;
+			if( I$3 <= TMP$1519$3 ) goto label$3723;
+			label$3722:;
 		}
 		_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (4ll & 63ll))) + -16ll), V$1 );
-		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3720;
+		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3724;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3720:;
+		label$3724:;
 		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$3711;
-	label$3712:;
+	goto label$3715;
+	label$3716:;
 	{
-		struct $N4MATH4VEC2E* TMP$1519$2;
-		uint64 TMP$1520$2;
-		struct $N4MATH4VEC2E* TMP$1521$2;
+		struct $N4MATH4VEC2E* TMP$1520$2;
+		uint64 TMP$1521$2;
+		struct $N4MATH4VEC2E* TMP$1522$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 16ull );
-		TMP$1519$2 = (struct $N4MATH4VEC2E*)vr$27;
-		if( TMP$1519$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3721;
-		TMP$1521$2 = TMP$1519$2;
-		TMP$1520$2 = 1ull;
-		label$3722:;
-		if( TMP$1520$2 == 0ull ) goto label$3723;
-		_ZN4MATH4VEC2C1Ev( TMP$1521$2 );
-		TMP$1521$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1521$2 + 16ll);
-		TMP$1520$2 = TMP$1520$2 + 18446744073709551615ull;
-		goto label$3722;
-		label$3723:;
-		label$3721:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1519$2;
+		TMP$1520$2 = (struct $N4MATH4VEC2E*)vr$27;
+		if( TMP$1520$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3725;
+		TMP$1522$2 = TMP$1520$2;
+		TMP$1521$2 = 1ull;
+		label$3726:;
+		if( TMP$1521$2 == 0ull ) goto label$3727;
+		_ZN4MATH4VEC2C1Ev( TMP$1522$2 );
+		TMP$1522$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1522$2 + 16ll);
+		TMP$1521$2 = TMP$1521$2 + 18446744073709551615ull;
+		goto label$3726;
+		label$3727:;
+		label$3725:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1520$2;
 		_ZN4MATH4VEC2aSERKS0_( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), V$1 );
 	}
-	label$3711:;
-	label$3710:;
+	label$3715:;
+	label$3714:;
 }
 
 void _ZN4MATH7V2ARRAYv27selfcatERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$3724:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3727;
+	label$3728:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3731;
 	{
-		struct $N4MATH4VEC2E* TMP$1522$2;
-		uint64 TMP$1523$2;
-		struct $N4MATH4VEC2E* TMP$1524$2;
-		struct $N4MATH4VEC2E TMP$1526$2;
-		double TMP$1527$2;
+		struct $N4MATH4VEC2E* TMP$1523$2;
+		uint64 TMP$1524$2;
+		struct $N4MATH4VEC2E* TMP$1525$2;
+		struct $N4MATH4VEC2E TMP$1527$2;
 		double TMP$1528$2;
+		double TMP$1529$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC2E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-		TMP$1522$2 = (struct $N4MATH4VEC2E*)vr$6;
-		if( TMP$1522$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3728;
-		TMP$1524$2 = TMP$1522$2;
-		TMP$1523$2 = *(uint64*)THIS$1;
-		label$3729:;
-		if( TMP$1523$2 == 0ull ) goto label$3730;
-		_ZN4MATH4VEC2C1Ev( TMP$1524$2 );
-		TMP$1524$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1524$2 + 16ll);
-		TMP$1523$2 = TMP$1523$2 + 18446744073709551615ull;
-		goto label$3729;
-		label$3730:;
-		label$3728:;
-		Q$2 = TMP$1522$2;
+		TMP$1523$2 = (struct $N4MATH4VEC2E*)vr$6;
+		if( TMP$1523$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3732;
+		TMP$1525$2 = TMP$1523$2;
+		TMP$1524$2 = *(uint64*)THIS$1;
+		label$3733:;
+		if( TMP$1524$2 == 0ull ) goto label$3734;
+		_ZN4MATH4VEC2C1Ev( TMP$1525$2 );
+		TMP$1525$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1525$2 + 16ll);
+		TMP$1524$2 = TMP$1524$2 + 18446744073709551615ull;
+		goto label$3733;
+		label$3734:;
+		label$3732:;
+		Q$2 = TMP$1523$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1525$3;
-			TMP$1525$3 = *(int64*)THIS$1 + -2ll;
-			goto label$3731;
-			label$3734:;
+			int64 TMP$1526$3;
+			TMP$1526$3 = *(int64*)THIS$1 + -2ll;
+			goto label$3735;
+			label$3738:;
 			{
 				_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$2 + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3732:;
+			label$3736:;
 			I$3 = I$3 + 1ll;
-			label$3731:;
-			if( I$3 <= TMP$1525$3 ) goto label$3734;
-			label$3733:;
+			label$3735:;
+			if( I$3 <= TMP$1526$3 ) goto label$3738;
+			label$3737:;
 		}
 		double vr$18 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
-		TMP$1528$2 = vr$18;
+		TMP$1529$2 = vr$18;
 		double vr$20 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
-		TMP$1527$2 = vr$20;
-		_ZN4MATH4VEC2C1ERKdS2_( &TMP$1526$2, (double*)&TMP$1527$2, (double*)&TMP$1528$2 );
-		_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (4ll & 63ll))) + -16ll), (struct $N4MATH4VEC2E*)&TMP$1526$2 );
-		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3735;
+		TMP$1528$2 = vr$20;
+		_ZN4MATH4VEC2C1ERKdS2_( &TMP$1527$2, (double*)&TMP$1528$2, (double*)&TMP$1529$2 );
+		_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 << (4ll & 63ll))) + -16ll), (struct $N4MATH4VEC2E*)&TMP$1527$2 );
+		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3739;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$3735:;
+		label$3739:;
 		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$3726;
-	label$3727:;
+	goto label$3730;
+	label$3731:;
 	{
-		struct $N4MATH4VEC2E* TMP$1529$2;
-		uint64 TMP$1530$2;
-		struct $N4MATH4VEC2E* TMP$1531$2;
-		struct $N4MATH4VEC2E TMP$1532$2;
-		double TMP$1533$2;
+		struct $N4MATH4VEC2E* TMP$1530$2;
+		uint64 TMP$1531$2;
+		struct $N4MATH4VEC2E* TMP$1532$2;
+		struct $N4MATH4VEC2E TMP$1533$2;
 		double TMP$1534$2;
+		double TMP$1535$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$33 = malloc( 16ull );
-		TMP$1529$2 = (struct $N4MATH4VEC2E*)vr$33;
-		if( TMP$1529$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3736;
-		TMP$1531$2 = TMP$1529$2;
-		TMP$1530$2 = 1ull;
-		label$3737:;
-		if( TMP$1530$2 == 0ull ) goto label$3738;
-		_ZN4MATH4VEC2C1Ev( TMP$1531$2 );
-		TMP$1531$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1531$2 + 16ll);
-		TMP$1530$2 = TMP$1530$2 + 18446744073709551615ull;
-		goto label$3737;
-		label$3738:;
-		label$3736:;
-		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1529$2;
+		TMP$1530$2 = (struct $N4MATH4VEC2E*)vr$33;
+		if( TMP$1530$2 == (struct $N4MATH4VEC2E*)0ull ) goto label$3740;
+		TMP$1532$2 = TMP$1530$2;
+		TMP$1531$2 = 1ull;
+		label$3741:;
+		if( TMP$1531$2 == 0ull ) goto label$3742;
+		_ZN4MATH4VEC2C1Ev( TMP$1532$2 );
+		TMP$1532$2 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1532$2 + 16ll);
+		TMP$1531$2 = TMP$1531$2 + 18446744073709551615ull;
+		goto label$3741;
+		label$3742:;
+		label$3740:;
+		*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1530$2;
 		double vr$37 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
-		TMP$1534$2 = vr$37;
+		TMP$1535$2 = vr$37;
 		double vr$39 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
-		TMP$1533$2 = vr$39;
-		_ZN4MATH4VEC2C1ERKdS2_( &TMP$1532$2, (double*)&TMP$1533$2, (double*)&TMP$1534$2 );
-		_ZN4MATH4VEC2aSERKS0_( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), (struct $N4MATH4VEC2E*)&TMP$1532$2 );
+		TMP$1534$2 = vr$39;
+		_ZN4MATH4VEC2C1ERKdS2_( &TMP$1533$2, (double*)&TMP$1534$2, (double*)&TMP$1535$2 );
+		_ZN4MATH4VEC2aSERKS0_( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), (struct $N4MATH4VEC2E*)&TMP$1533$2 );
 	}
-	label$3726:;
-	label$3725:;
+	label$3730:;
+	label$3729:;
 }
 
 void _ZN4MATH7V2ARRAYv27selfcatERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3739:;
-	if( THIS$1 == A$1 ) goto label$3742;
+	label$3743:;
+	if( THIS$1 == A$1 ) goto label$3746;
 	{
-		if( *(int64*)A$1 == 0ll ) goto label$3744;
+		if( *(int64*)A$1 == 0ll ) goto label$3748;
 		{
-			if( *(int64*)THIS$1 == 0ll ) goto label$3746;
+			if( *(int64*)THIS$1 == 0ll ) goto label$3750;
 			{
-				struct $N4MATH4VEC2E* TMP$1535$4;
-				uint64 TMP$1536$4;
-				struct $N4MATH4VEC2E* TMP$1537$4;
+				struct $N4MATH4VEC2E* TMP$1536$4;
+				uint64 TMP$1537$4;
+				struct $N4MATH4VEC2E* TMP$1538$4;
 				struct $N4MATH4VEC2E* Q$4;
 				void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) << (4ull & 63ll) );
-				TMP$1535$4 = (struct $N4MATH4VEC2E*)vr$6;
-				if( TMP$1535$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3747;
-				TMP$1537$4 = TMP$1535$4;
-				TMP$1536$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
-				label$3748:;
-				if( TMP$1536$4 == 0ull ) goto label$3749;
-				_ZN4MATH4VEC2C1Ev( TMP$1537$4 );
-				TMP$1537$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1537$4 + 16ll);
-				TMP$1536$4 = TMP$1536$4 + 18446744073709551615ull;
-				goto label$3748;
-				label$3749:;
-				label$3747:;
-				Q$4 = TMP$1535$4;
+				TMP$1536$4 = (struct $N4MATH4VEC2E*)vr$6;
+				if( TMP$1536$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3751;
+				TMP$1538$4 = TMP$1536$4;
+				TMP$1537$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
+				label$3752:;
+				if( TMP$1537$4 == 0ull ) goto label$3753;
+				_ZN4MATH4VEC2C1Ev( TMP$1538$4 );
+				TMP$1538$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1538$4 + 16ll);
+				TMP$1537$4 = TMP$1537$4 + 18446744073709551615ull;
+				goto label$3752;
+				label$3753:;
+				label$3751:;
+				Q$4 = TMP$1536$4;
 				int64 I$4;
 				__builtin_memset( &I$4, 0, 8ll );
 				{
 					I$4 = 0ll;
-					int64 TMP$1538$5;
-					TMP$1538$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3750;
-					label$3753:;
-					{
-						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$4 + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
-					}
-					label$3751:;
-					I$4 = I$4 + 1ll;
-					label$3750:;
-					if( I$4 <= TMP$1538$5 ) goto label$3753;
-					label$3752:;
-				}
-				{
-					I$4 = 0ll;
 					int64 TMP$1539$5;
-					TMP$1539$5 = *(int64*)A$1 + -1ll;
+					TMP$1539$5 = *(int64*)THIS$1 + -1ll;
 					goto label$3754;
 					label$3757:;
 					{
-						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
+						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$4 + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					}
 					label$3755:;
 					I$4 = I$4 + 1ll;
@@ -21743,158 +21745,173 @@ void _ZN4MATH7V2ARRAYv27selfcatERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $
 					if( I$4 <= TMP$1539$5 ) goto label$3757;
 					label$3756:;
 				}
+				{
+					I$4 = 0ll;
+					int64 TMP$1540$5;
+					TMP$1540$5 = *(int64*)A$1 + -1ll;
+					goto label$3758;
+					label$3761:;
+					{
+						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
+					}
+					label$3759:;
+					I$4 = I$4 + 1ll;
+					label$3758:;
+					if( I$4 <= TMP$1540$5 ) goto label$3761;
+					label$3760:;
+				}
 				*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-				if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3758;
+				if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3762;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$3758:;
+				label$3762:;
 				*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			goto label$3745;
-			label$3746:;
+			goto label$3749;
+			label$3750:;
 			{
-				struct $N4MATH4VEC2E* TMP$1540$4;
-				uint64 TMP$1541$4;
-				struct $N4MATH4VEC2E* TMP$1542$4;
+				struct $N4MATH4VEC2E* TMP$1541$4;
+				uint64 TMP$1542$4;
+				struct $N4MATH4VEC2E* TMP$1543$4;
 				*(int64*)THIS$1 = *(int64*)A$1;
 				void* vr$42 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-				TMP$1540$4 = (struct $N4MATH4VEC2E*)vr$42;
-				if( TMP$1540$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3759;
-				TMP$1542$4 = TMP$1540$4;
-				TMP$1541$4 = *(uint64*)THIS$1;
-				label$3760:;
-				if( TMP$1541$4 == 0ull ) goto label$3761;
-				_ZN4MATH4VEC2C1Ev( TMP$1542$4 );
-				TMP$1542$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1542$4 + 16ll);
-				TMP$1541$4 = TMP$1541$4 + 18446744073709551615ull;
-				goto label$3760;
-				label$3761:;
-				label$3759:;
-				*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1540$4;
+				TMP$1541$4 = (struct $N4MATH4VEC2E*)vr$42;
+				if( TMP$1541$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3763;
+				TMP$1543$4 = TMP$1541$4;
+				TMP$1542$4 = *(uint64*)THIS$1;
+				label$3764:;
+				if( TMP$1542$4 == 0ull ) goto label$3765;
+				_ZN4MATH4VEC2C1Ev( TMP$1543$4 );
+				TMP$1543$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1543$4 + 16ll);
+				TMP$1542$4 = TMP$1542$4 + 18446744073709551615ull;
+				goto label$3764;
+				label$3765:;
+				label$3763:;
+				*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1541$4;
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1543$5;
-					TMP$1543$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3762;
-					label$3765:;
+					int64 TMP$1544$5;
+					TMP$1544$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3766;
+					label$3769:;
 					{
 						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3763:;
+					label$3767:;
 					I$5 = I$5 + 1ll;
-					label$3762:;
-					if( I$5 <= TMP$1543$5 ) goto label$3765;
-					label$3764:;
+					label$3766:;
+					if( I$5 <= TMP$1544$5 ) goto label$3769;
+					label$3768:;
 				}
 			}
-			label$3745:;
+			label$3749:;
 		}
-		label$3744:;
-		label$3743:;
+		label$3748:;
+		label$3747:;
 	}
-	goto label$3741;
-	label$3742:;
+	goto label$3745;
+	label$3746:;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$3767;
+		if( *(int64*)THIS$1 == 0ll ) goto label$3771;
 		{
-			struct $N4MATH4VEC2E* TMP$1544$3;
-			uint64 TMP$1545$3;
-			struct $N4MATH4VEC2E* TMP$1546$3;
+			struct $N4MATH4VEC2E* TMP$1545$3;
+			uint64 TMP$1546$3;
+			struct $N4MATH4VEC2E* TMP$1547$3;
 			struct $N4MATH4VEC2E* Q$3;
 			void* vr$60 = malloc( (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) << (4ull & 63ll) );
-			TMP$1544$3 = (struct $N4MATH4VEC2E*)vr$60;
-			if( TMP$1544$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3768;
-			TMP$1546$3 = TMP$1544$3;
-			TMP$1545$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
-			label$3769:;
-			if( TMP$1545$3 == 0ull ) goto label$3770;
-			_ZN4MATH4VEC2C1Ev( TMP$1546$3 );
-			TMP$1546$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1546$3 + 16ll);
-			TMP$1545$3 = TMP$1545$3 + 18446744073709551615ull;
-			goto label$3769;
-			label$3770:;
-			label$3768:;
-			Q$3 = TMP$1544$3;
+			TMP$1545$3 = (struct $N4MATH4VEC2E*)vr$60;
+			if( TMP$1545$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3772;
+			TMP$1547$3 = TMP$1545$3;
+			TMP$1546$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
+			label$3773:;
+			if( TMP$1546$3 == 0ull ) goto label$3774;
+			_ZN4MATH4VEC2C1Ev( TMP$1547$3 );
+			TMP$1547$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1547$3 + 16ll);
+			TMP$1546$3 = TMP$1546$3 + 18446744073709551615ull;
+			goto label$3773;
+			label$3774:;
+			label$3772:;
+			Q$3 = TMP$1545$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1547$4;
-				TMP$1547$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3771;
-				label$3774:;
+				int64 TMP$1548$4;
+				TMP$1548$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3775;
+				label$3778:;
 				{
 					_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$3 + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$4) << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 				}
-				label$3772:;
+				label$3776:;
 				I$4 = I$4 + 1ll;
-				label$3771:;
-				if( I$4 <= TMP$1547$4 ) goto label$3774;
-				label$3773:;
+				label$3775:;
+				if( I$4 <= TMP$1548$4 ) goto label$3778;
+				label$3777:;
 			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 << (1ll & 63ll);
-			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3775;
+			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3779;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3775:;
+			label$3779:;
 			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		label$3767:;
-		label$3766:;
+		label$3771:;
+		label$3770:;
 	}
-	label$3741:;
-	label$3740:;
+	label$3745:;
+	label$3744:;
 }
 
 struct $N4MATH4VEC2E* _ZN4MATH7V2ARRAYixERKu7INTEGER( struct $N4MATH7V2ARRAYE* THIS$1, int64* I$1 )
 {
 	struct $N4MATH4VEC2E* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$3776:;
-	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$3779;
+	label$3780:;
+	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$3783;
 	{
 		fb$result$1 = (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (*I$1 << (4ll & 63ll)));
-		goto label$3777;
-		label$3779:;
+		goto label$3781;
+		label$3783:;
 	}
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	fb$result$1 = (struct $N4MATH4VEC2E*)((uint8*)THIS$1 + 16ll);
-	goto label$3777;
-	label$3777:;
+	goto label$3781;
+	label$3781:;
 	return fb$result$1;
 }
 
 void _ZN4MATH7V2ARRAYpLERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$3780:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3783;
+	label$3784:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3787;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1548$3;
-			TMP$1548$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3784;
-			label$3787:;
+			int64 TMP$1549$3;
+			TMP$1549$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3788;
+			label$3791:;
 			{
 				_ZN4MATH4VEC2pLERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), V$1 );
 			}
-			label$3785:;
+			label$3789:;
 			I$3 = I$3 + 1ll;
-			label$3784:;
-			if( I$3 <= TMP$1548$3 ) goto label$3787;
-			label$3786:;
+			label$3788:;
+			if( I$3 <= TMP$1549$3 ) goto label$3791;
+			label$3790:;
 		}
 	}
-	label$3783:;
-	label$3782:;
-	label$3781:;
+	label$3787:;
+	label$3786:;
+	label$3785:;
 }
 
 void _ZN4MATH7V2ARRAYpLERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$3788:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3791;
+	label$3792:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3795;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
@@ -21905,84 +21922,84 @@ void _ZN4MATH7V2ARRAYpLERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1549$3;
-			TMP$1549$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3792;
-			label$3795:;
+			int64 TMP$1550$3;
+			TMP$1550$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3796;
+			label$3799:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) + Y$2;
 			}
-			label$3793:;
+			label$3797:;
 			I$3 = I$3 + 1ll;
-			label$3792:;
-			if( I$3 <= TMP$1549$3 ) goto label$3795;
-			label$3794:;
+			label$3796:;
+			if( I$3 <= TMP$1550$3 ) goto label$3799;
+			label$3798:;
 		}
 	}
-	label$3791:;
-	label$3790:;
-	label$3789:;
+	label$3795:;
+	label$3794:;
+	label$3793:;
 }
 
 void _ZN4MATH7V2ARRAYpLERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3796:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3799;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1550$3;
-			TMP$1550$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3800;
-			label$3803:;
-			{
-				_ZN4MATH4VEC2pLERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
-			}
-			label$3801:;
-			I$3 = I$3 + 1ll;
-			label$3800:;
-			if( I$3 <= TMP$1550$3 ) goto label$3803;
-			label$3802:;
-		}
-	}
-	label$3799:;
-	label$3798:;
-	label$3797:;
-}
-
-void _ZN4MATH7V2ARRAYmIERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
-{
-	label$3804:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3807;
+	label$3800:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3803;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1551$3;
 			TMP$1551$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3808;
-			label$3811:;
+			goto label$3804;
+			label$3807:;
+			{
+				_ZN4MATH4VEC2pLERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+			}
+			label$3805:;
+			I$3 = I$3 + 1ll;
+			label$3804:;
+			if( I$3 <= TMP$1551$3 ) goto label$3807;
+			label$3806:;
+		}
+	}
+	label$3803:;
+	label$3802:;
+	label$3801:;
+}
+
+void _ZN4MATH7V2ARRAYmIERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
+{
+	label$3808:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3811;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1552$3;
+			TMP$1552$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3812;
+			label$3815:;
 			{
 				_ZN4MATH4VEC2mIERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), V$1 );
 			}
-			label$3809:;
+			label$3813:;
 			I$3 = I$3 + 1ll;
-			label$3808:;
-			if( I$3 <= TMP$1551$3 ) goto label$3811;
-			label$3810:;
+			label$3812:;
+			if( I$3 <= TMP$1552$3 ) goto label$3815;
+			label$3814:;
 		}
 	}
-	label$3807:;
-	label$3806:;
-	label$3805:;
+	label$3811:;
+	label$3810:;
+	label$3809:;
 }
 
 void _ZN4MATH7V2ARRAYmIERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$3812:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3815;
+	label$3816:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3819;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
@@ -21993,85 +22010,85 @@ void _ZN4MATH7V2ARRAYmIERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1552$3;
-			TMP$1552$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3816;
-			label$3819:;
+			int64 TMP$1553$3;
+			TMP$1553$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3820;
+			label$3823:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) - X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) - Y$2;
 			}
-			label$3817:;
+			label$3821:;
 			I$3 = I$3 + 1ll;
-			label$3816:;
-			if( I$3 <= TMP$1552$3 ) goto label$3819;
-			label$3818:;
+			label$3820:;
+			if( I$3 <= TMP$1553$3 ) goto label$3823;
+			label$3822:;
 		}
 	}
-	label$3815:;
-	label$3814:;
-	label$3813:;
+	label$3819:;
+	label$3818:;
+	label$3817:;
 }
 
 void _ZN4MATH7V2ARRAYmIERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3820:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3823;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1553$3;
-			TMP$1553$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3824;
-			label$3827:;
-			{
-				_ZN4MATH4VEC2mIERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
-			}
-			label$3825:;
-			I$3 = I$3 + 1ll;
-			label$3824:;
-			if( I$3 <= TMP$1553$3 ) goto label$3827;
-			label$3826:;
-		}
-	}
-	label$3823:;
-	label$3822:;
-	label$3821:;
-}
-
-void _ZN4MATH7V2ARRAYmLERKd( struct $N4MATH7V2ARRAYE* THIS$1, double* N$1 )
-{
-	label$3828:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3831;
+	label$3824:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3827;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1554$3;
 			TMP$1554$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3832;
-			label$3835:;
+			goto label$3828;
+			label$3831:;
+			{
+				_ZN4MATH4VEC2mIERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
+			}
+			label$3829:;
+			I$3 = I$3 + 1ll;
+			label$3828:;
+			if( I$3 <= TMP$1554$3 ) goto label$3831;
+			label$3830:;
+		}
+	}
+	label$3827:;
+	label$3826:;
+	label$3825:;
+}
+
+void _ZN4MATH7V2ARRAYmLERKd( struct $N4MATH7V2ARRAYE* THIS$1, double* N$1 )
+{
+	label$3832:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3835;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1555$3;
+			TMP$1555$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3836;
+			label$3839:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) * *N$1;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) * *N$1;
 			}
-			label$3833:;
+			label$3837:;
 			I$3 = I$3 + 1ll;
-			label$3832:;
-			if( I$3 <= TMP$1554$3 ) goto label$3835;
-			label$3834:;
+			label$3836:;
+			if( I$3 <= TMP$1555$3 ) goto label$3839;
+			label$3838:;
 		}
 	}
-	label$3831:;
-	label$3830:;
-	label$3829:;
+	label$3835:;
+	label$3834:;
+	label$3833:;
 }
 
 void _ZN4MATH7V2ARRAYmLERKNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3836:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3839;
+	label$3840:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3843;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -22079,56 +22096,56 @@ void _ZN4MATH7V2ARRAYmLERKNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1555$3;
-			TMP$1555$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3840;
-			label$3843:;
+			int64 TMP$1556$3;
+			TMP$1556$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3844;
+			label$3847:;
 			{
 				_ZN4MATH4VEC2mLERKd( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) );
 			}
-			label$3841:;
+			label$3845:;
 			I$3 = I$3 + 1ll;
-			label$3840:;
-			if( I$3 <= TMP$1555$3 ) goto label$3843;
-			label$3842:;
+			label$3844:;
+			if( I$3 <= TMP$1556$3 ) goto label$3847;
+			label$3846:;
 		}
 	}
-	label$3839:;
-	label$3838:;
-	label$3837:;
+	label$3843:;
+	label$3842:;
+	label$3841:;
 }
 
 void _ZN4MATH7V2ARRAYmLERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$3844:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3847;
+	label$3848:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3851;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1556$3;
-			TMP$1556$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3848;
-			label$3851:;
+			int64 TMP$1557$3;
+			TMP$1557$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3852;
+			label$3855:;
 			{
 				_ZN4MATH4VEC2mLERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), V$1 );
 			}
-			label$3849:;
+			label$3853:;
 			I$3 = I$3 + 1ll;
-			label$3848:;
-			if( I$3 <= TMP$1556$3 ) goto label$3851;
-			label$3850:;
+			label$3852:;
+			if( I$3 <= TMP$1557$3 ) goto label$3855;
+			label$3854:;
 		}
 	}
-	label$3847:;
-	label$3846:;
-	label$3845:;
+	label$3851:;
+	label$3850:;
+	label$3849:;
 }
 
 void _ZN4MATH7V2ARRAYmLERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$3852:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3855;
+	label$3856:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3859;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
@@ -22139,80 +22156,59 @@ void _ZN4MATH7V2ARRAYmLERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1557$3;
-			TMP$1557$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3856;
-			label$3859:;
+			int64 TMP$1558$3;
+			TMP$1558$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3860;
+			label$3863:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) * X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) * Y$2;
 			}
-			label$3857:;
+			label$3861:;
 			I$3 = I$3 + 1ll;
-			label$3856:;
-			if( I$3 <= TMP$1557$3 ) goto label$3859;
-			label$3858:;
+			label$3860:;
+			if( I$3 <= TMP$1558$3 ) goto label$3863;
+			label$3862:;
 		}
 	}
-	label$3855:;
-	label$3854:;
-	label$3853:;
+	label$3859:;
+	label$3858:;
+	label$3857:;
 }
 
 void _ZN4MATH7V2ARRAYmLERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3860:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3863;
+	label$3864:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3867;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1558$3;
-			TMP$1558$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3864;
-			label$3867:;
+			int64 TMP$1559$3;
+			TMP$1559$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3868;
+			label$3871:;
 			{
 				_ZN4MATH4VEC2mLERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) );
 			}
-			label$3865:;
+			label$3869:;
 			I$3 = I$3 + 1ll;
-			label$3864:;
-			if( I$3 <= TMP$1558$3 ) goto label$3867;
-			label$3866:;
+			label$3868:;
+			if( I$3 <= TMP$1559$3 ) goto label$3871;
+			label$3870:;
 		}
 	}
-	label$3863:;
-	label$3862:;
-	label$3861:;
+	label$3867:;
+	label$3866:;
+	label$3865:;
 }
 
 void _ZN4MATH7V2ARRAYdVERKd( struct $N4MATH7V2ARRAYE* THIS$1, double* N$1 )
 {
-	label$3868:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3871;
+	label$3872:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3875;
 	{
-		if( *N$1 == 0x0p+0 ) goto label$3873;
-		{
-			{
-				int64 I$4;
-				I$4 = 0ll;
-				int64 TMP$1559$4;
-				TMP$1559$4 = *(int64*)THIS$1 + -1ll;
-				goto label$3874;
-				label$3877:;
-				{
-					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) / *N$1;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) / *N$1;
-				}
-				label$3875:;
-				I$4 = I$4 + 1ll;
-				label$3874:;
-				if( I$4 <= TMP$1559$4 ) goto label$3877;
-				label$3876:;
-			}
-		}
-		goto label$3872;
-		label$3873:;
+		if( *N$1 == 0x0p+0 ) goto label$3877;
 		{
 			{
 				int64 I$4;
@@ -22222,8 +22218,8 @@ void _ZN4MATH7V2ARRAYdVERKd( struct $N4MATH7V2ARRAYE* THIS$1, double* N$1 )
 				goto label$3878;
 				label$3881:;
 				{
-					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) / *N$1;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) / *N$1;
 				}
 				label$3879:;
 				I$4 = I$4 + 1ll;
@@ -22232,17 +22228,38 @@ void _ZN4MATH7V2ARRAYdVERKd( struct $N4MATH7V2ARRAYE* THIS$1, double* N$1 )
 				label$3880:;
 			}
 		}
-		label$3872:;
+		goto label$3876;
+		label$3877:;
+		{
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1561$4;
+				TMP$1561$4 = *(int64*)THIS$1 + -1ll;
+				goto label$3882;
+				label$3885:;
+				{
+					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) = 0x0p+0;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+				}
+				label$3883:;
+				I$4 = I$4 + 1ll;
+				label$3882:;
+				if( I$4 <= TMP$1561$4 ) goto label$3885;
+				label$3884:;
+			}
+		}
+		label$3876:;
 	}
-	label$3871:;
-	label$3870:;
-	label$3869:;
+	label$3875:;
+	label$3874:;
+	label$3873:;
 }
 
 void _ZN4MATH7V2ARRAYdVERKNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1 )
 {
-	label$3882:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3885;
+	label$3886:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3889;
 	{
 		double* P$2;
 		double* vr$6 = _ZNK4MATH5ARRAY11DATA__get__Ev( A$1 );
@@ -22250,65 +22267,44 @@ void _ZN4MATH7V2ARRAYdVERKNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1561$3;
-			TMP$1561$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3886;
-			label$3889:;
+			int64 TMP$1562$3;
+			TMP$1562$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3890;
+			label$3893:;
 			{
-				if( *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$3891;
+				if( *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) == 0x0p+0 ) goto label$3895;
 				{
 					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) / *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll)));
 				}
-				goto label$3890;
-				label$3891:;
+				goto label$3894;
+				label$3895:;
 				{
 					*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = 0x0p+0;
 					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = 0x0p+0;
 				}
-				label$3890:;
+				label$3894:;
 			}
-			label$3887:;
+			label$3891:;
 			I$3 = I$3 + 1ll;
-			label$3886:;
-			if( I$3 <= TMP$1561$3 ) goto label$3889;
-			label$3888:;
+			label$3890:;
+			if( I$3 <= TMP$1562$3 ) goto label$3893;
+			label$3892:;
 		}
 	}
-	label$3885:;
-	label$3884:;
-	label$3883:;
+	label$3889:;
+	label$3888:;
+	label$3887:;
 }
 
 void _ZN4MATH7V2ARRAYdVERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$3892:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3895;
+	label$3896:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3899;
 	{
-		if( *(double*)V$1 == 0x0p+0 ) goto label$3897;
+		if( *(double*)V$1 == 0x0p+0 ) goto label$3901;
 		{
-			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$3899;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1562$5;
-					TMP$1562$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3900;
-					label$3903:;
-					{
-						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / *(double*)V$1;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-					}
-					label$3901:;
-					I$5 = I$5 + 1ll;
-					label$3900:;
-					if( I$5 <= TMP$1562$5 ) goto label$3903;
-					label$3902:;
-				}
-			}
-			goto label$3898;
-			label$3899:;
+			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$3903;
 			{
 				{
 					int64 I$5;
@@ -22319,7 +22315,7 @@ void _ZN4MATH7V2ARRAYdVERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3907:;
 					{
 						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / *(double*)V$1;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
 					}
 					label$3905:;
 					I$5 = I$5 + 1ll;
@@ -22328,33 +22324,33 @@ void _ZN4MATH7V2ARRAYdVERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3906:;
 				}
 			}
-			label$3898:;
-		}
-		goto label$3896;
-		label$3897:;
-		{
-			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$3909;
+			goto label$3902;
+			label$3903:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1564$5;
 					TMP$1564$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3910;
-					label$3913:;
-					{
-						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-					}
+					goto label$3908;
 					label$3911:;
+					{
+						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / *(double*)V$1;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					}
+					label$3909:;
 					I$5 = I$5 + 1ll;
+					label$3908:;
+					if( I$5 <= TMP$1564$5 ) goto label$3911;
 					label$3910:;
-					if( I$5 <= TMP$1564$5 ) goto label$3913;
-					label$3912:;
 				}
 			}
-			goto label$3908;
-			label$3909:;
+			label$3902:;
+		}
+		goto label$3900;
+		label$3901:;
+		{
+			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$3913;
 			{
 				{
 					int64 I$5;
@@ -22365,7 +22361,7 @@ void _ZN4MATH7V2ARRAYdVERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3917:;
 					{
 						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
 					}
 					label$3915:;
 					I$5 = I$5 + 1ll;
@@ -22374,19 +22370,40 @@ void _ZN4MATH7V2ARRAYdVERKNS_4VEC2E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3916:;
 				}
 			}
-			label$3908:;
+			goto label$3912;
+			label$3913:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1566$5;
+					TMP$1566$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3918;
+					label$3921:;
+					{
+						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					}
+					label$3919:;
+					I$5 = I$5 + 1ll;
+					label$3918:;
+					if( I$5 <= TMP$1566$5 ) goto label$3921;
+					label$3920:;
+				}
+			}
+			label$3912:;
 		}
-		label$3896:;
+		label$3900:;
 	}
-	label$3895:;
-	label$3894:;
-	label$3893:;
+	label$3899:;
+	label$3898:;
+	label$3897:;
 }
 
 void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$3918:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$3921;
+	label$3922:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$3925;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4PVEC8X__get__Ev( V$1 );
@@ -22394,30 +22411,9 @@ void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 		double Y$2;
 		double vr$2 = _ZNK4MATH4PVEC8Y__get__Ev( V$1 );
 		Y$2 = vr$2;
-		if( X$2 == 0x0p+0 ) goto label$3923;
+		if( X$2 == 0x0p+0 ) goto label$3927;
 		{
-			if( Y$2 == 0x0p+0 ) goto label$3925;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1566$5;
-					TMP$1566$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3926;
-					label$3929:;
-					{
-						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / X$2;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / Y$2;
-					}
-					label$3927:;
-					I$5 = I$5 + 1ll;
-					label$3926:;
-					if( I$5 <= TMP$1566$5 ) goto label$3929;
-					label$3928:;
-				}
-			}
-			goto label$3924;
-			label$3925:;
+			if( Y$2 == 0x0p+0 ) goto label$3929;
 			{
 				{
 					int64 I$5;
@@ -22428,7 +22424,7 @@ void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3933:;
 					{
 						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / X$2;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / Y$2;
 					}
 					label$3931:;
 					I$5 = I$5 + 1ll;
@@ -22437,33 +22433,33 @@ void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3932:;
 				}
 			}
-			label$3924:;
-		}
-		goto label$3922;
-		label$3923:;
-		{
-			if( Y$2 == 0x0p+0 ) goto label$3935;
+			goto label$3928;
+			label$3929:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1568$5;
 					TMP$1568$5 = *(int64*)THIS$1 + -1ll;
-					goto label$3936;
-					label$3939:;
-					{
-						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / Y$2;
-					}
+					goto label$3934;
 					label$3937:;
+					{
+						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) / X$2;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					}
+					label$3935:;
 					I$5 = I$5 + 1ll;
+					label$3934:;
+					if( I$5 <= TMP$1568$5 ) goto label$3937;
 					label$3936:;
-					if( I$5 <= TMP$1568$5 ) goto label$3939;
-					label$3938:;
 				}
 			}
-			goto label$3934;
-			label$3935:;
+			label$3928:;
+		}
+		goto label$3926;
+		label$3927:;
+		{
+			if( Y$2 == 0x0p+0 ) goto label$3939;
 			{
 				{
 					int64 I$5;
@@ -22474,7 +22470,7 @@ void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3943:;
 					{
 						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
-						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) / Y$2;
 					}
 					label$3941:;
 					I$5 = I$5 + 1ll;
@@ -22483,304 +22479,325 @@ void _ZN4MATH7V2ARRAYdVERKNS_4PVECE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4
 					label$3942:;
 				}
 			}
-			label$3934:;
+			goto label$3938;
+			label$3939:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1570$5;
+					TMP$1570$5 = *(int64*)THIS$1 + -1ll;
+					goto label$3944;
+					label$3947:;
+					{
+						*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) = 0x0p+0;
+						*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) = 0x0p+0;
+					}
+					label$3945:;
+					I$5 = I$5 + 1ll;
+					label$3944:;
+					if( I$5 <= TMP$1570$5 ) goto label$3947;
+					label$3946:;
+				}
+			}
+			label$3938:;
 		}
-		label$3922:;
+		label$3926:;
 	}
-	label$3921:;
-	label$3920:;
-	label$3919:;
+	label$3925:;
+	label$3924:;
+	label$3923:;
 }
 
 void _ZN4MATH7V2ARRAYdVERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3944:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3947;
+	label$3948:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$3951;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1570$3;
-			TMP$1570$3 = *(int64*)THIS$1 + -1ll;
-			goto label$3948;
-			label$3951:;
+			int64 TMP$1571$3;
+			TMP$1571$3 = *(int64*)THIS$1 + -1ll;
+			goto label$3952;
+			label$3955:;
 			{
-				double TMP$1571$4;
 				double TMP$1572$4;
-				if( *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) == 0x0p+0 ) goto label$3952;
-				TMP$1571$4 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) / *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll)));
-				goto label$3954;
-				label$3952:;
-				TMP$1571$4 = 0x0p+0;
-				label$3954:;
-				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = TMP$1571$4;
-				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) == 0x0p+0 ) goto label$3953;
-				TMP$1572$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll);
-				goto label$3955;
-				label$3953:;
+				double TMP$1573$4;
+				if( *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) == 0x0p+0 ) goto label$3956;
+				TMP$1572$4 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) / *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll)));
+				goto label$3958;
+				label$3956:;
 				TMP$1572$4 = 0x0p+0;
-				label$3955:;
-				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = TMP$1572$4;
+				label$3958:;
+				*(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) = TMP$1572$4;
+				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) == 0x0p+0 ) goto label$3957;
+				TMP$1573$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll);
+				goto label$3959;
+				label$3957:;
+				TMP$1573$4 = 0x0p+0;
+				label$3959:;
+				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll) = TMP$1573$4;
 			}
-			label$3949:;
+			label$3953:;
 			I$3 = I$3 + 1ll;
-			label$3948:;
-			if( I$3 <= TMP$1570$3 ) goto label$3951;
-			label$3950:;
+			label$3952:;
+			if( I$3 <= TMP$1571$3 ) goto label$3955;
+			label$3954:;
 		}
 	}
-	label$3947:;
-	label$3946:;
-	label$3945:;
+	label$3951:;
+	label$3950:;
+	label$3949:;
 }
 
 FBSTRING* _ZNK4MATH7V2ARRAYcv8FBSTRINGEv( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
-	FBSTRING TMP$1574$1;
 	FBSTRING TMP$1575$1;
+	FBSTRING TMP$1576$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$3956:;
+	label$3960:;
 	FBSTRING* vr$2 = fb_LongintToStr( *(int64*)THIS$1 );
-	__builtin_memset( &TMP$1574$1, 0, 24ll );
-	FBSTRING* vr$5 = fb_StrConcat( &TMP$1574$1, (void*)"<math.v2array>{ length : ", 26ll, (void*)vr$2, -1ll );
 	__builtin_memset( &TMP$1575$1, 0, 24ll );
-	FBSTRING* vr$8 = fb_StrConcat( &TMP$1575$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$5 = fb_StrConcat( &TMP$1575$1, (void*)"<math.v2array>{ length : ", 26ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$1576$1, 0, 24ll );
+	FBSTRING* vr$8 = fb_StrConcat( &TMP$1576$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$8, -1ll, 0 );
-	goto label$3957;
-	label$3957:;
+	goto label$3961;
+	label$3961:;
 	FBSTRING* vr$11 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$11;
 }
 
 void _ZN4MATH7V2ARRAYaSERKS0_( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$3958:;
-	if( THIS$1 == A$1 ) goto label$3961;
+	label$3962:;
+	if( THIS$1 == A$1 ) goto label$3965;
 	{
 		*(int64*)THIS$1 = 0ll;
-		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3963;
+		if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3967;
 		{
-			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3964;
+			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3968;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3964:;
+			label$3968:;
 			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH4VEC2E*)0ull;
 		}
-		label$3963:;
-		label$3962:;
-		if( *(int64*)A$1 == 0ll ) goto label$3966;
+		label$3967:;
+		label$3966:;
+		if( *(int64*)A$1 == 0ll ) goto label$3970;
 		{
-			struct $N4MATH4VEC2E* TMP$1576$3;
-			uint64 TMP$1577$3;
-			struct $N4MATH4VEC2E* TMP$1578$3;
+			struct $N4MATH4VEC2E* TMP$1577$3;
+			uint64 TMP$1578$3;
+			struct $N4MATH4VEC2E* TMP$1579$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$10 = malloc( *(uint64*)A$1 << (4ull & 63ll) );
-			TMP$1576$3 = (struct $N4MATH4VEC2E*)vr$10;
-			if( TMP$1576$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3967;
-			TMP$1578$3 = TMP$1576$3;
-			TMP$1577$3 = *(uint64*)A$1;
-			label$3968:;
-			if( TMP$1577$3 == 0ull ) goto label$3969;
-			_ZN4MATH4VEC2C1Ev( TMP$1578$3 );
-			TMP$1578$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1578$3 + 16ll);
-			TMP$1577$3 = TMP$1577$3 + 18446744073709551615ull;
-			goto label$3968;
-			label$3969:;
-			label$3967:;
-			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1576$3;
+			TMP$1577$3 = (struct $N4MATH4VEC2E*)vr$10;
+			if( TMP$1577$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3971;
+			TMP$1579$3 = TMP$1577$3;
+			TMP$1578$3 = *(uint64*)A$1;
+			label$3972:;
+			if( TMP$1578$3 == 0ull ) goto label$3973;
+			_ZN4MATH4VEC2C1Ev( TMP$1579$3 );
+			TMP$1579$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1579$3 + 16ll);
+			TMP$1578$3 = TMP$1578$3 + 18446744073709551615ull;
+			goto label$3972;
+			label$3973:;
+			label$3971:;
+			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1577$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1579$4;
-				TMP$1579$4 = *(int64*)A$1 + -1ll;
-				goto label$3970;
-				label$3973:;
+				int64 TMP$1580$4;
+				TMP$1580$4 = *(int64*)A$1 + -1ll;
+				goto label$3974;
+				label$3977:;
 				{
 					_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 				}
-				label$3971:;
+				label$3975:;
 				I$4 = I$4 + 1ll;
-				label$3970:;
-				if( I$4 <= TMP$1579$4 ) goto label$3973;
-				label$3972:;
+				label$3974:;
+				if( I$4 <= TMP$1580$4 ) goto label$3977;
+				label$3976:;
 			}
 		}
-		label$3966:;
-		label$3965:;
+		label$3970:;
+		label$3969:;
 	}
-	label$3961:;
-	label$3960:;
-	label$3959:;
+	label$3965:;
+	label$3964:;
+	label$3963:;
 }
 
 struct $N4MATH4VEC2E* _ZNK4MATH7V2ARRAY11DATA__get__Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
 	struct $N4MATH4VEC2E* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$3974:;
+	label$3978:;
 	fb$result$1 = *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll);
-	goto label$3975;
-	label$3975:;
+	goto label$3979;
+	label$3979:;
 	return fb$result$1;
 }
 
 void _ZN4MATH7V2ARRAY13LENGTH__set__ERKu7INTEGER( struct $N4MATH7V2ARRAYE* THIS$1, int64* L$1 )
 {
-	label$3976:;
-	if( *L$1 <= 0ll ) goto label$3979;
+	label$3980:;
+	if( *L$1 <= 0ll ) goto label$3983;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$3981;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$3985;
 		{
-			if( *L$1 == *(int64*)THIS$1 ) goto label$3983;
+			if( *L$1 == *(int64*)THIS$1 ) goto label$3987;
 			{
-				struct $N4MATH4VEC2E* TMP$1580$4;
-				uint64 TMP$1581$4;
-				struct $N4MATH4VEC2E* TMP$1582$4;
+				struct $N4MATH4VEC2E* TMP$1581$4;
+				uint64 TMP$1582$4;
+				struct $N4MATH4VEC2E* TMP$1583$4;
 				struct $N4MATH4VEC2E* Q$4;
 				void* vr$6 = malloc( *(uint64*)L$1 << (4ull & 63ll) );
-				TMP$1580$4 = (struct $N4MATH4VEC2E*)vr$6;
-				if( TMP$1580$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3984;
-				TMP$1582$4 = TMP$1580$4;
-				TMP$1581$4 = *(uint64*)L$1;
-				label$3985:;
-				if( TMP$1581$4 == 0ull ) goto label$3986;
-				_ZN4MATH4VEC2C1Ev( TMP$1582$4 );
-				TMP$1582$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1582$4 + 16ll);
-				TMP$1581$4 = TMP$1581$4 + 18446744073709551615ull;
-				goto label$3985;
-				label$3986:;
-				label$3984:;
-				Q$4 = TMP$1580$4;
+				TMP$1581$4 = (struct $N4MATH4VEC2E*)vr$6;
+				if( TMP$1581$4 == (struct $N4MATH4VEC2E*)0ull ) goto label$3988;
+				TMP$1583$4 = TMP$1581$4;
+				TMP$1582$4 = *(uint64*)L$1;
+				label$3989:;
+				if( TMP$1582$4 == 0ull ) goto label$3990;
+				_ZN4MATH4VEC2C1Ev( TMP$1583$4 );
+				TMP$1583$4 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1583$4 + 16ll);
+				TMP$1582$4 = TMP$1582$4 + 18446744073709551615ull;
+				goto label$3989;
+				label$3990:;
+				label$3988:;
+				Q$4 = TMP$1581$4;
 				{
-					int64 TMP$1583$5;
+					int64 TMP$1584$5;
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1584$5;
-					if( *L$1 >= *(int64*)THIS$1 ) goto label$3987;
-					TMP$1583$5 = *L$1;
-					goto label$4000;
-					label$3987:;
-					TMP$1583$5 = *(int64*)THIS$1;
-					label$4000:;
-					TMP$1584$5 = TMP$1583$5 + -1ll;
-					goto label$3988;
+					int64 TMP$1585$5;
+					if( *L$1 >= *(int64*)THIS$1 ) goto label$3991;
+					TMP$1584$5 = *L$1;
+					goto label$4004;
 					label$3991:;
+					TMP$1584$5 = *(int64*)THIS$1;
+					label$4004:;
+					TMP$1585$5 = TMP$1584$5 + -1ll;
+					goto label$3992;
+					label$3995:;
 					{
 						_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)Q$4 + (I$5 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$3989:;
+					label$3993:;
 					I$5 = I$5 + 1ll;
-					label$3988:;
-					if( I$5 <= TMP$1584$5 ) goto label$3991;
-					label$3990:;
+					label$3992:;
+					if( I$5 <= TMP$1585$5 ) goto label$3995;
+					label$3994:;
 				}
 				*(int64*)THIS$1 = *L$1;
-				if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3992;
+				if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3996;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$3992:;
+				label$3996:;
 				*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			label$3983:;
-			label$3982:;
+			label$3987:;
+			label$3986:;
 		}
-		goto label$3980;
-		label$3981:;
+		goto label$3984;
+		label$3985:;
 		{
-			struct $N4MATH4VEC2E* TMP$1585$3;
-			uint64 TMP$1586$3;
-			struct $N4MATH4VEC2E* TMP$1587$3;
+			struct $N4MATH4VEC2E* TMP$1586$3;
+			uint64 TMP$1587$3;
+			struct $N4MATH4VEC2E* TMP$1588$3;
 			*(int64*)THIS$1 = *L$1;
 			void* vr$30 = malloc( *(uint64*)THIS$1 << (4ull & 63ll) );
-			TMP$1585$3 = (struct $N4MATH4VEC2E*)vr$30;
-			if( TMP$1585$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3993;
-			TMP$1587$3 = TMP$1585$3;
-			TMP$1586$3 = *(uint64*)THIS$1;
-			label$3994:;
-			if( TMP$1586$3 == 0ull ) goto label$3995;
-			_ZN4MATH4VEC2C1Ev( TMP$1587$3 );
-			TMP$1587$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1587$3 + 16ll);
-			TMP$1586$3 = TMP$1586$3 + 18446744073709551615ull;
-			goto label$3994;
-			label$3995:;
-			label$3993:;
-			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1585$3;
+			TMP$1586$3 = (struct $N4MATH4VEC2E*)vr$30;
+			if( TMP$1586$3 == (struct $N4MATH4VEC2E*)0ull ) goto label$3997;
+			TMP$1588$3 = TMP$1586$3;
+			TMP$1587$3 = *(uint64*)THIS$1;
+			label$3998:;
+			if( TMP$1587$3 == 0ull ) goto label$3999;
+			_ZN4MATH4VEC2C1Ev( TMP$1588$3 );
+			TMP$1588$3 = (struct $N4MATH4VEC2E*)((uint8*)TMP$1588$3 + 16ll);
+			TMP$1587$3 = TMP$1587$3 + 18446744073709551615ull;
+			goto label$3998;
+			label$3999:;
+			label$3997:;
+			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = TMP$1586$3;
 		}
-		label$3980:;
+		label$3984:;
 	}
-	goto label$3978;
-	label$3979:;
-	if( *L$1 != 0ll ) goto label$3996;
+	goto label$3982;
+	label$3983:;
+	if( *L$1 != 0ll ) goto label$4000;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$3998;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$4002;
 		{
 			*(int64*)THIS$1 = 0ll;
-			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$3999;
+			if( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC2E*)0ull ) goto label$4003;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$3999:;
+			label$4003:;
 			*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH4VEC2E*)0ull;
 		}
-		label$3998:;
-		label$3997:;
+		label$4002:;
+		label$4001:;
 	}
-	label$3996:;
-	label$3978:;
-	label$3977:;
+	label$4000:;
+	label$3982:;
+	label$3981:;
 }
 
 double _ZNK4MATH7V2ARRAY11XMAX__get__Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4001:;
+	label$4005:;
 	{
-		int64 TMP$1588$2;
-		TMP$1588$2 = *(int64*)THIS$1;
-		if( TMP$1588$2 != 0ll ) goto label$4004;
-		label$4005:;
+		int64 TMP$1589$2;
+		TMP$1589$2 = *(int64*)THIS$1;
+		if( TMP$1589$2 != 0ll ) goto label$4008;
+		label$4009:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4002;
+			goto label$4006;
 		}
-		goto label$4003;
-		label$4004:;
-		if( TMP$1588$2 != 1ll ) goto label$4006;
-		label$4007:;
+		goto label$4007;
+		label$4008:;
+		if( TMP$1589$2 != 1ll ) goto label$4010;
+		label$4011:;
 		{
 			fb$result$1 = *(double*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll);
-			goto label$4002;
+			goto label$4006;
 		}
-		goto label$4003;
-		label$4006:;
+		goto label$4007;
+		label$4010:;
 		{
 			double R$3;
 			R$3 = *(double*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1589$4;
-				TMP$1589$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4009;
-				label$4012:;
+				int64 TMP$1590$4;
+				TMP$1590$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4013;
+				label$4016:;
 				{
-					if( R$3 >= *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) ) goto label$4014;
+					if( R$3 >= *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) ) goto label$4018;
 					{
 						R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll)));
-						label$4014:;
+						label$4018:;
 					}
 				}
-				label$4010:;
+				label$4014:;
 				I$4 = I$4 + 1ll;
-				label$4009:;
-				if( I$4 <= TMP$1589$4 ) goto label$4012;
-				label$4011:;
+				label$4013:;
+				if( I$4 <= TMP$1590$4 ) goto label$4016;
+				label$4015:;
 			}
 			fb$result$1 = R$3;
-			goto label$4002;
+			goto label$4006;
 		}
-		label$4008:;
-		label$4003:;
+		label$4012:;
+		label$4007:;
 	}
-	label$4002:;
+	label$4006:;
 	return fb$result$1;
 }
 
@@ -22788,56 +22805,56 @@ double _ZNK4MATH7V2ARRAY11XMIN__get__Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4015:;
+	label$4019:;
 	{
-		int64 TMP$1590$2;
-		TMP$1590$2 = *(int64*)THIS$1;
-		if( TMP$1590$2 != 0ll ) goto label$4018;
-		label$4019:;
+		int64 TMP$1591$2;
+		TMP$1591$2 = *(int64*)THIS$1;
+		if( TMP$1591$2 != 0ll ) goto label$4022;
+		label$4023:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4016;
+			goto label$4020;
 		}
-		goto label$4017;
-		label$4018:;
-		if( TMP$1590$2 != 1ll ) goto label$4020;
-		label$4021:;
+		goto label$4021;
+		label$4022:;
+		if( TMP$1591$2 != 1ll ) goto label$4024;
+		label$4025:;
 		{
 			fb$result$1 = *(double*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll);
-			goto label$4016;
+			goto label$4020;
 		}
-		goto label$4017;
-		label$4020:;
+		goto label$4021;
+		label$4024:;
 		{
 			double R$3;
 			R$3 = *(double*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1591$4;
-				TMP$1591$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4023;
-				label$4026:;
+				int64 TMP$1592$4;
+				TMP$1592$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4027;
+				label$4030:;
 				{
-					if( *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) >= R$3 ) goto label$4028;
+					if( *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) >= R$3 ) goto label$4032;
 					{
 						R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll)));
-						label$4028:;
+						label$4032:;
 					}
 				}
-				label$4024:;
+				label$4028:;
 				I$4 = I$4 + 1ll;
-				label$4023:;
-				if( I$4 <= TMP$1591$4 ) goto label$4026;
-				label$4025:;
+				label$4027:;
+				if( I$4 <= TMP$1592$4 ) goto label$4030;
+				label$4029:;
 			}
 			fb$result$1 = R$3;
-			goto label$4016;
+			goto label$4020;
 		}
-		label$4022:;
-		label$4017:;
+		label$4026:;
+		label$4021:;
 	}
-	label$4016:;
+	label$4020:;
 	return fb$result$1;
 }
 
@@ -22845,56 +22862,56 @@ double _ZNK4MATH7V2ARRAY11YMAX__get__Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4029:;
+	label$4033:;
 	{
-		int64 TMP$1592$2;
-		TMP$1592$2 = *(int64*)THIS$1;
-		if( TMP$1592$2 != 0ll ) goto label$4032;
-		label$4033:;
+		int64 TMP$1593$2;
+		TMP$1593$2 = *(int64*)THIS$1;
+		if( TMP$1593$2 != 0ll ) goto label$4036;
+		label$4037:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4030;
+			goto label$4034;
 		}
-		goto label$4031;
-		label$4032:;
-		if( TMP$1592$2 != 1ll ) goto label$4034;
-		label$4035:;
+		goto label$4035;
+		label$4036:;
+		if( TMP$1593$2 != 1ll ) goto label$4038;
+		label$4039:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + 8ll);
-			goto label$4030;
+			goto label$4034;
 		}
-		goto label$4031;
-		label$4034:;
+		goto label$4035;
+		label$4038:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1593$4;
-				TMP$1593$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4037;
-				label$4040:;
+				int64 TMP$1594$4;
+				TMP$1594$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4041;
+				label$4044:;
 				{
-					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) ) goto label$4042;
+					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) ) goto label$4046;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll);
-						label$4042:;
+						label$4046:;
 					}
 				}
-				label$4038:;
+				label$4042:;
 				I$4 = I$4 + 1ll;
-				label$4037:;
-				if( I$4 <= TMP$1593$4 ) goto label$4040;
-				label$4039:;
+				label$4041:;
+				if( I$4 <= TMP$1594$4 ) goto label$4044;
+				label$4043:;
 			}
 			fb$result$1 = R$3;
-			goto label$4030;
+			goto label$4034;
 		}
-		label$4036:;
-		label$4031:;
+		label$4040:;
+		label$4035:;
 	}
-	label$4030:;
+	label$4034:;
 	return fb$result$1;
 }
 
@@ -22902,903 +22919,903 @@ double _ZNK4MATH7V2ARRAY11YMIN__get__Ev( struct $N4MATH7V2ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4043:;
+	label$4047:;
 	{
-		int64 TMP$1594$2;
-		TMP$1594$2 = *(int64*)THIS$1;
-		if( TMP$1594$2 != 0ll ) goto label$4046;
-		label$4047:;
+		int64 TMP$1595$2;
+		TMP$1595$2 = *(int64*)THIS$1;
+		if( TMP$1595$2 != 0ll ) goto label$4050;
+		label$4051:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4044;
+			goto label$4048;
 		}
-		goto label$4045;
-		label$4046:;
-		if( TMP$1594$2 != 1ll ) goto label$4048;
-		label$4049:;
+		goto label$4049;
+		label$4050:;
+		if( TMP$1595$2 != 1ll ) goto label$4052;
+		label$4053:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + 8ll);
-			goto label$4044;
+			goto label$4048;
 		}
-		goto label$4045;
-		label$4048:;
+		goto label$4049;
+		label$4052:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1595$4;
-				TMP$1595$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4051;
-				label$4054:;
+				int64 TMP$1596$4;
+				TMP$1596$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4055;
+				label$4058:;
 				{
-					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) >= R$3 ) goto label$4056;
+					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) >= R$3 ) goto label$4060;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll);
-						label$4056:;
+						label$4060:;
 					}
 				}
-				label$4052:;
+				label$4056:;
 				I$4 = I$4 + 1ll;
-				label$4051:;
-				if( I$4 <= TMP$1595$4 ) goto label$4054;
-				label$4053:;
+				label$4055:;
+				if( I$4 <= TMP$1596$4 ) goto label$4058;
+				label$4057:;
 			}
 			fb$result$1 = R$3;
-			goto label$4044;
+			goto label$4048;
 		}
-		label$4050:;
-		label$4045:;
+		label$4054:;
+		label$4049:;
 	}
-	label$4044:;
+	label$4048:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY7FOREACHEPFvRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1491 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY7FOREACHEPFvRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1492 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4057:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4060;
+	label$4061:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4064;
 	{
-		if( F$1 == (tmp$1491)0ull ) goto label$4062;
+		if( F$1 == (tmp$1492)0ull ) goto label$4066;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4064;
+			if( *R$1 == (boolean)0ll ) goto label$4068;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4065;
-					label$4068:;
-					{
-						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-					}
-					label$4066:;
-					I$5 = I$5 + -1ll;
-					label$4065:;
-					if( I$5 >= 0ll ) goto label$4068;
-					label$4067:;
-				}
-			}
-			goto label$4063;
-			label$4064:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1596$5;
-					TMP$1596$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4069;
 					label$4072:;
 					{
 						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$4070:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4069:;
-					if( I$5 <= TMP$1596$5 ) goto label$4072;
+					if( I$5 >= 0ll ) goto label$4072;
 					label$4071:;
 				}
 			}
-			label$4063:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4058;
-		}
-		label$4062:;
-		label$4061:;
-	}
-	label$4060:;
-	label$4059:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4058;
-	label$4058:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY7FOREACHEPFbRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1493 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4073:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4076;
-	{
-		if( F$1 == (tmp$1493)0ull ) goto label$4078;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4080;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4081;
-					label$4084:;
-					{
-						boolean vr$8 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$8 != (boolean)0ll ) goto label$4086;
-						{
-							goto label$4083;
-						}
-						label$4086:;
-						label$4085:;
-					}
-					label$4082:;
-					I$5 = I$5 + -1ll;
-					label$4081:;
-					if( I$5 >= 0ll ) goto label$4084;
-					label$4083:;
-				}
-			}
-			goto label$4079;
-			label$4080:;
+			goto label$4067;
+			label$4068:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1597$5;
 					TMP$1597$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4087;
-					label$4090:;
+					goto label$4073;
+					label$4076:;
 					{
-						boolean vr$15 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$15 != (boolean)0ll ) goto label$4092;
-						{
-							goto label$4089;
-						}
-						label$4092:;
-						label$4091:;
+						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$4088:;
+					label$4074:;
 					I$5 = I$5 + 1ll;
-					label$4087:;
-					if( I$5 <= TMP$1597$5 ) goto label$4090;
-					label$4089:;
+					label$4073:;
+					if( I$5 <= TMP$1597$5 ) goto label$4076;
+					label$4075:;
 				}
 			}
-			label$4079:;
+			label$4067:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4074;
+			goto label$4062;
 		}
-		label$4078:;
-		label$4077:;
+		label$4066:;
+		label$4065:;
 	}
-	label$4076:;
-	label$4075:;
+	label$4064:;
+	label$4063:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4074;
-	label$4074:;
+	goto label$4062;
+	label$4062:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY7FOREACHEPFvRNS_4VEC2ERKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1492 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY7FOREACHEPFbRNS_4VEC2EERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1494 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4093:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4096;
+	label$4077:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4080;
 	{
-		if( F$1 == (tmp$1492)0ull ) goto label$4098;
+		if( F$1 == (tmp$1494)0ull ) goto label$4082;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4100;
+			if( *R$1 == (boolean)0ll ) goto label$4084;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4101;
-					label$4104:;
+					goto label$4085;
+					label$4088:;
 					{
-						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						boolean vr$8 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$8 != (boolean)0ll ) goto label$4090;
+						{
+							goto label$4087;
+						}
+						label$4090:;
+						label$4089:;
 					}
-					label$4102:;
+					label$4086:;
 					I$5 = I$5 + -1ll;
-					label$4101:;
-					if( I$5 >= 0ll ) goto label$4104;
-					label$4103:;
+					label$4085:;
+					if( I$5 >= 0ll ) goto label$4088;
+					label$4087:;
 				}
 			}
-			goto label$4099;
-			label$4100:;
+			goto label$4083;
+			label$4084:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1598$5;
 					TMP$1598$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4091;
+					label$4094:;
+					{
+						boolean vr$15 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$15 != (boolean)0ll ) goto label$4096;
+						{
+							goto label$4093;
+						}
+						label$4096:;
+						label$4095:;
+					}
+					label$4092:;
+					I$5 = I$5 + 1ll;
+					label$4091:;
+					if( I$5 <= TMP$1598$5 ) goto label$4094;
+					label$4093:;
+				}
+			}
+			label$4083:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4078;
+		}
+		label$4082:;
+		label$4081:;
+	}
+	label$4080:;
+	label$4079:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4078;
+	label$4078:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V2ARRAY7FOREACHEPFvRNS_4VEC2ERKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1493 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4097:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4100;
+	{
+		if( F$1 == (tmp$1493)0ull ) goto label$4102;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4104;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4105;
 					label$4108:;
 					{
 						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$4106:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4105:;
-					if( I$5 <= TMP$1598$5 ) goto label$4108;
+					if( I$5 >= 0ll ) goto label$4108;
 					label$4107:;
 				}
 			}
-			label$4099:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4094;
-		}
-		label$4098:;
-		label$4097:;
-	}
-	label$4096:;
-	label$4095:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4094;
-	label$4094:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY7FOREACHEPFbRNS_4VEC2ERKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1494 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4109:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4112;
-	{
-		if( F$1 == (tmp$1494)0ull ) goto label$4114;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4116;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4117;
-					label$4120:;
-					{
-						boolean vr$9 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$9 != (boolean)0ll ) goto label$4122;
-						{
-							goto label$4119;
-						}
-						label$4122:;
-						label$4121:;
-					}
-					label$4118:;
-					I$5 = I$5 + -1ll;
-					label$4117:;
-					if( I$5 >= 0ll ) goto label$4120;
-					label$4119:;
-				}
-			}
-			goto label$4115;
-			label$4116:;
+			goto label$4103;
+			label$4104:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1599$5;
 					TMP$1599$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4123;
-					label$4126:;
+					goto label$4109;
+					label$4112:;
 					{
-						boolean vr$17 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$17 != (boolean)0ll ) goto label$4128;
-						{
-							goto label$4125;
-						}
-						label$4128:;
-						label$4127:;
+						(F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
-					label$4124:;
+					label$4110:;
 					I$5 = I$5 + 1ll;
-					label$4123:;
-					if( I$5 <= TMP$1599$5 ) goto label$4126;
-					label$4125:;
+					label$4109:;
+					if( I$5 <= TMP$1599$5 ) goto label$4112;
+					label$4111:;
 				}
 			}
-			label$4115:;
+			label$4103:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4110;
+			goto label$4098;
 		}
-		label$4114:;
-		label$4113:;
+		label$4102:;
+		label$4101:;
 	}
-	label$4112:;
-	label$4111:;
+	label$4100:;
+	label$4099:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4110;
-	label$4110:;
+	goto label$4098;
+	label$4098:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY8FOREACHXEPFvRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY7FOREACHEPFbRNS_4VEC2ERKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1495 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4129:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4132;
+	label$4113:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4116;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$4134;
+		if( F$1 == (tmp$1495)0ull ) goto label$4118;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4136;
+			if( *R$1 == (boolean)0ll ) goto label$4120;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4137;
-					label$4140:;
+					goto label$4121;
+					label$4124:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						boolean vr$9 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$9 != (boolean)0ll ) goto label$4126;
+						{
+							goto label$4123;
+						}
+						label$4126:;
+						label$4125:;
 					}
-					label$4138:;
+					label$4122:;
 					I$5 = I$5 + -1ll;
-					label$4137:;
-					if( I$5 >= 0ll ) goto label$4140;
-					label$4139:;
+					label$4121:;
+					if( I$5 >= 0ll ) goto label$4124;
+					label$4123:;
 				}
 			}
-			goto label$4135;
-			label$4136:;
+			goto label$4119;
+			label$4120:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1600$5;
 					TMP$1600$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4127;
+					label$4130:;
+					{
+						boolean vr$17 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$17 != (boolean)0ll ) goto label$4132;
+						{
+							goto label$4129;
+						}
+						label$4132:;
+						label$4131:;
+					}
+					label$4128:;
+					I$5 = I$5 + 1ll;
+					label$4127:;
+					if( I$5 <= TMP$1600$5 ) goto label$4130;
+					label$4129:;
+				}
+			}
+			label$4119:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4114;
+		}
+		label$4118:;
+		label$4117:;
+	}
+	label$4116:;
+	label$4115:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4114;
+	label$4114:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V2ARRAY8FOREACHXEPFvRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4133:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4136;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$4138;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4140;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4141;
 					label$4144:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
 					label$4142:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4141:;
-					if( I$5 <= TMP$1600$5 ) goto label$4144;
+					if( I$5 >= 0ll ) goto label$4144;
 					label$4143:;
 				}
 			}
-			label$4135:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4130;
-		}
-		label$4134:;
-		label$4133:;
-	}
-	label$4132:;
-	label$4131:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4130;
-	label$4130:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY8FOREACHXEPFbRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4145:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4148;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$4150;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4152;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4153;
-					label$4156:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$9 != (boolean)0ll ) goto label$4158;
-						{
-							goto label$4155;
-						}
-						label$4158:;
-						label$4157:;
-					}
-					label$4154:;
-					I$5 = I$5 + -1ll;
-					label$4153:;
-					if( I$5 >= 0ll ) goto label$4156;
-					label$4155:;
-				}
-			}
-			goto label$4151;
-			label$4152:;
+			goto label$4139;
+			label$4140:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1601$5;
 					TMP$1601$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4159;
-					label$4162:;
+					goto label$4145;
+					label$4148:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
-						if( vr$17 != (boolean)0ll ) goto label$4164;
-						{
-							goto label$4161;
-						}
-						label$4164:;
-						label$4163:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
 					}
-					label$4160:;
+					label$4146:;
 					I$5 = I$5 + 1ll;
-					label$4159:;
-					if( I$5 <= TMP$1601$5 ) goto label$4162;
-					label$4161:;
+					label$4145:;
+					if( I$5 <= TMP$1601$5 ) goto label$4148;
+					label$4147:;
 				}
 			}
-			label$4151:;
+			label$4139:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4146;
+			goto label$4134;
 		}
-		label$4150:;
-		label$4149:;
+		label$4138:;
+		label$4137:;
 	}
-	label$4148:;
-	label$4147:;
+	label$4136:;
+	label$4135:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4146;
-	label$4146:;
+	goto label$4134;
+	label$4134:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY8FOREACHXEPFvRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY8FOREACHXEPFbRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4165:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4168;
+	label$4149:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4152;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$4170;
+		if( F$1 == (tmp$1296)0ull ) goto label$4154;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4172;
+			if( *R$1 == (boolean)0ll ) goto label$4156;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4173;
-					label$4176:;
+					goto label$4157;
+					label$4160:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$9 != (boolean)0ll ) goto label$4162;
+						{
+							goto label$4159;
+						}
+						label$4162:;
+						label$4161:;
 					}
-					label$4174:;
+					label$4158:;
 					I$5 = I$5 + -1ll;
-					label$4173:;
-					if( I$5 >= 0ll ) goto label$4176;
-					label$4175:;
+					label$4157:;
+					if( I$5 >= 0ll ) goto label$4160;
+					label$4159:;
 				}
 			}
-			goto label$4171;
-			label$4172:;
+			goto label$4155;
+			label$4156:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1602$5;
 					TMP$1602$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4163;
+					label$4166:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) );
+						if( vr$17 != (boolean)0ll ) goto label$4168;
+						{
+							goto label$4165;
+						}
+						label$4168:;
+						label$4167:;
+					}
+					label$4164:;
+					I$5 = I$5 + 1ll;
+					label$4163:;
+					if( I$5 <= TMP$1602$5 ) goto label$4166;
+					label$4165:;
+				}
+			}
+			label$4155:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4150;
+		}
+		label$4154:;
+		label$4153:;
+	}
+	label$4152:;
+	label$4151:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4150;
+	label$4150:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V2ARRAY8FOREACHXEPFvRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4169:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4172;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$4174;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4176;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4177;
 					label$4180:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
 					label$4178:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4177:;
-					if( I$5 <= TMP$1602$5 ) goto label$4180;
+					if( I$5 >= 0ll ) goto label$4180;
 					label$4179:;
 				}
 			}
-			label$4171:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4166;
-		}
-		label$4170:;
-		label$4169:;
-	}
-	label$4168:;
-	label$4167:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4166;
-	label$4166:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY8FOREACHXEPFbRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4181:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4184;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$4186;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4188;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4189;
-					label$4192:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$4194;
-						{
-							goto label$4191;
-						}
-						label$4194:;
-						label$4193:;
-					}
-					label$4190:;
-					I$5 = I$5 + -1ll;
-					label$4189:;
-					if( I$5 >= 0ll ) goto label$4192;
-					label$4191:;
-				}
-			}
-			goto label$4187;
-			label$4188:;
+			goto label$4175;
+			label$4176:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1603$5;
 					TMP$1603$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4195;
-					label$4198:;
+					goto label$4181;
+					label$4184:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$4200;
-						{
-							goto label$4197;
-						}
-						label$4200:;
-						label$4199:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
 					}
-					label$4196:;
+					label$4182:;
 					I$5 = I$5 + 1ll;
-					label$4195:;
-					if( I$5 <= TMP$1603$5 ) goto label$4198;
-					label$4197:;
+					label$4181:;
+					if( I$5 <= TMP$1603$5 ) goto label$4184;
+					label$4183:;
 				}
 			}
-			label$4187:;
+			label$4175:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4182;
+			goto label$4170;
 		}
-		label$4186:;
-		label$4185:;
+		label$4174:;
+		label$4173:;
 	}
-	label$4184:;
-	label$4183:;
+	label$4172:;
+	label$4171:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4182;
-	label$4182:;
+	goto label$4170;
+	label$4170:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY8FOREACHYEPFvRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY8FOREACHXEPFbRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4201:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4204;
+	label$4185:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4188;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$4206;
+		if( F$1 == (tmp$1297)0ull ) goto label$4190;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4208;
+			if( *R$1 == (boolean)0ll ) goto label$4192;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4209;
-					label$4212:;
+					goto label$4193;
+					label$4196:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$4198;
+						{
+							goto label$4195;
+						}
+						label$4198:;
+						label$4197:;
 					}
-					label$4210:;
+					label$4194:;
 					I$5 = I$5 + -1ll;
-					label$4209:;
-					if( I$5 >= 0ll ) goto label$4212;
-					label$4211:;
+					label$4193:;
+					if( I$5 >= 0ll ) goto label$4196;
+					label$4195:;
 				}
 			}
-			goto label$4207;
-			label$4208:;
+			goto label$4191;
+			label$4192:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1604$5;
 					TMP$1604$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4199;
+					label$4202:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$4204;
+						{
+							goto label$4201;
+						}
+						label$4204:;
+						label$4203:;
+					}
+					label$4200:;
+					I$5 = I$5 + 1ll;
+					label$4199:;
+					if( I$5 <= TMP$1604$5 ) goto label$4202;
+					label$4201:;
+				}
+			}
+			label$4191:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4186;
+		}
+		label$4190:;
+		label$4189:;
+	}
+	label$4188:;
+	label$4187:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4186;
+	label$4186:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V2ARRAY8FOREACHYEPFvRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4205:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4208;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$4210;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4212;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4213;
 					label$4216:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
 					}
 					label$4214:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4213:;
-					if( I$5 <= TMP$1604$5 ) goto label$4216;
+					if( I$5 >= 0ll ) goto label$4216;
 					label$4215:;
 				}
 			}
-			label$4207:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4202;
-		}
-		label$4206:;
-		label$4205:;
-	}
-	label$4204:;
-	label$4203:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4202;
-	label$4202:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY8FOREACHYEPFbRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4217:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4220;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$4222;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4224;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4225;
-					label$4228:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
-						if( vr$9 != (boolean)0ll ) goto label$4230;
-						{
-							goto label$4227;
-						}
-						label$4230:;
-						label$4229:;
-					}
-					label$4226:;
-					I$5 = I$5 + -1ll;
-					label$4225:;
-					if( I$5 >= 0ll ) goto label$4228;
-					label$4227:;
-				}
-			}
-			goto label$4223;
-			label$4224:;
+			goto label$4211;
+			label$4212:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1605$5;
 					TMP$1605$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4231;
-					label$4234:;
+					goto label$4217;
+					label$4220:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
-						if( vr$17 != (boolean)0ll ) goto label$4236;
-						{
-							goto label$4233;
-						}
-						label$4236:;
-						label$4235:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
 					}
-					label$4232:;
+					label$4218:;
 					I$5 = I$5 + 1ll;
-					label$4231:;
-					if( I$5 <= TMP$1605$5 ) goto label$4234;
-					label$4233:;
+					label$4217:;
+					if( I$5 <= TMP$1605$5 ) goto label$4220;
+					label$4219:;
 				}
 			}
-			label$4223:;
+			label$4211:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4218;
+			goto label$4206;
 		}
-		label$4222:;
-		label$4221:;
+		label$4210:;
+		label$4209:;
 	}
-	label$4220:;
-	label$4219:;
+	label$4208:;
+	label$4207:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4218;
-	label$4218:;
+	goto label$4206;
+	label$4206:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V2ARRAY8FOREACHYEPFvRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH7V2ARRAY8FOREACHYEPFbRdERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4237:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4240;
+	label$4221:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4224;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$4242;
+		if( F$1 == (tmp$1296)0ull ) goto label$4226;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4244;
+			if( *R$1 == (boolean)0ll ) goto label$4228;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4245;
-					label$4248:;
+					goto label$4229;
+					label$4232:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						if( vr$9 != (boolean)0ll ) goto label$4234;
+						{
+							goto label$4231;
+						}
+						label$4234:;
+						label$4233:;
 					}
-					label$4246:;
+					label$4230:;
 					I$5 = I$5 + -1ll;
-					label$4245:;
-					if( I$5 >= 0ll ) goto label$4248;
-					label$4247:;
+					label$4229:;
+					if( I$5 >= 0ll ) goto label$4232;
+					label$4231:;
 				}
 			}
-			goto label$4243;
-			label$4244:;
+			goto label$4227;
+			label$4228:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1606$5;
 					TMP$1606$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4235;
+					label$4238:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll) );
+						if( vr$17 != (boolean)0ll ) goto label$4240;
+						{
+							goto label$4237;
+						}
+						label$4240:;
+						label$4239:;
+					}
+					label$4236:;
+					I$5 = I$5 + 1ll;
+					label$4235:;
+					if( I$5 <= TMP$1606$5 ) goto label$4238;
+					label$4237:;
+				}
+			}
+			label$4227:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4222;
+		}
+		label$4226:;
+		label$4225:;
+	}
+	label$4224:;
+	label$4223:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4222;
+	label$4222:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V2ARRAY8FOREACHYEPFvRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4241:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4244;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$4246;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4248;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4249;
 					label$4252:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
 					}
 					label$4250:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4249:;
-					if( I$5 <= TMP$1606$5 ) goto label$4252;
+					if( I$5 >= 0ll ) goto label$4252;
 					label$4251:;
 				}
 			}
-			label$4243:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4238;
-		}
-		label$4242:;
-		label$4241:;
-	}
-	label$4240:;
-	label$4239:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4238;
-	label$4238:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V2ARRAY8FOREACHYEPFbRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4253:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4256;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$4258;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4260;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4261;
-					label$4264:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$4266;
-						{
-							goto label$4263;
-						}
-						label$4266:;
-						label$4265:;
-					}
-					label$4262:;
-					I$5 = I$5 + -1ll;
-					label$4261:;
-					if( I$5 >= 0ll ) goto label$4264;
-					label$4263:;
-				}
-			}
-			goto label$4259;
-			label$4260:;
+			goto label$4247;
+			label$4248:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1607$5;
 					TMP$1607$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4267;
-					label$4270:;
+					goto label$4253;
+					label$4256:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$4272;
-						{
-							goto label$4269;
-						}
-						label$4272:;
-						label$4271:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
 					}
-					label$4268:;
+					label$4254:;
 					I$5 = I$5 + 1ll;
-					label$4267:;
-					if( I$5 <= TMP$1607$5 ) goto label$4270;
-					label$4269:;
+					label$4253:;
+					if( I$5 <= TMP$1607$5 ) goto label$4256;
+					label$4255:;
 				}
 			}
-			label$4259:;
+			label$4247:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4254;
+			goto label$4242;
 		}
-		label$4258:;
-		label$4257:;
+		label$4246:;
+		label$4245:;
 	}
-	label$4256:;
-	label$4255:;
+	label$4244:;
+	label$4243:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4254;
-	label$4254:;
+	goto label$4242;
+	label$4242:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH7V2ARRAY3MAPERS0_PFNS_4VEC2ERKS2_E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1, tmp$1495 F$1 )
+boolean _ZN4MATH7V2ARRAY8FOREACHYEPFbRdRKu7INTEGERERKb( struct $N4MATH7V2ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4273:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4276;
+	label$4257:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4260;
 	{
-		if( F$1 == (tmp$1495)0ull ) goto label$4278;
+		if( F$1 == (tmp$1297)0ull ) goto label$4262;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4264;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4265;
+					label$4268:;
+					{
+						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$4270;
+						{
+							goto label$4267;
+						}
+						label$4270:;
+						label$4269:;
+					}
+					label$4266:;
+					I$5 = I$5 + -1ll;
+					label$4265:;
+					if( I$5 >= 0ll ) goto label$4268;
+					label$4267:;
+				}
+			}
+			goto label$4263;
+			label$4264:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1608$5;
+					TMP$1608$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4271;
+					label$4274:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$5 << (4ll & 63ll))) + 8ll), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$4276;
+						{
+							goto label$4273;
+						}
+						label$4276:;
+						label$4275:;
+					}
+					label$4272:;
+					I$5 = I$5 + 1ll;
+					label$4271:;
+					if( I$5 <= TMP$1608$5 ) goto label$4274;
+					label$4273:;
+				}
+			}
+			label$4263:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4258;
+		}
+		label$4262:;
+		label$4261:;
+	}
+	label$4260:;
+	label$4259:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4258;
+	label$4258:;
+	return fb$result$1;
+}
+
+boolean _ZNK4MATH7V2ARRAY3MAPERS0_PFNS_4VEC2ERKS2_E( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1, tmp$1496 F$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4277:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4280;
+	{
+		if( F$1 == (tmp$1496)0ull ) goto label$4282;
 		{
 			_ZN4MATH7V2ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1608$4;
-				TMP$1608$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4279;
-				label$4282:;
+				int64 TMP$1609$4;
+				TMP$1609$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4283;
+				label$4286:;
 				{
-					struct $N4MATH4VEC2E TMP$1609$5;
+					struct $N4MATH4VEC2E TMP$1610$5;
 					struct $N4MATH4VEC2E vr$9 = (F$1)( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
-					TMP$1609$5 = vr$9;
-					_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)&TMP$1609$5 );
+					TMP$1610$5 = vr$9;
+					_ZN4MATH4VEC2aSERKS0_( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)A$1 + 8ll) + (I$4 << (4ll & 63ll))), (struct $N4MATH4VEC2E*)&TMP$1610$5 );
 				}
-				label$4280:;
+				label$4284:;
 				I$4 = I$4 + 1ll;
-				label$4279:;
-				if( I$4 <= TMP$1608$4 ) goto label$4282;
-				label$4281:;
+				label$4283:;
+				if( I$4 <= TMP$1609$4 ) goto label$4286;
+				label$4285:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$4274;
+			goto label$4278;
 		}
-		label$4278:;
-		label$4277:;
+		label$4282:;
+		label$4281:;
 	}
-	label$4276:;
-	label$4275:;
+	label$4280:;
+	label$4279:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4274;
-	label$4274:;
+	goto label$4278;
+	label$4278:;
 	return fb$result$1;
 }
 
@@ -23806,8 +23823,8 @@ boolean _ZNK4MATH7V2ARRAY4MAPXERNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, str
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4283:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4286;
+	label$4287:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4290;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -23816,38 +23833,38 @@ boolean _ZNK4MATH7V2ARRAY4MAPXERNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, str
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1610$3;
-			TMP$1610$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4287;
-			label$4290:;
+			int64 TMP$1611$3;
+			TMP$1611$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4291;
+			label$4294:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll)));
 			}
-			label$4288:;
+			label$4292:;
 			I$3 = I$3 + 1ll;
-			label$4287:;
-			if( I$3 <= TMP$1610$3 ) goto label$4290;
-			label$4289:;
+			label$4291:;
+			if( I$3 <= TMP$1611$3 ) goto label$4294;
+			label$4293:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$4284;
+		goto label$4288;
 	}
-	label$4286:;
-	label$4285:;
+	label$4290:;
+	label$4289:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4284;
-	label$4284:;
+	goto label$4288;
+	label$4288:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH7V2ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZNK4MATH7V2ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4291:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4294;
+	label$4295:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4298;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$4296;
+		if( F$1 == (tmp$1298)0ull ) goto label$4300;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -23856,31 +23873,31 @@ boolean _ZNK4MATH7V2ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1611$4;
-				TMP$1611$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4297;
-				label$4300:;
+				int64 TMP$1612$4;
+				TMP$1612$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4301;
+				label$4304:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$4298:;
+				label$4302:;
 				I$4 = I$4 + 1ll;
-				label$4297:;
-				if( I$4 <= TMP$1611$4 ) goto label$4300;
-				label$4299:;
+				label$4301:;
+				if( I$4 <= TMP$1612$4 ) goto label$4304;
+				label$4303:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$4292;
+			goto label$4296;
 		}
-		label$4296:;
-		label$4295:;
+		label$4300:;
+		label$4299:;
 	}
-	label$4294:;
-	label$4293:;
+	label$4298:;
+	label$4297:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4292;
-	label$4292:;
+	goto label$4296;
+	label$4296:;
 	return fb$result$1;
 }
 
@@ -23888,8 +23905,8 @@ boolean _ZNK4MATH7V2ARRAY4MAPYERNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, str
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4301:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4304;
+	label$4305:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4308;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -23898,38 +23915,38 @@ boolean _ZNK4MATH7V2ARRAY4MAPYERNS_5ARRAYE( struct $N4MATH7V2ARRAYE* THIS$1, str
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1612$3;
-			TMP$1612$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4305;
-			label$4308:;
+			int64 TMP$1613$3;
+			TMP$1613$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4309;
+			label$4312:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$3 << (4ll & 63ll))) + 8ll);
 			}
-			label$4306:;
+			label$4310:;
 			I$3 = I$3 + 1ll;
-			label$4305:;
-			if( I$3 <= TMP$1612$3 ) goto label$4308;
-			label$4307:;
+			label$4309:;
+			if( I$3 <= TMP$1613$3 ) goto label$4312;
+			label$4311:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$4302;
+		goto label$4306;
 	}
-	label$4304:;
-	label$4303:;
+	label$4308:;
+	label$4307:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4302;
-	label$4302:;
+	goto label$4306;
+	label$4306:;
 	return fb$result$1;
 }
 
-boolean _ZNK4MATH7V2ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZNK4MATH7V2ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4309:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4312;
+	label$4313:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4316;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$4314;
+		if( F$1 == (tmp$1298)0ull ) goto label$4318;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -23938,31 +23955,31 @@ boolean _ZNK4MATH7V2ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V2ARRAYE* THIS
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1613$4;
-				TMP$1613$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4315;
-				label$4318:;
+				int64 TMP$1614$4;
+				TMP$1614$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4319;
+				label$4322:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))) + 8ll) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$4316:;
+				label$4320:;
 				I$4 = I$4 + 1ll;
-				label$4315:;
-				if( I$4 <= TMP$1613$4 ) goto label$4318;
-				label$4317:;
+				label$4319:;
+				if( I$4 <= TMP$1614$4 ) goto label$4322;
+				label$4321:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$4310;
+			goto label$4314;
 		}
-		label$4314:;
-		label$4313:;
+		label$4318:;
+		label$4317:;
 	}
-	label$4312:;
-	label$4311:;
+	label$4316:;
+	label$4315:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4310;
-	label$4310:;
+	goto label$4314;
+	label$4314:;
 	return fb$result$1;
 }
 
@@ -23970,75 +23987,75 @@ FBSTRING* _ZNK4MATH7V2ARRAY6TOJSONERKb( struct $N4MATH7V2ARRAYE* THIS$1, boolean
 {
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$4319:;
+	label$4323:;
 	{
-		int64 TMP$1614$2;
-		TMP$1614$2 = *(int64*)THIS$1;
-		if( TMP$1614$2 != 0ll ) goto label$4322;
-		label$4323:;
+		int64 TMP$1615$2;
+		TMP$1615$2 = *(int64*)THIS$1;
+		if( TMP$1615$2 != 0ll ) goto label$4326;
+		label$4327:;
 		{
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)"[]", 3ll, 0 );
-			goto label$4320;
+			goto label$4324;
 		}
-		goto label$4321;
-		label$4322:;
-		if( TMP$1614$2 != 1ll ) goto label$4324;
-		label$4325:;
+		goto label$4325;
+		label$4326:;
+		if( TMP$1615$2 != 1ll ) goto label$4328;
+		label$4329:;
 		{
-			FBSTRING TMP$1615$3;
 			FBSTRING TMP$1616$3;
-			FBSTRING* vr$4 = _ZNK4MATH4VEC26TOJSONERKb( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1615$3, 0, 24ll );
-			FBSTRING* vr$7 = fb_StrConcat( &TMP$1615$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
-			__builtin_memset( &TMP$1616$3, 0, 24ll );
-			FBSTRING* vr$10 = fb_StrConcat( &TMP$1616$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
-			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
-			goto label$4320;
-		}
-		goto label$4321;
-		label$4324:;
-		{
 			FBSTRING TMP$1617$3;
-			FBSTRING TMP$1621$3;
+			FBSTRING* vr$4 = _ZNK4MATH4VEC26TOJSONERKb( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), A$1 );
+			__builtin_memset( &TMP$1616$3, 0, 24ll );
+			FBSTRING* vr$7 = fb_StrConcat( &TMP$1616$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
+			__builtin_memset( &TMP$1617$3, 0, 24ll );
+			FBSTRING* vr$10 = fb_StrConcat( &TMP$1617$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
+			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
+			goto label$4324;
+		}
+		goto label$4325;
+		label$4328:;
+		{
+			FBSTRING TMP$1618$3;
+			FBSTRING TMP$1622$3;
 			FBSTRING R$3;
 			FBSTRING* vr$13 = _ZNK4MATH4VEC26TOJSONERKb( *(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1617$3, 0, 24ll );
-			FBSTRING* vr$16 = fb_StrConcat( &TMP$1617$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
+			__builtin_memset( &TMP$1618$3, 0, 24ll );
+			FBSTRING* vr$16 = fb_StrConcat( &TMP$1618$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
 			fb_StrInit( (void*)&R$3, -1ll, (void*)vr$16, -1ll, 0 );
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1618$4;
-				TMP$1618$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4327;
-				label$4330:;
+				int64 TMP$1619$4;
+				TMP$1619$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4331;
+				label$4334:;
 				{
-					FBSTRING TMP$1619$5;
 					FBSTRING TMP$1620$5;
+					FBSTRING TMP$1621$5;
 					FBSTRING* vr$23 = _ZNK4MATH4VEC26TOJSONERKb( (struct $N4MATH4VEC2E*)((uint8*)*(struct $N4MATH4VEC2E**)((uint8*)THIS$1 + 8ll) + (I$4 << (4ll & 63ll))), A$1 );
-					__builtin_memset( &TMP$1619$5, 0, 24ll );
-					FBSTRING* vr$26 = fb_StrConcat( &TMP$1619$5, (void*)",", 2ll, (void*)vr$23, -1ll );
 					__builtin_memset( &TMP$1620$5, 0, 24ll );
-					FBSTRING* vr$30 = fb_StrConcat( &TMP$1620$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
+					FBSTRING* vr$26 = fb_StrConcat( &TMP$1620$5, (void*)",", 2ll, (void*)vr$23, -1ll );
+					__builtin_memset( &TMP$1621$5, 0, 24ll );
+					FBSTRING* vr$30 = fb_StrConcat( &TMP$1621$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
 					fb_StrAssign( (void*)&R$3, -1ll, (void*)vr$30, -1ll, 0 );
 				}
-				label$4328:;
+				label$4332:;
 				I$4 = I$4 + 1ll;
-				label$4327:;
-				if( I$4 <= TMP$1618$4 ) goto label$4330;
-				label$4329:;
+				label$4331:;
+				if( I$4 <= TMP$1619$4 ) goto label$4334;
+				label$4333:;
 			}
-			__builtin_memset( &TMP$1621$3, 0, 24ll );
-			FBSTRING* vr$36 = fb_StrConcat( &TMP$1621$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
+			__builtin_memset( &TMP$1622$3, 0, 24ll );
+			FBSTRING* vr$36 = fb_StrConcat( &TMP$1622$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$36, -1ll, 0 );
 			fb_StrDelete( (FBSTRING*)&R$3 );
-			goto label$4320;
+			goto label$4324;
 			fb_StrDelete( (FBSTRING*)&R$3 );
 		}
-		label$4326:;
-		label$4321:;
+		label$4330:;
+		label$4325:;
 	}
-	label$4320:;
+	label$4324:;
 	FBSTRING* vr$41 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$41;
 }
@@ -24048,218 +24065,218 @@ void _ZN4MATH7V3ARRAYC1Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	label$4331:;
-	label$4332:;
+	label$4335:;
+	label$4336:;
 }
 
 void _ZN4MATH7V3ARRAYC1ERKu7INTEGER( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1 )
 {
-	label$4333:;
+	label$4337:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$4336;
+	if( *L$1 <= 0ll ) goto label$4340;
 	{
-		struct $N4MATH4VEC3E* TMP$1627$2;
-		uint64 TMP$1628$2;
-		struct $N4MATH4VEC3E* TMP$1629$2;
+		struct $N4MATH4VEC3E* TMP$1628$2;
+		uint64 TMP$1629$2;
+		struct $N4MATH4VEC3E* TMP$1630$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 * 24ull );
-		TMP$1627$2 = (struct $N4MATH4VEC3E*)vr$11;
-		if( TMP$1627$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4337;
-		TMP$1629$2 = TMP$1627$2;
-		TMP$1628$2 = *(uint64*)L$1;
-		label$4338:;
-		if( TMP$1628$2 == 0ull ) goto label$4339;
-		_ZN4MATH4VEC3C1Ev( TMP$1629$2 );
-		TMP$1629$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1629$2 + 24ll);
-		TMP$1628$2 = TMP$1628$2 + 18446744073709551615ull;
-		goto label$4338;
-		label$4339:;
-		label$4337:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1627$2;
+		TMP$1628$2 = (struct $N4MATH4VEC3E*)vr$11;
+		if( TMP$1628$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4341;
+		TMP$1630$2 = TMP$1628$2;
+		TMP$1629$2 = *(uint64*)L$1;
+		label$4342:;
+		if( TMP$1629$2 == 0ull ) goto label$4343;
+		_ZN4MATH4VEC3C1Ev( TMP$1630$2 );
+		TMP$1630$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1630$2 + 24ll);
+		TMP$1629$2 = TMP$1629$2 + 18446744073709551615ull;
+		goto label$4342;
+		label$4343:;
+		label$4341:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1628$2;
 	}
-	label$4336:;
-	label$4335:;
-	label$4334:;
+	label$4340:;
+	label$4339:;
+	label$4338:;
 }
 
-void _ZN4MATH7V3ARRAYC1ERKu7INTEGERPFvRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1, tmp$1622 F$1, boolean* R$1 )
+void _ZN4MATH7V3ARRAYC1ERKu7INTEGERPFvRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1, tmp$1623 F$1, boolean* R$1 )
 {
-	label$4340:;
+	label$4344:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$4343;
+	if( *L$1 <= 0ll ) goto label$4347;
 	{
-		struct $N4MATH4VEC3E* TMP$1630$2;
-		uint64 TMP$1631$2;
-		struct $N4MATH4VEC3E* TMP$1632$2;
+		struct $N4MATH4VEC3E* TMP$1631$2;
+		uint64 TMP$1632$2;
+		struct $N4MATH4VEC3E* TMP$1633$2;
 		*(int64*)THIS$1 = *L$1;
 		void* vr$11 = malloc( *(uint64*)L$1 * 24ull );
-		TMP$1630$2 = (struct $N4MATH4VEC3E*)vr$11;
-		if( TMP$1630$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4344;
-		TMP$1632$2 = TMP$1630$2;
-		TMP$1631$2 = *(uint64*)L$1;
-		label$4345:;
-		if( TMP$1631$2 == 0ull ) goto label$4346;
-		_ZN4MATH4VEC3C1Ev( TMP$1632$2 );
-		TMP$1632$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1632$2 + 24ll);
-		TMP$1631$2 = TMP$1631$2 + 18446744073709551615ull;
-		goto label$4345;
-		label$4346:;
-		label$4344:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1630$2;
-		if( F$1 == (tmp$1622)0ull ) goto label$4348;
+		TMP$1631$2 = (struct $N4MATH4VEC3E*)vr$11;
+		if( TMP$1631$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4348;
+		TMP$1633$2 = TMP$1631$2;
+		TMP$1632$2 = *(uint64*)L$1;
+		label$4349:;
+		if( TMP$1632$2 == 0ull ) goto label$4350;
+		_ZN4MATH4VEC3C1Ev( TMP$1633$2 );
+		TMP$1633$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1633$2 + 24ll);
+		TMP$1632$2 = TMP$1632$2 + 18446744073709551615ull;
+		goto label$4349;
+		label$4350:;
+		label$4348:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1631$2;
+		if( F$1 == (tmp$1623)0ull ) goto label$4352;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4350;
+			if( *R$1 == (boolean)0ll ) goto label$4354;
 			{
 				{
 					int64 I$5;
 					I$5 = *L$1 + -1ll;
-					goto label$4351;
-					label$4354:;
-					{
-						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-					}
-					label$4352:;
-					I$5 = I$5 + -1ll;
-					label$4351:;
-					if( I$5 >= 0ll ) goto label$4354;
-					label$4353:;
-				}
-			}
-			goto label$4349;
-			label$4350:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1633$5;
-					TMP$1633$5 = *L$1 + -1ll;
 					goto label$4355;
 					label$4358:;
 					{
 						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
 					label$4356:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4355:;
-					if( I$5 <= TMP$1633$5 ) goto label$4358;
+					if( I$5 >= 0ll ) goto label$4358;
 					label$4357:;
 				}
 			}
-			label$4349:;
-		}
-		label$4348:;
-		label$4347:;
-	}
-	label$4343:;
-	label$4342:;
-	label$4341:;
-}
-
-void _ZN4MATH7V3ARRAYC1ERKu7INTEGERPFvRNS_4VEC3ES3_ERKb( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1, tmp$1623 F$1, boolean* R$1 )
-{
-	label$4359:;
-	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
-	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
-	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( *L$1 <= 0ll ) goto label$4362;
-	{
-		struct $N4MATH4VEC3E* TMP$1634$2;
-		uint64 TMP$1635$2;
-		struct $N4MATH4VEC3E* TMP$1636$2;
-		*(int64*)THIS$1 = *L$1;
-		void* vr$11 = malloc( *(uint64*)L$1 * 24ull );
-		TMP$1634$2 = (struct $N4MATH4VEC3E*)vr$11;
-		if( TMP$1634$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4363;
-		TMP$1636$2 = TMP$1634$2;
-		TMP$1635$2 = *(uint64*)L$1;
-		label$4364:;
-		if( TMP$1635$2 == 0ull ) goto label$4365;
-		_ZN4MATH4VEC3C1Ev( TMP$1636$2 );
-		TMP$1636$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1636$2 + 24ll);
-		TMP$1635$2 = TMP$1635$2 + 18446744073709551615ull;
-		goto label$4364;
-		label$4365:;
-		label$4363:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1634$2;
-		if( F$1 == (tmp$1623)0ull ) goto label$4367;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4369;
-			{
-				{
-					int64 I$5;
-					I$5 = *L$1 + -1ll;
-					goto label$4370;
-					label$4373:;
-					{
-						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
-					}
-					label$4371:;
-					I$5 = I$5 + -1ll;
-					label$4370:;
-					if( I$5 >= 0ll ) goto label$4373;
-					label$4372:;
-				}
-			}
-			goto label$4368;
-			label$4369:;
+			goto label$4353;
+			label$4354:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1637$5;
-					TMP$1637$5 = *L$1 + -1ll;
+					int64 TMP$1634$5;
+					TMP$1634$5 = *L$1 + -1ll;
+					goto label$4359;
+					label$4362:;
+					{
+						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+					}
+					label$4360:;
+					I$5 = I$5 + 1ll;
+					label$4359:;
+					if( I$5 <= TMP$1634$5 ) goto label$4362;
+					label$4361:;
+				}
+			}
+			label$4353:;
+		}
+		label$4352:;
+		label$4351:;
+	}
+	label$4347:;
+	label$4346:;
+	label$4345:;
+}
+
+void _ZN4MATH7V3ARRAYC1ERKu7INTEGERPFvRNS_4VEC3ES3_ERKb( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1, tmp$1624 F$1, boolean* R$1 )
+{
+	label$4363:;
+	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
+	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
+	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
+	if( *L$1 <= 0ll ) goto label$4366;
+	{
+		struct $N4MATH4VEC3E* TMP$1635$2;
+		uint64 TMP$1636$2;
+		struct $N4MATH4VEC3E* TMP$1637$2;
+		*(int64*)THIS$1 = *L$1;
+		void* vr$11 = malloc( *(uint64*)L$1 * 24ull );
+		TMP$1635$2 = (struct $N4MATH4VEC3E*)vr$11;
+		if( TMP$1635$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4367;
+		TMP$1637$2 = TMP$1635$2;
+		TMP$1636$2 = *(uint64*)L$1;
+		label$4368:;
+		if( TMP$1636$2 == 0ull ) goto label$4369;
+		_ZN4MATH4VEC3C1Ev( TMP$1637$2 );
+		TMP$1637$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1637$2 + 24ll);
+		TMP$1636$2 = TMP$1636$2 + 18446744073709551615ull;
+		goto label$4368;
+		label$4369:;
+		label$4367:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1635$2;
+		if( F$1 == (tmp$1624)0ull ) goto label$4371;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4373;
+			{
+				{
+					int64 I$5;
+					I$5 = *L$1 + -1ll;
 					goto label$4374;
 					label$4377:;
 					{
 						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
 					}
 					label$4375:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4374:;
-					if( I$5 <= TMP$1637$5 ) goto label$4377;
+					if( I$5 >= 0ll ) goto label$4377;
 					label$4376:;
 				}
 			}
-			label$4368:;
+			goto label$4372;
+			label$4373:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1638$5;
+					TMP$1638$5 = *L$1 + -1ll;
+					goto label$4378;
+					label$4381:;
+					{
+						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+					}
+					label$4379:;
+					I$5 = I$5 + 1ll;
+					label$4378:;
+					if( I$5 <= TMP$1638$5 ) goto label$4381;
+					label$4380:;
+				}
+			}
+			label$4372:;
 		}
-		label$4367:;
-		label$4366:;
+		label$4371:;
+		label$4370:;
 	}
-	label$4362:;
-	label$4361:;
-	label$4360:;
+	label$4366:;
+	label$4365:;
+	label$4364:;
 }
 
 void _ZN4MATH7V3ARRAYC1ERKNS_5ARRAYES3_S3_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A1$1, struct $N4MATH5ARRAYE* A2$1, struct $N4MATH5ARRAYE* A3$1 )
 {
-	label$4378:;
+	label$4382:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( (((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) & (int64)-(*(int64*)A2$1 == *(int64*)A3$1)) == 0ll ) goto label$4381;
+	if( (((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) & (int64)-(*(int64*)A2$1 == *(int64*)A3$1)) == 0ll ) goto label$4385;
 	{
-		struct $N4MATH4VEC3E* TMP$1638$2;
-		uint64 TMP$1639$2;
-		struct $N4MATH4VEC3E* TMP$1640$2;
+		struct $N4MATH4VEC3E* TMP$1639$2;
+		uint64 TMP$1640$2;
+		struct $N4MATH4VEC3E* TMP$1641$2;
 		*(int64*)THIS$1 = *(int64*)A1$1;
 		void* vr$20 = malloc( *(uint64*)A1$1 * 24ull );
-		TMP$1638$2 = (struct $N4MATH4VEC3E*)vr$20;
-		if( TMP$1638$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4382;
-		TMP$1640$2 = TMP$1638$2;
-		TMP$1639$2 = *(uint64*)A1$1;
-		label$4383:;
-		if( TMP$1639$2 == 0ull ) goto label$4384;
-		_ZN4MATH4VEC3C1Ev( TMP$1640$2 );
-		TMP$1640$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1640$2 + 24ll);
-		TMP$1639$2 = TMP$1639$2 + 18446744073709551615ull;
-		goto label$4383;
-		label$4384:;
-		label$4382:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1638$2;
+		TMP$1639$2 = (struct $N4MATH4VEC3E*)vr$20;
+		if( TMP$1639$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4386;
+		TMP$1641$2 = TMP$1639$2;
+		TMP$1640$2 = *(uint64*)A1$1;
+		label$4387:;
+		if( TMP$1640$2 == 0ull ) goto label$4388;
+		_ZN4MATH4VEC3C1Ev( TMP$1641$2 );
+		TMP$1641$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1641$2 + 24ll);
+		TMP$1640$2 = TMP$1640$2 + 18446744073709551615ull;
+		goto label$4387;
+		label$4388:;
+		label$4386:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1639$2;
 		double* P1$2;
 		double* vr$25 = _ZNK4MATH5ARRAY11DATA__get__Ev( A1$1 );
 		P1$2 = vr$25;
@@ -24272,105 +24289,105 @@ void _ZN4MATH7V3ARRAYC1ERKNS_5ARRAYES3_S3_( struct $N4MATH7V3ARRAYE* THIS$1, str
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1641$3;
-			TMP$1641$3 = *(int64*)A1$1 + -1ll;
-			goto label$4385;
-			label$4388:;
+			int64 TMP$1642$3;
+			TMP$1642$3 = *(int64*)A1$1 + -1ll;
+			goto label$4389;
+			label$4392:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)P1$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)P2$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)P3$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$4386:;
+			label$4390:;
 			I$3 = I$3 + 1ll;
-			label$4385:;
-			if( I$3 <= TMP$1641$3 ) goto label$4388;
-			label$4387:;
+			label$4389:;
+			if( I$3 <= TMP$1642$3 ) goto label$4392;
+			label$4391:;
 		}
 	}
-	label$4381:;
-	label$4380:;
-	label$4379:;
+	label$4385:;
+	label$4384:;
+	label$4383:;
 }
 
 void _ZN4MATH7V3ARRAYC1ERKNS_7V2ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$4389:;
+	label$4393:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$4392;
+	if( *(int64*)A$1 == 0ll ) goto label$4396;
 	{
-		struct $N4MATH4VEC3E* TMP$1642$2;
-		uint64 TMP$1643$2;
-		struct $N4MATH4VEC3E* TMP$1644$2;
+		struct $N4MATH4VEC3E* TMP$1643$2;
+		uint64 TMP$1644$2;
+		struct $N4MATH4VEC3E* TMP$1645$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 * 24ull );
-		TMP$1642$2 = (struct $N4MATH4VEC3E*)vr$11;
-		if( TMP$1642$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4393;
-		TMP$1644$2 = TMP$1642$2;
-		TMP$1643$2 = *(uint64*)A$1;
-		label$4394:;
-		if( TMP$1643$2 == 0ull ) goto label$4395;
-		_ZN4MATH4VEC3C1Ev( TMP$1644$2 );
-		TMP$1644$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1644$2 + 24ll);
-		TMP$1643$2 = TMP$1643$2 + 18446744073709551615ull;
-		goto label$4394;
-		label$4395:;
-		label$4393:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1642$2;
+		TMP$1643$2 = (struct $N4MATH4VEC3E*)vr$11;
+		if( TMP$1643$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4397;
+		TMP$1645$2 = TMP$1643$2;
+		TMP$1644$2 = *(uint64*)A$1;
+		label$4398:;
+		if( TMP$1644$2 == 0ull ) goto label$4399;
+		_ZN4MATH4VEC3C1Ev( TMP$1645$2 );
+		TMP$1645$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1645$2 + 24ll);
+		TMP$1644$2 = TMP$1644$2 + 18446744073709551615ull;
+		goto label$4398;
+		label$4399:;
+		label$4397:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1643$2;
 		struct $N4MATH4VEC2E* P$2;
 		struct $N4MATH4VEC2E* vr$16 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A$1 );
 		P$2 = vr$16;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1645$3;
-			TMP$1645$3 = *(int64*)A$1 + -1ll;
-			goto label$4396;
-			label$4399:;
+			int64 TMP$1646$3;
+			TMP$1646$3 = *(int64*)A$1 + -1ll;
+			goto label$4400;
+			label$4403:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)P$2 + (I$3 << (4ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)P$2 + (I$3 << (4ll & 63ll))) + 8ll);
 			}
-			label$4397:;
+			label$4401:;
 			I$3 = I$3 + 1ll;
-			label$4396:;
-			if( I$3 <= TMP$1645$3 ) goto label$4399;
-			label$4398:;
+			label$4400:;
+			if( I$3 <= TMP$1646$3 ) goto label$4403;
+			label$4402:;
 		}
 	}
-	label$4392:;
-	label$4391:;
-	label$4390:;
+	label$4396:;
+	label$4395:;
+	label$4394:;
 }
 
 void _ZN4MATH7V3ARRAYC1ERKNS_7V2ARRAYERKNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A12$1, struct $N4MATH5ARRAYE* A3$1 )
 {
-	label$4400:;
+	label$4404:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( ((int64)-(*(int64*)A12$1 > 0ll) & (int64)-(*(int64*)A12$1 == *(int64*)A3$1)) == 0ll ) goto label$4403;
+	if( ((int64)-(*(int64*)A12$1 > 0ll) & (int64)-(*(int64*)A12$1 == *(int64*)A3$1)) == 0ll ) goto label$4407;
 	{
-		struct $N4MATH4VEC3E* TMP$1646$2;
-		uint64 TMP$1647$2;
-		struct $N4MATH4VEC3E* TMP$1648$2;
+		struct $N4MATH4VEC3E* TMP$1647$2;
+		uint64 TMP$1648$2;
+		struct $N4MATH4VEC3E* TMP$1649$2;
 		*(int64*)THIS$1 = *(int64*)A12$1;
 		void* vr$16 = malloc( *(uint64*)A12$1 * 24ull );
-		TMP$1646$2 = (struct $N4MATH4VEC3E*)vr$16;
-		if( TMP$1646$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4404;
-		TMP$1648$2 = TMP$1646$2;
-		TMP$1647$2 = *(uint64*)A12$1;
-		label$4405:;
-		if( TMP$1647$2 == 0ull ) goto label$4406;
-		_ZN4MATH4VEC3C1Ev( TMP$1648$2 );
-		TMP$1648$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1648$2 + 24ll);
-		TMP$1647$2 = TMP$1647$2 + 18446744073709551615ull;
-		goto label$4405;
-		label$4406:;
-		label$4404:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1646$2;
+		TMP$1647$2 = (struct $N4MATH4VEC3E*)vr$16;
+		if( TMP$1647$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4408;
+		TMP$1649$2 = TMP$1647$2;
+		TMP$1648$2 = *(uint64*)A12$1;
+		label$4409:;
+		if( TMP$1648$2 == 0ull ) goto label$4410;
+		_ZN4MATH4VEC3C1Ev( TMP$1649$2 );
+		TMP$1649$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1649$2 + 24ll);
+		TMP$1648$2 = TMP$1648$2 + 18446744073709551615ull;
+		goto label$4409;
+		label$4410:;
+		label$4408:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1647$2;
 		struct $N4MATH4VEC2E* P12$2;
 		struct $N4MATH4VEC2E* vr$21 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A12$1 );
 		P12$2 = vr$21;
@@ -24380,435 +24397,417 @@ void _ZN4MATH7V3ARRAYC1ERKNS_7V2ARRAYERKNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THI
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1649$3;
-			TMP$1649$3 = *(int64*)A12$1 + -1ll;
-			goto label$4407;
-			label$4410:;
+			int64 TMP$1650$3;
+			TMP$1650$3 = *(int64*)A12$1 + -1ll;
+			goto label$4411;
+			label$4414:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)P12$2 + (I$3 << (4ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)P12$2 + (I$3 << (4ll & 63ll))) + 8ll);
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)P3$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$4408:;
+			label$4412:;
 			I$3 = I$3 + 1ll;
-			label$4407:;
-			if( I$3 <= TMP$1649$3 ) goto label$4410;
-			label$4409:;
+			label$4411:;
+			if( I$3 <= TMP$1650$3 ) goto label$4414;
+			label$4413:;
 		}
 	}
-	label$4403:;
-	label$4402:;
-	label$4401:;
+	label$4407:;
+	label$4406:;
+	label$4405:;
 }
 
 void _ZN4MATH7V3ARRAYC1ERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4411:;
+	label$4415:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC3C1Ev( (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$4414;
+	if( *(int64*)A$1 == 0ll ) goto label$4418;
 	{
-		struct $N4MATH4VEC3E* TMP$1650$2;
-		uint64 TMP$1651$2;
-		struct $N4MATH4VEC3E* TMP$1652$2;
+		struct $N4MATH4VEC3E* TMP$1651$2;
+		uint64 TMP$1652$2;
+		struct $N4MATH4VEC3E* TMP$1653$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 * 24ull );
-		TMP$1650$2 = (struct $N4MATH4VEC3E*)vr$11;
-		if( TMP$1650$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4415;
-		TMP$1652$2 = TMP$1650$2;
-		TMP$1651$2 = *(uint64*)A$1;
-		label$4416:;
-		if( TMP$1651$2 == 0ull ) goto label$4417;
-		_ZN4MATH4VEC3C1Ev( TMP$1652$2 );
-		TMP$1652$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1652$2 + 24ll);
-		TMP$1651$2 = TMP$1651$2 + 18446744073709551615ull;
-		goto label$4416;
-		label$4417:;
-		label$4415:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1650$2;
+		TMP$1651$2 = (struct $N4MATH4VEC3E*)vr$11;
+		if( TMP$1651$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4419;
+		TMP$1653$2 = TMP$1651$2;
+		TMP$1652$2 = *(uint64*)A$1;
+		label$4420:;
+		if( TMP$1652$2 == 0ull ) goto label$4421;
+		_ZN4MATH4VEC3C1Ev( TMP$1653$2 );
+		TMP$1653$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1653$2 + 24ll);
+		TMP$1652$2 = TMP$1652$2 + 18446744073709551615ull;
+		goto label$4420;
+		label$4421:;
+		label$4419:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1651$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1653$3;
-			TMP$1653$3 = *(int64*)A$1 + -1ll;
-			goto label$4418;
-			label$4421:;
+			int64 TMP$1654$3;
+			TMP$1654$3 = *(int64*)A$1 + -1ll;
+			goto label$4422;
+			label$4425:;
 			{
 				_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4419:;
+			label$4423:;
 			I$3 = I$3 + 1ll;
-			label$4418:;
-			if( I$3 <= TMP$1653$3 ) goto label$4421;
-			label$4420:;
+			label$4422:;
+			if( I$3 <= TMP$1654$3 ) goto label$4425;
+			label$4424:;
 		}
 	}
-	label$4414:;
-	label$4413:;
-	label$4412:;
+	label$4418:;
+	label$4417:;
+	label$4416:;
 }
 
 void _ZN4MATH7V3ARRAYD1Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
-	label$4422:;
-	if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4425;
+	label$4426:;
+	if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4429;
 	{
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4426;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4430;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$4426:;
-		label$4425:;
+		label$4430:;
+		label$4429:;
 	}
-	label$4423:;
+	label$4427:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKNS_4VEC2E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC2E* V$1 )
 {
-	label$4427:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4430;
+	label$4431:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4434;
 	{
-		struct $N4MATH4VEC3E* TMP$1654$2;
-		uint64 TMP$1655$2;
-		struct $N4MATH4VEC3E* TMP$1656$2;
+		struct $N4MATH4VEC3E* TMP$1655$2;
+		uint64 TMP$1656$2;
+		struct $N4MATH4VEC3E* TMP$1657$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC3E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 * 24ull );
-		TMP$1654$2 = (struct $N4MATH4VEC3E*)vr$6;
-		if( TMP$1654$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4431;
-		TMP$1656$2 = TMP$1654$2;
-		TMP$1655$2 = *(uint64*)THIS$1;
-		label$4432:;
-		if( TMP$1655$2 == 0ull ) goto label$4433;
-		_ZN4MATH4VEC3C1Ev( TMP$1656$2 );
-		TMP$1656$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1656$2 + 24ll);
-		TMP$1655$2 = TMP$1655$2 + 18446744073709551615ull;
-		goto label$4432;
-		label$4433:;
-		label$4431:;
-		Q$2 = TMP$1654$2;
+		TMP$1655$2 = (struct $N4MATH4VEC3E*)vr$6;
+		if( TMP$1655$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4435;
+		TMP$1657$2 = TMP$1655$2;
+		TMP$1656$2 = *(uint64*)THIS$1;
+		label$4436:;
+		if( TMP$1656$2 == 0ull ) goto label$4437;
+		_ZN4MATH4VEC3C1Ev( TMP$1657$2 );
+		TMP$1657$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1657$2 + 24ll);
+		TMP$1656$2 = TMP$1656$2 + 18446744073709551615ull;
+		goto label$4436;
+		label$4437:;
+		label$4435:;
+		Q$2 = TMP$1655$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1657$3;
-			TMP$1657$3 = *(int64*)THIS$1 + -2ll;
-			goto label$4434;
-			label$4437:;
+			int64 TMP$1658$3;
+			TMP$1658$3 = *(int64*)THIS$1 + -2ll;
+			goto label$4438;
+			label$4441:;
 			{
 				_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$2 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4435:;
+			label$4439:;
 			I$3 = I$3 + 1ll;
-			label$4434:;
-			if( I$3 <= TMP$1657$3 ) goto label$4437;
-			label$4436:;
+			label$4438:;
+			if( I$3 <= TMP$1658$3 ) goto label$4441;
+			label$4440:;
 		}
 		_ZN4MATH4VEC3aSERKNS_4VEC2E( (struct $N4MATH4VEC3E*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 * 24ll)) + -24ll), V$1 );
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4438;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4442;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$4438:;
+		label$4442:;
 		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$4429;
-	label$4430:;
+	goto label$4433;
+	label$4434:;
 	{
-		struct $N4MATH4VEC3E* TMP$1658$2;
-		uint64 TMP$1659$2;
-		struct $N4MATH4VEC3E* TMP$1660$2;
+		struct $N4MATH4VEC3E* TMP$1659$2;
+		uint64 TMP$1660$2;
+		struct $N4MATH4VEC3E* TMP$1661$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 24ull );
-		TMP$1658$2 = (struct $N4MATH4VEC3E*)vr$27;
-		if( TMP$1658$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4439;
-		TMP$1660$2 = TMP$1658$2;
-		TMP$1659$2 = 1ull;
-		label$4440:;
-		if( TMP$1659$2 == 0ull ) goto label$4441;
-		_ZN4MATH4VEC3C1Ev( TMP$1660$2 );
-		TMP$1660$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1660$2 + 24ll);
-		TMP$1659$2 = TMP$1659$2 + 18446744073709551615ull;
-		goto label$4440;
-		label$4441:;
-		label$4439:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1658$2;
+		TMP$1659$2 = (struct $N4MATH4VEC3E*)vr$27;
+		if( TMP$1659$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4443;
+		TMP$1661$2 = TMP$1659$2;
+		TMP$1660$2 = 1ull;
+		label$4444:;
+		if( TMP$1660$2 == 0ull ) goto label$4445;
+		_ZN4MATH4VEC3C1Ev( TMP$1661$2 );
+		TMP$1661$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1661$2 + 24ll);
+		TMP$1660$2 = TMP$1660$2 + 18446744073709551615ull;
+		goto label$4444;
+		label$4445:;
+		label$4443:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1659$2;
 		_ZN4MATH4VEC3aSERKNS_4VEC2E( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), V$1 );
 	}
-	label$4429:;
-	label$4428:;
+	label$4433:;
+	label$4432:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKNS_4PVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4PVECE* V$1 )
 {
-	label$4442:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4445;
+	label$4446:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4449;
 	{
-		struct $N4MATH4VEC3E* TMP$1661$2;
-		uint64 TMP$1662$2;
-		struct $N4MATH4VEC3E* TMP$1663$2;
+		struct $N4MATH4VEC3E* TMP$1662$2;
+		uint64 TMP$1663$2;
+		struct $N4MATH4VEC3E* TMP$1664$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC3E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 * 24ull );
-		TMP$1661$2 = (struct $N4MATH4VEC3E*)vr$6;
-		if( TMP$1661$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4446;
-		TMP$1663$2 = TMP$1661$2;
-		TMP$1662$2 = *(uint64*)THIS$1;
-		label$4447:;
-		if( TMP$1662$2 == 0ull ) goto label$4448;
-		_ZN4MATH4VEC3C1Ev( TMP$1663$2 );
-		TMP$1663$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1663$2 + 24ll);
-		TMP$1662$2 = TMP$1662$2 + 18446744073709551615ull;
-		goto label$4447;
-		label$4448:;
-		label$4446:;
-		Q$2 = TMP$1661$2;
+		TMP$1662$2 = (struct $N4MATH4VEC3E*)vr$6;
+		if( TMP$1662$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4450;
+		TMP$1664$2 = TMP$1662$2;
+		TMP$1663$2 = *(uint64*)THIS$1;
+		label$4451:;
+		if( TMP$1663$2 == 0ull ) goto label$4452;
+		_ZN4MATH4VEC3C1Ev( TMP$1664$2 );
+		TMP$1664$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1664$2 + 24ll);
+		TMP$1663$2 = TMP$1663$2 + 18446744073709551615ull;
+		goto label$4451;
+		label$4452:;
+		label$4450:;
+		Q$2 = TMP$1662$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1664$3;
-			TMP$1664$3 = *(int64*)THIS$1 + -2ll;
-			goto label$4449;
-			label$4452:;
+			int64 TMP$1665$3;
+			TMP$1665$3 = *(int64*)THIS$1 + -2ll;
+			goto label$4453;
+			label$4456:;
 			{
 				_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$2 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4450:;
+			label$4454:;
 			I$3 = I$3 + 1ll;
-			label$4449:;
-			if( I$3 <= TMP$1664$3 ) goto label$4452;
-			label$4451:;
+			label$4453:;
+			if( I$3 <= TMP$1665$3 ) goto label$4456;
+			label$4455:;
 		}
 		_ZN4MATH4VEC3aSERKNS_4PVECE( (struct $N4MATH4VEC3E*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 * 24ll)) + -24ll), V$1 );
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4453;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4457;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$4453:;
+		label$4457:;
 		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$4444;
-	label$4445:;
+	goto label$4448;
+	label$4449:;
 	{
-		struct $N4MATH4VEC3E* TMP$1665$2;
-		uint64 TMP$1666$2;
-		struct $N4MATH4VEC3E* TMP$1667$2;
+		struct $N4MATH4VEC3E* TMP$1666$2;
+		uint64 TMP$1667$2;
+		struct $N4MATH4VEC3E* TMP$1668$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 24ull );
-		TMP$1665$2 = (struct $N4MATH4VEC3E*)vr$27;
-		if( TMP$1665$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4454;
-		TMP$1667$2 = TMP$1665$2;
-		TMP$1666$2 = 1ull;
-		label$4455:;
-		if( TMP$1666$2 == 0ull ) goto label$4456;
-		_ZN4MATH4VEC3C1Ev( TMP$1667$2 );
-		TMP$1667$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1667$2 + 24ll);
-		TMP$1666$2 = TMP$1666$2 + 18446744073709551615ull;
-		goto label$4455;
-		label$4456:;
-		label$4454:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1665$2;
+		TMP$1666$2 = (struct $N4MATH4VEC3E*)vr$27;
+		if( TMP$1666$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4458;
+		TMP$1668$2 = TMP$1666$2;
+		TMP$1667$2 = 1ull;
+		label$4459:;
+		if( TMP$1667$2 == 0ull ) goto label$4460;
+		_ZN4MATH4VEC3C1Ev( TMP$1668$2 );
+		TMP$1668$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1668$2 + 24ll);
+		TMP$1667$2 = TMP$1667$2 + 18446744073709551615ull;
+		goto label$4459;
+		label$4460:;
+		label$4458:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1666$2;
 		_ZN4MATH4VEC3aSERKNS_4PVECE( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), V$1 );
 	}
-	label$4444:;
-	label$4443:;
+	label$4448:;
+	label$4447:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$4457:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4460;
+	label$4461:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4464;
 	{
-		struct $N4MATH4VEC3E* TMP$1668$2;
-		uint64 TMP$1669$2;
-		struct $N4MATH4VEC3E* TMP$1670$2;
+		struct $N4MATH4VEC3E* TMP$1669$2;
+		uint64 TMP$1670$2;
+		struct $N4MATH4VEC3E* TMP$1671$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC3E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 * 24ull );
-		TMP$1668$2 = (struct $N4MATH4VEC3E*)vr$6;
-		if( TMP$1668$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4461;
-		TMP$1670$2 = TMP$1668$2;
-		TMP$1669$2 = *(uint64*)THIS$1;
-		label$4462:;
-		if( TMP$1669$2 == 0ull ) goto label$4463;
-		_ZN4MATH4VEC3C1Ev( TMP$1670$2 );
-		TMP$1670$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1670$2 + 24ll);
-		TMP$1669$2 = TMP$1669$2 + 18446744073709551615ull;
-		goto label$4462;
-		label$4463:;
-		label$4461:;
-		Q$2 = TMP$1668$2;
+		TMP$1669$2 = (struct $N4MATH4VEC3E*)vr$6;
+		if( TMP$1669$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4465;
+		TMP$1671$2 = TMP$1669$2;
+		TMP$1670$2 = *(uint64*)THIS$1;
+		label$4466:;
+		if( TMP$1670$2 == 0ull ) goto label$4467;
+		_ZN4MATH4VEC3C1Ev( TMP$1671$2 );
+		TMP$1671$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1671$2 + 24ll);
+		TMP$1670$2 = TMP$1670$2 + 18446744073709551615ull;
+		goto label$4466;
+		label$4467:;
+		label$4465:;
+		Q$2 = TMP$1669$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1671$3;
-			TMP$1671$3 = *(int64*)THIS$1 + -2ll;
-			goto label$4464;
-			label$4467:;
+			int64 TMP$1672$3;
+			TMP$1672$3 = *(int64*)THIS$1 + -2ll;
+			goto label$4468;
+			label$4471:;
 			{
 				_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$2 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4465:;
+			label$4469:;
 			I$3 = I$3 + 1ll;
-			label$4464:;
-			if( I$3 <= TMP$1671$3 ) goto label$4467;
-			label$4466:;
+			label$4468:;
+			if( I$3 <= TMP$1672$3 ) goto label$4471;
+			label$4470:;
 		}
 		_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 * 24ll)) + -24ll), V$1 );
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4468;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4472;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$4468:;
+		label$4472:;
 		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$4459;
-	label$4460:;
+	goto label$4463;
+	label$4464:;
 	{
-		struct $N4MATH4VEC3E* TMP$1672$2;
-		uint64 TMP$1673$2;
-		struct $N4MATH4VEC3E* TMP$1674$2;
+		struct $N4MATH4VEC3E* TMP$1673$2;
+		uint64 TMP$1674$2;
+		struct $N4MATH4VEC3E* TMP$1675$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 24ull );
-		TMP$1672$2 = (struct $N4MATH4VEC3E*)vr$27;
-		if( TMP$1672$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4469;
-		TMP$1674$2 = TMP$1672$2;
-		TMP$1673$2 = 1ull;
-		label$4470:;
-		if( TMP$1673$2 == 0ull ) goto label$4471;
-		_ZN4MATH4VEC3C1Ev( TMP$1674$2 );
-		TMP$1674$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1674$2 + 24ll);
-		TMP$1673$2 = TMP$1673$2 + 18446744073709551615ull;
-		goto label$4470;
-		label$4471:;
-		label$4469:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1672$2;
+		TMP$1673$2 = (struct $N4MATH4VEC3E*)vr$27;
+		if( TMP$1673$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4473;
+		TMP$1675$2 = TMP$1673$2;
+		TMP$1674$2 = 1ull;
+		label$4474:;
+		if( TMP$1674$2 == 0ull ) goto label$4475;
+		_ZN4MATH4VEC3C1Ev( TMP$1675$2 );
+		TMP$1675$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1675$2 + 24ll);
+		TMP$1674$2 = TMP$1674$2 + 18446744073709551615ull;
+		goto label$4474;
+		label$4475:;
+		label$4473:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1673$2;
 		_ZN4MATH4VEC3aSERKS0_( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), V$1 );
 	}
-	label$4459:;
-	label$4458:;
+	label$4463:;
+	label$4462:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$4472:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4475;
+	label$4476:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4479;
 	{
-		struct $N4MATH4VEC3E* TMP$1675$2;
-		uint64 TMP$1676$2;
-		struct $N4MATH4VEC3E* TMP$1677$2;
+		struct $N4MATH4VEC3E* TMP$1676$2;
+		uint64 TMP$1677$2;
+		struct $N4MATH4VEC3E* TMP$1678$2;
 		*(int64*)THIS$1 = *(int64*)THIS$1 + 1ll;
 		struct $N4MATH4VEC3E* Q$2;
 		void* vr$6 = malloc( *(uint64*)THIS$1 * 24ull );
-		TMP$1675$2 = (struct $N4MATH4VEC3E*)vr$6;
-		if( TMP$1675$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4476;
-		TMP$1677$2 = TMP$1675$2;
-		TMP$1676$2 = *(uint64*)THIS$1;
-		label$4477:;
-		if( TMP$1676$2 == 0ull ) goto label$4478;
-		_ZN4MATH4VEC3C1Ev( TMP$1677$2 );
-		TMP$1677$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1677$2 + 24ll);
-		TMP$1676$2 = TMP$1676$2 + 18446744073709551615ull;
-		goto label$4477;
-		label$4478:;
-		label$4476:;
-		Q$2 = TMP$1675$2;
+		TMP$1676$2 = (struct $N4MATH4VEC3E*)vr$6;
+		if( TMP$1676$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4480;
+		TMP$1678$2 = TMP$1676$2;
+		TMP$1677$2 = *(uint64*)THIS$1;
+		label$4481:;
+		if( TMP$1677$2 == 0ull ) goto label$4482;
+		_ZN4MATH4VEC3C1Ev( TMP$1678$2 );
+		TMP$1678$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1678$2 + 24ll);
+		TMP$1677$2 = TMP$1677$2 + 18446744073709551615ull;
+		goto label$4481;
+		label$4482:;
+		label$4480:;
+		Q$2 = TMP$1676$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1678$3;
-			TMP$1678$3 = *(int64*)THIS$1 + -2ll;
-			goto label$4479;
-			label$4482:;
+			int64 TMP$1679$3;
+			TMP$1679$3 = *(int64*)THIS$1 + -2ll;
+			goto label$4483;
+			label$4486:;
 			{
 				_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$2 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4480:;
+			label$4484:;
 			I$3 = I$3 + 1ll;
-			label$4479:;
-			if( I$3 <= TMP$1678$3 ) goto label$4482;
-			label$4481:;
+			label$4483:;
+			if( I$3 <= TMP$1679$3 ) goto label$4486;
+			label$4485:;
 		}
 		struct $N4MATH4VEC3E vr$18 = _ZNK4MATH4CVECcvNS_4VEC3EEv( V$1 );
 		*(struct $N4MATH4VEC3E*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (*(int64*)THIS$1 * 24ll)) + -24ll) = vr$18;
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4483;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4487;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$4483:;
+		label$4487:;
 		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$2;
 	}
-	goto label$4474;
-	label$4475:;
+	goto label$4478;
+	label$4479:;
 	{
-		struct $N4MATH4VEC3E* TMP$1679$2;
-		uint64 TMP$1680$2;
-		struct $N4MATH4VEC3E* TMP$1681$2;
+		struct $N4MATH4VEC3E* TMP$1680$2;
+		uint64 TMP$1681$2;
+		struct $N4MATH4VEC3E* TMP$1682$2;
 		*(int64*)THIS$1 = 1ll;
 		void* vr$27 = malloc( 24ull );
-		TMP$1679$2 = (struct $N4MATH4VEC3E*)vr$27;
-		if( TMP$1679$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4484;
-		TMP$1681$2 = TMP$1679$2;
-		TMP$1680$2 = 1ull;
-		label$4485:;
-		if( TMP$1680$2 == 0ull ) goto label$4486;
-		_ZN4MATH4VEC3C1Ev( TMP$1681$2 );
-		TMP$1681$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1681$2 + 24ll);
-		TMP$1680$2 = TMP$1680$2 + 18446744073709551615ull;
-		goto label$4485;
-		label$4486:;
-		label$4484:;
-		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1679$2;
+		TMP$1680$2 = (struct $N4MATH4VEC3E*)vr$27;
+		if( TMP$1680$2 == (struct $N4MATH4VEC3E*)0ull ) goto label$4488;
+		TMP$1682$2 = TMP$1680$2;
+		TMP$1681$2 = 1ull;
+		label$4489:;
+		if( TMP$1681$2 == 0ull ) goto label$4490;
+		_ZN4MATH4VEC3C1Ev( TMP$1682$2 );
+		TMP$1682$2 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1682$2 + 24ll);
+		TMP$1681$2 = TMP$1681$2 + 18446744073709551615ull;
+		goto label$4489;
+		label$4490:;
+		label$4488:;
+		*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1680$2;
 		struct $N4MATH4VEC3E vr$31 = _ZNK4MATH4CVECcvNS_4VEC3EEv( V$1 );
 		*(*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll)) = vr$31;
 	}
-	label$4474:;
-	label$4473:;
+	label$4478:;
+	label$4477:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKNS_7V2ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$4487:;
-	if( *(int64*)A$1 == 0ll ) goto label$4490;
+	label$4491:;
+	if( *(int64*)A$1 == 0ll ) goto label$4494;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$4492;
+		if( *(int64*)THIS$1 == 0ll ) goto label$4496;
 		{
-			struct $N4MATH4VEC3E* TMP$1682$3;
-			uint64 TMP$1683$3;
-			struct $N4MATH4VEC3E* TMP$1684$3;
+			struct $N4MATH4VEC3E* TMP$1683$3;
+			uint64 TMP$1684$3;
+			struct $N4MATH4VEC3E* TMP$1685$3;
 			struct $N4MATH4VEC3E* Q$3;
 			void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) * 24ull );
-			TMP$1682$3 = (struct $N4MATH4VEC3E*)vr$6;
-			if( TMP$1682$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4493;
-			TMP$1684$3 = TMP$1682$3;
-			TMP$1683$3 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
-			label$4494:;
-			if( TMP$1683$3 == 0ull ) goto label$4495;
-			_ZN4MATH4VEC3C1Ev( TMP$1684$3 );
-			TMP$1684$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1684$3 + 24ll);
-			TMP$1683$3 = TMP$1683$3 + 18446744073709551615ull;
-			goto label$4494;
-			label$4495:;
-			label$4493:;
-			Q$3 = TMP$1682$3;
+			TMP$1683$3 = (struct $N4MATH4VEC3E*)vr$6;
+			if( TMP$1683$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4497;
+			TMP$1685$3 = TMP$1683$3;
+			TMP$1684$3 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
+			label$4498:;
+			if( TMP$1684$3 == 0ull ) goto label$4499;
+			_ZN4MATH4VEC3C1Ev( TMP$1685$3 );
+			TMP$1685$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1685$3 + 24ll);
+			TMP$1684$3 = TMP$1684$3 + 18446744073709551615ull;
+			goto label$4498;
+			label$4499:;
+			label$4497:;
+			Q$3 = TMP$1683$3;
 			int64 I$3;
 			__builtin_memset( &I$3, 0, 8ll );
 			{
 				I$3 = 0ll;
-				int64 TMP$1685$4;
-				TMP$1685$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4496;
-				label$4499:;
-				{
-					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
-				}
-				label$4497:;
-				I$3 = I$3 + 1ll;
-				label$4496:;
-				if( I$3 <= TMP$1685$4 ) goto label$4499;
-				label$4498:;
-			}
-			struct $N4MATH4VEC2E* P$3;
-			struct $N4MATH4VEC2E* vr$21 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A$1 );
-			P$3 = vr$21;
-			{
-				I$3 = 0ll;
 				int64 TMP$1686$4;
-				TMP$1686$4 = *(int64*)A$1 + -1ll;
+				TMP$1686$4 = *(int64*)THIS$1 + -1ll;
 				goto label$4500;
 				label$4503:;
 				{
-					_ZN4MATH4VEC3aSERKNS_4VEC2E( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$3) * 24ll)), (struct $N4MATH4VEC2E*)((uint8*)P$3 + (I$3 << (4ll & 63ll))) );
+					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 				}
 				label$4501:;
 				I$3 = I$3 + 1ll;
@@ -24816,112 +24815,115 @@ void _ZN4MATH7V3ARRAYv27selfcatERKNS_7V2ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1,
 				if( I$3 <= TMP$1686$4 ) goto label$4503;
 				label$4502:;
 			}
+			struct $N4MATH4VEC2E* P$3;
+			struct $N4MATH4VEC2E* vr$21 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A$1 );
+			P$3 = vr$21;
+			{
+				I$3 = 0ll;
+				int64 TMP$1687$4;
+				TMP$1687$4 = *(int64*)A$1 + -1ll;
+				goto label$4504;
+				label$4507:;
+				{
+					_ZN4MATH4VEC3aSERKNS_4VEC2E( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$3) * 24ll)), (struct $N4MATH4VEC2E*)((uint8*)P$3 + (I$3 << (4ll & 63ll))) );
+				}
+				label$4505:;
+				I$3 = I$3 + 1ll;
+				label$4504:;
+				if( I$3 <= TMP$1687$4 ) goto label$4507;
+				label$4506:;
+			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4504;
+			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4508;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$4504:;
+			label$4508:;
 			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		goto label$4491;
-		label$4492:;
+		goto label$4495;
+		label$4496:;
 		{
-			struct $N4MATH4VEC3E* TMP$1687$3;
-			uint64 TMP$1688$3;
-			struct $N4MATH4VEC3E* TMP$1689$3;
+			struct $N4MATH4VEC3E* TMP$1688$3;
+			uint64 TMP$1689$3;
+			struct $N4MATH4VEC3E* TMP$1690$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$42 = malloc( *(uint64*)THIS$1 * 24ull );
-			TMP$1687$3 = (struct $N4MATH4VEC3E*)vr$42;
-			if( TMP$1687$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4505;
-			TMP$1689$3 = TMP$1687$3;
-			TMP$1688$3 = *(uint64*)THIS$1;
-			label$4506:;
-			if( TMP$1688$3 == 0ull ) goto label$4507;
-			_ZN4MATH4VEC3C1Ev( TMP$1689$3 );
-			TMP$1689$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1689$3 + 24ll);
-			TMP$1688$3 = TMP$1688$3 + 18446744073709551615ull;
-			goto label$4506;
-			label$4507:;
-			label$4505:;
-			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1687$3;
+			TMP$1688$3 = (struct $N4MATH4VEC3E*)vr$42;
+			if( TMP$1688$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4509;
+			TMP$1690$3 = TMP$1688$3;
+			TMP$1689$3 = *(uint64*)THIS$1;
+			label$4510:;
+			if( TMP$1689$3 == 0ull ) goto label$4511;
+			_ZN4MATH4VEC3C1Ev( TMP$1690$3 );
+			TMP$1690$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1690$3 + 24ll);
+			TMP$1689$3 = TMP$1689$3 + 18446744073709551615ull;
+			goto label$4510;
+			label$4511:;
+			label$4509:;
+			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1688$3;
 			struct $N4MATH4VEC2E* P$3;
 			struct $N4MATH4VEC2E* vr$47 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A$1 );
 			P$3 = vr$47;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1690$4;
-				TMP$1690$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4508;
-				label$4511:;
+				int64 TMP$1691$4;
+				TMP$1691$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4512;
+				label$4515:;
 				{
 					_ZN4MATH4VEC3aSERKNS_4VEC2E( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)), (struct $N4MATH4VEC2E*)((uint8*)P$3 + (I$4 << (4ll & 63ll))) );
 				}
-				label$4509:;
+				label$4513:;
 				I$4 = I$4 + 1ll;
-				label$4508:;
-				if( I$4 <= TMP$1690$4 ) goto label$4511;
-				label$4510:;
+				label$4512:;
+				if( I$4 <= TMP$1691$4 ) goto label$4515;
+				label$4514:;
 			}
 		}
-		label$4491:;
+		label$4495:;
 	}
-	label$4490:;
-	label$4489:;
-	label$4488:;
+	label$4494:;
+	label$4493:;
+	label$4492:;
 }
 
 void _ZN4MATH7V3ARRAYv27selfcatERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4512:;
-	if( THIS$1 == A$1 ) goto label$4515;
+	label$4516:;
+	if( THIS$1 == A$1 ) goto label$4519;
 	{
-		if( *(int64*)A$1 == 0ll ) goto label$4517;
+		if( *(int64*)A$1 == 0ll ) goto label$4521;
 		{
-			if( *(int64*)THIS$1 == 0ll ) goto label$4519;
+			if( *(int64*)THIS$1 == 0ll ) goto label$4523;
 			{
-				struct $N4MATH4VEC3E* TMP$1691$4;
-				uint64 TMP$1692$4;
-				struct $N4MATH4VEC3E* TMP$1693$4;
+				struct $N4MATH4VEC3E* TMP$1692$4;
+				uint64 TMP$1693$4;
+				struct $N4MATH4VEC3E* TMP$1694$4;
 				struct $N4MATH4VEC3E* Q$4;
 				void* vr$6 = malloc( (uint64)(*(int64*)THIS$1 + *(int64*)A$1) * 24ull );
-				TMP$1691$4 = (struct $N4MATH4VEC3E*)vr$6;
-				if( TMP$1691$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4520;
-				TMP$1693$4 = TMP$1691$4;
-				TMP$1692$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
-				label$4521:;
-				if( TMP$1692$4 == 0ull ) goto label$4522;
-				_ZN4MATH4VEC3C1Ev( TMP$1693$4 );
-				TMP$1693$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1693$4 + 24ll);
-				TMP$1692$4 = TMP$1692$4 + 18446744073709551615ull;
-				goto label$4521;
-				label$4522:;
-				label$4520:;
-				Q$4 = TMP$1691$4;
+				TMP$1692$4 = (struct $N4MATH4VEC3E*)vr$6;
+				if( TMP$1692$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4524;
+				TMP$1694$4 = TMP$1692$4;
+				TMP$1693$4 = (uint64)(*(int64*)THIS$1 + *(int64*)A$1);
+				label$4525:;
+				if( TMP$1693$4 == 0ull ) goto label$4526;
+				_ZN4MATH4VEC3C1Ev( TMP$1694$4 );
+				TMP$1694$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1694$4 + 24ll);
+				TMP$1693$4 = TMP$1693$4 + 18446744073709551615ull;
+				goto label$4525;
+				label$4526:;
+				label$4524:;
+				Q$4 = TMP$1692$4;
 				int64 I$4;
 				__builtin_memset( &I$4, 0, 8ll );
 				{
 					I$4 = 0ll;
-					int64 TMP$1694$5;
-					TMP$1694$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4523;
-					label$4526:;
-					{
-						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$4 + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
-					}
-					label$4524:;
-					I$4 = I$4 + 1ll;
-					label$4523:;
-					if( I$4 <= TMP$1694$5 ) goto label$4526;
-					label$4525:;
-				}
-				{
-					I$4 = 0ll;
 					int64 TMP$1695$5;
-					TMP$1695$5 = *(int64*)A$1 + -1ll;
+					TMP$1695$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4527;
 					label$4530:;
 					{
-						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$4 * 24ll)) );
+						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$4 + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
 					}
 					label$4528:;
 					I$4 = I$4 + 1ll;
@@ -24929,159 +24931,174 @@ void _ZN4MATH7V3ARRAYv27selfcatERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $
 					if( I$4 <= TMP$1695$5 ) goto label$4530;
 					label$4529:;
 				}
+				{
+					I$4 = 0ll;
+					int64 TMP$1696$5;
+					TMP$1696$5 = *(int64*)A$1 + -1ll;
+					goto label$4531;
+					label$4534:;
+					{
+						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$4 + ((*(int64*)THIS$1 + I$4) * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$4 * 24ll)) );
+					}
+					label$4532:;
+					I$4 = I$4 + 1ll;
+					label$4531:;
+					if( I$4 <= TMP$1696$5 ) goto label$4534;
+					label$4533:;
+				}
 				*(int64*)THIS$1 = *(int64*)THIS$1 + *(int64*)A$1;
-				if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4531;
+				if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4535;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$4531:;
+				label$4535:;
 				*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			goto label$4518;
-			label$4519:;
+			goto label$4522;
+			label$4523:;
 			{
-				struct $N4MATH4VEC3E* TMP$1696$4;
-				uint64 TMP$1697$4;
-				struct $N4MATH4VEC3E* TMP$1698$4;
+				struct $N4MATH4VEC3E* TMP$1697$4;
+				uint64 TMP$1698$4;
+				struct $N4MATH4VEC3E* TMP$1699$4;
 				*(int64*)THIS$1 = *(int64*)A$1;
 				void* vr$42 = malloc( *(uint64*)THIS$1 * 24ull );
-				TMP$1696$4 = (struct $N4MATH4VEC3E*)vr$42;
-				if( TMP$1696$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4532;
-				TMP$1698$4 = TMP$1696$4;
-				TMP$1697$4 = *(uint64*)THIS$1;
-				label$4533:;
-				if( TMP$1697$4 == 0ull ) goto label$4534;
-				_ZN4MATH4VEC3C1Ev( TMP$1698$4 );
-				TMP$1698$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1698$4 + 24ll);
-				TMP$1697$4 = TMP$1697$4 + 18446744073709551615ull;
-				goto label$4533;
-				label$4534:;
-				label$4532:;
-				*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1696$4;
+				TMP$1697$4 = (struct $N4MATH4VEC3E*)vr$42;
+				if( TMP$1697$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4536;
+				TMP$1699$4 = TMP$1697$4;
+				TMP$1698$4 = *(uint64*)THIS$1;
+				label$4537:;
+				if( TMP$1698$4 == 0ull ) goto label$4538;
+				_ZN4MATH4VEC3C1Ev( TMP$1699$4 );
+				TMP$1699$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1699$4 + 24ll);
+				TMP$1698$4 = TMP$1698$4 + 18446744073709551615ull;
+				goto label$4537;
+				label$4538:;
+				label$4536:;
+				*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1697$4;
 				{
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1699$5;
-					TMP$1699$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4535;
-					label$4538:;
+					int64 TMP$1700$5;
+					TMP$1700$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4539;
+					label$4542:;
 					{
 						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$5 * 24ll)) );
 					}
-					label$4536:;
+					label$4540:;
 					I$5 = I$5 + 1ll;
-					label$4535:;
-					if( I$5 <= TMP$1699$5 ) goto label$4538;
-					label$4537:;
+					label$4539:;
+					if( I$5 <= TMP$1700$5 ) goto label$4542;
+					label$4541:;
 				}
 			}
-			label$4518:;
+			label$4522:;
 		}
-		label$4517:;
-		label$4516:;
+		label$4521:;
+		label$4520:;
 	}
-	goto label$4514;
-	label$4515:;
+	goto label$4518;
+	label$4519:;
 	{
-		if( *(int64*)THIS$1 == 0ll ) goto label$4540;
+		if( *(int64*)THIS$1 == 0ll ) goto label$4544;
 		{
-			struct $N4MATH4VEC3E* TMP$1700$3;
-			uint64 TMP$1701$3;
-			struct $N4MATH4VEC3E* TMP$1702$3;
+			struct $N4MATH4VEC3E* TMP$1701$3;
+			uint64 TMP$1702$3;
+			struct $N4MATH4VEC3E* TMP$1703$3;
 			struct $N4MATH4VEC3E* Q$3;
 			void* vr$60 = malloc( (uint64)(*(int64*)THIS$1 << (1ll & 63ll)) * 24ull );
-			TMP$1700$3 = (struct $N4MATH4VEC3E*)vr$60;
-			if( TMP$1700$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4541;
-			TMP$1702$3 = TMP$1700$3;
-			TMP$1701$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
-			label$4542:;
-			if( TMP$1701$3 == 0ull ) goto label$4543;
-			_ZN4MATH4VEC3C1Ev( TMP$1702$3 );
-			TMP$1702$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1702$3 + 24ll);
-			TMP$1701$3 = TMP$1701$3 + 18446744073709551615ull;
-			goto label$4542;
-			label$4543:;
-			label$4541:;
-			Q$3 = TMP$1700$3;
+			TMP$1701$3 = (struct $N4MATH4VEC3E*)vr$60;
+			if( TMP$1701$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4545;
+			TMP$1703$3 = TMP$1701$3;
+			TMP$1702$3 = (uint64)(*(int64*)THIS$1 << (1ll & 63ll));
+			label$4546:;
+			if( TMP$1702$3 == 0ull ) goto label$4547;
+			_ZN4MATH4VEC3C1Ev( TMP$1703$3 );
+			TMP$1703$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1703$3 + 24ll);
+			TMP$1702$3 = TMP$1702$3 + 18446744073709551615ull;
+			goto label$4546;
+			label$4547:;
+			label$4545:;
+			Q$3 = TMP$1701$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1703$4;
-				TMP$1703$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4544;
-				label$4547:;
+				int64 TMP$1704$4;
+				TMP$1704$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4548;
+				label$4551:;
 				{
 					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
 					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$3 + ((*(int64*)THIS$1 + I$4) * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
 				}
-				label$4545:;
+				label$4549:;
 				I$4 = I$4 + 1ll;
-				label$4544:;
-				if( I$4 <= TMP$1703$4 ) goto label$4547;
-				label$4546:;
+				label$4548:;
+				if( I$4 <= TMP$1704$4 ) goto label$4551;
+				label$4550:;
 			}
 			*(int64*)THIS$1 = *(int64*)THIS$1 << (1ll & 63ll);
-			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4548;
+			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4552;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$4548:;
+			label$4552:;
 			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$3;
 		}
-		label$4540:;
-		label$4539:;
+		label$4544:;
+		label$4543:;
 	}
-	label$4514:;
-	label$4513:;
+	label$4518:;
+	label$4517:;
 }
 
 struct $N4MATH4VEC3E* _ZN4MATH7V3ARRAYixERKu7INTEGER( struct $N4MATH7V3ARRAYE* THIS$1, int64* I$1 )
 {
 	struct $N4MATH4VEC3E* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4549:;
-	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$4552;
+	label$4553:;
+	if( ((int64)-(*I$1 >= 0ll) & (int64)-(*I$1 < *(int64*)THIS$1)) == 0ll ) goto label$4556;
 	{
 		fb$result$1 = (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (*I$1 * 24ll));
-		goto label$4550;
-		label$4552:;
+		goto label$4554;
+		label$4556:;
 	}
 	*(double*)((uint8*)THIS$1 + 16ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 24ll) = 0x0p+0;
 	*(double*)((uint8*)THIS$1 + 32ll) = 0x0p+0;
 	fb$result$1 = (struct $N4MATH4VEC3E*)((uint8*)THIS$1 + 16ll);
-	goto label$4550;
-	label$4550:;
+	goto label$4554;
+	label$4554:;
 	return fb$result$1;
 }
 
 void _ZN4MATH7V3ARRAYpLERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$4553:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4556;
+	label$4557:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4560;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1704$3;
-			TMP$1704$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4557;
-			label$4560:;
+			int64 TMP$1705$3;
+			TMP$1705$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4561;
+			label$4564:;
 			{
 				_ZN4MATH4VEC3pLERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), V$1 );
 			}
-			label$4558:;
+			label$4562:;
 			I$3 = I$3 + 1ll;
-			label$4557:;
-			if( I$3 <= TMP$1704$3 ) goto label$4560;
-			label$4559:;
+			label$4561:;
+			if( I$3 <= TMP$1705$3 ) goto label$4564;
+			label$4563:;
 		}
 	}
-	label$4556:;
-	label$4555:;
-	label$4554:;
+	label$4560:;
+	label$4559:;
+	label$4558:;
 }
 
 void _ZN4MATH7V3ARRAYpLERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$4561:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4564;
+	label$4565:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4568;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
@@ -25092,85 +25109,85 @@ void _ZN4MATH7V3ARRAYpLERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1705$3;
-			TMP$1705$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4565;
-			label$4568:;
+			int64 TMP$1706$3;
+			TMP$1706$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4569;
+			label$4572:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) + Y$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) + *(double*)V$1;
 			}
-			label$4566:;
+			label$4570:;
 			I$3 = I$3 + 1ll;
-			label$4565:;
-			if( I$3 <= TMP$1705$3 ) goto label$4568;
-			label$4567:;
+			label$4569:;
+			if( I$3 <= TMP$1706$3 ) goto label$4572;
+			label$4571:;
 		}
 	}
-	label$4564:;
-	label$4563:;
-	label$4562:;
+	label$4568:;
+	label$4567:;
+	label$4566:;
 }
 
 void _ZN4MATH7V3ARRAYpLERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4569:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4572;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1706$3;
-			TMP$1706$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4573;
-			label$4576:;
-			{
-				_ZN4MATH4VEC3pLERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
-			}
-			label$4574:;
-			I$3 = I$3 + 1ll;
-			label$4573:;
-			if( I$3 <= TMP$1706$3 ) goto label$4576;
-			label$4575:;
-		}
-	}
-	label$4572:;
-	label$4571:;
-	label$4570:;
-}
-
-void _ZN4MATH7V3ARRAYmIERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
-{
-	label$4577:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4580;
+	label$4573:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4576;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1707$3;
 			TMP$1707$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4581;
-			label$4584:;
+			goto label$4577;
+			label$4580:;
+			{
+				_ZN4MATH4VEC3pLERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
+			}
+			label$4578:;
+			I$3 = I$3 + 1ll;
+			label$4577:;
+			if( I$3 <= TMP$1707$3 ) goto label$4580;
+			label$4579:;
+		}
+	}
+	label$4576:;
+	label$4575:;
+	label$4574:;
+}
+
+void _ZN4MATH7V3ARRAYmIERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
+{
+	label$4581:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4584;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1708$3;
+			TMP$1708$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4585;
+			label$4588:;
 			{
 				_ZN4MATH4VEC3mIERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), V$1 );
 			}
-			label$4582:;
+			label$4586:;
 			I$3 = I$3 + 1ll;
-			label$4581:;
-			if( I$3 <= TMP$1707$3 ) goto label$4584;
-			label$4583:;
+			label$4585:;
+			if( I$3 <= TMP$1708$3 ) goto label$4588;
+			label$4587:;
 		}
 	}
-	label$4580:;
-	label$4579:;
-	label$4578:;
+	label$4584:;
+	label$4583:;
+	label$4582:;
 }
 
 void _ZN4MATH7V3ARRAYmIERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$4585:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4588;
+	label$4589:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4592;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
@@ -25181,114 +25198,114 @@ void _ZN4MATH7V3ARRAYmIERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1708$3;
-			TMP$1708$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4589;
-			label$4592:;
+			int64 TMP$1709$3;
+			TMP$1709$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4593;
+			label$4596:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) - X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) - Y$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) - *(double*)V$1;
 			}
-			label$4590:;
+			label$4594:;
 			I$3 = I$3 + 1ll;
-			label$4589:;
-			if( I$3 <= TMP$1708$3 ) goto label$4592;
-			label$4591:;
+			label$4593:;
+			if( I$3 <= TMP$1709$3 ) goto label$4596;
+			label$4595:;
 		}
 	}
-	label$4588:;
-	label$4587:;
-	label$4586:;
+	label$4592:;
+	label$4591:;
+	label$4590:;
 }
 
 void _ZN4MATH7V3ARRAYmIERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4593:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4596;
-	{
-		{
-			int64 I$3;
-			I$3 = 0ll;
-			int64 TMP$1709$3;
-			TMP$1709$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4597;
-			label$4600:;
-			{
-				_ZN4MATH4VEC3mIERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
-			}
-			label$4598:;
-			I$3 = I$3 + 1ll;
-			label$4597:;
-			if( I$3 <= TMP$1709$3 ) goto label$4600;
-			label$4599:;
-		}
-	}
-	label$4596:;
-	label$4595:;
-	label$4594:;
-}
-
-void _ZN4MATH7V3ARRAYmLERKd( struct $N4MATH7V3ARRAYE* THIS$1, double* N$1 )
-{
-	label$4601:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4604;
+	label$4597:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4600;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1710$3;
 			TMP$1710$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4605;
-			label$4608:;
+			goto label$4601;
+			label$4604:;
 			{
-				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) * *N$1;
-				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) * *N$1;
-				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) * *N$1;
+				_ZN4MATH4VEC3mIERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4606:;
+			label$4602:;
 			I$3 = I$3 + 1ll;
-			label$4605:;
-			if( I$3 <= TMP$1710$3 ) goto label$4608;
-			label$4607:;
+			label$4601:;
+			if( I$3 <= TMP$1710$3 ) goto label$4604;
+			label$4603:;
 		}
 	}
-	label$4604:;
-	label$4603:;
-	label$4602:;
+	label$4600:;
+	label$4599:;
+	label$4598:;
 }
 
-void _ZN4MATH7V3ARRAYmLERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
+void _ZN4MATH7V3ARRAYmLERKd( struct $N4MATH7V3ARRAYE* THIS$1, double* N$1 )
 {
-	label$4609:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4612;
+	label$4605:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4608;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
 			int64 TMP$1711$3;
 			TMP$1711$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4613;
-			label$4616:;
+			goto label$4609;
+			label$4612:;
+			{
+				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) * *N$1;
+				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) * *N$1;
+				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) * *N$1;
+			}
+			label$4610:;
+			I$3 = I$3 + 1ll;
+			label$4609:;
+			if( I$3 <= TMP$1711$3 ) goto label$4612;
+			label$4611:;
+		}
+	}
+	label$4608:;
+	label$4607:;
+	label$4606:;
+}
+
+void _ZN4MATH7V3ARRAYmLERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
+{
+	label$4613:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4616;
+	{
+		{
+			int64 I$3;
+			I$3 = 0ll;
+			int64 TMP$1712$3;
+			TMP$1712$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4617;
+			label$4620:;
 			{
 				_ZN4MATH4VEC3mLERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), V$1 );
 			}
-			label$4614:;
+			label$4618:;
 			I$3 = I$3 + 1ll;
-			label$4613:;
-			if( I$3 <= TMP$1711$3 ) goto label$4616;
-			label$4615:;
+			label$4617:;
+			if( I$3 <= TMP$1712$3 ) goto label$4620;
+			label$4619:;
 		}
 	}
-	label$4612:;
-	label$4611:;
-	label$4610:;
+	label$4616:;
+	label$4615:;
+	label$4614:;
 }
 
 void _ZN4MATH7V3ARRAYmLERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$4617:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4620;
+	label$4621:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4624;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
@@ -25299,82 +25316,60 @@ void _ZN4MATH7V3ARRAYmLERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1712$3;
-			TMP$1712$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4621;
-			label$4624:;
+			int64 TMP$1713$3;
+			TMP$1713$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4625;
+			label$4628:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) * X$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) * Y$2;
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) * *(double*)V$1;
 			}
-			label$4622:;
+			label$4626:;
 			I$3 = I$3 + 1ll;
-			label$4621:;
-			if( I$3 <= TMP$1712$3 ) goto label$4624;
-			label$4623:;
+			label$4625:;
+			if( I$3 <= TMP$1713$3 ) goto label$4628;
+			label$4627:;
 		}
 	}
-	label$4620:;
-	label$4619:;
-	label$4618:;
+	label$4624:;
+	label$4623:;
+	label$4622:;
 }
 
 void _ZN4MATH7V3ARRAYmLERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4625:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4628;
+	label$4629:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4632;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1713$3;
-			TMP$1713$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4629;
-			label$4632:;
+			int64 TMP$1714$3;
+			TMP$1714$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4633;
+			label$4636:;
 			{
 				_ZN4MATH4VEC3mLERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$4630:;
+			label$4634:;
 			I$3 = I$3 + 1ll;
-			label$4629:;
-			if( I$3 <= TMP$1713$3 ) goto label$4632;
-			label$4631:;
+			label$4633:;
+			if( I$3 <= TMP$1714$3 ) goto label$4636;
+			label$4635:;
 		}
 	}
-	label$4628:;
-	label$4627:;
-	label$4626:;
+	label$4632:;
+	label$4631:;
+	label$4630:;
 }
 
 void _ZN4MATH7V3ARRAYdVERKd( struct $N4MATH7V3ARRAYE* THIS$1, double* N$1 )
 {
-	label$4633:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4636;
+	label$4637:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4640;
 	{
-		if( *N$1 == 0x0p+0 ) goto label$4638;
-		{
-			{
-				int64 I$4;
-				I$4 = 0ll;
-				int64 TMP$1714$4;
-				TMP$1714$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4639;
-				label$4642:;
-				{
-					*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) / *N$1;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) / *N$1;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) / *N$1;
-				}
-				label$4640:;
-				I$4 = I$4 + 1ll;
-				label$4639:;
-				if( I$4 <= TMP$1714$4 ) goto label$4642;
-				label$4641:;
-			}
-		}
-		goto label$4637;
-		label$4638:;
+		if( *N$1 == 0x0p+0 ) goto label$4642;
 		{
 			{
 				int64 I$4;
@@ -25384,9 +25379,9 @@ void _ZN4MATH7V3ARRAYdVERKd( struct $N4MATH7V3ARRAYE* THIS$1, double* N$1 )
 				goto label$4643;
 				label$4646:;
 				{
-					*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) = 0x0p+0;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) = 0x0p+0;
-					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) = 0x0p+0;
+					*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) / *N$1;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) / *N$1;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) / *N$1;
 				}
 				label$4644:;
 				I$4 = I$4 + 1ll;
@@ -25395,45 +25390,45 @@ void _ZN4MATH7V3ARRAYdVERKd( struct $N4MATH7V3ARRAYE* THIS$1, double* N$1 )
 				label$4645:;
 			}
 		}
-		label$4637:;
+		goto label$4641;
+		label$4642:;
+		{
+			{
+				int64 I$4;
+				I$4 = 0ll;
+				int64 TMP$1716$4;
+				TMP$1716$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4647;
+				label$4650:;
+				{
+					*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) = 0x0p+0;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) = 0x0p+0;
+					*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) = 0x0p+0;
+				}
+				label$4648:;
+				I$4 = I$4 + 1ll;
+				label$4647:;
+				if( I$4 <= TMP$1716$4 ) goto label$4650;
+				label$4649:;
+			}
+		}
+		label$4641:;
 	}
-	label$4636:;
-	label$4635:;
-	label$4634:;
+	label$4640:;
+	label$4639:;
+	label$4638:;
 }
 
 void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4VEC3E* V$1 )
 {
-	label$4647:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4650;
+	label$4651:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4654;
 	{
-		if( *(double*)V$1 == 0x0p+0 ) goto label$4652;
+		if( *(double*)V$1 == 0x0p+0 ) goto label$4656;
 		{
-			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$4654;
+			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$4658;
 			{
-				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4656;
-				{
-					{
-						int64 I$6;
-						I$6 = 0ll;
-						int64 TMP$1716$6;
-						TMP$1716$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4657;
-						label$4660:;
-						{
-							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / *(double*)V$1;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
-						}
-						label$4658:;
-						I$6 = I$6 + 1ll;
-						label$4657:;
-						if( I$6 <= TMP$1716$6 ) goto label$4660;
-						label$4659:;
-					}
-				}
-				goto label$4655;
-				label$4656:;
+				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4660;
 				{
 					{
 						int64 I$6;
@@ -25445,7 +25440,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / *(double*)V$1;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
 						}
 						label$4662:;
 						I$6 = I$6 + 1ll;
@@ -25454,34 +25449,34 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4663:;
 					}
 				}
-				label$4655:;
-			}
-			goto label$4653;
-			label$4654:;
-			{
-				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4666;
+				goto label$4659;
+				label$4660:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1718$6;
 						TMP$1718$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4667;
-						label$4670:;
+						goto label$4665;
+						label$4668:;
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / *(double*)V$1;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4668:;
+						label$4666:;
 						I$6 = I$6 + 1ll;
+						label$4665:;
+						if( I$6 <= TMP$1718$6 ) goto label$4668;
 						label$4667:;
-						if( I$6 <= TMP$1718$6 ) goto label$4670;
-						label$4669:;
 					}
 				}
-				goto label$4665;
-				label$4666:;
+				label$4659:;
+			}
+			goto label$4657;
+			label$4658:;
+			{
+				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4670;
 				{
 					{
 						int64 I$6;
@@ -25493,7 +25488,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / *(double*)V$1;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
 						}
 						label$4672:;
 						I$6 = I$6 + 1ll;
@@ -25502,38 +25497,38 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4673:;
 					}
 				}
-				label$4665:;
-			}
-			label$4653:;
-		}
-		goto label$4651;
-		label$4652:;
-		{
-			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$4676;
-			{
-				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4678;
+				goto label$4669;
+				label$4670:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1720$6;
 						TMP$1720$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4679;
-						label$4682:;
+						goto label$4675;
+						label$4678:;
 						{
-							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
+							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / *(double*)V$1;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4680:;
+						label$4676:;
 						I$6 = I$6 + 1ll;
-						label$4679:;
-						if( I$6 <= TMP$1720$6 ) goto label$4682;
-						label$4681:;
+						label$4675:;
+						if( I$6 <= TMP$1720$6 ) goto label$4678;
+						label$4677:;
 					}
 				}
-				goto label$4677;
-				label$4678:;
+				label$4669:;
+			}
+			label$4657:;
+		}
+		goto label$4655;
+		label$4656:;
+		{
+			if( *(double*)((uint8*)V$1 + 8ll) == 0x0p+0 ) goto label$4680;
+			{
+				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4682;
 				{
 					{
 						int64 I$6;
@@ -25545,7 +25540,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
 						}
 						label$4684:;
 						I$6 = I$6 + 1ll;
@@ -25554,34 +25549,34 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4685:;
 					}
 				}
-				label$4677:;
-			}
-			goto label$4675;
-			label$4676:;
-			{
-				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4688;
+				goto label$4681;
+				label$4682:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1722$6;
 						TMP$1722$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4689;
-						label$4692:;
+						goto label$4687;
+						label$4690:;
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / *(double*)((uint8*)V$1 + 8ll);
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4690:;
+						label$4688:;
 						I$6 = I$6 + 1ll;
+						label$4687:;
+						if( I$6 <= TMP$1722$6 ) goto label$4690;
 						label$4689:;
-						if( I$6 <= TMP$1722$6 ) goto label$4692;
-						label$4691:;
 					}
 				}
-				goto label$4687;
-				label$4688:;
+				label$4681:;
+			}
+			goto label$4679;
+			label$4680:;
+			{
+				if( *(double*)((uint8*)V$1 + 16ll) == 0x0p+0 ) goto label$4692;
 				{
 					{
 						int64 I$6;
@@ -25593,7 +25588,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)((uint8*)V$1 + 16ll);
 						}
 						label$4694:;
 						I$6 = I$6 + 1ll;
@@ -25602,21 +25597,43 @@ void _ZN4MATH7V3ARRAYdVERKNS_4VEC3E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4695:;
 					}
 				}
-				label$4687:;
+				goto label$4691;
+				label$4692:;
+				{
+					{
+						int64 I$6;
+						I$6 = 0ll;
+						int64 TMP$1724$6;
+						TMP$1724$6 = *(int64*)THIS$1 + -1ll;
+						goto label$4697;
+						label$4700:;
+						{
+							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+						}
+						label$4698:;
+						I$6 = I$6 + 1ll;
+						label$4697:;
+						if( I$6 <= TMP$1724$6 ) goto label$4700;
+						label$4699:;
+					}
+				}
+				label$4691:;
 			}
-			label$4675:;
+			label$4679:;
 		}
-		label$4651:;
+		label$4655:;
 	}
-	label$4650:;
-	label$4649:;
-	label$4648:;
+	label$4654:;
+	label$4653:;
+	label$4652:;
 }
 
 void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH4CVECE* V$1 )
 {
-	label$4697:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4700;
+	label$4701:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4704;
 	{
 		double X$2;
 		double vr$1 = _ZNK4MATH4CVEC8X__get__Ev( V$1 );
@@ -25624,33 +25641,11 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 		double Y$2;
 		double vr$2 = _ZNK4MATH4CVEC8Y__get__Ev( V$1 );
 		Y$2 = vr$2;
-		if( X$2 == 0x0p+0 ) goto label$4702;
+		if( X$2 == 0x0p+0 ) goto label$4706;
 		{
-			if( Y$2 == 0x0p+0 ) goto label$4704;
+			if( Y$2 == 0x0p+0 ) goto label$4708;
 			{
-				if( *(double*)V$1 == 0x0p+0 ) goto label$4706;
-				{
-					{
-						int64 I$6;
-						I$6 = 0ll;
-						int64 TMP$1724$6;
-						TMP$1724$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4707;
-						label$4710:;
-						{
-							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / X$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
-						}
-						label$4708:;
-						I$6 = I$6 + 1ll;
-						label$4707:;
-						if( I$6 <= TMP$1724$6 ) goto label$4710;
-						label$4709:;
-					}
-				}
-				goto label$4705;
-				label$4706:;
+				if( *(double*)V$1 == 0x0p+0 ) goto label$4710;
 				{
 					{
 						int64 I$6;
@@ -25662,7 +25657,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / X$2;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
 						}
 						label$4712:;
 						I$6 = I$6 + 1ll;
@@ -25671,34 +25666,34 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4713:;
 					}
 				}
-				label$4705:;
-			}
-			goto label$4703;
-			label$4704:;
-			{
-				if( *(double*)V$1 == 0x0p+0 ) goto label$4716;
+				goto label$4709;
+				label$4710:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1726$6;
 						TMP$1726$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4717;
-						label$4720:;
+						goto label$4715;
+						label$4718:;
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / X$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4718:;
+						label$4716:;
 						I$6 = I$6 + 1ll;
+						label$4715:;
+						if( I$6 <= TMP$1726$6 ) goto label$4718;
 						label$4717:;
-						if( I$6 <= TMP$1726$6 ) goto label$4720;
-						label$4719:;
 					}
 				}
-				goto label$4715;
-				label$4716:;
+				label$4709:;
+			}
+			goto label$4707;
+			label$4708:;
+			{
+				if( *(double*)V$1 == 0x0p+0 ) goto label$4720;
 				{
 					{
 						int64 I$6;
@@ -25710,7 +25705,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / X$2;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
 						}
 						label$4722:;
 						I$6 = I$6 + 1ll;
@@ -25719,38 +25714,38 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4723:;
 					}
 				}
-				label$4715:;
-			}
-			label$4703:;
-		}
-		goto label$4701;
-		label$4702:;
-		{
-			if( Y$2 == 0x0p+0 ) goto label$4726;
-			{
-				if( *(double*)V$1 == 0x0p+0 ) goto label$4728;
+				goto label$4719;
+				label$4720:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1728$6;
 						TMP$1728$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4729;
-						label$4732:;
+						goto label$4725;
+						label$4728:;
 						{
-							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
+							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) / X$2;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4730:;
+						label$4726:;
 						I$6 = I$6 + 1ll;
-						label$4729:;
-						if( I$6 <= TMP$1728$6 ) goto label$4732;
-						label$4731:;
+						label$4725:;
+						if( I$6 <= TMP$1728$6 ) goto label$4728;
+						label$4727:;
 					}
 				}
-				goto label$4727;
-				label$4728:;
+				label$4719:;
+			}
+			label$4707:;
+		}
+		goto label$4705;
+		label$4706:;
+		{
+			if( Y$2 == 0x0p+0 ) goto label$4730;
+			{
+				if( *(double*)V$1 == 0x0p+0 ) goto label$4732;
 				{
 					{
 						int64 I$6;
@@ -25762,7 +25757,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
 						}
 						label$4734:;
 						I$6 = I$6 + 1ll;
@@ -25771,34 +25766,34 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4735:;
 					}
 				}
-				label$4727:;
-			}
-			goto label$4725;
-			label$4726:;
-			{
-				if( *(double*)V$1 == 0x0p+0 ) goto label$4738;
+				goto label$4731;
+				label$4732:;
 				{
 					{
 						int64 I$6;
 						I$6 = 0ll;
 						int64 TMP$1730$6;
 						TMP$1730$6 = *(int64*)THIS$1 + -1ll;
-						goto label$4739;
-						label$4742:;
+						goto label$4737;
+						label$4740:;
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) / Y$2;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
 						}
-						label$4740:;
+						label$4738:;
 						I$6 = I$6 + 1ll;
+						label$4737:;
+						if( I$6 <= TMP$1730$6 ) goto label$4740;
 						label$4739:;
-						if( I$6 <= TMP$1730$6 ) goto label$4742;
-						label$4741:;
 					}
 				}
-				goto label$4737;
-				label$4738:;
+				label$4731:;
+			}
+			goto label$4729;
+			label$4730:;
+			{
+				if( *(double*)V$1 == 0x0p+0 ) goto label$4742;
 				{
 					{
 						int64 I$6;
@@ -25810,7 +25805,7 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						{
 							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
 							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
-							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) / *(double*)V$1;
 						}
 						label$4744:;
 						I$6 = I$6 + 1ll;
@@ -25819,314 +25814,336 @@ void _ZN4MATH7V3ARRAYdVERKNS_4CVECE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4
 						label$4745:;
 					}
 				}
-				label$4737:;
+				goto label$4741;
+				label$4742:;
+				{
+					{
+						int64 I$6;
+						I$6 = 0ll;
+						int64 TMP$1732$6;
+						TMP$1732$6 = *(int64*)THIS$1 + -1ll;
+						goto label$4747;
+						label$4750:;
+						{
+							*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 8ll) = 0x0p+0;
+							*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$6 * 24ll)) + 16ll) = 0x0p+0;
+						}
+						label$4748:;
+						I$6 = I$6 + 1ll;
+						label$4747:;
+						if( I$6 <= TMP$1732$6 ) goto label$4750;
+						label$4749:;
+					}
+				}
+				label$4741:;
 			}
-			label$4725:;
+			label$4729:;
 		}
-		label$4701:;
+		label$4705:;
 	}
-	label$4700:;
-	label$4699:;
-	label$4698:;
+	label$4704:;
+	label$4703:;
+	label$4702:;
 }
 
 void _ZN4MATH7V3ARRAYdVERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4747:;
-	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4750;
+	label$4751:;
+	if( ((int64)-(*(int64*)A$1 > 0ll) & (int64)-(*(int64*)A$1 == *(int64*)THIS$1)) == 0ll ) goto label$4754;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1732$3;
-			TMP$1732$3 = *(int64*)THIS$1 + -1ll;
-			goto label$4751;
-			label$4754:;
+			int64 TMP$1733$3;
+			TMP$1733$3 = *(int64*)THIS$1 + -1ll;
+			goto label$4755;
+			label$4758:;
 			{
-				double TMP$1733$4;
 				double TMP$1734$4;
 				double TMP$1735$4;
-				if( *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) == 0x0p+0 ) goto label$4755;
-				TMP$1733$4 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) / *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll));
-				goto label$4758;
-				label$4755:;
-				TMP$1733$4 = 0x0p+0;
-				label$4758:;
-				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = TMP$1733$4;
-				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 8ll) == 0x0p+0 ) goto label$4756;
-				TMP$1734$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 8ll);
-				goto label$4759;
-				label$4756:;
-				TMP$1734$4 = 0x0p+0;
+				double TMP$1736$4;
+				if( *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) == 0x0p+0 ) goto label$4759;
+				TMP$1734$4 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) / *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll));
+				goto label$4762;
 				label$4759:;
-				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = TMP$1734$4;
-				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 16ll) == 0x0p+0 ) goto label$4757;
-				TMP$1735$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 16ll);
-				goto label$4760;
-				label$4757:;
-				TMP$1735$4 = 0x0p+0;
+				TMP$1734$4 = 0x0p+0;
+				label$4762:;
+				*(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) = TMP$1734$4;
+				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 8ll) == 0x0p+0 ) goto label$4760;
+				TMP$1735$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 8ll);
+				goto label$4763;
 				label$4760:;
-				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = TMP$1735$4;
+				TMP$1735$4 = 0x0p+0;
+				label$4763:;
+				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll) = TMP$1735$4;
+				if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 16ll) == 0x0p+0 ) goto label$4761;
+				TMP$1736$4 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) / *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$3 * 24ll)) + 16ll);
+				goto label$4764;
+				label$4761:;
+				TMP$1736$4 = 0x0p+0;
+				label$4764:;
+				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll) = TMP$1736$4;
 			}
-			label$4752:;
+			label$4756:;
 			I$3 = I$3 + 1ll;
-			label$4751:;
-			if( I$3 <= TMP$1732$3 ) goto label$4754;
-			label$4753:;
+			label$4755:;
+			if( I$3 <= TMP$1733$3 ) goto label$4758;
+			label$4757:;
 		}
 	}
-	label$4750:;
-	label$4749:;
-	label$4748:;
+	label$4754:;
+	label$4753:;
+	label$4752:;
 }
 
 FBSTRING* _ZNK4MATH7V3ARRAYcv8FBSTRINGEv( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
-	FBSTRING TMP$1737$1;
 	FBSTRING TMP$1738$1;
+	FBSTRING TMP$1739$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$4761:;
+	label$4765:;
 	FBSTRING* vr$2 = fb_LongintToStr( *(int64*)THIS$1 );
-	__builtin_memset( &TMP$1737$1, 0, 24ll );
-	FBSTRING* vr$5 = fb_StrConcat( &TMP$1737$1, (void*)"<math.v3array>{ length : ", 26ll, (void*)vr$2, -1ll );
 	__builtin_memset( &TMP$1738$1, 0, 24ll );
-	FBSTRING* vr$8 = fb_StrConcat( &TMP$1738$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$5 = fb_StrConcat( &TMP$1738$1, (void*)"<math.v3array>{ length : ", 26ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$1739$1, 0, 24ll );
+	FBSTRING* vr$8 = fb_StrConcat( &TMP$1739$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$8, -1ll, 0 );
-	goto label$4762;
-	label$4762:;
+	goto label$4766;
+	label$4766:;
 	FBSTRING* vr$11 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$11;
 }
 
 void _ZN4MATH7V3ARRAYaSERKS0_( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$4763:;
-	if( THIS$1 == A$1 ) goto label$4766;
+	label$4767:;
+	if( THIS$1 == A$1 ) goto label$4770;
 	{
 		*(int64*)THIS$1 = 0ll;
-		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4768;
+		if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4772;
 		{
-			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4769;
+			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4773;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$4769:;
+			label$4773:;
 			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH4VEC3E*)0ull;
 		}
-		label$4768:;
-		label$4767:;
-		if( *(int64*)A$1 == 0ll ) goto label$4771;
+		label$4772:;
+		label$4771:;
+		if( *(int64*)A$1 == 0ll ) goto label$4775;
 		{
-			struct $N4MATH4VEC3E* TMP$1739$3;
-			uint64 TMP$1740$3;
-			struct $N4MATH4VEC3E* TMP$1741$3;
+			struct $N4MATH4VEC3E* TMP$1740$3;
+			uint64 TMP$1741$3;
+			struct $N4MATH4VEC3E* TMP$1742$3;
 			*(int64*)THIS$1 = *(int64*)A$1;
 			void* vr$10 = malloc( *(uint64*)A$1 * 24ull );
-			TMP$1739$3 = (struct $N4MATH4VEC3E*)vr$10;
-			if( TMP$1739$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4772;
-			TMP$1741$3 = TMP$1739$3;
-			TMP$1740$3 = *(uint64*)A$1;
-			label$4773:;
-			if( TMP$1740$3 == 0ull ) goto label$4774;
-			_ZN4MATH4VEC3C1Ev( TMP$1741$3 );
-			TMP$1741$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1741$3 + 24ll);
-			TMP$1740$3 = TMP$1740$3 + 18446744073709551615ull;
-			goto label$4773;
-			label$4774:;
-			label$4772:;
-			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1739$3;
+			TMP$1740$3 = (struct $N4MATH4VEC3E*)vr$10;
+			if( TMP$1740$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4776;
+			TMP$1742$3 = TMP$1740$3;
+			TMP$1741$3 = *(uint64*)A$1;
+			label$4777:;
+			if( TMP$1741$3 == 0ull ) goto label$4778;
+			_ZN4MATH4VEC3C1Ev( TMP$1742$3 );
+			TMP$1742$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1742$3 + 24ll);
+			TMP$1741$3 = TMP$1741$3 + 18446744073709551615ull;
+			goto label$4777;
+			label$4778:;
+			label$4776:;
+			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1740$3;
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1742$4;
-				TMP$1742$4 = *(int64*)A$1 + -1ll;
-				goto label$4775;
-				label$4778:;
+				int64 TMP$1743$4;
+				TMP$1743$4 = *(int64*)A$1 + -1ll;
+				goto label$4779;
+				label$4782:;
 				{
 					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$4 * 24ll)) );
 				}
-				label$4776:;
+				label$4780:;
 				I$4 = I$4 + 1ll;
-				label$4775:;
-				if( I$4 <= TMP$1742$4 ) goto label$4778;
-				label$4777:;
+				label$4779:;
+				if( I$4 <= TMP$1743$4 ) goto label$4782;
+				label$4781:;
 			}
 		}
-		label$4771:;
-		label$4770:;
+		label$4775:;
+		label$4774:;
 	}
-	label$4766:;
-	label$4765:;
-	label$4764:;
+	label$4770:;
+	label$4769:;
+	label$4768:;
 }
 
 struct $N4MATH4VEC3E* _ZNK4MATH7V3ARRAY11DATA__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	struct $N4MATH4VEC3E* fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4779:;
+	label$4783:;
 	fb$result$1 = *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll);
-	goto label$4780;
-	label$4780:;
+	goto label$4784;
+	label$4784:;
 	return fb$result$1;
 }
 
 void _ZN4MATH7V3ARRAY13LENGTH__set__ERKu7INTEGER( struct $N4MATH7V3ARRAYE* THIS$1, int64* L$1 )
 {
-	label$4781:;
-	if( *L$1 <= 0ll ) goto label$4784;
+	label$4785:;
+	if( *L$1 <= 0ll ) goto label$4788;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$4786;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$4790;
 		{
-			if( *L$1 == *(int64*)THIS$1 ) goto label$4788;
+			if( *L$1 == *(int64*)THIS$1 ) goto label$4792;
 			{
-				struct $N4MATH4VEC3E* TMP$1743$4;
-				uint64 TMP$1744$4;
-				struct $N4MATH4VEC3E* TMP$1745$4;
+				struct $N4MATH4VEC3E* TMP$1744$4;
+				uint64 TMP$1745$4;
+				struct $N4MATH4VEC3E* TMP$1746$4;
 				struct $N4MATH4VEC3E* Q$4;
 				void* vr$6 = malloc( *(uint64*)L$1 * 24ull );
-				TMP$1743$4 = (struct $N4MATH4VEC3E*)vr$6;
-				if( TMP$1743$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4789;
-				TMP$1745$4 = TMP$1743$4;
-				TMP$1744$4 = *(uint64*)L$1;
-				label$4790:;
-				if( TMP$1744$4 == 0ull ) goto label$4791;
-				_ZN4MATH4VEC3C1Ev( TMP$1745$4 );
-				TMP$1745$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1745$4 + 24ll);
-				TMP$1744$4 = TMP$1744$4 + 18446744073709551615ull;
-				goto label$4790;
-				label$4791:;
-				label$4789:;
-				Q$4 = TMP$1743$4;
+				TMP$1744$4 = (struct $N4MATH4VEC3E*)vr$6;
+				if( TMP$1744$4 == (struct $N4MATH4VEC3E*)0ull ) goto label$4793;
+				TMP$1746$4 = TMP$1744$4;
+				TMP$1745$4 = *(uint64*)L$1;
+				label$4794:;
+				if( TMP$1745$4 == 0ull ) goto label$4795;
+				_ZN4MATH4VEC3C1Ev( TMP$1746$4 );
+				TMP$1746$4 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1746$4 + 24ll);
+				TMP$1745$4 = TMP$1745$4 + 18446744073709551615ull;
+				goto label$4794;
+				label$4795:;
+				label$4793:;
+				Q$4 = TMP$1744$4;
 				{
-					int64 TMP$1746$5;
+					int64 TMP$1747$5;
 					int64 I$5;
 					I$5 = 0ll;
-					int64 TMP$1747$5;
-					if( *L$1 >= *(int64*)THIS$1 ) goto label$4792;
-					TMP$1746$5 = *L$1;
-					goto label$4805;
-					label$4792:;
-					TMP$1746$5 = *(int64*)THIS$1;
-					label$4805:;
-					TMP$1747$5 = TMP$1746$5 + -1ll;
-					goto label$4793;
+					int64 TMP$1748$5;
+					if( *L$1 >= *(int64*)THIS$1 ) goto label$4796;
+					TMP$1747$5 = *L$1;
+					goto label$4809;
 					label$4796:;
+					TMP$1747$5 = *(int64*)THIS$1;
+					label$4809:;
+					TMP$1748$5 = TMP$1747$5 + -1ll;
+					goto label$4797;
+					label$4800:;
 					{
 						_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)Q$4 + (I$5 * 24ll)), (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
-					label$4794:;
+					label$4798:;
 					I$5 = I$5 + 1ll;
-					label$4793:;
-					if( I$5 <= TMP$1747$5 ) goto label$4796;
-					label$4795:;
+					label$4797:;
+					if( I$5 <= TMP$1748$5 ) goto label$4800;
+					label$4799:;
 				}
 				*(int64*)THIS$1 = *L$1;
-				if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4797;
+				if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4801;
 				free( *(void**)((uint8*)THIS$1 + 8ll) );
-				label$4797:;
+				label$4801:;
 				*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = Q$4;
 			}
-			label$4788:;
-			label$4787:;
+			label$4792:;
+			label$4791:;
 		}
-		goto label$4785;
-		label$4786:;
+		goto label$4789;
+		label$4790:;
 		{
-			struct $N4MATH4VEC3E* TMP$1748$3;
-			uint64 TMP$1749$3;
-			struct $N4MATH4VEC3E* TMP$1750$3;
+			struct $N4MATH4VEC3E* TMP$1749$3;
+			uint64 TMP$1750$3;
+			struct $N4MATH4VEC3E* TMP$1751$3;
 			*(int64*)THIS$1 = *L$1;
 			void* vr$30 = malloc( *(uint64*)THIS$1 * 24ull );
-			TMP$1748$3 = (struct $N4MATH4VEC3E*)vr$30;
-			if( TMP$1748$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4798;
-			TMP$1750$3 = TMP$1748$3;
-			TMP$1749$3 = *(uint64*)THIS$1;
-			label$4799:;
-			if( TMP$1749$3 == 0ull ) goto label$4800;
-			_ZN4MATH4VEC3C1Ev( TMP$1750$3 );
-			TMP$1750$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1750$3 + 24ll);
-			TMP$1749$3 = TMP$1749$3 + 18446744073709551615ull;
-			goto label$4799;
-			label$4800:;
-			label$4798:;
-			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1748$3;
+			TMP$1749$3 = (struct $N4MATH4VEC3E*)vr$30;
+			if( TMP$1749$3 == (struct $N4MATH4VEC3E*)0ull ) goto label$4802;
+			TMP$1751$3 = TMP$1749$3;
+			TMP$1750$3 = *(uint64*)THIS$1;
+			label$4803:;
+			if( TMP$1750$3 == 0ull ) goto label$4804;
+			_ZN4MATH4VEC3C1Ev( TMP$1751$3 );
+			TMP$1751$3 = (struct $N4MATH4VEC3E*)((uint8*)TMP$1751$3 + 24ll);
+			TMP$1750$3 = TMP$1750$3 + 18446744073709551615ull;
+			goto label$4803;
+			label$4804:;
+			label$4802:;
+			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = TMP$1749$3;
 		}
-		label$4785:;
+		label$4789:;
 	}
-	goto label$4783;
-	label$4784:;
-	if( *L$1 != 0ll ) goto label$4801;
+	goto label$4787;
+	label$4788:;
+	if( *L$1 != 0ll ) goto label$4805;
 	{
-		if( *(int64*)THIS$1 <= 0ll ) goto label$4803;
+		if( *(int64*)THIS$1 <= 0ll ) goto label$4807;
 		{
 			*(int64*)THIS$1 = 0ll;
-			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4804;
+			if( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC3E*)0ull ) goto label$4808;
 			free( *(void**)((uint8*)THIS$1 + 8ll) );
-			label$4804:;
+			label$4808:;
 			*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) = (struct $N4MATH4VEC3E*)0ull;
 		}
-		label$4803:;
-		label$4802:;
+		label$4807:;
+		label$4806:;
 	}
-	label$4801:;
-	label$4783:;
-	label$4782:;
+	label$4805:;
+	label$4787:;
+	label$4786:;
 }
 
 double _ZNK4MATH7V3ARRAY11XMAX__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4806:;
+	label$4810:;
 	{
-		int64 TMP$1751$2;
-		TMP$1751$2 = *(int64*)THIS$1;
-		if( TMP$1751$2 != 0ll ) goto label$4809;
-		label$4810:;
+		int64 TMP$1752$2;
+		TMP$1752$2 = *(int64*)THIS$1;
+		if( TMP$1752$2 != 0ll ) goto label$4813;
+		label$4814:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4807;
+			goto label$4811;
 		}
-		goto label$4808;
-		label$4809:;
-		if( TMP$1751$2 != 1ll ) goto label$4811;
-		label$4812:;
+		goto label$4812;
+		label$4813:;
+		if( TMP$1752$2 != 1ll ) goto label$4815;
+		label$4816:;
 		{
 			fb$result$1 = *(double*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll);
-			goto label$4807;
+			goto label$4811;
 		}
-		goto label$4808;
-		label$4811:;
+		goto label$4812;
+		label$4815:;
 		{
 			double R$3;
 			R$3 = *(double*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1752$4;
-				TMP$1752$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4814;
-				label$4817:;
+				int64 TMP$1753$4;
+				TMP$1753$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4818;
+				label$4821:;
 				{
-					if( R$3 >= *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) ) goto label$4819;
+					if( R$3 >= *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) ) goto label$4823;
 					{
 						R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll));
-						label$4819:;
+						label$4823:;
 					}
 				}
-				label$4815:;
+				label$4819:;
 				I$4 = I$4 + 1ll;
-				label$4814:;
-				if( I$4 <= TMP$1752$4 ) goto label$4817;
-				label$4816:;
+				label$4818:;
+				if( I$4 <= TMP$1753$4 ) goto label$4821;
+				label$4820:;
 			}
 			fb$result$1 = R$3;
-			goto label$4807;
+			goto label$4811;
 		}
-		label$4813:;
-		label$4808:;
+		label$4817:;
+		label$4812:;
 	}
-	label$4807:;
+	label$4811:;
 	return fb$result$1;
 }
 
@@ -26134,56 +26151,56 @@ double _ZNK4MATH7V3ARRAY11XMIN__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4820:;
+	label$4824:;
 	{
-		int64 TMP$1753$2;
-		TMP$1753$2 = *(int64*)THIS$1;
-		if( TMP$1753$2 != 0ll ) goto label$4823;
-		label$4824:;
+		int64 TMP$1754$2;
+		TMP$1754$2 = *(int64*)THIS$1;
+		if( TMP$1754$2 != 0ll ) goto label$4827;
+		label$4828:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4821;
+			goto label$4825;
 		}
-		goto label$4822;
-		label$4823:;
-		if( TMP$1753$2 != 1ll ) goto label$4825;
-		label$4826:;
+		goto label$4826;
+		label$4827:;
+		if( TMP$1754$2 != 1ll ) goto label$4829;
+		label$4830:;
 		{
 			fb$result$1 = *(double*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll);
-			goto label$4821;
+			goto label$4825;
 		}
-		goto label$4822;
-		label$4825:;
+		goto label$4826;
+		label$4829:;
 		{
 			double R$3;
 			R$3 = *(double*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1754$4;
-				TMP$1754$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4828;
-				label$4831:;
+				int64 TMP$1755$4;
+				TMP$1755$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4832;
+				label$4835:;
 				{
-					if( *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) >= R$3 ) goto label$4833;
+					if( *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) >= R$3 ) goto label$4837;
 					{
 						R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll));
-						label$4833:;
+						label$4837:;
 					}
 				}
-				label$4829:;
+				label$4833:;
 				I$4 = I$4 + 1ll;
-				label$4828:;
-				if( I$4 <= TMP$1754$4 ) goto label$4831;
-				label$4830:;
+				label$4832:;
+				if( I$4 <= TMP$1755$4 ) goto label$4835;
+				label$4834:;
 			}
 			fb$result$1 = R$3;
-			goto label$4821;
+			goto label$4825;
 		}
-		label$4827:;
-		label$4822:;
+		label$4831:;
+		label$4826:;
 	}
-	label$4821:;
+	label$4825:;
 	return fb$result$1;
 }
 
@@ -26191,56 +26208,56 @@ double _ZNK4MATH7V3ARRAY11YMAX__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4834:;
+	label$4838:;
 	{
-		int64 TMP$1755$2;
-		TMP$1755$2 = *(int64*)THIS$1;
-		if( TMP$1755$2 != 0ll ) goto label$4837;
-		label$4838:;
+		int64 TMP$1756$2;
+		TMP$1756$2 = *(int64*)THIS$1;
+		if( TMP$1756$2 != 0ll ) goto label$4841;
+		label$4842:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4835;
+			goto label$4839;
 		}
-		goto label$4836;
-		label$4837:;
-		if( TMP$1755$2 != 1ll ) goto label$4839;
-		label$4840:;
+		goto label$4840;
+		label$4841:;
+		if( TMP$1756$2 != 1ll ) goto label$4843;
+		label$4844:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 8ll);
-			goto label$4835;
+			goto label$4839;
 		}
-		goto label$4836;
-		label$4839:;
+		goto label$4840;
+		label$4843:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1756$4;
-				TMP$1756$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4842;
-				label$4845:;
+				int64 TMP$1757$4;
+				TMP$1757$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4846;
+				label$4849:;
 				{
-					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) ) goto label$4847;
+					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) ) goto label$4851;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll);
-						label$4847:;
+						label$4851:;
 					}
 				}
-				label$4843:;
+				label$4847:;
 				I$4 = I$4 + 1ll;
-				label$4842:;
-				if( I$4 <= TMP$1756$4 ) goto label$4845;
-				label$4844:;
+				label$4846:;
+				if( I$4 <= TMP$1757$4 ) goto label$4849;
+				label$4848:;
 			}
 			fb$result$1 = R$3;
-			goto label$4835;
+			goto label$4839;
 		}
-		label$4841:;
-		label$4836:;
+		label$4845:;
+		label$4840:;
 	}
-	label$4835:;
+	label$4839:;
 	return fb$result$1;
 }
 
@@ -26248,56 +26265,56 @@ double _ZNK4MATH7V3ARRAY11YMIN__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4848:;
+	label$4852:;
 	{
-		int64 TMP$1757$2;
-		TMP$1757$2 = *(int64*)THIS$1;
-		if( TMP$1757$2 != 0ll ) goto label$4851;
-		label$4852:;
+		int64 TMP$1758$2;
+		TMP$1758$2 = *(int64*)THIS$1;
+		if( TMP$1758$2 != 0ll ) goto label$4855;
+		label$4856:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4849;
+			goto label$4853;
 		}
-		goto label$4850;
-		label$4851:;
-		if( TMP$1757$2 != 1ll ) goto label$4853;
-		label$4854:;
+		goto label$4854;
+		label$4855:;
+		if( TMP$1758$2 != 1ll ) goto label$4857;
+		label$4858:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 8ll);
-			goto label$4849;
+			goto label$4853;
 		}
-		goto label$4850;
-		label$4853:;
+		goto label$4854;
+		label$4857:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 8ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1758$4;
-				TMP$1758$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4856;
-				label$4859:;
+				int64 TMP$1759$4;
+				TMP$1759$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4860;
+				label$4863:;
 				{
-					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) >= R$3 ) goto label$4861;
+					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) >= R$3 ) goto label$4865;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll);
-						label$4861:;
+						label$4865:;
 					}
 				}
-				label$4857:;
+				label$4861:;
 				I$4 = I$4 + 1ll;
-				label$4856:;
-				if( I$4 <= TMP$1758$4 ) goto label$4859;
-				label$4858:;
+				label$4860:;
+				if( I$4 <= TMP$1759$4 ) goto label$4863;
+				label$4862:;
 			}
 			fb$result$1 = R$3;
-			goto label$4849;
+			goto label$4853;
 		}
-		label$4855:;
-		label$4850:;
+		label$4859:;
+		label$4854:;
 	}
-	label$4849:;
+	label$4853:;
 	return fb$result$1;
 }
 
@@ -26305,56 +26322,56 @@ double _ZNK4MATH7V3ARRAY11ZMAX__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4862:;
+	label$4866:;
 	{
-		int64 TMP$1759$2;
-		TMP$1759$2 = *(int64*)THIS$1;
-		if( TMP$1759$2 != 0ll ) goto label$4865;
-		label$4866:;
+		int64 TMP$1760$2;
+		TMP$1760$2 = *(int64*)THIS$1;
+		if( TMP$1760$2 != 0ll ) goto label$4869;
+		label$4870:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4863;
+			goto label$4867;
 		}
-		goto label$4864;
-		label$4865:;
-		if( TMP$1759$2 != 1ll ) goto label$4867;
-		label$4868:;
+		goto label$4868;
+		label$4869:;
+		if( TMP$1760$2 != 1ll ) goto label$4871;
+		label$4872:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 16ll);
-			goto label$4863;
+			goto label$4867;
 		}
-		goto label$4864;
-		label$4867:;
+		goto label$4868;
+		label$4871:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 16ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1760$4;
-				TMP$1760$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4870;
-				label$4873:;
+				int64 TMP$1761$4;
+				TMP$1761$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4874;
+				label$4877:;
 				{
-					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) ) goto label$4875;
+					if( R$3 >= *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) ) goto label$4879;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll);
-						label$4875:;
+						label$4879:;
 					}
 				}
-				label$4871:;
+				label$4875:;
 				I$4 = I$4 + 1ll;
-				label$4870:;
-				if( I$4 <= TMP$1760$4 ) goto label$4873;
-				label$4872:;
+				label$4874:;
+				if( I$4 <= TMP$1761$4 ) goto label$4877;
+				label$4876:;
 			}
 			fb$result$1 = R$3;
-			goto label$4863;
+			goto label$4867;
 		}
-		label$4869:;
-		label$4864:;
+		label$4873:;
+		label$4868:;
 	}
-	label$4863:;
+	label$4867:;
 	return fb$result$1;
 }
 
@@ -26362,1171 +26379,1171 @@ double _ZNK4MATH7V3ARRAY11ZMIN__get__Ev( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	double fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 8ll );
-	label$4876:;
+	label$4880:;
 	{
-		int64 TMP$1761$2;
-		TMP$1761$2 = *(int64*)THIS$1;
-		if( TMP$1761$2 != 0ll ) goto label$4879;
-		label$4880:;
+		int64 TMP$1762$2;
+		TMP$1762$2 = *(int64*)THIS$1;
+		if( TMP$1762$2 != 0ll ) goto label$4883;
+		label$4884:;
 		{
 			fb$result$1 = 0x0p+0;
-			goto label$4877;
+			goto label$4881;
 		}
-		goto label$4878;
-		label$4879:;
-		if( TMP$1761$2 != 1ll ) goto label$4881;
-		label$4882:;
+		goto label$4882;
+		label$4883:;
+		if( TMP$1762$2 != 1ll ) goto label$4885;
+		label$4886:;
 		{
 			fb$result$1 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 16ll);
-			goto label$4877;
+			goto label$4881;
 		}
-		goto label$4878;
-		label$4881:;
+		goto label$4882;
+		label$4885:;
 		{
 			double R$3;
 			R$3 = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + 16ll);
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1762$4;
-				TMP$1762$4 = *(int64*)THIS$1 + -1ll;
-				goto label$4884;
-				label$4887:;
+				int64 TMP$1763$4;
+				TMP$1763$4 = *(int64*)THIS$1 + -1ll;
+				goto label$4888;
+				label$4891:;
 				{
-					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) >= R$3 ) goto label$4889;
+					if( *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) >= R$3 ) goto label$4893;
 					{
 						R$3 = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll);
-						label$4889:;
+						label$4893:;
 					}
 				}
-				label$4885:;
+				label$4889:;
 				I$4 = I$4 + 1ll;
-				label$4884:;
-				if( I$4 <= TMP$1762$4 ) goto label$4887;
-				label$4886:;
+				label$4888:;
+				if( I$4 <= TMP$1763$4 ) goto label$4891;
+				label$4890:;
 			}
 			fb$result$1 = R$3;
-			goto label$4877;
+			goto label$4881;
 		}
-		label$4883:;
-		label$4878:;
+		label$4887:;
+		label$4882:;
 	}
-	label$4877:;
+	label$4881:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY7FOREACHEPFvRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1622 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY7FOREACHEPFvRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1623 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4890:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4893;
+	label$4894:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4897;
 	{
-		if( F$1 == (tmp$1622)0ull ) goto label$4895;
+		if( F$1 == (tmp$1623)0ull ) goto label$4899;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4897;
+			if( *R$1 == (boolean)0ll ) goto label$4901;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4898;
-					label$4901:;
-					{
-						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-					}
-					label$4899:;
-					I$5 = I$5 + -1ll;
-					label$4898:;
-					if( I$5 >= 0ll ) goto label$4901;
-					label$4900:;
-				}
-			}
-			goto label$4896;
-			label$4897:;
-			{
-				{
-					int64 I$5;
-					I$5 = 0ll;
-					int64 TMP$1763$5;
-					TMP$1763$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4902;
 					label$4905:;
 					{
 						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
 					label$4903:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4902:;
-					if( I$5 <= TMP$1763$5 ) goto label$4905;
+					if( I$5 >= 0ll ) goto label$4905;
 					label$4904:;
 				}
 			}
-			label$4896:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4891;
-		}
-		label$4895:;
-		label$4894:;
-	}
-	label$4893:;
-	label$4892:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4891;
-	label$4891:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY7FOREACHEPFbRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1624 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4906:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4909;
-	{
-		if( F$1 == (tmp$1624)0ull ) goto label$4911;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4913;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4914;
-					label$4917:;
-					{
-						boolean vr$8 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-						if( vr$8 != (boolean)0ll ) goto label$4919;
-						{
-							goto label$4916;
-						}
-						label$4919:;
-						label$4918:;
-					}
-					label$4915:;
-					I$5 = I$5 + -1ll;
-					label$4914:;
-					if( I$5 >= 0ll ) goto label$4917;
-					label$4916:;
-				}
-			}
-			goto label$4912;
-			label$4913:;
+			goto label$4900;
+			label$4901:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1764$5;
 					TMP$1764$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4920;
-					label$4923:;
+					goto label$4906;
+					label$4909:;
 					{
-						boolean vr$15 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-						if( vr$15 != (boolean)0ll ) goto label$4925;
-						{
-							goto label$4922;
-						}
-						label$4925:;
-						label$4924:;
+						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
-					label$4921:;
+					label$4907:;
 					I$5 = I$5 + 1ll;
-					label$4920:;
-					if( I$5 <= TMP$1764$5 ) goto label$4923;
-					label$4922:;
+					label$4906:;
+					if( I$5 <= TMP$1764$5 ) goto label$4909;
+					label$4908:;
 				}
 			}
-			label$4912:;
+			label$4900:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4907;
+			goto label$4895;
 		}
-		label$4911:;
-		label$4910:;
+		label$4899:;
+		label$4898:;
 	}
-	label$4909:;
-	label$4908:;
+	label$4897:;
+	label$4896:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4907;
-	label$4907:;
+	goto label$4895;
+	label$4895:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY7FOREACHEPFvRNS_4VEC3ERKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1623 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY7FOREACHEPFbRNS_4VEC3EERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1625 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4926:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4929;
+	label$4910:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4913;
 	{
-		if( F$1 == (tmp$1623)0ull ) goto label$4931;
+		if( F$1 == (tmp$1625)0ull ) goto label$4915;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4933;
+			if( *R$1 == (boolean)0ll ) goto label$4917;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4934;
-					label$4937:;
+					goto label$4918;
+					label$4921:;
 					{
-						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						boolean vr$8 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+						if( vr$8 != (boolean)0ll ) goto label$4923;
+						{
+							goto label$4920;
+						}
+						label$4923:;
+						label$4922:;
 					}
-					label$4935:;
+					label$4919:;
 					I$5 = I$5 + -1ll;
-					label$4934:;
-					if( I$5 >= 0ll ) goto label$4937;
-					label$4936:;
+					label$4918:;
+					if( I$5 >= 0ll ) goto label$4921;
+					label$4920:;
 				}
 			}
-			goto label$4932;
-			label$4933:;
+			goto label$4916;
+			label$4917:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1765$5;
 					TMP$1765$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4924;
+					label$4927:;
+					{
+						boolean vr$15 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+						if( vr$15 != (boolean)0ll ) goto label$4929;
+						{
+							goto label$4926;
+						}
+						label$4929:;
+						label$4928:;
+					}
+					label$4925:;
+					I$5 = I$5 + 1ll;
+					label$4924:;
+					if( I$5 <= TMP$1765$5 ) goto label$4927;
+					label$4926:;
+				}
+			}
+			label$4916:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4911;
+		}
+		label$4915:;
+		label$4914:;
+	}
+	label$4913:;
+	label$4912:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4911;
+	label$4911:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY7FOREACHEPFvRNS_4VEC3ERKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1624 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4930:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4933;
+	{
+		if( F$1 == (tmp$1624)0ull ) goto label$4935;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4937;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4938;
 					label$4941:;
 					{
 						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
 					}
 					label$4939:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4938:;
-					if( I$5 <= TMP$1765$5 ) goto label$4941;
+					if( I$5 >= 0ll ) goto label$4941;
 					label$4940:;
 				}
 			}
-			label$4932:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4927;
-		}
-		label$4931:;
-		label$4930:;
-	}
-	label$4929:;
-	label$4928:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4927;
-	label$4927:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY7FOREACHEPFbRNS_4VEC3ERKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1625 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4942:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4945;
-	{
-		if( F$1 == (tmp$1625)0ull ) goto label$4947;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4949;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4950;
-					label$4953:;
-					{
-						boolean vr$9 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
-						if( vr$9 != (boolean)0ll ) goto label$4955;
-						{
-							goto label$4952;
-						}
-						label$4955:;
-						label$4954:;
-					}
-					label$4951:;
-					I$5 = I$5 + -1ll;
-					label$4950:;
-					if( I$5 >= 0ll ) goto label$4953;
-					label$4952:;
-				}
-			}
-			goto label$4948;
-			label$4949:;
+			goto label$4936;
+			label$4937:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1766$5;
 					TMP$1766$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4956;
-					label$4959:;
+					goto label$4942;
+					label$4945:;
 					{
-						boolean vr$17 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
-						if( vr$17 != (boolean)0ll ) goto label$4961;
-						{
-							goto label$4958;
-						}
-						label$4961:;
-						label$4960:;
+						(F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
 					}
-					label$4957:;
+					label$4943:;
 					I$5 = I$5 + 1ll;
-					label$4956:;
-					if( I$5 <= TMP$1766$5 ) goto label$4959;
-					label$4958:;
+					label$4942:;
+					if( I$5 <= TMP$1766$5 ) goto label$4945;
+					label$4944:;
 				}
 			}
-			label$4948:;
+			label$4936:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4943;
+			goto label$4931;
 		}
-		label$4947:;
-		label$4946:;
+		label$4935:;
+		label$4934:;
 	}
-	label$4945:;
-	label$4944:;
+	label$4933:;
+	label$4932:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4943;
-	label$4943:;
+	goto label$4931;
+	label$4931:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHXEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY7FOREACHEPFbRNS_4VEC3ERKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1626 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4962:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4965;
+	label$4946:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4949;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$4967;
+		if( F$1 == (tmp$1626)0ull ) goto label$4951;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$4969;
+			if( *R$1 == (boolean)0ll ) goto label$4953;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4970;
-					label$4973:;
+					goto label$4954;
+					label$4957:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+						boolean vr$9 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						if( vr$9 != (boolean)0ll ) goto label$4959;
+						{
+							goto label$4956;
+						}
+						label$4959:;
+						label$4958:;
 					}
-					label$4971:;
+					label$4955:;
 					I$5 = I$5 + -1ll;
-					label$4970:;
-					if( I$5 >= 0ll ) goto label$4973;
-					label$4972:;
+					label$4954:;
+					if( I$5 >= 0ll ) goto label$4957;
+					label$4956:;
 				}
 			}
-			goto label$4968;
-			label$4969:;
+			goto label$4952;
+			label$4953:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1767$5;
 					TMP$1767$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4960;
+					label$4963:;
+					{
+						boolean vr$17 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						if( vr$17 != (boolean)0ll ) goto label$4965;
+						{
+							goto label$4962;
+						}
+						label$4965:;
+						label$4964:;
+					}
+					label$4961:;
+					I$5 = I$5 + 1ll;
+					label$4960:;
+					if( I$5 <= TMP$1767$5 ) goto label$4963;
+					label$4962:;
+				}
+			}
+			label$4952:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4947;
+		}
+		label$4951:;
+		label$4950:;
+	}
+	label$4949:;
+	label$4948:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4947;
+	label$4947:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHXEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$4966:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4969;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$4971;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$4973;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$4974;
 					label$4977:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
 					label$4975:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$4974:;
-					if( I$5 <= TMP$1767$5 ) goto label$4977;
+					if( I$5 >= 0ll ) goto label$4977;
 					label$4976:;
 				}
 			}
-			label$4968:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4963;
-		}
-		label$4967:;
-		label$4966:;
-	}
-	label$4965:;
-	label$4964:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4963;
-	label$4963:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHXEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4978:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$4981;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$4983;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$4985;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4986;
-					label$4989:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-						if( vr$9 != (boolean)0ll ) goto label$4991;
-						{
-							goto label$4988;
-						}
-						label$4991:;
-						label$4990:;
-					}
-					label$4987:;
-					I$5 = I$5 + -1ll;
-					label$4986:;
-					if( I$5 >= 0ll ) goto label$4989;
-					label$4988:;
-				}
-			}
-			goto label$4984;
-			label$4985:;
+			goto label$4972;
+			label$4973:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1768$5;
 					TMP$1768$5 = *(int64*)THIS$1 + -1ll;
-					goto label$4992;
-					label$4995:;
+					goto label$4978;
+					label$4981:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
-						if( vr$17 != (boolean)0ll ) goto label$4997;
-						{
-							goto label$4994;
-						}
-						label$4997:;
-						label$4996:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
 					}
-					label$4993:;
+					label$4979:;
 					I$5 = I$5 + 1ll;
-					label$4992:;
-					if( I$5 <= TMP$1768$5 ) goto label$4995;
-					label$4994:;
+					label$4978:;
+					if( I$5 <= TMP$1768$5 ) goto label$4981;
+					label$4980:;
 				}
 			}
-			label$4984:;
+			label$4972:;
 			fb$result$1 = (boolean)1ll;
-			goto label$4979;
+			goto label$4967;
 		}
-		label$4983:;
-		label$4982:;
+		label$4971:;
+		label$4970:;
 	}
-	label$4981:;
-	label$4980:;
+	label$4969:;
+	label$4968:;
 	fb$result$1 = (boolean)0ll;
-	goto label$4979;
-	label$4979:;
+	goto label$4967;
+	label$4967:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHXEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHXEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$4998:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5001;
+	label$4982:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$4985;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$5003;
+		if( F$1 == (tmp$1296)0ull ) goto label$4987;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$5005;
+			if( *R$1 == (boolean)0ll ) goto label$4989;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5006;
-					label$5009:;
+					goto label$4990;
+					label$4993:;
 					{
-						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+						if( vr$9 != (boolean)0ll ) goto label$4995;
+						{
+							goto label$4992;
+						}
+						label$4995:;
+						label$4994:;
 					}
-					label$5007:;
+					label$4991:;
 					I$5 = I$5 + -1ll;
-					label$5006:;
-					if( I$5 >= 0ll ) goto label$5009;
-					label$5008:;
+					label$4990:;
+					if( I$5 >= 0ll ) goto label$4993;
+					label$4992:;
 				}
 			}
-			goto label$5004;
-			label$5005:;
+			goto label$4988;
+			label$4989:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1769$5;
 					TMP$1769$5 = *(int64*)THIS$1 + -1ll;
+					goto label$4996;
+					label$4999:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) );
+						if( vr$17 != (boolean)0ll ) goto label$5001;
+						{
+							goto label$4998;
+						}
+						label$5001:;
+						label$5000:;
+					}
+					label$4997:;
+					I$5 = I$5 + 1ll;
+					label$4996:;
+					if( I$5 <= TMP$1769$5 ) goto label$4999;
+					label$4998:;
+				}
+			}
+			label$4988:;
+			fb$result$1 = (boolean)1ll;
+			goto label$4983;
+		}
+		label$4987:;
+		label$4986:;
+	}
+	label$4985:;
+	label$4984:;
+	fb$result$1 = (boolean)0ll;
+	goto label$4983;
+	label$4983:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHXEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5002:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5005;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$5007;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5009;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$5010;
 					label$5013:;
 					{
 						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
 					}
 					label$5011:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$5010:;
-					if( I$5 <= TMP$1769$5 ) goto label$5013;
+					if( I$5 >= 0ll ) goto label$5013;
 					label$5012:;
 				}
 			}
-			label$5004:;
-			fb$result$1 = (boolean)1ll;
-			goto label$4999;
-		}
-		label$5003:;
-		label$5002:;
-	}
-	label$5001:;
-	label$5000:;
-	fb$result$1 = (boolean)0ll;
-	goto label$4999;
-	label$4999:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHXEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5014:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5017;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$5019;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$5021;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5022;
-					label$5025:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$5027;
-						{
-							goto label$5024;
-						}
-						label$5027:;
-						label$5026:;
-					}
-					label$5023:;
-					I$5 = I$5 + -1ll;
-					label$5022:;
-					if( I$5 >= 0ll ) goto label$5025;
-					label$5024:;
-				}
-			}
-			goto label$5020;
-			label$5021:;
+			goto label$5008;
+			label$5009:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1770$5;
 					TMP$1770$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5028;
-					label$5031:;
+					goto label$5014;
+					label$5017:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$5033;
-						{
-							goto label$5030;
-						}
-						label$5033:;
-						label$5032:;
+						(F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
 					}
-					label$5029:;
+					label$5015:;
 					I$5 = I$5 + 1ll;
-					label$5028:;
-					if( I$5 <= TMP$1770$5 ) goto label$5031;
-					label$5030:;
+					label$5014:;
+					if( I$5 <= TMP$1770$5 ) goto label$5017;
+					label$5016:;
 				}
 			}
-			label$5020:;
+			label$5008:;
 			fb$result$1 = (boolean)1ll;
-			goto label$5015;
+			goto label$5003;
 		}
-		label$5019:;
-		label$5018:;
+		label$5007:;
+		label$5006:;
 	}
-	label$5017:;
-	label$5016:;
+	label$5005:;
+	label$5004:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5015;
-	label$5015:;
+	goto label$5003;
+	label$5003:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHYEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHXEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5034:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5037;
+	label$5018:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5021;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$5039;
+		if( F$1 == (tmp$1297)0ull ) goto label$5023;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$5041;
+			if( *R$1 == (boolean)0ll ) goto label$5025;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5042;
-					label$5045:;
+					goto label$5026;
+					label$5029:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
+						boolean vr$10 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$5031;
+						{
+							goto label$5028;
+						}
+						label$5031:;
+						label$5030:;
 					}
-					label$5043:;
+					label$5027:;
 					I$5 = I$5 + -1ll;
-					label$5042:;
-					if( I$5 >= 0ll ) goto label$5045;
-					label$5044:;
+					label$5026:;
+					if( I$5 >= 0ll ) goto label$5029;
+					label$5028:;
 				}
 			}
-			goto label$5040;
-			label$5041:;
+			goto label$5024;
+			label$5025:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1771$5;
 					TMP$1771$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5032;
+					label$5035:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$5037;
+						{
+							goto label$5034;
+						}
+						label$5037:;
+						label$5036:;
+					}
+					label$5033:;
+					I$5 = I$5 + 1ll;
+					label$5032:;
+					if( I$5 <= TMP$1771$5 ) goto label$5035;
+					label$5034:;
+				}
+			}
+			label$5024:;
+			fb$result$1 = (boolean)1ll;
+			goto label$5019;
+		}
+		label$5023:;
+		label$5022:;
+	}
+	label$5021:;
+	label$5020:;
+	fb$result$1 = (boolean)0ll;
+	goto label$5019;
+	label$5019:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHYEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5038:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5041;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$5043;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5045;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$5046;
 					label$5049:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
 					}
 					label$5047:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$5046:;
-					if( I$5 <= TMP$1771$5 ) goto label$5049;
+					if( I$5 >= 0ll ) goto label$5049;
 					label$5048:;
 				}
 			}
-			label$5040:;
-			fb$result$1 = (boolean)1ll;
-			goto label$5035;
-		}
-		label$5039:;
-		label$5038:;
-	}
-	label$5037:;
-	label$5036:;
-	fb$result$1 = (boolean)0ll;
-	goto label$5035;
-	label$5035:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHYEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5050:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5053;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$5055;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$5057;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5058;
-					label$5061:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
-						if( vr$9 != (boolean)0ll ) goto label$5063;
-						{
-							goto label$5060;
-						}
-						label$5063:;
-						label$5062:;
-					}
-					label$5059:;
-					I$5 = I$5 + -1ll;
-					label$5058:;
-					if( I$5 >= 0ll ) goto label$5061;
-					label$5060:;
-				}
-			}
-			goto label$5056;
-			label$5057:;
+			goto label$5044;
+			label$5045:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1772$5;
 					TMP$1772$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5064;
-					label$5067:;
+					goto label$5050;
+					label$5053:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
-						if( vr$17 != (boolean)0ll ) goto label$5069;
-						{
-							goto label$5066;
-						}
-						label$5069:;
-						label$5068:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
 					}
-					label$5065:;
+					label$5051:;
 					I$5 = I$5 + 1ll;
-					label$5064:;
-					if( I$5 <= TMP$1772$5 ) goto label$5067;
-					label$5066:;
+					label$5050:;
+					if( I$5 <= TMP$1772$5 ) goto label$5053;
+					label$5052:;
 				}
 			}
-			label$5056:;
+			label$5044:;
 			fb$result$1 = (boolean)1ll;
-			goto label$5051;
+			goto label$5039;
 		}
-		label$5055:;
-		label$5054:;
+		label$5043:;
+		label$5042:;
 	}
-	label$5053:;
-	label$5052:;
+	label$5041:;
+	label$5040:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5051;
-	label$5051:;
+	goto label$5039;
+	label$5039:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHYEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHYEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5070:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5073;
+	label$5054:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5057;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$5075;
+		if( F$1 == (tmp$1296)0ull ) goto label$5059;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$5077;
+			if( *R$1 == (boolean)0ll ) goto label$5061;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5078;
-					label$5081:;
+					goto label$5062;
+					label$5065:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
+						if( vr$9 != (boolean)0ll ) goto label$5067;
+						{
+							goto label$5064;
+						}
+						label$5067:;
+						label$5066:;
 					}
-					label$5079:;
+					label$5063:;
 					I$5 = I$5 + -1ll;
-					label$5078:;
-					if( I$5 >= 0ll ) goto label$5081;
-					label$5080:;
+					label$5062:;
+					if( I$5 >= 0ll ) goto label$5065;
+					label$5064:;
 				}
 			}
-			goto label$5076;
-			label$5077:;
+			goto label$5060;
+			label$5061:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1773$5;
 					TMP$1773$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5068;
+					label$5071:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll) );
+						if( vr$17 != (boolean)0ll ) goto label$5073;
+						{
+							goto label$5070;
+						}
+						label$5073:;
+						label$5072:;
+					}
+					label$5069:;
+					I$5 = I$5 + 1ll;
+					label$5068:;
+					if( I$5 <= TMP$1773$5 ) goto label$5071;
+					label$5070:;
+				}
+			}
+			label$5060:;
+			fb$result$1 = (boolean)1ll;
+			goto label$5055;
+		}
+		label$5059:;
+		label$5058:;
+	}
+	label$5057:;
+	label$5056:;
+	fb$result$1 = (boolean)0ll;
+	goto label$5055;
+	label$5055:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHYEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5074:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5077;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$5079;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5081;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$5082;
 					label$5085:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
 					}
 					label$5083:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$5082:;
-					if( I$5 <= TMP$1773$5 ) goto label$5085;
+					if( I$5 >= 0ll ) goto label$5085;
 					label$5084:;
 				}
 			}
-			label$5076:;
-			fb$result$1 = (boolean)1ll;
-			goto label$5071;
-		}
-		label$5075:;
-		label$5074:;
-	}
-	label$5073:;
-	label$5072:;
-	fb$result$1 = (boolean)0ll;
-	goto label$5071;
-	label$5071:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHYEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5086:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5089;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$5091;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$5093;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5094;
-					label$5097:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$5099;
-						{
-							goto label$5096;
-						}
-						label$5099:;
-						label$5098:;
-					}
-					label$5095:;
-					I$5 = I$5 + -1ll;
-					label$5094:;
-					if( I$5 >= 0ll ) goto label$5097;
-					label$5096:;
-				}
-			}
-			goto label$5092;
-			label$5093:;
+			goto label$5080;
+			label$5081:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1774$5;
 					TMP$1774$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5100;
-					label$5103:;
+					goto label$5086;
+					label$5089:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$5105;
-						{
-							goto label$5102;
-						}
-						label$5105:;
-						label$5104:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
 					}
-					label$5101:;
+					label$5087:;
 					I$5 = I$5 + 1ll;
-					label$5100:;
-					if( I$5 <= TMP$1774$5 ) goto label$5103;
-					label$5102:;
+					label$5086:;
+					if( I$5 <= TMP$1774$5 ) goto label$5089;
+					label$5088:;
 				}
 			}
-			label$5092:;
+			label$5080:;
 			fb$result$1 = (boolean)1ll;
-			goto label$5087;
+			goto label$5075;
 		}
-		label$5091:;
-		label$5090:;
+		label$5079:;
+		label$5078:;
 	}
-	label$5089:;
-	label$5088:;
+	label$5077:;
+	label$5076:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5087;
-	label$5087:;
+	goto label$5075;
+	label$5075:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHZEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1293 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHYEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5106:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5109;
+	label$5090:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5093;
 	{
-		if( F$1 == (tmp$1293)0ull ) goto label$5111;
+		if( F$1 == (tmp$1297)0ull ) goto label$5095;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$5113;
+			if( *R$1 == (boolean)0ll ) goto label$5097;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5114;
-					label$5117:;
+					goto label$5098;
+					label$5101:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
+						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$5103;
+						{
+							goto label$5100;
+						}
+						label$5103:;
+						label$5102:;
 					}
-					label$5115:;
+					label$5099:;
 					I$5 = I$5 + -1ll;
-					label$5114:;
-					if( I$5 >= 0ll ) goto label$5117;
-					label$5116:;
+					label$5098:;
+					if( I$5 >= 0ll ) goto label$5101;
+					label$5100:;
 				}
 			}
-			goto label$5112;
-			label$5113:;
+			goto label$5096;
+			label$5097:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1775$5;
 					TMP$1775$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5104;
+					label$5107:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 8ll), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$5109;
+						{
+							goto label$5106;
+						}
+						label$5109:;
+						label$5108:;
+					}
+					label$5105:;
+					I$5 = I$5 + 1ll;
+					label$5104:;
+					if( I$5 <= TMP$1775$5 ) goto label$5107;
+					label$5106:;
+				}
+			}
+			label$5096:;
+			fb$result$1 = (boolean)1ll;
+			goto label$5091;
+		}
+		label$5095:;
+		label$5094:;
+	}
+	label$5093:;
+	label$5092:;
+	fb$result$1 = (boolean)0ll;
+	goto label$5091;
+	label$5091:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHZEPFvRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5110:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5113;
+	{
+		if( F$1 == (tmp$1294)0ull ) goto label$5115;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5117;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$5118;
 					label$5121:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
 					}
 					label$5119:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$5118:;
-					if( I$5 <= TMP$1775$5 ) goto label$5121;
+					if( I$5 >= 0ll ) goto label$5121;
 					label$5120:;
 				}
 			}
-			label$5112:;
-			fb$result$1 = (boolean)1ll;
-			goto label$5107;
-		}
-		label$5111:;
-		label$5110:;
-	}
-	label$5109:;
-	label$5108:;
-	fb$result$1 = (boolean)0ll;
-	goto label$5107;
-	label$5107:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHZEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5122:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5125;
-	{
-		if( F$1 == (tmp$1295)0ull ) goto label$5127;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$5129;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5130;
-					label$5133:;
-					{
-						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
-						if( vr$9 != (boolean)0ll ) goto label$5135;
-						{
-							goto label$5132;
-						}
-						label$5135:;
-						label$5134:;
-					}
-					label$5131:;
-					I$5 = I$5 + -1ll;
-					label$5130:;
-					if( I$5 >= 0ll ) goto label$5133;
-					label$5132:;
-				}
-			}
-			goto label$5128;
-			label$5129:;
+			goto label$5116;
+			label$5117:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1776$5;
 					TMP$1776$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5136;
-					label$5139:;
+					goto label$5122;
+					label$5125:;
 					{
-						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
-						if( vr$17 != (boolean)0ll ) goto label$5141;
-						{
-							goto label$5138;
-						}
-						label$5141:;
-						label$5140:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
 					}
-					label$5137:;
+					label$5123:;
 					I$5 = I$5 + 1ll;
-					label$5136:;
-					if( I$5 <= TMP$1776$5 ) goto label$5139;
-					label$5138:;
+					label$5122:;
+					if( I$5 <= TMP$1776$5 ) goto label$5125;
+					label$5124:;
 				}
 			}
-			label$5128:;
+			label$5116:;
 			fb$result$1 = (boolean)1ll;
-			goto label$5123;
+			goto label$5111;
 		}
-		label$5127:;
-		label$5126:;
+		label$5115:;
+		label$5114:;
 	}
-	label$5125:;
-	label$5124:;
+	label$5113:;
+	label$5112:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5123;
-	label$5123:;
+	goto label$5111;
+	label$5111:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY8FOREACHZEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1294 F$1, boolean* R$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHZEPFbRdERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5142:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5145;
+	label$5126:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5129;
 	{
-		if( F$1 == (tmp$1294)0ull ) goto label$5147;
+		if( F$1 == (tmp$1296)0ull ) goto label$5131;
 		{
-			if( *R$1 == (boolean)0ll ) goto label$5149;
+			if( *R$1 == (boolean)0ll ) goto label$5133;
 			{
 				{
 					int64 I$5;
 					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5150;
-					label$5153:;
+					goto label$5134;
+					label$5137:;
 					{
-						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
+						boolean vr$9 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
+						if( vr$9 != (boolean)0ll ) goto label$5139;
+						{
+							goto label$5136;
+						}
+						label$5139:;
+						label$5138:;
 					}
-					label$5151:;
+					label$5135:;
 					I$5 = I$5 + -1ll;
-					label$5150:;
-					if( I$5 >= 0ll ) goto label$5153;
-					label$5152:;
+					label$5134:;
+					if( I$5 >= 0ll ) goto label$5137;
+					label$5136:;
 				}
 			}
-			goto label$5148;
-			label$5149:;
+			goto label$5132;
+			label$5133:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1777$5;
 					TMP$1777$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5140;
+					label$5143:;
+					{
+						boolean vr$17 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll) );
+						if( vr$17 != (boolean)0ll ) goto label$5145;
+						{
+							goto label$5142;
+						}
+						label$5145:;
+						label$5144:;
+					}
+					label$5141:;
+					I$5 = I$5 + 1ll;
+					label$5140:;
+					if( I$5 <= TMP$1777$5 ) goto label$5143;
+					label$5142:;
+				}
+			}
+			label$5132:;
+			fb$result$1 = (boolean)1ll;
+			goto label$5127;
+		}
+		label$5131:;
+		label$5130:;
+	}
+	label$5129:;
+	label$5128:;
+	fb$result$1 = (boolean)0ll;
+	goto label$5127;
+	label$5127:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY8FOREACHZEPFvRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1295 F$1, boolean* R$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5146:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5149;
+	{
+		if( F$1 == (tmp$1295)0ull ) goto label$5151;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5153;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
 					goto label$5154;
 					label$5157:;
 					{
 						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
 					}
 					label$5155:;
-					I$5 = I$5 + 1ll;
+					I$5 = I$5 + -1ll;
 					label$5154:;
-					if( I$5 <= TMP$1777$5 ) goto label$5157;
+					if( I$5 >= 0ll ) goto label$5157;
 					label$5156:;
 				}
 			}
-			label$5148:;
-			fb$result$1 = (boolean)1ll;
-			goto label$5143;
-		}
-		label$5147:;
-		label$5146:;
-	}
-	label$5145:;
-	label$5144:;
-	fb$result$1 = (boolean)0ll;
-	goto label$5143;
-	label$5143:;
-	return fb$result$1;
-}
-
-boolean _ZN4MATH7V3ARRAY8FOREACHZEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1296 F$1, boolean* R$1 )
-{
-	boolean fb$result$1;
-	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5158:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5161;
-	{
-		if( F$1 == (tmp$1296)0ull ) goto label$5163;
-		{
-			if( *R$1 == (boolean)0ll ) goto label$5165;
-			{
-				{
-					int64 I$5;
-					I$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5166;
-					label$5169:;
-					{
-						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
-						if( vr$10 != (boolean)0ll ) goto label$5171;
-						{
-							goto label$5168;
-						}
-						label$5171:;
-						label$5170:;
-					}
-					label$5167:;
-					I$5 = I$5 + -1ll;
-					label$5166:;
-					if( I$5 >= 0ll ) goto label$5169;
-					label$5168:;
-				}
-			}
-			goto label$5164;
-			label$5165:;
+			goto label$5152;
+			label$5153:;
 			{
 				{
 					int64 I$5;
 					I$5 = 0ll;
 					int64 TMP$1778$5;
 					TMP$1778$5 = *(int64*)THIS$1 + -1ll;
-					goto label$5172;
-					label$5175:;
+					goto label$5158;
+					label$5161:;
 					{
-						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
-						if( vr$19 != (boolean)0ll ) goto label$5177;
-						{
-							goto label$5174;
-						}
-						label$5177:;
-						label$5176:;
+						(F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
 					}
-					label$5173:;
+					label$5159:;
 					I$5 = I$5 + 1ll;
-					label$5172:;
-					if( I$5 <= TMP$1778$5 ) goto label$5175;
-					label$5174:;
+					label$5158:;
+					if( I$5 <= TMP$1778$5 ) goto label$5161;
+					label$5160:;
 				}
 			}
-			label$5164:;
+			label$5152:;
 			fb$result$1 = (boolean)1ll;
-			goto label$5159;
+			goto label$5147;
 		}
-		label$5163:;
-		label$5162:;
+		label$5151:;
+		label$5150:;
 	}
-	label$5161:;
-	label$5160:;
+	label$5149:;
+	label$5148:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5159;
-	label$5159:;
+	goto label$5147;
+	label$5147:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY3MAPERS0_PFNS_4VEC3ERKS2_E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1, tmp$1626 F$1 )
+boolean _ZN4MATH7V3ARRAY8FOREACHZEPFbRdRKu7INTEGERERKb( struct $N4MATH7V3ARRAYE* THIS$1, tmp$1297 F$1, boolean* R$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5178:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5181;
+	label$5162:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5165;
 	{
-		if( F$1 == (tmp$1626)0ull ) goto label$5183;
+		if( F$1 == (tmp$1297)0ull ) goto label$5167;
+		{
+			if( *R$1 == (boolean)0ll ) goto label$5169;
+			{
+				{
+					int64 I$5;
+					I$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5170;
+					label$5173:;
+					{
+						boolean vr$10 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
+						if( vr$10 != (boolean)0ll ) goto label$5175;
+						{
+							goto label$5172;
+						}
+						label$5175:;
+						label$5174:;
+					}
+					label$5171:;
+					I$5 = I$5 + -1ll;
+					label$5170:;
+					if( I$5 >= 0ll ) goto label$5173;
+					label$5172:;
+				}
+			}
+			goto label$5168;
+			label$5169:;
+			{
+				{
+					int64 I$5;
+					I$5 = 0ll;
+					int64 TMP$1779$5;
+					TMP$1779$5 = *(int64*)THIS$1 + -1ll;
+					goto label$5176;
+					label$5179:;
+					{
+						boolean vr$19 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$5 * 24ll)) + 16ll), (int64*)&I$5 );
+						if( vr$19 != (boolean)0ll ) goto label$5181;
+						{
+							goto label$5178;
+						}
+						label$5181:;
+						label$5180:;
+					}
+					label$5177:;
+					I$5 = I$5 + 1ll;
+					label$5176:;
+					if( I$5 <= TMP$1779$5 ) goto label$5179;
+					label$5178:;
+				}
+			}
+			label$5168:;
+			fb$result$1 = (boolean)1ll;
+			goto label$5163;
+		}
+		label$5167:;
+		label$5166:;
+	}
+	label$5165:;
+	label$5164:;
+	fb$result$1 = (boolean)0ll;
+	goto label$5163;
+	label$5163:;
+	return fb$result$1;
+}
+
+boolean _ZN4MATH7V3ARRAY3MAPERS0_PFNS_4VEC3ERKS2_E( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1, tmp$1627 F$1 )
+{
+	boolean fb$result$1;
+	__builtin_memset( &fb$result$1, 0, 1ll );
+	label$5182:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5185;
+	{
+		if( F$1 == (tmp$1627)0ull ) goto label$5187;
 		{
 			_ZN4MATH7V3ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1779$4;
-				TMP$1779$4 = *(int64*)THIS$1 + -1ll;
-				goto label$5184;
-				label$5187:;
+				int64 TMP$1780$4;
+				TMP$1780$4 = *(int64*)THIS$1 + -1ll;
+				goto label$5188;
+				label$5191:;
 				{
-					struct $N4MATH4VEC3E TMP$1780$5;
+					struct $N4MATH4VEC3E TMP$1781$5;
 					struct $N4MATH4VEC3E vr$9 = (F$1)( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
-					TMP$1780$5 = vr$9;
-					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)&TMP$1780$5 );
+					TMP$1781$5 = vr$9;
+					_ZN4MATH4VEC3aSERKS0_( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)A$1 + 8ll) + (I$4 * 24ll)), (struct $N4MATH4VEC3E*)&TMP$1781$5 );
 				}
-				label$5185:;
+				label$5189:;
 				I$4 = I$4 + 1ll;
-				label$5184:;
-				if( I$4 <= TMP$1779$4 ) goto label$5187;
-				label$5186:;
+				label$5188:;
+				if( I$4 <= TMP$1780$4 ) goto label$5191;
+				label$5190:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$5179;
+			goto label$5183;
 		}
-		label$5183:;
-		label$5182:;
+		label$5187:;
+		label$5186:;
 	}
-	label$5181:;
-	label$5180:;
+	label$5185:;
+	label$5184:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5179;
-	label$5179:;
+	goto label$5183;
+	label$5183:;
 	return fb$result$1;
 }
 
@@ -27534,8 +27551,8 @@ boolean _ZN4MATH7V3ARRAY4MAPXERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5188:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5191;
+	label$5192:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5195;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -27544,38 +27561,38 @@ boolean _ZN4MATH7V3ARRAY4MAPXERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1781$3;
-			TMP$1781$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5192;
-			label$5195:;
+			int64 TMP$1782$3;
+			TMP$1782$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5196;
+			label$5199:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll));
 			}
-			label$5193:;
+			label$5197:;
 			I$3 = I$3 + 1ll;
-			label$5192:;
-			if( I$3 <= TMP$1781$3 ) goto label$5195;
-			label$5194:;
+			label$5196:;
+			if( I$3 <= TMP$1782$3 ) goto label$5199;
+			label$5198:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$5189;
+		goto label$5193;
 	}
-	label$5191:;
-	label$5190:;
+	label$5195:;
+	label$5194:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5189;
-	label$5189:;
+	goto label$5193;
+	label$5193:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZN4MATH7V3ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5196:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5199;
+	label$5200:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5203;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$5201;
+		if( F$1 == (tmp$1298)0ull ) goto label$5205;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -27584,31 +27601,31 @@ boolean _ZN4MATH7V3ARRAY4MAPXERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1782$4;
-				TMP$1782$4 = *(int64*)THIS$1 + -1ll;
-				goto label$5202;
-				label$5205:;
+				int64 TMP$1783$4;
+				TMP$1783$4 = *(int64*)THIS$1 + -1ll;
+				goto label$5206;
+				label$5209:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$5203:;
+				label$5207:;
 				I$4 = I$4 + 1ll;
-				label$5202:;
-				if( I$4 <= TMP$1782$4 ) goto label$5205;
-				label$5204:;
+				label$5206:;
+				if( I$4 <= TMP$1783$4 ) goto label$5209;
+				label$5208:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$5197;
+			goto label$5201;
 		}
-		label$5201:;
-		label$5200:;
+		label$5205:;
+		label$5204:;
 	}
-	label$5199:;
-	label$5198:;
+	label$5203:;
+	label$5202:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5197;
-	label$5197:;
+	goto label$5201;
+	label$5201:;
 	return fb$result$1;
 }
 
@@ -27616,8 +27633,8 @@ boolean _ZN4MATH7V3ARRAY4MAPYERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5206:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5209;
+	label$5210:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5213;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -27626,38 +27643,38 @@ boolean _ZN4MATH7V3ARRAY4MAPYERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1783$3;
-			TMP$1783$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5210;
-			label$5213:;
+			int64 TMP$1784$3;
+			TMP$1784$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5214;
+			label$5217:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 8ll);
 			}
-			label$5211:;
+			label$5215:;
 			I$3 = I$3 + 1ll;
-			label$5210:;
-			if( I$3 <= TMP$1783$3 ) goto label$5213;
-			label$5212:;
+			label$5214:;
+			if( I$3 <= TMP$1784$3 ) goto label$5217;
+			label$5216:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$5207;
+		goto label$5211;
 	}
-	label$5209:;
-	label$5208:;
+	label$5213:;
+	label$5212:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5207;
-	label$5207:;
+	goto label$5211;
+	label$5211:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZN4MATH7V3ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5214:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5217;
+	label$5218:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5221;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$5219;
+		if( F$1 == (tmp$1298)0ull ) goto label$5223;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -27666,31 +27683,31 @@ boolean _ZN4MATH7V3ARRAY4MAPYERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1784$4;
-				TMP$1784$4 = *(int64*)THIS$1 + -1ll;
-				goto label$5220;
-				label$5223:;
+				int64 TMP$1785$4;
+				TMP$1785$4 = *(int64*)THIS$1 + -1ll;
+				goto label$5224;
+				label$5227:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 8ll) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$5221:;
+				label$5225:;
 				I$4 = I$4 + 1ll;
-				label$5220:;
-				if( I$4 <= TMP$1784$4 ) goto label$5223;
-				label$5222:;
+				label$5224:;
+				if( I$4 <= TMP$1785$4 ) goto label$5227;
+				label$5226:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$5215;
+			goto label$5219;
 		}
-		label$5219:;
-		label$5218:;
+		label$5223:;
+		label$5222:;
 	}
-	label$5217:;
-	label$5216:;
+	label$5221:;
+	label$5220:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5215;
-	label$5215:;
+	goto label$5219;
+	label$5219:;
 	return fb$result$1;
 }
 
@@ -27698,8 +27715,8 @@ boolean _ZN4MATH7V3ARRAY4MAPZERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5224:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5227;
+	label$5228:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5231;
 	{
 		_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 		double* P$2;
@@ -27708,38 +27725,38 @@ boolean _ZN4MATH7V3ARRAY4MAPZERNS_5ARRAYE( struct $N4MATH7V3ARRAYE* THIS$1, stru
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1785$3;
-			TMP$1785$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5228;
-			label$5231:;
+			int64 TMP$1786$3;
+			TMP$1786$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5232;
+			label$5235:;
 			{
 				*(double*)((uint8*)P$2 + (I$3 << (3ll & 63ll))) = *(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) + 16ll);
 			}
-			label$5229:;
+			label$5233:;
 			I$3 = I$3 + 1ll;
-			label$5228:;
-			if( I$3 <= TMP$1785$3 ) goto label$5231;
-			label$5230:;
+			label$5232:;
+			if( I$3 <= TMP$1786$3 ) goto label$5235;
+			label$5234:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$5225;
+		goto label$5229;
 	}
-	label$5227:;
-	label$5226:;
+	label$5231:;
+	label$5230:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5225;
-	label$5225:;
+	goto label$5229;
+	label$5229:;
 	return fb$result$1;
 }
 
-boolean _ZN4MATH7V3ARRAY4MAPZERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1297 F$1 )
+boolean _ZN4MATH7V3ARRAY4MAPZERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A$1, tmp$1298 F$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5232:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5235;
+	label$5236:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5239;
 	{
-		if( F$1 == (tmp$1297)0ull ) goto label$5237;
+		if( F$1 == (tmp$1298)0ull ) goto label$5241;
 		{
 			_ZN4MATH5ARRAY13LENGTH__set__ERKu7INTEGER( A$1, (int64*)THIS$1 );
 			double* P$3;
@@ -27748,31 +27765,31 @@ boolean _ZN4MATH7V3ARRAY4MAPZERNS_5ARRAYEPFdRKdE( struct $N4MATH7V3ARRAYE* THIS$
 			{
 				int64 I$4;
 				I$4 = 0ll;
-				int64 TMP$1786$4;
-				TMP$1786$4 = *(int64*)THIS$1 + -1ll;
-				goto label$5238;
-				label$5241:;
+				int64 TMP$1787$4;
+				TMP$1787$4 = *(int64*)THIS$1 + -1ll;
+				goto label$5242;
+				label$5245:;
 				{
 					double vr$11 = (F$1)( (double*)((uint8*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)) + 16ll) );
 					*(double*)((uint8*)P$3 + (I$4 << (3ll & 63ll))) = vr$11;
 				}
-				label$5239:;
+				label$5243:;
 				I$4 = I$4 + 1ll;
-				label$5238:;
-				if( I$4 <= TMP$1786$4 ) goto label$5241;
-				label$5240:;
+				label$5242:;
+				if( I$4 <= TMP$1787$4 ) goto label$5245;
+				label$5244:;
 			}
 			fb$result$1 = (boolean)1ll;
-			goto label$5233;
+			goto label$5237;
 		}
-		label$5237:;
-		label$5236:;
+		label$5241:;
+		label$5240:;
 	}
-	label$5235:;
-	label$5234:;
+	label$5239:;
+	label$5238:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5233;
-	label$5233:;
+	goto label$5237;
+	label$5237:;
 	return fb$result$1;
 }
 
@@ -27780,33 +27797,33 @@ boolean _ZN4MATH7V3ARRAY9NORMALISEEv( struct $N4MATH7V3ARRAYE* THIS$1 )
 {
 	boolean fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 1ll );
-	label$5242:;
-	if( *(int64*)THIS$1 == 0ll ) goto label$5245;
+	label$5246:;
+	if( *(int64*)THIS$1 == 0ll ) goto label$5249;
 	{
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1787$3;
-			TMP$1787$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5246;
-			label$5249:;
+			int64 TMP$1788$3;
+			TMP$1788$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5250;
+			label$5253:;
 			{
 				_ZN4MATH4VEC39NORMALISEEv( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$3 * 24ll)) );
 			}
-			label$5247:;
+			label$5251:;
 			I$3 = I$3 + 1ll;
-			label$5246:;
-			if( I$3 <= TMP$1787$3 ) goto label$5249;
-			label$5248:;
+			label$5250:;
+			if( I$3 <= TMP$1788$3 ) goto label$5253;
+			label$5252:;
 		}
 		fb$result$1 = (boolean)1ll;
-		goto label$5243;
+		goto label$5247;
 	}
-	label$5245:;
-	label$5244:;
+	label$5249:;
+	label$5248:;
 	fb$result$1 = (boolean)0ll;
-	goto label$5243;
-	label$5243:;
+	goto label$5247;
+	label$5247:;
 	return fb$result$1;
 }
 
@@ -27814,75 +27831,75 @@ FBSTRING* _ZNK4MATH7V3ARRAY6TOJSONERKb( struct $N4MATH7V3ARRAYE* THIS$1, boolean
 {
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$5250:;
+	label$5254:;
 	{
-		int64 TMP$1788$2;
-		TMP$1788$2 = *(int64*)THIS$1;
-		if( TMP$1788$2 != 0ll ) goto label$5253;
-		label$5254:;
+		int64 TMP$1789$2;
+		TMP$1789$2 = *(int64*)THIS$1;
+		if( TMP$1789$2 != 0ll ) goto label$5257;
+		label$5258:;
 		{
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)"[]", 3ll, 0 );
-			goto label$5251;
+			goto label$5255;
 		}
-		goto label$5252;
-		label$5253:;
-		if( TMP$1788$2 != 1ll ) goto label$5255;
-		label$5256:;
+		goto label$5256;
+		label$5257:;
+		if( TMP$1789$2 != 1ll ) goto label$5259;
+		label$5260:;
 		{
-			FBSTRING TMP$1789$3;
 			FBSTRING TMP$1790$3;
-			FBSTRING* vr$4 = _ZNK4MATH4VEC36TOJSONERKb( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1789$3, 0, 24ll );
-			FBSTRING* vr$7 = fb_StrConcat( &TMP$1789$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
-			__builtin_memset( &TMP$1790$3, 0, 24ll );
-			FBSTRING* vr$10 = fb_StrConcat( &TMP$1790$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
-			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
-			goto label$5251;
-		}
-		goto label$5252;
-		label$5255:;
-		{
 			FBSTRING TMP$1791$3;
-			FBSTRING TMP$1795$3;
+			FBSTRING* vr$4 = _ZNK4MATH4VEC36TOJSONERKb( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), A$1 );
+			__builtin_memset( &TMP$1790$3, 0, 24ll );
+			FBSTRING* vr$7 = fb_StrConcat( &TMP$1790$3, (void*)"[", 2ll, (void*)vr$4, -1ll );
+			__builtin_memset( &TMP$1791$3, 0, 24ll );
+			FBSTRING* vr$10 = fb_StrConcat( &TMP$1791$3, (void*)vr$7, -1ll, (void*)"]", 2ll );
+			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$10, -1ll, 0 );
+			goto label$5255;
+		}
+		goto label$5256;
+		label$5259:;
+		{
+			FBSTRING TMP$1792$3;
+			FBSTRING TMP$1796$3;
 			FBSTRING R$3;
 			FBSTRING* vr$13 = _ZNK4MATH4VEC36TOJSONERKb( *(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll), A$1 );
-			__builtin_memset( &TMP$1791$3, 0, 24ll );
-			FBSTRING* vr$16 = fb_StrConcat( &TMP$1791$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
+			__builtin_memset( &TMP$1792$3, 0, 24ll );
+			FBSTRING* vr$16 = fb_StrConcat( &TMP$1792$3, (void*)"[", 2ll, (void*)vr$13, -1ll );
 			fb_StrInit( (void*)&R$3, -1ll, (void*)vr$16, -1ll, 0 );
 			{
 				int64 I$4;
 				I$4 = 1ll;
-				int64 TMP$1792$4;
-				TMP$1792$4 = *(int64*)THIS$1 + -1ll;
-				goto label$5258;
-				label$5261:;
+				int64 TMP$1793$4;
+				TMP$1793$4 = *(int64*)THIS$1 + -1ll;
+				goto label$5262;
+				label$5265:;
 				{
-					FBSTRING TMP$1793$5;
 					FBSTRING TMP$1794$5;
+					FBSTRING TMP$1795$5;
 					FBSTRING* vr$23 = _ZNK4MATH4VEC36TOJSONERKb( (struct $N4MATH4VEC3E*)((uint8*)*(struct $N4MATH4VEC3E**)((uint8*)THIS$1 + 8ll) + (I$4 * 24ll)), A$1 );
-					__builtin_memset( &TMP$1793$5, 0, 24ll );
-					FBSTRING* vr$26 = fb_StrConcat( &TMP$1793$5, (void*)",", 2ll, (void*)vr$23, -1ll );
 					__builtin_memset( &TMP$1794$5, 0, 24ll );
-					FBSTRING* vr$30 = fb_StrConcat( &TMP$1794$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
+					FBSTRING* vr$26 = fb_StrConcat( &TMP$1794$5, (void*)",", 2ll, (void*)vr$23, -1ll );
+					__builtin_memset( &TMP$1795$5, 0, 24ll );
+					FBSTRING* vr$30 = fb_StrConcat( &TMP$1795$5, (void*)&R$3, -1ll, (void*)vr$26, -1ll );
 					fb_StrAssign( (void*)&R$3, -1ll, (void*)vr$30, -1ll, 0 );
 				}
-				label$5259:;
+				label$5263:;
 				I$4 = I$4 + 1ll;
-				label$5258:;
-				if( I$4 <= TMP$1792$4 ) goto label$5261;
-				label$5260:;
+				label$5262:;
+				if( I$4 <= TMP$1793$4 ) goto label$5265;
+				label$5264:;
 			}
-			__builtin_memset( &TMP$1795$3, 0, 24ll );
-			FBSTRING* vr$36 = fb_StrConcat( &TMP$1795$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
+			__builtin_memset( &TMP$1796$3, 0, 24ll );
+			FBSTRING* vr$36 = fb_StrConcat( &TMP$1796$3, (void*)&R$3, -1ll, (void*)"]", 2ll );
 			fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$36, -1ll, 0 );
 			fb_StrDelete( (FBSTRING*)&R$3 );
-			goto label$5251;
+			goto label$5255;
 			fb_StrDelete( (FBSTRING*)&R$3 );
 		}
-		label$5257:;
-		label$5252:;
+		label$5261:;
+		label$5256:;
 	}
-	label$5251:;
+	label$5255:;
 	FBSTRING* vr$41 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$41;
 }
@@ -27892,36 +27909,36 @@ void _ZN4MATH7V4ARRAYC1Ev( struct $N4MATH7V4ARRAYE* THIS$1 )
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	label$5262:;
-	label$5263:;
+	label$5266:;
+	label$5267:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKNS_5ARRAYES3_S3_S3_( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH5ARRAYE* A1$1, struct $N4MATH5ARRAYE* A2$1, struct $N4MATH5ARRAYE* A3$1, struct $N4MATH5ARRAYE* A4$1 )
 {
-	label$5264:;
+	label$5268:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( ((((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) & (int64)-(*(int64*)A2$1 == *(int64*)A3$1)) & (int64)-(*(int64*)A3$1 == *(int64*)A4$1)) == 0ll ) goto label$5267;
+	if( ((((int64)-(*(int64*)A1$1 > 0ll) & (int64)-(*(int64*)A1$1 == *(int64*)A2$1)) & (int64)-(*(int64*)A2$1 == *(int64*)A3$1)) & (int64)-(*(int64*)A3$1 == *(int64*)A4$1)) == 0ll ) goto label$5271;
 	{
-		struct $N4MATH4VEC4E* TMP$1801$2;
-		uint64 TMP$1802$2;
-		struct $N4MATH4VEC4E* TMP$1803$2;
+		struct $N4MATH4VEC4E* TMP$1802$2;
+		uint64 TMP$1803$2;
+		struct $N4MATH4VEC4E* TMP$1804$2;
 		*(int64*)THIS$1 = *(int64*)A1$1;
 		void* vr$24 = malloc( *(uint64*)A1$1 << (5ull & 63ll) );
-		TMP$1801$2 = (struct $N4MATH4VEC4E*)vr$24;
-		if( TMP$1801$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5268;
-		TMP$1803$2 = TMP$1801$2;
-		TMP$1802$2 = *(uint64*)A1$1;
-		label$5269:;
-		if( TMP$1802$2 == 0ull ) goto label$5270;
-		_ZN4MATH4VEC4C1Ev( TMP$1803$2 );
-		TMP$1803$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1803$2 + 32ll);
-		TMP$1802$2 = TMP$1802$2 + 18446744073709551615ull;
-		goto label$5269;
-		label$5270:;
-		label$5268:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1801$2;
+		TMP$1802$2 = (struct $N4MATH4VEC4E*)vr$24;
+		if( TMP$1802$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5272;
+		TMP$1804$2 = TMP$1802$2;
+		TMP$1803$2 = *(uint64*)A1$1;
+		label$5273:;
+		if( TMP$1803$2 == 0ull ) goto label$5274;
+		_ZN4MATH4VEC4C1Ev( TMP$1804$2 );
+		TMP$1804$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1804$2 + 32ll);
+		TMP$1803$2 = TMP$1803$2 + 18446744073709551615ull;
+		goto label$5273;
+		label$5274:;
+		label$5272:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1802$2;
 		double* P1$2;
 		double* vr$29 = _ZNK4MATH5ARRAY11DATA__get__Ev( A1$1 );
 		P1$2 = vr$29;
@@ -27937,106 +27954,106 @@ void _ZN4MATH7V4ARRAYC1ERKNS_5ARRAYES3_S3_S3_( struct $N4MATH7V4ARRAYE* THIS$1, 
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1804$3;
-			TMP$1804$3 = *(int64*)A1$1 + -1ll;
-			goto label$5271;
-			label$5274:;
+			int64 TMP$1805$3;
+			TMP$1805$3 = *(int64*)A1$1 + -1ll;
+			goto label$5275;
+			label$5278:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) = *(double*)((uint8*)P1$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 8ll) = *(double*)((uint8*)P2$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 16ll) = *(double*)((uint8*)P3$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 24ll) = *(double*)((uint8*)P4$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$5272:;
+			label$5276:;
 			I$3 = I$3 + 1ll;
-			label$5271:;
-			if( I$3 <= TMP$1804$3 ) goto label$5274;
-			label$5273:;
+			label$5275:;
+			if( I$3 <= TMP$1805$3 ) goto label$5278;
+			label$5277:;
 		}
 	}
-	label$5267:;
-	label$5266:;
-	label$5265:;
+	label$5271:;
+	label$5270:;
+	label$5269:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKNS_7V2ARRAYE( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A$1 )
 {
-	label$5275:;
+	label$5279:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$5278;
+	if( *(int64*)A$1 == 0ll ) goto label$5282;
 	{
-		struct $N4MATH4VEC4E* TMP$1805$2;
-		uint64 TMP$1806$2;
-		struct $N4MATH4VEC4E* TMP$1807$2;
+		struct $N4MATH4VEC4E* TMP$1806$2;
+		uint64 TMP$1807$2;
+		struct $N4MATH4VEC4E* TMP$1808$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (5ull & 63ll) );
-		TMP$1805$2 = (struct $N4MATH4VEC4E*)vr$11;
-		if( TMP$1805$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5279;
-		TMP$1807$2 = TMP$1805$2;
-		TMP$1806$2 = *(uint64*)A$1;
-		label$5280:;
-		if( TMP$1806$2 == 0ull ) goto label$5281;
-		_ZN4MATH4VEC4C1Ev( TMP$1807$2 );
-		TMP$1807$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1807$2 + 32ll);
-		TMP$1806$2 = TMP$1806$2 + 18446744073709551615ull;
-		goto label$5280;
-		label$5281:;
-		label$5279:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1805$2;
+		TMP$1806$2 = (struct $N4MATH4VEC4E*)vr$11;
+		if( TMP$1806$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5283;
+		TMP$1808$2 = TMP$1806$2;
+		TMP$1807$2 = *(uint64*)A$1;
+		label$5284:;
+		if( TMP$1807$2 == 0ull ) goto label$5285;
+		_ZN4MATH4VEC4C1Ev( TMP$1808$2 );
+		TMP$1808$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1808$2 + 32ll);
+		TMP$1807$2 = TMP$1807$2 + 18446744073709551615ull;
+		goto label$5284;
+		label$5285:;
+		label$5283:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1806$2;
 		struct $N4MATH4VEC2E* P$2;
 		struct $N4MATH4VEC2E* vr$16 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A$1 );
 		P$2 = vr$16;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1808$3;
-			TMP$1808$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5282;
-			label$5285:;
+			int64 TMP$1809$3;
+			TMP$1809$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5286;
+			label$5289:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) = *(double*)((uint8*)P$2 + (I$3 << (4ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)P$2 + (I$3 << (4ll & 63ll))) + 8ll);
 			}
-			label$5283:;
+			label$5287:;
 			I$3 = I$3 + 1ll;
-			label$5282:;
-			if( I$3 <= TMP$1808$3 ) goto label$5285;
-			label$5284:;
+			label$5286:;
+			if( I$3 <= TMP$1809$3 ) goto label$5289;
+			label$5288:;
 		}
 	}
-	label$5278:;
-	label$5277:;
-	label$5276:;
+	label$5282:;
+	label$5281:;
+	label$5280:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKNS_7V2ARRAYERKNS_5ARRAYES6_( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH7V2ARRAYE* A12$1, struct $N4MATH5ARRAYE* A3$1, struct $N4MATH5ARRAYE* A4$1 )
 {
-	label$5286:;
+	label$5290:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( (((int64)-(*(int64*)A12$1 > 0ll) & (int64)-(*(int64*)A12$1 == *(int64*)A3$1)) & (int64)-(*(int64*)A3$1 == *(int64*)A4$1)) == 0ll ) goto label$5289;
+	if( (((int64)-(*(int64*)A12$1 > 0ll) & (int64)-(*(int64*)A12$1 == *(int64*)A3$1)) & (int64)-(*(int64*)A3$1 == *(int64*)A4$1)) == 0ll ) goto label$5293;
 	{
-		struct $N4MATH4VEC4E* TMP$1809$2;
-		uint64 TMP$1810$2;
-		struct $N4MATH4VEC4E* TMP$1811$2;
+		struct $N4MATH4VEC4E* TMP$1810$2;
+		uint64 TMP$1811$2;
+		struct $N4MATH4VEC4E* TMP$1812$2;
 		*(int64*)THIS$1 = *(int64*)A12$1;
 		void* vr$20 = malloc( *(uint64*)A12$1 << (5ull & 63ll) );
-		TMP$1809$2 = (struct $N4MATH4VEC4E*)vr$20;
-		if( TMP$1809$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5290;
-		TMP$1811$2 = TMP$1809$2;
-		TMP$1810$2 = *(uint64*)A12$1;
-		label$5291:;
-		if( TMP$1810$2 == 0ull ) goto label$5292;
-		_ZN4MATH4VEC4C1Ev( TMP$1811$2 );
-		TMP$1811$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1811$2 + 32ll);
-		TMP$1810$2 = TMP$1810$2 + 18446744073709551615ull;
-		goto label$5291;
-		label$5292:;
-		label$5290:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1809$2;
+		TMP$1810$2 = (struct $N4MATH4VEC4E*)vr$20;
+		if( TMP$1810$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5294;
+		TMP$1812$2 = TMP$1810$2;
+		TMP$1811$2 = *(uint64*)A12$1;
+		label$5295:;
+		if( TMP$1811$2 == 0ull ) goto label$5296;
+		_ZN4MATH4VEC4C1Ev( TMP$1812$2 );
+		TMP$1812$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1812$2 + 32ll);
+		TMP$1811$2 = TMP$1811$2 + 18446744073709551615ull;
+		goto label$5295;
+		label$5296:;
+		label$5294:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1810$2;
 		struct $N4MATH4VEC2E* P12$2;
 		struct $N4MATH4VEC2E* vr$25 = _ZNK4MATH7V2ARRAY11DATA__get__Ev( A12$1 );
 		P12$2 = vr$25;
@@ -28049,107 +28066,107 @@ void _ZN4MATH7V4ARRAYC1ERKNS_7V2ARRAYERKNS_5ARRAYES6_( struct $N4MATH7V4ARRAYE* 
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1812$3;
-			TMP$1812$3 = *(int64*)A12$1 + -1ll;
-			goto label$5293;
-			label$5296:;
+			int64 TMP$1813$3;
+			TMP$1813$3 = *(int64*)A12$1 + -1ll;
+			goto label$5297;
+			label$5300:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) = *(double*)((uint8*)P12$2 + (I$3 << (4ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)P12$2 + (I$3 << (4ll & 63ll))) + 8ll);
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 16ll) = *(double*)((uint8*)P3$2 + (I$3 << (3ll & 63ll)));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 24ll) = *(double*)((uint8*)P4$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$5294:;
+			label$5298:;
 			I$3 = I$3 + 1ll;
-			label$5293:;
-			if( I$3 <= TMP$1812$3 ) goto label$5296;
-			label$5295:;
+			label$5297:;
+			if( I$3 <= TMP$1813$3 ) goto label$5300;
+			label$5299:;
 		}
 	}
-	label$5289:;
-	label$5288:;
-	label$5287:;
+	label$5293:;
+	label$5292:;
+	label$5291:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKNS_7V3ARRAYE( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A$1 )
 {
-	label$5297:;
+	label$5301:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$5300;
+	if( *(int64*)A$1 == 0ll ) goto label$5304;
 	{
-		struct $N4MATH4VEC4E* TMP$1813$2;
-		uint64 TMP$1814$2;
-		struct $N4MATH4VEC4E* TMP$1815$2;
+		struct $N4MATH4VEC4E* TMP$1814$2;
+		uint64 TMP$1815$2;
+		struct $N4MATH4VEC4E* TMP$1816$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (5ull & 63ll) );
-		TMP$1813$2 = (struct $N4MATH4VEC4E*)vr$11;
-		if( TMP$1813$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5301;
-		TMP$1815$2 = TMP$1813$2;
-		TMP$1814$2 = *(uint64*)A$1;
-		label$5302:;
-		if( TMP$1814$2 == 0ull ) goto label$5303;
-		_ZN4MATH4VEC4C1Ev( TMP$1815$2 );
-		TMP$1815$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1815$2 + 32ll);
-		TMP$1814$2 = TMP$1814$2 + 18446744073709551615ull;
-		goto label$5302;
-		label$5303:;
-		label$5301:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1813$2;
+		TMP$1814$2 = (struct $N4MATH4VEC4E*)vr$11;
+		if( TMP$1814$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5305;
+		TMP$1816$2 = TMP$1814$2;
+		TMP$1815$2 = *(uint64*)A$1;
+		label$5306:;
+		if( TMP$1815$2 == 0ull ) goto label$5307;
+		_ZN4MATH4VEC4C1Ev( TMP$1816$2 );
+		TMP$1816$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1816$2 + 32ll);
+		TMP$1815$2 = TMP$1815$2 + 18446744073709551615ull;
+		goto label$5306;
+		label$5307:;
+		label$5305:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1814$2;
 		struct $N4MATH4VEC3E* P$2;
 		struct $N4MATH4VEC3E* vr$16 = _ZNK4MATH7V3ARRAY11DATA__get__Ev( A$1 );
 		P$2 = vr$16;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1816$3;
-			TMP$1816$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5304;
-			label$5307:;
+			int64 TMP$1817$3;
+			TMP$1817$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5308;
+			label$5311:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) = *(double*)((uint8*)P$2 + (I$3 * 24ll));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)P$2 + (I$3 * 24ll)) + 8ll);
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 16ll) = *(double*)((uint8*)((uint8*)P$2 + (I$3 * 24ll)) + 16ll);
 			}
-			label$5305:;
+			label$5309:;
 			I$3 = I$3 + 1ll;
-			label$5304:;
-			if( I$3 <= TMP$1816$3 ) goto label$5307;
-			label$5306:;
+			label$5308:;
+			if( I$3 <= TMP$1817$3 ) goto label$5311;
+			label$5310:;
 		}
 	}
-	label$5300:;
-	label$5299:;
-	label$5298:;
+	label$5304:;
+	label$5303:;
+	label$5302:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKNS_7V3ARRAYERKNS_5ARRAYE( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH7V3ARRAYE* A123$1, struct $N4MATH5ARRAYE* A4$1 )
 {
-	label$5308:;
+	label$5312:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( ((int64)-(*(int64*)A123$1 > 0ll) & (int64)-(*(int64*)A123$1 == *(int64*)A4$1)) == 0ll ) goto label$5311;
+	if( ((int64)-(*(int64*)A123$1 > 0ll) & (int64)-(*(int64*)A123$1 == *(int64*)A4$1)) == 0ll ) goto label$5315;
 	{
-		struct $N4MATH4VEC4E* TMP$1817$2;
-		uint64 TMP$1818$2;
-		struct $N4MATH4VEC4E* TMP$1819$2;
+		struct $N4MATH4VEC4E* TMP$1818$2;
+		uint64 TMP$1819$2;
+		struct $N4MATH4VEC4E* TMP$1820$2;
 		*(int64*)THIS$1 = *(int64*)A123$1;
 		void* vr$16 = malloc( *(uint64*)A123$1 << (5ull & 63ll) );
-		TMP$1817$2 = (struct $N4MATH4VEC4E*)vr$16;
-		if( TMP$1817$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5312;
-		TMP$1819$2 = TMP$1817$2;
-		TMP$1818$2 = *(uint64*)A123$1;
-		label$5313:;
-		if( TMP$1818$2 == 0ull ) goto label$5314;
-		_ZN4MATH4VEC4C1Ev( TMP$1819$2 );
-		TMP$1819$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1819$2 + 32ll);
-		TMP$1818$2 = TMP$1818$2 + 18446744073709551615ull;
-		goto label$5313;
-		label$5314:;
-		label$5312:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1817$2;
+		TMP$1818$2 = (struct $N4MATH4VEC4E*)vr$16;
+		if( TMP$1818$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5316;
+		TMP$1820$2 = TMP$1818$2;
+		TMP$1819$2 = *(uint64*)A123$1;
+		label$5317:;
+		if( TMP$1819$2 == 0ull ) goto label$5318;
+		_ZN4MATH4VEC4C1Ev( TMP$1820$2 );
+		TMP$1820$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1820$2 + 32ll);
+		TMP$1819$2 = TMP$1819$2 + 18446744073709551615ull;
+		goto label$5317;
+		label$5318:;
+		label$5316:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1818$2;
 		struct $N4MATH4VEC3E* P123$2;
 		struct $N4MATH4VEC3E* vr$21 = _ZNK4MATH7V3ARRAY11DATA__get__Ev( A123$1 );
 		P123$2 = vr$21;
@@ -28159,113 +28176,113 @@ void _ZN4MATH7V4ARRAYC1ERKNS_7V3ARRAYERKNS_5ARRAYE( struct $N4MATH7V4ARRAYE* THI
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1820$3;
-			TMP$1820$3 = *(int64*)A123$1 + -1ll;
-			goto label$5315;
-			label$5318:;
+			int64 TMP$1821$3;
+			TMP$1821$3 = *(int64*)A123$1 + -1ll;
+			goto label$5319;
+			label$5322:;
 			{
 				*(double*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) = *(double*)((uint8*)P123$2 + (I$3 * 24ll));
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 8ll) = *(double*)((uint8*)((uint8*)P123$2 + (I$3 * 24ll)) + 8ll);
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 16ll) = *(double*)((uint8*)((uint8*)P123$2 + (I$3 * 24ll)) + 16ll);
 				*(double*)((uint8*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))) + 24ll) = *(double*)((uint8*)P4$2 + (I$3 << (3ll & 63ll)));
 			}
-			label$5316:;
+			label$5320:;
 			I$3 = I$3 + 1ll;
-			label$5315:;
-			if( I$3 <= TMP$1820$3 ) goto label$5318;
-			label$5317:;
+			label$5319:;
+			if( I$3 <= TMP$1821$3 ) goto label$5322;
+			label$5321:;
 		}
 	}
-	label$5311:;
-	label$5310:;
-	label$5309:;
+	label$5315:;
+	label$5314:;
+	label$5313:;
 }
 
 void _ZN4MATH7V4ARRAYC1ERKS0_( struct $N4MATH7V4ARRAYE* THIS$1, struct $N4MATH7V4ARRAYE* A$1 )
 {
-	label$5319:;
+	label$5323:;
 	__builtin_memset( (struct $N4MATH9BASEARRAYE*)THIS$1, 0, 8ll );
 	__builtin_memset( (struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll), 0, 8ll );
 	_ZN4MATH4VEC4C1Ev( (struct $N4MATH4VEC4E*)((uint8*)THIS$1 + 16ll) );
-	if( *(int64*)A$1 == 0ll ) goto label$5322;
+	if( *(int64*)A$1 == 0ll ) goto label$5326;
 	{
-		struct $N4MATH4VEC4E* TMP$1821$2;
-		uint64 TMP$1822$2;
-		struct $N4MATH4VEC4E* TMP$1823$2;
+		struct $N4MATH4VEC4E* TMP$1822$2;
+		uint64 TMP$1823$2;
+		struct $N4MATH4VEC4E* TMP$1824$2;
 		*(int64*)THIS$1 = *(int64*)A$1;
 		void* vr$11 = malloc( *(uint64*)A$1 << (5ull & 63ll) );
-		TMP$1821$2 = (struct $N4MATH4VEC4E*)vr$11;
-		if( TMP$1821$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5323;
-		TMP$1823$2 = TMP$1821$2;
-		TMP$1822$2 = *(uint64*)A$1;
-		label$5324:;
-		if( TMP$1822$2 == 0ull ) goto label$5325;
-		_ZN4MATH4VEC4C1Ev( TMP$1823$2 );
-		TMP$1823$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1823$2 + 32ll);
-		TMP$1822$2 = TMP$1822$2 + 18446744073709551615ull;
-		goto label$5324;
-		label$5325:;
-		label$5323:;
-		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1821$2;
+		TMP$1822$2 = (struct $N4MATH4VEC4E*)vr$11;
+		if( TMP$1822$2 == (struct $N4MATH4VEC4E*)0ull ) goto label$5327;
+		TMP$1824$2 = TMP$1822$2;
+		TMP$1823$2 = *(uint64*)A$1;
+		label$5328:;
+		if( TMP$1823$2 == 0ull ) goto label$5329;
+		_ZN4MATH4VEC4C1Ev( TMP$1824$2 );
+		TMP$1824$2 = (struct $N4MATH4VEC4E*)((uint8*)TMP$1824$2 + 32ll);
+		TMP$1823$2 = TMP$1823$2 + 18446744073709551615ull;
+		goto label$5328;
+		label$5329:;
+		label$5327:;
+		*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) = TMP$1822$2;
 		{
 			int64 I$3;
 			I$3 = 0ll;
-			int64 TMP$1824$3;
-			TMP$1824$3 = *(int64*)THIS$1 + -1ll;
-			goto label$5326;
-			label$5329:;
+			int64 TMP$1825$3;
+			TMP$1825$3 = *(int64*)THIS$1 + -1ll;
+			goto label$5330;
+			label$5333:;
 			{
 				_ZN4MATH4VEC4aSERKS0_( (struct $N4MATH4VEC4E*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) + (I$3 << (5ll & 63ll))), (struct $N4MATH4VEC4E*)((uint8*)*(struct $N4MATH4VEC4E**)((uint8*)A$1 + 8ll) + (I$3 << (5ll & 63ll))) );
 			}
-			label$5327:;
+			label$5331:;
 			I$3 = I$3 + 1ll;
-			label$5326:;
-			if( I$3 <= TMP$1824$3 ) goto label$5329;
-			label$5328:;
+			label$5330:;
+			if( I$3 <= TMP$1825$3 ) goto label$5333;
+			label$5332:;
 		}
 	}
-	label$5322:;
-	label$5321:;
-	label$5320:;
+	label$5326:;
+	label$5325:;
+	label$5324:;
 }
 
 void _ZN4MATH7V4ARRAYD1Ev( struct $N4MATH7V4ARRAYE* THIS$1 )
 {
-	label$5330:;
-	if( *(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC4E*)0ull ) goto label$5333;
+	label$5334:;
+	if( *(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC4E*)0ull ) goto label$5337;
 	{
-		if( *(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC4E*)0ull ) goto label$5334;
+		if( *(struct $N4MATH4VEC4E**)((uint8*)THIS$1 + 8ll) == (struct $N4MATH4VEC4E*)0ull ) goto label$5338;
 		free( *(void**)((uint8*)THIS$1 + 8ll) );
-		label$5334:;
-		label$5333:;
+		label$5338:;
+		label$5337:;
 	}
-	label$5331:;
+	label$5335:;
 }
 
 FBSTRING* _ZNK4MATH7V4ARRAYcv8FBSTRINGEv( struct $N4MATH7V4ARRAYE* THIS$1 )
 {
-	FBSTRING TMP$1826$1;
 	FBSTRING TMP$1827$1;
+	FBSTRING TMP$1828$1;
 	FBSTRING fb$result$1;
 	__builtin_memset( &fb$result$1, 0, 24ll );
-	label$5335:;
+	label$5339:;
 	FBSTRING* vr$2 = fb_LongintToStr( *(int64*)THIS$1 );
-	__builtin_memset( &TMP$1826$1, 0, 24ll );
-	FBSTRING* vr$5 = fb_StrConcat( &TMP$1826$1, (void*)"<math.v4array>{ length : ", 26ll, (void*)vr$2, -1ll );
 	__builtin_memset( &TMP$1827$1, 0, 24ll );
-	FBSTRING* vr$8 = fb_StrConcat( &TMP$1827$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
+	FBSTRING* vr$5 = fb_StrConcat( &TMP$1827$1, (void*)"<math.v4array>{ length : ", 26ll, (void*)vr$2, -1ll );
+	__builtin_memset( &TMP$1828$1, 0, 24ll );
+	FBSTRING* vr$8 = fb_StrConcat( &TMP$1828$1, (void*)vr$5, -1ll, (void*)" }", 3ll );
 	fb_StrInit( (void*)&fb$result$1, -1ll, (void*)vr$8, -1ll, 0 );
-	goto label$5336;
-	label$5336:;
+	goto label$5340;
+	label$5340:;
 	FBSTRING* vr$11 = fb_StrAllocTempResult( (FBSTRING*)&fb$result$1 );
 	return vr$11;
 }
 
 int32 main( int32 __FB_ARGC__$0, char** __FB_ARGV__$0 )
 {
-	double TMP$1835$0;
 	double TMP$1836$0;
 	double TMP$1837$0;
+	double TMP$1838$0;
 	int32 fb$result$0;
 	__builtin_memset( &fb$result$0, 0, 4ll );
 	fb_Init( __FB_ARGC__$0, (char**)__FB_ARGV__$0, 0 );
@@ -28277,13 +28294,13 @@ int32 main( int32 __FB_ARGC__$0, char** __FB_ARGV__$0 )
 	FBSTRING* vr$3 = fb_StrAllocTempDescZEx( (char*)"Graphical plane is not flipped.", 31ll );
 	fb_PrintString( 0, (FBSTRING*)vr$3, 1 );
 	struct $N4MATH4VEC2E V$0;
-	TMP$1836$0 = 0x1.p+1;
-	TMP$1835$0 = 0x1.8p+1;
-	_ZN4MATH4VEC2C1ERKdS2_( &V$0, (double*)&TMP$1835$0, (double*)&TMP$1836$0 );
+	TMP$1837$0 = 0x1.p+1;
+	TMP$1836$0 = 0x1.8p+1;
+	_ZN4MATH4VEC2C1ERKdS2_( &V$0, (double*)&TMP$1836$0, (double*)&TMP$1837$0 );
 	FBSTRING* vr$8 = _ZNK4MATH4VEC2cv8FBSTRINGEv( (struct $N4MATH4VEC2E*)&V$0 );
 	fb_PrintString( 0, (FBSTRING*)vr$8, 1 );
-	TMP$1837$0 = 0x1.921FB54442D18p+0;
-	_ZN4MATH4VEC26ROTATEERKd( &V$0, (double*)&TMP$1837$0 );
+	TMP$1838$0 = 0x1.921FB54442D18p+0;
+	_ZN4MATH4VEC26ROTATEERKd( &V$0, (double*)&TMP$1838$0 );
 	FBSTRING* vr$12 = _ZNK4MATH4VEC2cv8FBSTRINGEv( (struct $N4MATH4VEC2E*)&V$0 );
 	fb_PrintString( 0, (FBSTRING*)vr$12, 1 );
 	fb_Sleep( -1 );
@@ -28294,21 +28311,21 @@ int32 main( int32 __FB_ARGC__$0, char** __FB_ARGV__$0 )
 
 static void _ZN4MATH4MAT2D1Ev( struct $N4MATH4MAT2E* THIS$1 )
 {
-	label$2020:;
-	label$2021:;
+	label$2024:;
+	label$2025:;
 	_ZN4MATH10BASEMATRIXD1Ev( (struct $N4MATH10BASEMATRIXE*)THIS$1 );
 }
 
 static void _ZN4MATH4MAT3D1Ev( struct $N4MATH4MAT3E* THIS$1 )
 {
-	label$2146:;
-	label$2147:;
+	label$2150:;
+	label$2151:;
 	_ZN4MATH10BASEMATRIXD1Ev( (struct $N4MATH10BASEMATRIXE*)THIS$1 );
 }
 
 static void _ZN4MATH4MAT4D1Ev( struct $N4MATH4MAT4E* THIS$1 )
 {
-	label$2337:;
-	label$2338:;
+	label$2341:;
+	label$2342:;
 	_ZN4MATH10BASEMATRIXD1Ev( (struct $N4MATH10BASEMATRIXE*)THIS$1 );
 }
