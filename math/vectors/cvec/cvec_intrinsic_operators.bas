@@ -86,7 +86,7 @@ namespace math
         #ifdef _MATH_ANGLE_BI_
         return "<math.cvec>{ theta : " & angle.render(this._a, angleUnit.radian) & " , rho : " & this._r & " , z : " & this.z & " }"
         #else
-        return "<math.cvec>{ theta : " & this._a                                   " , rho : " & this._r & " , z : " & this.z & " }"
+        return "<math.cvec>{ theta : " & this._a                                 & " , rho : " & this._r & " , z : " & this.z & " }"
         #endif
     end operator
     

@@ -94,6 +94,9 @@
         declare function random           (byref as const real)                      as real
         declare function random           (byref as const real, byref as const real) as real
         #endif
+        declare sub      rotx    m_ovl    (byref as real, byref as real, byref as const real)
+        declare sub      roty    m_ovl    (byref as real, byref as real, byref as const real)
+        declare sub      rotz    m_ovl    (byref as real, byref as real, byref as const real)
         declare function sec     m_ovl    (byref as const real) as real
         declare function sech    m_ovl    (byref as const real) as real
         declare function sinh    m_ovl    (byref as const real) as real

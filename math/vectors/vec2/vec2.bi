@@ -44,11 +44,29 @@
                 declare       property theta  (byref as const real)
                 
                 #ifdef _MATH_ANGLE_BI_
-                declare static function fromPolar overload (byref as const real                          , byref as const real) as vec2
-                declare static function fromPolar          (byref as const real, byref as const angleUnit, byref as const real) as vec2
-                declare static function fromPolar          (byref as const angle                         , byref as const real) as vec2
+                declare static function fromPolar overload (byref as const real                              , byref as const real)     as vec2
+                #ifdef _MATH_RATIONAL_BI_
+                declare static function fromPolar          (byref as const real                              , byref as const rational) as vec2
+                declare static function fromPolar          (byref as const rational                          , byref as const real)     as vec2
+                declare static function fromPolar          (byref as const rational                          , byref as const rational) as vec2
+                #endif
+                declare static function fromPolar          (byref as const real    , byref as const angleUnit, byref as const real)     as vec2
+                #ifdef _MATH_RATIONAL_BI_
+                declare static function fromPolar          (byref as const real    , byref as const angleUnit, byref as const rational) as vec2
+                declare static function fromPolar          (byref as const rational, byref as const angleUnit, byref as const real)     as vec2
+                declare static function fromPolar          (byref as const rational, byref as const angleUnit, byref as const rational) as vec2
+                #endif
+                declare static function fromPolar          (byref as const angle                             , byref as const real)     as vec2
+                #ifdef _MATH_RATIONAL_BI_
+                declare static function fromPolar          (byref as const angle                             , byref as const rational) as vec2
+                #endif
                 #else
-                declare static function fromPolar          (byref as const real, byref as const real) as vec2
+                #ifdef _MATH_RATIONAL_BI_
+                declare static function fromPolar overload (byref as const rational, byref as const rational) as vec2
+                declare static function fromPolar          (byref as const rational, byref as const real)     as vec2
+                declare static function fromPolar          (byref as const real    , byref as const rational) as vec2
+                #endif
+                declare static function fromPolar          (byref as const real    , byref as const real)     as vec2
                 #endif
                 declare const  function isNull    overload ()                    as boolean
                 declare const  function isNull             (byref as const real) as boolean
@@ -63,9 +81,15 @@
                 declare static function random             (byref as const real, byref as const real, byref as const real, byref as const real) as vec2
                 #endif
                 #ifdef _MATH_ANGLE_BI_
-                declare        sub      rotate    overload (byref as const real, byref as const angleUnit => defaultAngleUnit)
-                declare        sub      rotate             (byref as const math.angle)
+                declare        sub      rotate    overload (byref as const real    , byref as const angleUnit => defaultAngleUnit)
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      rotate             (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                #endif
+                declare        sub      rotate             (byref as const angle)
                 #else
+                #ifdef _MATH_RATIONAL_BI_
+                declare        sub      rotate    overload (byref as const rational)
+                #endif
                 declare        sub      rotate             (byref as const real)
                 #endif
                 declare const  function toJSON             (byref as const boolean => false) as string

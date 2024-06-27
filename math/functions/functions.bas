@@ -654,6 +654,31 @@ namespace math
     
     #endif
     
+' math.rotx --------------------------------------------------------------------
+    
+    
+    
+' math.roty --------------------------------------------------------------------
+    
+    
+    
+' math.rotz --------------------------------------------------------------------
+    
+    sub rotz m_ovl (byref x as real, byref y as real, byref t as const real)
+        if t then
+            dim as real c => cos(t), s => sin(t), i, j
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
+            i =>  c * x + s * y
+            j => -s * x + c * y
+            #else
+            i => c * x - s * y
+            j => s * x + c * y
+            #endif
+            x => i
+            y => j
+        end if
+    end sub
+    
 ' math.sec ---------------------------------------------------------------------
     
     ' Returns the secant of t.

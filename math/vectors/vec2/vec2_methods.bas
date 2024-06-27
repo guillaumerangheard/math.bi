@@ -6,23 +6,23 @@ namespace math
     
     #ifdef _MATH_ANGLE_BI_
     
-    function vec2.fromPolar (byref n1 as const real, byref n2 as const real) as vec2
-        if 0d <= n2 then
-            dim as real t => angle.convert(n1, defaultAngleUnit, angleUnit.radian)
-            #ifdef MATH_FLIP_GRAPHICAL_PLANE
-            return vec2(cos(t) * n2, -sin(t) * n2)
-            #else
-            return vec2(cos(t) * n2, sin(t) * n2)
-            #endif
-        else
-            dim as real t => angle.convert(n1 + pi, defaultAngleUnit, angleUnit.radian), r => -n2
-            #ifdef MATH_FLIP_GRAPHICAL_PLANE
-            return vec2(cos(t) * r, -sin(t) * r)
-            #else
-            return vec2(cos(t) * r, sin(t) * r)
-            #endif
-        end if
+    function vec2.fromPolar overload (byref n1 as const real, byref n2 as const real) as vec2
+        return vec2.fromPolar(n1, defaultAngleUnit, n2)
     end function
+    
+    #ifdef _MATH_RATIONAL_BI_
+    function vec2.fromPolar (byref n1 as const real, byref r2 as const rational) as vec2
+        return vec2.fromPolar(n1, defaultAngleUnit, m_crl(r2))
+    end function
+    
+    function vec2.fromPolar (byref r1 as const rational, byref n2 as const real) as vec2
+        return vec2.fromPolar(m_crl(r1), defaultAngleUnit, n2)
+    end function
+    
+    function vec2.fromPolar (byref r1 as const rational, byref r2 as const rational) as vec2
+        return vec2.fromPolar(m_crl(r1), defaultAngleUnit, m_crl(r2))
+    end function
+    #endif
     
     function vec2.fromPolar (byref n1 as const real, byref u as const angleUnit, byref n2 as const real) as vec2
         if 0d <= n2 then
@@ -42,29 +42,53 @@ namespace math
         end if
     end function
     
-    function vec2.fromPolar (byref a as const angle, byref n as const real) as vec2
-        dim as real t => a.theta
-        if 0d <= n then
-            #ifdef MATH_FLIP_GRAPHICAL_PLANE
-            return vec2(cos(t) * n, -sin(t) * n)
-            #else
-            return vec2(cos(t) * n, sin(t) * n)
-            #endif
-        else
-            dim as real r => -n
-            #ifdef MATH_FLIP_GRAPHICAL_PLANE
-            return vec2(cos(t) * r, -sin(t) * r)
-            #else
-            return vec2(cos(t) * r, sin(t) * r)
-            #endif
-        end if
+    #ifdef _MATH_RATIONAL_BI_
+    function vec2.fromPolar (byref n1 as const real, byref u as const angleUnit, byref r2 as const rational) as vec2
+        return vec2.fromPolar(n1, u, m_crl(r2))
     end function
+    
+    function vec2.fromPolar (byref r1 as const rational, byref u as const angleUnit, byref n2 as const real) as vec2
+        return vec2.fromPolar(m_crl(r1), u, n2)
+    end function
+    
+    function vec2.fromPolar (byref r1 as const rational, byref u as const angleUnit, byref r2 as const rational) as vec2
+        return vec2.fromPolar(m_crl(r1), u, m_crl(r2))
+    end function
+    #endif
+    
+    function vec2.fromPolar (byref a as const angle, byref n as const real) as vec2
+        return vec2.fromPolar(a.theta, angleUnit.radian, n)
+    end function
+    
+    #ifdef _MATH_RATIONAL_BI_
+    function vec2.fromPolar (byref a as const angle, byref r as const rational) as vec2
+        return vec2.fromPolar(a.theta, angleUnit.radian, m_crl(r))
+    end function
+    #endif
     
     #else
     
+    #ifdef _MATH_RATIONAL_BI_
+    function vec2.fromPolar overload (byref r1 as const rational, byref r2 as const rational) as vec2
+        return vec2.fromPolar(m_crl(r1), m_crl(r2))
+    end function
+    
+    function vec2.fromPolar (byref r1 as const rational, byref n2 as const real) as vec2
+        return vec2.fromPolar(m_crl(r1), n2)
+    end function
+    
+    function vec2.fromPolar (byref n1 as const real, byref r2 as const rational) as vec2
+        return vec2.fromPolar(n1, m_crl(r2))
+    end function
+    #endif
+    
     function vec2.fromPolar (byref n1 as const real, byref n2 as const real) as vec2
         if 0d <= n2 then
+            #ifdef MATH_FLIP_GRAPHICAL_PLANE
             return vec2(cos(n1) * n2, -sin(n1) * n2)
+            #else
+            return vec2(cos(n1) * n2, sin(n1) * n2)
+            #endif
         else
             dim as real t => n1 + pi, r => -n2
             #ifdef MATH_FLIP_GRAPHICAL_PLANE
@@ -142,31 +166,30 @@ namespace math
     
     #ifdef _MATH_ANGLE_BI_
     
-    sub vec2.rotate (byref n as const real, byref u as const angleUnit => defaultAngleUnit)
-        dim as real t => angle.convert(n, u, angleUnit.radian), _
-                    c => cos(t), s => cos(t), _
-                    i => c * this.x - s * this.y, _
-                    j => s * this.x + c * this.y
-        this.x => i
-        this.y => j
+    sub vec2.rotate overload (byref n as const real, byref u as const angleUnit => defaultAngleUnit)
+        math.rotz(this.x, this.y, angle.convert(n, u, angleUnit.radian))
     end sub
     
+    #ifdef _MATH_RATIONAL_BI_
+    sub vec2.rotate (byref r as const rational, byref u as const angleUnit => defaultAngleUnit)
+        math.rotz(this.x, this.y, angle.convert(m_crl(r), u, angleUnit.radian))
+    end sub
+    #endif
+    
     sub vec2.rotate (byref a as const math.angle)
-        dim as real t => a.theta, c => cos(t), s => sin(t), _
-                    i => c * this.x - s * this.y, _
-                    j => s * this.x + c * this.y
-        this.x => i
-        this.y => j
+        math.rotz(this.x, this.y, a.theta)
     end sub
     
     #else
     
+    #ifdef _MATH_RATIONAL_BI_
+    sub vec2.rotate overload (byref r as const rational)
+        math.rotz(this.x, this.y, m_crl(r))
+    end sub
+    #endif
+    
     sub vec2.rotate (byref n as const real)
-        dim as real c => cos(n), s => sin(n), _
-                    i => c * this.x - s * this.y, _
-                    j => s * this.x + c * this.y
-        this.x => i
-        this.y => j
+        math.rotz(this.x, this.y, n)
     end sub
     
     #endif
