@@ -94,9 +94,9 @@ namespace math
         return complex(m_crl(r) * (1d - t) + c.r * t, c.i * t)
     end function
     
-    function lerp (byref r as const rational, byref c as const complex, byref s as const real, byref c as const easing.curve) as complex
+    function lerp (byref r as const rational, byref d as const complex, byref s as const real, byref c as const easing.curve) as complex
         dim as real t => c.compute(clamp(s))
-        return complex(m_crl(r) * (1d - t) + c.r * t, c.i * t)
+        return complex(m_crl(r) * (1d - t) + d.r * t, d.i * t)
     end function
     #endif
     
@@ -111,9 +111,9 @@ namespace math
         return complex(c.r * u + m_crl(r) * t, c.i * u)
     end function
     
-    function lerp (byref c as const complex, byref r as const rational, byref s as const real, byref c as const easing.curve) as complex
+    function lerp (byref d as const complex, byref r as const rational, byref s as const real, byref c as const easing.curve) as complex
         dim as real t => c.compute(clamp(s)), u => 1d - t
-        return complex(c.r * u + m_crl(r) * t, c.i * u)
+        return complex(d.r * u + m_crl(r) * t, d.i * u)
     end function
     #endif
     #endif

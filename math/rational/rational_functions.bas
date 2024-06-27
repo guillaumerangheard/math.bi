@@ -546,7 +546,7 @@ namespace math
         return m_crl(r1) * (1d - t) + m_crl(r2) * t
     end function
     
-    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, byref c s const easing.curve) as real
+    function lerp (byref r1 as const rational, byref r2 as const rational, byref s as const real, byref c as const easing.curve) as real
         dim as real t => c.compute(clamp(s))
         return m_crl(r1) * (1d - t) + m_crl(r2) * t
     end function

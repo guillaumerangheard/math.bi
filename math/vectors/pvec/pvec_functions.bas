@@ -130,9 +130,9 @@ namespace math
         if e then t => e(t)
         u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.rho * u + v2.rho * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.rho * u + v2.rho * t)
         #endif
     end function
     
@@ -141,9 +141,9 @@ namespace math
         t => c.compute(t)
         u => 1d - t
         #ifdef _MATH_ANGLE_BI_
-        return pvec(v1.phi * u + v2.phi * t, angleUnit.radian, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, angleUnit.radian, v1.rho * u + v2.rho * t)
         #else
-        return pvec(v1.phi * u + v2.phi * t, v1.rho * u + v2.rho * t)
+        return pvec(v1.theta * u + v2.theta * t, v1.rho * u + v2.rho * t)
         #endif
     end function
     #endif
