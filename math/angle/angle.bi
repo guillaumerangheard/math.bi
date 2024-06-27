@@ -8,16 +8,34 @@
                     as angleUnit unit
                     
                     declare constructor ()
-                    declare constructor (byref as const real, byref as const angleUnit => defaultAngleUnit)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare constructor (byref as const rational, byref as const angleUnit => defaultAngleUnit)
+                    #endif
+                    declare constructor (byref as const real    , byref as const angleUnit => defaultAngleUnit)
                     declare constructor (byref as const angle)
                     
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator +=   (byref as const rational)
+                    #endif
                     declare       operator +=   (byref as const real)
                     declare       operator +=   (byref as const angle)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator -=   (byref as const rational)
+                    #endif
                     declare       operator -=   (byref as const real)
                     declare       operator -=   (byref as const angle)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator *=   (byref as const rational)
+                    #endif
                     declare       operator *=   (byref as const real)
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator /=   (byref as const rational)
+                    #endif
                     declare       operator /=   (byref as const real)
                     declare const operator cast () as string
+                    #ifdef _MATH_RATIONAL_BI_
+                    declare       operator let  (byref as const rational)
+                    #endif
                     declare       operator let  (byref as const real)
                     declare       operator let  (byref as const angle)
                     

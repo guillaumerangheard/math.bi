@@ -5,6 +5,12 @@ namespace math
 ' math.angle.+= ----------------------------------------------------------------
     
     #macro a_op(_o_)
+    #ifdef _MATH_RATIONAL_BI_
+    operator angle.##_o_##= (byref r as const rational)
+        this._v => wrap(this._v _o_ m_crl(r) / angles(defaultAngleUnit))
+    end operator
+    #endif
+    
     operator angle.##_o_##= (byref n as const real)
         this._v => wrap(this._v _o_ n / angles(defaultAngleUnit))
     end operator
@@ -24,11 +30,24 @@ namespace math
     
 ' math.angle.*= ----------------------------------------------------------------
     
+    #ifdef _MATH_RATIONAL_BI_
+    operator angle.*= (byref r as const rational)
+        this._v => wrap(this._v * m_crl(r))
+    end operator
+    #endif
+    
     operator angle.*= (byref n as const real)
         this._v => wrap(this._v * n)
     end operator
     
 ' math.angle./= ----------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator angle./= (byref r as const rational)
+        dim as real n => m_crl(r)
+        this._v => iif(n, wrap(this._v / n), 0d)
+    end operator
+    #endif
     
     operator angle./= (byref n as const real)
         this._v => iif(n, wrap(this._v / n), 0d)
@@ -41,6 +60,12 @@ namespace math
     end operator
     
 ' math.angle.let ---------------------------------------------------------------
+    
+    #ifdef _MATH_RATIONAL_BI_
+    operator angle.let (byref r as const rational)
+        this._v => wrap(m_crl(r) / angles(defaultAngleUnit))
+    end operator
+    #endif
     
     operator angle.let (byref n as const real)
         this._v => wrap(n / angles(defaultAngleUnit))
